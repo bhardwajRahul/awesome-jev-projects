@@ -1,0 +1,45 @@
+name: Ecosystem radar
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ecosystem-radar
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --no-fund --no-audit
+      - name: Discover projects and refresh metadata
+        run: npm run radar
+        env:
+          GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
+          RADAR_MAX_PAGES: "2"
+          RADAR_MAX_CANDIDATES: "60"
+      - name: Validate data and frontend
+        run: npm test && npm run build
+      - name: Publish data snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/projects.json src/data/radar.json radar/receipts radar/state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh Jev ecosystem radar"
+            git push
+          fi
+      - name: Retain scan receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-receipts
+          path: radar/receipts
+          retention-days: 30

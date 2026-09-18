@@ -1,0 +1,19 @@
+{
+  "lastAttemptAt": "2026-09-18T06:27:08.043469+00:00",
+  "lastSuccessfulAt": null,
+  "status": "partial",
+  "sources": [
+    {
+      "name": "14 个种子仓库元数据与来源核验",
+      "status": "ok",
+      "count": 14
+    },
+    {
+      "name": "全网自动发现",
+      "status": "pending"
+    }
+  ],
+  "newProjects": 0,
+  "schedule": "0 */12 * * *",
+  "schedulerStatus": "not-configured"
+}

@@ -1,0 +1,26 @@
+name: Submit a Jev project
+description: Share an open-source tool that uses Jev
+title: "[Project] "
+labels: []
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: GitHub repository
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What does it do?
+      description: Describe it in plain language.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Where does Jev make a decision?
+      description: Include a link to the implementation or README and benchmark conditions, if any.
+    validations:
+      required: true
