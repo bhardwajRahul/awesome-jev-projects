@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 130 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 131 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (130 Projects)
+## Curated Projects Directory (131 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1049,4 +1049,12 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): 让 Scala 应用也能接入 Jev。这个多模型客户端新增了独立 TypeSafe 模块，用状态和判断题获取结构化答案。
 - Jev Decision Role: 调用 System One 返回单选、评分和是非概率；可把受支持的封闭 JSON Schema 转成判断题。
 - Core Benefit: 能沿用 Scala 的异步接口和错误处理；Jev 是额外支持的 provider，不承担普通聊天生成。
+
+### ego-jev
+- Repository: https://github.com/phd-peter/ego-jev
+- Category: Browser & OS Action
+- Overview (EN): Integrates Jev with Ego Lite browser agent. Reads semantic snapshots to decide DOM clicks and wheel scrolls, delegating text entry to LLMs.
+- Overview (ZH): 把 Jev 接入 Ego Lite 浏览器。读取轻量语义快照，由 Jev 决定点哪个控件、怎么滚轮，需要输文字时才叫大模型。
+- Jev Decision Role: 读取当前页面的动作空间候选，在单次请求里选定目标控件与操作类型；由 ego-lite 本地执行。
+- Core Benefit: 用轻量语义快照替代昂贵的视觉多模态，5 步跑完维基百科复杂导航，延迟极低。
 
