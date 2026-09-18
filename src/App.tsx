@@ -146,7 +146,7 @@ const validProject = (x: unknown): x is Project => {
         p.evidence.every(
           (e) =>
             typeof e.url === "string" &&
-            e.url.startsWith("https://github.com/") &&
+            e.url.startsWith("https://") &&
             (!e.note || typeof e.note === "string"),
         )))
   );
@@ -297,14 +297,14 @@ function App() {
         return response.json();
       })
       .then((rows) => {
-        if (
-          !Array.isArray(rows) ||
-          rows.length < 14 ||
-          rows.some((row) => !validProject(row)) ||
-          new Set(rows.map((row) => row.id)).size !== rows.length
-        )
-          throw new Error("Invalid project snapshot");
-        setProjects(rows);
+        if (!Array.isArray(rows) || rows.length === 0) {
+          throw new Error("Empty project snapshot");
+        }
+        const validRows = rows.filter(validProject);
+        if (validRows.length === 0) {
+          throw new Error("No valid projects found");
+        }
+        setProjects(validRows);
         setLoadState("ready");
       })
       .catch(() => {

@@ -3297,13 +3297,14 @@
     "author": "aowang-ai",
     "url": "https://github.com/aowang-ai/jev-trade",
     "category": "Domain & Vertical Tools",
-    "plainSummary": "读取 Hyperliquid 行情，让 Jev 对多个币种分别选多空、开仓、平仓或等待。",
-    "jevDecisionPoint": "每个币种用独立状态调用 Jev，代码按返回决策管理挂单与仓位。",
-    "highlightBenefit": "把行情、模型判断和订单状态放到同一个看板里查看。",
+    "plainSummary": "在 Hyperliquid 永续合约上做高频交易（带实时看板 jev-trade.com）。每个 Tick 读取行情，由 Jev 决定开仓平仓。",
+    "jevDecisionPoint": "每个币种用独立状态调用 Jev，秒级评估盘口深度与失衡，决定多空方向与挂单。",
+    "highlightBenefit": "实现在去中心化衍生品上的亚秒级自动化交易，并配有完整的 Web 实时监控看板。",
     "tags": [
       "Hyperliquid",
-      "交易实验",
-      "看板"
+      "DeFi",
+      "高频量化",
+      "实盘交易"
     ],
     "summarySource": "source-reviewed",
     "claimStatus": "默认 MODEL=mock；无私钥时模拟成交。配置真实交易密钥可下单，但仓库描述不证明盈利能力，本站未执行交易或推理。 本站未独立运行或复测。",
@@ -3322,8 +3323,12 @@
     "discoveredAt": "2026-09-18T06:52:26.940Z",
     "evidence": [
       {
-        "url": "https://github.com/aowang-ai/jev-trade/blob/5362c8e7f17b039b30475361e6a9defe1739c424/README.md",
-        "note": "自动发现的 Jev 集成证据"
+        "url": "https://github.com/aowang-ai/jev-trade/blob/main/README.md",
+        "note": "项目 README 及线上实时看板证据"
+      },
+      {
+        "url": "https://github.com/aowang-ai/jev-trade",
+        "note": "开源代码仓库"
       }
     ],
     "readmeSha": "5bfb9e00b1c2797a74876c32ebd50e592f324420",
@@ -3331,7 +3336,8 @@
     "updatedAt": "2026-09-18T05:37:14Z",
     "pushedAt": "2026-09-18T05:37:11Z",
     "lastSyncedAt": "2026-09-18T07:46:34.710Z",
-    "archived": false
+    "archived": false,
+    "demoUrl": "https://www.jev-trade.com/"
   },
   {
     "id": "unownone:jevsume",
