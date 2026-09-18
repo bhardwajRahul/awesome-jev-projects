@@ -504,17 +504,36 @@ function App() {
           <button
             className={onlySaved ? "nav-item active" : "nav-item"}
             onClick={() => setOnlySaved(true)}
+            aria-label={`我的收藏 ${saved.length}`}
           >
-            我的收藏<span className="nav-count">{saved.length}</span>
+            <Bookmark
+              className="mobile-bookmark"
+              size={18}
+              aria-hidden="true"
+            />
+            <span className="saved-label">我的收藏</span>
+            <span className="nav-count">{saved.length}</span>
           </button>
         </nav>
-        <button
-          className="button dark submit-top"
-          onClick={() => setModal("submit")}
-        >
-          <Plus size={16} />
-          <span>提交项目</span>
-        </button>
+        <div className="header-actions">
+          <a
+            className="button header-github"
+            href="https://github.com/logicrw/awesome-jev-projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub 仓库（新标签页打开）"
+            title="GitHub 仓库"
+          >
+            <Github size={19} strokeWidth={1.75} aria-hidden="true" />
+          </a>
+          <button
+            className="button dark submit-top"
+            onClick={() => setModal("submit")}
+          >
+            <Plus size={16} />
+            <span>提交项目</span>
+          </button>
+        </div>
       </header>
       <main className="page">
         <section className="hero" aria-labelledby="hero-heading">
