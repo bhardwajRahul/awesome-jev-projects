@@ -2,7 +2,7 @@
 
 A source-backed, plain-language radar for tools built with TypeSafe AI's Jev. 中文优先，保留英文项目名与技术标签。
 
-- **Website:** https://awesome-jev.quirky-reed-8948.chatgpt.site
+- **Website:** https://awesome-jev.logicrw001.chatgpt.site
 - **Submit a project:** https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml
 - **Run the radar:** [Actions](https://github.com/logicrw/awesome-jev-projects/actions/workflows/radar.yml)
 
