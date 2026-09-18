@@ -8414,5 +8414,144 @@
     ],
     "readmeSha": "9ef10cc029b62fe999ebb6e49a3be19afdf5ddb3",
     "sourceHash": "c4c8c1abb341fff34164c2e830a800d732d85cd9fc9c34407916dbd3e2a2025a"
+  },
+  {
+    "id": "supercorp-ai:supercov",
+    "name": "supercov",
+    "author": "supercorp-ai",
+    "url": "https://github.com/supercorp-ai/supercov",
+    "repoId": 1343957927,
+    "category": "CLI & Pipelines",
+    "plainSummary": "supercov：对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "ai",
+      "coverage",
+      "qa",
+      "quality-assurance"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "plainSummaryEn": "Code quality and coverage for coding agents",
+    "enrichment": {
+      "issueTextTrusted": false,
+      "ai": {
+        "attempted": true,
+        "status": "request-failed",
+        "requestedFields": [
+          "plainSummary"
+        ],
+        "circuitReason": "dns-error"
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "repo-description"
+      }
+    },
+    "stars": 32,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-08-23T16:12:35Z",
+    "lastCommitAt": "2026-09-18T20:45:36Z",
+    "headSha": "55f5ce93a239829c224b89e6749991310be91ea4",
+    "metadataFetchedAt": "2026-09-18T23:16:01.601Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/152935339?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T23:16:01.602Z",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "evidence": [
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/cmd/supercov/main_test.go",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/cmd/supercov/main.go",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/assertions_human.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/assertions_query.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/human_query.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/public_query.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/quality.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "55f5ce93a239829c224b89e6749991310be91ea4",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/README.md",
+          "hash": "083b31b5c2eb77b63339dc4c1f49aa0b501a1fee76b7fac454943097ba17ca97"
+        },
+        {
+          "path": "cmd/supercov/main_test.go",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/cmd/supercov/main_test.go",
+          "hash": "f1aa320ce7a1f22f684bfae43b667755edb8c10498b50922d0368ad3dd253f5f"
+        },
+        {
+          "path": "cmd/supercov/main.go",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/cmd/supercov/main.go",
+          "hash": "719f23d208546afe7ce514780e13e7b09840bd7ecac2af5baa93f50f711e0ae8"
+        },
+        {
+          "path": "crates/supercov-cli/src/assertions_human.rs",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/assertions_human.rs",
+          "hash": "e925f299d6c4f178aec608469ee336daa946adc2c9342cdf51943df0ae2a7826"
+        },
+        {
+          "path": "crates/supercov-cli/src/assertions_query.rs",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/assertions_query.rs",
+          "hash": "fca3cd679aa84c5553435ec7af79581e83f29c85d6aac5d4590463bac06c5ea9"
+        },
+        {
+          "path": "crates/supercov-cli/src/human_query.rs",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/human_query.rs",
+          "hash": "61246aeff680df1dfd9440c7d719a5dec71c64b920078b8bf11c76c59f7934a0"
+        },
+        {
+          "path": "crates/supercov-cli/src/public_query.rs",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/public_query.rs",
+          "hash": "9e209862f60727b718e790c32d6d72da2649c761c625278518e03f2acaa44d1a"
+        },
+        {
+          "path": "crates/supercov-cli/src/quality.rs",
+          "url": "https://github.com/supercorp-ai/supercov/blob/55f5ce93a239829c224b89e6749991310be91ea4/crates/supercov-cli/src/quality.rs",
+          "hash": "cae7506488df365d26643802cee74e7e3af75de5edaa66e37b3db7c6196c89b2"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 8,
+      "issueBodySha256": "b55d749147fcfa52ced114fbab1d79c5d4ad2a1f082a1963a7b8c2378e0d17ad",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/8"
+    }
   }
 ]
