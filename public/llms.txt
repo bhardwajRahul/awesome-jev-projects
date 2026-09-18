@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 131 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 133 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (131 Projects)
+## Curated Projects Directory (133 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1057,4 +1057,20 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): 把 Jev 接入 Ego Lite 浏览器。读取轻量语义快照，由 Jev 决定点哪个控件、怎么滚轮，需要输文字时才叫大模型。
 - Jev Decision Role: 读取当前页面的动作空间候选，在单次请求里选定目标控件与操作类型；由 ego-lite 本地执行。
 - Core Benefit: 用轻量语义快照替代昂贵的视觉多模态，5 步跑完维基百科复杂导航，延迟极低。
+
+### jev-visual
+- Repository: https://github.com/hr98w/jev-visual
+- Category: SDK & Decision Frameworks
+- Overview (EN): Local Jev-like visual inference experiment on Apple Silicon Mac. Scores and classifies single images across multiple questions with 3 playable game demos.
+- Overview (ZH): 在 Apple Silicon Mac 本地跑的视觉版 Jev 实验。对单张图片做选择、打分与是非判断，自带 3 个本地视觉游戏 Demo。
+- Jev Decision Role: 复用图像上下文，读取模型 logits 直接为候选答案打分，由本地代码拼装结构化结果。
+- Core Benefit: 把 Jev 的多问题单次打分范式拓展到端侧视觉场景，本地秒级跑通分拣与体感游戏。
+
+### bluenoise
+- Repository: https://github.com/rokcso/bluenoise
+- Category: Context GC & Filter
+- Overview (EN): X/Twitter browser extension filtering noise. Uses local rules first, batching ambiguous replies to Jev for noise probability scoring (filters at >=0.9).
+- Overview (ZH): 推特/X 浏览器的降噪过滤扩展。本地规则过滤垃圾，疑难回复成批交给 Jev 判定噪音概率（>=0.9 则隐藏）。
+- Jev Decision Role: 对未命中本地规则的长尾回复，单次最多批量提交 25 条询问 noul 噪音概率，由代码决定是否隐藏。
+- Core Benefit: 不调用任何 X 官方 API，用本地混合架构实现毫秒级社交媒体时间线清洁。
 
