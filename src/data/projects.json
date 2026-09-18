@@ -17,8 +17,8 @@
     "metricLabel": "7.1 s",
     "metricContext": "作者单任务测量",
     "repo": "browser-use/jev-ultrafast",
-    "stars": 3076,
-    "forks": 172,
+    "stars": 3143,
+    "forks": 180,
     "openIssues": 20,
     "license": "MIT",
     "createdAt": "2026-09-16T21:30:12Z",
@@ -42,7 +42,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "作者自测：单一航班任务、两组各 3 次，中位数 9.450 → 7.092 秒；不是通用 Agent 基准。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:05.440020+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:16.055Z",
     "evidence": [
       {
         "url": "https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/docs/performance.md#L7",
@@ -68,7 +68,7 @@
     "metricLabel": "3 types",
     "metricContext": "Choice · Score · Noul",
     "repo": "itsmostafa/typesafe-mcp",
-    "stars": 35,
+    "stars": 36,
     "forks": 4,
     "openIssues": 0,
     "license": "MIT",
@@ -96,7 +96,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "README 说明接口与客户端接入；未见该项目几毫秒端到端测试。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:05.440252+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:16.452Z",
     "evidence": [
       {
         "url": "https://github.com/itsmostafa/typesafe-mcp/blob/2137d0268badd5622243424fa7993a12f3330691/README.md#L3",
@@ -147,7 +147,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "作者报告约 150–500 ms；typed output 不保证事实正确，阈值需要自行校准。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:05.440373+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:16.887Z",
     "evidence": [
       {
         "url": "https://github.com/jkudish/jev-mcp/blob/223f95e66a393601889367b332d36c45933b4df1/README.md#L6",
@@ -205,7 +205,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "README 描述 CLI 能力；未独立验证实际运行效果。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:05.440422+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:17.295Z",
     "evidence": [
       {
         "url": "https://github.com/sharziki/semdecide/blob/33cf5c03c50e02e59df3f3ea81f0650f6b791545/README.md#L3",
@@ -232,7 +232,7 @@
     "metricContext": "作者回放估算 · 237 轮",
     "repo": "0xNatoshi/jev-codex-router",
     "stars": 14,
-    "forks": 1,
+    "forks": 2,
     "openIssues": 0,
     "license": "MIT",
     "createdAt": "2026-09-17T04:14:19Z",
@@ -264,7 +264,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "60% 是单人历史回放的标价等价估算，固定 token 量，未计跨模型缓存失效；不是已支付账单下降。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:05.440510+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:17.744Z",
     "evidence": [
       {
         "url": "https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/BACKTEST.md#L3",
@@ -322,7 +322,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "默认 Jev；也支持 Haiku adapter。节省与漏删风险取决于任务和阈值，不保证彻底解决上下文问题。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:06.679395+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:18.104Z",
     "evidence": [
       {
         "url": "https://github.com/GhalebDweikat/winnow/blob/637668d60a76a975791339d49dd768038de82c2c/README.md#L5",
@@ -348,7 +348,7 @@
     "metricLabel": "5 axes",
     "metricContext": "正确性 · 安全 · 可靠性等",
     "repo": "devagrawal09/jev-review",
-    "stars": 191,
+    "stars": 192,
     "forks": 11,
     "openIssues": 1,
     "license": "MIT",
@@ -379,7 +379,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "README 支持 diff 和整库审查；未证明高风险才调用大模型，也没有节省算力的对照结果。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:06.834223+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:18.495Z",
     "evidence": [
       {
         "url": "https://github.com/devagrawal09/jev-review/blob/31f89602797fb7bea007f8a480bf368bf564954e/README.md#L9",
@@ -430,7 +430,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "README 使用 ensemble of walkers；未称为 beam search，也无通用极速 benchmark。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:06.836529+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:18.893Z",
     "evidence": [
       {
         "url": "https://github.com/ellipsis-dev/blink/blob/a621ede75649303a933828c18c27ad800bb43ef0/README.md#L89",
@@ -481,7 +481,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "图导航演示；未见千万节点或加速数十倍的测量。缺少 key 时，文档明确使用标注的替代答案。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:06.838763+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:19.308Z",
     "evidence": [
       {
         "url": "https://github.com/jexp/neo4jev/blob/7dca13df208cdbeacd7845f28a0200312b91d79b/README.md#L3",
@@ -545,7 +545,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "Jev 集成在 agent-desktop 的独立 skill/scripts 中。文档称复杂界面快照约 3 秒，不能据此宣称整体极低延迟。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:07.061678+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:19.718Z",
     "evidence": [
       {
         "url": "https://github.com/lahfir/agent-desktop/blob/7a8e4a10281c7319733aa200fd79501f34529716/skills/jev-desktop/SKILL.md#L6",
@@ -596,7 +596,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "README 提供实验命令；没有支持亚毫秒响应的性能证据。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:07.979201+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:20.094Z",
     "evidence": [
       {
         "url": "https://github.com/markjaquith/typesafe-ai-playground/blob/0602513a18fbc7cc80ae93291871b06eb5ec5204/README.md#L1",
@@ -622,7 +622,7 @@
     "metricLabel": "Shadow",
     "metricContext": "咨询信号 · 不驱动交易",
     "repo": "irfndi/prism-liquidity-agent",
-    "stars": 27,
+    "stars": 28,
     "forks": 3,
     "openIssues": 5,
     "license": "MIT",
@@ -647,7 +647,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "engine/jev-service.ts 明确 shadow/advisory only，NEVER drives ENTER/EXIT；README 主循环每 10 分钟，不是秒级量化交易证据。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:07.997253+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:20.517Z",
     "evidence": [
       {
         "url": "https://github.com/irfndi/prism-liquidity-agent/blob/22c67bdbe30bab608226832256a5013ad826b707/engine/jev-service.ts#L1",
@@ -698,7 +698,7 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "README 描述约 9 Hz 的决策 tick；不是经过独立测量的持续 API 吞吐量，且有 heuristic fallback。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:08.037102+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:20.926Z",
     "evidence": [
       {
         "url": "https://github.com/emrickgarrett/OneVOneJev/blob/365b339d04446836352687b3650762106ea37f17/README.md#L54",
@@ -749,12 +749,1240 @@
     "metadataStatus": "ok",
     "summarySource": "source-reviewed",
     "claimStatus": "当前 README 的产品是安全门禁；没有按任务难度挑模型或零冷启动性能证据。 本站未独立复测。",
-    "metadataFetchedAt": "2026-09-18T06:27:08.043469+00:00",
+    "metadataFetchedAt": "2026-09-18T06:51:21.688Z",
     "evidence": [
       {
         "url": "https://github.com/andrelandgraf/typesafe-on-neon/blob/c4e08476a5841e9c4f0a17e9a260fc4e15f2be0f/README.md#L1",
         "note": "查看固定版本的来源证据"
       }
     ]
+  },
+  {
+    "id": "tamaratran:fast-jev-compaction",
+    "name": "fast-jev-compaction",
+    "author": "tamaratran",
+    "url": "https://github.com/tamaratran/fast-jev-compaction",
+    "category": "Decision Tools",
+    "plainSummary": "fast-jev-compaction：Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are d",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "tags": [
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1475,
+    "forks": 72,
+    "openIssues": 9,
+    "license": "MIT",
+    "createdAt": "2026-09-17T05:57:20Z",
+    "lastCommitAt": "2026-09-17T22:29:18Z",
+    "headSha": "e3f262a7f4d42bd8dd32ced30d26176f7cb545b0",
+    "metadataFetchedAt": "2026-09-18T06:51:22.209Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/65584429?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "8f4f65b5567600cd8257c54fc3beb7c8f3c861d9",
+    "sourceHash": "5499bdb4f3ec13ac9e228cb09ab2894fd1a4e3128db04722735dbfc794f27299"
+  },
+  {
+    "id": "niazmorshed2007:jev-review",
+    "name": "jev-review",
+    "author": "NiazMorshed2007",
+    "url": "https://github.com/NiazMorshed2007/jev-review",
+    "category": "MCP & Integrations",
+    "plainSummary": "jev-review：Local-first MCP plugin for continuous software-quality review by AI coding agents, powered by Jev.",
+    "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "tags": [
+      "MCP",
+      "Integration",
+      "agent-plugin",
+      "ai-agents",
+      "claude-code",
+      "code-review"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 93,
+    "forks": 7,
+    "openIssues": 2,
+    "license": "MIT",
+    "createdAt": "2026-09-17T05:24:51Z",
+    "lastCommitAt": "2026-09-17T17:15:18Z",
+    "headSha": "57690af54ef7d862c2483342c1e61c14dffcf727",
+    "metadataFetchedAt": "2026-09-18T06:51:23.366Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/77217706?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/NiazMorshed2007/jev-review/blob/57690af54ef7d862c2483342c1e61c14dffcf727/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "376e5bbc11811fa0fd4dbed8ef02e46899ecb83c",
+    "sourceHash": "f7b6c5ba650ee20fbe7e6ca344b82ad967526d9b10f26ab52209e83f0ea9a8c0"
+  },
+  {
+    "id": "realzachi:pg-jev",
+    "name": "pg-jev",
+    "author": "realZachi",
+    "url": "https://github.com/realZachi/pg-jev",
+    "category": "CLI & Pipelines",
+    "plainSummary": "pg-jev：Ask your Postgres tables questions in plain language. A PostgreSQL extension powered by TypeSafe's Jev.",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "Python"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 74,
+    "forks": 4,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-17T20:04:00Z",
+    "lastCommitAt": "2026-09-18T03:17:53Z",
+    "headSha": "23682752ccf6a3af1db3e499f292c7e94f2e42a0",
+    "metadataFetchedAt": "2026-09-18T06:51:24.587Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/109552121?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/realZachi/pg-jev/blob/23682752ccf6a3af1db3e499f292c7e94f2e42a0/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "70f50cbac77cbf23767e656be2b0b474da0d11a9",
+    "sourceHash": "e60a75eae968d98e18e4365f4feb4e3b1f6919d68514f61a9297d27ad5030df1"
+  },
+  {
+    "id": "y0usaf:pi-jev",
+    "name": "pi-jev",
+    "author": "y0usaf",
+    "url": "https://github.com/y0usaf/pi-jev",
+    "category": "CLI & Pipelines",
+    "plainSummary": "pi-jev：TypeSafe Jev as a decision layer for the Pi coding agent: a measured tool-call gate plus jev_ask for typed, calibrated answers",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "guardrails",
+      "pi-extension",
+      "pi-package",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 30,
+    "forks": 3,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-16T05:57:10Z",
+    "lastCommitAt": "2026-09-17T16:33:20Z",
+    "headSha": "b3478fd4ca1ac8ffcb703f6dc8d6069b555f531e",
+    "metadataFetchedAt": "2026-09-18T06:51:27.499Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/74448287?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/y0usaf/pi-jev/blob/b3478fd4ca1ac8ffcb703f6dc8d6069b555f531e/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "f5a7a47a067465b7994444373181dfd75c5b1c46",
+    "sourceHash": "c4049ae5637dbe3d658d307954465032b23c350a9847c0b4c12ca951120b9df3"
+  },
+  {
+    "id": "jkudish:jev-browser",
+    "name": "jev-browser",
+    "author": "jkudish",
+    "url": "https://github.com/jkudish/jev-browser",
+    "category": "Browser & OS Action",
+    "plainSummary": "jev-browser：Browser use using Typesafe's Jev model",
+    "jevDecisionPoint": "根据界面状态选择下一步动作或目标；本地执行器负责操作。",
+    "highlightBenefit": "让界面选择与执行分开，便于检查每一步。",
+    "tags": [
+      "Automation",
+      "Agent",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 29,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T19:22:28Z",
+    "lastCommitAt": "2026-09-18T04:31:27Z",
+    "headSha": "f789419059950987ad0c4ada0a0377486483fac1",
+    "metadataFetchedAt": "2026-09-18T06:51:28.065Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/260253?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/jkudish/jev-browser/blob/f789419059950987ad0c4ada0a0377486483fac1/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "e31ccc7e66c6c652172fab9e7dd955efa8443261",
+    "sourceHash": "b8756116bc560dcdd67828d433fa9d59c69b62a2ed1f670291cf21d304ef11f7"
+  },
+  {
+    "id": "jomatsu:pi-jev-auto-mode",
+    "name": "pi-jev-auto-mode",
+    "author": "jomatsu",
+    "url": "https://github.com/jomatsu/pi-jev-auto-mode",
+    "category": "CLI & Pipelines",
+    "plainSummary": "pi-jev-auto-mode：Jev (TypeSafe System One) backed auto mode for the Pi coding agent: semantically auto-approves bash, write, and edit tool calls and fails closed when ",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "auto-mode",
+      "coding-agent",
+      "guardrail",
+      "permission"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 7,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T03:14:28Z",
+    "lastCommitAt": "2026-09-17T18:22:49Z",
+    "headSha": "06a56043088124ed650471a8589fddd8139708f4",
+    "metadataFetchedAt": "2026-09-18T06:51:30.918Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/50577611?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/jomatsu/pi-jev-auto-mode/blob/06a56043088124ed650471a8589fddd8139708f4/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "9f550a9ba2fdbf06b94771536690b3f94687496a",
+    "sourceHash": "e89c769a4b76ce438d2d902ab52bfd289f28ddf561158a2abc49f9063bbaee10"
+  },
+  {
+    "id": "dannote:jev",
+    "name": "jev",
+    "author": "dannote",
+    "url": "https://github.com/dannote/jev",
+    "category": "Decision Tools",
+    "plainSummary": "jev：TypeSafe Jev for OTP: reply to Jev from a GenServer and pattern match on its answer",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "tags": [
+      "Elixir"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 7,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T20:53:28Z",
+    "lastCommitAt": "2026-09-17T21:47:30Z",
+    "headSha": "b64eabaad7f851c6b3ce417b67ab51229c06d6ef",
+    "metadataFetchedAt": "2026-09-18T06:51:31.474Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/2206583?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/dannote/jev/blob/b64eabaad7f851c6b3ce417b67ab51229c06d6ef/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "e096248ed64b0b1d62b5f7ff7dcf1da60d0894f8",
+    "sourceHash": "e598da46f03a09a2316effd718f5d2d28e5e7941b9c3b0047344d6d66bcf0973"
+  },
+  {
+    "id": "zadescoxp:jev-trades",
+    "name": "Jev-Trades",
+    "author": "zadescoxp",
+    "url": "https://github.com/zadescoxp/Jev-Trades",
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "Jev-Trades：Trading bot with the all new TypeSafe AI's first system one model named as Jev",
+    "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "tags": [
+      "Domain Tools",
+      "automated-testing",
+      "backtesting",
+      "crypto-trading-bot-latest",
+      "trading-bot-ai-automated",
+      "Python"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 7,
+    "forks": 1,
+    "openIssues": 6,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-17T18:59:50Z",
+    "lastCommitAt": "2026-09-18T05:36:18Z",
+    "headSha": "01fb18e4484d626f03345eaff2b93b641677b786",
+    "metadataFetchedAt": "2026-09-18T06:51:32.107Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/78777405?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/zadescoxp/Jev-Trades/blob/01fb18e4484d626f03345eaff2b93b641677b786/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "99e97b9894c9d9ce32db65f6e059ac9314ff26f5",
+    "sourceHash": "139531b1b5440a83907f5deb5a00dc7bf56d608ff0876adb1de3cc5b38653ac0"
+  },
+  {
+    "id": "abovecolin:ha-jev",
+    "name": "HA-Jev",
+    "author": "AboveColin",
+    "url": "https://github.com/AboveColin/HA-Jev",
+    "category": "custom-components",
+    "plainSummary": "HA-Jev：Home Assistant integration for TypeSafe Jev. Ask a question about your house and get a probability, a choice or a score as an entity.",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "tags": [
+      "ai",
+      "custom-components",
+      "hacs",
+      "home-assistant",
+      "home-automation",
+      "homeassistant"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 6,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T11:01:48Z",
+    "lastCommitAt": "2026-09-17T14:38:21Z",
+    "headSha": "43af3eeae31b35fdbcc3d186c3f8cae63afafe5c",
+    "metadataFetchedAt": "2026-09-18T06:51:32.622Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/6614011?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/AboveColin/HA-Jev/blob/43af3eeae31b35fdbcc3d186c3f8cae63afafe5c/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "1ad0271add4cdb4644736d31358797be8cbc4e18",
+    "sourceHash": "958a0772ba2a0f03f3c6ee997aacbb038a17045dad47fe55979739d9008be7b1"
+  },
+  {
+    "id": "gamesonrblx:jevbridge",
+    "name": "Jevbridge",
+    "author": "gamesonrblx",
+    "url": "https://github.com/gamesonrblx/Jevbridge",
+    "category": "Browser & OS Action",
+    "plainSummary": "Jevbridge：ACP-compatible adapter that bridges TypeSafe Jev with any LLM — computer use and typed decisions alongside Codex, Claude, Grok, and OpenCode.",
+    "jevDecisionPoint": "根据界面状态选择下一步动作或目标；本地执行器负责操作。",
+    "highlightBenefit": "让界面选择与执行分开，便于检查每一步。",
+    "tags": [
+      "Automation",
+      "Agent",
+      "acp",
+      "agent",
+      "claude",
+      "computer-use"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T02:36:01Z",
+    "lastCommitAt": "2026-09-18T03:13:24Z",
+    "headSha": "e3a6f4b593bec1a78eabde0c24c194c058a54f27",
+    "metadataFetchedAt": "2026-09-18T06:51:33.184Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/79436209?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/gamesonrblx/Jevbridge/blob/e3a6f4b593bec1a78eabde0c24c194c058a54f27/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "51bdbd5cedbb448952de9cb9516b1e12ab1d2be5",
+    "sourceHash": "eff4a1f051e1e2b8a4e538473f3a1a341f0a712e21dc66efed9d20ed645045d8"
+  },
+  {
+    "id": "mizchi:jev-playground",
+    "name": "jev-playground",
+    "author": "mizchi",
+    "url": "https://github.com/mizchi/jev-playground",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-playground 在终端和自动化脚本中加入文本判断。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "MoonBit"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-17T15:49:13Z",
+    "lastCommitAt": "2026-09-18T05:14:06Z",
+    "headSha": "290dae69514baee0257b0f09a0ca2864428348f6",
+    "metadataFetchedAt": "2026-09-18T06:51:33.754Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/73962?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/mizchi/jev-playground/blob/290dae69514baee0257b0f09a0ca2864428348f6/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "2afd7b3824b6c45fc83b08f8c42e478c2a9818fc",
+    "sourceHash": "86b65883d5fed5afa016fd7e5ea2d6ca70f3fbfa75cdc4b0ed245cbe67d9b74a"
+  },
+  {
+    "id": "jomatsu:zod-jev",
+    "name": "zod-jev",
+    "author": "jomatsu",
+    "url": "https://github.com/jomatsu/zod-jev",
+    "category": "Decision Tools",
+    "plainSummary": "zod-jev 把 Jev 接入软件，让程序拿到可直接使用的判断。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "tags": [
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T01:12:53Z",
+    "lastCommitAt": "2026-09-17T08:47:40Z",
+    "headSha": "700bd256fe94541a2d21044027cc2dbf5036b396",
+    "metadataFetchedAt": "2026-09-18T06:51:34.383Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/50577611?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/jomatsu/zod-jev/blob/700bd256fe94541a2d21044027cc2dbf5036b396/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "7dcfdd24335bdb4762dc1104bdac0e07ec0ad9bb",
+    "sourceHash": "0d4d9cf4c879a709d3200af07b02f9e51a6829ed17fffe8335396fe3fd2dfa12"
+  },
+  {
+    "id": "docxology:daf-jev",
+    "name": "daf-jev",
+    "author": "docxology",
+    "url": "https://github.com/docxology/daf-jev",
+    "category": "MCP & Integrations",
+    "plainSummary": "daf-jev：daf-jev: composable Python toolkit for TypeSafe's Jev (System One) decision API — question builders, confidence gates, evaluator, calibration, CLI, MC",
+    "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "tags": [
+      "MCP",
+      "Integration",
+      "Python"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T17:13:42Z",
+    "lastCommitAt": "2026-09-17T21:44:37Z",
+    "headSha": "86ea7e394bc218a85fece67fdd577d529e5964e9",
+    "metadataFetchedAt": "2026-09-18T06:51:37.425Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/6911384?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/docxology/daf-jev/blob/86ea7e394bc218a85fece67fdd577d529e5964e9/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "78b7e81f8c78a4b429bf5c15248b5a94fa6530c3",
+    "sourceHash": "58e67bfe134256baa83d4b0c6e79a68e7909ad624b05c2ccffc62a179a2e5156"
+  },
+  {
+    "id": "superagents-lab:jev-search",
+    "name": "jev-search",
+    "author": "superagents-lab",
+    "url": "https://github.com/superagents-lab/jev-search",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-search：Search the web with TypeSafe's Jev: source selection, query understanding and relevance ranking. Built with Search1API.",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 3,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T18:05:10Z",
+    "lastCommitAt": "2026-09-18T05:57:42Z",
+    "headSha": "180c6b5efb72eb5e74bf50972e08aff9cb0d23fd",
+    "metadataFetchedAt": "2026-09-18T06:51:38.022Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/270369317?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/superagents-lab/jev-search/blob/180c6b5efb72eb5e74bf50972e08aff9cb0d23fd/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "fb2ddd9bcf307a2248ee32085e9df4c869b409f8",
+    "sourceHash": "905ed6659df54a1a3983d1a88d95b7721fe39f1c503db7539e00f2f1f6b49499"
+  },
+  {
+    "id": "devagrawal09:jev-code",
+    "name": "jev-code",
+    "author": "devagrawal09",
+    "url": "https://github.com/devagrawal09/jev-code",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-code：Bounded TypeSafe Jev workflows for coding agents.",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T15:15:24Z",
+    "lastCommitAt": "2026-09-18T00:00:21Z",
+    "headSha": "fd092558ebea389c81d44f9b10e826d9a72afaa3",
+    "metadataFetchedAt": "2026-09-18T06:51:39.262Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/19648701?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/devagrawal09/jev-code/blob/fd092558ebea389c81d44f9b10e826d9a72afaa3/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "206d382acc21c23d1682c7e241d7c79ba1802ab9",
+    "sourceHash": "41a12025455f2c0ea00e62d0208fd74b52a28b0860b134fed643f70baafeb92b"
+  },
+  {
+    "id": "tumf:jev-cli",
+    "name": "jev-cli",
+    "author": "tumf",
+    "url": "https://github.com/tumf/jev-cli",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-cli：Small dependency-free CLI for TypeSafe Jev",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "ai",
+      "cli",
+      "python",
+      "Python"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T23:45:29Z",
+    "lastCommitAt": "2026-09-18T03:50:18Z",
+    "headSha": "2cb0b78b7c2c6c0c7a090b3465a7e3f42de33ea6",
+    "metadataFetchedAt": "2026-09-18T06:51:39.849Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/69994?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/tumf/jev-cli/blob/2cb0b78b7c2c6c0c7a090b3465a7e3f42de33ea6/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "969ae25fc384be44d6d7ada180ee5f7b77750b87",
+    "sourceHash": "5a7cf1e13593cd2c3fafbc246e5a69b2a2e0f00f1ca9b8f18ac957ce35050925"
+  },
+  {
+    "id": "ranjan2829:askjev",
+    "name": "AskJev",
+    "author": "ranjan2829",
+    "url": "https://github.com/ranjan2829/AskJev",
+    "category": "CLI & Pipelines",
+    "plainSummary": "AskJev：AskJev — Jev autopilot for any website + guard on irreversible clicks (TypeSafe System One, not Claude)",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "browser-automation",
+      "chrome-extension",
+      "mv3",
+      "typescript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 2,
+    "forks": 2,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T22:40:34Z",
+    "lastCommitAt": "2026-09-18T00:48:01Z",
+    "headSha": "5c43500725247dd1068cd7ad12670097deb02dcb",
+    "metadataFetchedAt": "2026-09-18T06:51:41.569Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/73215366?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ranjan2829/AskJev/blob/5c43500725247dd1068cd7ad12670097deb02dcb/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "6b2a45865bd544bf3273d8654266b4b659651a61",
+    "sourceHash": "d745f64d7e7d4ac7180555e5f985c6ab3826c19f74d3176323bedb0520673071"
+  },
+  {
+    "id": "foadsf:jev-for-engineers",
+    "name": "jev-for-engineers",
+    "author": "Foadsf",
+    "url": "https://github.com/Foadsf/jev-for-engineers",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-for-engineers：Eight minimal working examples of TypeSafe's Jev (a System One model) applied to mechanical and electrical engineering: CAD/CAE/CAM routing, FEM resul",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "cad",
+      "cae",
+      "calibrated-confidence",
+      "classification"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-16T23:17:23Z",
+    "lastCommitAt": "2026-09-16T23:19:13Z",
+    "headSha": "181e75208ac3b982c80889267a28a1ed718452a9",
+    "metadataFetchedAt": "2026-09-18T06:51:43.877Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/12762442?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Foadsf/jev-for-engineers/blob/181e75208ac3b982c80889267a28a1ed718452a9/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "720d82dc04142f2fae02dc3a624557c87c3e80fd",
+    "sourceHash": "08c212d38c2cafb2687d29165c08ff889266dd396b8949954264231f4bf8399c"
+  },
+  {
+    "id": "hyunjunjeon:jev-judgment",
+    "name": "jev-judgment",
+    "author": "HyunjunJeon",
+    "url": "https://github.com/HyunjunJeon/jev-judgment",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-judgment：Agent Skill: send closed coding-agent judgments to TypeSafe Jev",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "Python"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T03:54:12Z",
+    "lastCommitAt": "2026-09-17T03:54:07Z",
+    "headSha": "f6056e7cd31d467d6773a0737731c85939499e5e",
+    "metadataFetchedAt": "2026-09-18T06:51:44.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/15343250?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/HyunjunJeon/jev-judgment/blob/f6056e7cd31d467d6773a0737731c85939499e5e/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "0bbbafd5726bc6aa4ed3d7fd9e8539974b5f5e63",
+    "sourceHash": "9ba915b65ce5db7d8fb55f2c6c75cf0b635de3bbf0677f0457329ce1f235cce0"
+  },
+  {
+    "id": "jtsang4:jev-cli",
+    "name": "jev-cli",
+    "author": "jtsang4",
+    "url": "https://github.com/jtsang4/jev-cli",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-cli：CLI for TypeSafe AI's Jev evaluation model — typed questions in, structured JSON answers out",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "cli",
+      "skills",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T12:36:40Z",
+    "lastCommitAt": "2026-09-18T04:02:41Z",
+    "headSha": "6ea8abdf702d2fc28bfffd979e83db8c32f3ceb5",
+    "metadataFetchedAt": "2026-09-18T06:51:48.640Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/17686135?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/jtsang4/jev-cli/blob/6ea8abdf702d2fc28bfffd979e83db8c32f3ceb5/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "ed61efc0d9079b931c8e54dd4efd732cef5e20b0",
+    "sourceHash": "88ba94b5fe48b869c60e7dd1af083d728ec9c2080d07eefdbcfbf7171af052cf"
+  },
+  {
+    "id": "buchmark:claude-jev",
+    "name": "claude-jev",
+    "author": "buchmark",
+    "url": "https://github.com/buchmark/claude-jev",
+    "category": "MCP & Integrations",
+    "plainSummary": "claude-jev：Claude Code plugin that scores review findings, debug hypotheses and design options with TypeSafe's Jev — calibrated probabilities instead of one more",
+    "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "tags": [
+      "MCP",
+      "Integration",
+      "ai",
+      "antrophic",
+      "claude-plugin",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T03:27:22Z",
+    "lastCommitAt": "2026-09-18T03:33:10Z",
+    "headSha": "06fe407f2894bc5c44f2dfc41e05d3592e5215a5",
+    "metadataFetchedAt": "2026-09-18T06:51:49.305Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/73613787?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/buchmark/claude-jev/blob/06fe407f2894bc5c44f2dfc41e05d3592e5215a5/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "7e70417b6bdec1f0eb8f4808e6e232e4550c8523",
+    "sourceHash": "47c37aa0c10495c8e8ccc8fb3f7efcfcb17a747b65c1e4c346bea5312c69b899"
+  },
+  {
+    "id": "tontoko:jev-browser",
+    "name": "jev-browser",
+    "author": "tontoko",
+    "url": "https://github.com/tontoko/jev-browser",
+    "category": "Browser & OS Action",
+    "plainSummary": "jev-browser：One grounded Jev/Playwright core: typed SDK, persistent CLI, and MCP server with native browser operations and deterministic assertions.",
+    "jevDecisionPoint": "根据界面状态选择下一步动作或目标；本地执行器负责操作。",
+    "highlightBenefit": "让界面选择与执行分开，便于检查每一步。",
+    "tags": [
+      "Automation",
+      "Agent",
+      "browser-automation",
+      "cli",
+      "mcp",
+      "playwright"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 4,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-17T09:14:40Z",
+    "lastCommitAt": "2026-09-17T23:43:56Z",
+    "headSha": "8a70925faa74f7bc82e759976a3e1dfb907ec895",
+    "metadataFetchedAt": "2026-09-18T06:51:49.910Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/31890263?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/tontoko/jev-browser/blob/8a70925faa74f7bc82e759976a3e1dfb907ec895/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "37f537f47bb0c5d7ed184ad83243ee66e2d7bf4a",
+    "sourceHash": "e07b498e03d6862cef36d6415b2605f0a5827f5d7d973bda790c21abefc1015d"
+  },
+  {
+    "id": "theooliveira:pi-jev",
+    "name": "pi-jev",
+    "author": "TheoOliveira",
+    "url": "https://github.com/TheoOliveira/pi-jev",
+    "category": "CLI & Pipelines",
+    "plainSummary": "pi-jev：Semantic tool routing and typed System One decisions for the Pi coding agent using TypeSafe Jev",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "pi-coding-agent",
+      "pi-extension",
+      "pi-package",
+      "system-one"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T04:00:49Z",
+    "lastCommitAt": "2026-09-18T02:26:29Z",
+    "headSha": "8bd8dcf1b258af580be065f96f2b5405c672f937",
+    "metadataFetchedAt": "2026-09-18T06:51:51.085Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/11945175?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/TheoOliveira/pi-jev/blob/8bd8dcf1b258af580be065f96f2b5405c672f937/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "8a4f70e9fa59e2b3efcedd0e8444ab368eaf4606",
+    "sourceHash": "938b6ae12821e73213fb0c91149f586f3a5fb8e52114bf4612f98c317cdeb373"
+  },
+  {
+    "id": "reachjalil:jev-tree",
+    "name": "jev-tree",
+    "author": "reachjalil",
+    "url": "https://github.com/reachjalil/jev-tree",
+    "category": "classification",
+    "plainSummary": "jev-tree：Recursive Jev choice over a taxonomy. Select from more than 255 options without breaking TypeSafe Jev's choice cap.",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "tags": [
+      "classification",
+      "taxonomy",
+      "typescript",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T01:03:19Z",
+    "lastCommitAt": "2026-09-18T02:12:21Z",
+    "headSha": "95bff63bd653fee4dc71f33f9431dce0f81e2ca3",
+    "metadataFetchedAt": "2026-09-18T06:51:51.764Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/6254931?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/reachjalil/jev-tree/blob/95bff63bd653fee4dc71f33f9431dce0f81e2ca3/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "9d9f34a53ab582c8af93708c2ec7515cdb8bd698",
+    "sourceHash": "7808f0097943255a7e668256baa6a8379f9008f9819035026077060b34457750"
+  },
+  {
+    "id": "hamakyo:jev-starter",
+    "name": "jev-starter",
+    "author": "hamakyo",
+    "url": "https://github.com/hamakyo/jev-starter",
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "jev-starter：Typed, policy-driven decision workflows on top of TypeSafe AI Jev: confidence routing, fallbacks, evaluation, and RAG patterns for TypeScript apps.",
+    "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "tags": [
+      "Domain Tools",
+      "ai",
+      "confidence-routing",
+      "decision-engine",
+      "decision-workflows",
+      "fallback"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T01:48:56Z",
+    "lastCommitAt": "2026-09-18T01:43:15Z",
+    "headSha": "fb0fae07d1f3052f28af630b942c16b2a7bd8c88",
+    "metadataFetchedAt": "2026-09-18T06:51:52.365Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/32177429?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hamakyo/jev-starter/blob/fb0fae07d1f3052f28af630b942c16b2a7bd8c88/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "5b867b771e6e5c78a631d1adcaa0f8ca28de734c",
+    "sourceHash": "4565bb2dbf43ca6ac841215dde6c7b88c15bcb627df83136793f82261a9c5c3d"
+  },
+  {
+    "id": "himomohi:aside-jev",
+    "name": "aside-jev",
+    "author": "himomohi",
+    "url": "https://github.com/himomohi/aside-jev",
+    "category": "MCP & Integrations",
+    "plainSummary": "aside-jev：Aside agents decide with TypeSafe Jev (System One: Choice/Score/Noul). Not a Cua binding — Jev is the model, Aside is the browser runtime.",
+    "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "tags": [
+      "MCP",
+      "Integration",
+      "aside",
+      "browser-agent",
+      "computer-use",
+      "mcp"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T22:07:20Z",
+    "lastCommitAt": "2026-09-18T00:20:33Z",
+    "headSha": "d2923f7949a9576e82b51d2c5e5514c17d80d60b",
+    "metadataFetchedAt": "2026-09-18T06:51:53.583Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/49967692?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/himomohi/aside-jev/blob/d2923f7949a9576e82b51d2c5e5514c17d80d60b/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "461e74f4d0b12b7d840dd9b70dc427c8738d3e59",
+    "sourceHash": "e11640844f41bf1d78ff7d1acfd548761c46e68ed3460ce05deb7c32b4500f56"
+  },
+  {
+    "id": "shivampansuriya:jev-skill-gate",
+    "name": "jev-skill-gate",
+    "author": "ShivamPansuriya",
+    "url": "https://github.com/ShivamPansuriya/jev-skill-gate",
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "jev-skill-gate：Cut Claude Code's skill manifest by ~75% with TypeSafe Jev. Scores every installed skill for relevance and hides the rest via skillOverrides — 12,750 ",
+    "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "tags": [
+      "Domain Tools",
+      "agent-skills",
+      "ai-agents",
+      "ai-tooling",
+      "anthropic",
+      "claude"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T19:27:46Z",
+    "lastCommitAt": "2026-09-17T20:32:51Z",
+    "headSha": "1ab4c9a7cd117e1c7e129021303416bb7c2f5328",
+    "metadataFetchedAt": "2026-09-18T06:51:54.145Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/121541430?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ShivamPansuriya/jev-skill-gate/blob/1ab4c9a7cd117e1c7e129021303416bb7c2f5328/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "3bb175620513e795662207daa8c68e8cd41b6ddf",
+    "sourceHash": "5e524c10bf3576c6f92c21b5fd814bbd27efa0c3e3f3a33100bdf37b2543e7da"
+  },
+  {
+    "id": "leepokai:jev-guard",
+    "name": "jev-guard",
+    "author": "leepokai",
+    "url": "https://github.com/leepokai/jev-guard",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-guard：Auto mode for every coding agent, built on Jev: risk-scores every tool call with session context (deny / ask / allow), flags prompt injection in resul",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "cursor"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T14:39:28Z",
+    "lastCommitAt": "2026-09-17T18:44:09Z",
+    "headSha": "94996ea80b6b308327ac2077706a29ce6abd3ba0",
+    "metadataFetchedAt": "2026-09-18T06:51:54.805Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/109857817?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/leepokai/jev-guard/blob/94996ea80b6b308327ac2077706a29ce6abd3ba0/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "b8224944a241952e89abfa04e080c08bf518c021",
+    "sourceHash": "bb3dfe5733821556b55386fd84db5c2072cfb940cebfb214b57058336770edf2"
+  },
+  {
+    "id": "rashedint32:jev-mcp",
+    "name": "jev-mcp",
+    "author": "rashedInt32",
+    "url": "https://github.com/rashedInt32/jev-mcp",
+    "category": "MCP & Integrations",
+    "plainSummary": "jev-mcp：MCP server exposing TypeSafe Jev as typed, calibrated judgment tools: classify, score, check, batched ask. Ships as a Claude Code plugin.",
+    "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "tags": [
+      "MCP",
+      "Integration",
+      "ai-agents",
+      "classification",
+      "claude-code",
+      "claude-code-plugin"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T11:51:54Z",
+    "lastCommitAt": "2026-09-17T18:16:39Z",
+    "headSha": "27603c12d06cd7899d93c0fbb8ce9331040b8a8c",
+    "metadataFetchedAt": "2026-09-18T06:51:55.481Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/8067127?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/rashedInt32/jev-mcp/blob/27603c12d06cd7899d93c0fbb8ce9331040b8a8c/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "c3c0f682443a6700d0ca346e93d00ba62cb34de9",
+    "sourceHash": "d24c5a133d9531f6a9bba7a7f93e26c4f0768e3cec1525e0c6d8857d3f5f8664"
+  },
+  {
+    "id": "abovecolin:jevclient",
+    "name": "jevclient",
+    "author": "AboveColin",
+    "url": "https://github.com/AboveColin/jevclient",
+    "category": "async",
+    "plainSummary": "jevclient：Async Python client for TypeSafe Jev. Typed questions in, probabilities and choices out, no prose to parse.",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "tags": [
+      "async",
+      "asyncio",
+      "classification",
+      "python",
+      "Python"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T11:00:15Z",
+    "lastCommitAt": "2026-09-17T11:25:12Z",
+    "headSha": "d568f25717c5b956022f5dc0fcfcb905c7533a05",
+    "metadataFetchedAt": "2026-09-18T06:51:56.862Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/6614011?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/AboveColin/jevclient/blob/d568f25717c5b956022f5dc0fcfcb905c7533a05/README.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "1449cb27af8d1ab9d3f82b33ca92c34ec12d3058",
+    "sourceHash": "b5a91d8ee44cd1756c4a02e1cd16cd477062e5f967051d50148a0413b7b38045"
+  },
+  {
+    "id": "unownone:jevsume",
+    "name": "jevsume",
+    "author": "unownone",
+    "url": "https://github.com/unownone/jevsume",
+    "category": "CLI & Pipelines",
+    "plainSummary": "jevsume 在终端和自动化脚本中加入文本判断。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "TypeScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-17T20:15:41Z",
+    "lastCommitAt": "2026-09-18T05:22:33Z",
+    "headSha": "650a96a4c90da129cf745687d25abca36120c470",
+    "metadataFetchedAt": "2026-09-18T06:51:57.495Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/38348296?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T06:50:11.974Z",
+    "evidence": [
+      {
+        "url": "https://github.com/unownone/jevsume/blob/650a96a4c90da129cf745687d25abca36120c470/readme.md",
+        "note": "自动发现的 Jev 集成证据"
+      }
+    ],
+    "readmeSha": "5b9a2c9994c75dae6808b22e1dea6f2f6ddabdeb",
+    "sourceHash": "62c622357c6f59285ec4af87f3c9d46d6aec08bd3d736f7614ba109c653e9e70"
   }
 ]
