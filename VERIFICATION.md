@@ -31,4 +31,4 @@
 - A reviewed guard keeps project deep links and the submission dialog mutually exclusive during delayed data loading; modal title IDs are unique.
 - Search slash/Cmd-K, explicit empty-state recovery, all external link attributes, and 375px/430px layouts were checked. No document horizontal overflow was observed in either language.
 - The featured placement links directly to the requested X profile; README contains the live-site badge and bilingual submission instructions.
-- All 130 existing project fields were compared against the prior commit and preserved; only optional English fields were added for 24 records.
+- The English-copy patch preserved the prior 130 records and added optional fields for 24 records. Later upstream jev-trade content/evidence changes and single-record tolerance were merged without reverting them.

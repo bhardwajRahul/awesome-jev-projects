@@ -145,6 +145,7 @@ const validProject = (x: unknown): x is Project => {
       (Array.isArray(p.evidence) &&
         p.evidence.every(
           (e) =>
+            !!e && typeof e === "object" &&
             typeof e.url === "string" &&
             e.url.startsWith("https://") &&
             (!e.note || typeof e.note === "string"),
