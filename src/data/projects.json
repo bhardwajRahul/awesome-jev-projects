@@ -6428,18 +6428,19 @@
     "author": "XieChengYuan",
     "url": "https://github.com/XieChengYuan/jev-gomoku",
     "repoId": 1375601534,
-    "category": "CLI & Pipelines",
+    "category": "High-Frequency & Simulation",
     "plainSummary": "弈瞬：双 Jev 玩家在九宫格五子棋中对战，比较不同输入信息对落子决策的影响，并逐手展示真实请求与返回。",
-    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
-    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "jevDecisionPoint": "每盘每手回答一个 Choice 问题：根据棋盘、规则、颜色和合法候选选择落子点，由本地代码校验执行。",
+    "highlightBenefit": "逐手展示真实请求与返回概率，支持免 API Key 真实对局回放与 OpenRouter 自定义对战，支持 JSON 导出。",
     "tags": [
-      "CLI",
-      "Pipelines",
-      "JavaScript"
+      "Gomoku",
+      "Game AI",
+      "Choice",
+      "Evaluation"
     ],
-    "summarySource": "readme-extractive",
-    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
-    "plainSummaryEn": "This project integrates Jev to provide structured decisions for its workflow. See the repository for implementation details.",
+    "summarySource": "source-reviewed",
+    "claimStatus": "公开示例包含 9 局、144 次真实模型决策（基于 typesafe/jev-1.13-20260917）；提供在线体验 Demo 与真实回放。",
+    "plainSummaryEn": "Dual-Jev 9x9 Gomoku workbench evaluating how input representations affect placement decisions, featuring replay and live play.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6467,11 +6468,15 @@
     "metadataFetchedAt": "2026-09-18T10:20:12.116Z",
     "metadataStatus": "ok",
     "avatarUrl": "https://avatars.githubusercontent.com/u/33199973?v=4",
-    "verificationStatus": "integration-detected",
-    "runtimeVerified": false,
+    "verificationStatus": "source-verified",
+    "runtimeVerified": true,
     "discoveredAt": "2026-09-18T10:20:12.116Z",
-    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "claimStatusEn": "Includes 9 games with 144 real model decision samples on typesafe/jev-1.13-20260917 with live web demo and replays.",
     "evidence": [
+      {
+        "url": "https://xiechengyuan.github.io/jev-gomoku/",
+        "note": "在线体验与真实对局回放看板"
+      },
       {
         "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/README.md",
         "note": "固定版本的 Jev 集成与说明来源"
@@ -6556,6 +6561,8 @@
       "issueNumber": 4,
       "issueBodySha256": "dea74a0ac1bd44da904f24d00da91af47bbee1d46c8a8c1d9ece922b61683c26",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/4"
-    }
+    },
+    "jevDecisionPointEn": "Answers a single Choice problem per turn: picks the next move coordinate based on board state, candidate moves, and game rules.",
+    "highlightBenefitEn": "Exposes per-turn request payloads, model probabilities, and latency; supports free replay of recorded matches and OpenRouter live play."
   }
 ]
