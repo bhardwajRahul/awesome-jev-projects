@@ -60,6 +60,63 @@ export function verifyIntegration(repo, text) {
       .map((l) => l.slice(0, 220)),
   };
 }
+
+export async function summarizeWithGitHubModels(repo, readme, fallbackSummary) {
+  const token = process.env.GH_MODELS_TOKEN;
+  if (!token) return fallbackSummary;
+  try {
+    const prompt = "You are a developer tooling expert analyzing an open-source project that integrates Jev (TypeSafe AI low-latency decision model).\n" +
+      "Analyze the project metadata and README snippet below, then generate a bilingual summary in JSON format.\n\n" +
+      "Project: " + repo.name + "\n" +
+      "Description: " + (repo.description || "N/A") + "\n" +
+      "README snippet:\n" + readme.slice(0, 3000) + "\n\n" +
+      "Requirements:\n" +
+      "1. \"plainSummary\": Chinese plain-English summary in ONE crisp sentence. Explain what it actually does for developers in human terms (说人话，拒绝假大空废话).\n" +
+      "2. \"jevDecisionPoint\": Chinese explanation of exactly what step/decision Jev makes (e.g. 选动作、打分分流、挑日志、评估多空).\n" +
+      "3. \"highlightBenefit\": Chinese explanation of the practical benefit/speedup/cost saving.\n" +
+      "4. \"plainSummary_en\": English plain-English summary in one sentence.\n" +
+      "5. \"jevDecisionPoint_en\": English explanation of Jev exact decision point.\n" +
+      "6. Keep technical terms like Jev, Token, Agent, Context GC in English.\n\n" +
+      "Return ONLY a valid JSON object matching these keys.";
+
+    const res = await fetch("https://models.inference.ai.azure.com/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token
+      },
+      body: JSON.stringify({
+        messages: [{ role: "user", content: prompt }],
+        model: "gpt-4o-mini",
+        response_format: { type: "json_object" }
+      }),
+      signal: AbortSignal.timeout(10000)
+    });
+
+    if (!res.ok) {
+      console.warn("[GitHub Models] request returned " + res.status + ", falling back to rules.");
+      return fallbackSummary;
+    }
+
+    const data = await res.json();
+    const parsed = JSON.parse(data.choices?.[0]?.message?.content || "{}");
+    if (parsed.plainSummary && parsed.jevDecisionPoint) {
+      return {
+        ...fallbackSummary,
+        plainSummary: parsed.plainSummary,
+        jevDecisionPoint: parsed.jevDecisionPoint,
+        highlightBenefit: parsed.highlightBenefit || fallbackSummary.highlightBenefit,
+        plainSummary_en: parsed.plainSummary_en,
+        jevDecisionPoint_en: parsed.jevDecisionPoint_en,
+        summarySource: "ai-assisted"
+      };
+    }
+  } catch (err) {
+    console.warn("[GitHub Models] AI summarization skipped:", err.message);
+  }
+  return fallbackSummary;
+}
+
 export function summarize(repo, readme, taxonomy) {
   const focused = `${repo.name} ${repo.description ?? ""} ${(repo.topics ?? []).join(" ")} ${readme.slice(0, 7000)}`;
   const matches = taxonomy
@@ -470,7 +527,7 @@ export async function main() {
         report.discovery.rejected++;
         continue;
       }
-      const summary = summarize(repo, readme, taxonomy);
+      const summary = await summarizeWithGitHubModels(repo, readme, summarize(repo, readme, taxonomy));
       const sourceUrl = `${repo.html_url}/blob/${sha}/${sourcePath}`;
       const project = {
         id: `${repo.owner.login}:${repo.name}`.toLowerCase(),
