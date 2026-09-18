@@ -6421,5 +6421,141 @@
         "note": "开源代码仓库"
       }
     ]
+  },
+  {
+    "id": "xiechengyuan:jev-gomoku",
+    "name": "jev-gomoku",
+    "author": "XieChengYuan",
+    "url": "https://github.com/XieChengYuan/jev-gomoku",
+    "repoId": 1375601534,
+    "category": "CLI & Pipelines",
+    "plainSummary": "弈瞬：双 Jev 玩家在九宫格五子棋中对战，比较不同输入信息对落子决策的影响，并逐手展示真实请求与返回。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "tags": [
+      "CLI",
+      "Pipelines",
+      "JavaScript"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "plainSummaryEn": "This project integrates Jev to provide structured decisions for its workflow. See the repository for implementation details.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": true,
+        "status": "request-failed",
+        "requestedFields": [
+          "plainSummaryEn"
+        ],
+        "circuitReason": "dns-error"
+      },
+      "plainSummary": {
+        "source": "issue"
+      },
+      "plainSummaryEn": {
+        "source": "rules"
+      }
+    },
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-18T08:38:10Z",
+    "lastCommitAt": "2026-09-18T08:38:09Z",
+    "headSha": "2aac72cd54ab63fd35e7d29e65def787dda2b333",
+    "metadataFetchedAt": "2026-09-18T10:20:12.116Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/33199973?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T10:20:12.116Z",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "evidence": [
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/arena.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/board-view.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/decision.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/game.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/input-features.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/main.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/online.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "2aac72cd54ab63fd35e7d29e65def787dda2b333",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/README.md",
+          "hash": "b23a582231616cebdf51f37c83f5e1e5063c432b6e775619451df4fa2c3a7647"
+        },
+        {
+          "path": "src/arena.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/arena.js",
+          "hash": "9f600daab3afd0fad3537a27316d7aeba9d326f9f0e3580bbc8e167c01628a42"
+        },
+        {
+          "path": "src/board-view.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/board-view.js",
+          "hash": "226760e28668fd596b977e412750c8050eefc08c0b1132daf9e008fef0381dd3"
+        },
+        {
+          "path": "src/decision.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/decision.js",
+          "hash": "7a05268263166944f745768b2e0c2888f6f835b86de7f80e5ccfabbd9377d20b"
+        },
+        {
+          "path": "src/game.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/game.js",
+          "hash": "a8b62813726dd5cbce33b3143217e210a1cd686f17d174bc1dc0ddd978998d25"
+        },
+        {
+          "path": "src/input-features.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/input-features.js",
+          "hash": "f0877844a94265aed3cc20eb59d4c323e3462bb432a41320e539a06eb38d08ed"
+        },
+        {
+          "path": "src/main.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/main.js",
+          "hash": "30faabbff51fef69182c5504b5e621f5d888ab8eb928677067f6530a1064b946"
+        },
+        {
+          "path": "src/online.js",
+          "url": "https://github.com/XieChengYuan/jev-gomoku/blob/2aac72cd54ab63fd35e7d29e65def787dda2b333/src/online.js",
+          "hash": "42cd4149903085fb1b71adc903a13d907a189cc20ae18f25cda5096124d75e77"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 4,
+      "issueBodySha256": "dea74a0ac1bd44da904f24d00da91af47bbee1d46c8a8c1d9ece922b61683c26",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/4"
+    }
   }
 ]
