@@ -49,7 +49,11 @@
         "url": "https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/docs/performance.md#L7",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Give the browser a goal. Jev picks the buttons and actions, while a small language model handles text. The author’s Google Flights example finished in about 7.1 seconds.",
+    "jevDecisionPointEn": "Read the current DOM and choose an action and target element in one request; call the text model only when input is needed.",
+    "highlightBenefitEn": "Separate interface choices from text generation to avoid repeatedly reading the page.",
+    "claimStatusEn": "Author test: one flight task, three runs per setup; median time fell from 9.450 to 7.092 seconds. This is not a general agent benchmark. Not independently retested by this site."
   },
   {
     "id": "typesafe-mcp",
@@ -104,7 +108,11 @@
         "url": "https://github.com/itsmostafa/typesafe-mcp/blob/2137d0268badd5622243424fa7993a12f3330691/README.md#L3",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Give Claude Code, Claude Desktop, and Codex one MCP tool for small decisions: which option, what score, or yes/no.",
+    "jevDecisionPointEn": "Send state and typed questions to Jev; receive Choice, Score, Noul, and probabilities.",
+    "highlightBenefitEn": "Get answers your code can branch on without parsing a long text response.",
+    "claimStatusEn": "The README covers the interface and client setup; no millisecond-scale end-to-end test was found for this project. Not independently retested by this site."
   },
   {
     "id": "jev-mcp",
@@ -156,7 +164,11 @@
         "url": "https://github.com/jkudish/jev-mcp/blob/223f95e66a393601889367b332d36c45933b4df1/README.md#L6",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Give your agent three helpers: check citations, screen for prompt injection, and pick relevant candidates.",
+    "jevDecisionPointEn": "Use verify, screen, and find to assess evidence support, content risk, and candidate relevance.",
+    "highlightBenefitEn": "Add a configurable check whenever the agent reads or cites content.",
+    "claimStatusEn": "The author reports about 150–500 ms. Typed output does not guarantee factual accuracy, and thresholds need calibration. Not independently retested by this site."
   },
   {
     "id": "semdecide",
@@ -215,7 +227,11 @@
         "url": "https://github.com/sharziki/semdecide/blob/33cf5c03c50e02e59df3f3ea81f0650f6b791545/README.md#L3",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Add semantic decisions to terminal pipelines: classify a sentence or filter a batch of text from Bash and CI.",
+    "jevDecisionPointEn": "Classify input or estimate probabilities, then let local rules handle thresholds, exit codes, and allow/escalate/block outcomes.",
+    "highlightBenefitEn": "Add semantic decisions to existing scripts without building a full agent.",
+    "claimStatusEn": "The README describes the CLI; its behavior has not been independently verified. Not independently retested by this site."
   },
   {
     "id": "jev-codex-router",
@@ -275,7 +291,11 @@
         "url": "https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/BACKTEST.md#L3",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Check how hard each turn is, then choose a Codex model and reasoning depth. Spend less on simple work and use stronger models for harder tasks.",
+    "jevDecisionPointEn": "Jev assesses the task tier and reasoning needs for the current turn; local policy chooses the model, effort, and speed tier.",
+    "highlightBenefitEn": "The author repriced 237 historical turns and estimated about 60% lower cost than using the most expensive model throughout.",
+    "claimStatusEn": "The 60% figure is a list-price estimate from one person’s session replay with fixed token counts; it excludes cache invalidation across models. It is not a reduction in a paid bill. Not independently retested by this site."
   },
   {
     "id": "winnow",
@@ -334,7 +354,11 @@
         "url": "https://github.com/GhalebDweikat/winnow/blob/637668d60a76a975791339d49dd768038de82c2c/README.md#L5",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Filter long Claude Code logs. Hide content that is not relevant right now, with the full original still available to retrieve.",
+    "jevDecisionPointEn": "Assess Read, Bash, and Grep output block by block; keep relevant or uncertain content and hide blocks judged irrelevant with high confidence.",
+    "highlightBenefitEn": "Reduce redundant context while keeping the original output retrievable.",
+    "claimStatusEn": "Uses Jev by default and also supports a Haiku adapter. Savings and the risk of hiding useful content depend on the task and thresholds; it does not guarantee a complete fix for context limits. Not independently retested by this site."
   },
   {
     "id": "jev-review",
@@ -392,7 +416,11 @@
         "url": "https://github.com/devagrawal09/jev-review/blob/31f89602797fb7bea007f8a480bf368bf564954e/README.md#L9",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Triage code changes, then follow the risk signals. Review the results and their evidence in a local dashboard.",
+    "jevDecisionPointEn": "Assess risks in stages, select files and evidence, identify mechanisms and severity, then choose the review path.",
+    "highlightBenefitEn": "Focus reviews on specific code snippets and risk signals.",
+    "claimStatusEn": "The README supports diff and whole-repository reviews. It does not establish that large models are called only for high risks, and provides no controlled compute-savings result. Not independently retested by this site."
   },
   {
     "id": "blink",
@@ -444,7 +472,11 @@
         "url": "https://github.com/ellipsis-dev/blink/blob/a621ede75649303a933828c18c27ad800bb43ef0/README.md#L89",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Describe the code you want to find and send a group of probes down the directory tree. More relevant-looking paths get more probes.",
+    "jevDecisionPointEn": "Estimate the relevance of file and directory names, then distribute walkers across the next level by probability.",
+    "highlightBenefitEn": "Search the file tree directly without first building a vector index.",
+    "claimStatusEn": "The README calls this an ensemble of walkers, not beam search, and provides no general speed benchmark. Not independently retested by this site."
   },
   {
     "id": "neo4jev",
@@ -496,7 +528,11 @@
         "url": "https://github.com/jexp/neo4jev/blob/7dca13df208cdbeacd7845f28a0200312b91d79b/README.md#L3",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Follow relationships through Neo4j one step at a time: at each node, ask Jev which edge to take next.",
+    "jevDecisionPointEn": "Choice assigns probabilities to neighboring relationships; Noul checks whether the goal is reached. Local beam search retains candidate paths.",
+    "highlightBenefitEn": "Connect a natural-language goal to graph paths you can inspect.",
+    "claimStatusEn": "A graph-navigation demo; no measurement on tens of millions of nodes or tens-fold speedup was found. Without a key, the docs explicitly use labeled substitute answers. Not independently retested by this site."
   },
   {
     "id": "jev-desktop",
@@ -561,7 +597,11 @@
         "url": "https://github.com/lahfir/agent-desktop/blob/7a8e4a10281c7319733aa200fd79501f34529716/skills/jev-desktop/SKILL.md#L6",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Let Jev choose your computer’s buttons and menus. It reads the native accessibility structure and works through desktop actions step by step.",
+    "jevDecisionPointEn": "Jev chooses both an action and target, and assesses confidence and risk; local policy decides whether to execute or stop.",
+    "highlightBenefitEn": "Keep the main agent from having to load the entire interface tree into context.",
+    "claimStatusEn": "Jev is integrated through separate skill/scripts in agent-desktop. The docs report about 3 seconds for a complex interface snapshot; this does not establish extremely low overall latency. Not independently retested by this site."
   },
   {
     "id": "typesafe-ai-playground",
@@ -613,7 +653,11 @@
         "url": "https://github.com/markjaquith/typesafe-ai-playground/blob/0602513a18fbc7cc80ae93291871b06eb5ec5204/README.md#L1",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "A Rust experiment kit for trying Jev in the terminal: check private information, code comments, and whether a message sounds friendly.",
+    "jevDecisionPointEn": "Turn short tasks into probability or category questions, such as whether text contains PHI, whether a comment is useful, or whether a tone is friendly.",
+    "highlightBenefitEn": "Use runnable small experiments to explore where structured decisions fit.",
+    "claimStatusEn": "The README provides experiment commands; there is no performance evidence for sub-millisecond responses. Not independently retested by this site."
   },
   {
     "id": "prism-liquidity-agent",
@@ -665,7 +709,11 @@
         "url": "https://github.com/irfndi/prism-liquidity-agent/blob/22c67bdbe30bab608226832256a5013ad826b707/engine/jev-service.ts#L1",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "An agent that watches Solana liquidity pools. Jev scores risks alongside the rules for comparison, without directly deciding trades.",
+    "jevDecisionPointEn": "Produce shadow judgments on pool-entry distributions, toxic flow, reversion holding, and market stress; logs support calibration.",
+    "highlightBenefitEn": "Add comparable signals to existing rules while deterministic rules retain control of trading decisions.",
+    "claimStatusEn": "engine/jev-service.ts explicitly says shadow/advisory only and NEVER drives ENTER/EXIT. The README describes a 10-minute main loop, not evidence of second-scale quant trading. Not independently retested by this site."
   },
   {
     "id": "one-v-one-jev",
@@ -717,7 +765,11 @@
         "url": "https://github.com/emrickgarrett/OneVOneJev/blob/365b339d04446836352687b3650762106ea37f17/README.md#L54",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Play a 1v1 shooter against Jev in your browser. It reads structured game state and chooses movement, aim, and firing.",
+    "jevDecisionPointEn": "Each decision tick asks about movement, view, aiming down sights, firing, and jumping together; heuristic logic takes over when the API is unavailable.",
+    "highlightBenefitEn": "See structured decisions at work inside a continuous game loop.",
+    "claimStatusEn": "The README describes a decision tick of about 9 Hz, not independently measured sustained API throughput. A heuristic fallback is present. Not independently retested by this site."
   },
   {
     "id": "typesafe-on-neon",
@@ -769,7 +821,11 @@
         "url": "https://github.com/andrelandgraf/typesafe-on-neon/blob/c4e08476a5841e9c4f0a17e9a260fc4e15f2be0f/README.md#L1",
         "note": "查看固定版本的来源证据"
       }
-    ]
+    ],
+    "plainSummaryEn": "Put a content gate in front of HTTP requests. Jev checks for prompt injection or unsafe content before approved requests are forwarded.",
+    "jevDecisionPointEn": "Decide whether request content can pass; local code forwards on pass and stops requests marked review or block.",
+    "highlightBenefitEn": "Check content before upstream requests while reusing existing HTTP services.",
+    "claimStatusEn": "The current README describes a safety gateway, with no evidence of routing models by task difficulty or zero-cold-start performance. Not independently retested by this site."
   },
   {
     "id": "tamaratran:fast-jev-compaction",
@@ -4307,7 +4363,11 @@
     "updatedAt": "2026-09-18T06:44:00Z",
     "pushedAt": "2026-09-18T05:43:46Z",
     "lastSyncedAt": "2026-09-18T07:47:46.688Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "An optional TypeSafe provider for AI SDK: ask Jev several choice, scoring, and yes/no questions through one evaluate interface.",
+    "jevDecisionPointEn": "Send shared state and questions to the System One API, then map native probabilities, scores, and usage into SDK results.",
+    "highlightBenefitEn": "Connect structured evaluation through the interface your AI SDK project already uses.",
+    "claimStatusEn": "The packages/typesafe-ai README and typesafe-ai-evaluation-model.ts support a real implementation; evaluation is an experimental API. Vercel AI SDK as a whole does not use Jev by default. Not independently run or retested by this site."
   },
   {
     "id": "langchain-ai:langchain",
@@ -4354,7 +4414,11 @@
     "updatedAt": "2026-09-18T07:30:34Z",
     "pushedAt": "2026-09-18T03:21:09Z",
     "lastSyncedAt": "2026-09-18T07:47:49.761Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "Add an optional Jev classification node to a Python LangChain workflow, returning categories, probabilities, and rating scores.",
+    "jevDecisionPointEn": "TypeSafeClassifier sends JSON state and typed questions to /v1/systemone with synchronous and asynchronous Runnable calls.",
+    "highlightBenefitEn": "Connect structured decisions to existing LangChain workflows and tracing interfaces.",
+    "claimStatusEn": "libs/partners/typesafe/langchain_typesafe/classifier.py contains HTTP calls and a Runnable implementation. This optional component does not show that LangChain agents use Jev by default. Not independently run or retested by this site."
   },
   {
     "id": "can1357:oh-my-pi",
@@ -4404,7 +4468,11 @@
     "updatedAt": "2026-09-18T07:45:43Z",
     "pushedAt": "2026-09-17T23:58:11Z",
     "lastSyncedAt": "2026-09-18T07:47:52.721Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "Oh My Pi can optionally use Jev for small decisions: reasoning depth, unexpected stops, and Git-staging classifications.",
+    "jevDecisionPointEn": "The shared judgment interface calls Jev when TypeSafe credentials are supplied; typed questions return probabilities for local policy.",
+    "highlightBenefitEn": "Keep small classification tasks behind one interface with a replaceable backend.",
+    "claimStatusEn": "docs/environment-variables.md line 411 and packages/ai/src/judgment/typesafe.ts support an optional backend. Without credentials, other judgment paths are used; this does not make the whole application Jev-powered. Not independently run or retested by this site."
   },
   {
     "id": "elizaos:eliza",
@@ -4454,7 +4522,11 @@
     "updatedAt": "2026-09-18T06:59:41Z",
     "pushedAt": "2026-09-18T07:13:14Z",
     "lastSyncedAt": "2026-09-18T07:47:55.743Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "Eliza’s source includes an optional TypeSafe HTTP adapter for structured decision requests when explicitly called.",
+    "jevDecisionPointEn": "The caller supplies the model, state, and questions; systemOne validates inputs and outputs around the Jev request.",
+    "highlightBenefitEn": "Provide constrained request and response validation for code that opts into the adapter.",
+    "claimStatusEn": "The dedicated README, lines 3–6, and client.ts state that it is not registered with the runtime and does not automatically read keys or upload history. An executable client exists, but there is no evidence of runtime adoption. Not independently run or retested by this site."
   },
   {
     "id": "composiohq:composio",
@@ -4505,7 +4577,11 @@
     "updatedAt": "2026-09-18T03:12:31Z",
     "pushedAt": "2026-09-18T07:08:29Z",
     "lastSyncedAt": "2026-09-18T07:47:58.767Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "Add an optional Jev decision layer to Composio: pick a tool and its enumerable arguments, then leave the rest for the caller to fill in.",
+    "jevDecisionPointEn": "Compile tools and closed-set arguments into typed questions; return a complete call, partial call, or abstention, followed by an explicit execute step.",
+    "highlightBenefitEn": "Reuse Composio tools while exposing missing arguments and confidence.",
+    "claimStatusEn": "The provider source and dedicated README support a real integration. Jev does not freely generate open text, numbers, or IDs. Composio does not use this provider by default, and broad latency benefits are unverified. Not independently run or retested by this site."
   },
   {
     "id": "pydantic:pydantic-ai",
@@ -4552,7 +4628,11 @@
     "updatedAt": "2026-09-18T07:25:14Z",
     "pushedAt": "2026-09-18T07:21:10Z",
     "lastSyncedAt": "2026-09-18T07:48:01.770Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "An optional Jev model for Pydantic AI: turn boolean and enum fields in an output model into questions and receive typed decisions.",
+    "jevDecisionPointEn": "TypeSafeModel compiles supported output_type fields into typed questions, calls the API through TypeSafeProvider, and reconstructs the output.",
+    "highlightBenefitEn": "Reuse Pydantic output definitions for decision agents and compare results with other models.",
+    "claimStatusEn": "providers/typesafe.py and docs/models/typesafe.md support an optional integration requiring the typesafe extra. This does not mean all Pydantic agents use Jev, and it does not support free-text generation. Not independently run or retested by this site."
   },
   {
     "id": "berriai:litellm",
@@ -4598,7 +4678,11 @@
     "updatedAt": "2026-09-18T07:41:20Z",
     "pushedAt": "2026-09-18T07:45:24Z",
     "lastSyncedAt": "2026-09-18T07:48:04.726Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "LiteLLM’s complexity router can optionally use Jev to assess which model tier a request needs before routing it.",
+    "jevDecisionPointEn": "Jev Choice selects a configured model tier; the HTTP client returns probabilities and confidence to the complexity router.",
+    "highlightBenefitEn": "Connect task-difficulty assessment to existing model tiers and routing configuration.",
+    "claimStatusEn": "jev_classifier.py contains a System One HTTP client; config.py requires an explicit classifier_type=jev setting. Actual cost savings and preserved answer quality are unproven, and this is not default gateway behavior. Not independently run or retested by this site."
   },
   {
     "id": "langchain-ai:langchainjs",
@@ -4645,7 +4729,11 @@
     "updatedAt": "2026-09-18T03:54:29Z",
     "pushedAt": "2026-09-18T02:00:48Z",
     "lastSyncedAt": "2026-09-18T07:48:07.817Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "An optional Jev classifier for LangChain.js: pair state with questions and receive categories and scores your code can use.",
+    "jevDecisionPointEn": "TypeSafeClassifier sends shared state with Choice, Noul, and Score questions through the Runnable interface, then validates and organizes answers.",
+    "highlightBenefitEn": "Compose structured decision nodes directly into TypeScript workflows.",
+    "claimStatusEn": "libs/providers/langchain-typesafe/src/classifier.ts contains a real request implementation. It is a separate optional provider, not the default LangChain.js model; README latency claims have not been independently reproduced. Not independently run or retested by this site."
   },
   {
     "id": "kunchenguid:firstmate",
@@ -4695,7 +4783,11 @@
     "updatedAt": "2026-09-18T07:23:44Z",
     "pushedAt": "2026-09-18T03:21:34Z",
     "lastSyncedAt": "2026-09-18T07:48:10.760Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "Firstmate can optionally ask Jev to match a task brief to dispatch rules, then let local rules choose the specific agent configuration.",
+    "jevDecisionPointEn": "Use one Choice question to match a task with candidate dispatch rules; confidence, approvals, quotas, and candidate ordering stay in shell logic.",
+    "highlightBenefitEn": "Make rule matching a logged step and hand the decision back when uncertain.",
+    "claimStatusEn": "bin/fm-dispatch-resolve.sh contains a real, opt-in API call. The small documented sample includes wrong matches and escalations; it does not guarantee dispatch accuracy. Not independently run or retested by this site."
   },
   {
     "id": "openchamber:openchamber",
@@ -4745,7 +4837,11 @@
     "updatedAt": "2026-09-18T07:45:30Z",
     "pushedAt": "2026-09-18T00:26:34Z",
     "lastSyncedAt": "2026-09-18T07:48:13.726Z",
-    "archived": false
+    "archived": false,
+    "plainSummaryEn": "OpenChamber can optionally route models automatically: Jev classifies a message’s task, then the app uses that category’s model and reasoning setting.",
+    "jevDecisionPointEn": "Choice classifies the task; Noul can also assess whether an automatically approved permission should be left for the user to confirm.",
+    "highlightBenefitEn": "Add model selection and permission prompts to the existing chat interface, with failure and fallback reasons logged.",
+    "claimStatusEn": "routing/DOCUMENTATION.md says this is off by default and requires a feature flag and complete configuration. Routing errors fall back to the original model; safety-check errors retain the original automatic approval, so this is not fail-closed. Not independently run or retested by this site."
   },
   {
     "id": "ax-llm:ax",

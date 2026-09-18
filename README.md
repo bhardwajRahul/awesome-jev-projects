@@ -1,6 +1,12 @@
+[![Live Website](https://img.shields.io/badge/Website-Awesome%20Jev%20Radar-black?style=flat-square&logo=safari)](https://logicrw.github.io/awesome-jev-projects/)
+
 # Awesome Jev
 
-A source-backed, plain-language radar for tools built with TypeSafe AI's Jev. 中文优先，保留英文项目名与技术标签。
+**[打开在线版 →](https://logicrw.github.io/awesome-jev-projects/)** 搜索和筛选 Jev 开源项目，查看具体决策点与来源证据。支持中文 / English 切换。
+
+**[Explore the live website →](https://logicrw.github.io/awesome-jev-projects/)** Find open-source Jev projects, see what Jev decides, and inspect the source evidence. Switch between Chinese and English in the header.
+
+A source-backed, plain-language radar for tools built with TypeSafe AI's Jev. 项目名与技术标签保留原文；尚无英文摘要的项目显示原简介。
 
 - **Website:** https://logicrw.github.io/awesome-jev-projects/
 - **Submit a project:** https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml
@@ -17,7 +23,7 @@ npm test
 npm run build
 ```
 
-Vite + React + TypeScript + Tailwind CSS. Fonts are self-hosted. The site has fuzzy search, dynamic category and tag filtering, star ranges, sorting, device-local bookmarks, keyboard search (`/`, `⌘K`, `Ctrl+K`), shareable project detail links, and pre-filled GitHub Issues. Bookmarks stay in your browser.
+Vite + React + TypeScript + Tailwind CSS. Fonts are self-hosted. The site has fuzzy search, dynamic category and tag filtering, star ranges, sorting, device-local bookmarks, keyboard search (`/`, `⌘K`, `Ctrl+K`), shareable project detail links, and pre-filled GitHub Issues. Bookmarks and language preferences stay in your browser. Optional English project fields (`plainSummaryEn`, `jevDecisionPointEn`, `highlightBenefitEn`, `claimStatusEn`) are included in the public data; missing translations fall back to the original text.
 
 ## Data and autonomous updates
 
@@ -69,6 +75,12 @@ No long-lived deployment key is needed for Pages: Actions uses the built-in toke
 
 ## Contributing
 
-Open a project Issue with the repository URL, a plain-language explanation, Jev's specific decision point, and source evidence. The form opens a pre-filled issue; you confirm publication on GitHub. Edit `src/data/taxonomy.json` for classification rules, and review automatically generated summaries before strengthening their claims.
+Edit `src/data/taxonomy.json` for classification rules, and review automatically generated summaries before strengthening their claims. Keep translations faithful to the source, including uncertainty and verification limits.
 
 MIT licensed site code. Project names, avatars, and metadata remain their owners' content.
+
+## 提交项目 / Submit a project
+
+**中文：** 在[在线版](https://logicrw.github.io/awesome-jev-projects/)点击「提交项目」，填入仓库地址、至少 5 个字的简介和 Jev 的具体决策点，并附上可核验的来源。支持 `owner/repo`、完整仓库地址，以及带 `/blob/...`、`/tree/...` 的 GitHub 链接；表单会提取仓库根地址。点击提交按钮时才校验，缺失或过短的内容会在输入框下方提示。校验通过后，新标签页打开预填的 GitHub Issue；**最后仍需在 GitHub 确认发布**。也可以[直接创建项目 Issue](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)。
+
+**English:** Select **Submit project** on the [website](https://logicrw.github.io/awesome-jev-projects/). Add the repository, a plain-language summary of at least 5 characters, Jev's specific decision point, and verifiable source evidence. The form accepts `owner/repo`, full repository URLs, and GitHub links with `/blob/...` or `/tree/...` paths; it extracts the repository root. Validation runs when you submit and explains missing or short entries below each field. Valid submissions open a pre-filled GitHub Issue in a new tab; **you still confirm publication on GitHub**. You can also [create a project Issue directly](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml).

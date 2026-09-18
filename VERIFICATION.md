@@ -20,3 +20,15 @@
 - 14 original projects are pinned; all 130 curated descriptions, decisions, benefits, tags, categories and evidence match the pre-change baseline.
 - Production local preview rendered 130 projects, the removed radar interface was absent, repository links opened in a new tab, and a nested query-parameter project URL rendered its detail without a blank screen.
 - Twitter/OpenGraph fields and the actual 1200×630 PNG share image were inspected. X cache refresh behavior and unmeasured traffic capacity are not guaranteed.
+
+## Interaction and bilingual release
+
+- 35 tests passed, including repository shorthand/deep-link/SSH normalization, malicious-host rejection, Unicode length checks, issue parameter encoding, English validation, and UI translation coverage.
+- Browser verified Chinese/English switching and reload persistence; 24 records have English copy, and an untranslated record correctly falls back to its original summary.
+- The Star action contains only a star icon and “Star on GitHub”; it does not fetch or display this repository's star count.
+- Submission stays enabled. Empty and short inputs produce inline errors after activation; the first invalid field receives focus. A deep repository URL was cleaned to its root and a real new tab opened the encoded issue draft URL. No issue was published.
+- Dialog padding clicks keep it open; backdrop clicks close it and restore page scrolling. Draft text survives close/reopen, and closing project details removes its query/hash selection.
+- A reviewed guard keeps project deep links and the submission dialog mutually exclusive during delayed data loading; modal title IDs are unique.
+- Search slash/Cmd-K, explicit empty-state recovery, all external link attributes, and 375px/430px layouts were checked. No document horizontal overflow was observed in either language.
+- The featured placement links directly to the requested X profile; README contains the live-site badge and bilingual submission instructions.
+- All 130 existing project fields were compared against the prior commit and preserved; only optional English fields were added for 24 records.
