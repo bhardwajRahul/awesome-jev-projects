@@ -36,7 +36,7 @@ GitHub Pages serves the static assets. Source pushes deploy automatically. A suc
 1. Searches repository topics, README references, code, commits, and PRs.
 2. Fetches README/code evidence. Requires an exact provider signal, Jev/AI context, and implementation signal. Excludes forks, private repositories, and obvious mention-only directories. This is a conservative heuristic, not proof of runtime adoption.
 3. Refreshes stars, forks, license, creation date, and the **latest default-branch commit date** of known projects. `openIssues` uses GitHub's counter and includes pull requests.
-4. Builds a three-part extractive explanation with configurable taxonomy rules. The description preserves the author's overview; decision and benefit text are category-based inferences, explicitly marked for review. No paid LLM or external inference key is required. Human-reviewed summaries are preserved during later runs; `radar/exclusions.json` keeps reviewed false positives out of future scans. Remote text is never executed or treated as instructions. New categories may derive from repository topics, so UI categories are not a fixed enum.
+4. Uses source-first bilingual enrichment for **new** repositories. Clear author/maintainer Issue summaries, repository descriptions and dedicated Chinese README text are retained verbatim (apart from trimming). Only a missing/vague language invokes `gpt-4o-mini` with the Actions-only `GH_MODELS_TOKEN`; response fields cannot replace the other language or repository identity. Jev, Agent, Token, Context GC and other technical terms stay in English in generated copy. The deterministic quality gate checks concise functional prose, language content, placeholders and unsafe content; it is not a semantic fact-checker. Model failures, rate limits and missing credentials use explicit rule-based bilingual fallbacks without blocking metadata sync. Reviewed and pinned existing copy is never regenerated.
 5. Validates the dataset, runs the production build, and commits the updated JSON and audit receipts together. This runs in the same workflow because a `GITHUB_TOKEN` commit does not trigger another push workflow.
 
 ### Coverage, not omniscience
@@ -50,6 +50,22 @@ node scripts/radar-sync.mjs --metadata-only
 ```
 
 `RADAR_MAX_PAGES` (1–10), `RADAR_MAX_CANDIDATES` (1–250) control the run budget. `RADAR_SOURCES=code` performs a code-only supplement and retains previously fetched metadata. All API requests, including retries and same-host redirects, are serialized at least 1.5 seconds apart; search-specific limits remain stricter. Rate-limit retries honor Retry-After and primary reset times, and secondary limits without headers wait at least 60 seconds with exponential backoff. Exhausted retries or the run-wide waiting budget stop further network requests. Full search history and API results are not equivalent to whole-web coverage. The pipeline is GitHub-focused.
+
+## Autonomous project submissions
+
+`.github/workflows/auto-ingest-issue.yml` runs on `issues.opened`. It recognizes `[Project]` submissions and the site's repository field. Normal bug reports, ambiguous links, inaccessible/private repositories, duplicates and editorial exclusions are left open for human handling; no false success comment is sent.
+
+The workflow uses only this repository's trusted `main` code. It reads the submitted repository through GitHub's API, captures a commit SHA, and checks its README plus bounded Jev/TypeSafe source candidates. Auto-ingestion requires an implementation-file provider endpoint or SDK usage; README installation commands alone do not qualify. Chinese README links/root variants are checked before requesting translation. Issue prose is retained only when submitted by the target repository owner or a maintainer of this directory (`OWNER`, `MEMBER`, `COLLABORATOR`). For third-party submissions, repository metadata/README supply the copy and the Issue prose is excluded from model input. Issue claims alone are not integration evidence; target code, workflows and packages are never checked out or executed.
+
+After `npm test && npm run build`, the Contents API atomically appends the project to `main` using the current file SHA. On a conflict or uncertain write result, it re-reads the latest data and retries without discarding concurrent submissions or manual edits. This API operation creates the main-branch commit directly; no persistent Git credential or force-push is used.
+
+The successful ingestion workflow triggers Pages. A publication gate skips rejected/probe/dry-run submissions. **Only after deployment succeeds**, the exact deployed checkout is reconciled against the live `projects.json`: matching, unchanged, still-open Issues receive the requested thank-you comment and are closed as `completed`. A hidden bot-comment marker makes retries idempotent. Every successful Pages deployment also reconciles pending accepted submissions, so a coalesced/canceled publication does not lose acknowledgements. Edited/withdrawn Issues remain untouched.
+
+Maintainers can re-run an existing Issue through `workflow_dispatch`; `dry_run` defaults to true. A separate `models_probe` option checks the requested endpoint without appending data, posting comments or closing Issues. Rejected/duplicate submissions exit before installing dependencies or building. Each accepted submission makes at most one bounded Models request; writes use file-SHA conflict protection, and per-Issue concurrency avoids canceling unrelated pending submissions. Per-run receipts are retained as Actions artifacts. Failed or rate-limited service status stays explicit in `enrichment.ai`, which is excluded from the public website.
+
+### GitHub Models availability
+
+The adapter intentionally retains the requested `https://models.inference.ai.azure.com/chat/completions` endpoint and `gpt-4o-mini` model. GitHub announced that [GitHub Models was fully retired on July 30, 2026](https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/); the Azure endpoint was deprecated earlier. Configuration of `GH_MODELS_TOKEN` does **not** establish service availability. A live Actions probe records the actual result. The pipeline remains usable through native text and rule fallbacks and never silently switches providers or claims a failed inference succeeded.
 
 ## Source quality
 

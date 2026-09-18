@@ -11,7 +11,10 @@ function fixture(responses, options = {}) {
   const api = createGitHubClient({
     token: "test-token",
     now: () => time,
-    sleep: async (ms) => { sleeps.push(ms); time += ms; },
+    sleep: async (ms) => {
+      sleeps.push(ms);
+      time += ms;
+    },
     fetchImpl: async (url, init) => {
       active++;
       maxActive = Math.max(active, maxActive);
@@ -32,10 +35,24 @@ function fixture(responses, options = {}) {
 }
 
 test("concurrent callers are serialized with at least 1.5 seconds between requests", async () => {
-  const f = fixture([{ body: { id: 1 } }, { body: { id: 2 } }, { body: { id: 3 } }]);
-  const result = await Promise.all([f.api("/repos/a/1"), f.api("/repos/a/2"), f.api("/repos/a/3")]);
-  assert.deepEqual(result.map((r) => r.id), [1, 2, 3]);
-  assert.deepEqual(f.calls.map((c) => c.at), [0, 1500, 3000]);
+  const f = fixture([
+    { body: { id: 1 } },
+    { body: { id: 2 } },
+    { body: { id: 3 } },
+  ]);
+  const result = await Promise.all([
+    f.api("/repos/a/1"),
+    f.api("/repos/a/2"),
+    f.api("/repos/a/3"),
+  ]);
+  assert.deepEqual(
+    result.map((r) => r.id),
+    [1, 2, 3],
+  );
+  assert.deepEqual(
+    f.calls.map((c) => c.at),
+    [0, 1500, 3000],
+  );
   assert.equal(f.maxActive(), 1);
 });
 
@@ -44,73 +61,119 @@ test("code-search retries retain the stricter 6.5-second request spacing", async
   await f.api("/search/code?q=jev", { search: true, code: true });
   await f.api("/repos/a/b");
   await f.api("/search/code?q=typesafe", { search: true, code: true });
-  assert.deepEqual(f.calls.map((c) => c.at), [0, 6500, 8000, 13000]);
+  assert.deepEqual(
+    f.calls.map((c) => c.at),
+    [0, 6500, 8000, 13000],
+  );
 });
 
 test("repository searches preserve authenticated and anonymous search intervals", async () => {
-  for (const [token, interval] of [["test-token", 2200], [undefined, 6200]]) {
+  for (const [token, interval] of [
+    ["test-token", 2200],
+    [undefined, 6200],
+  ]) {
     const f = fixture([{}, {}], { token });
     await f.api("/search/repositories?q=jev", { search: true });
     await f.api("/search/repositories?q=typesafe", { search: true });
-    assert.deepEqual(f.calls.map((c) => c.at), [0, interval]);
+    assert.deepEqual(
+      f.calls.map((c) => c.at),
+      [0, interval],
+    );
   }
 });
 
 test("secondary 403 limits without headers back off at least 60 then 120 seconds", async () => {
-  const limited = { status: 403, body: { message: "You have exceeded a secondary rate limit." } };
+  const limited = {
+    status: 403,
+    body: { message: "You have exceeded a secondary rate limit." },
+  };
   const f = fixture([limited, limited, {}]);
   await f.api("/repos/a/b");
   assert.deepEqual(f.sleeps, [60500, 120500]);
-  assert.deepEqual(f.calls.map((c) => c.at), [0, 60500, 181000]);
+  assert.deepEqual(
+    f.calls.map((c) => c.at),
+    [0, 60500, 181000],
+  );
 });
 
 test("429 respects Retry-After seconds and HTTP dates", async () => {
   for (const retryAfter of ["90", new Date(90000).toUTCString()]) {
-    const f = fixture([{ status: 429, headers: { "retry-after": retryAfter } }, {}]);
+    const f = fixture([
+      { status: 429, headers: { "retry-after": retryAfter } },
+      {},
+    ]);
     await f.api("/repos/a/b");
     assert.equal(f.calls[1].at, 90500);
   }
 });
 
 test("primary rate limits wait until the reset even when the error message is generic", async () => {
-  const f = fixture([{
-    status: 403,
-    body: { message: "Forbidden" },
-    headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": "180" },
-  }, {}]);
+  const f = fixture([
+    {
+      status: 403,
+      body: { message: "Forbidden" },
+      headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": "180" },
+    },
+    {},
+  ]);
   await f.api("/repos/a/b");
   assert.equal(f.calls[1].at, 180500);
 });
 
 test("a non-rate-limit 403 is not retried and does not poison the request queue", async () => {
-  const f = fixture([{ status: 403, body: { message: "Resource not accessible by integration" } }, {}]);
-  await assert.rejects(f.api("/search/code?q=jev"), { status: 403, message: "GitHub 403: Resource not accessible by integration" });
+  const f = fixture([
+    {
+      status: 403,
+      body: { message: "Resource not accessible by integration" },
+    },
+    {},
+  ]);
+  await assert.rejects(f.api("/search/code?q=jev"), {
+    status: 403,
+    message: "GitHub 403: Resource not accessible by integration",
+  });
   await f.api("/repos/a/b");
   assert.equal(f.calls.length, 2);
   assert.equal(f.calls[1].at, 1500);
 });
 
 test("network and server retries also observe the global interval", async () => {
-  const f = fixture([new Error("network interrupted"), { status: 502 }, {}, {}]);
+  const f = fixture([
+    new Error("network interrupted"),
+    { status: 502 },
+    {},
+    {},
+  ]);
   await f.api("/repos/a/b");
   await f.api("/repos/a/c");
-  assert.deepEqual(f.calls.map((c) => c.at), [0, 1500, 4500, 6000]);
+  assert.deepEqual(
+    f.calls.map((c) => c.at),
+    [0, 1500, 4500, 6000],
+  );
 });
 
 test("exhausted rate limits stop later queued requests instead of hammering repositories", async () => {
   const limited = { status: 403, body: { message: "secondary rate limit" } };
   const f = fixture([limited, limited, limited]);
-  const results = await Promise.allSettled([f.api("/repos/a/b"), f.api("/repos/a/c")]);
-  assert.deepEqual(results.map((r) => r.status), ["rejected", "rejected"]);
+  const results = await Promise.allSettled([
+    f.api("/repos/a/b"),
+    f.api("/repos/a/c"),
+  ]);
+  assert.deepEqual(
+    results.map((r) => r.status),
+    ["rejected", "rejected"],
+  );
   assert.ok(results.every((r) => r.reason.rateLimited));
   assert.equal(f.calls.length, 3);
 });
 
 test("rate-limit waits have a run-wide budget and never retry before a distant reset", async () => {
-  const f = fixture([{
-    status: 403,
-    headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": "3600" },
-  }]);
+  const f = fixture([
+    {
+      status: 403,
+      headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": "3600" },
+    },
+  ]);
   await assert.rejects(f.api("/repos/a/b"), { status: 403, rateLimited: true });
   await assert.rejects(f.api("/repos/a/c"), { status: 403, rateLimited: true });
   assert.equal(f.calls.length, 1);
@@ -119,7 +182,9 @@ test("rate-limit waits have a run-wide budget and never retry before a distant r
 
 test("API credentials remain in request headers and are redacted from errors", async () => {
   const f = fixture([{ status: 401, body: { message: "invalid test-token" } }]);
-  await assert.rejects(f.api("/repos/a/b"), { message: "GitHub 401: invalid [redacted]" });
+  await assert.rejects(f.api("/repos/a/b"), {
+    message: "GitHub 401: invalid [redacted]",
+  });
   assert.equal(f.calls[0].init.headers.Authorization, "Bearer test-token");
   assert.equal(f.calls[0].url.includes("test-token"), false);
   assert.equal(f.calls[0].init.redirect, "manual");
@@ -128,20 +193,37 @@ test("API credentials remain in request headers and are redacted from errors", a
 test("same-origin GitHub redirects support renamed repositories, preserve pacing and stop after three hops", async () => {
   for (const status of [301, 302, 307, 308]) {
     const f = fixture([
-      { status, headers: { location: "https://api.github.com/repos/new/name" } },
+      {
+        status,
+        headers: { location: "https://api.github.com/repos/new/name" },
+      },
       { status, headers: { location: "/repositories/1234" } },
       { status, headers: { location: "/repos/final/name" } },
       { body: { id: 1234 } },
     ]);
     assert.deepEqual(await f.api("/repos/old/name"), { id: 1234 });
-    assert.deepEqual(f.calls.map((c) => c.at), [0, 1500, 3000, 4500]);
+    assert.deepEqual(
+      f.calls.map((c) => c.at),
+      [0, 1500, 3000, 4500],
+    );
     assert.equal(f.calls[3].url, "https://api.github.com/repos/final/name");
-    assert.ok(f.calls.every((c) => c.init.headers.Authorization === "Bearer test-token"));
+    assert.ok(
+      f.calls.every(
+        (c) => c.init.headers.Authorization === "Bearer test-token",
+      ),
+    );
   }
-  const redirect = { status: 301, headers: { location: "/repos/redirect/loop" } };
+  const redirect = {
+    status: 301,
+    headers: { location: "/repos/redirect/loop" },
+  };
   const f = fixture([redirect, redirect, redirect, redirect]);
   await assert.rejects(f.api("/repos/old/name"), /redirect rejected/);
-  assert.equal(f.calls.length, 4, "only the initial request and three follow-ups are sent");
+  assert.equal(
+    f.calls.length,
+    4,
+    "only the initial request and three follow-ups are sent",
+  );
 });
 
 test("cross-origin and HTTP redirects are rejected without sending credentials to the destination", async () => {
@@ -157,6 +239,46 @@ test("cross-origin and HTTP redirects are rejected without sending credentials t
     assert.equal(f.calls.length, 1);
     assert.equal(f.calls[0].url, "https://api.github.com/repos/old/name");
     assert.equal(f.calls[0].init.redirect, "manual");
-    assert.deepEqual(f.sleeps, [], "unsafe redirects are not retried as network errors");
+    assert.deepEqual(
+      f.sleeps,
+      [],
+      "unsafe redirects are not retried as network errors",
+    );
   }
+});
+
+test("POST is not automatically retried after an unknown write outcome", async () => {
+  let requests = 0;
+  const api = createGitHubClient({
+    token: "test-token",
+    fetchImpl: async () => {
+      requests++;
+      throw new TypeError("lost connection");
+    },
+    sleep: async () => {},
+  });
+  await assert.rejects(
+    api("/repos/logicrw/test/issues/1/comments", {
+      method: "POST",
+      body: { body: "hello" },
+    }),
+  );
+  assert.equal(requests, 1);
+});
+test("JSON mutations use request bodies and support an empty 204 response", async () => {
+  const api = createGitHubClient({
+    fetchImpl: async (url, options) => {
+      assert.equal(options.method, "PATCH");
+      assert.equal(options.headers["Content-Type"], "application/json");
+      assert.deepEqual(JSON.parse(options.body), { state: "closed" });
+      return new Response(null, { status: 204 });
+    },
+  });
+  assert.equal(
+    await api("/repos/logicrw/test/issues/1", {
+      method: "PATCH",
+      body: { state: "closed" },
+    }),
+    null,
+  );
 });

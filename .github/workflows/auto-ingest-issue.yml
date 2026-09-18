@@ -1,0 +1,70 @@
+name: Issue ingestion
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Existing issue number to retry (not used for a Models probe)
+        type: number
+        default: 0
+      dry_run:
+        description: Validate and build without publishing or commenting
+        type: boolean
+        default: true
+      models_probe:
+        description: Read-only probe of the requested Models endpoint and safe fallback
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+concurrency:
+  group: ingest-issue-${{ github.event.issue.number || inputs.issue_number || github.run_id }}
+  cancel-in-progress: false
+jobs:
+  review:
+    if: github.repository == 'logicrw/awesome-jev-projects'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Verify sources and fill only missing summaries
+        id: review
+        run: node scripts/issue-ingestion.mjs prepare
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_MODELS_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
+          INGEST_ISSUE_NUMBER: ${{ inputs.issue_number || 0 }}
+          INGEST_MODELS_PROBE: ${{ inputs.models_probe || false }}
+      # Source validation uses Node built-ins only. Rejected/duplicate Issues
+      # stop here, before dependency installation, build, or publication.
+      - run: npm ci --no-fund --no-audit
+        if: steps.review.outputs.ready == 'true'
+      - name: Validate candidate data and website
+        if: steps.review.outputs.ready == 'true'
+        run: npm test && npm run build
+      - name: Append through an atomic main-branch commit
+        if: steps.review.outputs.ready == 'true' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run)
+        run: node scripts/issue-ingestion.mjs publish
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INGEST_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      - name: Retain ingestion receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-ingestion-${{ github.event.issue.number || inputs.issue_number || github.run_id }}
+          path: ${{ runner.temp }}/ingestion-result.json
+          retention-days: 30
+# Deploy GitHub Pages listens for this workflow's success. Its post-deploy
+# reconciliation comments/closes ONLY submissions confirmed in the live data.

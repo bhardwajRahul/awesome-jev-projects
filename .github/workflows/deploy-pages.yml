@@ -4,29 +4,54 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: [Ecosystem radar]
+    workflows: [Ecosystem radar, Issue ingestion]
     branches: [main]
     types: [completed]
 permissions:
   contents: write
+  actions: read
+  issues: write
   pages: write
   id-token: write
 concurrency:
   group: github-pages
   cancel-in-progress: false
 jobs:
-  build:
+  publication-gate:
     if: >-
       github.event_name != 'workflow_run' ||
       (github.event.workflow_run.conclusion == 'success' &&
        github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.gate.outputs.allowed }}
+    steps:
+      - id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          TRIGGER_WORKFLOW: ${{ github.event.workflow_run.name }}
+          TRIGGER_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: |
+          allowed=true
+          if [ "$EVENT_NAME" = "workflow_run" ] && [ "$TRIGGER_WORKFLOW" = "Issue ingestion" ]; then
+            allowed=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$TRIGGER_RUN_ID/jobs?per_page=100" --jq 'any(.jobs[].steps[]; .name == "Append through an atomic main-branch commit" and .conclusion == "success")')
+          fi
+          echo "allowed=$allowed" >> "$GITHUB_OUTPUT"
+  build:
+    needs: publication-gate
+    if: needs.publication-gate.outputs.allowed == 'true'
+    runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      source_sha: ${{ steps.source.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
           persist-credentials: false
+      - id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -49,3 +74,21 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+
+  acknowledge-submissions:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.build.outputs.source_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Confirm live inclusion, then thank and close
+        run: node scripts/issue-ingestion.mjs acknowledge
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DEPLOYED_SHA: ${{ needs.build.outputs.source_sha }}

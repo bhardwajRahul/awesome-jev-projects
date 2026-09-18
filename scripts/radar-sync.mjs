@@ -5,6 +5,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { createGitHubClient } from "./github-client.mjs";
+import { createSummaryEnricher } from "./source-enrichment.mjs";
+import { readLocalizedReadmes } from "./project-source.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const normalizeRepo = (value) => {
   try {
@@ -61,60 +63,9 @@ export function verifyIntegration(repo, text) {
   };
 }
 
+const enrichSummary = createSummaryEnricher();
 export async function summarizeWithGitHubModels(repo, readme, fallbackSummary) {
-  const token = process.env.GH_MODELS_TOKEN;
-  if (!token) return fallbackSummary;
-  try {
-    const prompt = "You are a developer tooling expert analyzing an open-source project that integrates Jev (TypeSafe AI low-latency decision model).\n" +
-      "Analyze the project metadata and README snippet below, then generate a bilingual summary in JSON format.\n\n" +
-      "Project: " + repo.name + "\n" +
-      "Description: " + (repo.description || "N/A") + "\n" +
-      "README snippet:\n" + readme.slice(0, 3000) + "\n\n" +
-      "Requirements:\n" +
-      "1. \"plainSummary\": Chinese plain-English summary in ONE crisp sentence. Explain what it actually does for developers in human terms (说人话，拒绝假大空废话).\n" +
-      "2. \"jevDecisionPoint\": Chinese explanation of exactly what step/decision Jev makes (e.g. 选动作、打分分流、挑日志、评估多空).\n" +
-      "3. \"highlightBenefit\": Chinese explanation of the practical benefit/speedup/cost saving.\n" +
-      "4. \"plainSummary_en\": English plain-English summary in one sentence.\n" +
-      "5. \"jevDecisionPoint_en\": English explanation of Jev exact decision point.\n" +
-      "6. Keep technical terms like Jev, Token, Agent, Context GC in English.\n\n" +
-      "Return ONLY a valid JSON object matching these keys.";
-
-    const res = await fetch("https://models.inference.ai.azure.com/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
-      },
-      body: JSON.stringify({
-        messages: [{ role: "user", content: prompt }],
-        model: "gpt-4o-mini",
-        response_format: { type: "json_object" }
-      }),
-      signal: AbortSignal.timeout(10000)
-    });
-
-    if (!res.ok) {
-      console.warn("[GitHub Models] request returned " + res.status + ", falling back to rules.");
-      return fallbackSummary;
-    }
-
-    const data = await res.json();
-    const parsed = JSON.parse(data.choices?.[0]?.message?.content || "{}");
-    if (parsed.plainSummary && parsed.jevDecisionPoint) {
-      return {
-        ...fallbackSummary,
-        plainSummary: parsed.plainSummary,
-        jevDecisionPoint: parsed.jevDecisionPoint,
-        highlightBenefit: parsed.highlightBenefit || fallbackSummary.highlightBenefit,
-        plainSummary_en: parsed.plainSummary_en,
-        jevDecisionPoint_en: parsed.jevDecisionPoint_en,
-        summarySource: "ai-assisted"
-      };
-    }
-  } catch (err) {
-    console.warn("[GitHub Models] AI summarization skipped:", err.message);
-  }
-  return fallbackSummary;
+  return enrichSummary({ repo, readme, fallback: fallbackSummary });
 }
 
 export function summarize(repo, readme, taxonomy) {
@@ -174,8 +125,16 @@ export function summarize(repo, readme, taxonomy) {
   };
 }
 /** An allowlist keeps upstream descriptions and metadata out of reviewed copy. */
-export function refreshMetadata(project, meta, commits, syncedAt = new Date().toISOString()) {
-  if (!Number.isSafeInteger(meta.stargazers_count) || meta.stargazers_count < 0) {
+export function refreshMetadata(
+  project,
+  meta,
+  commits,
+  syncedAt = new Date().toISOString(),
+) {
+  if (
+    !Number.isSafeInteger(meta.stargazers_count) ||
+    meta.stargazers_count < 0
+  ) {
     throw new Error("GitHub repository metadata has an invalid star count");
   }
   const refreshed = {
@@ -194,7 +153,10 @@ export function refreshMetadata(project, meta, commits, syncedAt = new Date().to
     Object.assign(refreshed, {
       forks: meta.forks_count,
       openIssues: meta.open_issues_count,
-      license: meta.license?.spdx_id === "NOASSERTION" ? null : (meta.license?.spdx_id ?? null),
+      license:
+        meta.license?.spdx_id === "NOASSERTION"
+          ? null
+          : (meta.license?.spdx_id ?? null),
       headSha: commits[0]?.sha ?? null,
       createdAt: meta.created_at,
       avatarUrl: meta.owner?.avatar_url,
@@ -527,11 +489,25 @@ export async function main() {
         report.discovery.rejected++;
         continue;
       }
-      const summary = await summarizeWithGitHubModels(repo, readme, summarize(repo, readme, taxonomy));
+      const nativeReadmes = await readLocalizedReadmes({
+        api,
+        repository: full,
+        sha,
+        readme,
+        readmePath,
+      });
+      const sourceText =
+        nativeReadmes.map((file) => file.text).join("\n\n") || readme;
+      const summary = await summarizeWithGitHubModels(
+        repo,
+        sourceText,
+        summarize(repo, sourceText, taxonomy),
+      );
       const sourceUrl = `${repo.html_url}/blob/${sha}/${sourcePath}`;
       const project = {
         id: `${repo.owner.login}:${repo.name}`.toLowerCase(),
         name: repo.name,
+        repoId: repo.id,
         author: repo.owner.login,
         url: repo.html_url,
         ...summary,
@@ -564,6 +540,12 @@ export async function main() {
         sourceUrl,
         sourceHash: project.sourceHash,
         evidence: evidence.evidence,
+        enrichment: summary.enrichment,
+        readmeSources: nativeReadmes.map(({ path, url, hash }) => ({
+          path,
+          url,
+          hash,
+        })),
       });
       console.log(`[new] ${full} → ${project.category}`);
     } catch (e) {

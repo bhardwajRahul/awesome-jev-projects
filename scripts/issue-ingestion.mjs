@@ -1,0 +1,552 @@
+/** Trusted workflow code only. Untrusted issues/READMEs are never executed. */
+import { createHash } from "node:crypto";
+import { readFile, writeFile, appendFile, mkdir } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import { createGitHubClient } from "./github-client.mjs";
+import {
+  extractSubmittedRepository,
+  inspectRepository,
+} from "./project-source.mjs";
+import { createSummaryEnricher } from "./source-enrichment.mjs";
+import { summarize, verifyIntegration, atomicJSON } from "./radar-sync.mjs";
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+export const SITE_URL = "https://logicrw.github.io/awesome-jev-projects/";
+export const bodyHash = (body) =>
+  createHash("sha256")
+    .update(body ?? "")
+    .digest("hex");
+export const successComment =
+  "🎉 感谢提交！项目已通过自动化代码审查，并在雷达站成功收录上线：https://logicrw.github.io/awesome-jev-projects/";
+const OWNER_REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
+function requireOwner(repository) {
+  if (!OWNER_REPO.test(repository ?? ""))
+    throw new Error("Invalid owning repository");
+  return repository;
+}
+function publicIdentity(project) {
+  try {
+    const u = new URL(project.url);
+    return u.protocol === "https:" && u.hostname === "github.com"
+      ? u.pathname.replace(/^\/|\/$/g, "").toLowerCase()
+      : null;
+  } catch {
+    return null;
+  }
+}
+function sameProject(a, b) {
+  return (
+    a.id === b.id ||
+    publicIdentity(a) === publicIdentity(b) ||
+    (Number.isSafeInteger(a.repoId) && a.repoId === b.repoId)
+  );
+}
+function isSubmission(issue) {
+  return (
+    /^\s*\[project\]/i.test(issue.title ?? "") ||
+    /^#{1,6}\s+(?:GitHub repository|Project repository|项目仓库|仓库地址)\s*$/im.test(
+      issue.body ?? "",
+    )
+  );
+}
+export async function prepareSubmission({
+  issue,
+  repository,
+  projects,
+  taxonomy,
+  exclusions = [],
+  api,
+  enrich,
+  inspect = inspectRepository,
+  now = () => new Date().toISOString(),
+}) {
+  requireOwner(repository);
+  if (
+    !Number.isSafeInteger(issue?.number) ||
+    issue.number < 1 ||
+    issue.pull_request ||
+    issue.state !== "open"
+  )
+    return { status: "ignored", reason: "not an open issue" };
+  if (!isSubmission(issue))
+    return { status: "ignored", reason: "not a project submission" };
+  const submitted = extractSubmittedRepository(issue.body);
+  if (!submitted)
+    return {
+      status: "rejected",
+      reason: "missing or ambiguous repository URL",
+    };
+  if (submitted.toLowerCase() === repository.toLowerCase())
+    return {
+      status: "rejected",
+      reason: "cannot ingest this directory itself",
+    };
+  const result = await inspect({
+    api,
+    repository: submitted,
+    existingProjects: projects,
+    exclusions,
+    verifyIntegration,
+    requireCodeEvidence: true,
+  });
+  if (result.status === "duplicate") {
+    const prior = projects.find(
+      (p) =>
+        p.ingestion?.repository === repository &&
+        p.ingestion.issueNumber === issue.number &&
+        p.ingestion.issueBodySha256 === bodyHash(issue.body) &&
+        (p.repoId === result.repo?.id ||
+          publicIdentity(p) === result.repo?.full_name?.toLowerCase()),
+    );
+    if (prior) return { status: "resume", project: prior };
+  }
+  if (result.status !== "accepted")
+    return { status: result.status, reason: result.reason };
+  const { repo, sha, commits, readme, evidence } = result;
+  // Issue association belongs to this directory; only its maintainers or the
+  // target repository owner can supply copy treated as author-approved text.
+  const issueTrusted = Boolean(
+    issue.user?.login &&
+      (issue.user.login.toLowerCase() === repo.owner?.login?.toLowerCase() ||
+        ["OWNER", "MEMBER", "COLLABORATOR"].includes(issue.author_association)),
+  );
+  const editorial = await enrich({
+    repo,
+    readme,
+    issueBody: issue.body ?? "",
+    issueTrusted,
+    fallback: summarize(repo, readme, taxonomy),
+  });
+  const [author, name] = repo.full_name.split("/");
+  const project = {
+    id: `${author}:${name}`.toLowerCase(),
+    name,
+    author,
+    url: `https://github.com/${repo.full_name}`,
+    repoId: repo.id,
+    ...editorial,
+    stars: repo.stargazers_count,
+    forks: repo.forks_count,
+    openIssues: repo.open_issues_count,
+    license:
+      repo.license?.spdx_id === "NOASSERTION"
+        ? null
+        : (repo.license?.spdx_id ?? null),
+    createdAt: repo.created_at,
+    lastCommitAt: commits[0]?.commit?.committer?.date ?? null,
+    headSha: sha,
+    metadataFetchedAt: now(),
+    metadataStatus: "ok",
+    avatarUrl: repo.owner?.avatar_url,
+    verificationStatus: "integration-detected",
+    runtimeVerified: false,
+    discoveredAt: now(),
+    claimStatus:
+      "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    claimStatusEn:
+      "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    evidence: evidence.files.map(({ url }) => ({
+      url,
+      note: "固定版本的 Jev 集成与说明来源",
+    })),
+    sourceVerification: {
+      method: "bounded-source-heuristic",
+      sha,
+      files: evidence.files.map(({ path, url, hash }) => ({ path, url, hash })),
+    },
+    ingestion: {
+      repository,
+      issueNumber: issue.number,
+      issueBodySha256: bodyHash(issue.body),
+      issueUrl: `https://github.com/${repository}/issues/${issue.number}`,
+    },
+  };
+  if (
+    !project.evidence.length ||
+    ![
+      "plainSummary",
+      "plainSummaryEn",
+      "jevDecisionPoint",
+      "highlightBenefit",
+      "category",
+    ].every((k) => typeof project[k] === "string" && project[k].trim()) ||
+    !Array.isArray(project.tags) ||
+    !project.tags.length
+  )
+    throw new Error("Prepared project failed required-field validation");
+  return { status: "ready", project };
+}
+function decodeSnapshot(file) {
+  if (
+    file.encoding !== "base64" ||
+    typeof file.content !== "string" ||
+    !file.sha
+  )
+    throw new Error("Invalid canonical data response");
+  const rows = JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
+  if (!Array.isArray(rows))
+    throw new Error("Canonical projects must be an array");
+  return rows;
+}
+/** Contents API SHA compare-and-swap preserves concurrent submissions and manual edits. */
+export async function publishSubmission({
+  api,
+  repository,
+  project,
+  maxAttempts = 4,
+}) {
+  requireOwner(repository);
+  const ingestion = project.ingestion;
+  if (
+    ingestion?.repository !== repository ||
+    !Number.isSafeInteger(ingestion.issueNumber) ||
+    ingestion.issueNumber < 1
+  )
+    throw new Error("Invalid submission provenance");
+  const issue = await api(
+    `/repos/${repository}/issues/${ingestion.issueNumber}`,
+  );
+  if (
+    issue.state !== "open" ||
+    issue.pull_request ||
+    bodyHash(issue.body) !== ingestion.issueBodySha256
+  )
+    return {
+      status: "changed",
+      reason: "issue changed or closed before publication",
+    };
+  const publicRepo = await api(`/repos/${publicIdentity(project)}`);
+  if (publicRepo.private !== false || publicRepo.id !== project.repoId)
+    return {
+      status: "changed",
+      reason: "target repository is no longer the verified public repository",
+    };
+  const path = `/repos/${repository}/contents/src/data/projects.json`;
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    const file = await api(path + "?ref=main");
+    if (typeof file.sha !== "string" || (file.size ?? 0) > 10_000_000)
+      throw new Error(
+        "Canonical dataset is unavailable or exceeds the publication budget",
+      );
+    const current = decodeSnapshot(
+      file.encoding === "base64"
+        ? file
+        : await api(`/repos/${repository}/git/blobs/${file.sha}`),
+    );
+    const existing = current.find((row) => sameProject(row, project));
+    if (existing) {
+      const own =
+        existing.ingestion?.repository === repository &&
+        existing.ingestion.issueNumber === ingestion.issueNumber &&
+        existing.ingestion.issueBodySha256 === ingestion.issueBodySha256;
+      return { status: own ? "ingested" : "duplicate", changed: false };
+    }
+    const content = Buffer.from(
+      JSON.stringify([...current, project], null, 2) + "\n",
+    ).toString("base64");
+    try {
+      const response = await api(path, {
+        method: "PUT",
+        body: {
+          message: `data: ingest ${publicIdentity(project)} from #${ingestion.issueNumber}`,
+          content,
+          sha: file.sha,
+          branch: "main",
+        },
+      });
+      return {
+        status: "ingested",
+        changed: true,
+        commit: response.commit?.sha,
+      };
+    } catch (error) {
+      // Re-read after both write conflicts and unknown transport outcomes; a completed
+      // prior write is detected above, without overwriting or duplicating another writer.
+      if (attempt === maxAttempts - 1) throw error;
+      if (
+        error.status &&
+        ![409, 422, 500, 502, 503, 504].includes(error.status)
+      )
+        throw error;
+    }
+  }
+  throw new Error("Publication retries exhausted");
+}
+/** Called only by the Pages workflow AFTER its deployment succeeds. */
+export async function acknowledgePublished({
+  api,
+  repository,
+  projects,
+  publishedProjects,
+}) {
+  requireOwner(repository);
+  const byIssue = new Map();
+  for (const project of projects) {
+    const i = project.ingestion;
+    if (
+      i?.repository === repository &&
+      Number.isSafeInteger(i.issueNumber) &&
+      i.issueNumber > 0 &&
+      typeof i.issueBodySha256 === "string"
+    )
+      byIssue.set(i.issueNumber, project);
+  }
+  const results = [];
+  if (!byIssue.size) return results;
+  const open = [];
+  for (let page = 1; page <= 20; page++) {
+    const rows = await api(
+      `/repos/${repository}/issues?state=open&per_page=100&page=${page}`,
+    );
+    open.push(...rows);
+    if (rows.length < 100) break;
+    if (page === 20)
+      throw new Error(
+        "Open issue pagination limit reached; no completion claims sent",
+      );
+  }
+  for (const issue of open) {
+    const project = byIssue.get(issue.number);
+    if (!project || issue.pull_request) continue;
+    if (bodyHash(issue.body) !== project.ingestion.issueBodySha256) {
+      results.push({ issue: issue.number, status: "edited-after-review" });
+      continue;
+    }
+    if (
+      !publishedProjects.some(
+        (row) =>
+          row.id === project.id &&
+          publicIdentity(row) === publicIdentity(project),
+      )
+    ) {
+      results.push({
+        issue: issue.number,
+        status: "not-in-published-snapshot",
+      });
+      continue;
+    }
+    const marker = `<!-- awesome-jev-ingestion:${issue.number}:${project.repoId} -->`;
+    let commented = false;
+    for (let page = 1; page <= 20; page++) {
+      const comments = await api(
+        `/repos/${repository}/issues/${issue.number}/comments?per_page=100&page=${page}`,
+      );
+      commented ||= comments.some(
+        (c) =>
+          c.user?.login === "github-actions[bot]" && c.body?.includes(marker),
+      );
+      if (commented || comments.length < 100) break;
+      if (page === 20)
+        throw new Error(
+          "Comment pagination limit reached; avoiding duplicate notification",
+        );
+    }
+    // Recheck just before side effects: an author may retract or edit a queued submission.
+    const latest = await api(`/repos/${repository}/issues/${issue.number}`);
+    if (
+      latest.state !== "open" ||
+      latest.pull_request ||
+      bodyHash(latest.body) !== project.ingestion.issueBodySha256
+    ) {
+      results.push({
+        issue: issue.number,
+        status: "changed-before-acknowledgement",
+      });
+      continue;
+    }
+    if (!commented)
+      await api(`/repos/${repository}/issues/${issue.number}/comments`, {
+        method: "POST",
+        body: { body: `${successComment}\n\n${marker}` },
+      });
+    await api(`/repos/${repository}/issues/${issue.number}`, {
+      method: "PATCH",
+      body: { state: "closed", state_reason: "completed" },
+    });
+    results.push({ issue: issue.number, status: "completed" });
+  }
+  return results;
+}
+async function output(values) {
+  if (process.env.GITHUB_OUTPUT)
+    await appendFile(
+      process.env.GITHUB_OUTPUT,
+      Object.entries(values)
+        .map(([k, v]) => `${k}=${v}`)
+        .join("\n") + "\n",
+    );
+}
+async function main() {
+  const mode = process.argv[2] ?? "prepare";
+  const repository = requireOwner(
+    process.env.GITHUB_REPOSITORY ?? "logicrw/awesome-jev-projects",
+  );
+  const token = process.env.GITHUB_TOKEN;
+  if (!token)
+    throw new Error(
+      "GITHUB_TOKEN is required for workflow repository operations",
+    );
+  const api = createGitHubClient({ token });
+  const resultPath =
+    process.env.INGEST_RESULT_FILE ??
+    resolve(
+      process.env.RUNNER_TEMP ?? resolve(root, ".sites-runtime"),
+      "ingestion-result.json",
+    );
+  if (mode === "prepare") {
+    const event = JSON.parse(
+      await readFile(process.env.GITHUB_EVENT_PATH, "utf8"),
+    );
+    if (
+      event.repository?.full_name !== repository ||
+      event.repository.private === true
+    )
+      throw new Error("Workflow event must belong to this public repository");
+    const projects = JSON.parse(
+      await readFile(resolve(root, "src/data/projects.json"), "utf8"),
+    );
+    const taxonomy = JSON.parse(
+      await readFile(resolve(root, "src/data/taxonomy.json"), "utf8"),
+    );
+    const exclusions = JSON.parse(
+      await readFile(resolve(root, "radar/exclusions.json"), "utf8"),
+    );
+    const enrich = createSummaryEnricher();
+    let result;
+    if (process.env.INGEST_MODELS_PROBE === "true") {
+      if (process.env.GITHUB_EVENT_NAME !== "workflow_dispatch")
+        throw new Error("Models probes require manual workflow dispatch");
+      const repo = {
+        name: "jev-probe",
+        description:
+          "A command-line tool that uses Jev to classify log lines before passing relevant context to an Agent.",
+      };
+      const summary = await enrich({
+        repo,
+        readme:
+          "# Jev probe\n\nA command-line tool that uses Jev to classify log lines before passing relevant context to an Agent.",
+        fallback: summarize(repo, "", taxonomy),
+      });
+      result = { status: "models-probe", enrichment: summary.enrichment };
+    } else {
+      const number = Number(
+        event.issue?.number ?? process.env.INGEST_ISSUE_NUMBER,
+      );
+      if (!Number.isSafeInteger(number) || number < 1)
+        throw new Error("A positive issue number is required");
+      const issue = await api(`/repos/${repository}/issues/${number}`);
+      result = await prepareSubmission({
+        issue,
+        repository,
+        projects,
+        taxonomy,
+        exclusions,
+        api,
+        enrich,
+      });
+      if (result.status === "ready")
+        await atomicJSON(resolve(root, "src/data/projects.json"), [
+          ...projects,
+          result.project,
+        ]);
+    }
+    await mkdir(dirname(resultPath), { recursive: true });
+    await atomicJSON(resultPath, result);
+    await output({
+      ready: ["ready", "resume"].includes(result.status),
+      status: result.status,
+    });
+    console.log(
+      JSON.stringify({
+        status: result.status,
+        reason: result.reason,
+        enrichment: result.project?.enrichment ?? result.enrichment,
+      }),
+    );
+    if (process.env.GITHUB_STEP_SUMMARY)
+      await appendFile(
+        process.env.GITHUB_STEP_SUMMARY,
+        `Ingestion result: **${result.status}**\n\n${result.reason ?? ""}\n\nModels: ${result.project?.enrichment?.ai?.status ?? result.enrichment?.ai?.status ?? "not-called"}\n`,
+      );
+  } else if (mode === "publish") {
+    if (process.env.INGEST_DRY_RUN === "true")
+      throw new Error("Dry-run publication is forbidden");
+    const prepared = JSON.parse(await readFile(resultPath, "utf8"));
+    if (!["ready", "resume"].includes(prepared.status))
+      throw new Error("No validated prepared project");
+    const result = await publishSubmission({
+      api,
+      repository,
+      project: prepared.project,
+    });
+    await atomicJSON(resultPath, { ...prepared, publication: result });
+    await output({
+      ingested: result.status === "ingested",
+      commit: result.commit ?? "",
+    });
+    console.log(JSON.stringify(result));
+  } else if (mode === "acknowledge") {
+    const projects = JSON.parse(
+      await readFile(resolve(root, "src/data/projects.json"), "utf8"),
+    );
+    if (!projects.some((p) => p.ingestion?.repository === repository)) {
+      console.log("No ingested submissions awaiting reconciliation.");
+      return;
+    }
+    const revision = process.env.DEPLOYED_SHA;
+    if (!/^[a-f\d]{40}$/.test(revision ?? ""))
+      throw new Error("Exact deployed source SHA is required");
+    let publishedProjects;
+    for (let attempt = 0; attempt < 6; attempt++) {
+      try {
+        const response = await fetch(
+          `${SITE_URL}projects.json?deployment=${revision}`,
+          {
+            headers: { "Cache-Control": "no-cache" },
+            signal: AbortSignal.timeout(15000),
+          },
+        );
+        if (!response.ok)
+          throw new Error(`Published snapshot HTTP ${response.status}`);
+        publishedProjects = await response.json();
+        if (!Array.isArray(publishedProjects))
+          throw new Error("Published snapshot is not an array");
+        const expected = projects.filter(
+          (p) => p.ingestion?.repository === repository,
+        );
+        if (
+          expected.every((p) =>
+            publishedProjects.some(
+              (row) =>
+                row.id === p.id && publicIdentity(row) === publicIdentity(p),
+            ),
+          )
+        )
+          break;
+        publishedProjects = null;
+      } catch {
+        publishedProjects = null;
+      }
+      if (attempt < 5) await new Promise((r) => setTimeout(r, 5000));
+    }
+    if (!publishedProjects)
+      throw new Error(
+        "Published project snapshot not confirmed; issues remain open",
+      );
+    const results = await acknowledgePublished({
+      api,
+      repository,
+      projects,
+      publishedProjects,
+    });
+    console.log(JSON.stringify({ acknowledgements: results }));
+  } else throw new Error("Unknown ingestion command");
+}
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(resolve(process.argv[1])).href
+)
+  main().catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
