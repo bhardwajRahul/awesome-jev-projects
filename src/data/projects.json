@@ -6330,5 +6330,96 @@
         "note": "开源代码仓库"
       }
     ]
+  },
+  {
+    "id": "hr98w:jev-visual",
+    "name": "jev-visual",
+    "author": "hr98w",
+    "url": "https://github.com/hr98w/jev-visual",
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "在 Apple Silicon Mac 本地跑的视觉版 Jev 实验。对单张图片做选择、打分与是非判断，自带 3 个本地视觉游戏 Demo。",
+    "plainSummaryEn": "Local Jev-like visual inference experiment on Apple Silicon Mac. Scores and classifies single images across multiple questions with 3 playable game demos.",
+    "jevDecisionPoint": "复用图像上下文，读取模型 logits 直接为候选答案打分，由本地代码拼装结构化结果。",
+    "jevDecisionPointEn": "Reuses multimodal visual context to score candidate answers directly from logits without autoregressive generation.",
+    "highlightBenefit": "把 Jev 的多问题单次打分范式拓展到端侧视觉场景，本地秒级跑通分拣与体感游戏。",
+    "highlightBenefitEn": "Brings Jev-style single-pass multi-question scoring to local edge vision on Apple Silicon.",
+    "tags": [
+      "Apple Silicon",
+      "MLX",
+      "Local Vision",
+      "Gaming",
+      "Inference"
+    ],
+    "claimStatus": "社区开源实验：基于 Qwen3.5-0.8B 与 MLX。非 TypeSafe 官方实现，附带完整本地视频与源码。",
+    "summarySource": "source-reviewed",
+    "stars": 75,
+    "forks": 4,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-17T17:45:56Z",
+    "updatedAt": "2026-09-18T08:53:11Z",
+    "pushedAt": "2026-09-18T08:53:11Z",
+    "lastCommitAt": "2026-09-18T08:53:11Z",
+    "lastSyncedAt": "2026-09-18T10:06:17.785Z",
+    "metadataFetchedAt": "2026-09-18T10:06:17.785Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/150772264?v=4",
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "evidence": [
+      {
+        "url": "https://github.com/hr98w/jev-visual/blob/main/README.zh-CN.md",
+        "note": "项目中文 README 及视觉游戏演示"
+      },
+      {
+        "url": "https://github.com/hr98w/jev-visual",
+        "note": "开源代码仓库"
+      }
+    ]
+  },
+  {
+    "id": "rokcso:bluenoise",
+    "name": "bluenoise",
+    "author": "rokcso",
+    "url": "https://github.com/rokcso/bluenoise",
+    "category": "Context GC & Filter",
+    "plainSummary": "推特/X 浏览器的降噪过滤扩展。本地规则过滤垃圾，疑难回复成批交给 Jev 判定噪音概率（>=0.9 则隐藏）。",
+    "plainSummaryEn": "X/Twitter browser extension filtering noise. Uses local rules first, batching ambiguous replies to Jev for noise probability scoring (filters at >=0.9).",
+    "jevDecisionPoint": "对未命中本地规则的长尾回复，单次最多批量提交 25 条询问 noul 噪音概率，由代码决定是否隐藏。",
+    "jevDecisionPointEn": "Batches up to 25 candidate replies per System One request, querying noul noise probability to decide DOM visibility.",
+    "highlightBenefit": "不调用任何 X 官方 API，用本地混合架构实现毫秒级社交媒体时间线清洁。",
+    "highlightBenefitEn": "Zero X API dependency; combines fast local matching with Jev semantic gatekeeping for clean timelines.",
+    "tags": [
+      "Twitter Extension",
+      "Noise Filter",
+      "Browser Extension",
+      "Content Moderation"
+    ],
+    "claimStatus": "纯本地+可选云端混合设计；仅在开启 Jev 试验选项时使用用户私有 Key 请求 System One 接口。",
+    "summarySource": "source-reviewed",
+    "stars": 82,
+    "forks": 2,
+    "openIssues": 0,
+    "license": "GPL-3.0",
+    "createdAt": "2026-08-20T10:08:40Z",
+    "updatedAt": "2026-09-18T09:01:18Z",
+    "pushedAt": "2026-09-18T09:01:18Z",
+    "lastCommitAt": "2026-09-18T09:01:18Z",
+    "lastSyncedAt": "2026-09-18T10:06:17.785Z",
+    "metadataFetchedAt": "2026-09-18T10:06:17.785Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/47956905?v=4",
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "evidence": [
+      {
+        "url": "https://github.com/rokcso/bluenoise/blob/main/src/domain/ai-filter.ts",
+        "note": "Jev System One 接口调用与噪音概率过滤实现"
+      },
+      {
+        "url": "https://github.com/rokcso/bluenoise",
+        "note": "开源代码仓库"
+      }
+    ]
   }
 ]
