@@ -6285,5 +6285,50 @@
     "plainSummaryEn": "openai-scala-client: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
     "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+  },
+  {
+    "id": "phd-peter:ego-jev",
+    "name": "ego-jev",
+    "author": "phd-peter",
+    "url": "https://github.com/phd-peter/ego-jev",
+    "category": "Browser & OS Action",
+    "plainSummary": "把 Jev 接入 Ego Lite 浏览器。读取轻量语义快照，由 Jev 决定点哪个控件、怎么滚轮，需要输文字时才叫大模型。",
+    "plainSummaryEn": "Integrates Jev with Ego Lite browser agent. Reads semantic snapshots to decide DOM clicks and wheel scrolls, delegating text entry to LLMs.",
+    "jevDecisionPoint": "读取当前页面的动作空间候选，在单次请求里选定目标控件与操作类型；由 ego-lite 本地执行。",
+    "jevDecisionPointEn": "Evaluates candidate action space from page snapshots to pick target controls and action types in a single request.",
+    "highlightBenefit": "用轻量语义快照替代昂贵的视觉多模态，5 步跑完维基百科复杂导航，延迟极低。",
+    "highlightBenefitEn": "Substitutes heavy vision models with lightweight semantic snapshots for sub-second browser loops.",
+    "tags": [
+      "Ego Lite",
+      "Browser Automation",
+      "Agent",
+      "TypeScript"
+    ],
+    "claimStatus": "作者自测：在真实 macOS 环境下以 5 步动作完成维基百科端到端导航烟雾测试。本站未独立复测性能。",
+    "summarySource": "source-reviewed",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T06:51:40Z",
+    "updatedAt": "2026-09-18T07:04:18Z",
+    "pushedAt": "2026-09-18T07:04:18Z",
+    "lastCommitAt": "2026-09-18T07:04:18Z",
+    "lastSyncedAt": "2026-09-18T10:02:04.798Z",
+    "metadataFetchedAt": "2026-09-18T10:02:04.798Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/175372403?v=4",
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "evidence": [
+      {
+        "url": "https://github.com/phd-peter/ego-jev/blob/main/README.md",
+        "note": "Ego Lite 与 Jev 集成代码及维基百科 Smoke 证据"
+      },
+      {
+        "url": "https://github.com/phd-peter/ego-jev",
+        "note": "开源代码仓库"
+      }
+    ]
   }
 ]
