@@ -6469,7 +6469,7 @@
     "metadataStatus": "ok",
     "avatarUrl": "https://avatars.githubusercontent.com/u/33199973?v=4",
     "verificationStatus": "source-verified",
-    "runtimeVerified": true,
+    "runtimeVerified": false,
     "discoveredAt": "2026-09-18T10:20:12.116Z",
     "claimStatusEn": "Includes 9 games with 144 real model decision samples on typesafe/jev-1.13-20260917 with live web demo and replays.",
     "evidence": [
