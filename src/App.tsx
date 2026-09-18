@@ -79,6 +79,15 @@ type RadarState = {
 const seedProjects = rawProjects as Project[];
 const seedScan = rawRadar as RadarState;
 const categoryInfo: Record<string, { label: string; icon: LucideIcon }> = {
+  "SDK & Integrations": { label: "SDK 与兼容接入", icon: Braces },
+  "Evaluation & Observability": { label: "评测与观测", icon: SlidersHorizontal },
+  "Voice & Conversation": { label: "语音与对话", icon: Terminal },
+  "Data & Search": { label: "数据与搜索", icon: Search },
+  "Classification & Taxonomy": { label: "分类与目录", icon: Layers },
+  "SDK & Decision Frameworks": { label: "SDK 与决策框架", icon: Braces },
+  "Creative Tools": { label: "音乐与界面创作", icon: Sparkles },
+  "Benchmarks & Evaluation": { label: "基准与评测", icon: SlidersHorizontal },
+  "Decision Tools": { label: "决策工具", icon: Workflow },
   "Browser & OS Action": { label: "浏览器与桌面", icon: Globe },
   "MCP & Integrations": { label: "MCP 与集成", icon: Braces },
   "CLI & Pipelines": { label: "命令行与流水线", icon: Terminal },
@@ -147,6 +156,21 @@ const validProject = (x: unknown): x is Project => {
         )))
   );
 };
+const searchProjects = (fuse: Fuse<Project>, query: string): Project[] => {
+  const aliases: Record<string, string[]> = {
+    省成本: ["Cost Optimization", "Token Saver"],
+    省钱: ["Cost Optimization", "Token Saver"],
+    降本: ["Cost Optimization", "Token Saver"],
+    浏览器: ["browser"],
+    上下文: ["context", "compaction"],
+    "9hz": ["9hz", "9 hz"],
+  };
+  const terms = [query, ...(aliases[query.trim().toLowerCase()] ?? [])];
+  const hits = new Map<string, Project>();
+  for (const term of terms)
+    for (const hit of fuse.search(term)) hits.set(hit.item.id, hit.item);
+  return [...hits.values()];
+};
 const getSaved = () => {
   try {
     const x = JSON.parse(localStorage.getItem("awesome-jev:saved") ?? "[]");
@@ -197,10 +221,18 @@ function Modal({
 function App() {
   const [projects, setProjects] = useState<Project[]>(seedProjects);
   const [scan, setScan] = useState<RadarState>(seedScan);
-  const [refreshState, setRefreshState] = useState('snapshot');
+  const [refreshState, setRefreshState] = useState("snapshot");
   const [checkedAt, setCheckedAt] = useState(Date.now());
-  const stale = !!scan.lastAttemptAt && checkedAt-Date.parse(scan.lastAttemptAt)>26*60*60*1000;
+  const stale =
+    !!scan.lastAttemptAt &&
+    checkedAt - Date.parse(scan.lastAttemptAt) > 26 * 60 * 60 * 1000;
   useEffect(() => {
+    if (import.meta.env.DEV) {
+      setProjects(seedProjects);
+      setScan(seedScan);
+      setRefreshState("local");
+      return;
+    }
     const controller = new AbortController();
     const refresh = async () => {
       setCheckedAt(Date.now());
@@ -210,17 +242,33 @@ function App() {
         const [p, r] = await Promise.all([
           fetch(base + "projects.json", {
             cache: "no-cache",
-            signal: AbortSignal.any([controller.signal, AbortSignal.timeout(10000)]),
+            signal: AbortSignal.any([
+              controller.signal,
+              AbortSignal.timeout(10000),
+            ]),
           }),
           fetch(base + "radar.json", {
             cache: "no-cache",
-            signal: AbortSignal.any([controller.signal, AbortSignal.timeout(10000)]),
+            signal: AbortSignal.any([
+              controller.signal,
+              AbortSignal.timeout(10000),
+            ]),
           }),
         ]);
-        if (!p.ok || !r.ok) throw new Error('snapshot unavailable');
+        if (!p.ok || !r.ok) throw new Error("snapshot unavailable");
         const [projectText, status] = await Promise.all([p.text(), r.json()]);
-        const rows=JSON.parse(projectText);
-        if(status.projectsSha256){const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(projectText));const hash=[...new Uint8Array(bytes)].map(b=>b.toString(16).padStart(2,'0')).join('');if(hash!==status.projectsSha256)throw new Error('snapshot mismatch');}
+        const rows = JSON.parse(projectText);
+        if (status.projectsSha256) {
+          const bytes = await crypto.subtle.digest(
+            "SHA-256",
+            new TextEncoder().encode(projectText),
+          );
+          const hash = [...new Uint8Array(bytes)]
+            .map((b) => b.toString(16).padStart(2, "0"))
+            .join("");
+          if (hash !== status.projectsSha256)
+            throw new Error("snapshot mismatch");
+        }
         if (
           !Array.isArray(rows) ||
           rows.length < 14 ||
@@ -241,12 +289,12 @@ function App() {
               ),
           )
         )
-          throw new Error('invalid snapshot');
-        setRefreshState('ok');
+          throw new Error("invalid snapshot");
+        setRefreshState("ok");
         setProjects(rows);
         setScan(status);
       } catch {
-        if(!controller.signal.aborted)setRefreshState('offline');
+        if (!controller.signal.aborted) setRefreshState("offline");
         /* Keep the last usable snapshot when offline or GitHub is unavailable. */
       }
     };
@@ -329,6 +377,7 @@ function App() {
           { name: "plainSummary", weight: 2 },
           "author",
           "jevDecisionPoint",
+          "highlightBenefit",
           "category",
           "tags",
         ],
@@ -370,9 +419,7 @@ function App() {
           (q.category !== undefined && typeof q.category !== "string")
         )
           throw new Error("query and category must be strings");
-        const found = q.query
-          ? fuse.search(q.query).map((r) => r.item)
-          : projects;
+        const found = q.query ? searchProjects(fuse, q.query) : projects;
         return {
           projects: found
             .filter((p) => !q.category || p.category === q.category)
@@ -399,7 +446,7 @@ function App() {
   }, [projects, fuse, scan.lastAttemptAt]);
   const visible = useMemo(() => {
     const list = searchTerm.trim()
-      ? fuse.search(searchTerm).map((x) => x.item)
+      ? searchProjects(fuse, searchTerm)
       : projects;
     return list
       .filter(
@@ -542,12 +589,11 @@ function App() {
       <main className="page">
         <section className="hero" aria-labelledby="hero-heading">
           <div className="hero-copy">
-            <h1 id="hero-heading">
-              小决策，<span>大可能。</span>
-            </h1>
+            <h1 id="hero-heading">拿到 Jev，然后呢？</h1>
             <p>
-              发现用 <strong>Jev</strong> 构建的下一代开源工具。
-              <br className="mobile-break" /> 不讲黑话，看看它们到底能做什么。
+              收集社区里真跑起来了的开源项目。
+              <br className="mobile-break" />{" "}
+              看看别人怎么拿它做选择、省成本和跑高频。
             </p>
             <a
               className="text-link"
@@ -561,7 +607,7 @@ function App() {
           </div>
           <div className="decision-canvas" aria-label="Jev 决策机制示意">
             <div className="canvas-heading">
-              <span>ONE SMALL DECISION.</span>
+              <span>INPUT → DECISION</span>
               <span className="mono">jev.choice()</span>
             </div>
             <div className="decision-flow">
@@ -591,7 +637,7 @@ function App() {
               </div>
             </div>
             <div className="canvas-footer">
-              把明确的判断，交给擅长做判断的模型。
+              把重活留给大模型，把选择题交给 Jev。
               <ArrowRight size={14} />
             </div>
           </div>
@@ -628,11 +674,15 @@ function App() {
               </strong>
               <span>
                 最近扫描 ·{" "}
-                {stale ? "快照已过期" : refreshState === "offline" ? "保留上次快照" : scan.status === "complete"
-                  ? "已完成"
-                  : scan.status === "partial"
-                    ? "部分来源可用"
-                    : "等待同步"}
+                {stale
+                  ? "快照已过期"
+                  : refreshState === "offline"
+                    ? "保留上次快照"
+                    : scan.status === "complete"
+                      ? "已完成"
+                      : scan.status === "partial"
+                        ? "部分来源可用"
+                        : "等待同步"}
               </span>
             </span>
             <ChevronRight size={17} />
@@ -661,7 +711,7 @@ function App() {
         <section className="explorer" id="explore">
           <aside className="sidebar">
             <div className="side-title">
-              探索方向 <span>{categories.length}</span>
+              分类 <span>{categories.length}</span>
             </div>
             <div className="category-list">
               <button
@@ -719,7 +769,7 @@ function App() {
                   aria-label="搜索项目"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="搜索项目、作者，或你想解决的问题…"
+                  placeholder="搜项目、作者，或场景（如：省成本、浏览器、9Hz、上下文）..."
                 />
                 {query ? (
                   <button
@@ -966,9 +1016,9 @@ function App() {
             rel="noreferrer"
           >
             <Zap size={16} />
-            Built around small decisions.
+            Awesome Jev · 开源项目雷达
           </a>
-          <span>Awesome Jev · 社区发现，由你继续。</span>
+          <span>GitHub 数据定时同步</span>
           <button onClick={() => setModal("radar")}>
             数据与来源
             <ArrowUpRight size={13} />
@@ -1123,10 +1173,10 @@ function App() {
             </div>
             <div>
               <dt>许可证</dt>
-              <dd>{active.license ?? "未声明"}</dd>
+              <dd>{active.license ?? "API 未识别"}</dd>
             </div>
             <div>
-              <dt>最近推送</dt>
+              <dt>最近提交</dt>
               <dd>{date(active.lastCommitAt)}</dd>
             </div>
           </dl>

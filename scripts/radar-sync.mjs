@@ -34,6 +34,7 @@ export function verifyIntegration(repo, text) {
       text,
     );
   const listOnly =
+    /^(?:docs|documentation|.*-docs)$/i.test(repo.name) ||
     /^(?:awesome-|awesome$)|(?:curated (?:list|collection)|awesome list|collection of (?:ai|llm|tools))/i.test(
       repo.name + " " + (repo.description ?? ""),
     );
@@ -64,10 +65,16 @@ export function summarize(repo, readme, taxonomy) {
   const matches = taxonomy
     .map((rule) => ({
       ...rule,
-      score: rule.patterns.reduce(
-        (s, p) => s + (new RegExp(p, "i").test(focused) ? 1 : 0),
-        0,
-      ),
+      score: rule.patterns.reduce((score, pattern) => {
+        const re = new RegExp(pattern, "i");
+        return (
+          score +
+          (re.test(`${repo.name} ${repo.description ?? ""}`) ? 4 : 0) +
+          (re.test((repo.topics ?? []).join(" ")) ? 3 : 0) +
+          (re.test(readme.slice(0, 1500)) ? 2 : 0) +
+          (re.test(focused) ? 1 : 0)
+        );
+      }, 0),
     }))
     .sort((a, b) => b.score - a.score);
   const rule = matches[0]?.score ? matches[0] : null;
@@ -140,6 +147,7 @@ export async function main() {
   );
   const report = {
     lastAttemptAt: started,
+    mode: process.env.RADAR_SOURCES === "code" ? "code-only" : "full",
     lastSuccessfulAt: old.lastSuccessfulAt ?? null,
     status: "partial",
     sources: [],
@@ -174,17 +182,26 @@ export async function main() {
       nextSearch = Date.now() + (code ? 6500 : token ? 2200 : 6200);
     }
     for (let attempt = 0; attempt < 3; attempt++) {
-      const response = await fetch("https://api.github.com" + path, {
-        headers: {
-          Accept: raw
-            ? "application/vnd.github.raw+json"
-            : "application/vnd.github+json",
-          "X-GitHub-Api-Version": "2022-11-28",
-          "User-Agent": "awesome-jev-radar",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-        signal: AbortSignal.timeout(20000),
-      });
+      let response;
+      try {
+        response = await fetch("https://api.github.com" + path, {
+          headers: {
+            Accept: raw
+              ? "application/vnd.github.raw+json"
+              : "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "awesome-jev-radar",
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+          signal: AbortSignal.timeout(20000),
+        });
+      } catch (error) {
+        if (attempt < 2) {
+          await pause(1500 * (attempt + 1));
+          continue;
+        }
+        throw error;
+      }
       if (response.ok) return raw ? response.text() : response.json();
       let detail;
       try {
@@ -244,7 +261,7 @@ export async function main() {
         page++
       ) {
         const result = await api(
-          `/search/${kind}?q=${encodeURIComponent(q + " is:public")}&per_page=100&page=${page}&sort=${kind === "code" ? "indexed" : kind === "commits" ? "committer-date" : "updated"}&order=desc`,
+          `/search/${kind}?q=${encodeURIComponent(q + (kind === "code" ? "" : " is:public"))}&per_page=100&page=${page}&sort=${kind === "code" ? "indexed" : kind === "commits" ? "committer-date" : "updated"}&order=desc`,
           { search: true, code: kind === "code" },
         );
         source.pages++;
@@ -259,6 +276,13 @@ export async function main() {
         if (firstPage > 1 || page < lastPage) source.status = "bounded";
         if (result.items.length < 100 || page >= lastPage) break;
       }
+      if (source.total > 1000) source.status = "search-cap";
+      else if (
+        source.status === "bounded" &&
+        firstPage === 1 &&
+        source.count >= source.total
+      )
+        source.status = "ok";
       console.log(
         `[search] ${source.name}: ${source.count}/${source.total} (${source.status})`,
       );
@@ -272,6 +296,15 @@ export async function main() {
     }
     return found;
   }
+  let exclusions = [];
+  try {
+    exclusions = JSON.parse(
+      await readFile(resolve(root, "radar/exclusions.json"), "utf8"),
+    );
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  const excluded = new Set(exclusions.map((x) => x.repo.toLowerCase()));
   const byRepo = new Map(
     known.map((p) => [normalizeRepo(p.url)?.toLowerCase(), p]),
   );
@@ -282,6 +315,7 @@ export async function main() {
       !full ||
       repo.private ||
       repo.fork ||
+      excluded.has(full.toLowerCase()) ||
       byRepo.has(full.toLowerCase()) ||
       full.toLowerCase() === report.submissionRepository.toLowerCase()
     )
@@ -294,77 +328,93 @@ export async function main() {
     candidates.set(full.toLowerCase(), value);
   };
   if (!metadataOnly) {
-    for (const q of [
-      "topic:jev fork:false",
-      "topic:typesafe-ai fork:false",
-      "topic:typesafe ai fork:false",
-      '"api.typesafe.ai" in:readme fork:false',
-      '"typesafe.ai" "jev" in:readme fork:false',
-      '"from typesafe import jev" in:readme fork:false',
-      '"@typesafe/jev" in:readme fork:false',
-    ])
-      for (const repo of await search("repositories", q)) add(repo);
+    if (process.env.RADAR_SOURCES !== "code")
+      for (const q of [
+        "topic:jev fork:false",
+        "typesafe jev fork:false",
+        "typesafe-ai fork:false",
+        "jev-mcp fork:false",
+        "jev decision fork:false",
+        '\"TypeSafe AI\" in:readme fork:false',
+        '\"Jev API\" in:readme fork:false',
+        "topic:typesafe-ai fork:false",
+        "topic:typesafe ai fork:false",
+        '"api.typesafe.ai" in:readme fork:false',
+        '"typesafe.ai" "jev" in:readme fork:false',
+        '"from typesafe import jev" in:readme fork:false',
+        '"@typesafe/jev" in:readme fork:false',
+      ])
+        for (const repo of await search("repositories", q)) add(repo);
     for (const q of [
       '"api.typesafe.ai" in:file',
-      '"typesafe.ai" "jev" in:file',
-      '"from typesafe import jev" in:file',
+      '"typesafe.ai" in:file',
+      '"from typesafe import" in:file',
       '"@typesafe/jev" in:file',
     ])
       for (const item of await search("code", q))
         add(item.repository, item.path);
-    for (const q of ['"typesafe.ai"', '"Jev" "AI"'])
-      for (const item of await search("commits", q)) add(item.repository);
-    for (const q of [
-      '"typesafe.ai" is:pr in:title,body',
-      '"Jev" "TypeSafe" is:pr in:title,body',
-    ])
-      for (const item of await search("issues", q)) {
-        const full = item.repository_url?.replace(
-          "https://api.github.com/repos/",
-          "",
-        );
-        if (full) add({ full_name: full, name: full.split("/")[1] });
+    if (process.env.RADAR_SOURCES !== "code")
+      for (const q of ['"typesafe.ai"', '"Jev" "AI"'])
+        for (const item of await search("commits", q)) add(item.repository);
+    if (process.env.RADAR_SOURCES !== "code")
+      for (const q of [
+        '"typesafe.ai" is:pr in:title,body',
+        '"Jev" "TypeSafe" is:pr in:title,body',
+      ])
+        for (const item of await search("issues", q)) {
+          const full = item.repository_url?.replace(
+            "https://api.github.com/repos/",
+            "",
+          );
+          if (full) add({ full_name: full, name: full.split("/")[1] });
+        }
+  }
+  if (process.env.RADAR_SOURCES !== "code")
+    for (const project of known) {
+      const repo = normalizeRepo(project.url);
+      if (!repo) {
+        report.metadata.failed++;
+        project.metadataStatus = "invalid-url";
+        continue;
       }
-  }
-  for (const project of known) {
-    const repo = normalizeRepo(project.url);
-    if (!repo) {
-      report.metadata.failed++;
-      project.metadataStatus = "invalid-url";
-      continue;
+      try {
+        const meta = await api(`/repos/${repo}`);
+        const commits = await api(`/repos/${repo}/commits?per_page=1`);
+        Object.assign(project, {
+          stars: meta.stargazers_count,
+          forks: meta.forks_count,
+          openIssues: meta.open_issues_count,
+          license:
+            meta.license?.spdx_id === "NOASSERTION"
+              ? null
+              : (meta.license?.spdx_id ?? null),
+          lastCommitAt: commits[0]?.commit.committer.date ?? null,
+          headSha: commits[0]?.sha ?? null,
+          createdAt: meta.created_at,
+          pushedAt: meta.pushed_at,
+          avatarUrl: meta.owner.avatar_url,
+          archived: meta.archived,
+          metadataStatus: "ok",
+          metadataFetchedAt: new Date().toISOString(),
+        });
+        report.metadata.ok++;
+      } catch (e) {
+        project.metadataStatus = e.status === 404 ? "unavailable" : "stale";
+        project.metadataError = e.message;
+        report.metadata.failed++;
+        console.log(`[metadata] ${repo}: ${e.message}`);
+      }
     }
-    try {
-      const meta = await api(`/repos/${repo}`);
-      const commits = await api(`/repos/${repo}/commits?per_page=1`);
-      Object.assign(project, {
-        stars: meta.stargazers_count,
-        forks: meta.forks_count,
-        openIssues: meta.open_issues_count,
-        license:
-          meta.license?.spdx_id === "NOASSERTION"
-            ? null
-            : (meta.license?.spdx_id ?? null),
-        lastCommitAt: commits[0]?.commit.committer.date ?? null,
-        headSha: commits[0]?.sha ?? null,
-        createdAt: meta.created_at,
-        pushedAt: meta.pushed_at,
-        avatarUrl: meta.owner.avatar_url,
-        archived: meta.archived,
-        metadataStatus: "ok",
-        metadataFetchedAt: new Date().toISOString(),
-      });
-      report.metadata.ok++;
-    } catch (e) {
-      project.metadataStatus = e.status === 404 ? "unavailable" : "stale";
-      project.metadataError = e.message;
-      report.metadata.failed++;
-      console.log(`[metadata] ${repo}: ${e.message}`);
-    }
-  }
   report.sources.push({
     name: "Known repository metadata + latest commit",
-    status: report.metadata.failed ? "partial" : "ok",
-    count: report.metadata.ok,
+    status:
+      process.env.RADAR_SOURCES === "code"
+        ? "retained"
+        : report.metadata.failed
+          ? "partial"
+          : "ok",
+    count:
+      process.env.RADAR_SOURCES === "code" ? known.length : report.metadata.ok,
   });
   const list = [...candidates.values()].sort(
     (a, b) =>
@@ -394,7 +444,7 @@ export async function main() {
       }
       const commits = await api(`/repos/${full}/commits?per_page=1`);
       const sha = commits[0]?.sha;
-      if (!sha) throw new Error('No immutable commit available');
+      if (!sha) throw new Error("No immutable commit available");
       let readme = "";
       let readmePath = "README.md";
       let readmeSha = null;
@@ -412,7 +462,20 @@ export async function main() {
         sourcePath = readmePath,
         sourceContent = readme;
       if (!evidence.verified) {
-        for (const path of [...candidate.paths].slice(0, 3)) {
+        for (const path of [...candidate.paths].slice(0, 5)) {
+          if (
+            /(?:^|\/)(?:docs?|documentation|node_modules|vendor)(?:\/)|(?:\.env(?:\.[\w.-]+)?|package\.json|\.lock|package-lock\.json|yarn\.lock|pnpm-lock\.yaml|models\.json|catalog\.json)$/.test(
+              path,
+            )
+          ) {
+            receipts.push({
+              repo: full,
+              path,
+              status: "rejected-evidence",
+              reason: "documentation or dependency/catalog metadata only",
+            });
+            continue;
+          }
           try {
             const f = await api(
               `/repos/${full}/contents/${encodeURIComponent(path).replaceAll("%2F", "/")}?ref=${sha}`,
@@ -499,7 +562,7 @@ export async function main() {
     report.discovery.deferred;
   report.status = metadataOnly
     ? "metadata-only"
-    : failures
+    : failures || process.env.RADAR_SOURCES === "code"
       ? "partial"
       : "complete";
   if (report.status === "complete")
@@ -507,7 +570,9 @@ export async function main() {
   report.finishedAt = new Date().toISOString();
   report.totalProjects = known.length;
   await atomicJSON(resolve(root, "radar/state.json"), reviewState);
-  report.projectsSha256 = createHash("sha256").update(JSON.stringify(known, null, 2)+"\n").digest("hex");
+  report.projectsSha256 = createHash("sha256")
+    .update(JSON.stringify(known, null, 2) + "\n")
+    .digest("hex");
   await atomicJSON(dataPath, known);
   await atomicJSON(statusPath, report);
   await atomicJSON(
@@ -523,7 +588,8 @@ export async function main() {
       discovery: report.discovery,
     }),
   );
-  if (report.metadata.ok === 0) process.exitCode = 1;
+  if (report.metadata.ok === 0 && process.env.RADAR_SOURCES !== "code")
+    process.exitCode = 1;
 }
 if (
   process.argv[1] &&

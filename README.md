@@ -28,12 +28,12 @@ Vite + React + TypeScript + Tailwind CSS. Fonts are self-hosted. The site has fu
 1. Searches repository topics, README references, code, commits, and PRs.
 2. Fetches README/code evidence. Requires an exact provider signal, Jev/AI context, and implementation signal. Excludes forks, private repositories, and obvious mention-only directories. This is a conservative heuristic, not proof of runtime adoption.
 3. Refreshes stars, forks, license, creation date, and the **latest default-branch commit date** of known projects. `openIssues` uses GitHub's counter and includes pull requests.
-4. Builds a three-part extractive explanation with configurable taxonomy rules. The description preserves the author's overview; decision and benefit text are category-based inferences, explicitly marked for review. No paid LLM or external inference key is required. Remote text is never executed or treated as instructions. New categories may derive from repository topics, so UI categories are not a fixed enum.
+4. Builds a three-part extractive explanation with configurable taxonomy rules. The description preserves the author's overview; decision and benefit text are category-based inferences, explicitly marked for review. No paid LLM or external inference key is required. Human-reviewed summaries are preserved during later runs; `radar/exclusions.json` keeps reviewed false positives out of future scans. Remote text is never executed or treated as instructions. New categories may derive from repository topics, so UI categories are not a fixed enum.
 5. Validates the dataset, runs the production build, and commits the updated JSON and audit receipts together. This runs in the same workflow because a `GITHUB_TOKEN` commit does not trigger another push workflow.
 
 ### Coverage, not omniscience
 
-Search APIs expose at most 1,000 results. Default discovery is bounded to 2 pages per query and 60 candidate verifications per run. `radar/state.json` rotates search pages within GitHub’s 1,000-result ceiling and prioritizes unchecked candidates. `src/data/radar.json` records bounded, partial, unauthenticated, and failed sources; it never calls a partial run complete. Known metadata is preserved on errors. Public code search may reject GitHub Actions' built-in token: set the optional `RADAR_GITHUB_TOKEN` repository secret to a compatible GitHub token for that source. No credential is ever bundled into the site. The other search sources continue and the missing coverage stays visible.
+Search APIs expose at most 1,000 results. Default discovery is bounded to 2 pages per query and 60 candidate verifications per run. `radar/state.json` rotates search pages within GitHub’s 1,000-result ceiling and prioritizes unchecked candidates. `src/data/radar.json` records bounded, partial, unauthenticated, and failed sources; it never calls a partial run complete. Known metadata is preserved on errors. The legacy REST code search does not accept `is:public`; the radar filters returned repositories explicitly and never reads private repository content. Public code search may reject GitHub Actions' built-in token: set the optional `RADAR_GITHUB_TOKEN` repository secret to a compatible GitHub token for that source. No credential is ever bundled into the site. The other search sources continue and the missing coverage stays visible.
 
 ```sh
 # GITHUB_TOKEN may be supplied by your shell or CI; never put it in source.
@@ -41,7 +41,7 @@ npm run radar
 node scripts/radar-sync.mjs --metadata-only
 ```
 
-`RADAR_MAX_PAGES` (1–10), `RADAR_MAX_CANDIDATES` (1–250) control the run budget. Rate-limit waits are bounded; larger waits become explicit failures. Full search history and API results are not equivalent to whole-web coverage. The pipeline is GitHub-focused.
+`RADAR_MAX_PAGES` (1–10), `RADAR_MAX_CANDIDATES` (1–250) control the run budget. `RADAR_SOURCES=code` performs a code-only supplement and retains previously fetched metadata. Rate-limit waits are bounded; larger waits become explicit failures. Full search history and API results are not equivalent to whole-web coverage. The pipeline is GitHub-focused.
 
 ## Source quality
 

@@ -99,3 +99,13 @@ test("host suffixes and hidden comments are not provider proof", () => {
     false,
   );
 });
+
+test('documentation mirrors are not runnable Jev projects', () => {
+  assert.equal(verifyIntegration({name:'litellm-docs'}, 'Jev AI from typesafe import jev').verified, false);
+});
+test('reviewed exclusions cannot appear in the published dataset', async () => {
+  const projects=JSON.parse(await readFile(new URL('../src/data/projects.json',import.meta.url),'utf8'));
+  const exclusions=JSON.parse(await readFile(new URL('../radar/exclusions.json',import.meta.url),'utf8'));
+  const urls=new Set(projects.map(p=>normalizeRepo(p.url).toLowerCase()));
+  for(const item of exclusions)assert.equal(urls.has(item.repo.toLowerCase()),false);
+});
