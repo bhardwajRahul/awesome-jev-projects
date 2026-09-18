@@ -1,6 +1,7 @@
 [
   {
     "id": "jev-ultrafast",
+    "pinned": true,
     "name": "jev-ultrafast",
     "author": "browser-use",
     "url": "https://github.com/browser-use/jev-ultrafast",
@@ -52,6 +53,7 @@
   },
   {
     "id": "typesafe-mcp",
+    "pinned": true,
     "name": "typesafe-mcp",
     "author": "itsmostafa",
     "url": "https://github.com/itsmostafa/typesafe-mcp",
@@ -106,6 +108,7 @@
   },
   {
     "id": "jev-mcp",
+    "pinned": true,
     "name": "jev-mcp",
     "author": "jkudish",
     "url": "https://github.com/jkudish/jev-mcp",
@@ -157,6 +160,7 @@
   },
   {
     "id": "semdecide",
+    "pinned": true,
     "name": "SemDecide",
     "author": "sharziki",
     "url": "https://github.com/sharziki/semdecide",
@@ -215,6 +219,7 @@
   },
   {
     "id": "jev-codex-router",
+    "pinned": true,
     "name": "Jev Codex Router",
     "author": "0xNatoshi",
     "url": "https://github.com/0xNatoshi/jev-codex-router",
@@ -274,6 +279,7 @@
   },
   {
     "id": "winnow",
+    "pinned": true,
     "name": "Winnow",
     "author": "GhalebDweikat",
     "url": "https://github.com/GhalebDweikat/winnow",
@@ -332,6 +338,7 @@
   },
   {
     "id": "jev-review",
+    "pinned": true,
     "name": "Jev Review",
     "author": "devagrawal09",
     "url": "https://github.com/devagrawal09/jev-review",
@@ -389,6 +396,7 @@
   },
   {
     "id": "blink",
+    "pinned": true,
     "name": "Blink",
     "author": "ellipsis-dev",
     "url": "https://github.com/ellipsis-dev/blink",
@@ -440,6 +448,7 @@
   },
   {
     "id": "neo4jev",
+    "pinned": true,
     "name": "neo4jev",
     "author": "jexp",
     "url": "https://github.com/jexp/neo4jev",
@@ -491,6 +500,7 @@
   },
   {
     "id": "jev-desktop",
+    "pinned": true,
     "name": "jev-desktop",
     "author": "lahfir",
     "url": "https://github.com/lahfir/agent-desktop",
@@ -555,6 +565,7 @@
   },
   {
     "id": "typesafe-ai-playground",
+    "pinned": true,
     "name": "TypeSafe AI Playground",
     "author": "markjaquith",
     "url": "https://github.com/markjaquith/typesafe-ai-playground",
@@ -606,6 +617,7 @@
   },
   {
     "id": "prism-liquidity-agent",
+    "pinned": true,
     "name": "Prism",
     "author": "irfndi",
     "url": "https://github.com/irfndi/prism-liquidity-agent",
@@ -657,6 +669,7 @@
   },
   {
     "id": "one-v-one-jev",
+    "pinned": true,
     "name": "1v1 Jev",
     "author": "emrickgarrett",
     "url": "https://github.com/emrickgarrett/OneVOneJev",
@@ -708,6 +721,7 @@
   },
   {
     "id": "typesafe-on-neon",
+    "pinned": true,
     "name": "Safer with Jev",
     "author": "andrelandgraf",
     "url": "https://github.com/andrelandgraf/typesafe-on-neon",

@@ -8,7 +8,6 @@ import {
   Braces,
   Check,
   CheckCheck,
-  ChevronRight,
   CircleHelp,
   Code2,
   Copy,
@@ -33,8 +32,6 @@ import {
   Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import rawProjects from "./data/projects.json";
-import rawRadar from "./data/radar.json";
 
 type Project = {
   id: string;
@@ -52,35 +49,19 @@ type Project = {
   license: string | null;
   lastCommitAt: string | null;
   createdAt: string | null;
-  metadataStatus: string;
   summarySource: string;
   claimStatus: string;
   avatarUrl?: string;
   metadataFetchedAt?: string;
   evidence?: { url: string; note?: string }[];
-  verificationStatus?: string;
+  pinned?: boolean;
 };
-type RadarState = {
-  lastAttemptAt: string | null;
-  lastSuccessfulAt: string | null;
-  status: string;
-  sources: {
-    name?: string;
-    query?: string;
-    status: string;
-    count?: number;
-    error?: string;
-  }[];
-  newProjects: number;
-  schedule: string;
-  schedulerStatus?: string;
-  submissionRepository?: string;
-};
-const seedProjects = rawProjects as Project[];
-const seedScan = rawRadar as RadarState;
 const categoryInfo: Record<string, { label: string; icon: LucideIcon }> = {
   "SDK & Integrations": { label: "SDK 与兼容接入", icon: Braces },
-  "Evaluation & Observability": { label: "评测与观测", icon: SlidersHorizontal },
+  "Evaluation & Observability": {
+    label: "评测与观测",
+    icon: SlidersHorizontal,
+  },
   "Voice & Conversation": { label: "语音与对话", icon: Terminal },
   "Data & Search": { label: "数据与搜索", icon: Search },
   "Classification & Taxonomy": { label: "分类与目录", icon: Layers },
@@ -109,7 +90,7 @@ const date = (s: string | null | undefined) =>
         minute: "2-digit",
         hour12: false,
       })
-    : "尚未扫描";
+    : "—";
 const label = (c: string) => categoryInfo[c]?.label ?? c;
 const validProject = (x: unknown): x is Project => {
   if (!x || typeof x !== "object") return false;
@@ -125,7 +106,6 @@ const validProject = (x: unknown): x is Project => {
       "highlightBenefit",
       "url",
       "claimStatus",
-      "metadataStatus",
       "summarySource",
     ].every((k) => typeof p[k as keyof Project] === "string") &&
     /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/?$/.test(p.url) &&
@@ -219,93 +199,48 @@ function Modal({
   );
 }
 function App() {
-  const [projects, setProjects] = useState<Project[]>(seedProjects);
-  const [scan, setScan] = useState<RadarState>(seedScan);
-  const [refreshState, setRefreshState] = useState("snapshot");
-  const [checkedAt, setCheckedAt] = useState(Date.now());
-  const stale =
-    !!scan.lastAttemptAt &&
-    checkedAt - Date.parse(scan.lastAttemptAt) > 26 * 60 * 60 * 1000;
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loadState, setLoadState] = useState<"loading" | "ready" | "error">(
+    "loading",
+  );
+  const [loadAttempt, setLoadAttempt] = useState(0);
   useEffect(() => {
-    if (import.meta.env.DEV) {
-      setProjects(seedProjects);
-      setScan(seedScan);
-      setRefreshState("local");
-      return;
-    }
     const controller = new AbortController();
-    const refresh = async () => {
-      setCheckedAt(Date.now());
-      try {
-        const base =
-          "https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/src/data/";
-        const [p, r] = await Promise.all([
-          fetch(base + "projects.json", {
-            cache: "no-cache",
-            signal: AbortSignal.any([
-              controller.signal,
-              AbortSignal.timeout(10000),
-            ]),
-          }),
-          fetch(base + "radar.json", {
-            cache: "no-cache",
-            signal: AbortSignal.any([
-              controller.signal,
-              AbortSignal.timeout(10000),
-            ]),
-          }),
-        ]);
-        if (!p.ok || !r.ok) throw new Error("snapshot unavailable");
-        const [projectText, status] = await Promise.all([p.text(), r.json()]);
-        const rows = JSON.parse(projectText);
-        if (status.projectsSha256) {
-          const bytes = await crypto.subtle.digest(
-            "SHA-256",
-            new TextEncoder().encode(projectText),
-          );
-          const hash = [...new Uint8Array(bytes)]
-            .map((b) => b.toString(16).padStart(2, "0"))
-            .join("");
-          if (hash !== status.projectsSha256)
-            throw new Error("snapshot mismatch");
-        }
+    setLoadState("loading");
+    fetch(`${import.meta.env.BASE_URL}projects.json`, {
+      signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15000)]),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Project snapshot unavailable");
+        return response.json();
+      })
+      .then((rows) => {
         if (
           !Array.isArray(rows) ||
           rows.length < 14 ||
-          rows.some((x) => !validProject(x)) ||
-          new Set(rows.map((x) => x.id)).size !== rows.length ||
-          typeof status.status !== "string" ||
-          !Array.isArray(status.sources) ||
-          status.sources.some(
-            (x: {
-              status?: unknown;
-              name?: unknown;
-              query?: unknown;
-              error?: unknown;
-            }) =>
-              typeof x.status !== "string" ||
-              [x.name, x.query, x.error].some(
-                (v) => v !== undefined && typeof v !== "string",
-              ),
-          )
+          rows.some((row) => !validProject(row)) ||
+          new Set(rows.map((row) => row.id)).size !== rows.length
         )
-          throw new Error("invalid snapshot");
-        setRefreshState("ok");
+          throw new Error("Invalid project snapshot");
         setProjects(rows);
-        setScan(status);
-      } catch {
-        if (!controller.signal.aborted) setRefreshState("offline");
-        /* Keep the last usable snapshot when offline or GitHub is unavailable. */
-      }
-    };
-    void refresh();
-    const interval = setInterval(refresh, 300000);
-    return () => {
-      controller.abort();
-      clearInterval(interval);
-    };
-  }, []);
-
+        setLoadState("ready");
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setLoadState("error");
+      });
+    return () => controller.abort();
+  }, [loadAttempt]);
+  const updatedAt = useMemo(
+    () =>
+      projects.reduce(
+        (latest, project) =>
+          project.metadataFetchedAt && project.metadataFetchedAt > latest
+            ? project.metadataFetchedAt
+            : latest,
+        "",
+      ),
+    [projects],
+  );
   const [query, setQuery] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("all");
@@ -315,7 +250,7 @@ function App() {
   const [saved, setSaved] = useState<string[]>(getSaved);
   const [onlySaved, setOnlySaved] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
-  const [modal, setModal] = useState<"submit" | "radar" | null>(null);
+  const [modal, setModal] = useState<"submit" | null>(null);
   const [active, setActive] = useState<Project | null>(null);
   const [toast, setToast] = useState("");
   const [repo, setRepo] = useState("");
@@ -351,7 +286,9 @@ function App() {
     };
     window.addEventListener("keydown", handler);
     const fromHash = () => {
-      const id = new URLSearchParams(location.hash.slice(1)).get("project");
+      const id =
+        new URLSearchParams(location.hash.slice(1)).get("project") ??
+        new URLSearchParams(location.search).get("project");
       setActive(projects.find((p) => p.id === id) ?? null);
     };
     fromHash();
@@ -431,7 +368,7 @@ function App() {
               decision: p.jevDecisionPoint,
               url: p.url,
             })),
-          snapshotAt: scan.lastAttemptAt,
+          snapshotAt: updatedAt,
         };
       },
     };
@@ -443,7 +380,7 @@ function App() {
       /* Optional API; normal UI remains available. */
     }
     return () => lifecycle.abort();
-  }, [projects, fuse, scan.lastAttemptAt]);
+  }, [projects, fuse, updatedAt]);
   const visible = useMemo(() => {
     const list = searchTerm.trim()
       ? searchProjects(fuse, searchTerm)
@@ -514,7 +451,7 @@ function App() {
   };
   const share = (p: Project) =>
     copy(
-      `${location.origin}${location.pathname}#project=${encodeURIComponent(p.id)}`,
+      `${location.origin}${import.meta.env.BASE_URL}#project=${encodeURIComponent(p.id)}`,
       "项目链接已复制",
     );
   const openProject = (p: Project) => {
@@ -569,13 +506,6 @@ function App() {
             onClick={() => setOnlySaved(true)}
           >
             我的收藏<span className="nav-count">{saved.length}</span>
-          </button>
-          <button
-            className="nav-item radar-nav"
-            onClick={() => setModal("radar")}
-          >
-            雷达日志
-            <ArrowUpRight size={14} />
           </button>
         </nav>
         <button
@@ -664,29 +594,10 @@ function App() {
             </span>
             <span>应用方向</span>
           </div>
-          <button className="scan-stat" onClick={() => setModal("radar")}>
-            <Radar size={21} />
-            <span>
-              <strong>
-                {scan.lastAttemptAt
-                  ? date(scan.lastAttemptAt)
-                  : "正在建立首份快照"}
-              </strong>
-              <span>
-                最近扫描 ·{" "}
-                {stale
-                  ? "快照已过期"
-                  : refreshState === "offline"
-                    ? "保留上次快照"
-                    : scan.status === "complete"
-                      ? "已完成"
-                      : scan.status === "partial"
-                        ? "部分来源可用"
-                        : "等待同步"}
-              </span>
-            </span>
-            <ChevronRight size={17} />
-          </button>
+          <div className="data-updated">
+            <span>数据更新</span>
+            <strong>{updatedAt ? date(updatedAt) : "—"}</strong>
+          </div>
         </section>
         {trending.length > 0 && (
           <div className="ticker">
@@ -753,11 +664,11 @@ function App() {
             </div>
             <a
               className="side-source"
-              href="https://typesafe.ai/"
+              href="https://github.com/logicrw/awesome-jev-projects"
               target="_blank"
               rel="noreferrer"
             >
-              独立社区项目 · 非官方出品 <ExternalLink size={12} />
+              Awesome Jev · 开源项目雷达 <ExternalLink size={12} />
             </a>
           </aside>
           <div className="results">
@@ -915,9 +826,7 @@ function App() {
                       {p.summarySource === "readme-extractive" && (
                         <span className="auto-label">自动提炼</span>
                       )}
-                      {p.verificationStatus === "unconfirmed" && (
-                        <span className="unconfirmed">待核实关联</span>
-                      )}
+                      {false && <span className="unconfirmed">待核实关联</span>}
                     </div>
                     <p className="plain-summary">{p.plainSummary}</p>
                     <div className="decision-block">
@@ -979,7 +888,23 @@ function App() {
                 );
               })}
             </div>
-            {!visible.length && (
+            {loadState === "loading" && (
+              <div className="empty-state" role="status">
+                正在读取项目…
+              </div>
+            )}
+            {loadState === "error" && (
+              <div className="empty-state" role="alert">
+                <p>项目数据暂时无法读取。</p>
+                <button
+                  className="button"
+                  onClick={() => setLoadAttempt((n) => n + 1)}
+                >
+                  重试
+                </button>
+              </div>
+            )}
+            {loadState === "ready" && !visible.length && (
               <div className="empty-state">
                 <Search size={30} />
                 <h3>
@@ -1011,7 +936,7 @@ function App() {
         <footer className="footer">
           <a
             className="footer-brand"
-            href="https://typesafe.ai/"
+            href="https://github.com/logicrw/awesome-jev-projects"
             target="_blank"
             rel="noreferrer"
           >
@@ -1019,63 +944,16 @@ function App() {
             Awesome Jev · 开源项目雷达
           </a>
           <span>GitHub 数据定时同步</span>
-          <button onClick={() => setModal("radar")}>
-            数据与来源
+          <a
+            href="https://github.com/logicrw/awesome-jev-projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
             <ArrowUpRight size={13} />
-          </button>
+          </a>
         </footer>
       </main>
-      {modal === "radar" && (
-        <Modal title="雷达日志" onClose={() => setModal(null)}>
-          <p className="modal-intro">
-            每一份快照都有来处。指标来自 GitHub API，项目介绍来自 README
-            与人工核验。
-          </p>
-          <dl className="detail-grid">
-            <div>
-              <dt>最近尝试</dt>
-              <dd>{date(scan.lastAttemptAt)}</dd>
-            </div>
-            <div>
-              <dt>最近完整扫描</dt>
-              <dd>{date(scan.lastSuccessfulAt)}</dd>
-            </div>
-            <div>
-              <dt>计划频率</dt>
-              <dd>每 12 小时</dd>
-            </div>
-            <div>
-              <dt>定时运行</dt>
-              <dd>
-                {scan.schedulerStatus === "active"
-                  ? "已在 GitHub Actions 启用"
-                  : "待连接 GitHub 仓库"}
-              </dd>
-            </div>
-          </dl>
-          <div className="source-list">
-            {scan.sources.length ? (
-              scan.sources.map((s, i) => (
-                <div key={i}>
-                  <span>
-                    <strong>{s.name ?? s.query ?? "GitHub"}</strong>
-                    {s.error && <small>{s.error}</small>}
-                  </span>
-                  <code className={s.status === "ok" ? "ok" : ""}>
-                    {s.status}
-                    {s.count !== undefined ? ` · ${s.count}` : ""}
-                  </code>
-                </div>
-              ))
-            ) : (
-              <p>首次扫描尚未完成。</p>
-            )}
-          </div>
-          <p className="fine-print">
-            热门按最近同步的星数排序。首次快照不计算增长趋势。限流或鉴权失败会保留上次有效数据；扫描成功不代表性能声明已被验证。
-          </p>
-        </Modal>
-      )}
       {modal === "submit" && (
         <Modal title="把你的项目带上雷达" onClose={() => setModal(null)}>
           <p className="modal-intro">
@@ -1189,10 +1067,7 @@ function App() {
                 <ExternalLink size={13} />
               </a>
             ))}
-            <span>
-              元数据同步：{date(active.metadataFetchedAt)} ·{" "}
-              {active.metadataStatus}
-            </span>
+            <span>数据更新：{date(active.metadataFetchedAt)}</span>
           </div>
           <div className="detail-actions">
             <a

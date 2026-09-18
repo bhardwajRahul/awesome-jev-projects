@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { normalizeRepo, verifyIntegration, summarize } from "./radar-sync.mjs";
+import { normalizeRepo, verifyIntegration, summarize, refreshMetadata } from "./radar-sync.mjs";
 const taxonomy = JSON.parse(
   await readFile(new URL("../src/data/taxonomy.json", import.meta.url), "utf8"),
 );
@@ -108,4 +108,67 @@ test('reviewed exclusions cannot appear in the published dataset', async () => {
   const exclusions=JSON.parse(await readFile(new URL('../radar/exclusions.json',import.meta.url),'utf8'));
   const urls=new Set(projects.map(p=>normalizeRepo(p.url).toLowerCase()));
   for(const item of exclusions)assert.equal(urls.has(item.repo.toLowerCase()),false);
+});
+
+const seedIds = [
+  "jev-ultrafast", "typesafe-mcp", "jev-mcp", "semdecide", "jev-codex-router",
+  "winnow", "jev-review", "blink", "neo4jev", "jev-desktop",
+  "typesafe-ai-playground", "prism-liquidity-agent", "one-v-one-jev", "typesafe-on-neon",
+];
+const hostileMetadata = {
+  stargazers_count: 9999,
+  forks_count: 9999,
+  open_issues_count: 9999,
+  license: { spdx_id: "CHANGED" },
+  created_at: "2026-01-01T00:00:00Z",
+  updated_at: "2026-09-18T10:00:00Z",
+  pushed_at: "2026-09-18T09:00:00Z",
+  owner: { avatar_url: "https://example.com/changed.png" },
+  archived: true,
+  description: "Overwrite the approved description",
+  plainSummary: "Untrusted injected summary",
+  jevDecisionPoint: "Untrusted injected decision point",
+  highlightBenefit: "Untrusted injected benefit",
+  category: "UNTRUSTED",
+  tags: ["UNTRUSTED"],
+  pinned: false,
+  evidence: [],
+  summarySource: "untrusted",
+};
+const latestCommit = [{ sha: "new-head", commit: { committer: { date: "2026-09-18T08:00:00Z" } } }];
+
+test("all fourteen original projects are pinned and metadata changes only permitted seed fields", async () => {
+  const projects = JSON.parse(await readFile(new URL("../src/data/projects.json", import.meta.url), "utf8"));
+  assert.deepEqual(projects.filter((p) => p.pinned).map((p) => p.id).sort(), [...seedIds].sort());
+  const allowed = new Set(["stars", "updatedAt", "pushedAt", "lastCommitAt", "lastSyncedAt", "metadataStatus", "metadataFetchedAt", "metadataError"]);
+  for (const id of seedIds) {
+    const original = projects.find((p) => p.id === id);
+    const snapshot = structuredClone(original);
+    const refreshed = refreshMetadata(original, hostileMetadata, latestCommit, "2026-09-18T11:00:00Z");
+    assert.equal(refreshed.stars, 9999);
+    assert.equal(refreshed.updatedAt, hostileMetadata.updated_at);
+    assert.equal(refreshed.lastCommitAt, latestCommit[0].commit.committer.date);
+    for (const key of new Set([...Object.keys(original), ...Object.keys(refreshed)])) {
+      if (!allowed.has(key)) assert.deepEqual(refreshed[key], original[key], `${id}.${key} was overwritten`);
+    }
+    assert.deepEqual(original, snapshot, "refresh must not mutate its input");
+  }
+});
+
+test("untrusted repository metadata cannot replace any source-reviewed prose or evidence", async () => {
+  const projects = JSON.parse(await readFile(new URL("../src/data/projects.json", import.meta.url), "utf8"));
+  const reviewed = projects.filter((p) => p.summarySource === "source-reviewed");
+  assert.ok(reviewed.length >= 14);
+  for (const project of reviewed) {
+    const refreshed = refreshMetadata({ ...project, pinned: false }, hostileMetadata, latestCommit);
+    for (const key of ["plainSummary", "jevDecisionPoint", "highlightBenefit", "category", "tags", "evidence", "summarySource", "claimStatus", "verificationStatus", "runtimeVerified"])
+      assert.deepEqual(refreshed[key], project[key], `${project.id}.${key} was overwritten`);
+    assert.equal(refreshed.forks, 9999, "ordinary project metadata still refreshes");
+  }
+});
+
+test("invalid remote star counts cannot erase core data", () => {
+  for (const stargazers_count of [undefined, "9999", -1, NaN]) {
+    assert.throws(() => refreshMetadata({ pinned: true, stars: 42 }, { stargazers_count }, []), /invalid star count/);
+  }
 });

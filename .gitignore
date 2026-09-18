@@ -8,3 +8,6 @@ playwright-report/
 test-results/
 
 *.tsbuildinfo
+
+# Generated public projection; src/data/projects.json is canonical.
+public/projects.json

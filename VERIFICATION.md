@@ -10,3 +10,13 @@
 - WebMCP search tested with valid input; invalid input intentionally rejected.
 - Privacy review excludes local paths and common credential patterns from publication. Source credentials remain ephemeral.
 - Source caps, remaining candidate queues and failures are visible in radar receipts; a successful workflow is not presented as exhaustive web coverage.
+
+## GitHub Pages hardening
+
+- Pages enabled through REST API as a workflow-based public HTTPS site; Actions default permissions read back as write, without PR-approval capability.
+- All workflows explicitly declare contents/pages/id-token write permissions. Pages deployment accepts main only, with no manual reviewer gate.
+- 25 focused tests passed for source verification, pinned fields, serial pacing, retries, redirect credential isolation, and public projection.
+- Public build audit passed: no credential patterns, private paths, source maps, radar configuration or crawler logs; only the allowlisted project fields are shipped.
+- 14 original projects are pinned; all 130 curated descriptions, decisions, benefits, tags, categories and evidence match the pre-change baseline.
+- Production local preview rendered 130 projects, the removed radar interface was absent, repository links opened in a new tab, and a nested query-parameter project URL rendered its detail without a blank screen.
+- Twitter/OpenGraph fields and the actual 1200×630 PNG share image were inspected. X cache refresh behavior and unmeasured traffic capacity are not guaranteed.

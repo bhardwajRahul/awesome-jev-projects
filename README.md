@@ -2,7 +2,7 @@
 
 A source-backed, plain-language radar for tools built with TypeSafe AI's Jev. 中文优先，保留英文项目名与技术标签。
 
-- **Website:** https://awesome-jev.logicrw001.chatgpt.site
+- **Website:** https://logicrw.github.io/awesome-jev-projects/
 - **Submit a project:** https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml
 - **Run the radar:** [Actions](https://github.com/logicrw/awesome-jev-projects/actions/workflows/radar.yml)
 
@@ -21,7 +21,9 @@ Vite + React + TypeScript + Tailwind CSS. Fonts are self-hosted. The site has fu
 
 ## Data and autonomous updates
 
-`src/data/projects.json` is the only project dataset. The shipped bundle has a usable snapshot; on load and every five minutes the browser reads the same file from this public repository's `main` branch. If the request fails or data fails validation, it retains the last usable snapshot. GitHub raw caching can add several minutes of delay. The Sites deployment therefore receives **data updates without a redeploy**; source/UI changes still require publishing a new Sites version.
+`src/data/projects.json` is the canonical project dataset. `prepare-public-data.mjs` builds a strict public projection as `public/projects.json`; Vite publishes it as `/awesome-jev-projects/projects.json`. The browser loads only this same-origin static file. It never calls GitHub's API, reads crawler logs, or receives a token. Diagnostics and discovery receipts stay in the source repository and Actions artifacts, outside the static website.
+
+GitHub Pages serves the static assets. Source pushes deploy automatically. A successful **Ecosystem radar** run triggers the Pages workflow through `workflow_run`, including when a data commit made with `GITHUB_TOKEN` does not emit another `push` workflow. Updates become visible on the next page load after Pages finishes publishing.
 
 `.github/workflows/radar.yml` runs at `0 */12 * * *` (00:00 and 12:00 UTC), or manually. GitHub may delay cron execution and disable inactive public-repository schedules after 60 days. Each run:
 
@@ -33,7 +35,7 @@ Vite + React + TypeScript + Tailwind CSS. Fonts are self-hosted. The site has fu
 
 ### Coverage, not omniscience
 
-Search APIs expose at most 1,000 results. Default discovery is bounded to 2 pages per query and 60 candidate verifications per run. `radar/state.json` rotates search pages within GitHub’s 1,000-result ceiling and prioritizes unchecked candidates. `src/data/radar.json` records bounded, partial, unauthenticated, and failed sources; it never calls a partial run complete. Known metadata is preserved on errors. The legacy REST code search does not accept `is:public`; the radar filters returned repositories explicitly and never reads private repository content. Public code search may reject GitHub Actions' built-in token: set the optional `RADAR_GITHUB_TOKEN` repository secret to a compatible GitHub token for that source. No credential is ever bundled into the site. The other search sources continue and the missing coverage stays visible.
+Search APIs expose at most 1,000 results. Default discovery is bounded to 2 pages per query and 60 candidate verifications per run. `radar/state.json` rotates search pages within GitHub’s 1,000-result ceiling and prioritizes unchecked candidates. `src/data/radar.json` records bounded, partial, unauthenticated, and failed sources; it never calls a partial run complete. Known metadata is preserved on errors. The legacy REST code search does not accept `is:public`; the radar filters returned repositories explicitly and never reads private repository content. Public code search may reject GitHub Actions' built-in token: set the optional `RADAR_GITHUB_TOKEN` repository secret to a compatible GitHub token for that source. No credential is ever bundled into the site. The first 14 projects are `pinned: true`; their curated descriptions, categories, tags, forks, license and evidence are protected. Automatic refresh changes only their stars, timestamps and synchronization status. Other source-reviewed prose is also preserved. The other search sources continue and the missing coverage stays visible.
 
 ```sh
 # GITHUB_TOKEN may be supplied by your shell or CI; never put it in source.
@@ -41,7 +43,7 @@ npm run radar
 node scripts/radar-sync.mjs --metadata-only
 ```
 
-`RADAR_MAX_PAGES` (1–10), `RADAR_MAX_CANDIDATES` (1–250) control the run budget. `RADAR_SOURCES=code` performs a code-only supplement and retains previously fetched metadata. Rate-limit waits are bounded; larger waits become explicit failures. Full search history and API results are not equivalent to whole-web coverage. The pipeline is GitHub-focused.
+`RADAR_MAX_PAGES` (1–10), `RADAR_MAX_CANDIDATES` (1–250) control the run budget. `RADAR_SOURCES=code` performs a code-only supplement and retains previously fetched metadata. All API requests, including retries and same-host redirects, are serialized at least 1.5 seconds apart; search-specific limits remain stricter. Rate-limit retries honor Retry-After and primary reset times, and secondary limits without headers wait at least 60 seconds with exponential backoff. Exhausted retries or the run-wide waiting budget stop further network requests. Full search history and API results are not equivalent to whole-web coverage. The pipeline is GitHub-focused.
 
 ## Source quality
 
@@ -55,9 +57,15 @@ The initial 14 repositories were checked against GitHub API, README, and impleme
 
 All projects have `runtimeVerified: false`. Source verification does not establish production readiness, safety, investment performance, or endorsement. The project is independent of TypeSafe AI.
 
-## Deployment
+## Deployment and security
 
-`.openai/hosting.json` identifies the existing Codex Site and its static Vite output. Run the Sites build/save/deploy workflow for source changes. The hosting manifest contains only the non-secret Site ID and static directory; credentials are not persisted. The public repository and the Site have separate access policies.
+GitHub Pages is configured through the API with `build_type: workflow`, HTTPS enabled, and repository Actions default permissions set to write. All workflows explicitly declare `contents: write`, `pages: write`, and `id-token: write` as requested. Build and deployment checkouts do not persist authentication; the radar push uses an isolated step environment.
+
+`deploy-pages.yml` validates, builds, uploads only `dist/`, and publishes through the official Pages actions. `base` is `/awesome-jev-projects/`. The production build copies `index.html` to `404.html`; an unknown nested URL can render the app even though GitHub Pages still returns HTTP 404 for that unknown path. Canonical shared project URLs use `#project=...` on the site root, which returns HTTP 200. Query-parameter project links also open the matching detail.
+
+The final build audits path prefixes, credentials/private-path patterns, public fields, 14 pinned seeds, the identical 404 fallback, OG/Twitter metadata and the 1200×630 PNG card. A production Content Security Policy limits network data reads to the same origin; external avatar images are restricted to GitHub's avatar host. Twitter/X's own crawler cache and card display policy are outside this repository's control.
+
+No long-lived deployment key is needed for Pages: Actions uses the built-in token and OIDC. Crawler secrets exist only in its Actions step environment. The original `.openai/hosting.json` is retained for the earlier Codex Site and is not published with Pages; Pages workflows do not change that earlier deployment.
 
 ## Contributing
 

@@ -4,8 +4,8 @@ import { readFile, writeFile, rename, mkdir } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
+import { createGitHubClient } from "./github-client.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const pause = (ms) => new Promise((r) => setTimeout(r, ms));
 export const normalizeRepo = (value) => {
   try {
     const u = new URL(value);
@@ -116,6 +116,37 @@ export function summarize(repo, readme, taxonomy) {
       "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
   };
 }
+/** An allowlist keeps upstream descriptions and metadata out of reviewed copy. */
+export function refreshMetadata(project, meta, commits, syncedAt = new Date().toISOString()) {
+  if (!Number.isSafeInteger(meta.stargazers_count) || meta.stargazers_count < 0) {
+    throw new Error("GitHub repository metadata has an invalid star count");
+  }
+  const refreshed = {
+    ...project,
+    stars: meta.stargazers_count,
+    updatedAt: meta.updated_at ?? project.updatedAt,
+    pushedAt: meta.pushed_at ?? project.pushedAt,
+    lastCommitAt: commits[0]?.commit?.committer?.date ?? null,
+    lastSyncedAt: syncedAt,
+    metadataStatus: "ok",
+    metadataFetchedAt: syncedAt,
+  };
+  // Pinned seeds retain every editorial and non-time field, including their
+  // fixed source SHA, license and forks. Only stars/timestamps/status change.
+  if (!project.pinned) {
+    Object.assign(refreshed, {
+      forks: meta.forks_count,
+      openIssues: meta.open_issues_count,
+      license: meta.license?.spdx_id === "NOASSERTION" ? null : (meta.license?.spdx_id ?? null),
+      headSha: commits[0]?.sha ?? null,
+      createdAt: meta.created_at,
+      avatarUrl: meta.owner?.avatar_url,
+      archived: meta.archived,
+    });
+  }
+  delete refreshed.metadataError;
+  return refreshed;
+}
 export async function atomicJSON(path, value) {
   await mkdir(dirname(path), { recursive: true });
   const tmp = path + `.${process.pid}.tmp`;
@@ -174,67 +205,12 @@ export async function main() {
     );
   } catch {}
   const receipts = [];
-  let nextSearch = 0;
   let codeUnavailable = false;
-  async function api(path, { search = false, code = false, raw = false } = {}) {
-    if (search) {
-      await pause(Math.max(0, nextSearch - Date.now()));
-      nextSearch = Date.now() + (code ? 6500 : token ? 2200 : 6200);
-    }
-    for (let attempt = 0; attempt < 3; attempt++) {
-      let response;
-      try {
-        response = await fetch("https://api.github.com" + path, {
-          headers: {
-            Accept: raw
-              ? "application/vnd.github.raw+json"
-              : "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "awesome-jev-radar",
-            ...(token ? { Authorization: `Bearer ${token}` } : {}),
-          },
-          signal: AbortSignal.timeout(20000),
-        });
-      } catch (error) {
-        if (attempt < 2) {
-          await pause(1500 * (attempt + 1));
-          continue;
-        }
-        throw error;
-      }
-      if (response.ok) return raw ? response.text() : response.json();
-      let detail;
-      try {
-        detail = (await response.json()).message;
-      } catch {
-        detail = response.statusText;
-      }
-      const error = new Error(
-        `GitHub ${response.status}: ${String(detail).slice(0, 220)}`,
-      );
-      error.status = response.status;
-      if (
-        [429, 403].includes(response.status) &&
-        (/rate limit/i.test(String(detail)) ||
-          response.headers.get("retry-after"))
-      ) {
-        const reset = Number(response.headers.get("x-ratelimit-reset")) * 1000;
-        const wait =
-          Number(response.headers.get("retry-after")) * 1000 ||
-          Math.max(1000, reset - Date.now());
-        if (attempt < 2 && wait <= 65000) {
-          console.log(`[rate-limit] backing off ${Math.ceil(wait / 1000)}s`);
-          await pause(wait + 500);
-          continue;
-        }
-      }
-      if (response.status >= 500 && attempt < 2) {
-        await pause(1500 * (attempt + 1));
-        continue;
-      }
-      throw error;
-    }
-  }
+  const api = createGitHubClient({
+    token,
+    onRetry: ({ waitMs }) =>
+      console.log(`[rate-limit] backing off ${Math.ceil(waitMs / 1000)}s`),
+  });
   async function search(kind, q) {
     const source = {
       name: `${kind}: ${q}`,
@@ -380,23 +356,8 @@ export async function main() {
       try {
         const meta = await api(`/repos/${repo}`);
         const commits = await api(`/repos/${repo}/commits?per_page=1`);
-        Object.assign(project, {
-          stars: meta.stargazers_count,
-          forks: meta.forks_count,
-          openIssues: meta.open_issues_count,
-          license:
-            meta.license?.spdx_id === "NOASSERTION"
-              ? null
-              : (meta.license?.spdx_id ?? null),
-          lastCommitAt: commits[0]?.commit.committer.date ?? null,
-          headSha: commits[0]?.sha ?? null,
-          createdAt: meta.created_at,
-          pushedAt: meta.pushed_at,
-          avatarUrl: meta.owner.avatar_url,
-          archived: meta.archived,
-          metadataStatus: "ok",
-          metadataFetchedAt: new Date().toISOString(),
-        });
+        Object.assign(project, refreshMetadata(project, meta, commits));
+        delete project.metadataError;
         report.metadata.ok++;
       } catch (e) {
         project.metadataStatus = e.status === 404 ? "unavailable" : "stale";
