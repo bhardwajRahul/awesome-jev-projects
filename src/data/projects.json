@@ -3241,7 +3241,7 @@
     "author": "aowang-ai",
     "url": "https://github.com/aowang-ai/jev-trade",
     "category": "Domain & Vertical Tools",
-    "plainSummary": "在 Hyperliquid 永续合约上做高频交易。每个 Tick 读取盘口行情，由 Jev 决定开仓、平仓或等待。",
+    "plainSummary": "在 Hyperliquid 永续合约上做高频交易（带实时看板 jev-trade.com）。每个 Tick 读取行情，由 Jev 决定开仓平仓。",
     "jevDecisionPoint": "每个币种用独立状态调用 Jev，秒级评估盘口深度与失衡，决定多空方向与挂单。",
     "highlightBenefit": "实现在去中心化衍生品上的亚秒级自动化交易，并配有完整的 Web 实时监控看板。",
     "tags": [
@@ -3267,8 +3267,8 @@
     "discoveredAt": "2026-09-18T06:52:26.940Z",
     "evidence": [
       {
-        "url": "https://www.jev-trade.com/",
-        "note": "线上实时运行看板 (Live Demo)"
+        "url": "https://github.com/aowang-ai/jev-trade/blob/main/README.md",
+        "note": "项目 README 及线上实时看板证据"
       },
       {
         "url": "https://github.com/aowang-ai/jev-trade",
