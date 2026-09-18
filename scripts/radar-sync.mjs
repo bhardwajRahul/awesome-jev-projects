@@ -6,7 +6,7 @@ import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { createGitHubClient } from "./github-client.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
-import { readLocalizedReadmes } from "./project-source.mjs";
+import { readLocalizedReadmes, hasOpenRouterJevSource } from "./project-source.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const normalizeRepo = (value) => {
   try {
@@ -20,9 +20,12 @@ export const normalizeRepo = (value) => {
     return null;
   }
 };
-export function verifyIntegration(repo, text) {
+export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
   text = text.replace(/<!--[\s\S]*?-->/g, "");
-  const exact =
+  // Jev is also available through OpenRouter's decisions API. An exact model
+  // identifier and provider request marker are both required; names alone fail.
+  const routerDecision = codeSources.some(hasOpenRouterJevSource);
+  const exact = routerDecision ||
     /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe\s+import|typesafe(?:_ai|-ai)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\bJevClient\b/i.test(
       text,
     );
@@ -31,7 +34,7 @@ export function verifyIntegration(repo, text) {
     /\b(ai|llm|agent|decision|inference|classification|model|choice|score|noul)\b/i.test(
       text,
     );
-  const implementation =
+  const implementation = routerDecision ||
     /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|from\s+typesafe\s+import|(?:import|require|npm\s+(?:i|install)|pip\s+install|uv\s+add).{0,100}(?:typesafe|jev)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|TypeSafeClient|JevClient|TYPESAFE_API_KEY|JEV_API_KEY|typesafe\.Client|typesafe\.AsyncClient/i.test(
       text,
     );
@@ -54,7 +57,7 @@ export function verifyIntegration(repo, text) {
     evidence: text
       .split("\n")
       .filter((l) =>
-        /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|@typesafe|from\s+typesafe|\bjev\b|TYPESAFE_API_KEY|TypeSafeClient/i.test(
+        /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|@typesafe|typesafe\/jev|openrouter\.ai|from\s+typesafe|\bjev\b|TYPESAFE_API_KEY|TypeSafeClient/i.test(
           l,
         ),
       )
@@ -463,7 +466,9 @@ export async function main() {
             const code = Buffer.from(f.content ?? "", "base64")
               .toString("utf8")
               .slice(0, 90000);
-            const found = verifyIntegration(repo, readme + "\n" + code);
+            const found = verifyIntegration(repo, readme + "\n" + code, {
+              codeSources: f.type === "file" ? [{ path, text: code }] : [],
+            });
             if (found.verified) {
               evidence = found;
               sourcePath = path;

@@ -252,8 +252,7 @@ function codeCandidate(entry) {
   );
 }
 
-/** Static implementation evidence must come from executable sources, not README installs. */
-function hasImplementationEvidence(text, path) {
+function stripSourceComments(text, path) {
   // Preserve quoted endpoints while removing comments and Python documentation strings.
   let code = /\.py$/i.test(path)
     ? text.replace(/("""|\x27\x27\x27)[\s\S]*?\1/g, " ")
@@ -261,8 +260,28 @@ function hasImplementationEvidence(text, path) {
   const commentsAndStrings = /\.(?:py|rb|sh)$/i.test(path)
     ? /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|#[^\n]*/g
     : /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|`(?:\\[\s\S]|[^`\\])*`|\/\*[\s\S]*?\*\/|\/\/[^\n]*/g;
-  code = code.replace(commentsAndStrings, (token) => /^["'`]/.test(token) ? token : " ");
+  return code.replace(commentsAndStrings, (token) => /^["'`]/.test(token) ? token : " ");
+}
+
+export function hasOpenRouterJevSource({ path, text }) {
+  if (typeof text !== "string" || !codeCandidate({ path, type: "blob", mode: "100644", size: Buffer.byteLength(text) })) return false;
+  return hasOpenRouterJevIntegration(stripSourceComments(text, path));
+}
+
+function hasOpenRouterJevIntegration(code) {
+  const jevModel = /["'`]~?typesafe\/jev-(?:latest|\d+(?:\.\d+)*(?:-\d{8})?)["'`]/i.test(code);
+  const openRouterRequest = /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)["'`]/i.test(code);
+  const openRouterSdk = /\b(?:from|require\s*\(|import\s*\()\s*["']@openrouter\/sdk["']/i.test(code) &&
+    /\.\s*alpha\s*\.\s*decisions\s*\.\s*create\s*\(/i.test(code);
+  // A model ID alone may be a catalog or an unused mention; require request code too.
+  return jevModel && (openRouterRequest || openRouterSdk);
+}
+
+/** Static implementation evidence must come from executable sources, not README installs. */
+function hasImplementationEvidence(text, path) {
+  const code = stripSourceComments(text, path);
   if (/(?<![\w.-])api\.typesafe\.ai(?![\w.-])/i.test(code)) return true;
+  if (hasOpenRouterJevIntegration(code)) return true;
   const providerImport = /\bfrom\s+typesafe(?:_ai)?(?:\.[\w.]+)?\s+import\b|\bimport\s+typesafe(?:_ai)?\b|\b(?:from|require\s*\(|import\s*\()\s*["'](?:@typesafe\/(?:jev|sdk)|typesafe(?:-ai)?)["']/i.test(code);
   const sdkCall = /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient))\s*\(|\.\s*(?:choice|score|noul|decision|query|ask)\s*\(/i.test(code);
   return providerImport && sdkCall;
@@ -398,6 +417,7 @@ export async function inspectRepository({
       evidence = verifyIntegration(
         repo,
         files.map((source) => source.text).join("\n\n"),
+        { codeSources: files.filter((source) => !readmeFiles.includes(source)) },
       );
       if (evidence.verified && (!requireCodeEvidence || implementationFiles.length)) break;
     }

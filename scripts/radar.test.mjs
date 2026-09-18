@@ -172,3 +172,24 @@ test("invalid remote star counts cannot erase core data", () => {
     assert.throws(() => refreshMetadata({ pinned: true, stars: 42 }, { stargazers_count }, []), /invalid star count/);
   }
 });
+
+
+test("OpenRouter Jev requires an exact model and provider request marker", () => {
+  const code = `const input = {model: '~typesafe/jev-latest'};
+    fetch('https://openrouter.ai/api/alpha/decisions', {method:'POST', body:JSON.stringify(input)});`;
+  assert.equal(verifyIntegration({name:'jev-gomoku'}, code, {codeSources:[{path:'src/online.js',text:code}]}).verified, true);
+  assert.equal(verifyIntegration({name:'jev-gomoku'}, "const model = '~typesafe/jev-latest';").verified, false);
+  assert.equal(verifyIntegration({name:'jev-gomoku'}, code.replace('~typesafe/jev-latest', 'unrelated/jev-copy')).verified, false);
+});
+
+
+test("OpenRouter evidence cannot pair README/model text with a different implementation file", () => {
+  const model = "const input={model:'~typesafe/jev-latest'};";
+  const request = "fetch('https://openrouter.ai/api/alpha/decisions',{method:'POST',body:JSON.stringify(input)});";
+  const repo={name:'jev-game'};
+  assert.equal(verifyIntegration(repo, model+request).verified, false);
+  assert.equal(verifyIntegration(repo, model+request, {codeSources:[{path:'src/request.js',text:request}]}).verified, false);
+  assert.equal(verifyIntegration(repo, model+request, {codeSources:[{path:'src/model.js',text:model},{path:'src/request.js',text:request}]}).verified, false);
+  assert.equal(verifyIntegration(repo, model+request, {codeSources:[{path:'README.md',text:model+request}]}).verified, false);
+  assert.equal(verifyIntegration(repo, model+request, {codeSources:[{path:'src/request.js',text:'// '+model+request}]}).verified, false);
+});

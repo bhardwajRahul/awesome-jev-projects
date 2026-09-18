@@ -435,3 +435,54 @@ test("strict ingestion accepts immutable provider endpoint or TypeSafe SDK decis
     assert.equal(result.evidence.implementationFiles[0].hash, createHash("sha256").update(text).digest("hex"));
   }
 });
+
+test("strict ingestion recognizes precise Jev models only with an OpenRouter request in source", async () => {
+  const cases = [
+    {
+      text: "const input={model:'~typesafe/jev-latest',state,questions};\nconst response=await fetcher('https://openrouter.ai/api/alpha/decisions',{method:'POST',body:JSON.stringify(input)});",
+      accepted: true,
+    },
+    {
+      text: "const input={model:'typesafe/jev-1.13-20260917',state,questions};\nconst response=await fetch('https://openrouter.ai/api/alpha/decisions',{method:'POST',body:JSON.stringify(input)});",
+      accepted: true,
+    },
+    {
+      text: "const {OpenRouter}=await import('@openrouter/sdk');\nconst client=new OpenRouter({apiKey});\nconst result=await client.alpha.decisions.create({decisionsRequest:{model:'~typesafe/jev-latest',state,questions}});",
+      accepted: true,
+    },
+    {
+      text: "const models=['typesafe/jev-1.13-20260917']; console.log(models);",
+      accepted: false,
+    },
+    {
+      text: "fetch('https://openrouter.ai/api/alpha/decisions',{body:JSON.stringify({model:'another/llm',state,questions})});",
+      accepted: false,
+    },
+    {
+      text: "fetch('https://openrouter.ai.evil.test/api/alpha/decisions',{body:JSON.stringify({model:'~typesafe/jev-latest'})});",
+      accepted: false,
+    },
+    {
+      text: "fetch('https://openrouter.ai/api/alpha/decisions',{body:JSON.stringify({model:'not-typesafe/jev-latest'})});",
+      accepted: false,
+    },
+    {
+      text: "fetch('https://openrouter.ai/api/alpha/decisions',{body:JSON.stringify({model:'typesafe/jev-unrelated'})});",
+      accepted: false,
+    },
+    {
+      text: "// fetch('https://openrouter.ai/api/alpha/decisions',{model:'~typesafe/jev-latest'});\nconsole.log('not implemented');",
+      accepted: false,
+    },
+  ];
+  const path = "src/online.js";
+  for (const { text, accepted } of cases) {
+    const f = fixture({
+      [`/repos/${repository}/git/trees/${sha}?recursive=1`]: { tree: [{ type: "blob", path, mode: "100644", size: text.length }] },
+      [`/repos/${repository}/contents/${path}?ref=${sha}`]: encoded(text, path),
+    });
+    const result = await inspect(f, { requireCodeEvidence: true });
+    assert.equal(result.status, accepted ? "accepted" : "rejected", text);
+    assert.equal(result.evidence.implementationFiles.length, Number(accepted));
+  }
+});
