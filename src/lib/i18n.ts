@@ -7,6 +7,8 @@ export const english: Record<string, string> = {
   "从社区源码里，查看 Jev 的接入方式与决策位置。": "See how Jev fits into Agent architectures, directly in community source code.",
   "把思考留给大模型，把选择题交给 Jev。": "Let LLMs think. Let Jev choose.",
   "已审校条目": "Source-reviewed entries",
+  "已审校项目": "Verified projects",
+  "架构分类": "Architecture categories",
   "主题标签": "Topics",
 
   "查看代码示例": "Show code example",
@@ -230,6 +232,8 @@ export const japanese: Record<string, string> = {
   "从社区源码里，查看 Jev 的接入方式与决策位置。": "コミュニティのソースから、Jev の組み込み方と判断する箇所を探す。",
   "把思考留给大模型，把选择题交给 Jev。": "思考は LLM に。選択は Jev に。",
   "已审校条目": "ソース確認済み",
+  "已审校项目": "確認済みプロジェクト",
+  "架构分类": "アーキテクチャ分類",
   "主题标签": "トピック",
 
   "查看代码示例": "コード例を表示",
@@ -412,6 +416,8 @@ export const korean: Record<string, string> = {
   "从社区源码里，查看 Jev 的接入方式与决策位置。": "커뮤니티 소스에서 Jev 연동 방식과 판단 지점을 살펴보세요.",
   "把思考留给大模型，把选择题交给 Jev。": "생각은 LLM에. 선택은 Jev에.",
   "已审校条目": "소스 검토 완료",
+  "已审校项目": "검토 완료 프로젝트",
+  "架构分类": "아키텍처 분류",
   "主题标签": "주제",
 
   "查看代码示例": "코드 예제 보기",

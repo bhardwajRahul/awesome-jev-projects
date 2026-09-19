@@ -984,13 +984,13 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <span className="stat-value">
               {projects.length.toString().padStart(2, "0")}
             </span>
-            <span>{t("收录项目")}</span>
+            <span>{t("已审校项目")}</span>
           </div>
           <div>
             <span className="stat-value">
-              {explorableCount}
+              {categories.length.toString().padStart(2, "0")}
             </span>
-            <span>{t("已审校条目")}</span>
+            <span>{t("架构分类")}</span>
           </div>
           <div>
             <span className="stat-value">
