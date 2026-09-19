@@ -32,6 +32,10 @@ test('daily discovery is identical in four locales while existing Header, Sponso
       assert.equal((html.match(/data-project-id=/g) ?? []).length, 24, 'Initial grid stays bounded');
       assert.equal((html.match(/class="featured-partners"/g) ?? []).length, 1);
       assert.ok(html.includes('class="quick-filters"') && html.includes('class="search-box"'));
+      assert.ok(html.includes('type="search"') && html.includes('id="project-search"') && html.includes('role="search"'));
+      assert.ok(!html.includes('aria-keyshortcuts="Meta+G Control+G"') && !html.includes('⌘G') && !html.includes('Ctrl+G'));
+      assert.match(html, /<div[^>]*class="jevy"[^>]*aria-hidden="true"/);
+      assert.doesNotMatch(html, /<button[^>]*class="jevy"/);
       const header = html.match(/<header[^>]*>([\s\S]*?)<\/header>/)[1];
       assert.ok(header.includes('sponsor-entry-button') && header.includes('agent-skill-btn'));
       assert.ok(!header.includes('discovery-entry'), 'Do not expand the six mobile Header slots');

@@ -2,17 +2,11 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { Locale } from "../lib/i18n";
 import "../styles/jevy.css";
 
-const labels: Record<Locale, string> = {
-  zh: "给机械助手 Jevy 上发条",
-  en: "Wind up Jevy, the mechanical assistant",
-  ja: "機械アシスタント Jevy のぜんまいを巻く",
-  ko: "기계 도우미 Jevy의 태엽 감기",
-};
 const cog = "M-4-17h8l1 5 4 2 5-2 4 7-4 3v4l4 3-4 7-5-2-4 2-1 5h-8l-1-5-4-2-5 2-4-7 4-3v-4l-4-3 4-7 5 2 4-2Z";
 
-export function Jevy({ locale }: { locale: Locale }) {
+export function Jevy(_props: { locale: Locale }) {
   const id = useId();
-  const button = useRef<HTMLButtonElement>(null);
+  const root = useRef<HTMLDivElement>(null);
   const [winding, setWinding] = useState(false);
   const [awake, setAwake] = useState(true);
 
@@ -23,7 +17,7 @@ export function Jevy({ locale }: { locale: Locale }) {
       visible = entry.isIntersecting;
       update();
     });
-    if (button.current) observer?.observe(button.current);
+    if (root.current) observer?.observe(root.current);
     document.addEventListener("visibilitychange", update);
     update();
     return () => { observer?.disconnect(); document.removeEventListener("visibilitychange", update); };
@@ -36,9 +30,8 @@ export function Jevy({ locale }: { locale: Locale }) {
   }, [winding]);
 
   return (
-    <button ref={button} type="button" className="jevy" data-awake={awake} data-winding={winding}
-      aria-label={labels[locale]} title={labels[locale]} onClick={() => setWinding(true)}>
-      <svg viewBox="0 0 184 166" width="176" height="159" fill="none" aria-hidden="true" focusable="false">
+    <div ref={root} className="jevy" data-awake={awake} data-winding={winding} aria-hidden="true" onClick={() => setWinding(true)}>
+      <svg viewBox="0 0 184 166" width="176" height="159" fill="none" focusable="false">
         <defs>
           <linearGradient id={`${id}-brass`} x1="0" y1="0" x2=".85" y2="1">
             <stop className="jevy-brass-light" /><stop offset=".4" className="jevy-brass-mid" /><stop offset="1" className="jevy-brass-dark" />
@@ -121,6 +114,6 @@ export function Jevy({ locale }: { locale: Locale }) {
           </g>
         </g>
       </svg>
-    </button>
+    </div>
   );
 }

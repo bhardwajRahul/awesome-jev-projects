@@ -1,5 +1,5 @@
 /* The Hero is a drafting bench: registration marks, paper, and a small machine. */
-.hero.hero-tactile { align-items: center; gap: clamp(32px, 5vw, 72px); padding-block: 38px 32px; }
+.hero.hero-tactile { align-items: center; gap: clamp(28px, 4vw, 56px); padding-block: 28px 20px; }
 .hero-tactile .hero-copy { position: relative; isolation: isolate; padding: 15px 0 0 18px; }
 .hero-tactile .hero-copy::before { content: ''; position: absolute; z-index: -1; inset: -16px -20px -10px -20px; background-image: radial-gradient(circle, var(--text) 1px, transparent 1px); background-size: 18px 18px; opacity: .06; mask-image: linear-gradient(90deg, transparent, black 8%, black 85%, transparent); pointer-events: none; }
 .hero-tactile .hero-copy::after { content: ''; position: absolute; z-index: -1; inset: 5px auto 4px 0; width: 10px; border-left: 1px solid var(--border-strong); background: repeating-linear-gradient(to bottom, var(--border-strong) 0 1px, transparent 1px 18px); opacity: .55; pointer-events: none; }
@@ -28,21 +28,21 @@
 }
 @media (max-width: 768px) {
   .hero.hero-tactile { padding-block: 14px 12px; gap: 14px; }
-  .hero-tactile .hero-copy { padding: 4px 0 0 12px; min-height: 154px; }
+  .hero-tactile .hero-copy { padding: 4px 0 0 12px; min-height: 0; }
   .hero-tactile .hero-copy::before { inset: 0 -4px -6px; background-size: 16px 16px; }
   .hero-engine-status { min-height: 24px; margin-bottom: 10px; font-size: 9px; padding: 2px 7px; }
   .hero-tactile h1 { font-size: clamp(28px, 7vw, 34px); margin-bottom: 8px; }
-  .hero-tactile .hero-copy > p { max-width: calc(100% - 88px); font-size: 12px; line-height: 1.6; }
-  .hero-maker-row { position: absolute; right: -4px; bottom: -8px; min-height: 0; margin: 0; }
+  .hero-tactile .hero-copy > p { max-width: 100%; font-size: 12px; line-height: 1.6; }
+  .hero-maker-row { position: static; justify-content: flex-end; min-height: 0; margin-top: 4px; }
   .hero-maker-copy { display: none; }
-  .hero-maker-row > .jevy { flex-basis: 92px; width: 92px; }
+  .hero-maker-row > .jevy { flex-basis: 72px; width: 72px; }
   .hero-tactile .hero-workbench { padding-top: 0; }
   .hero-tactile .hero-tool-row { margin-bottom: 6px; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-led::after { animation: none; opacity: .75; } }
 @media (max-width: 430px) {
   .hero.hero-tactile { padding-block: 10px 8px; gap: 10px; }
-  .hero-tactile .hero-copy { min-height: 146px; }
+  .hero-tactile .hero-copy { min-height: 0; }
   .hero-engine-status { margin-bottom: 8px; }
   .hero.hero-tactile h1 { font-size: 27px; line-height: 1.15; }
   .hero-tactile .hero-tool-row { margin-bottom: 4px; }
