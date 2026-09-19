@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { DECISIONS_JA, DECISIONS_KO, BENEFITS_JA, BENEFITS_KO } from "./readme-i18n.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");
@@ -9,6 +10,7 @@ const projectsPath = resolve(rootDir, "src/data/projects.json");
 const projects = JSON.parse(readFileSync(projectsPath, "utf-8"));
 
 const BANNER_URL = "https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner.svg";
+const BANNER_ZH_URL = "https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-zh.svg";
 const SITE_URL = "https://logicrw.github.io/awesome-jev-projects/";
 const ISSUE_SUBMIT_URL = "https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml";
 
@@ -298,10 +300,12 @@ function buildHeader(lang) {
     ko: { radar: "🌐 실시간 인터랙티브 레이더 열기", submit: "📝 프로젝트 등록 신청" }
   };
 
+  const banner = lang === "zh" ? BANNER_ZH_URL : BANNER_URL;
+
   return `<div align="center">
 
 <a href="${SITE_URL}">
-  <img src="${BANNER_URL}" alt="Awesome Jev Projects Banner" width="880" style="max-width: 100%; border-radius: 12px;" />
+  <img src="${banner}" alt="Awesome Jev Projects Banner" width="880" style="max-width: 100%; border-radius: 12px;" />
 </a>
 
 <br/><br/>
@@ -400,6 +404,14 @@ function buildReadme(lang) {
         summary = p.plainSummary;
         decision = p.jevDecisionPoint;
         benefit = p.highlightBenefit;
+      } else if (lang === "ja") {
+        summary = p.plainSummaryEn || p.plainSummary;
+        decision = DECISIONS_JA[p.jevDecisionPointEn] || p.jevDecisionPointEn;
+        benefit = BENEFITS_JA[p.highlightBenefitEn] || p.highlightBenefitEn;
+      } else if (lang === "ko") {
+        summary = p.plainSummaryEn || p.plainSummary;
+        decision = DECISIONS_KO[p.jevDecisionPointEn] || p.jevDecisionPointEn;
+        benefit = BENEFITS_KO[p.highlightBenefitEn] || p.highlightBenefitEn;
       }
 
       md += `- [**${p.name}**](${p.url})${starTag} - ${summary}\n`;

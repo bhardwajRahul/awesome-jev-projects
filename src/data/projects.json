@@ -870,7 +870,8 @@
     "archived": false,
     "plainSummaryEn": "fast-jev-compaction: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.",
     "jevDecisionPointEn": "Judges line-by-line relevance against current task goals to discard token noise.",
-    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions."
+    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "niazmorshed2007:jev-review",
@@ -915,7 +916,8 @@
     "archived": false,
     "plainSummaryEn": "Code review triage engine assessing correctness, security, reliability, and compatibility before deep review.",
     "jevDecisionPointEn": "Scores risk dimensions upfront to isolate high-risk diff chunks for frontier model attention.",
-    "highlightBenefitEn": "Focuses expensive model reasoning on critical changes rather than boilerplate diffs."
+    "highlightBenefitEn": "Focuses expensive model reasoning on critical changes rather than boilerplate diffs.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "realzachi:pg-jev",
@@ -960,7 +962,8 @@
     "archived": false,
     "plainSummaryEn": "pg-jev: Semantic query and classification layer applied over tabular databases and search indexes.",
     "jevDecisionPointEn": "Performs batch semantic matching and condition evaluation over row records.",
-    "highlightBenefitEn": "Enables natural-language semantic filtering directly within existing SQL queries."
+    "highlightBenefitEn": "Enables natural-language semantic filtering directly within existing SQL queries.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "standardagents:jevpilot",
@@ -1005,7 +1008,8 @@
     "archived": false,
     "plainSummaryEn": "jevpilot: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jkudish:jev-browser",
@@ -1051,7 +1055,8 @@
     "archived": false,
     "plainSummaryEn": "jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "y0usaf:pi-jev",
@@ -1097,7 +1102,8 @@
     "archived": false,
     "plainSummaryEn": "pi-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jomatsu:pi-jev-auto-mode",
@@ -1143,7 +1149,8 @@
     "archived": false,
     "plainSummaryEn": "pi-jev-auto-mode: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "zadescoxp:jev-trades",
@@ -1189,7 +1196,8 @@
     "archived": false,
     "plainSummaryEn": "High-frequency perp trader on Hyperliquid with live dashboard (jev-trade.com). Evaluates order book every tick to trade.",
     "jevDecisionPointEn": "Evaluates order book imbalance, depth, and spread per tick to decide side, leverage, and quotes.",
-    "highlightBenefitEn": "Sub-second decentralized derivatives execution with multi-sleeve isolation."
+    "highlightBenefitEn": "Sub-second decentralized derivatives execution with multi-sleeve isolation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "dannote:jev",
@@ -1235,7 +1243,8 @@
     "archived": false,
     "plainSummaryEn": "jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "blakestone-x:jev-mcp",
@@ -1280,7 +1289,8 @@
     "archived": false,
     "plainSummaryEn": "Pragmatic MCP utility suite packaging real-time fact-checking, prompt injection guards, and semantic reranking.",
     "jevDecisionPointEn": "Applies instant binary checks for output safety and factual consistency, plus candidate reranking.",
-    "highlightBenefitEn": "Enforces lightweight safety guardrails at a fraction of frontier model costs."
+    "highlightBenefitEn": "Enforces lightweight safety guardrails at a fraction of frontier model costs.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "abovecolin:ha-jev",
@@ -1326,7 +1336,8 @@
     "archived": false,
     "plainSummaryEn": "HA-Jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "abdelstark:jev-benchmarks",
@@ -1371,7 +1382,8 @@
     "archived": false,
     "plainSummaryEn": "jev-benchmarks: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "gamesonrblx:jevbridge",
@@ -1417,7 +1429,8 @@
     "archived": false,
     "plainSummaryEn": "Jevbridge: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "mizchi:jev-playground",
@@ -1463,7 +1476,8 @@
     "archived": false,
     "plainSummaryEn": "jev-playground: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jomatsu:zod-jev",
@@ -1509,7 +1523,8 @@
     "archived": false,
     "plainSummaryEn": "zod-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "y0usaf:jev-lm",
@@ -1554,7 +1569,8 @@
     "archived": false,
     "plainSummaryEn": "jev-lm: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "superagents-lab:jev-search",
@@ -1600,7 +1616,8 @@
     "archived": false,
     "plainSummaryEn": "jev-search: Semantic query and classification layer applied over tabular databases and search indexes.",
     "jevDecisionPointEn": "Performs batch semantic matching and condition evaluation over row records.",
-    "highlightBenefitEn": "Enables natural-language semantic filtering directly within existing SQL queries."
+    "highlightBenefitEn": "Enables natural-language semantic filtering directly within existing SQL queries.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "vinilana:live-jev",
@@ -1645,7 +1662,8 @@
     "archived": false,
     "plainSummaryEn": "live-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "devagrawal09:jev-code",
@@ -1691,7 +1709,8 @@
     "archived": false,
     "plainSummaryEn": "jev-code: Semantic exploration engine for codebases and knowledge graphs using beam search.",
     "jevDecisionPointEn": "Assigns relevance probabilities to candidate files or graph edges to direct exploration.",
-    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing."
+    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "docxology:daf-jev",
@@ -1738,7 +1757,8 @@
     "archived": false,
     "plainSummaryEn": "daf-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "adhyaay-karnwal:jev-chat",
@@ -1783,7 +1803,8 @@
     "archived": false,
     "plainSummaryEn": "jev-chat: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "tumf:jev-cli",
@@ -1829,7 +1850,8 @@
     "archived": false,
     "plainSummaryEn": "jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "ranjan2829:askjev",
@@ -1875,7 +1897,8 @@
     "archived": false,
     "plainSummaryEn": "AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "foadsf:jev-for-engineers",
@@ -1921,7 +1944,8 @@
     "archived": false,
     "plainSummaryEn": "jev-for-engineers: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "haseeb-heaven:jev-system-one",
@@ -1966,7 +1990,8 @@
     "archived": false,
     "plainSummaryEn": "jev-system-one: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "leftspace89:jevbird",
@@ -2011,7 +2036,8 @@
     "archived": false,
     "plainSummaryEn": "JevBird: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "hyunjunjeon:jev-judgment",
@@ -2057,7 +2083,8 @@
     "archived": false,
     "plainSummaryEn": "jev-judgment: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jtsang4:jev-cli",
@@ -2103,7 +2130,8 @@
     "archived": false,
     "plainSummaryEn": "jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "buchmark:claude-jev",
@@ -2149,7 +2177,8 @@
     "archived": false,
     "plainSummaryEn": "claude-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.",
     "jevDecisionPointEn": "Assigns relevance probabilities to candidate files or graph edges to direct exploration.",
-    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing."
+    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "tontoko:jev-browser",
@@ -2195,7 +2224,8 @@
     "archived": false,
     "plainSummaryEn": "jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "theooliveira:pi-jev",
@@ -2241,7 +2271,8 @@
     "archived": false,
     "plainSummaryEn": "pi-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "reachjalil:jev-tree",
@@ -2287,7 +2318,8 @@
     "archived": false,
     "plainSummaryEn": "jev-tree: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "hamakyo:jev-starter",
@@ -2333,7 +2365,8 @@
     "archived": false,
     "plainSummaryEn": "jev-starter: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "himomohi:aside-jev",
@@ -2379,7 +2412,8 @@
     "archived": false,
     "plainSummaryEn": "aside-jev: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "shivampansuriya:jev-skill-gate",
@@ -2425,7 +2459,8 @@
     "archived": false,
     "plainSummaryEn": "jev-skill-gate: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.",
     "jevDecisionPointEn": "Judges line-by-line relevance against current task goals to discard token noise.",
-    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions."
+    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "leepokai:jev-guard",
@@ -2471,7 +2506,8 @@
     "archived": false,
     "plainSummaryEn": "jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "rashedint32:jev-mcp",
@@ -2517,7 +2553,8 @@
     "archived": false,
     "plainSummaryEn": "Pragmatic MCP utility suite packaging real-time fact-checking, prompt injection guards, and semantic reranking.",
     "jevDecisionPointEn": "Applies instant binary checks for output safety and factual consistency, plus candidate reranking.",
-    "highlightBenefitEn": "Enforces lightweight safety guardrails at a fraction of frontier model costs."
+    "highlightBenefitEn": "Enforces lightweight safety guardrails at a fraction of frontier model costs.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "abovecolin:jevclient",
@@ -2563,7 +2600,8 @@
     "archived": false,
     "plainSummaryEn": "jevclient: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "molis-ai:jev-workbench",
@@ -2608,7 +2646,8 @@
     "archived": false,
     "plainSummaryEn": "jev-workbench: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "phureewat29:got-jev",
@@ -2653,7 +2692,8 @@
     "archived": false,
     "plainSummaryEn": "got-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "joelhooks:pi-fast-jev-compaction",
@@ -2698,7 +2738,8 @@
     "archived": false,
     "plainSummaryEn": "pi-fast-jev-compaction: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "anpicasso:hermes-jev-approvals",
@@ -2743,7 +2784,8 @@
     "archived": false,
     "plainSummaryEn": "hermes-jev-approvals: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "sherajdev:jev-research",
@@ -2788,7 +2830,8 @@
     "archived": false,
     "plainSummaryEn": "jev-research: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "vicente-md:jev-resilience",
@@ -2833,7 +2876,8 @@
     "archived": false,
     "plainSummaryEn": "jev-resilience: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "stumble:jev-go",
@@ -2878,7 +2922,8 @@
     "archived": false,
     "plainSummaryEn": "jev-go: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "tokentrim:jev-agent-failure-benchmark",
@@ -2923,7 +2968,8 @@
     "archived": false,
     "plainSummaryEn": "jev-agent-failure-benchmark: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "paulsmith:computer-use-jev",
@@ -2968,7 +3014,8 @@
     "archived": false,
     "plainSummaryEn": "computer-use-jev: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "4anti:jev-broadcast-lab",
@@ -3013,7 +3060,8 @@
     "archived": false,
     "plainSummaryEn": "jev-broadcast-lab: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "fgn:jevgo",
@@ -3058,7 +3106,8 @@
     "archived": false,
     "plainSummaryEn": "jevgo: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "lbotinelly:jev-little-airways",
@@ -3103,7 +3152,8 @@
     "archived": false,
     "plainSummaryEn": "jev-little-airways: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "little-planet-labs:jev-playground",
@@ -3148,7 +3198,8 @@
     "archived": false,
     "plainSummaryEn": "jev-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "butochnikov:laravel-typesafe-jev",
@@ -3193,7 +3244,8 @@
     "archived": false,
     "plainSummaryEn": "laravel-typesafe-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "guillemus:jev-go",
@@ -3238,7 +3290,8 @@
     "archived": false,
     "plainSummaryEn": "jev-go: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "omni-:ask-jev",
@@ -3283,7 +3336,8 @@
     "archived": false,
     "plainSummaryEn": "ask-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "rhighs:jev-code",
@@ -3328,7 +3382,8 @@
     "archived": false,
     "plainSummaryEn": "jev-code: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "lukaske:jev-doom-agent",
@@ -3373,7 +3428,8 @@
     "archived": false,
     "plainSummaryEn": "jev-doom-agent: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "anessbelbati:jev-rerank-bench",
@@ -3418,7 +3474,8 @@
     "archived": false,
     "plainSummaryEn": "jev-rerank-bench: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "danielkillenberger:jev-predict-skill",
@@ -3463,7 +3520,8 @@
     "archived": false,
     "plainSummaryEn": "jev-predict-skill: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "aowang-ai:jev-trade",
@@ -3514,7 +3572,8 @@
     "demoUrl": "https://www.jev-trade.com/",
     "plainSummaryEn": "High-frequency perp trader on Hyperliquid with live dashboard (jev-trade.com). Evaluates order book every tick to trade.",
     "jevDecisionPointEn": "Evaluates order book imbalance, depth, and spread per tick to decide side, leverage, and quotes.",
-    "highlightBenefitEn": "Sub-second decentralized derivatives execution with multi-sleeve isolation."
+    "highlightBenefitEn": "Sub-second decentralized derivatives execution with multi-sleeve isolation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "unownone:jevsume",
@@ -3560,7 +3619,8 @@
     "archived": false,
     "plainSummaryEn": "jevsume: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "thesammykins:jev_ampcode",
@@ -3605,7 +3665,8 @@
     "archived": false,
     "plainSummaryEn": "jev_ampcode: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "nicolasmontone:jev-tool-permissions",
@@ -3650,7 +3711,8 @@
     "archived": false,
     "plainSummaryEn": "jev-tool-permissions: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "cocktailpeanut:jevthoven",
@@ -3695,7 +3757,8 @@
     "archived": false,
     "plainSummaryEn": "jevthoven: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "amoghcreator:doom-jev",
@@ -3740,7 +3803,8 @@
     "archived": false,
     "plainSummaryEn": "doom-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "zbush:jev-context",
@@ -3785,7 +3849,8 @@
     "archived": false,
     "plainSummaryEn": "jev-context: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.",
     "jevDecisionPointEn": "Judges line-by-line relevance against current task goals to discard token noise.",
-    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions."
+    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "joevidev:ui-generator-instinct-jev",
@@ -3830,7 +3895,8 @@
     "archived": false,
     "plainSummaryEn": "ui-generator-instinct-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "vlad-terin:jev-use",
@@ -3877,7 +3943,8 @@
     "plainSummaryEn": "jev-use: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
     "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
-    "metadataError": "GitHub 404: Not Found"
+    "metadataError": "GitHub 404: Not Found",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "alxcrt:is-odd-jev",
@@ -3922,7 +3989,8 @@
     "archived": false,
     "plainSummaryEn": "is-odd-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "droidrun:mobile-jev",
@@ -3968,7 +4036,8 @@
     "archived": false,
     "plainSummaryEn": "mobile-jev: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "minghanminghan:jev-demo",
@@ -4013,7 +4082,8 @@
     "archived": false,
     "plainSummaryEn": "jev-demo: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "adammichaelwood:jev-music-theory-1",
@@ -4059,7 +4129,8 @@
     "archived": false,
     "plainSummaryEn": "jev-music-theory-1: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jcpsimmons:jev-macos-loop",
@@ -4105,7 +4176,8 @@
     "archived": false,
     "plainSummaryEn": "jev-macos-loop: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "hugo-alves:jev-router-playground",
@@ -4151,7 +4223,8 @@
     "archived": false,
     "plainSummaryEn": "jev-router-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "amberwhitehead:jevscript",
@@ -4196,7 +4269,8 @@
     "archived": false,
     "plainSummaryEn": "jevscript: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.",
     "jevDecisionPointEn": "Applies real-time semantic classification and filtering on standard input streams.",
-    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD."
+    "highlightBenefitEn": "Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "ae-alphaedge:grokskill-jev",
@@ -4242,7 +4316,8 @@
     "archived": false,
     "plainSummaryEn": "grokskill-jev: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "waxmell114514:jev-trade",
@@ -4287,7 +4362,8 @@
     "archived": false,
     "plainSummaryEn": "High-frequency perp trader on Hyperliquid with live dashboard (jev-trade.com). Evaluates order book every tick to trade.",
     "jevDecisionPointEn": "Evaluates order book imbalance, depth, and spread per tick to decide side, leverage, and quotes.",
-    "highlightBenefitEn": "Sub-second decentralized derivatives execution with multi-sleeve isolation."
+    "highlightBenefitEn": "Sub-second decentralized derivatives execution with multi-sleeve isolation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "bud-ro:jev-demos",
@@ -4337,7 +4413,8 @@
     "archived": false,
     "plainSummaryEn": "jev-demos: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jvsteiner:jevex",
@@ -4383,7 +4460,8 @@
     "archived": false,
     "plainSummaryEn": "jevex: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "mittal-parth:jev-experiments",
@@ -4429,7 +4507,8 @@
     "archived": false,
     "plainSummaryEn": "jev-experiments: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.",
     "jevDecisionPointEn": "Executes continuous multi-Hz decision loops to drive movement, steering, and actions.",
-    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver."
+    "highlightBenefitEn": "Achieves real-time interaction rates that frontier LLMs cannot physically deliver.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "shifty-eye-games:foreman-jev",
@@ -4474,7 +4553,8 @@
     "archived": false,
     "plainSummaryEn": "foreman-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.",
     "jevDecisionPointEn": "Assigns relevance probabilities to candidate files or graph edges to direct exploration.",
-    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing."
+    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "reachjalil:jevlogs",
@@ -4520,7 +4600,8 @@
     "archived": false,
     "plainSummaryEn": "jevlogs: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.",
     "jevDecisionPointEn": "Judges line-by-line relevance against current task goals to discard token noise.",
-    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions."
+    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "luxus:ha-conversation-jev",
@@ -4565,7 +4646,8 @@
     "archived": false,
     "plainSummaryEn": "ha-conversation-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "vercel:ai",
@@ -5148,7 +5230,8 @@
     "archived": false,
     "plainSummaryEn": "ax: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "agentgateway:agentgateway",
@@ -5202,7 +5285,8 @@
     "archived": false,
     "plainSummaryEn": "agentgateway: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "bennykok:omg.dev",
@@ -5248,7 +5332,8 @@
     "archived": false,
     "plainSummaryEn": "omg.dev: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "monotykamary:pi-fabric",
@@ -5298,7 +5383,8 @@
     "archived": false,
     "plainSummaryEn": "pi-fabric: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "latitude-dev:latitude-llm",
@@ -5347,7 +5433,8 @@
     "archived": false,
     "plainSummaryEn": "latitude-llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "cognesy:instructor-php",
@@ -5397,7 +5484,8 @@
     "archived": false,
     "plainSummaryEn": "instructor-php: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "bastani-inc:atomic",
@@ -5446,7 +5534,8 @@
     "archived": false,
     "plainSummaryEn": "atomic: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "wrongstack:wrongstack",
@@ -5495,7 +5584,8 @@
     "archived": false,
     "plainSummaryEn": "WrongStack: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "celestoai:celesto",
@@ -5545,7 +5635,8 @@
     "archived": false,
     "plainSummaryEn": "celesto: Semantic exploration engine for codebases and knowledge graphs using beam search.",
     "jevDecisionPointEn": "Assigns relevance probabilities to candidate files or graph edges to direct exploration.",
-    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing."
+    "highlightBenefitEn": "Locates target code and relationships in seconds without expensive vector indexing.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "agentjido:req_llm",
@@ -5594,7 +5685,8 @@
     "archived": false,
     "plainSummaryEn": "req_llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "vellum-ai:vellum-assistant",
@@ -5643,7 +5735,8 @@
     "archived": false,
     "plainSummaryEn": "vellum-assistant: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "notque:vexjoy-agent",
@@ -5692,7 +5785,8 @@
     "archived": false,
     "plainSummaryEn": "vexjoy-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "uezo:aiavatarkit",
@@ -5742,7 +5836,8 @@
     "archived": false,
     "plainSummaryEn": "aiavatarkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "ldbumble:taskuary",
@@ -5792,7 +5887,8 @@
     "archived": false,
     "plainSummaryEn": "taskuary: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "yonatangross:orchestkit",
@@ -5841,7 +5937,8 @@
     "archived": false,
     "plainSummaryEn": "orchestkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "kitze:skillbox",
@@ -5891,7 +5988,8 @@
     "archived": false,
     "plainSummaryEn": "skillbox: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.",
     "jevDecisionPointEn": "Judges line-by-line relevance against current task goals to discard token noise.",
-    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions."
+    "highlightBenefitEn": "Preserves context window bandwidth and prevents reasoning degradation on long sessions.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "quentincody:interlinked-cli",
@@ -5940,7 +6038,8 @@
     "archived": false,
     "plainSummaryEn": "interlinked-cli: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "danieljvdm:effect-agent",
@@ -5990,7 +6089,8 @@
     "archived": false,
     "plainSummaryEn": "effect-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "devmortimer:pi-warden",
@@ -6039,7 +6139,8 @@
     "archived": false,
     "plainSummaryEn": "pi-warden: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "pithings:advocaat",
@@ -6088,7 +6189,8 @@
     "archived": false,
     "plainSummaryEn": "advocaat: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "getsynkora:synkora-ai",
@@ -6137,7 +6239,8 @@
     "archived": false,
     "plainSummaryEn": "synkora-ai: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "hackclub:ai",
@@ -6186,7 +6289,8 @@
     "archived": false,
     "plainSummaryEn": "ai: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).",
     "jevDecisionPointEn": "Provides Choice, Score, and Noul tools on demand for external agent environments.",
-    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly."
+    "highlightBenefitEn": "Integrates low-latency structured decisions into existing agent stacks effortlessly.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "kitze:unclutter",
@@ -6235,7 +6339,8 @@
     "archived": false,
     "plainSummaryEn": "unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.",
     "jevDecisionPointEn": "Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.",
-    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation."
+    "highlightBenefitEn": "Decouples decision making from execution for inspectable, lightning-fast UI navigation.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "cequence-io:openai-scala-client",
@@ -6285,7 +6390,8 @@
     "archived": false,
     "plainSummaryEn": "openai-scala-client: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.",
     "jevDecisionPointEn": "Ingests real-time domain telemetry to trigger automated execution or risk advisories.",
-    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows."
+    "highlightBenefitEn": "Brings structured semantic perception to second-level mission-critical workflows.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "phd-peter:ego-jev",
@@ -6332,7 +6438,8 @@
       }
     ],
     "headSha": "0da45e4f3a3bdad56402b5c38226ad3a2e10409c",
-    "archived": false
+    "archived": false,
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "hr98w:jev-visual",
@@ -6380,7 +6487,8 @@
       }
     ],
     "headSha": "19af545f096e8db4c4dd5d47aed42d92ec252111",
-    "archived": false
+    "archived": false,
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "rokcso:bluenoise",
@@ -6427,7 +6535,8 @@
       }
     ],
     "headSha": "ef81ea7a7c3677501d6de8f9235a4d6a866b573a",
-    "archived": false
+    "archived": false,
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "xiechengyuan:jev-gomoku",
@@ -6583,7 +6692,7 @@
     "author": "moritzkremb",
     "url": "https://github.com/moritzkremb/jev-voice-browser",
     "category": "CLI & Pipelines",
-    "plainSummary": "jev-voice-browser：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -6593,7 +6702,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Control a real browser by voice. Jev (TypeSafe System One) decides intent + target in ~300 ms per spoken word; Playwright acts — often before you finish the sentence.",
+    "plainSummaryEn": "Control a real browser with sub-300ms voice commands, using Jev to resolve intent and target elements before sentences finish.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6631,7 +6740,10 @@
       }
     ],
     "readmeSha": "fa033303eeefb82528327d28b4a9388972ca1c82",
-    "sourceHash": "2934ead60b2911e4fd978550f8a4e2f406ba3108423d8e6a96384882a2fcfaa5"
+    "sourceHash": "2934ead60b2911e4fd978550f8a4e2f406ba3108423d8e6a96384882a2fcfaa5",
+    "jevDecisionPointEn": "Classifies spoken voice input into target DOM controls and actions within ~300ms per utterance.",
+    "highlightBenefitEn": "Enables voice-driven browser navigation fast enough to act before speech concludes.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "yusukebe:hono-jev-router",
@@ -6640,7 +6752,7 @@
     "author": "yusukebe",
     "url": "https://github.com/yusukebe/hono-jev-router",
     "category": "CLI & Pipelines",
-    "plainSummary": "hono-jev-router：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -6650,7 +6762,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Route HTTP requests by meaning. A semantic router for Hono powered by Jev.",
+    "plainSummaryEn": "Semantic HTTP request router for Hono applications powered by TypeSafe Jev discrete classifications.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6688,7 +6800,10 @@
       }
     ],
     "readmeSha": "82444e8f08781a044956473aa7b4871ac1db2051",
-    "sourceHash": "0e41755f3ef34480abea81de86cac24ecfd848693589fb08f7aad6c18e26abb7"
+    "sourceHash": "0e41755f3ef34480abea81de86cac24ecfd848693589fb08f7aad6c18e26abb7",
+    "jevDecisionPointEn": "Routes incoming HTTP requests based on semantic meaning rather than static URL paths.",
+    "highlightBenefitEn": "Embeds intent-based routing into lightweight edge and serverless web APIs.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "razorback16:openjev",
@@ -6697,7 +6812,7 @@
     "author": "razorback16",
     "url": "https://github.com/razorback16/openjev",
     "category": "CLI & Pipelines",
-    "plainSummary": "openjev：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -6707,7 +6822,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Open, Jev-compatible System One decision server on DiffusionGemma",
+    "plainSummaryEn": "Open-source, self-hostable Jev-compatible System One decision server built on DiffusionGemma.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6745,7 +6860,10 @@
       }
     ],
     "readmeSha": "339652a0c12a891a025c1e1438977fddbea77237",
-    "sourceHash": "070060512483579fe55ba616be5800bc97ddae5f1de33f87751518a95dcba354"
+    "sourceHash": "070060512483579fe55ba616be5800bc97ddae5f1de33f87751518a95dcba354",
+    "jevDecisionPointEn": "Serves structured Choice, Score, and Noul inference requests conforming to TypeSafe API specification.",
+    "highlightBenefitEn": "Provides a drop-in open-source alternative for local Jev-compatible decision loops.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "giesn:typesafe-jev-workflow",
@@ -6764,7 +6882,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "A small async LangGraph workflow that sends a mocked email to TypeSafe's Jev model,\nreceives a typed `Choice` (`invoice` or `general`), and routes to a demo handler.\nThe handlers only set a destination in graph state; they do not send email or make payments.",
+    "plainSummaryEn": "Async LangGraph workflow routing simulated emails to typed destination handlers via Jev Choice judgments.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6802,7 +6920,10 @@
       }
     ],
     "readmeSha": "3a77bfb9b7a2fa063a1d768078b4be54c1e0e23e",
-    "sourceHash": "ce37ae52cb64a9b57fe50a01e41b86d4710c0ea62794b3d0914fbff8cca9f2c3"
+    "sourceHash": "ce37ae52cb64a9b57fe50a01e41b86d4710c0ea62794b3d0914fbff8cca9f2c3",
+    "jevDecisionPointEn": "Classifies incoming email payloads into discrete category choices (e.g. invoice vs. general).",
+    "highlightBenefitEn": "Provides deterministic state-machine branching without verbose LLM prompt overhead.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "billionsbobby:jevrouter",
@@ -6821,7 +6942,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "A lightweight Jev-powered router for models, tools, and subagents",
+    "plainSummaryEn": "Local-first agent capability router coordinating models, tools, and subagents with Jev decision gates.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6856,7 +6977,10 @@
       }
     ],
     "readmeSha": "a3708cef8d874d118f52af910b2733b8b3403543",
-    "sourceHash": "ffcbecb81500e09b075afc8dfb38314a0cbdf567b9d320686e45c7ada6af2f24"
+    "sourceHash": "ffcbecb81500e09b075afc8dfb38314a0cbdf567b9d320686e45c7ada6af2f24",
+    "jevDecisionPointEn": "Selects optimal execution agents and tools while enforcing safety and permission policies.",
+    "highlightBenefitEn": "Unifies heterogeneous agent capabilities under a single typed routing layer.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "brainwires:jevwire",
@@ -6865,7 +6989,7 @@
     "author": "Brainwires",
     "url": "https://github.com/Brainwires/jevwire",
     "category": "MCP & Integrations",
-    "plainSummary": "jevwire：通过工具接口提供选择、评分或概率判断。",
+    "plainSummary": "通过工具接口提供选择、评分或概率判断。",
     "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
     "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
     "tags": [
@@ -6875,7 +6999,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Jev decision layer for agents: MCP server, embeddable DecisionModel library, and an escalate-only Claude Code plugin (TypeSafe AI's Jev)",
+    "plainSummaryEn": "Agent decision layer providing an MCP server, embeddable library, and Claude Code escalation plugin.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6913,7 +7037,10 @@
       }
     ],
     "readmeSha": "b900654c843c49a5e452aa9b4bfc70a04a629367",
-    "sourceHash": "27b5b64d9973519126f6e952b49e296d44f38c59cd92bbd36f41a4499f19625c"
+    "sourceHash": "27b5b64d9973519126f6e952b49e296d44f38c59cd92bbd36f41a4499f19625c",
+    "jevDecisionPointEn": "Evaluates task risk and complexity to determine when to escalate execution to higher-tier models.",
+    "highlightBenefitEn": "Reduces unnecessary frontier model invocations with an embeddable decision gate.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "wiktorb2004:llama-index-jev",
@@ -6922,7 +7049,7 @@
     "author": "WiktorB2004",
     "url": "https://github.com/WiktorB2004/llama-index-jev",
     "category": "Data & Search",
-    "plainSummary": "llama-index-jev：给候选记录判断相关性或打分，再由本地程序筛选和排序。",
+    "plainSummary": "给候选记录判断相关性或打分，再由本地程序筛选和排序。",
     "jevDecisionPoint": "给候选记录判断相关性或打分，再由本地程序筛选和排序。",
     "highlightBenefit": "把语义判断接进已有的数据查询流程。",
     "tags": [
@@ -6935,7 +7062,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "LlamaIndex reranker + router powered by TypeSafe Jev — typed scores/choices, cheaper than LLM-as-judge.",
+    "plainSummaryEn": "Reranker and semantic router for LlamaIndex leveraging Jev for typed document scoring and choice.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -6973,7 +7100,10 @@
       }
     ],
     "readmeSha": "4fa259669e9b09818aa83689f7f0c23108e74694",
-    "sourceHash": "61e1dc12c5959cc624f3b1d7ed411375548080e1fd5febc1b11482e6be08f7e9"
+    "sourceHash": "61e1dc12c5959cc624f3b1d7ed411375548080e1fd5febc1b11482e6be08f7e9",
+    "jevDecisionPointEn": "Scores candidate document relevance and routes queries to specialized index collections.",
+    "highlightBenefitEn": "Offers a faster, cheaper alternative to heavy LLM-as-a-judge reranking.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "abhixhek:jevcal",
@@ -6982,7 +7112,7 @@
     "author": "abhixhek",
     "url": "https://github.com/abhixhek/jevcal",
     "category": "CLI & Pipelines",
-    "plainSummary": "jevcal：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -6995,7 +7125,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Stop guessing confidence thresholds: calibrate, threshold, and drift-check typed decision models (TypeSafe Jev) against an LLM teacher.",
+    "plainSummaryEn": "Calibration and drift-detection toolkit for typed decision models against frontier LLM teachers.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7033,7 +7163,10 @@
       }
     ],
     "readmeSha": "f7240981a12f67d2c87c54e71b23ee757d19ecc8",
-    "sourceHash": "063dc7eae75add346f76a6a3663da6953d1d43d87b9460e162f477835ccb2d32"
+    "sourceHash": "063dc7eae75add346f76a6a3663da6953d1d43d87b9460e162f477835ccb2d32",
+    "jevDecisionPointEn": "Calculates calibration curves, optimal confidence thresholds, and distributional drift over time.",
+    "highlightBenefitEn": "Prevents decision degradation by systematically validating confidence reliability.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "wondertwins:jev-benchmark",
@@ -7042,7 +7175,7 @@
     "author": "wondertwins",
     "url": "https://github.com/wondertwins/jev-benchmark",
     "category": "Decision Tools",
-    "plainSummary": "jev-benchmark：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "plainSummary": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
     "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
     "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
     "tags": [
@@ -7050,7 +7183,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Benchmarks and a playground for TypeSafe's Jev (System One) model: chess, and who-is-the-player-talking-to for speech-to-text game NPCs",
+    "plainSummaryEn": "Interactive benchmark suite and playground evaluating Jev across chess tactics and NPC dialogue routing.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7088,7 +7221,10 @@
       }
     ],
     "readmeSha": "4d088603b77d628edb975369db1a9a4c09a1356b",
-    "sourceHash": "c5fbd9ea3aed275c3237423ac10fa2dc91df6f99b91eb4994a83e91cc6f02ab4"
+    "sourceHash": "c5fbd9ea3aed275c3237423ac10fa2dc91df6f99b91eb4994a83e91cc6f02ab4",
+    "jevDecisionPointEn": "Tests discrete coordinate choice in board games and speaker-attribution decisions in audio transcripts.",
+    "highlightBenefitEn": "Provides reproducible latency and accuracy baselines across real-world decision scenarios.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "olti1947:jev-java",
@@ -7097,7 +7233,7 @@
     "author": "Olti1947",
     "url": "https://github.com/Olti1947/jev-java",
     "category": "SDK & Decision Frameworks",
-    "plainSummary": "jev-java：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
+    "plainSummary": "由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
     "jevDecisionPoint": "由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
     "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
     "tags": [
@@ -7107,7 +7243,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Idiomatic Java SDK for TypeSafe AI Jev System One decision engine",
+    "plainSummaryEn": "Idiomatic Java SDK and type-safe client library for TypeSafe AI Jev decision engine.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7145,7 +7281,10 @@
       }
     ],
     "readmeSha": "41f69847539ed77bace9feefd23e9dec77be890d",
-    "sourceHash": "2a7c15702d04f28e782a4da9451e48ff7b19c61ae7b1795c4ebbaf442b52eaec"
+    "sourceHash": "2a7c15702d04f28e782a4da9451e48ff7b19c61ae7b1795c4ebbaf442b52eaec",
+    "jevDecisionPointEn": "Wraps HTTP System One endpoints into strongly-typed Java POJOs and asynchronous reactive flows.",
+    "highlightBenefitEn": "Brings native enterprise Java compatibility to Jev-powered microservices.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "vmendes90:jev-shield",
@@ -7154,7 +7293,7 @@
     "author": "vmendes90",
     "url": "https://github.com/vmendes90/jev-shield",
     "category": "High-Frequency & Simulation",
-    "plainSummary": "jev-shield：读取当前状态，在可用动作中做选择。",
+    "plainSummary": "读取当前状态，在可用动作中做选择。",
     "jevDecisionPoint": "读取当前状态，在可用动作中做选择。",
     "highlightBenefit": "在连续交互中观察决策效果；频率依实际运行而定。",
     "tags": [
@@ -7167,7 +7306,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Traditional ad blockers (like uBlock Origin) rely primarily on static URL filterlists and CSS selector lists. While effective for traditional banner networks, they struggle with **native ads and sponsored feed cards** (on platforms like X/Twitter, Reddit, LinkedIn, and modern digital feeds) where promotional posts share the exact same first-party domain, markup structure, and styling as organic content.",
+    "plainSummaryEn": "Semantic content blocker distinguishing sponsored feed cards and native ads from organic content using real-time Jev judgments.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7205,7 +7344,10 @@
       }
     ],
     "readmeSha": "5eb739a203673f2a202842df2e835f5e75a4737c",
-    "sourceHash": "3c9167b13f0aa86ec7f3fe9ae72c46730035828d16515d4771ed494f0420d247"
+    "sourceHash": "3c9167b13f0aa86ec7f3fe9ae72c46730035828d16515d4771ed494f0420d247",
+    "jevDecisionPointEn": "Inspects feed card DOM structures to classify promotional and sponsored content sharing organic styling.",
+    "highlightBenefitEn": "Filters first-party native ads where traditional CSS selectors and URL blocklists fail.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "nainish-rai:jev-frontend-qa",
@@ -7214,7 +7356,7 @@
     "author": "Nainish-Rai",
     "url": "https://github.com/Nainish-Rai/jev-frontend-qa",
     "category": "Decision Tools",
-    "plainSummary": "jev-frontend-qa：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "plainSummary": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
     "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
     "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
     "tags": [
@@ -7222,7 +7364,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "**Status: live Jev acceptance passed for the synthetic reference scenarios.** The real CLI, Jev `1.13.0`, Browser Harness, Chrome, HTTP endpoints, and SQLite were exercised together. Healthy creation, lifecycle, and validation passed; all three deliberate defects failed their authored contracts; exploration completed without claiming a contract PASS. There is no offline-model fallback in the production CLI.",
+    "plainSummaryEn": "Automated frontend QA and regression testing suite exercising browser interactions with Jev contract verification.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7260,7 +7402,10 @@
       }
     ],
     "readmeSha": "6ff98986777607dcb626a139b96a3186b6ee089d",
-    "sourceHash": "fd259e906d7dc9670b3fa39ec543afd5103b1e8d8d3c4153fe9ad54a508b0802"
+    "sourceHash": "fd259e906d7dc9670b3fa39ec543afd5103b1e8d8d3c4153fe9ad54a508b0802",
+    "jevDecisionPointEn": "Evaluates synthetic scenario contracts and verifies UI element state transitions under test.",
+    "highlightBenefitEn": "Detects subtle UI defects and behavioral deviations without heavy end-to-end model costs.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jerryfane:omp-jev-compaction",
@@ -7269,7 +7414,7 @@
     "author": "jerryfane",
     "url": "https://github.com/jerryfane/omp-jev-compaction",
     "category": "Decision Tools",
-    "plainSummary": "omp-jev-compaction：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "plainSummary": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
     "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
     "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
     "tags": [
@@ -7277,7 +7422,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Verbatim Jev-scored context reduction for omp, over TypeSafe or OpenRouter",
+    "plainSummaryEn": "Verbatim context reduction plugin for OpenMultiPlatform (omp) scoring token utility via Jev.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7315,7 +7460,10 @@
       }
     ],
     "readmeSha": "29398ad2e6dd6bb9beabffb5178284f735289106",
-    "sourceHash": "722b6387d661c2310ac336eaca9c93f684a7e64e5a69d4053906a933c31a4ab6"
+    "sourceHash": "722b6387d661c2310ac336eaca9c93f684a7e64e5a69d4053906a933c31a4ab6",
+    "jevDecisionPointEn": "Scores conversational history and tool responses to prune obsolete context while preserving exact text.",
+    "highlightBenefitEn": "Slashes prompt token overhead without introducing summary hallucinations.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "maker-kk:todo-jev",
@@ -7324,7 +7472,7 @@
     "author": "maker-KK",
     "url": "https://github.com/maker-KK/todo-jev",
     "category": "CLI & Pipelines",
-    "plainSummary": "todo-jev：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -7334,7 +7482,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "⚡ Ultra-fast, low-cost intelligent task classifier and 3-tier routing engine powered by TypeSafe Jev (System One)",
+    "plainSummaryEn": "Intelligent task classifier and 3-tier routing engine organizing todo items via Jev decisions.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7372,7 +7520,10 @@
       }
     ],
     "readmeSha": "819f00b5e9c8775a7b0332480d43485e380aee2f",
-    "sourceHash": "7df4af353cfc5b36a6f6f7f4283627400568acd940db3186c3dbb7383112b4b9"
+    "sourceHash": "7df4af353cfc5b36a6f6f7f4283627400568acd940db3186c3dbb7383112b4b9",
+    "jevDecisionPointEn": "Classifies raw task notes into priority tiers, execution contexts, and scheduling buckets.",
+    "highlightBenefitEn": "Automates backlog grooming and task prioritization with sub-100ms response times.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "ozers:jevsome-projects",
@@ -7381,7 +7532,7 @@
     "author": "ozers",
     "url": "https://github.com/ozers/jevsome-projects",
     "category": "Domain & Vertical Tools",
-    "plainSummary": "jevsome-projects：评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "plainSummary": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "highlightBenefit": "增加一组可记录、可对照的判断信号。",
     "tags": [
@@ -7394,7 +7545,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Open-source projects that provably call Jev, TypeSafe AI's System One model. Every entry links to the line of code that proves it. Refreshed daily.",
+    "plainSummaryEn": "Automated index tracking verified open-source repositories integrating TypeSafe Jev model.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7432,7 +7583,10 @@
       }
     ],
     "readmeSha": "48060e99bcc8b25495c202b141b95f66de895adf",
-    "sourceHash": "cee69117c17e5b3573331baca462647b1fbc8377b9c3b2f88d324381e092e2b1"
+    "sourceHash": "cee69117c17e5b3573331baca462647b1fbc8377b9c3b2f88d324381e092e2b1",
+    "jevDecisionPointEn": "Scans GitHub commits and pull requests to verify source-level implementation signatures.",
+    "highlightBenefitEn": "Provides transparent, line-of-code traceability across the emerging Jev ecosystem.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "nasrallah-al:jev-cli",
@@ -7441,7 +7595,7 @@
     "author": "Nasrallah-AL",
     "url": "https://github.com/Nasrallah-AL/jev-cli",
     "category": "CLI & Pipelines",
-    "plainSummary": "jev-cli：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -7454,7 +7608,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Exit code was 2: a claim was contradicted. Add `--json` to any command for machine-readable output, or `--dry-run` to see exactly what would be sent without calling the API.",
+    "plainSummaryEn": "Command-line interface for testing, dry-running, and piping structured Jev decisions in shell pipelines.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7492,7 +7646,10 @@
       }
     ],
     "readmeSha": "6adf6bc10dad9df42e4a19af0e8c39833ef2f003",
-    "sourceHash": "a58272afafe34f75b3030216072ce7ad7dca560a0166c78272a806be6d7528c8"
+    "sourceHash": "a58272afafe34f75b3030216072ce7ad7dca560a0166c78272a806be6d7528c8",
+    "jevDecisionPointEn": "Executes typed Jev queries from shell stdin, returning JSON or structured exit codes for Unix pipes.",
+    "highlightBenefitEn": "Seamlessly embeds System One decision gates into standard bash and CI scripts.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "rongxinzy:lightjev",
@@ -7501,7 +7658,7 @@
     "author": "rongxinzy",
     "url": "https://github.com/rongxinzy/LightJev",
     "category": "CLI & Pipelines",
-    "plainSummary": "原始概率的硬标签准确率为 **test 79.57%（656 题）/ 来源定义 OOD 72.44%（352 题）**；精确软分布的平方 L2 分别为 **0.003132 / 0.003964**。这是合成任务、单种子研究结果。目录检索和智能家居规则较强，网格与井字棋状态判断较弱，尚不能称为通用业务决策模型。[完整结果与限制](docs/results-v0.1.md)。",
+    "plainSummary": "用于训练和评测轻量级决策主干模型的实验框架，探索基于 CE/Brier 损失的离线端到端判断。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -7514,7 +7671,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Train lightweight language backbones for typed decisions and candidate probabilities. CE/Brier training, evaluation, and an offline end-to-end demo.",
+    "plainSummaryEn": "Lightweight training and evaluation framework for typed decision backbones, exploring CE/Brier loss on offline decision tasks.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7549,7 +7706,10 @@
       }
     ],
     "readmeSha": "92fe8da5fa58515df11fe91b70481c875a65be89",
-    "sourceHash": "5b984a917c8ac676e2f51ded74eea739d6756e12e1016a7f0d97ae6e675b6fab"
+    "sourceHash": "5b984a917c8ac676e2f51ded74eea739d6756e12e1016a7f0d97ae6e675b6fab",
+    "jevDecisionPointEn": "Evaluates candidate probabilities and discrete choice accuracy across benchmark datasets.",
+    "highlightBenefitEn": "Enables offline experimentation and evaluation of compact System One decision models.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "poponline63:hermes-jev-north-star",
@@ -7558,7 +7718,7 @@
     "author": "poponline63",
     "url": "https://github.com/poponline63/hermes-jev-north-star",
     "category": "Domain & Vertical Tools",
-    "plainSummary": "hermes-jev-north-star：评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "plainSummary": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "highlightBenefit": "增加一组可记录、可对照的判断信号。",
     "tags": [
@@ -7571,7 +7731,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Hermes Agent skill whose north-star gate is judged by Jev (TypeSafe System One): turn an intention into a checkable finish line, generate the run prompt, and let Jev rank what is still unproven.",
+    "plainSummaryEn": "Hermes Agent skill utilizing Jev as a north-star gatekeeper to evaluate unproven task criteria.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7609,7 +7769,10 @@
       }
     ],
     "readmeSha": "dad07dd11d7df508eceadd99f50dbd867e4f6063",
-    "sourceHash": "944cd23131194cd3f1c08327fd6814fa8932d59f1b504242a8852ae1c3ff0132"
+    "sourceHash": "944cd23131194cd3f1c08327fd6814fa8932d59f1b504242a8852ae1c3ff0132",
+    "jevDecisionPointEn": "Ranks unproven validation criteria and determines when execution meets acceptance milestones.",
+    "highlightBenefitEn": "Prevents premature agent termination by enforcing verified completion gates.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "wang-auspicious:codex-jev-compaction",
@@ -7618,7 +7781,7 @@
     "author": "Wang-auspicious",
     "url": "https://github.com/Wang-auspicious/codex-jev-compaction",
     "category": "MCP & Integrations",
-    "plainSummary": "**用 Jev 筛选旧上下文，为 Codex 生成保留原文、可追溯的任务交接包。**",
+    "plainSummary": "用 Jev 筛选旧上下文，为 Codex 生成保留原文、可追溯的任务交接包。",
     "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
     "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
     "tags": [
@@ -7631,7 +7794,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Jev-powered context curation for Codex. Build compact, traceable handoff context through native plugins and skills.",
+    "plainSummaryEn": "Jev-powered context curation skill for Codex generating compact, traceable task handoff packages.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7666,7 +7829,10 @@
       }
     ],
     "readmeSha": "bf2749d1c92242d0dbbf5b727253e09c96693864",
-    "sourceHash": "307a80341687a868e134d4149185c700f827be6b5b5493bcd177e0f321f70a10"
+    "sourceHash": "307a80341687a868e134d4149185c700f827be6b5b5493bcd177e0f321f70a10",
+    "jevDecisionPointEn": "Evaluates previous conversation steps and tool logs to isolate vital context for agent handoffs.",
+    "highlightBenefitEn": "Produces compact, hallucination-free handoff state while drastically saving prompt tokens.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "wang-auspicious:pi-jev-compaction",
@@ -7675,7 +7841,7 @@
     "author": "Wang-auspicious",
     "url": "https://github.com/Wang-auspicious/pi-jev-compaction",
     "category": "CLI & Pipelines",
-    "plainSummary": "**让 Jev 判断哪些旧工具记录仍有用，把保留的原文交还给 Pi。**",
+    "plainSummary": "让 Jev 判断哪些旧工具记录仍有用，把保留的原文交还给 Pi。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -7688,7 +7854,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Jev-powered context compaction for Pi. Keep critical instructions and tool history, prune the noise, and fall back gracefully.",
+    "plainSummaryEn": "Context compaction utility for Pi retaining critical instructions and tool records via Jev scoring.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7723,7 +7889,10 @@
       }
     ],
     "readmeSha": "3c1de5bddb0cb9087f1282c944c2b47a6be3a890",
-    "sourceHash": "5f5e65727c6f5036aaedcb6a98e3a635f0764f40d0e789ea302e7a586ffdfc37"
+    "sourceHash": "5f5e65727c6f5036aaedcb6a98e3a635f0764f40d0e789ea302e7a586ffdfc37",
+    "jevDecisionPointEn": "Scores utility of prior tool invocations and filters non-essential output before model ingestion.",
+    "highlightBenefitEn": "Maintains pristine agent memory across extended multi-step coding sessions.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "fatwang2:jev-review-action",
@@ -7732,7 +7901,7 @@
     "author": "fatwang2",
     "url": "https://github.com/fatwang2/jev-review-action",
     "category": "Domain & Vertical Tools",
-    "plainSummary": "jev-review-action：评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "plainSummary": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "highlightBenefit": "增加一组可记录、可对照的判断信号。",
     "tags": [
@@ -7745,7 +7914,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Configurable GitHub submission review and PR classification with TypeSafe Jev. No text-generation model.",
+    "plainSummaryEn": "Configurable GitHub Action for PR triage and automated code review classification with Jev.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7783,7 +7952,10 @@
       }
     ],
     "readmeSha": "03950571f7d5bf3a663df539fce181fd2ca9122a",
-    "sourceHash": "d4440756743e244b7ce2e624c194d332d1d58366ac9ae0d96919a768a8d571e0"
+    "sourceHash": "d4440756743e244b7ce2e624c194d332d1d58366ac9ae0d96919a768a8d571e0",
+    "jevDecisionPointEn": "Scores PR diff risk dimensions to route trivial changes for auto-merge and complex changes to human review.",
+    "highlightBenefitEn": "Accelerates code review velocity and reduces engineering overhead on routine pull requests.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "akashpriyadarshii:jev-curate",
@@ -7792,7 +7964,7 @@
     "author": "AkashPriyadarshii",
     "url": "https://github.com/AkashPriyadarshii/jev-curate",
     "category": "High-Frequency & Simulation",
-    "plainSummary": "jev-curate：读取当前状态，在可用动作中做选择。",
+    "plainSummary": "读取当前状态，在可用动作中做选择。",
     "jevDecisionPoint": "读取当前状态，在可用动作中做选择。",
     "highlightBenefit": "在连续交互中观察决策效果；频率依实际运行而定。",
     "tags": [
@@ -7805,7 +7977,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "High-throughput synthetic & pretraining dataset sifter powered by TypeSafe AI Jev (api.typesafe.ai). Stream, filter, and score Parquet & JSONL datasets at 1,500+ rows/sec using System One typed decisions (Choice, Score, Noul).",
+    "plainSummaryEn": "High-throughput pretraining dataset sifter streaming, filtering, and scoring Parquet and JSONL rows via Jev.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7843,7 +8015,10 @@
       }
     ],
     "readmeSha": "284371c59e7cc2b25d3fd9007ea060370405eba9",
-    "sourceHash": "6e764bf31acb0d4dc2061098cccf59c0e0c0d17779697eada856f9bfac368935"
+    "sourceHash": "6e764bf31acb0d4dc2061098cccf59c0e0c0d17779697eada856f9bfac368935",
+    "jevDecisionPointEn": "Performs batch Score and Noul judgments on dataset rows at 1,500+ rows/sec.",
+    "highlightBenefitEn": "Separates low-quality or toxic synthetic data prior to compute-intensive model training.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "altryne:jevify",
@@ -7852,7 +8027,7 @@
     "author": "altryne",
     "url": "https://github.com/altryne/jevify",
     "category": "SDK & Decision Frameworks",
-    "plainSummary": "jevify：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
+    "plainSummary": "由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
     "jevDecisionPoint": "由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
     "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
     "tags": [
@@ -7865,7 +8040,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "The CLI asks which agents to install for (Claude Code, Codex, Cursor, and others) and whether to install for this project or globally. Common variations:",
+    "plainSummaryEn": "CLI installer and integration assistant configuring Jev decision endpoints for Claude Code, Codex, and Cursor.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7903,7 +8078,10 @@
       }
     ],
     "readmeSha": "9a4ec0453ff5adf7e5fecbf3b8a47dbade8d8fc2",
-    "sourceHash": "79c469081458476f5a521c13fddf936635ad2b03881852a2c7b1b1d89fad3987"
+    "sourceHash": "79c469081458476f5a521c13fddf936635ad2b03881852a2c7b1b1d89fad3987",
+    "jevDecisionPointEn": "Interactive configuration CLI setting up structured Jev decision hooks across developer agent environments.",
+    "highlightBenefitEn": "Automates multi-agent environment setup and eliminates manual client configuration.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "pistachioaihq:jev-synergy-screening",
@@ -7912,7 +8090,7 @@
     "author": "PistachioAIHQ",
     "url": "https://github.com/PistachioAIHQ/jev-synergy-screening",
     "category": "CLI & Pipelines",
-    "plainSummary": "jev-synergy-screening：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -7922,7 +8100,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "**Gold story = Abstract Triage (TIAB) only — not Article Triage, not MEDLINE PT, not SYNERGY.**",
+    "plainSummaryEn": "High-throughput biomedical literature abstract triage pipeline for systematic reviews using typed Jev decisions.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -7960,7 +8138,10 @@
       }
     ],
     "readmeSha": "b167e02a33ada69d12b15136b7f69ba8e45e340d",
-    "sourceHash": "8147756e94d43236db8d4589d06f16176db7950a31da1747dc53fe5e8cd16665"
+    "sourceHash": "8147756e94d43236db8d4589d06f16176db7950a31da1747dc53fe5e8cd16665",
+    "jevDecisionPointEn": "Evaluates title and abstract (TIAB) texts to classify relevance and score inclusion probability.",
+    "highlightBenefitEn": "Accelerates systematic literature screening pipelines with high-speed semantic pre-filtering.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "byk:jev-mcp",
@@ -7969,7 +8150,7 @@
     "author": "BYK",
     "url": "https://github.com/BYK/jev-mcp",
     "category": "MCP & Integrations",
-    "plainSummary": "jev-mcp：通过工具接口提供选择、评分或概率判断。",
+    "plainSummary": "通过工具接口提供选择、评分或概率判断。",
     "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
     "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
     "tags": [
@@ -7979,7 +8160,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "An eval-first MCP server for TypeSafe's Jev, a System One model that returns typed judgments (noul, choice, score) with probabilities instead of generated text.",
+    "plainSummaryEn": "Evaluation-first Model Context Protocol (MCP) server providing typed Jev decision tools.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8017,7 +8198,10 @@
       }
     ],
     "readmeSha": "7832f636262d740c495b8ed2be4384f7f429451b",
-    "sourceHash": "9c82e136a5f33bb5343c118367769aa0e3110c11c55f3493dc090feef7fddb3e"
+    "sourceHash": "9c82e136a5f33bb5343c118367769aa0e3110c11c55f3493dc090feef7fddb3e",
+    "jevDecisionPointEn": "Exposes calibrated Choice, Score, and Noul capabilities directly to Claude Desktop and Cursor.",
+    "highlightBenefitEn": "Provides immediate drop-in decision primitives to any MCP-compliant agent.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "felpsdev:jev-classifier",
@@ -8026,7 +8210,7 @@
     "author": "felpsdev",
     "url": "https://github.com/felpsdev/jev-classifier",
     "category": "MCP & Integrations",
-    "plainSummary": "jev-classifier：通过工具接口提供选择、评分或概率判断。",
+    "plainSummary": "通过工具接口提供选择、评分或概率判断。",
     "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
     "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
     "tags": [
@@ -8036,7 +8220,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Local tool-routing classifier for coding agents, with a gateway, MCP integrations, and decision logs.",
+    "plainSummaryEn": "Local tool-routing classifier and gateway for coding agents with decision logging.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8074,7 +8258,10 @@
       }
     ],
     "readmeSha": "0c82c9f02aea1582ae4d013ef300f999af81bb63",
-    "sourceHash": "5b23fed8568c3cf99ac9412e8d411751a0f3b7e440021e3a1a07b49341d1d013"
+    "sourceHash": "5b23fed8568c3cf99ac9412e8d411751a0f3b7e440021e3a1a07b49341d1d013",
+    "jevDecisionPointEn": "Evaluates prompt intent to route tasks to specialized tools and agent plugins.",
+    "highlightBenefitEn": "Prevents tool invocation clutter and reduces latency by gating agent toolsets.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "samuelsacco:jev-exploration",
@@ -8083,7 +8270,7 @@
     "author": "SamuelSacco",
     "url": "https://github.com/SamuelSacco/jev-exploration",
     "category": "Domain & Vertical Tools",
-    "plainSummary": "jev-exploration：评估业务状态，给出供本地规则参考的分类或风险分数。",
+    "plainSummary": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "jevDecisionPoint": "评估业务状态，给出供本地规则参考的分类或风险分数。",
     "highlightBenefit": "增加一组可记录、可对照的判断信号。",
     "tags": [
@@ -8092,7 +8279,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Jev (TypeSafe) exploratory thread: claim audit, live demos, and runnable code",
+    "plainSummaryEn": "Exploratory benchmark and runnable experiment collection examining Jev latency and accuracy.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8130,7 +8317,10 @@
       }
     ],
     "readmeSha": "b2e657bdb9dc4e3a9b1e3b4c74d2423cfae9b419",
-    "sourceHash": "eed2e59eb424364aee2c79e67ecc76482cbab0ec0fbe72458ea55667600c3ed8"
+    "sourceHash": "eed2e59eb424364aee2c79e67ecc76482cbab0ec0fbe72458ea55667600c3ed8",
+    "jevDecisionPointEn": "Executes controlled decision experiments comparing Jev latency against autoregressive LLMs.",
+    "highlightBenefitEn": "Offers empirical performance proofs and reproducible code for prospective adopters.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "jevbook:jevscan",
@@ -8139,7 +8329,7 @@
     "author": "jevbook",
     "url": "https://github.com/jevbook/jevscan",
     "category": "MCP & Integrations",
-    "plainSummary": "jevscan：通过工具接口提供选择、评分或概率判断。",
+    "plainSummary": "通过工具接口提供选择、评分或概率判断。",
     "jevDecisionPoint": "通过工具接口提供选择、评分或概率判断。",
     "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
     "tags": [
@@ -8149,7 +8339,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Typed onchain verdicts for EVM tokens. Paste a contract address, get `ape / watch / avoid` with calibrated probabilities, plus `rug_risk`, `momentum`, `liquidity_health` and `fdv_stress` scores. One System One decision loop, three interfaces: a library, a CLI built for pipelines, and an MCP server so your agents can use it too.",
+    "plainSummaryEn": "On-chain token risk scanner providing typed EVM safety verdicts, rug risk, and liquidity health scores.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8187,7 +8377,10 @@
       }
     ],
     "readmeSha": "898f17ab2a41b9321bd6e6334b91d19d856d9adb",
-    "sourceHash": "e41c7f1ae2c115308332935a7fc6a5e40748aa227b936911380730f0a4396e6f"
+    "sourceHash": "e41c7f1ae2c115308332935a7fc6a5e40748aa227b936911380730f0a4396e6f",
+    "jevDecisionPointEn": "Evaluates contract bytecodes and liquidity pool metrics to output ape, watch, or avoid ratings.",
+    "highlightBenefitEn": "Combines real-time DeFi telemetry with instant machine risk scoring.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "taruntomar122:jev-askable-arm",
@@ -8196,7 +8389,7 @@
     "author": "TarunTomar122",
     "url": "https://github.com/TarunTomar122/jev-askable-arm",
     "category": "CLI & Pipelines",
-    "plainSummary": "jev-askable-arm：对输入文本做分类或打分，交给本地规则继续处理。",
+    "plainSummary": "对输入文本做分类或打分，交给本地规则继续处理。",
     "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
     "tags": [
@@ -8206,7 +8399,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "1. **Catalog.** ~30 mutually exclusive skills: `open_gripper`, `up_1cm`, `hover_over`, `descend_onto`, `press_onto`, `done`, …\n2. **State.** Privileged sim xyz, gripper open/closed, object distances, recent chain. No images go to Jev.\n3. **Choose.** One System One request: which primitive, and which object if it needs a target.\n4. **Act.** A small PD executor drives `pd_ee_delta_pos` for that skill, then we ask again.",
+    "plainSummaryEn": "Robot arm manipulation controller selecting discrete action primitives and target objects via high-speed Jev decisions.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8244,7 +8437,10 @@
       }
     ],
     "readmeSha": "7f130fa4eeab685ae1a27f12b8ca6db70eb073ee",
-    "sourceHash": "6a00136963799e4455e2d3cd735e616a2bb0afe6d8c6de27db6cce0cf3d00aec"
+    "sourceHash": "6a00136963799e4455e2d3cd735e616a2bb0afe6d8c6de27db6cce0cf3d00aec",
+    "jevDecisionPointEn": "Selects discrete robotic primitive skills and target coordinates based on privileged simulation state.",
+    "highlightBenefitEn": "Decouples high-level discrete skill choice from low-level PD motor control.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "thebous:jev-flash-review",
@@ -8263,7 +8459,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "Local-first: the engine never reads your repository. The calling agent supplies\nthe diff (and the business context); the engine returns structured verdicts.",
+    "plainSummaryEn": "Local-first code review triage engine returning structured verdicts on candidate diff hunks.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8301,7 +8497,10 @@
       }
     ],
     "readmeSha": "696d9668be96fca5d0b0c75c7851e6ee7b052b15",
-    "sourceHash": "109f13db705b55f00addb947fb4e46c7712be3ad59b0175dc09b53430a44beca"
+    "sourceHash": "109f13db705b55f00addb947fb4e46c7712be3ad59b0175dc09b53430a44beca",
+    "jevDecisionPointEn": "Evaluates diff chunks against business intent to identify high-risk code paths before deep review.",
+    "highlightBenefitEn": "Narrows review scope to high-risk hunks while keeping source code local and private.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "kt3k:jevchat",
@@ -8318,7 +8517,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "By default Jev answers **Yes** or **No**. You can switch to other answer styles\n(Yes/No/Maybe, Mom, Pirate, Tabloid headlines, …) or create your own custom set\nof answers for Jev to choose from.",
+    "plainSummaryEn": "Lightweight terminal chat utility querying Jev for custom persona answers and binary choices.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8356,7 +8555,10 @@
       }
     ],
     "readmeSha": "92fedea553e965b1b0edcc15dbafb0f97ba18668",
-    "sourceHash": "7aaee22ee6d658810875f452ce2cac31a7e634c061f10ae1b67f1283b9944189"
+    "sourceHash": "7aaee22ee6d658810875f452ce2cac31a7e634c061f10ae1b67f1283b9944189",
+    "jevDecisionPointEn": "Selects optimal answers from predefined stylistic choices (e.g. Yes/No, Pirate, Tabloid).",
+    "highlightBenefitEn": "Delivers zero-latency persona-based choices without token-by-token generation overhead.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "raihankhan-rk:jevarena",
@@ -8365,7 +8567,7 @@
     "author": "raihankhan-rk",
     "url": "https://github.com/raihankhan-rk/jevarena",
     "category": "High-Frequency & Simulation",
-    "plainSummary": "jevarena：读取当前状态，在可用动作中做选择。",
+    "plainSummary": "读取当前状态，在可用动作中做选择。",
     "jevDecisionPoint": "读取当前状态，在可用动作中做选择。",
     "highlightBenefit": "在连续交互中观察决策效果；频率依实际运行而定。",
     "tags": [
@@ -8375,7 +8577,7 @@
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
-    "plainSummaryEn": "JevArena — two Jev agents duel in click-only browser games (Browser Use + TypeSafe Jev)",
+    "plainSummaryEn": "Interactive evaluation arena staging click-only browser game duels between competing Jev agents.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -8413,7 +8615,10 @@
       }
     ],
     "readmeSha": "9ef10cc029b62fe999ebb6e49a3be19afdf5ddb3",
-    "sourceHash": "c4c8c1abb341fff34164c2e830a800d732d85cd9fc9c34407916dbd3e2a2025a"
+    "sourceHash": "c4c8c1abb341fff34164c2e830a800d732d85cd9fc9c34407916dbd3e2a2025a",
+    "jevDecisionPointEn": "Selects discrete UI coordinates and click actions from live browser canvas frames.",
+    "highlightBenefitEn": "Provides a competitive, visual benchmark for testing high-frequency decision reflexes.",
+    "claimStatusEn": "Distilled automatically from repository metadata and README; decision mechanism categorized by rule and awaiting manual retest. Not independently run or performance-benchmarked by this site."
   },
   {
     "id": "supercorp-ai:supercov",
@@ -8563,7 +8768,7 @@
     "url": "https://github.com/doeixd/jev-pref",
     "repoId": 1374853245,
     "category": "CLI & Pipelines",
-    "plainSummary": "jev-pref：把 AGENTS.md 中的项目偏好转为 jev-pref.json 规则，用 Jev 审查代码变更（hunk、暂存文件、PR），并把发现反馈给编码 Agent。",
+    "plainSummary": "把 AGENTS.md 中的项目偏好转为 jev-pref.json 规则，用 Jev 审查代码变更（hunk、暂存文件、PR），并把发现反馈给编码 Agent。",
     "plainSummaryEn": "Turn AGENTS.md preferences into a fast, Jev-powered AI linter: define project-specific review rules in jev-pref.json, check hunks, staged files or PRs with Jev, and feed findings back to your coding agent.",
     "jevDecisionPoint": "对每条偏好规则和每个代码变更片段，判断该变更是否违反这条规则。",
     "jevDecisionPointEn": "For each preference rule and each code-change hunk, decide whether the change violates the rule.",

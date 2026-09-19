@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://logicrw.github.io/awesome-jev-projects/">
-  <img src="https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner.svg" alt="Awesome Jev Projects Banner" width="880" style="max-width: 100%; border-radius: 12px;" />
+  <img src="https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-zh.svg" alt="Awesome Jev Projects Banner" width="880" style="max-width: 100%; border-radius: 12px;" />
 </a>
 
 <br/><br/>
@@ -80,7 +80,7 @@
   - 🎯 **核心决策**: 一次请求判断变道、速度、危险程度和是否让行，代码再按阈值执行。
   - 💡 **收益亮点**: 把两种模型放进相同路况里，直接对照决策、耗时和用量。
 
-- [**jev-shield**](https://github.com/vmendes90/jev-shield) `★ 2` - jev-shield：读取当前状态，在可用动作中做选择。
+- [**jev-shield**](https://github.com/vmendes90/jev-shield) `★ 2` - 读取当前状态，在可用动作中做选择。
   - 🎯 **核心决策**: 读取当前状态，在可用动作中做选择。
   - 💡 **收益亮点**: 在连续交互中观察决策效果；频率依实际运行而定。
 
@@ -92,7 +92,7 @@
   - 🎯 **核心决策**: 选择宏观目标、敌人、移动、转向、跳跃与开火；几何逻辑接手细微瞄准。
   - 💡 **收益亮点**: 把游戏运行和网络推理分开，不必每一帧都等待模型。
 
-- [**jev-curate**](https://github.com/AkashPriyadarshii/jev-curate) `★ 1` - jev-curate：读取当前状态，在可用动作中做选择。
+- [**jev-curate**](https://github.com/AkashPriyadarshii/jev-curate) `★ 1` - 读取当前状态，在可用动作中做选择。
   - 🎯 **核心决策**: 读取当前状态，在可用动作中做选择。
   - 💡 **收益亮点**: 在连续交互中观察决策效果；频率依实际运行而定。
 
@@ -109,7 +109,7 @@
   - 🎯 **核心决策**: 每架飞机提交油量、预计时间和附近交通，塔台另问降落顺序。
   - 💡 **收益亮点**: 把多飞机冲突做成可观察的决策场景，每次请求都能展开查看。
 
-- [**jevarena**](https://github.com/raihankhan-rk/jevarena) `★ 1` - jevarena：读取当前状态，在可用动作中做选择。
+- [**jevarena**](https://github.com/raihankhan-rk/jevarena) `★ 1` - 读取当前状态，在可用动作中做选择。
   - 🎯 **核心决策**: 读取当前状态，在可用动作中做选择。
   - 💡 **收益亮点**: 在连续交互中观察决策效果；频率依实际运行而定。
 
@@ -156,7 +156,7 @@
   - 🎯 **核心决策**: 将带类型的问题转成 System One 请求，并把命名答案映射回调用方。
   - 💡 **收益亮点**: 减少手写请求和解析代码，也支持通过 Vercel 网关调用。
 
-- [**jev-java**](https://github.com/Olti1947/jev-java) `★ 2` - jev-java：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+- [**jev-java**](https://github.com/Olti1947/jev-java) `★ 2` - 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 🎯 **核心决策**: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 💡 **收益亮点**: 在现有程序中复用接入代码，减少重复处理接口细节。
 
@@ -168,7 +168,7 @@
   - 🎯 **核心决策**: 围绕同一份状态回答是非、单选和评分问题，把结果交还 Python 程序继续处理。
   - 💡 **收益亮点**: 省去自己封装请求和解析回答的工作；可复用 aiohttp 连接，重试策略由调用方掌握。
 
-- [**jevify**](https://github.com/altryne/jevify) `★ 1` - jevify：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+- [**jevify**](https://github.com/altryne/jevify) `★ 1` - 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 🎯 **核心决策**: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 💡 **收益亮点**: 在现有程序中复用接入代码，减少重复处理接口细节。
 
@@ -218,7 +218,7 @@
 
 *在终端脚本、Unix 管道与 CI/CD 自动化流程中引入语义判断的工程工具。*
 
-- [**jev-voice-browser**](https://github.com/moritzkremb/jev-voice-browser) `★ 35` - jev-voice-browser：对输入文本做分类或打分，交给本地规则继续处理。
+- [**jev-voice-browser**](https://github.com/moritzkremb/jev-voice-browser) `★ 35` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -226,7 +226,7 @@
   - 🎯 **核心决策**: 每个源文件一次请求，问 Jev 12 个命名属性的 Noul 判断；分数、good/fair/weak 分档和文件排序都由 CLI 自己算。
   - 💡 **收益亮点**: 分数可以拆回具体属性，对着文件核对；答案按内容缓存，第二次只为改动付费。
 
-- [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) `★ 19` - hono-jev-router：对输入文本做分类或打分，交给本地规则继续处理。
+- [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) `★ 19` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -234,7 +234,7 @@
   - 🎯 **核心决策**: 把棋盘、游戏状态、命令或候选任务转成类型化问题，让 Jev 选动作或给风险评分。
   - 💡 **收益亮点**: 把不同问题的问法、结果和限制放到可重跑的小实验里比较。
 
-- [**openjev**](https://github.com/razorback16/openjev) `★ 14` - openjev：对输入文本做分类或打分，交给本地规则继续处理。
+- [**openjev**](https://github.com/razorback16/openjev) `★ 14` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -258,7 +258,7 @@
   - 🎯 **核心决策**: 将单题或多题状态发送给 Jev，返回 Noul、Choice、Score 的完整 JSON 或主值。
   - 💡 **收益亮点**: 只用 Python 标准库提供输入、退出码和结构化错误，方便管道调用。
 
-- [**jev-pref**](https://github.com/doeixd/jev-pref) `★ 2` - jev-pref：把 AGENTS.md 中的项目偏好转为 jev-pref.json 规则，用 Jev 审查代码变更（hunk、暂存文件、PR），并把发现反馈给编码 Agent。
+- [**jev-pref**](https://github.com/doeixd/jev-pref) `★ 2` - 把 AGENTS.md 中的项目偏好转为 jev-pref.json 规则，用 Jev 审查代码变更（hunk、暂存文件、PR），并把发现反馈给编码 Agent。
   - 🎯 **核心决策**: 对每条偏好规则和每个代码变更片段，判断该变更是否违反这条规则。
   - 💡 **收益亮点**: 以 CLI 形式运行（npx jev-pref setup），可接入 pre-commit、PR 与 Agent 工作流，区分阻断与建议级发现。
 
@@ -266,7 +266,7 @@
   - 🎯 **核心决策**: 先判断模式、深度与澄清需求，再检查草稿是否切题、有无无依据陈述。
   - 💡 **收益亮点**: 回答和决策报告并排显示，方便看模型为什么进入下一步。
 
-- [**jevcal**](https://github.com/abhixhek/jevcal) `★ 2` - jevcal：对输入文本做分类或打分，交给本地规则继续处理。
+- [**jevcal**](https://github.com/abhixhek/jevcal) `★ 2` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -274,7 +274,7 @@
   - 🎯 **核心决策**: 对每个工具调用分别问是否保留调用与结果，再执行保留、截短结果或成对删除。
   - 💡 **收益亮点**: 减少送给主模型的旧工具内容，并保留可重建的裁剪记录。
 
-- [**todo-jev**](https://github.com/maker-KK/todo-jev) `★ 2` - todo-jev：对输入文本做分类或打分，交给本地规则继续处理。
+- [**todo-jev**](https://github.com/maker-KK/todo-jev) `★ 2` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -286,7 +286,7 @@
   - 🎯 **核心决策**: 用 Noul 回答 Is n odd，本地按概率转成布尔值。
   - 💡 **收益亮点**: 用极小接口示例观察模型判断与确定性计算的差别。
 
-- [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) `★ 1` - jev-askable-arm：对输入文本做分类或打分，交给本地规则继续处理。
+- [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) `★ 1` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -294,7 +294,7 @@
   - 🎯 **核心决策**: 针对同一份输入做分类、真假判断和分级评分，返回选项及其概率。
   - 💡 **收益亮点**: 能接收标准输入，把语义校验接进已有脚本和 CI；支持直连 TypeSafe 或走 Vercel 网关。
 
-- [**jev-cli**](https://github.com/Nasrallah-AL/jev-cli) `★ 1` - jev-cli：对输入文本做分类或打分，交给本地规则继续处理。
+- [**jev-cli**](https://github.com/Nasrallah-AL/jev-cli) `★ 1` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -302,15 +302,15 @@
   - 🎯 **核心决策**: 在有限语法和工具候选里选下一步，代码负责组合成 Python、Bash 等输出。
   - 💡 **收益亮点**: 能观察结构化决策如何参与代码生成和执行。
 
-- [**jev-synergy-screening**](https://github.com/PistachioAIHQ/jev-synergy-screening) `★ 1` - jev-synergy-screening：对输入文本做分类或打分，交给本地规则继续处理。
+- [**jev-synergy-screening**](https://github.com/PistachioAIHQ/jev-synergy-screening) `★ 1` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
-- [**LightJev**](https://github.com/rongxinzy/LightJev) `★ 1` - 原始概率的硬标签准确率为 **test 79.57%（656 题）/ 来源定义 OOD 72.44%（352 题）**；精确软分布的平方 L2 分别为 **0.003132 / 0.003964**。这是合成任务、单种子研究结果。目录检索和智能家居规则较强，网格与井字棋状态判断较弱，尚不能称为通用业务决策模型。[完整结果与限制](docs/results-v0.1.md)。
+- [**LightJev**](https://github.com/rongxinzy/LightJev) `★ 1` - 用于训练和评测轻量级决策主干模型的实验框架，探索基于 CE/Brier 损失的离线端到端判断。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
-- [**pi-jev-compaction**](https://github.com/Wang-auspicious/pi-jev-compaction) `★ 1` - **让 Jev 判断哪些旧工具记录仍有用，把保留的原文交还给 Pi。**
+- [**pi-jev-compaction**](https://github.com/Wang-auspicious/pi-jev-compaction) `★ 1` - 让 Jev 判断哪些旧工具记录仍有用，把保留的原文交还给 Pi。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
 
@@ -342,7 +342,7 @@
   - 💡 **收益亮点**: 纯客户端/双阶段执行，支持高并发批量请求与本地缓存（重复内容不重复打分），附带开箱即用的在线 Demo。
   - 🌐 [在线演示](https://jevql.fly.dev/)
 
-- [**llama-index-jev**](https://github.com/WiktorB2004/llama-index-jev) `★ 2` - llama-index-jev：给候选记录判断相关性或打分，再由本地程序筛选和排序。
+- [**llama-index-jev**](https://github.com/WiktorB2004/llama-index-jev) `★ 2` - 给候选记录判断相关性或打分，再由本地程序筛选和排序。
   - 🎯 **核心决策**: 给候选记录判断相关性或打分，再由本地程序筛选和排序。
   - 💡 **收益亮点**: 把语义判断接进已有的数据查询流程。
 
@@ -554,7 +554,7 @@
   - 🎯 **核心决策**: Jev 选择工具或结束，语言模型填开放内容，Python 验参后再由 Jev批准具体调用。
   - 💡 **收益亮点**: 把选工具、写内容和执行权限拆开，逐步记录两种模型各做了什么。
 
-- [**jevwire**](https://github.com/Brainwires/jevwire) `★ 3` - jevwire：通过工具接口提供选择、评分或概率判断。
+- [**jevwire**](https://github.com/Brainwires/jevwire) `★ 3` - 通过工具接口提供选择、评分或概率判断。
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
 
@@ -570,7 +570,7 @@
   - 🎯 **核心决策**: 复用社区 PHP SDK 发出三类判断请求，保留类型、异步 Promise 和异常。
   - 💡 **收益亮点**: Laravel 服务与队列任务可以沿用自己的配置和测试方式。
 
-- [**codex-jev-compaction**](https://github.com/Wang-auspicious/codex-jev-compaction) `★ 1` - **用 Jev 筛选旧上下文，为 Codex 生成保留原文、可追溯的任务交接包。**
+- [**codex-jev-compaction**](https://github.com/Wang-auspicious/codex-jev-compaction) `★ 1` - 用 Jev 筛选旧上下文，为 Codex 生成保留原文、可追溯的任务交接包。
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
 
@@ -578,7 +578,7 @@
   - 🎯 **核心决策**: 在明确候选中分配选择概率，并分别检查各方案是否符合要求。
   - 💡 **收益亮点**: 把方案取舍记录成可对照的判断；结果只作建议，不授权执行。
 
-- [**jev-classifier**](https://github.com/felpsdev/jev-classifier) `★ 1` - jev-classifier：通过工具接口提供选择、评分或概率判断。
+- [**jev-classifier**](https://github.com/felpsdev/jev-classifier) `★ 1` - 通过工具接口提供选择、评分或概率判断。
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
 
@@ -590,7 +590,7 @@
   - 🎯 **核心决策**: 将 Go 的 Choice、Noul、Score 问题转成 System One API 请求。
   - 💡 **收益亮点**: 给 Go 项目提供最基本的 Jev 调用入口。
 
-- [**jev-mcp**](https://github.com/BYK/jev-mcp) `★ 1` - jev-mcp：通过工具接口提供选择、评分或概率判断。
+- [**jev-mcp**](https://github.com/BYK/jev-mcp) `★ 1` - 通过工具接口提供选择、评分或概率判断。
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
 
@@ -602,7 +602,7 @@
   - 🎯 **核心决策**: 发送结构化状态和三类问题，返回带类型的答案，并检查响应是否符合请求。
   - 💡 **收益亮点**: 把连接、校验、取消和观测接入 Go 服务。
 
-- [**jevscan**](https://github.com/jevbook/jevscan) `★ 1` - jevscan：通过工具接口提供选择、评分或概率判断。
+- [**jevscan**](https://github.com/jevbook/jevscan) `★ 1` - 通过工具接口提供选择、评分或概率判断。
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
 
@@ -723,7 +723,7 @@
   - 🎯 **核心决策**: 对新剧情判断 location、beat、mood、danger、inFiction 五项状态。
   - 💡 **收益亮点**: 用固定状态驱动界面和下一回合，不必从生成的故事里硬拆字段。
 
-- [**hermes-jev-north-star**](https://github.com/poponline63/hermes-jev-north-star) `★ 1` - hermes-jev-north-star：评估业务状态，给出供本地规则参考的分类或风险分数。
+- [**hermes-jev-north-star**](https://github.com/poponline63/hermes-jev-north-star) `★ 1` - 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 🎯 **核心决策**: 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 💡 **收益亮点**: 增加一组可记录、可对照的判断信号。
 
@@ -731,15 +731,15 @@
   - 🎯 **核心决策**: 从 chess.js 算出的合法走法中选择一步；Stockfish 分数只给操作者看。
   - 💡 **收益亮点**: 可以同时观察模型选步和本地棋力评估，检查两者的差别。
 
-- [**jev-exploration**](https://github.com/SamuelSacco/jev-exploration) `★ 1` - jev-exploration：评估业务状态，给出供本地规则参考的分类或风险分数。
+- [**jev-exploration**](https://github.com/SamuelSacco/jev-exploration) `★ 1` - 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 🎯 **核心决策**: 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 💡 **收益亮点**: 增加一组可记录、可对照的判断信号。
 
-- [**jev-review-action**](https://github.com/fatwang2/jev-review-action) `★ 1` - jev-review-action：评估业务状态，给出供本地规则参考的分类或风险分数。
+- [**jev-review-action**](https://github.com/fatwang2/jev-review-action) `★ 1` - 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 🎯 **核心决策**: 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 💡 **收益亮点**: 增加一组可记录、可对照的判断信号。
 
-- [**jevsome-projects**](https://github.com/ozers/jevsome-projects) `★ 1` - jevsome-projects：评估业务状态，给出供本地规则参考的分类或风险分数。
+- [**jevsome-projects**](https://github.com/ozers/jevsome-projects) `★ 1` - 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 🎯 **核心决策**: 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 💡 **收益亮点**: 增加一组可记录、可对照的判断信号。
 
@@ -770,15 +770,15 @@
   - 🎯 **核心决策**: 对固定文本和标签集合做分类，记录每个标签的概率、耗时和失败。
   - 💡 **收益亮点**: 能看清模型在哪些任务上适合自动处理，在哪些任务上容易过度自信。
 
-- [**jev-benchmark**](https://github.com/wondertwins/jev-benchmark) `★ 2` - jev-benchmark：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- [**jev-benchmark**](https://github.com/wondertwins/jev-benchmark) `★ 2` - 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 🎯 **核心决策**: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 💡 **收益亮点**: 把选择和打分接进现有程序；暂无可核验的性能对照。
 
-- [**jev-frontend-qa**](https://github.com/Nainish-Rai/jev-frontend-qa) `★ 2` - jev-frontend-qa：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- [**jev-frontend-qa**](https://github.com/Nainish-Rai/jev-frontend-qa) `★ 2` - 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 🎯 **核心决策**: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 💡 **收益亮点**: 把选择和打分接进现有程序；暂无可核验的性能对照。
 
-- [**omp-jev-compaction**](https://github.com/jerryfane/omp-jev-compaction) `★ 2` - omp-jev-compaction：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- [**omp-jev-compaction**](https://github.com/jerryfane/omp-jev-compaction) `★ 2` - 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 🎯 **核心决策**: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 💡 **收益亮点**: 把选择和打分接进现有程序；暂无可核验的性能对照。
 
