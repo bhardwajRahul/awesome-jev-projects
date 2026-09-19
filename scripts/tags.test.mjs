@@ -99,11 +99,12 @@ test('catalog projects each carry only two or three canonical tags', () => {
   }
 });
 
-test('tag-only migration retains the original 259 projects while allowing later additions', {
+test('tag-only migration retains every baseline project while allowing later additions', {
   skip: !process.env.TAG_MIGRATION_BASELINE,
 }, () => {
   const before = JSON.parse(readFileSync(process.env.TAG_MIGRATION_BASELINE, 'utf8'));
-  assert.equal(before.length, 259);
+  assert.ok(before.length > 0, 'migration checks require a nonempty explicit baseline');
+  assert.equal(new Set(before.map(project => project.id)).size, before.length, 'baseline IDs must be unique');
   assert.ok(projects.length >= before.length, 'the catalog must retain every original project');
   const afterById = new Map(projects.map((project) => [project.id, project]));
   const withoutTags = ({ tags: _tags, ...rest }) => rest;
