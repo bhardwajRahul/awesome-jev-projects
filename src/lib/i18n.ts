@@ -130,8 +130,8 @@ export const english: Record<string, string> = {
   "复制": "Copy",
   "Agent 可用核心能力": "Core capabilities for agents",
   "项目检索与推荐：": "Project discovery & recommendations:",
-  "按 18 个专业分类检索 259+ 实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。":
-    "Query 259+ real-world open-source projects across 18 categories, including DOM decisions, routing, and context GC.",
+  "按专业分类检索实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。":
+    "Query real-world open-source projects across categories, including DOM decisions, routing, and context GC.",
   "架构模式与源码证据：": "Architectural patterns & code evidence:",
   "获取 System-1 决策协同器架构，查阅每个项目的真实 Jev 决策点与 GitHub 源码证据。":
     "Learn System-1 decision co-processor patterns with verified Jev decision points and commit-pinned code evidence.",
@@ -141,7 +141,7 @@ export const english: Record<string, string> = {
   "机器可读接口": "Machine-readable endpoints",
   "Agent Skill 标准定义 (Markdown)": "Standard Agent Skill definition (Markdown)",
   "精简路线图与重点项目 (Markdown)": "Curated roadmap & top projects (Markdown)",
-  "完整 259+ 项目结构化数据集 (JSON)": "Full 259+ projects structured dataset (JSON)",
+  "完整项目结构化数据集 (JSON)": "Complete projects structured dataset (JSON)",
   "Agent Skill": "Agent Skill",
   "查看 Agent Skill 与接入指南": "View Agent Skill & integration guide",
   "Agent Skill 接入": "Agent Skill Integration",

@@ -644,49 +644,33 @@ function App() {
           awesome<span className="brand-jev">jev</span>
           <span className="beta">RADAR</span>
         </a>
-        <div className="header-utilities">
-          <nav aria-label={t("主导航")}>
-            <button
-              className={!onlySaved ? "nav-item active" : "nav-item"}
-              onClick={() => {
-                setOnlySaved(false);
-                setCategory("all");
-              }}
-            >
-              {t("探索项目")}
-            </button>
-            <button
-              className={onlySaved ? "nav-item active" : "nav-item"}
-              onClick={() => setOnlySaved(true)}
-              aria-label={`${t("我的收藏")} ${saved.length}`}
-            >
-              <Bookmark
-                className="mobile-bookmark"
-                size={18}
-                aria-hidden="true"
-              />
-              <span className="saved-label">{t("我的收藏")}</span>
-              <span className="nav-count">{saved.length}</span>
-            </button>
-          </nav>
+        <nav className="header-nav" aria-label={t("主导航")}>
           <button
-            className="language-toggle"
-            onClick={() => setLocale((value) => (value === "zh" ? "en" : "zh"))}
-            aria-label={t(locale === "zh" ? "切换到英文" : "切换到中文")}
-            title={t(locale === "zh" ? "切换到英文" : "切换到中文")}
+            className={!onlySaved ? "nav-item active" : "nav-item"}
+            onClick={() => {
+              setOnlySaved(false);
+              setCategory("all");
+            }}
           >
-            <span className={locale === "zh" ? "current" : ""} lang="zh-CN">
-              中
-            </span>
-            <span aria-hidden="true">/</span>
-            <span className={locale === "en" ? "current" : ""} lang="en">
-              EN
-            </span>
+            {t("探索项目")}
           </button>
-        </div>
+          <button
+            className={onlySaved ? "nav-item active" : "nav-item"}
+            onClick={() => setOnlySaved(true)}
+            aria-label={`${t("我的收藏")} ${saved.length}`}
+          >
+            <Bookmark
+              className="mobile-bookmark"
+              size={18}
+              aria-hidden="true"
+            />
+            <span className="saved-label">{t("我的收藏")}</span>
+            <span className="nav-count">{saved.length}</span>
+          </button>
+        </nav>
         <div className="header-actions">
           <button
-            className="button agent-skill-btn"
+            className="agent-skill-btn"
             onClick={() => {
               closeProject();
               setModal("agentSkill");
@@ -694,23 +678,41 @@ function App() {
             aria-label={t("查看 Agent Skill 与接入指南")}
             title={t("查看 Agent Skill 与接入指南")}
           >
-            <Sparkles size={15} />
-            <span>{t("Agent Skill")}</span>
+            <Sparkles size={14} aria-hidden="true" />
+            <span>Agent Skill</span>
           </button>
           <a
-            className="button github-star"
+            className="github-star-btn"
             href="https://github.com/logicrw/awesome-jev-projects"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t("Star on GitHub（新标签页打开）")}
             title={t("到 GitHub 支持这个项目")}
           >
-            <Star size={17} strokeWidth={1.75} aria-hidden="true" />
-            <span>Star on GitHub</span>
+            <Github size={15} aria-hidden="true" />
+            <span>GitHub</span>
           </a>
           <button className="button dark submit-top" onClick={openSubmission}>
-            <Plus size={16} />
+            <Plus size={15} />
             <span>{t("提交项目")}</span>
+          </button>
+          <span className="header-divider" aria-hidden="true" />
+          <button
+            className="language-toggle"
+            onClick={() => setLocale((value) => (value === "zh" ? "en" : "zh"))}
+            aria-label={t(locale === "zh" ? "切换到英文" : "切换到中文")}
+            title={t(locale === "zh" ? "切换到英文" : "切换到中文")}
+          >
+            <Globe size={14} className="lang-globe-icon" aria-hidden="true" />
+            <span className={locale === "zh" ? "current" : ""} lang="zh-CN">
+              中
+            </span>
+            <span aria-hidden="true" className="lang-sep">
+              /
+            </span>
+            <span className={locale === "en" ? "current" : ""} lang="en">
+              EN
+            </span>
           </button>
         </div>
       </header>
@@ -1393,7 +1395,7 @@ function App() {
               <ul className="agent-feature-list">
                 <li>
                   <strong>{t("项目检索与推荐：")}</strong>
-                  {t("按 18 个专业分类检索 259+ 实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。")}
+                  {t("按专业分类检索实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。")}
                 </li>
                 <li>
                   <strong>{t("架构模式与源码证据：")}</strong>
@@ -1441,7 +1443,9 @@ function App() {
                 >
                   <div>
                     <strong>projects.json</strong>
-                    <span>{t("完整 259+ 项目结构化数据集 (JSON)")}</span>
+                    <span>
+                      {t("完整项目结构化数据集 (JSON)")} ({projects.length})
+                    </span>
                   </div>
                   <ExternalLink size={14} />
                 </a>

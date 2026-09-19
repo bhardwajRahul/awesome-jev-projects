@@ -1797,52 +1797,76 @@ a {
 }
 
 /* Primary actions and language control share the site's existing compact chrome. */
-.header-utilities {
+.header-nav {
   display: flex;
   align-items: center;
+  gap: 24px;
   flex: 1;
   min-width: 0;
-  gap: 24px;
 }
-.header-utilities nav {
-  min-width: 0;
+.header-divider {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background: #e3e7de;
+  margin: 0 4px;
+  flex-shrink: 0;
 }
 .language-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 5px;
   height: 36px;
   padding: 0 10px;
   border: 1px solid var(--line);
   border-radius: 7px;
+  background: #ffffff;
   font-size: 12px;
-  color: #8a9183;
+  color: #7a8474;
   flex-shrink: 0;
   white-space: nowrap;
-}
-.language-toggle .current {
-  color: #283821;
-  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 .language-toggle:hover {
-  background: #f0f3eb;
+  background: #f4f6f1;
+  border-color: #ccd5c5;
+  color: #242f20;
 }
-.github-star {
-  border-radius: 999px;
-  border-color: #c4d6b0;
-  background: #eff6e7;
-  color: #3d582a;
-  padding: 10px 15px;
-  height: 40px;
-  font-size: 13px;
-  font-weight: 600;
-  gap: 8px;
+.lang-globe-icon {
+  color: #8c9685;
 }
-.github-star:hover {
-  background: #e0edcf;
-  border-color: #a8c287;
-  color: #283d1b;
+.language-toggle .current {
+  color: #212b1c;
+  font-weight: 700;
+}
+.lang-sep {
+  color: #c9cfc3;
+  font-size: 11px;
+}
+.github-star-btn {
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: #4b5446;
+  padding: 0 11px;
+  height: 36px;
+  font-size: 12.5px;
+  font-weight: 550;
+  gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.github-star-btn:hover {
+  background: #f4f6f1;
+  border-color: #ccd5c5;
+  color: #21291d;
+}
+.github-star-btn svg {
+  color: #495444;
 }
 .featured-banner {
   display: flex;
@@ -2094,30 +2118,36 @@ a {
 
 /* Agent Skill UI & Dialog */
 .agent-skill-btn {
-  border-radius: 999px;
-  border: 1px solid #c8d8b8;
-  background: #f1f7eb;
-  color: #385226;
-  padding: 10px 14px;
-  height: 40px;
-  font-size: 13px;
+  border-radius: 7px;
+  border: 1px solid #dbe6d2;
+  background: #f4f9ef;
+  color: #324722;
+  padding: 0 11px;
+  height: 36px;
+  font-size: 12.5px;
   font-weight: 600;
   gap: 6px;
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 .agent-skill-btn:hover {
-  background: #e3efd5;
-  border-color: #acc692;
-  color: #243a15;
+  background: #e8f3de;
+  border-color: #c4daba;
+  color: #1f3013;
 }
-@media (max-width: 640px) {
-  .agent-skill-btn span {
+.agent-skill-btn svg {
+  color: #5c8538;
+}
+@media (max-width: 768px) {
+  .agent-skill-btn span,
+  .github-star-btn span {
     display: none;
   }
-  .agent-skill-btn {
-    padding: 8px 10px;
-    height: 36px;
+  .agent-skill-btn,
+  .github-star-btn {
+    padding: 0 9px;
   }
 }
 .footer-link-button {
