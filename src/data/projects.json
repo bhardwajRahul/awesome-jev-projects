@@ -9594,5 +9594,89 @@
         "note": "查看固定版本的来源证据"
       }
     ]
+  },
+  {
+    "id": "ufec:jev-block-android-ad",
+    "pinned": false,
+    "name": "jev-block-android-ad",
+    "author": "ufec",
+    "url": "https://github.com/ufec/jev-block-android-ad",
+    "category": "Security & Guardrails",
+    "plainSummary": "JevNoiseGate：面向 Android 通知与短信的噪声过滤器，通过 Jev 离散判定消息是否为垃圾广告，对验证码等未知路径严格放行。",
+    "plainSummaryEn": "JevNoiseGate: Android notification and SMS noise gate using Jev to classify and suppress spam ads while strictly failing open on OTP verification codes.",
+    "jevDecisionPoint": "将捕获的通知文本或短信内容交给 Jev，裁决是否归类为广告干扰信息。",
+    "jevDecisionPointEn": "Sends captured notification or SMS text to Jev to evaluate whether the message is advertising noise.",
+    "highlightBenefit": "告别脆弱的关键词规则库，在保护验证码安全的前提下实现高精度广告拦截。",
+    "highlightBenefitEn": "Replaces brittle keyword blacklists with robust semantic filtering while ensuring verification codes are never dropped.",
+    "claimStatus": "优先保留投稿者与仓库原文；自动检查已确认 Jev 集成代码证据，未经本站真机拦截实测。",
+    "claimStatusEn": "Author and repository text preserved; automated check verified Jev integration code. Runtime SMS blocking not tested by this site.",
+    "tags": [
+      "Android",
+      "Security",
+      "Notification",
+      "SMS",
+      "Kotlin"
+    ],
+    "evidenceNote": "core/decision/.../TypeSafeBackend.kt 接入 TypeSafeClient 与 Jev systemOne 判决短信及通知是否为广告干扰。",
+    "metricLabel": "Noise Gate",
+    "metricContext": "通知与短信智能降噪",
+    "repo": "ufec/jev-block-android-ad",
+    "repoId": 1376095310,
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T15:54:10Z",
+    "updatedAt": "2026-09-19T03:06:43Z",
+    "pushedAt": "2026-09-19T03:06:43Z",
+    "lastCommitAt": "2026-09-19T03:06:43Z",
+    "lastSyncedAt": "2026-09-19T03:46:23Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/34962267?v=4",
+    "language": "Kotlin",
+    "topics": [
+      "ad-blocker",
+      "android",
+      "kotlin",
+      "notification-blocker",
+      "sms-blocker"
+    ],
+    "archived": false,
+    "headSha": "8da22d212a3392468686d21a020eb8ae06afe320",
+    "sourceUrl": "https://github.com/ufec/jev-block-android-ad/blob/8da22d212a3392468686d21a020eb8ae06afe320/core/decision/src/commonMain/kotlin/me/ethanxu/jevnoisegate/core/decision/TypeSafeBackend.kt",
+    "sourcePath": "core/decision/src/commonMain/kotlin/me/ethanxu/jevnoisegate/core/decision/TypeSafeBackend.kt",
+    "evidenceLines": "L1-L45",
+    "verificationStatus": "verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "metadataFetchedAt": "2026-09-19T03:46:23Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ufec/jev-block-android-ad/blob/8da22d212a3392468686d21a020eb8ae06afe320/core/decision/src/commonMain/kotlin/me/ethanxu/jevnoisegate/core/decision/TypeSafeBackend.kt",
+        "note": "查看固定版本的来源证据"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "8da22d212a3392468686d21a020eb8ae06afe320",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ufec/jev-block-android-ad/blob/8da22d212a3392468686d21a020eb8ae06afe320/README.md",
+          "hash": "0745680fafadb9b40c9ce7daaa73304ef3448efc6a124e7e0557c7d259278446"
+        },
+        {
+          "path": "core/decision/src/commonMain/kotlin/me/ethanxu/jevnoisegate/core/decision/TypeSafeBackend.kt",
+          "url": "https://github.com/ufec/jev-block-android-ad/blob/8da22d212a3392468686d21a020eb8ae06afe320/core/decision/src/commonMain/kotlin/me/ethanxu/jevnoisegate/core/decision/TypeSafeBackend.kt",
+          "hash": "686f61e856e17d85b2c08a6edad68120683fc077cea59c65bf7f37e48e77f984"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 11,
+      "issueBodySha256": "1556da14e1c61f3cb5a9a114f82ee282d67bb5b28034dacdee97ce86c91bc851",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/11"
+    }
   }
 ]

@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
-<p>严谨收录 **181+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
+<p>严谨收录 **182+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
 
 </div>
 
@@ -48,7 +48,7 @@
 - [💾 数据库扩展与语义检索 (4)](#data-search-zh)
 - [🌐 浏览器与桌面端自动化 (16)](#browser-os-action-zh)
 - [🧹 上下文垃圾回收与降噪 (7)](#context-gc-filter-zh)
-- [🛡️ 安全防御与输入护栏 (10)](#security-guardrails-zh)
+- [🛡️ 安全防御与输入护栏 (11)](#security-guardrails-zh)
 - [🧩 MCP 协议与工具扩展 (29)](#mcp-integrations-zh)
 - [🧭 代码库分析与图谱寻路 (9)](#codebase-graph-pathfinding-zh)
 - [🔀 模型路由与成本优化 (10)](#routing-cost-optimization-zh)
@@ -502,6 +502,10 @@
 - [**Safer with Jev**](https://github.com/andrelandgraf/typesafe-on-neon) `★ 3` - 给 HTTP 请求装一道内容门禁。Jev 先检查注入指令或不安全内容，通过了再转发到指定地址。
   - 🎯 **核心决策**: 检查请求内容是否允许通过；本地代码在 pass 时转发，review 或 block 时拦住。
   - 💡 **收益亮点**: 把内容检查放到上游请求前，直接复用现有 HTTP 服务。
+
+- [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) `★ 2` - JevNoiseGate：面向 Android 通知与短信的噪声过滤器，通过 Jev 离散判定消息是否为垃圾广告，对验证码等未知路径严格放行。
+  - 🎯 **核心决策**: 将捕获的通知文本或短信内容交给 Jev，裁决是否归类为广告干扰信息。
+  - 💡 **收益亮点**: 告别脆弱的关键词规则库，在保护验证码安全的前提下实现高精度广告拦截。
 
 - [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - 在编程 Agent 调工具前后加一道检查：操作是否危险、是不是用户要求的、返回内容里有没有诱导 Agent 越界的指令。
   - 🎯 **核心决策**: 结合会话对工具风险、用户意图与提示注入迹象做判断，由本地规则决定放行、提醒或拦截。

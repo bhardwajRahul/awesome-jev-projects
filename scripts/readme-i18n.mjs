@@ -71,6 +71,7 @@ export const DECISIONS_JA = {
   "Consumes distance sectors and obstacle heights from classical CV to choose tactical maneuvers among climb, brake, or gap traversal.": "古典的CVによる距離セクターと障害物高さを読み取り、上昇、ブレーキ、間隙通過などの戦術機動を選択。",
   "Reads structured battlefield state and economy data to make independent decisions on base building and army micro.": "構造化された戦況とリソースデータを読み取り、内政建築と戦闘ユニットの操作を独立して意思決定。",
   "Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.": "ユーザーの対話履歴とツールの引数を総合評価し、実行意図がセキュリティポリシー規則に適合しているかを判定。",
+  "Sends captured notification or SMS text to Jev to evaluate whether the message is advertising noise.": "キャプチャした通知やSMSのテキストをJevに送信し、メッセージが広告ノイズであるかを判定。",
 };
 
 export const DECISIONS_KO = {
@@ -146,6 +147,7 @@ export const DECISIONS_KO = {
   "Consumes distance sectors and obstacle heights from classical CV to choose tactical maneuvers among climb, brake, or gap traversal.": "고전 컴퓨터 비전의 거리 섹터와 장애물 높이를 분석하여 상승, 제동, 간극 통과 등 전술 기동을 선택.",
   "Reads structured battlefield state and economy data to make independent decisions on base building and army micro.": "구조화된 전장 상황과 자원 데이터를 읽고 기지 건설과 전투 유닛 미세 컨트롤을 독립적으로 의사결정.",
   "Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.": "사용자 대화 이력과 도구 인수를 종합 평가하여 실행 의도가 보안 정책 규칙을 준수하는지 판정.",
+  "Sends captured notification or SMS text to Jev to evaluate whether the message is advertising noise.": "캡처된 알림 또는 SMS 텍스트를 Jev로 전송하여 메시지가 광고 스팸인지 판정.",
 };
 
 export const BENEFITS_JA = {
@@ -226,6 +228,7 @@ export const BENEFITS_JA = {
   "Tiered control architecture: Jev handles macro tactical decisions while deterministic code guarantees flight safety.": "階層化制御アーキテクチャ：Jevがマクロ戦術判断を担当し、決定論的コードが飛行の安全性を保証。",
   "Demonstrates the feasibility of decomposing complex real-time strategy state into discrete semantic decisions.": "複雑なリアルタイムストラテジーの状況を離散的なセマンティック決定へ分解可能であることを実証。",
   "Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.": "静的な正規表現マッチングを超越：ツール選択に依存せずセマンティックな意図からポリシー違反を検知。",
+  "Replaces brittle keyword blacklists with robust semantic filtering while ensuring verification codes are never dropped.": "脆弱なキーワードブラックリストを堅牢なセマンティックフィルタリングに置き換え、認証コードの誤遮断をゼロに。",
 };
 
 export const BENEFITS_KO = {
@@ -306,4 +309,5 @@ export const BENEFITS_KO = {
   "Tiered control architecture: Jev handles macro tactical decisions while deterministic code guarantees flight safety.": "계층화된 제어 아키텍처: Jev가 거시적 전술 결정을 전담하고 결정론적 코드가 비행 안전을 보장.",
   "Demonstrates the feasibility of decomposing complex real-time strategy state into discrete semantic decisions.": "복잡한 실시간 전략 시뮬레이션 상태를 이산적인 시맨틱 의사결정으로 분해할 수 있음을 입증.",
   "Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.": "정적 정규식 매칭을 초월: 도구의 종류와 무관하게 시맨틱 의도를 통해 보안 정책 위반을 감지.",
+  "Replaces brittle keyword blacklists with robust semantic filtering while ensuring verification codes are never dropped.": "취약한 키워드 블랙리스트를 견고한 시맨틱 필터링으로 대체하여 인증 코드 유실을 원천 방지.",
 };

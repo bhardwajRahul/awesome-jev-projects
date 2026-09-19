@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 프로젝트 등록 신청</strong></a>
 </p>
 
-<p>TypeSafe AI의 Jev 모델을 탑재한 **181+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
+<p>TypeSafe AI의 Jev 모델을 탑재한 **182+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
 
 </div>
 
@@ -48,7 +48,7 @@
 - [💾 데이터베이스 확장 및 시맨틱 검색 (4)](#data-search-ko)
 - [🌐 브라우저 및 데스크톱 자동화 (16)](#browser-os-action-ko)
 - [🧹 컨텍스트 압축 및 가비지 컬렉션 (7)](#context-gc-filter-ko)
-- [🛡️ 보안 및 가드레일 (10)](#security-guardrails-ko)
+- [🛡️ 보안 및 가드레일 (11)](#security-guardrails-ko)
 - [🧩 MCP 프로토콜 및 도구 확장 (29)](#mcp-integrations-ko)
 - [🧭 코드베이스 분석 및 지식 그래프 탐색 (9)](#codebase-graph-pathfinding-ko)
 - [🔀 모델 라우팅 및 비용 최적화 (10)](#routing-cost-optimization-ko)
@@ -502,6 +502,10 @@
 - [**Safer with Jev**](https://github.com/andrelandgraf/typesafe-on-neon) `★ 3` - Serverless request router on Neon evaluating incoming queries and dispatching to specialized frontier models.
   - 🎯 **Jev의 역할**: 콜드 스타트 없이 사용자 의도(단순 Q&A vs 복잡한 코딩 vs 추론)를 즉시 분류.
   - 💡 **핵심 장점**: 모델 계층화를 최적화하면서 전역 지연 시간을 최소화합니다.
+
+- [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) `★ 2` - JevNoiseGate: Android notification and SMS noise gate using Jev to classify and suppress spam ads while strictly failing open on OTP verification codes.
+  - 🎯 **Jev의 역할**: 캡처된 알림 또는 SMS 텍스트를 Jev로 전송하여 메시지가 광고 스팸인지 판정.
+  - 💡 **핵심 장점**: 취약한 키워드 블랙리스트를 견고한 시맨틱 필터링으로 대체하여 인증 코드 유실을 원천 방지.
 
 - [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.

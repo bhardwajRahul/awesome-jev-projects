@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 プロジェクトを申請</strong></a>
 </p>
 
-<p>TypeSafe AIのJevモデルを採用した **181+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
+<p>TypeSafe AIのJevモデルを採用した **182+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
 
 </div>
 
@@ -48,7 +48,7 @@
 - [💾 データベース拡張・セマンティック検索 (4)](#data-search-ja)
 - [🌐 ブラウザ・デスクトップ自動化 (16)](#browser-os-action-ja)
 - [🧹 コンテキスト圧縮・ノイズ除去 (7)](#context-gc-filter-ja)
-- [🛡️ セキュリティ・ガードレール (10)](#security-guardrails-ja)
+- [🛡️ セキュリティ・ガードレール (11)](#security-guardrails-ja)
 - [🧩 MCP プロトコル・ツール拡張 (29)](#mcp-integrations-ja)
 - [🧭 コードベース解析・グラフ探索 (9)](#codebase-graph-pathfinding-ja)
 - [🔀 モデルルーティング・コスト最適化 (10)](#routing-cost-optimization-ja)
@@ -502,6 +502,10 @@
 - [**Safer with Jev**](https://github.com/andrelandgraf/typesafe-on-neon) `★ 3` - Serverless request router on Neon evaluating incoming queries and dispatching to specialized frontier models.
   - 🎯 **Jevの判断箇所**: コールドスタートなしでユーザー意図（簡単なQ&A vs 複雑なコーディング vs 推論）を瞬時に分類。
   - 💡 **主な特徴**: モデルの階層化を最適化しながらグローバルレイテンシを最小化。
+
+- [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) `★ 2` - JevNoiseGate: Android notification and SMS noise gate using Jev to classify and suppress spam ads while strictly failing open on OTP verification codes.
+  - 🎯 **Jevの判断箇所**: キャプチャした通知やSMSのテキストをJevに送信し、メッセージが広告ノイズであるかを判定。
+  - 💡 **主な特徴**: 脆弱なキーワードブラックリストを堅牢なセマンティックフィルタリングに置き換え、認証コードの誤遮断をゼロに。
 
 - [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。

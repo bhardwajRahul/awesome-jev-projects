@@ -282,8 +282,8 @@ function hasImplementationEvidence(text, path) {
   const code = stripSourceComments(text, path);
   if (/(?<![\w.-])api\.typesafe\.ai(?![\w.-])/i.test(code)) return true;
   if (hasOpenRouterJevIntegration(code)) return true;
-  const providerImport = /\bfrom\s+typesafe(?:_ai)?(?:\.[\w.]+)?\s+import\b|\bimport\s+typesafe(?:_ai)?\b|\b(?:from|require\s*\(|import\s*\()\s*["'](?:@typesafe\/(?:jev|sdk)|typesafe(?:-ai)?)["']/i.test(code);
-  const sdkCall = /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient))\s*\(|\.\s*(?:choice|score|noul|decision|query|ask)\s*\(/i.test(code);
+  const providerImport = /\bfrom\s+typesafe(?:_ai)?(?:\.[\w.]+)?\s+import\b|\bimport\s+(?:[\w.]+\.)?typesafe(?:_ai)?(?:\.[\w.]+)*\b|\b(?:from|require\s*\(|import\s*\()\s*["'](?:@typesafe\/(?:jev|sdk)|typesafe(?:-ai)?)["']/i.test(code);
+  const sdkCall = /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient))\s*\(|\.\s*(?:choice|score|noul|decision|query|ask|systemOne)\s*\(/i.test(code);
   return providerImport && sdkCall;
 }
 
@@ -393,6 +393,10 @@ export async function inspectRepository({
       .filter(codeCandidate)
       .sort(
         (a, b) =>
+          Number(/typesafe|jev/i.test(posix.basename(b.path))) -
+            Number(/typesafe|jev/i.test(posix.basename(a.path))) ||
+          Number(/(?:^|\/)(?:decision|backend|client|agent|model|service)/i.test(b.path)) -
+            Number(/(?:^|\/)(?:decision|backend|client|agent|model|service)/i.test(a.path)) ||
           Number(/jev|typesafe/i.test(b.path)) -
             Number(/jev|typesafe/i.test(a.path)) ||
           Number(/(?:^|\/)(?:src|lib|app|main|client|agent)/i.test(b.path)) -

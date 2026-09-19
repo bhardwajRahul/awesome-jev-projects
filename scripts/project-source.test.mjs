@@ -422,6 +422,7 @@ test("strict ingestion accepts immutable provider endpoint or TypeSafe SDK decis
     ["src/main.py", 'response = requests.post("https://api.typesafe.ai/v1/choice", json=payload)'],
     ["src/main.py", 'from typesafe import Client\nclient = Client()\nresult = client.choice(options)'],
     ["src/main.ts", 'import { TypeSafeClient } from "@typesafe/sdk";\nconst client = new TypeSafeClient();\nconst result = await client.choice(options);'],
+    ["core/decision/TypeSafeBackend.kt", 'import me.ethanxu.typesafe.sdk.TypeSafeClient\nval client = TypeSafeClient()\nval decision = client.systemOne(input)'],
   ];
   for (const [path, text] of cases) {
     const f = fixture({

@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 181 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 182 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (181 Projects)
+## Curated Projects Directory (182 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1457,3 +1457,11 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): OpenCode V2 意图感知权限安全插件，用自然语言撰写安全策略，由 Jev 审查 Agent 的 Shell 与网络工具调用意图并拦截违规行为。
 - Jev Decision Role: 结合用户历史对话与工具具体入参，评估操作意图是否符合安全策略规则。
 - Core Benefit: 超越静态正则匹配：无论 Agent 用 curl 还是内置抓取，只要语义意图违规即刻被识别。
+
+### jev-block-android-ad
+- Repository: https://github.com/ufec/jev-block-android-ad
+- Category: Security & Guardrails
+- Overview (EN): JevNoiseGate: Android notification and SMS noise gate using Jev to classify and suppress spam ads while strictly failing open on OTP verification codes.
+- Overview (ZH): JevNoiseGate：面向 Android 通知与短信的噪声过滤器，通过 Jev 离散判定消息是否为垃圾广告，对验证码等未知路径严格放行。
+- Jev Decision Role: 将捕获的通知文本或短信内容交给 Jev，裁决是否归类为广告干扰信息。
+- Core Benefit: 告别脆弱的关键词规则库，在保护验证码安全的前提下实现高精度广告拦截。

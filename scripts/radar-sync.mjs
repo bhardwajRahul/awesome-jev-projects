@@ -26,11 +26,11 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
   // identifier and provider request marker are both required; names alone fail.
   const routerDecision = codeSources.some(hasOpenRouterJevSource);
   const exact = routerDecision ||
-    /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe\s+import|typesafe(?:_ai|-ai)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\bJevClient\b/i.test(
+    /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe\s+import|typesafe(?:_ai|-ai)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\b(?:JevClient|TypeSafeClient)\b/i.test(
       text,
     );
   const context =
-    /\bjev\b/i.test(text) &&
+    /(?:\b|_)jev(?:[A-Za-z0-9_]|\b)/i.test(text) &&
     /\b(ai|llm|agent|decision|inference|classification|model|choice|score|noul)\b/i.test(
       text,
     );

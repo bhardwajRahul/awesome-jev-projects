@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 Submit a Project</strong></a>
 </p>
 
-<p>A source-verified, zero-hype directory of **181+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
+<p>A source-verified, zero-hype directory of **182+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
 
 </div>
 
@@ -48,7 +48,7 @@
 - [💾 Data & Search (4)](#data-search-en)
 - [🌐 Browser & Desktop Automation (16)](#browser-os-action-en)
 - [🧹 Context GC & Noise Filtering (7)](#context-gc-filter-en)
-- [🛡️ Security & Guardrails (10)](#security-guardrails-en)
+- [🛡️ Security & Guardrails (11)](#security-guardrails-en)
 - [🧩 MCP Protocols & Tool Endpoints (29)](#mcp-integrations-en)
 - [🧭 Codebase Analysis & Knowledge Graphs (9)](#codebase-graph-pathfinding-en)
 - [🔀 Model Routing & Cost Reduction (10)](#routing-cost-optimization-en)
@@ -502,6 +502,10 @@
 - [**Safer with Jev**](https://github.com/andrelandgraf/typesafe-on-neon) `★ 3` - Serverless request router on Neon evaluating incoming queries and dispatching to specialized frontier models.
   - 🎯 **What Jev Decides**: Classifies user intent (simple Q&A vs complex coding vs reasoning) with zero cold start.
   - 💡 **Key Advantage**: Minimizes global latency while optimizing model tiering.
+
+- [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) `★ 2` - JevNoiseGate: Android notification and SMS noise gate using Jev to classify and suppress spam ads while strictly failing open on OTP verification codes.
+  - 🎯 **What Jev Decides**: Sends captured notification or SMS text to Jev to evaluate whether the message is advertising noise.
+  - 💡 **Key Advantage**: Replaces brittle keyword blacklists with robust semantic filtering while ensuring verification codes are never dropped.
 
 - [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
