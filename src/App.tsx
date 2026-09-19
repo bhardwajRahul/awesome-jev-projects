@@ -43,6 +43,7 @@ import { HelloJev } from "./components/HelloJev.tsx";
 import { CopyCloneButton } from "./components/CopyCloneButton.tsx";
 import { ThemeToggle } from "./components/ThemeToggle.tsx";
 import { DailyProject } from "./components/DailyProject.tsx";
+import { GachaDialog } from "./components/GachaDialog.tsx";
 import { CardDispenser } from "./components/CardDispenser.tsx";
 import { Jevy } from "./components/Jevy.tsx";
 import "./styles/hero-engineering.css";
@@ -460,18 +461,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     if (tag !== "all" && !projects.some((p) => projectHasTag(p, tag))) setTag("all");
   }, [projects, loadState, category, tag]);
   const [modal, setModal] = useState<"submit" | "agentSkill" | "sponsor" | "gacha" | null>(null);
-  const [GachaComponent, setGachaComponent] = useState<typeof import("./components/GachaDialog.tsx").GachaDialog | null>(null);
-  const [gachaLoadFailed, setGachaLoadFailed] = useState(false);
-  const [gachaAttempt, setGachaAttempt] = useState(0);
-  useEffect(() => {
-    if (modal !== "gacha" || GachaComponent) return;
-    let current = true;
-    setGachaLoadFailed(false);
-    void import("./components/GachaDialog.tsx")
-      .then((module) => { if (current) setGachaComponent(() => module.GachaDialog); })
-      .catch(() => { if (current) setGachaLoadFailed(true); });
-    return () => { current = false; };
-  }, [modal, GachaComponent, gachaAttempt]);
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("sponsor") === "1") setModal("sponsor");
   }, []);
@@ -1454,9 +1443,9 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           </a>
         </footer>
       </main>
-      {modal === "gacha" && (GachaComponent
-        ? <GachaComponent projects={projects} locale={locale} onClose={() => setModal(null)} />
-        : <Modal locale={locale} title={discoveryEntry} onClose={() => setModal(null)}><p role="status">{discoveryUi[gachaLoadFailed ? 2 : 1]}</p>{gachaLoadFailed && <button type="button" className="button dark" onClick={() => setGachaAttempt((value) => value + 1)}>{discoveryUi[3]}</button>}</Modal>)}
+      {modal === "gacha" && (
+        <GachaDialog projects={projects} locale={locale} onClose={() => setModal(null)} />
+      )}
       {modal === "sponsor" && (
         <SponsorDialog locale={locale} projectCount={projects.length} onClose={() => setModal(null)} />
       )}
