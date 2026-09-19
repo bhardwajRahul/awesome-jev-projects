@@ -8555,5 +8555,107 @@
       "issueBodySha256": "b55d749147fcfa52ced114fbab1d79c5d4ad2a1f082a1963a7b8c2378e0d17ad",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/8"
     }
+  },
+  {
+    "id": "doeixd:jev-pref",
+    "name": "jev-pref",
+    "author": "doeixd",
+    "url": "https://github.com/doeixd/jev-pref",
+    "repoId": 1374853245,
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-pref：把 AGENTS.md 中的项目偏好转为 jev-pref.json 规则，用 Jev 审查代码变更（hunk、暂存文件、PR），并把发现反馈给编码 Agent。",
+    "plainSummaryEn": "Turn AGENTS.md preferences into a fast, Jev-powered AI linter: define project-specific review rules in jev-pref.json, check hunks, staged files or PRs with Jev, and feed findings back to your coding agent.",
+    "jevDecisionPoint": "对每条偏好规则和每个代码变更片段，判断该变更是否违反这条规则。",
+    "jevDecisionPointEn": "For each preference rule and each code-change hunk, decide whether the change violates the rule.",
+    "highlightBenefit": "以 CLI 形式运行（npx jev-pref setup），可接入 pre-commit、PR 与 Agent 工作流，区分阻断与建议级发现。",
+    "highlightBenefitEn": "CLI (npx jev-pref setup) for pre-commit, PR and agent workflows, with blocking vs. advisory findings.",
+    "tags": [
+      "Code Review",
+      "Linter",
+      "Agent",
+      "CLI",
+      "JavaScript"
+    ],
+    "summarySource": "source-reviewed",
+    "claimStatus": "由作者提交 PR #7；根据 README 与 packages/jev-pref/src/jev.js 源码核验收录。",
+    "claimStatusEn": "Submitted by author in PR #7; source verified via packages/jev-pref/src/jev.js.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T18:01:44Z",
+    "lastCommitAt": "2026-09-18T17:49:11Z",
+    "headSha": "9d77ea6069123a0b3eedf465ec39781842722b0a",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/13461122?v=4",
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-18T19:31:44.267Z",
+    "evidence": [
+      {
+        "url": "https://github.com/doeixd/jev-pref/blob/9d77ea6069123a0b3eedf465ec39781842722b0a/README.md",
+        "note": "固定版本的 README"
+      },
+      {
+        "url": "https://github.com/doeixd/jev-pref/blob/9d77ea6069123a0b3eedf465ec39781842722b0a/packages/jev-pref/src/jev.js",
+        "note": "固定版本的 Jev 调用实现"
+      },
+      {
+        "url": "https://github.com/doeixd/jev-pref",
+        "note": "开源代码仓库"
+      }
+    ]
+  },
+  {
+    "id": "kylemclaren:jevql",
+    "name": "jevql",
+    "author": "kylemclaren",
+    "url": "https://github.com/kylemclaren/jevql",
+    "repoId": 1375800823,
+    "category": "Data & Search",
+    "plainSummary": "针对原生 Postgres 的 Jev 语义 SQL 扩展。无需装插件，在终端和 Go/TS/Python SDK 中直接用 WHERE jev() 做语义过滤、排序与分组。",
+    "plainSummaryEn": "Semantic SQL for vanilla Postgres without database extensions. Query rows with WHERE jev(), jev_prob, jev_choice, and jev_score via CLI and Go/TS/Python SDKs.",
+    "jevDecisionPoint": "对 SQL 初筛后的每一行数据调用 Jev 进行 Noul、Choice 或 Score 判断，结果用于客户端的语义过滤、概率排序或分组。",
+    "jevDecisionPointEn": "Evaluates candidate table rows using Noul, Choice, or Score judgements to drive client-side semantic filtering, ranking, or grouping.",
+    "highlightBenefit": "纯客户端/双阶段执行，支持高并发批量请求与本地缓存（重复内容不重复打分），附带开箱即用的在线 Demo。",
+    "highlightBenefitEn": "Two-pass client-side execution with automatic batching, concurrency pooling, and content-addressable response caching.",
+    "tags": [
+      "Postgres",
+      "SQL",
+      "Semantic Search",
+      "Go",
+      "SDK"
+    ],
+    "summarySource": "source-reviewed",
+    "claimStatus": "由作者提交 Issue #5；经源码核验包含完整 System One 客户端与双阶段执行逻辑；附带在线演示 Demo。",
+    "claimStatusEn": "Submitted by author in Issue #5; source verified for complete System One client and two-pass query execution with live demo.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 2,
+    "license": "MIT",
+    "createdAt": "2026-09-18T11:57:33Z",
+    "lastCommitAt": "2026-09-18T22:51:09Z",
+    "headSha": "4534f59cb79e7829871fc3f628045fef38f1580d",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/3727384?v=4",
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T01:10:59.088Z",
+    "evidence": [
+      {
+        "url": "https://jevql.fly.dev/",
+        "note": "在线交互体验与文档看板"
+      },
+      {
+        "url": "https://github.com/kylemclaren/jevql/blob/main/internal/app/app.go",
+        "note": "Jev System One 接口接入与执行配置"
+      },
+      {
+        "url": "https://github.com/kylemclaren/jevql/blob/main/internal/typesafe/client.go",
+        "note": "TypeSafe System One 客户端与并发批处理"
+      },
+      {
+        "url": "https://github.com/kylemclaren/jevql",
+        "note": "开源代码仓库"
+      }
+    ]
   }
 ]
