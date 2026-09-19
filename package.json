@@ -10,7 +10,8 @@
     "radar": "node scripts/radar-sync.mjs",
     "test": "node --test scripts/*.test.mjs",
     "predev": "node scripts/prepare-public-data.mjs",
-    "prebuild": "node scripts/prepare-public-data.mjs"
+    "prebuild": "node scripts/prepare-public-data.mjs",
+    "build:readme": "node scripts/generate-readme.mjs"
   },
   "dependencies": {
     "react": "^19.1.1",
