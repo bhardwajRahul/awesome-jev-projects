@@ -343,6 +343,7 @@ p { margin: 0; }
 .twitter-share-btn svg { flex-shrink: 0; }
 .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; background: var(--code-bg); color: var(--code-text); padding: 13px 19px; border-radius: 9px; font-size: 13px; z-index: 100; max-width: calc(100vw - 30px); box-shadow: var(--shadow-dialog); }
 .toast svg { color: var(--accent-text); }
+.catalog-notice { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 110; background: var(--code-bg); color: var(--code-text); padding: 10px 16px; border-radius: 9px; font-size: 13px; line-height: 1.5; box-shadow: var(--shadow-dialog); max-width: calc(100vw - 30px); pointer-events: none; }
 .auto-label { margin-left: auto; border: 1px solid var(--border); padding: 1px 5px; border-radius: 4px; font-size: 10px; }
 .project-card .decision-block { background: var(--surface-inset); box-shadow: var(--shadow-recess); }
 .card-category .auto-label { color: var(--text-muted); }
