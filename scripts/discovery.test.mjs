@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { dailyProject, drawProject, eligibleProjects, nextUtcMidnightDelay, rarity, utcDay } from '../src/lib/discovery.mjs';
+import { dailyProject, drawProject, eligibleProjects, localDay, nextLocalMidnightDelay, nextUtcMidnightDelay, rarity, utcDay } from '../src/lib/discovery.mjs';
 
 const project = (id, overrides = {}) => ({ id, stars: 30, license: 'MIT', licenseStatus: 'declared', ...overrides });
 const ids = (projects) => projects.map(({ id }) => id);
@@ -27,7 +27,7 @@ test('conflicting duplicate selection metadata resolves independently of input o
   assert.equal(dailyProject(items, '2026-09-19').id, dailyProject([...items].reverse(), '2026-09-19').id);
 });
 
-test('UTC day and next midnight are independent of local timezone and handle leap days', () => {
+test('UTC helpers remain available for a specified instant, including leap days', () => {
   const before = new Date('2028-03-01T07:59:59.999+08:00');
   assert.equal(utcDay(before), '2028-02-29');
   assert.equal(nextUtcMidnightDelay(before), 1);
@@ -39,7 +39,32 @@ test('UTC day and next midnight are independent of local timezone and handle lea
   assert.throws(() => nextUtcMidnightDelay(new Date('bad-date')), RangeError);
 });
 
-test('daily project validates real UTC calendar days instead of silently rolling dates', () => {
+test('visitor civil day follows local calendar fields and next local midnight handles leap days', () => {
+  const morning = new Date(2028, 1, 29, 8, 0, 0, 0);
+  assert.equal(localDay(morning), '2028-02-29');
+  const beforeMidnight = new Date(2028, 1, 29, 23, 59, 59, 999);
+  assert.equal(localDay(beforeMidnight), '2028-02-29');
+  assert.equal(nextLocalMidnightDelay(beforeMidnight), 1);
+  const midnight = new Date(2028, 2, 1, 0, 0, 0, 0);
+  assert.equal(localDay(midnight), '2028-03-01');
+  const nextMidnight = new Date(midnight);
+  nextMidnight.setHours(24, 0, 0, 0);
+  assert.equal(nextLocalMidnightDelay(midnight), nextMidnight.getTime() - midnight.getTime());
+  assert.ok(nextLocalMidnightDelay(midnight) > 0);
+  assert.throws(() => localDay(new Date('bad-date')), RangeError);
+  assert.throws(() => nextLocalMidnightDelay(new Date('bad-date')), RangeError);
+});
+
+test('East-eight morning is not forced onto the previous UTC date', () => {
+  const localMorning = new Date(2028, 2, 1, 7, 59, 59, 999);
+  assert.equal(localDay(localMorning), '2028-03-01');
+  if (localMorning.getTimezoneOffset() < 0) {
+    assert.equal(utcDay(localMorning), '2028-02-29');
+    assert.notEqual(localDay(localMorning), utcDay(localMorning));
+  }
+});
+
+test('daily project validates real calendar days instead of silently rolling dates', () => {
   for (const day of ['2026-02-29', '2026-04-31', '2026-13-01', '2026-9-19', '2026-09-19T00:00Z', '', undefined]) {
     assert.throws(() => dailyProject([], day), RangeError, String(day));
   }
@@ -73,7 +98,7 @@ test('every member receives one day per cycle with no adjacent repeats, unaffect
   const seen = new Set();
   let previous;
   for (let offset = 0; offset < 6; offset += 1) {
-    const day = utcDay(new Date(Date.parse('2026-09-19T00:00:00Z') + offset * 86_400_000));
+    const day = localDay(new Date(2026, 8, 19 + offset));
     const selected = dailyProject(items, day);
     assert.notEqual(selected.id, previous);
     assert.equal(selected.id, dailyProject([...items].reverse().map((item) => ({ ...item, plainSummary: '文本不影响选择', plainSummaryEn: 'Changed translation' })), day).id);
@@ -105,9 +130,8 @@ test('real catalog discovery does not mutate metadata or recommend quarantined r
   const before = JSON.stringify(catalog);
   const eligible = eligibleProjects(catalog);
   assert.equal(eligible.length, catalog.filter(({ catalogStatus }) => catalogStatus !== 'review-pending').length);
-  const first = Date.parse('2026-09-19T00:00:00Z');
   for (let day = 0; day < 30; day += 1) {
-    const selected = dailyProject(catalog, utcDay(new Date(first + day * 86_400_000)));
+    const selected = dailyProject(catalog, localDay(new Date(2026, 8, 19 + day)));
     assert.ok(selected.stars >= 20 && selected.stars <= 50);
     assert.ok(['declared', 'confirmed'].includes(selected.licenseStatus));
     assert.notEqual(selected.catalogStatus, 'review-pending');

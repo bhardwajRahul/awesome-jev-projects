@@ -1,4 +1,4 @@
-import { utcDay } from "../src/lib/discovery.mjs";
+import { localDay } from "../src/lib/discovery.mjs";
 import { loadAnalytics, analyticsMarkup } from "./analytics-policy.mjs";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
@@ -20,7 +20,7 @@ const assets = [...baseHTML.matchAll(/<(?:script\b[^>]*\bsrc="[^"]+"[^>]*><\/scr
 const homeAssets = assets.join("\n");
 const styleAssets = assets.filter((tag) => tag.includes('rel="stylesheet"')).join("\n");
 const vite = await createServer({ root, server: { middlewareMode: true, hmr: false, ws: false }, appType: "custom", logLevel: "error" });
-const initialDay = utcDay();
+const initialDay = localDay();
 const { renderHome, categoryLabel, localeMeta } = await vite.ssrLoadModule("/src/entry-server.tsx");
 for (const locale of LOCALES) Object.assign(COPY[locale], { title: localeMeta[locale].title, description: localeMeta[locale].description });
 const pages = [];

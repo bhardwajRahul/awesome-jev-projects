@@ -5,7 +5,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 import { publicProjects } from './prepare-public-data.mjs';
-import { dailyProject } from '../src/lib/discovery.mjs';
+import { dailyProject, localDay } from '../src/lib/discovery.mjs';
 
 const rows = publicProjects(JSON.parse(await readFile(new URL('../src/data/projects.json', import.meta.url), 'utf8')));
 
@@ -18,8 +18,12 @@ test('daily discovery is identical in four locales while existing Header, Sponso
     for (const initialLocale of ['zh', 'en', 'ja', 'ko']) {
       const html = renderToStaticMarkup(createElement(App, { initialProjects: rows, initialLocale, initialDay: day }));
       const daily = html.match(/<button[^>]*class="daily-project"[\s\S]*?<\/button>/)?.[0];
-      assert.ok(daily?.includes(expected.name), `${initialLocale}: same UTC selection`);
+      assert.ok(daily?.includes(expected.name), `${initialLocale}: same calendar-day selection`);
       assert.ok(daily.includes(`dateTime="${day}"`) || daily.includes(`datetime="${day}"`));
+      assert.doesNotMatch(daily, /\bUTC\b/);
+      assert.doesNotMatch(daily, /title="[^"]*UTC"/);
+      assert.doesNotMatch(daily, /<svg\b/);
+      assert.ok(daily.includes('今日一荐') || daily.includes('Project of the day') || daily.includes('今日のプロジェクト') || daily.includes('오늘의 프로젝트'));
       if (['en', 'ko'].includes(initialLocale)) assert.ok(!/\p{Script=Han}/u.test(daily), `${initialLocale}: translated daily card`);
       assert.equal((html.match(/class="card-dispenser"/g) ?? []).length, 1);
       assert.ok(html.includes('class="jevy"'), 'The original mechanical assistant is present in every locale');
@@ -38,6 +42,24 @@ test('daily discovery is identical in four locales while existing Header, Sponso
       assert.ok(header.indexOf('language-control') > header.indexOf('submit-top'));
       assert.ok(header.includes('github-star-btn') && !header.includes('>0</a>'));
     }
+  } finally { await server.close(); }
+});
+
+test('daily card renders the snapshot civil day locally without UTC branding or a fake external link', async () => {
+  const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
+  try {
+    const { DailyProject } = await server.ssrLoadModule('/src/components/DailyProject.tsx');
+    const day = '2026-09-20';
+    const expected = dailyProject(rows, day);
+    const html = renderToStaticMarkup(createElement(DailyProject, { projects: rows, locale: 'zh', initialDay: day, onOpen() {} }));
+    assert.ok(html.includes(expected.name));
+    assert.ok(html.includes('今日一荐'));
+    assert.match(html, /datetime="2026-09-20"/i);
+    assert.match(html, /<strong[^>]*>20<\/strong>/);
+    assert.doesNotMatch(html, /\bUTC\b/);
+    assert.doesNotMatch(html, /<svg\b/);
+    assert.match(html, /aria-label="查看今日项目: /);
+    assert.equal(localDay(new Date(2026, 8, 20, 7, 59, 59, 999)), '2026-09-20');
   } finally { await server.close(); }
 });
 
