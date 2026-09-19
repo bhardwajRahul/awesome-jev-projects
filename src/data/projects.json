@@ -29820,5 +29820,94 @@
       "issueBodySha256": "adf0163891fe2d30fe863e353f4a10862203ef55e0c1fbf4da9ed3750024e430",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/23"
     }
+  },
+  {
+    "id": "chy4pro:jevbrowserext",
+    "name": "JevBrowserExt",
+    "author": "chy4pro",
+    "url": "https://github.com/chy4pro/JevBrowserExt",
+    "repoId": 1376447184,
+    "category": "CLI & Pipelines",
+    "plainSummary": "1. 内容脚本读取当前可见页面：每个可交互元素得到一个由代码分配的编号、角色、可访问名称和当前值；可见文本最多取 6,000 字符。不截图。\n2. 后台 worker 把目标、元素表和最近动作一次性发给 Jev。Jev 同时回答两个问题：做什么操作（`CLICK`、`TYPE_TEXT`、`SELECT`、`SCROLL_*`、`WAIT`、`DONE`、`BLOCKED`），以及每种操作对应哪个元素。只消费被选中操作的那个目标答案。\n3. 如果操作是 `TYPE_TEXT`，由一个小型对话模型（DeepSeek、Gemini 或任何 OpenAI 兼容接口）根据目标和字段上下文给出要输入的字符串。扩展本身从不猜测字段值。\n4. 内容脚本在真实 DOM 节点上执行。页面若在观察之后发生了变化就不执行；点击只触发一次。不会偷偷替模型按 Enter：当聚焦的文本框里有内容时，会单独提供一个 `PRESS_ENTER` 控件，由模型自己选择（这是相对参考项目动作空间唯一的新增；arXiv、Wolfram Alpha 这类站点没有提交按钮）。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "browser-automation"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Core use case: Chrome extension (Manifest V3) port of browser-use/jev-ultrafast. Jev picks the browser operation and the DOM element in one request per step; a small text model writes TYPE_TEXT values; it runs in the user's own tabs via OpenRouter, TypeSafe or Cloudflare Workers AI. MIT.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "not-needed",
+        "requestedFields": []
+      },
+      "plainSummary": {
+        "source": "readme"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T21:24:11Z",
+    "lastCommitAt": "2026-09-19T13:55:17Z",
+    "headSha": "0e4c5294ab3de8db09e6ddbc523ce8004406e199",
+    "metadataFetchedAt": "2026-09-19T15:06:41.726Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/61305850?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T15:06:41.726Z",
+    "evidence": [
+      {
+        "url": "https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/README_CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/src/shared/providers/typesafe.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "0e4c5294ab3de8db09e6ddbc523ce8004406e199",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/README.md",
+          "hash": "e9618a1e049d6b5364181a588cb7d2971a5cf621ea47dcd13a2eefb3b8ac570d"
+        },
+        {
+          "path": "README_CN.md",
+          "url": "https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/README_CN.md",
+          "hash": "dcefc73e1e0d8746c0c5b6cc438964822783bd1b7214f78b97c9bdb6a66a037d"
+        },
+        {
+          "path": "src/shared/providers/typesafe.ts",
+          "url": "https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/src/shared/providers/typesafe.ts",
+          "hash": "acfedb26507cae6755fe3ec8c109c0e52e338a3ed06832e6afdeab302af3a147"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 22,
+      "issueBodySha256": "809aa7f313981ba0822542903112087d422d4a86c42bc2cad681f909452a3334",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/22"
+    }
   }
 ]
