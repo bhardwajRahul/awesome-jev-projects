@@ -424,25 +424,35 @@ p { margin: 0; }
 .nav-item.active::after { position: absolute; inset: auto 0 0; height: 2px; content: ''; background: var(--accent-text); }
 .nav-count { font-family: var(--mono); font-size: 10px; padding: 2px 5px; border-radius: 4px; color: var(--text-muted); background: var(--surface-inset); }
 .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; margin-left: auto; }
-.header-ecosystem { display: flex; align-items: center; gap: 0; padding: 3px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--metal-top), var(--metal-bottom)); box-shadow: inset 0 1px 0 var(--material-edge), var(--shadow-soft); }
-.header-ecosystem > :is(button, a) { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 34px; padding: 0 9px; border: 0; border-radius: 0; background: transparent; color: var(--text-muted); font-size: 12px; font-weight: 500; white-space: nowrap; transition: box-shadow 180ms ease, transform 180ms ease; }
-.header-ecosystem > :first-child { border-radius: var(--radius-pill) 0 0 var(--radius-pill); }
-.header-ecosystem > :last-child { border-radius: 0 var(--radius-pill) var(--radius-pill) 0; }
-.header-ecosystem > :is(button, a) + :is(button, a)::before { position: absolute; inset: 8px auto 8px 0; width: 1px; content: ""; background: var(--border-strong); opacity: .35; pointer-events: none; }
-.header-ecosystem > :is(button, a):hover { background: var(--surface-raised); color: var(--text); box-shadow: inset 0 1px 0 var(--material-edge), var(--shadow-soft); }
-.header-ecosystem > :is(button, a):active { transform: translateY(1px); box-shadow: var(--shadow-recess); }
-.header-ecosystem > :is(button, a):focus-visible { outline-offset: 1px; }
+.header-ecosystem { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--metal-top), var(--metal-bottom)); box-shadow: inset 0 1px 0 var(--material-edge), var(--shadow-soft); }
+.header-ecosystem > :is(button, a) { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 0 11px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--text-muted); font-size: 12px; font-weight: 500; white-space: nowrap; transition: box-shadow 160ms ease, transform 160ms ease; }
+.header-ecosystem > :is(button, a) + :is(button, a)::before { position: absolute; inset: 7px auto 7px -2px; width: 1px; content: ""; background: var(--border-strong); opacity: .3; pointer-events: none; transition: opacity 140ms ease; }
+.header-ecosystem > :is(button, a):hover::before,
+.header-ecosystem > :is(button, a):hover + :is(button, a)::before,
+.header-ecosystem > :is(button, a):focus-visible::before,
+.header-ecosystem > :is(button, a):focus-visible + :is(button, a)::before { opacity: 0; }
+.header-ecosystem > :is(button, a):hover { background: var(--surface-raised); color: var(--text); box-shadow: 0 1px 3px color-mix(in srgb, var(--text) 8%, transparent), 0 1px 1px color-mix(in srgb, var(--text) 4%, transparent); }
+.header-ecosystem > :is(button, a):active { transform: scale(0.98); box-shadow: inset 0 1px 2px color-mix(in srgb, var(--text) 12%, transparent); }
+.header-ecosystem > :is(button, a):focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
 .github-star-btn svg { color: var(--brass); }
 .github-star-btn .star-label-short { display: none; }
-.header .submit-top { min-height: 40px; padding: 0 14px; border-radius: 10px; gap: 6px; font-size: 13px; box-shadow: var(--shadow-material); transition: box-shadow 180ms ease, transform 180ms ease; }
-.header .submit-top:hover { box-shadow: var(--shadow-material-hover); }
+.header .submit-top { min-height: 40px; padding: 0 16px; border-radius: 10px; gap: 7px; font-size: 13px; font-weight: 550; border: 1px solid color-mix(in srgb, var(--primary-bg) 75%, black 25%); background: linear-gradient(180deg, color-mix(in srgb, var(--primary-bg) 92%, white 8%), var(--primary-bg)); box-shadow: inset 0 1px 0 color-mix(in srgb, white 14%, transparent), 0 1px 2px color-mix(in srgb, var(--text) 14%, transparent), 0 3px 8px -1px color-mix(in srgb, var(--text) 18%, transparent); transition: box-shadow 180ms ease, transform 180ms ease; }
+.header .submit-top:hover { background: linear-gradient(180deg, color-mix(in srgb, var(--primary-bg) 88%, white 12%), var(--primary-bg)); box-shadow: inset 0 1px 0 color-mix(in srgb, white 18%, transparent), 0 2px 5px color-mix(in srgb, var(--text) 18%, transparent), 0 7px 16px -2px color-mix(in srgb, var(--text) 22%, transparent); transform: translateY(-1px); }
 .submit-label-short, .sponsor-label-short { display: none; }
-.header .submit-top:active { transform: translateY(1px); box-shadow: var(--shadow-recess); }
-.header-utilities { display: flex; align-items: center; flex-shrink: 0; padding: 2px; gap: 2px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); }
-.language-control { display: inline-flex; align-items: center; gap: 4px; min-height: 34px; padding-left: 7px; border-left: 1px solid var(--border); color: var(--text-muted); }
-.language-control > svg { width: 14px; height: 14px; }
-.language-toggle { width: 78px; min-height: 34px; padding: 0 2px; border: 0; border-radius: 6px; background: transparent; color: var(--text); font-size: 12px; cursor: pointer; }
-.language-toggle:hover { background: var(--surface); }
+.header .submit-top:active { transform: translateY(1px); box-shadow: inset 0 2px 4px color-mix(in srgb, black 28%, transparent), 0 1px 2px color-mix(in srgb, var(--text) 10%, transparent); }
+.header-utilities { display: flex; align-items: center; flex-shrink: 0; padding: 3px; gap: 2px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--surface); box-shadow: inset 0 1px 0 var(--material-edge), var(--shadow-soft); }
+.header-utilities .theme-toggle { width: 32px; min-width: 32px; height: 32px; min-height: 32px; border-radius: var(--radius-pill); transition: box-shadow 150ms ease, transform 150ms ease; }
+.header-utilities .theme-toggle:hover { background: var(--surface-raised); box-shadow: 0 1px 2px color-mix(in srgb, var(--text) 8%, transparent); }
+.header-utilities .theme-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.language-control { position: relative; display: inline-flex; align-items: center; gap: 7px; min-height: 32px; padding: 0 10px 0 10px; border-radius: var(--radius-pill); color: var(--text-muted); cursor: pointer; transition: box-shadow 150ms ease, transform 150ms ease; }
+.language-control::before { position: absolute; inset: 7px auto 7px 0; width: 1px; content: ""; background: var(--border-strong); opacity: .35; pointer-events: none; transition: opacity 140ms ease; }
+.language-control:hover { background: var(--surface-raised); color: var(--text); box-shadow: 0 1px 2px color-mix(in srgb, var(--text) 8%, transparent); }
+.language-control:hover::before { opacity: 0; }
+.language-control:focus-within { background: var(--surface-raised); color: var(--text); outline: 2px solid var(--focus); outline-offset: 1px; }
+.language-control:focus-within::before { opacity: 0; }
+.language-control > svg { width: 15px; height: 15px; flex-shrink: 0; color: inherit; }
+.language-toggle { width: auto; min-width: 70px; min-height: 32px; padding: 0 2px 0 0; border: 0; border-radius: 0; background: transparent; color: inherit; font-size: 12px; font-weight: 500; cursor: pointer; outline: none; }
+.language-toggle:focus-visible { outline: none; }
 .language-toggle option { background: var(--surface-raised); color: var(--text); }
 .page { max-width: 1440px; margin: auto; padding: 0 56px; }
 .hero { display: grid; grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); align-items: center; gap: clamp(26px, 4vw, 54px); padding: 36px 0 28px; }
@@ -547,23 +557,23 @@ p { margin: 0; }
   .header-nav .nav-count { display: none; }
   .mobile-bookmark { display: block; }
   .header-actions { display: flex; justify-content: space-between; gap: 6px; min-width: 0; }
-  .header-ecosystem { gap: 0; padding: 2px; }
-  .header-ecosystem > :is(button, a) { min-height: 32px; padding-inline: 6px; gap: 3px; font-size: 11px; }
+  .header-ecosystem { gap: 1px; padding: 2px; }
+  .header-ecosystem > :is(button, a) { min-height: 30px; padding-inline: 7px; gap: 4px; font-size: 11px; }
   .header-ecosystem > :is(button, a) svg { width: 13px; height: 13px; }
   .agent-skill-btn span { display: none; }
   .github-star-btn .star-label-full { display: none; }
   .github-star-btn .star-label-short { display: inline; }
-  .header .submit-top { min-height: 36px; padding-inline: 9px; gap: 4px; font-size: 11px; }
+  .header .submit-top { min-height: 34px; padding-inline: 10px; gap: 4px; font-size: 11px; }
   .header .submit-top .submit-label-full { display: none; }
   .header .submit-top .submit-label-short { display: inline; }
   .header .sponsor-entry-button .sponsor-label-full { display: none; }
   .header .sponsor-entry-button .sponsor-label-short { display: inline; }
   .header .submit-top svg { width: 13px; height: 13px; }
-  .header-utilities { gap: 0; padding: 1px; }
-  .header-utilities .theme-toggle { width: 30px; min-width: 30px; min-height: 32px; height: 32px; }
-  .language-control { gap: 3px; min-height: 30px; padding-left: 5px; }
-  .language-control > svg { width: 12px; height: 12px; }
-  .language-toggle { width: 62px; min-height: 32px; font-size: 11px; padding: 0; }
+  .header-utilities { gap: 1px; padding: 2px; }
+  .header-utilities .theme-toggle { width: 30px; min-width: 30px; min-height: 30px; height: 30px; }
+  .language-control { gap: 5px; min-height: 30px; padding: 0 7px 0 8px; }
+  .language-control > svg { width: 13px; height: 13px; }
+  .language-toggle { min-width: 56px; min-height: 30px; font-size: 11px; padding: 0; }
   .hero { grid-template-columns: 1fr; padding: 14px 0 8px; gap: 12px; }
   .hero h1 { font-size: clamp(29px, 7.2vw, 36px); line-height: 1.18; margin-bottom: 8px; }
   .hero-copy > p { max-width: 58ch; font-size: 13px; line-height: 1.65; }
