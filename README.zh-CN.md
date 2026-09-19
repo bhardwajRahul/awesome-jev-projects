@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-259%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
-<p>严谨收录 **183+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
+<p>严谨收录 **259+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
 
 </div>
 
@@ -41,23 +41,23 @@
 <a id="contents"></a>
 ## 目录索引
 
-- [⚡ 高频模拟与实时博弈 (17)](#high-frequency-simulation-zh)
-- [🛠️ 开发工具包与决策框架 (12)](#sdk-decision-frameworks-zh)
-- [🔌 生态框架与接入适配器 (8)](#sdk-integrations-zh)
-- [💻 命令行工具与自动化工作流 (26)](#cli-pipelines-zh)
-- [💾 数据库扩展与语义检索 (4)](#data-search-zh)
-- [🌐 浏览器与桌面端自动化 (17)](#browser-os-action-zh)
-- [🧹 上下文垃圾回收与降噪 (7)](#context-gc-filter-zh)
-- [🛡️ 安全防御与输入护栏 (11)](#security-guardrails-zh)
-- [🧩 MCP 协议与工具扩展 (29)](#mcp-integrations-zh)
-- [🧭 代码库分析与图谱寻路 (9)](#codebase-graph-pathfinding-zh)
-- [🔀 模型路由与成本优化 (10)](#routing-cost-optimization-zh)
-- [📊 垂直行业与专业业务系统 (15)](#domain-vertical-tools-zh)
-- [🎯 通用决策与启发式评估 (11)](#decision-tools-zh)
+- [⚡ 高频模拟与实时博弈 (20)](#high-frequency-simulation-zh)
+- [🛠️ 开发工具包与决策框架 (32)](#sdk-decision-frameworks-zh)
+- [🔌 生态框架与接入适配器 (9)](#sdk-integrations-zh)
+- [💻 命令行工具与自动化工作流 (32)](#cli-pipelines-zh)
+- [💾 数据库扩展与语义检索 (7)](#data-search-zh)
+- [🌐 浏览器与桌面端自动化 (23)](#browser-os-action-zh)
+- [🧹 上下文垃圾回收与降噪 (11)](#context-gc-filter-zh)
+- [🛡️ 安全防御与输入护栏 (16)](#security-guardrails-zh)
+- [🧩 MCP 协议与工具扩展 (32)](#mcp-integrations-zh)
+- [🧭 代码库分析与图谱寻路 (12)](#codebase-graph-pathfinding-zh)
+- [🔀 模型路由与成本优化 (15)](#routing-cost-optimization-zh)
+- [📊 垂直行业与专业业务系统 (19)](#domain-vertical-tools-zh)
+- [🎯 通用决策与启发式评估 (14)](#decision-tools-zh)
 - [🏷️ 文本分类与分类学标注 (2)](#classification-taxonomy-zh)
-- [📈 评测基准与系统可观测性 (1)](#evaluation-observability-zh)
-- [🎙️ 实时语音与多轮对话 (1)](#voice-conversation-zh)
-- [🎨 创意生成与多媒体编排 (3)](#creative-tools-zh)
+- [📈 评测基准与系统可观测性 (7)](#evaluation-observability-zh)
+- [🎙️ 实时语音与多轮对话 (3)](#voice-conversation-zh)
+- [🎨 创意生成与多媒体编排 (5)](#creative-tools-zh)
 - [📖 本地运行与架构原理](#dev-arch-zh)
 - [🤝 如何提交你的项目](#submit-guide-zh)
 
@@ -87,6 +87,10 @@
 - [**tsai-sc**](https://github.com/phyous/tsai-sc) `★ 15` - 星际争霸 1998 经典战役 AI 控制框架，经历 421 次真实 Jev 决策完成 Strongarm 关卡，提供完整的复现记录与胜局复核。
   - 🎯 **核心决策**: 输入结构化战场态势与资源数据，独立选择经济建造与部队微操指令。
   - 💡 **收益亮点**: 验证复杂实时策略游戏中将全局态势解构为离散语义决策的可行性。
+
+- [**jevscape**](https://github.com/Skyvern-AI/jevscape) `★ 6` - RuneBench 智能体基准测试 Harness：为 Jev 接入有界动作目录、Tick 模式控制器与实时监控面板。
+  - 🎯 **核心决策**: 在每个游戏 Tick 周期内，读取游戏状态数据并在有界动作空间中挑选最合理的行进或操作动作。
+  - 💡 **收益亮点**: 为复杂游戏环境提供可量化、高可控的决策测试平台，展示 Jev 在有界离散动作空间中的卓越表现。
 
 - [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 在浏览器里和 Jev 打一局 1v1 射击。它看结构化战况，选走位、瞄准和开火。
   - 🎯 **核心决策**: 每个决策 tick 同时询问移动、视角、开镜、开火与跳跃；API 不可用时切到启发式逻辑。
@@ -137,6 +141,14 @@
   - 🎯 **核心决策**: 每个 tick 并行询问动作与相关开关，Python 或页面代码执行物理和碰撞规则。
   - 💡 **收益亮点**: 把持续游戏决策做成带日志和观察面板的可试验循环。
 
+- [**jev-play-ping-pong**](https://github.com/Icohen007/jev-play-ping-pong) - 实时网页乒乓球对战：Jev 接收球台坐标遥测，毫秒级裁决球拍移动指令与击球时机。
+  - 🎯 **核心决策**: 根据乒乓球实时坐标、速度矢量与球拍当前位置，做出上移、下移或保持动作选择。
+  - 💡 **收益亮点**: 完全剥离了笨重的生成式 Prompt，以低延迟离散动作调用满足实时球类物理反射要求。
+
+- [**mk-jev-fly-brain**](https://github.com/lavallee/mk-jev-fly-brain) - 果蝇脑连接组 vs 语言模型：在 mk.js 格斗游戏中将生物脉冲神经网络与 Jev 决策模型实时对战。
+  - 🎯 **核心决策**: 在每帧游戏状态中评估双方血量、距离与对手动作，裁决下一个攻击、跳跃或防御输入。
+  - 💡 **收益亮点**: 在高频动作博弈中验证离散决策模型的低延迟响应与战术对抗策略。
+
 ---
 
 <a id="sdk-decision-frameworks-zh"></a>
@@ -164,6 +176,10 @@
   - 🎯 **核心决策**: 对程序提交的状态做单选、是非判断或评分；循环和动作执行由本地程序控制。
   - 💡 **收益亮点**: 适合把反复发生的小判断写成可复用流程；Jev 是需要配置的可选能力。
 
+- [**typesafe-sdk-js**](https://github.com/typesafe-ai/typesafe-sdk-js) `★ 138` - TypeSafe 官方 TypeScript/JavaScript 客户端：提供最权威、最新的 Jev 核心接口绑定与类型定义。
+  - 🎯 **核心决策**: 全面支持 System One 的 Choice、Score、Noul 与批处理决策请求，提供类型推导与流式支持。
+  - 💡 **收益亮点**: 官方维护，始终与最新 API 规范保持一致，是整个 Jev 生态大部分 JS/TS 项目的基石。
+
 - [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - 在 Effect Agent 里接入 Jev 决策模型。TypeScript 程序可以用带类型的问题集做判断，也能把它用于可选的模型选择。
   - 🎯 **核心决策**: TypeSafeDecisionModel 通过 TypeSafeClient 调用 Jev，并把概率、单选与评分结果接回 Effect。
   - 💡 **收益亮点**: 复用 Effect 的配置、类型和错误处理；重试与超时由应用自己设置。
@@ -176,9 +192,65 @@
   - 🎯 **核心决策**: 将带类型的问题转成 System One 请求，并把命名答案映射回调用方。
   - 💡 **收益亮点**: 减少手写请求和解析代码，也支持通过 Vercel 网关调用。
 
+- [**ruby_decision_model**](https://github.com/obie/ruby_decision_model) `★ 36` - 面向 Ruby 社区的决策模型客户端：提供针对 TypeSafe Jev 的强类型调用封装与异常重试。
+  - 🎯 **核心决策**: 把 Ruby 哈希与枚举问题构造成 Jev System One 规范请求并解码结构化答案。
+  - 💡 **收益亮点**: 符合 Ruby 习惯的流畅语法，避免手写原始 HTTP 请求与散乱的 JSON 解析代码。
+
+- [**typesafe-ai**](https://github.com/Twister915/typesafe-ai) `★ 8` - 类型安全的 Rust 客户端：同时提供异步与阻塞后端支持，内置可观察重试与详细遥测。
+  - 🎯 **核心决策**: 管理对 Jev System One API 的网络握手、鉴权与强类型请求编解码。
+  - 💡 **收益亮点**: 同时满足 Tokio 异步运行时与轻量 CLI 同步脚本需求，具有极高的工程灵活性。
+
+- [**typesafe-sdk-go**](https://github.com/Tangerg/typesafe-sdk-go) `★ 7` - 规范的 Go SDK：输入强类型问题，输出精确校准的离散概率分布，专为分布式系统设计。
+  - 🎯 **核心决策**: 为 Go 后端服务提供标准 Jev 问答接口，完成结构化 JSON 编码与网络重试。
+  - 💡 **收益亮点**: 线程安全，支持并发调用，为微服务架构提供稳定的低延迟决策通道。
+
+- [**jev-dsl**](https://github.com/inanna-malick/jev-dsl) `★ 6` - 面向智能体的 Haskell 领域特定语言：为 TypeSafe Jev 带来强类型推导与带标签的答案映射。
+  - 🎯 **核心决策**: 利用 Haskell 类型系统为判断问题声明严格的返回类型，并在解析时实施完备性保证。
+  - 💡 **收益亮点**: 纯函数式安全范式，确保每个进入下游业务逻辑的 Jev 判断结果在编译期即被证明完全合法。
+
+- [**swift-typesafe**](https://github.com/ainame/swift-typesafe) `★ 6` - 非官方 Swift 客户端库：为 Apple 平台开发者提供原生、符合 Swift 语法习惯的 Jev 接口封装。
+  - 🎯 **核心决策**: 通过强类型 Swift 结构体定义问题并接收 Jev 的离散选择与评分结果。
+  - 💡 **收益亮点**: 无缝集成进 Xcode 工程与 Swift 现代并发工作流，无第三方臃肿依赖。
+
+- [**super-jev**](https://github.com/Kevthetech143/super-jev) `★ 5` - 紧凑可扩展的 Jev 决策-执行 Harness：把多选题结果映射为确定性业务动作或函数调用。
+  - 🎯 **核心决策**: 解析业务场景问题，调用 Jev 获取离散 Choice / Noul 判定并触发绑定的回调函数。
+  - 💡 **收益亮点**: 免去冗余的 JSON Schema 解析与重试环节，将不可预测的生成式输出收敛为有限状态机跳转。
+
+- [**typesafe-sdk**](https://github.com/joshmn/typesafe-sdk) `★ 4` - 面向 Ruby 社区的轻量客户端：为 typesafe.ai 提供简洁现代的 Ruby 请求包装与结果映射。
+  - 🎯 **核心决策**: 以 Ruby Hash 构造题目与选项列表，发起 HTTP 请求并解析返回的离散判断数据。
+  - 💡 **收益亮点**: 简单直接，依赖极少，适合快速将 Jev 嵌入已有的 Rails 项目或后台自动化作业中。
+
+- [**typesafe-ai-rs**](https://github.com/gilljon/typesafe-ai-rs) `★ 3` - 独立 Rust SDK：专注于 TypeSafe AI System One API 的严密类型化与零开销异常处理。
+  - 🎯 **核心决策**: 将业务分类与评分问题解析为结构化枚举，并安全映射来自服务端的浮点概率数组。
+  - 💡 **收益亮点**: 清晰的错误类型枚举设计，方便上层调用方进行精细化故障降级处理。
+
+- [**typesafe-sdk-java**](https://github.com/Premo-Cloud/typesafe-sdk-java) `★ 3` - 社区 Java 客户端与 Spring Boot Starter：在微服务架构中开箱即用注入 Jev 判定能力。
+  - 🎯 **核心决策**: 通过 Java 注解与 POJO 强类型封装发起 Jev System One 请求，自动处理反序列化。
+  - 💡 **收益亮点**: 完美契合企业级 Spring 生态，支持配置类自动装配、连接池管理与优雅超时回退。
+
+- [**jev-go**](https://github.com/Gaurav-Gosain/jev-go) `★ 2` - 专注于结构化判断的 Go 客户端：输出经过校准的置信度概率而非随机生成的非结构化长文本。
+  - 🎯 **核心决策**: 将业务问题与候选选项序列化，提交给 Jev 并返回带有校准概率分布的 Choice 结果。
+  - 💡 **收益亮点**: 严格对齐 System One 接口契约，适合对结果确定性与概率度量有严苛要求的生产服务。
+
 - [**jev-java**](https://github.com/Olti1947/jev-java) `★ 2` - 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 🎯 **核心决策**: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 💡 **收益亮点**: 在现有程序中复用接入代码，减少重复处理接口细节。
+
+- [**typesafe_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) `★ 2` - 符合 Elixir 习惯的类型安全 AI SDK：统一 LLM 与 System One Jev 接口，提供高并发 Actor 模型支持。
+  - 🎯 **核心决策**: 在 Elixir 进程中发起非阻塞 Jev 决策请求，以模式匹配直接处理分类与评分结果。
+  - 💡 **收益亮点**: 将 Jev 极速判定带入 Erlang/OTP 容错体系，轻松支撑百万级并发长连接的实时决策。
+
+- [**typesafe-go**](https://github.com/2389-research/typesafe-go) `★ 2` - 零第三方依赖的 Go 客户端：仅依靠标准库实现对 TypeSafe System One API 的类型安全调用。
+  - 🎯 **核心决策**: 将 Go 原生类型安全地转换为 Jev 请求载荷，并解析 Choice/Score/Noul 结构化响应。
+  - 💡 **收益亮点**: 极简实现，零供应链污染风险，体积轻量且可无缝交叉编译至各类嵌入式与容器环境。
+
+- [**typesafe-go**](https://github.com/cole-gillespie/typesafe-go) `★ 2` - 非官方 Go SDK：具备完善的指数退避重试、上下文取消控制与强类型答案解析功能。
+  - 🎯 **核心决策**: 处理 HTTP 连接生命周期，将 Jev 概率输出转换为 Go 结构体中的强类型枚举。
+  - 💡 **收益亮点**: 针对高并发云服务优化，支持 context.Context 超时熔断与智能重试。
+
+- [**typesafe-sdk-rust**](https://github.com/codeitlikemiley/typesafe-sdk-rust) `★ 2` - TypeSafe AI API 的 Rust SDK：提供轻量常数定义、序列化模型与网络客户端封装。
+  - 🎯 **核心决策**: 在 Rust 代码中构造 Jev System One 交互载荷，处理端点路由与身份认证。
+  - 💡 **收益亮点**: 利用 Rust 所有权与类型系统消除非法请求格式，编译期捕获字段缺失错误。
 
 - [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - 给 Jev 判断补上应用里的后半段：把结果送去自动处理、备用模型或人工复核，并记录每条规则的效果。
   - 🎯 **核心决策**: 为分类或检查任务提供选项与概率；代码里的阈值决定后续处理路线。
@@ -191,6 +263,26 @@
 - [**jevify**](https://github.com/altryne/jevify) `★ 1` - 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 🎯 **核心决策**: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
   - 💡 **收益亮点**: 在现有程序中复用接入代码，减少重复处理接口细节。
+
+- [**qualm**](https://github.com/qddegtya/qualm) `★ 1` - 面向不确定性处理的 System One 决策封装库：在 Jev 输出低置信度时强制开发者提供回退策略。
+  - 🎯 **核心决策**: 查询 Jev 的概率分布，当最大概率未达安全阈值时主动抛出或触发 Qualm 回退机制。
+  - 💡 **收益亮点**: 从类型系统层面杜绝盲目信任模型预测的隐患，构建防御性智能体决策链路。
+
+- [**typesafe-go**](https://github.com/zhirschtritt/typesafe-go) `★ 1` - 符合 Go 语言工程习惯的 SDK：为 TypeSafe AI API 提供优雅的客户端调用接口与完备的上下文传递。
+  - 🎯 **核心决策**: 管理底层 HTTP 通信与 JSON 编解码，把 Jev 的多项选择与评分结果结构化注入业务代码。
+  - 💡 **收益亮点**: 接口设计简洁明了，无多余设计负担，便于集成进现有的 Go 后端微服务或命令行工具中。
+
+- [**typesafe-sdk-php**](https://github.com/Butochnikov/typesafe-sdk-php) `★ 1` - PHP 生态客户端：为现代 PHP 8+ 应用提供接入 TypeSafe Jev 的强类型客户端与请求构建器。
+  - 🎯 **核心决策**: 封装 HTTP Guzzle/Curl 请求，将 PHP 关联数组与枚举转换为符合规范的 Jev 问题载荷。
+  - 💡 **收益亮点**: 让 Laravel、Symfony 等 PHP Web 框架轻松引入 Jev 毫秒级决策能力，无需单独搭建 Python 微服务。
+
+- [**typesafe-rs**](https://github.com/AbdelStark/typesafe-rs) - 面向超低延迟场景的 Rust SDK：封装 TypeSafe System One API，具备极致序列化性能与连接复用。
+  - 🎯 **核心决策**: 将强类型 Rust 结构体序列化为标准 Jev 请求，并以极致速度解析返回的概率分布。
+  - 💡 **收益亮点**: 零不必要内存分配，为高频量化、系统守护进程与终端工具提供最底层性能保证。
+
+- [**typesafe-sdk-swift**](https://github.com/marandaneto/typesafe-sdk-swift) - Swift 原生移植客户端：将官方 JS/Python SDK 的核心功能移植到 Swift 现代异步并发体系中。
+  - 🎯 **核心决策**: 通过 Swift async/await 接口发起 Jev 决策调用，并利用 Codable 完成无缝数据解析。
+  - 💡 **收益亮点**: 适配 iOS、macOS 与 Linux 上的 Swift 应用程序，充分享受 Swift 强类型系统的安全保障。
 
 ---
 
@@ -231,12 +323,28 @@
   - 🎯 **核心决策**: 适配器将支持的输出字段变成 Jev 问题，原生 client 的 systemOne 负责发送和验证回答。
   - 💡 **收益亮点**: 结构化决策可以和 Ax 的生成式步骤显式组合。
 
+- [**ruby_llm-typesafe**](https://github.com/kieranklaassen/ruby_llm-typesafe) `★ 12` - RubyLLM 2 适配插件：为 Ruby 生态统一大模型框架提供 TypeSafe 结构化输出提供商驱动。
+  - 🎯 **核心决策**: 将 RubyLLM 定义的结构化 Schema 转换为 Jev 问题，接管分类与选择类判断。
+  - 💡 **收益亮点**: 无缝融入现有 RubyLLM 应用代码，无需更改上层业务逻辑即可将特定分支切换为 Jev 极速推理。
+
 ---
 
 <a id="cli-pipelines-zh"></a>
 ## 💻 命令行工具与自动化工作流
 
 *在终端脚本、Unix 管道与 CI/CD 自动化流程中引入语义判断的工程工具。*
+
+- [**jev-experiments**](https://github.com/dabit3/jev-experiments) `★ 255` - Nader Dabit 打造的 Jev 实验库与 Commit Sentry：包含代码提交守护、意图判定等前沿探索范例。
+  - 🎯 **核心决策**: 在 commit-sentry 示例中对提交差异进行风险分级，拦截潜在问题提交并推荐改进建议。
+  - 💡 **收益亮点**: 获得 250+ GitHub Stars，以极具启发性的实战代码展示了 Jev 在开发者工具链中的无限可能。
+
+- [**runline**](https://github.com/Michaelliv/runline) `★ 162` - 面向智能体的命令行交互运行环境：集成 Jev 判定插件，把控智能体生成的 Shell 指令安全性。
+  - 🎯 **核心决策**: 在命令实际执行前，裁决 Shell 脚本是否涉及敏感目录破坏、权限提权或未知网络外联。
+  - 💡 **收益亮点**: 比固定正则更具泛化能力，为智能体全自动终端操作建立坚实的最后一道安全护栏。
+
+- [**captaincore**](https://github.com/CaptainCore/captaincore) `★ 71` - WordPress 站点运维命令行工具：集成 Jev 进行插件兼容性风险与更新决策预判。
+  - 🎯 **核心决策**: 评估待更新插件的版本变更说明与已知冲突信息，裁决自动更新或人工复核。
+  - 💡 **收益亮点**: 在批量站点自动化维护中加入语义风控，有效预防插件更新导致的白屏故障。
 
 - [**jev-voice-browser**](https://github.com/moritzkremb/jev-voice-browser) `★ 35` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
@@ -257,6 +365,14 @@
 - [**openjev**](https://github.com/razorback16/openjev) `★ 14` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
+
+- [**jev-axi**](https://github.com/shiftynick/jev-axi) `★ 13` - 面向智能体开发者的实用命令行套件：在终端一键执行 pick、rate、check、rank、triage 与 guard 任务。
+  - 🎯 **核心决策**: 根据传入的子命令分别执行多项选择、数值评分、真伪核实、候选排序与输入拦截。
+  - 💡 **收益亮点**: 将所有 Jev 核心原语包装为 Unix 友好的单行命令，轻松插入 Bash 脚本与自动化管道。
+
+- [**rift**](https://github.com/exYze/rift) `★ 9` - Rust 打造的高性能终端 TUI：内嵌 Jev 决策组件，用于终端代码辅助与快捷动作裁决。
+  - 🎯 **核心决策**: 分析终端上下文与光标所在代码块，裁决最契合的补全类型或重构动作建议。
+  - 💡 **收益亮点**: Rust 零开销运行时结合 Jev 亚秒级决策，提供极度丝滑的终端键盘操作流。
 
 - [**SemDecide**](https://github.com/sharziki/semdecide) `★ 5` - 给终端管道加一点语义判断：一句话分类、一批文本过滤，都能接在 Bash 和 CI 后面。
   - 🎯 **核心决策**: 对输入做分类或概率判断，再由本地规则执行阈值、退出码与 allow/escalate/block。
@@ -322,6 +438,10 @@
   - 🎯 **核心决策**: 在有限语法和工具候选里选下一步，代码负责组合成 Python、Bash 等输出。
   - 💡 **收益亮点**: 能观察结构化决策如何参与代码生成和执行。
 
+- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) `★ 1` - 亚秒级 Git pre-commit 与 pre-push 语义反射门禁：在本地提交阶段拦截潜在逻辑错误与敏感凭证泄露。
+  - 🎯 **核心决策**: 扫描 staged diff 的新增与删除行，判定代码改动是否违反预设工程规范或包含硬编码密钥。
+  - 💡 **收益亮点**: 纯 Rust 实现，执行耗时通常低于 300ms，为每次 git commit 提供无缝贴合的语义守护。
+
 - [**jev-synergy-screening**](https://github.com/PistachioAIHQ/jev-synergy-screening) `★ 1` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
   - 💡 **收益亮点**: 把语义判断接到已有的命令行工作流。
@@ -353,9 +473,21 @@
   - 🎯 **核心决策**: 把行内容成批交给 Jev，返回是否符合条件、所属类别或等级分数，供 WHERE、GROUP BY、ORDER BY 使用。
   - 💡 **收益亮点**: 语义条件可以和原有 SQL 一起写，并复用同一会话里已经算过的判断。
 
+- [**pg_typesafe**](https://github.com/giuliosmall/pg_typesafe) `★ 76` - PostgreSQL 原生 C 扩展：在 SQL 语句中直接调用 Jev 对数据表字段进行语义类别分类。
+  - 🎯 **核心决策**: 对 SQL 查询流经的每一行文本数据，实时请求 Jev 并将离散分类结果作为 SQL 列返回。
+  - 💡 **收益亮点**: 无需将数据导出到外部 Python 脚本，直接利用数据库内部流水线完成海量数据的语义分类与过滤。
+
 - [**jev-search**](https://github.com/superagents-lab/jev-search) `★ 38` - 用人话搜网页，先挑搜索源和时间范围，再把相关链接排到前面。页面给链接和摘要，不代写答案。
   - 🎯 **核心决策**: Jev 对请求做结构化判断以选择检索参数，再给 Search1API 返回的标题和摘要评分。
   - 💡 **收益亮点**: 把来源选择与结果排序串起来，同时保留可改的过滤条件和失败来源提示。
+
+- [**duckdb-jev**](https://github.com/colliber/duckdb-jev) `★ 8` - DuckDB 扩展：将 Jev 的强类型决策作为原生 SQL 函数暴露，直接把语义判断映射为 SQL 原生数据类型。
+  - 🎯 **核心决策**: 在执行 SQL 查询时，对表格行中的文本表达式由 Jev 进行离散分类或打分，直接生成结构化列。
+  - 💡 **收益亮点**: 无需复杂的外部数据迁移，在单机列式数据库分析流水线内直接实现超高速语义打标与智能过滤。
+
+- [**jevsql**](https://github.com/EugeneBoondock/jevsql) `★ 3` - 自然语言谓词 SQL 引擎：在标准 SQL 中通过 Jev 实现由语义含义驱动的 WHERE、ORDER BY 与打分过滤。
+  - 🎯 **核心决策**: 在 SQL 执行计划中，对候选行记录由 Jev 批量评估自然语言条件匹配度，决定行的筛选与排序权重。
+  - 💡 **收益亮点**: 具备自动批处理、结果内容缓存与成本配额保护机制，让传统数据库瞬间具备语义理解能力。
 
 - [**jevql**](https://github.com/kylemclaren/jevql) `★ 2` - 针对原生 Postgres 的 Jev 语义 SQL 扩展。无需装插件，在终端和 Go/TS/Python SDK 中直接用 WHERE jev() 做语义过滤、排序与分组。
   - 🎯 **核心决策**: 对 SQL 初筛后的每一行数据调用 Jev 进行 Noul、Choice 或 Score 判断，结果用于客户端的语义过滤、概率排序或分组。
@@ -385,6 +517,10 @@
   - 🎯 **核心决策**: Jev 同时选择动作与目标，并评估置信度和操作风险；本地策略决定是否执行或停止。
   - 💡 **收益亮点**: 让主 Agent 不必把整棵界面树塞进上下文。
 
+- [**Agent**](https://github.com/AgentiLoop/Agent) `★ 616` - macOS 原生自主智能体：内置 TypeSafeKit 模块，将系统自动化动作与脚本调用交给 Jev 决策。
+  - 🎯 **核心决策**: 从当前应用状态与用户任务出发，裁决下一步调用的 macOS 原生自动化接口与参数。
+  - 💡 **收益亮点**: Swift 原生实现与 Jev 结构化判断深度结合，极大减少高阶操作的规划等待时间。
+
 - [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev 的移动端测试脚本可用 Jev 看无障碍树：选下一控件，判断步骤是否完成或已经走不通。
   - 🎯 **核心决策**: 测试辅助 judge 将界面树与 Noul、Choice 问题发往 Jev，精确字符串断言仍由代码控制。
   - 💡 **收益亮点**: 让端到端测试在界面略有变化时多一个语义判断信号。
@@ -392,6 +528,10 @@
 - [**typesafe-computer-use**](https://github.com/awlevin/typesafe-computer-use) `★ 237` - 极低成本的 macOS 桌面控制工具，用确定性 OCR 提取文字坐标，由 Jev 裁决下一步动作，单步成本约两美分的两百分之一。
   - 🎯 **核心决策**: 比对当前屏幕元素列表与目标意图，从候选中选取下一个原子点击或按键。
   - 💡 **收益亮点**: 不向大模型传输高分辨率截图，避免截图多模态高昂 token 计费与等待。
+
+- [**jev-browser-use**](https://github.com/wy-coliney/jev-browser-use) `★ 132` - EZCollegeApp 出品的极速浏览器自动化：Jev 负责点击与交互裁决，Codex 负责宏观思考与结果复核，提速 5-10 倍。
+  - 🎯 **核心决策**: 在每一步页面交互中，由 Jev 从轻量 DOM 候选中裁决具体点击的目标元素与滚动动作。
+  - 💡 **收益亮点**: 解耦高频局部操作与低频全局规划，不仅速度提升 5-10 倍，更大幅节省大模型多模态调用费用。
 
 - [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - 给 Android 手机一个目标，Jev 选应用和控件，Mobilerun 负责打开、点击、输入；网页面板能看过程。
   - 🎯 **核心决策**: 一次请求选择操作及兼容目标，本地重新核对控件后通过 Mobilerun 执行。
@@ -409,9 +549,21 @@
   - 🎯 **核心决策**: 对页面元素候选做分类，只让通过阈值的非必要元素进入隐藏规则，不确定的保留。
   - 💡 **收益亮点**: 常见页面可以复用规则，隐藏操作可撤销；它不阻止追踪请求，也不代替用户处理同意选项。
 
+- [**plasmallm**](https://github.com/joshuaeroman/plasmallm) `★ 28` - KDE Plasma 桌面小部件适配器：引入 Jev 决策适配层，用于本地桌面交互动作与指令分流。
+  - 🎯 **核心决策**: 评估用户桌面操作意图并分流为本地快捷动作、对话生成或系统工具调用。
+  - 💡 **收益亮点**: 毫秒级判定用户意图，无需唤醒昂贵的云端多模态模型即可完成高频桌面指令决策。
+
 - [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) `★ 14` - Jev-cu：面向 Codex 桌面端 Computer Use 的决策助手，将「下一步点哪里」交给 Jev System One 从候选文字中离散选择，只传文本不传截图。
   - 🎯 **核心决策**: 从可访问性树与界面文字候选中，由 Jev 裁决下一个操作目标元素、动作类型、完成度与风险分级。
   - 💡 **收益亮点**: 只传文字不传截图，大幅降低多模态 token 消耗与延迟，结合本地白名单策略拦截敏感系统操作。
+
+- [**jev-browser**](https://github.com/Ying-Kai-Liao/jev-browser) `★ 12` - 混合架构浏览器自动化：大模型负责高层规划，Jev 负责底层每一步点击与交互的毫秒级决策。
+  - 🎯 **核心决策**: 从页面可访问性树和候选动作中，由 Jev 选定具体执行的控件选择器与事件类型。
+  - 💡 **收益亮点**: 提供 Library、CLI 与 MCP Server 三种使用方式，全方位降低网页自动化探索中的等待与成本。
+
+- [**jev-ego**](https://github.com/romaluev/jev-ego) `★ 4` - 面向 ego-lite 的极速浏览器智能体：每一步仅需单次 TypeSafe 请求，由 Jev 直接挑出下一步动作。
+  - 🎯 **核心决策**: 评估当前页面关键交互元素列表，裁决是点击、输入文字、滚动还是提交表单。
+  - 💡 **收益亮点**: 单步无需多次大模型推理回合，极大压缩了浏览器智能体在表单填写与多步导航中的耗时。
 
 - [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - 给浏览器装一个任务副驾。输入目标后自动点按钮、填表；碰到付款、删除等高风险操作时停下来确认。
   - 🎯 **核心决策**: 从当前网页的交互元素里选择下一步动作，并评估点击的风险与不可逆程度。
@@ -441,6 +593,10 @@
   - 🎯 **核心决策**: Jev 从本地视觉、OCR 与无障碍标签组成的有限元素列表中选择；坐标和输入执行留在 Mac。
   - 💡 **收益亮点**: 让原生界面点击使用可枚举目标，并在执行前复核焦点与元素状态。
 
+- [**openclaw-typesafe-ai**](https://github.com/Olli0103/openclaw-typesafe-ai) - OpenClaw 网页抓取框架适配插件：引入 Jev 结构化决策，用于抓取目标定位与验证码风险判决。
+  - 🎯 **核心决策**: 评估页面结构并裁决列表翻页按钮、动态加载触发点或是否存在反爬阻断元素。
+  - 💡 **收益亮点**: 以确定性类型字段驱动爬虫引擎，在复杂多变的现代前端页面中大幅提高采集鲁棒性。
+
 ---
 
 <a id="context-gc-filter-zh"></a>
@@ -460,6 +616,10 @@
   - 🎯 **核心决策**: 对未命中本地规则的长尾回复，单次最多批量提交 25 条询问 noul 噪音概率，由代码决定是否隐藏。
   - 💡 **收益亮点**: 不调用任何 X 官方 API，用本地混合架构实现毫秒级社交媒体时间线清洁。
 
+- [**jev-pruner**](https://github.com/tamaratran/jev-pruner) `★ 17` - Claude Code 插件：在超长 Bash 与终端输出送入模型上下文前，由 Jev 判断哪些行是关键错误与堆栈，过滤冗余输出。
+  - 🎯 **核心决策**: 评估终端输出每一块的错误相关性与上下文价值，裁决保留或静默修剪。
+  - 💡 **收益亮点**: 大幅缩减后续推理 token 消耗与延迟，避免上下文窗口被冗余日志污染。
+
 - [**Winnow**](https://github.com/GhalebDweikat/winnow) `★ 13` - 给 Claude Code 的长日志装一道筛子。暂时不相关的内容先藏起来，想看时还能完整找回。
   - 🎯 **核心决策**: 逐块判断 Read、Bash、Grep 输出是否有用；保留相关或不确定内容，隐藏高置信度无关块。
   - 💡 **收益亮点**: 减少进入上下文的冗余输出，并保留可召回的原文。
@@ -472,9 +632,21 @@
   - 🎯 **核心决策**: 结合项目技术栈、目录和 README，逐个判断已安装技能是否相关，再由规则调整可见程度。
   - 💡 **收益亮点**: 减少进入上下文的技能描述，同时保留手动调用入口；没有 API key 时可用本地评分。
 
+- [**pi-jev-context**](https://github.com/kevinpita/pi-jev-context) `★ 2` - Pi 智能体可逆上下文修剪器：基于 Jev 语义判定，在不删除底层会话记录的前提下智能精简投喂给模型的上下文。
+  - 🎯 **核心决策**: 逐条检查终端命令结果与历史回答，裁决该条目是否保留、折叠或在必要时由指针召回。
+  - 💡 **收益亮点**: 完全可逆的设计，既保证了当前 Prompt 的精炼度，又确保在需要追溯历史时原始信息完好无损。
+
 - [**jev-context**](https://github.com/zbush/jev-context) `★ 1` - 给 Codex 的代码搜索加一道筛子。先用 ripgrep 找候选，再只把 Jev 判为相关的片段送回来。
   - 🎯 **核心决策**: 逐段判断代码是否与问题相关，只返回 Yes 片段，并记录筛选前后的文本。
   - 💡 **收益亮点**: 能按指定 tokenizer 核对取回文本的变化；不等同整项任务的成本节省。
+
+- [**your-signal**](https://github.com/MithrilMan/your-signal) `★ 1` - 开源 BYOK Chrome 扩展：通过 Jev 对 X/Twitter 关注流进行个性化降噪，过滤水帖与广告推文。
+  - 🎯 **核心决策**: 分析推文文本与上下文，裁决该推文是属于有价值的行业技术讨论还是无营养的营销造势。
+  - 💡 **收益亮点**: 用户自带 API Key，前端纯本地静默隐藏不相关推文，并支持一键恢复原貌。
+
+- [**pi-jev-compact**](https://github.com/ilkerulusoy/pi-jev-compact) - Pi 编程智能体上下文紧缩插件：利用 Jev 识别冗长会话历史中的冗余信息并执行安全紧缩。
+  - 🎯 **核心决策**: 评估大段历史日志与对话记录对于解决当前编程任务的必要性，标记可压缩的上下文段落。
+  - 💡 **收益亮点**: 在超长编程会话中动态释放宝贵上下文窗口，延缓大模型推理疲劳与上下文饱和。
 
 ---
 
@@ -499,6 +671,22 @@
   - 🎯 **核心决策**: 通过 Jev 判断改动是否违背规则、是否偏离任务或不可逆，再与本地模式规则合并处理。
   - 💡 **收益亮点**: 让规则提醒进入实际工具流程；多数问题是提示，少数破坏性操作才会被拦下。
 
+- [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) `★ 50` - 实验性 Chrome 扩展：将疑似广告的 DOM 元素文本提取并交由 Jev 判断是否为推广广告，在前端直接移除该节点。
+  - 🎯 **核心决策**: 基于 DOM 节点的文本与属性判定是否属于原生广告或赞助内容。
+  - 💡 **收益亮点**: 无需维护庞大的静态规则列表，依靠语义理解识别具有正常外观的隐蔽推广卡片。
+
+- [**vibecheck**](https://github.com/RafalWilinski/vibecheck) `★ 30` - 推文安全自检 Chrome 扩展：在点击 Post 发推前，由 Jev 对推文内容进行风格、语气与冒犯性风险自检。
+  - 🎯 **核心决策**: 检查待发布的推文草稿，裁决是否存在无意义争吵倾向、刻薄语气或不慎泄露的敏感言论。
+  - 💡 **收益亮点**: 为社交媒体输出加上一道毫秒级的前置反思保护，帮助技术人员与创作者维护良好公众声誉。
+
+- [**Jev-Moderation-Bot**](https://github.com/brainstormity/Jev-Moderation-Bot) `★ 28` - 社区聊天审核机器人：利用 Jev 快速对用户聊天信息进行多标签违规筛查与自动静音裁决。
+  - 🎯 **核心决策**: 评估消息是否存在骚扰、垃圾推广、仇恨言论或诱导链接，输出违规类型与置信度。
+  - 💡 **收益亮点**: 无需调用昂贵的长文本大模型，毫秒级完成海量群聊消息的内容合规拦截。
+
+- [**snifftest**](https://github.com/DanRWilloughby/snifftest) `★ 14` - AI 文本痕迹检测与散文 Linter：通过确定性规则与 Jev 混合研判段落是否存在典型的 AI 套话腔调。
+  - 🎯 **核心决策**: 对长文本段落判断是否存在陈词滥调、假大空过渡词、机械对称句式等 AI 写作特征。
+  - 💡 **收益亮点**: 零笨重依赖，将机械统计指标与深度语义判断相结合，提供可精细定位到句的审查建议。
+
 - [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - 给 Pi 的命令执行加一道门禁。明确安全的先通过，其余交给 Jev 判断；默认拿不准就拦住。
   - 🎯 **核心决策**: 本地规则先处理硬拒绝和允许项，Jev 再检查升级上来的 bash、write、edit 是否符合授权及风险条件。
   - 💡 **收益亮点**: 把常见允许规则与语义检查接起来，保留每次判断记录供调阈值。
@@ -510,6 +698,10 @@
 - [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) `★ 2` - JevNoiseGate：面向 Android 通知与短信的噪声过滤器，通过 Jev 离散判定消息是否为垃圾广告，对验证码等未知路径严格放行。
   - 🎯 **核心决策**: 将捕获的通知文本或短信内容交给 Jev，裁决是否归类为广告干扰信息。
   - 💡 **收益亮点**: 告别脆弱的关键词规则库，在保护验证码安全的前提下实现高精度广告拦截。
+
+- [**jev-cvss**](https://github.com/Red5d/jev-cvss) `★ 2` - 安全漏洞研判工具：输入 CVE 漏洞描述，由 Jev 快速预测 CVSS v3.1 核心度量指标与严重度评分。
+  - 🎯 **核心决策**: 从非结构化漏洞描述中抽取攻击向量、复杂性、特权要求与影响程度的离散枚举值。
+  - 💡 **收益亮点**: 毫秒级输出确定性漏洞分级向量，比传统大模型推理更快且格式完全合规。
 
 - [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - 在编程 Agent 调工具前后加一道检查：操作是否危险、是不是用户要求的、返回内容里有没有诱导 Agent 越界的指令。
   - 🎯 **核心决策**: 结合会话对工具风险、用户意图与提示注入迹象做判断，由本地规则决定放行、提醒或拦截。
@@ -557,6 +749,10 @@
 - [**synkora-ai**](https://github.com/getsynkora/synkora-ai) `★ 34` - Synkora Agent 平台提供 TypeSafe 客户端，可把业务数据交给 Jev 做分类、评分或是非判断，作为工作流中的一项能力。
   - 🎯 **核心决策**: 把调用方的 question、options 和 levels 转成 Jev 的题型与标准，再调用 System One。
   - 💡 **收益亮点**: 应用可以沿用统一的凭据和结果格式；这是兼容接入，不代表整个平台默认使用 Jev。
+
+- [**pi-typesafe**](https://github.com/DevMortimer/pi-typesafe) `★ 14` - Pi 编程智能体扩展套件：提供批量 Jev 评估工具、终端演练场与给插件作者使用的类型安全 API。
+  - 🎯 **核心决策**: 在 Pi 编码会话中批量评估候选文件相关性或代码修复方案，返回结构化采纳建议。
+  - 💡 **收益亮点**: 为 Pi 扩展开发者提供一站式决策接口与终端交互测试环境，加速智能体功能迭代。
 
 - [**Jevbridge**](https://github.com/gamesonrblx/Jevbridge) `★ 13` - 给现有 Agent 接一个结构化决策适配器：同样的问题可以交给 Jev，也可以交给普通模型或离线规则。
   - 🎯 **核心决策**: 对状态回答 Choice、Score、Noul，再按置信度把动作建议分成执行、确认、升级或放弃。
@@ -614,6 +810,10 @@
   - 🎯 **核心决策**: 复用社区 PHP SDK 发出三类判断请求，保留类型、异步 Promise 和异常。
   - 💡 **收益亮点**: Laravel 服务与队列任务可以沿用自己的配置和测试方式。
 
+- [**tenbin**](https://github.com/simota/tenbin) `★ 2` - TypeSafe Jev MCP 服务器与 Agent Skill：将复杂判定拆解为 Choice/Score/Noul 问题并在有标数据上校准。
+  - 🎯 **核心决策**: 为接入的智能体提供规范的 Jev 结构化问答工具，并在代码层提供校准过的阈值检查。
+  - 💡 **收益亮点**: 规范化提示词设计与置信度校准，帮助开发者写出高确定性、可测试的智能体判断逻辑。
+
 - [**codex-jev-compaction**](https://github.com/Wang-auspicious/codex-jev-compaction) `★ 1` - 用 Jev 筛选旧上下文，为 Codex 生成保留原文、可追溯的任务交接包。
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
@@ -650,6 +850,10 @@
   - 🎯 **核心决策**: 通过工具接口提供选择、评分或概率判断。
   - 💡 **收益亮点**: 让现有 Agent 通过通用接口使用 Jev。
 
+- [**n8n-nodes-typesafe-jev**](https://github.com/n3ndor/n8n-nodes-typesafe-jev) - n8n 自动化工作流社区节点：为低代码工作流平台引入 TypeSafe Jev 结构化 AI 决策节点。
+  - 🎯 **核心决策**: 在 n8n 工作流分支节点中，由 Jev 裁决输入事件的业务分类、评分或布尔真伪，触发下游不同动作。
+  - 💡 **收益亮点**: 无需编写代码即可在企业现有的自动化流程中添加低延迟、确定性的语义分支判断。
+
 ---
 
 <a id="codebase-graph-pathfinding-zh"></a>
@@ -669,6 +873,10 @@
   - 🎯 **核心决策**: 接收聚焦的代码差异与上下文，用 Score、Choice、Noul 给各质量维度打分，再与上一轮比较。
   - 💡 **收益亮点**: 把每轮修改的质量变化摆出来，帮助主 Agent 决定接下来查哪里。
 
+- [**commit-miner**](https://github.com/devanshbatham/commit-miner) `★ 22` - Git 提交语义分类器：利用 Jev 自动化分析 Commit Diff 与日志，精准标注 Bug 修复、安全补丁与 CWE 编号。
+  - 🎯 **核心决策**: 扫描代码改动的核心 hunk 与 commit message，裁决该提交属于常规重构、功能新增还是特定安全漏洞修复。
+  - 💡 **收益亮点**: Rust 高性能实现，批量挖掘数万条历史提交仅需极低耗时，为安全审计与代码库分析提供自动化支持。
+
 - [**neo4jev**](https://github.com/jexp/neo4jev) `★ 16` - 在 Neo4j 里一步步找关系：每到一个节点，就问 Jev 下一条边该往哪走。
   - 🎯 **核心决策**: Choice 为相邻关系分配概率，Noul 判断是否到达目标；本地 beam search 保留候选路径。
   - 💡 **收益亮点**: 把自然语言目标接到可查看的图谱路径上。
@@ -681,6 +889,10 @@
   - 🎯 **核心决策**: 先在四个固定流程中选一个，再对有限的 diff、代码或日志片段做结构化判断；本地规则形成带位置的报告。
   - 💡 **收益亮点**: 把需要继续检查的线索和未检查范围一起返回，帮助 Agent 安排下一步。
 
+- [**leanest**](https://github.com/baronunread/leanest) `★ 3` - 本地优先的智能测试用例选择器：通过 Jev 研判代码改动，精准挑选受影响需要重新执行的测试。
+  - 🎯 **核心决策**: 分析 Git diff 的修改逻辑与函数签名，从海量单测中筛选出逻辑强相关的测试用例子集。
+  - 💡 **收益亮点**: 避免在单次小改动后全量跑漫长的测试套件，在大型工程中将本地反馈循环从数分钟缩减至数秒。
+
 - [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - 给 Claude Code 的审查结论找个复核助手。把疑似 Bug、排错猜想、设计方案和搜索结果交给 Jev 打分，再决定先看什么。
   - 🎯 **核心决策**: 判断缺陷是否存在且可触发、哪个假设更符合症状，以及哪些文件与当前问题有关。
   - 💡 **收益亮点**: 把复查优先级变成可查看的分数；评分仍需配合读代码和实际复现。
@@ -688,6 +900,10 @@
 - [**jev-flash-review**](https://github.com/TheBous/jev-flash-review) `★ 1` - jev-flash-review 在代码或图谱中缩小需要查看的范围。
   - 🎯 **核心决策**: 评估候选代码或关系与目标的相关程度，选择下一条路径。
   - 💡 **收益亮点**: 把下一步调查集中到更相关的证据上。
+
+- [**jev-scout**](https://github.com/AkashPriyadarshii/jev-scout) `★ 1` - 零幻觉开源项目与 Rust Crate 探查器：结合 DuckDuckGo 与 Jev 快速为需求挑选最适配的代码库。
+  - 🎯 **核心决策**: 评估搜索结果中候选仓库的 README、维护活跃度与技术栈匹配度，挑选出最佳候选。
+  - 💡 **收益亮点**: 完全杜绝大模型编造不存在的假开源包名，秒级返回真实存在且源码对齐的优质项目。
 
 - [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - 给 Codex 工人配一个 Jev 监督员。它评估进展，但完成前还必须跑程序员指定的验收命令。
   - 🎯 **核心决策**: 对工作状态和证据做进展与完成判断，本地运行验收命令并检查源码在验证期间是否变化。
@@ -728,9 +944,29 @@
   - 🎯 **核心决策**: 从候选角色中选一个，同时判断有没有任何候选真正适合；不合适时交回原有策略。
   - 💡 **收益亮点**: 分派结果带有可检查的概率，也能明确表示没有合适人选。
 
+- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) `★ 50` - 智能体技能实时排序器：基于当前会话上下文由 Jev 为下一步动作推荐最匹配的 Agent Skill，支持 Claude Code。
+  - 🎯 **核心决策**: 在每步操作前对候选 Skill 库进行打分与重排，裁决最契合当前调试进度的技能或选择弃权。
+  - 💡 **收益亮点**: 提供 Claude Code 钩子脚本与结构化 JSON 输出，避免模型在过多工具中迷航，提升智能体决策准确率。
+
 - [**Jev Codex Router**](https://github.com/0xNatoshi/jev-codex-router) `★ 26` - 每轮先看任务有多难，再给 Codex 选模型和思考深度。简单活省一点，难活再上强模型。
   - 🎯 **核心决策**: Jev 判断当前轮次的任务层级与推理需求，本地策略决定模型、effort 和速度档。
   - 💡 **收益亮点**: 作者对 237 轮历史会话按标价重算，估计比全用最贵模型省约 60%。
+
+- [**typesafe-skill-router**](https://github.com/DECRUX9812/typesafe-skill-router) `★ 7` - Hermes Agent 专用技能路由器：在调用大模型前先由 Jev 选出唯一值得加载的 Skill，单轮仅需 ~$0.001。
+  - 🎯 **核心决策**: 在数十个可用 Agent Skill 列表中，比对用户指令并挑出最关键的一个，拒绝加载冗余技能。
+  - 💡 **收益亮点**: 无需将所有工具定义全量塞入 Prompt，极大地释放上下文空间并降低首字生成延迟。
+
+- [**jev**](https://github.com/BorisLeMeec/jev) `★ 6` - Go 编写的 Claude Code 插件：利用 Jev 对会话状态与文件改动进行快速模型分流与上下文瘦身。
+  - 🎯 **核心决策**: 根据当前改动文件的复杂度和工程师指令，裁决该轮由轻量模型响应还是升级至顶级模型。
+  - 💡 **收益亮点**: 编译为单一 Go 二进制插件，无外部运行时代价，显著降低日常编码调试的 API 费用。
+
+- [**hermes-jev**](https://github.com/keeltrace/hermes-jev) `★ 4` - Hermes Agent 决策与工具门禁系统：利用 Jev 进行类型化判定、技能排序与可选工具准入。
+  - 🎯 **核心决策**: 在任务各阶段对候选工具打分并裁决是否准入，拦截无关工具调用以防模型偏离任务目标。
+  - 💡 **收益亮点**: 将智能体的工具候选集严格收缩至必需范围，大幅提升复杂长链任务的执行准确率。
+
+- [**SpecPi**](https://github.com/TannerMidd/SpecPi) `★ 4` - Pi 编程 Agent 的轻量级 Harness：内置 Jev 顾问扩展，根据任务复杂度与上下文规格动态优化执行参数。
+  - 🎯 **核心决策**: 在任务派发前判定代码改动规模与依赖深度，推荐对应模型档位与上下文保留策略。
+  - 💡 **收益亮点**: 轻量化架构避免引入冗余中介抽象，直接利用 Jev 裁决降低长会话 token 开销。
 
 - [**jev-demo**](https://github.com/minghanminghan/jev-demo) - 一个客服分流小样：同一轮先问全套分类问题，再沿答案选路径；用户想转人工时就提前交接。
   - 🎯 **核心决策**: 并行评估分类树各层，同时判断转人工意愿和挫败程度，再由本地规则选用需要的答案。
@@ -747,6 +983,14 @@
 
 *去中心化金融（DeFi）、量化交易策略、合规法务等垂直行业的专业决策系统。*
 
+- [**tax-doc-classifier**](https://github.com/kyotofin/tax-doc-classifier) `★ 155` - 税务文档页面分类器：通过 Jev 对 261 种美国 IRS 税表实现 100% 严格分类准确率，单页成本约 $0.001。
+  - 🎯 **核心决策**: 分析扫描件提取的 OCR 文本片段，从 261 个税表编号候选中精确裁决具体所属税表类型。
+  - 💡 **收益亮点**: 获得 150+ GitHub Stars，在庞大候选空间中达成 100% 准确率，大幅颠覆传统金融报税处理成本。
+
+- [**goodwatch-monorepo**](https://github.com/alp82/goodwatch-monorepo) `★ 38` - 影视推荐发现系统：集成 Jev 原型比对模块，通过影视 DNA 与用户偏好特征进行离散推荐裁决。
+  - 🎯 **核心决策**: 根据电影多维元数据特征与用户历史喜好，判定候选影视作品的推荐契合度。
+  - 💡 **收益亮点**: 比纯向量余弦相似度更契合复杂偏好边界，有效挖掘长尾高质量电影。
+
 - [**Prism**](https://github.com/irfndi/prism-liquidity-agent) `★ 32` - 观察 Solana 流动性池的 Agent。Jev 在旁边给风险打分，先与规则结果对照，不直接决定买卖。
   - 🎯 **核心决策**: 对入池分布、毒性交易流、回归持有与市场压力给出影子判断，日志用于校准。
   - 💡 **收益亮点**: 给既有规则多一组可比较的信号；交易决定仍由确定性规则控制。
@@ -758,6 +1002,10 @@
 - [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - 让智能家居回答「衣服是不是洗完却忘了拿」。Jev 的答案变成 Home Assistant 传感器，接进已有自动化。
   - 🎯 **核心决策**: 把选定设备和实体的状态交给 Jev，得到概率、选项或分数，再按配置阈值触发自动化。
   - 💡 **收益亮点**: 自然语言条件能复用现有传感器、通知和场景，不必另搭聊天助手。
+
+- [**jev-seo**](https://github.com/AkashPriyadarshii/jev-seo) `★ 3` - 完全免费的终端 SEO 与 GEO 分析套件：结合 DuckDuckGo 与 Jev 评估搜索排名与内容相关性。
+  - 🎯 **核心决策**: 评估搜索结果摘要与网页内容的意图匹配度、关键词密度与生成式回答推荐概率。
+  - 💡 **收益亮点**: 无需购买昂贵的商业 SEO 会员，依靠开源命令行与 Jev 语义打分实现高质量的站点优化审计。
 
 - [**jev-trade**](https://github.com/aowang-ai/jev-trade) `★ 3` - 在 Hyperliquid 永续合约上做高频交易（带实时看板 jev-trade.com）。每个 Tick 读取行情，由 Jev 决定开仓平仓。
   - 🎯 **核心决策**: 每个币种用独立状态调用 Jev，秒级评估盘口深度与失衡，决定多空方向与挂单。
@@ -786,6 +1034,10 @@
 - [**jev-review-action**](https://github.com/fatwang2/jev-review-action) `★ 1` - 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 🎯 **核心决策**: 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 💡 **收益亮点**: 增加一组可记录、可对照的判断信号。
+
+- [**jev-reviewer**](https://github.com/choxos/jev-reviewer) `★ 1` - 医学与文献系统综述数据提取器：按照 RoB 2 / ROBINS-I 等标准模板由 Jev 定位原始论文依据并逐行标注。
+  - 🎯 **核心决策**: 在临床试验报告与论文补充材料中，判断具体行是否回答了提取表单中的特定偏倚风险评估项。
+  - 💡 **收益亮点**: 所有答案直接关联原文逐字引用和页码，所有文献保留在浏览器本地，满足严苛学术审查要求。
 
 - [**jevsome-projects**](https://github.com/ozers/jevsome-projects) `★ 1` - 评估业务状态，给出供本地规则参考的分类或风险分数。
   - 🎯 **核心决策**: 评估业务状态，给出供本地规则参考的分类或风险分数。
@@ -817,6 +1069,14 @@
 - [**ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund) `★ 63497` - 爆款多智能体 AI 对冲基金模拟系统，内置官方 JevLLM 适配器直接调用 System One 接口，为量化交易提供零幻觉确定性决策。
   - 🎯 **核心决策**: 输入多维度行情指标与智能体信号，在单一请求中输出买入、卖出或持有决策及其置信度。
   - 💡 **收益亮点**: 免除大语言模型输出格式漂移与解析失败，交易信号响应极快且可严格设防。
+
+- [**loki**](https://github.com/wundercorp/loki) `★ 24` - 可自主演进的智能体框架：接入 Jev 决策客户端，在执行复杂长流程时对步骤完成度进行打分。
+  - 🎯 **核心决策**: 评估智能体当前执行环境状态与预期目标，裁决是否达到阶段性验收标准。
+  - 💡 **收益亮点**: 避免智能体陷入死循环或未完成即提前退出，提供可靠的外部轻量验收裁判。
+
+- [**killmyidea**](https://github.com/monteduro/killmyidea) `★ 17` - 创业点子速决器：向 Jev 描述你的创业想法，毫秒级判定该想法应当 Kill 掉、继续修复完善还是立即上线。
+  - 🎯 **核心决策**: 根据产品描述评估市场痛点真实度、技术可行性与护城河，输出 kill / fix / ship 离散裁决。
+  - 💡 **收益亮点**: 毫不留情的客观裁决，杜绝大模型的逢迎阿谀，帮助创业者在数秒内识别想法中的致命缺陷。
 
 - [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - 把 Jev 和 GLiNER 放到同一批分类题上，除了答对率，也检查概率靠不靠谱。
   - 🎯 **核心决策**: 对固定文本和标签集合做分类，记录每个标签的概率、耗时和失败。
@@ -858,6 +1118,10 @@
   - 🎯 **核心决策**: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
   - 💡 **收益亮点**: 把选择和打分接进现有程序；暂无可核验的性能对照。
 
+- [**goodall**](https://github.com/bensyverson/goodall) - Go 语言简单可扩展的智能体循环：集成 TypeSafe 客户端作为离散决策分支内核。
+  - 🎯 **核心决策**: 在每轮智能体循环中评估上下文观察结果，裁决下一步调用哪个本地 Go 工具或结束循环。
+  - 💡 **收益亮点**: 代码结构极度清晰，为 Go 开发者构建自主智能体提供了一个轻便、易测的基准架构。
+
 ---
 
 <a id="classification-taxonomy-zh"></a>
@@ -884,6 +1148,30 @@
   - 🎯 **核心决策**: 对对话状态回答一个是非问题，再由阈值记为“会运行”或“会跳过”。
   - 💡 **收益亮点**: 能积累模型决策与用量记录；当前是默认关闭的影子试验，不改变现有检查结果。
 
+- [**typesafe-ai-benchmark**](https://github.com/iammrduncan/typesafe-ai-benchmark) `★ 32` - LLM 网关与基准对比套件：模拟 TypeSafe 结构化输出并对标真实 Jev 在延迟与确定性上的差异。
+  - 🎯 **核心决策**: 对比传统生成式模型做强类型输出与 Jev 原生 System One 输出在耗时与解析失败率上的表现。
+  - 💡 **收益亮点**: 提供翔实的实测对比数据，证明 Jev 在特定分类与离散判断场景下对传统模型的碾压级性能。
+
+- [**typesafe-playground**](https://github.com/kavehmz/typesafe-playground) `★ 9` - Jev 交互式实验沙盒：涵盖客服工单多分类路由与 3D 自动驾驶模拟环境中的连续避障决策。
+  - 🎯 **核心决策**: 在工单分流中匹配最佳业务队列，在 3D 仿真中实时评估传感器输入并选择转向操作。
+  - 💡 **收益亮点**: 直观呈现 Jev 在静态文本分类与高频动态决策两类场景下的延迟与置信度表现。
+
+- [**jev-behavior-study**](https://github.com/RINNECODER/jev-behavior-study) `★ 3` - Jev 1.13.0 行为实证研究：包含详尽测试报告、受控提示词对比实验、原始测试数据与离线验证套件。
+  - 🎯 **核心决策**: 在不同温度参数、提示词长度与选项扰动下，系统性记录 Jev 的输出稳定性与概率漂移规律。
+  - 💡 **收益亮点**: 为学术界与工业界提供了珍贵的第一手实证行为图谱，深入揭示 System One 模型的决策特性。
+
+- [**Canny**](https://github.com/qkal/Canny) `★ 1` - 智能体工作完成度验收门禁：防止 AI 编程智能体在没有证据的情况下擅自宣称任务已完成，由 Jev 协助裁决。
+  - 🎯 **核心决策**: 分析终端命令执行结果、代码改动差异与验收标准，裁决智能体是否真正达成了验收里程碑。
+  - 💡 **收益亮点**: 确定性 Hook 与 Jev 语义裁决双重把关，配合只增账本记录，彻底消除智能体「假装完成」的幻觉。
+
+- [**jev-calibration-audit**](https://github.com/jujumilk3/jev-calibration-audit) - Jev 模型置信度校准评测套件：通过独立 API 批量测试 Jev 的预测准确率、ECE 误差与概率可靠性。
+  - 🎯 **核心决策**: 在标准基准数据集上提取 Jev 输出的离散概率值，并与真实标注标签进行可靠性对齐计算。
+  - 💡 **收益亮点**: 提供第三方客观的置信度可靠性数据支撑，帮助工程团队设定严谨的业务拒绝与放行阈值。
+
+- [**jev-eval**](https://github.com/4esv/jev-eval) - 独立横向评测套件：将 TypeSafe Jev 与前沿模型在准确率、置信度校准、时延与成本四个维度进行全面对标。
+  - 🎯 **核心决策**: 在标准化多选与真伪判断测试集上，并行执行 Jev 与基准模型并对输出做严格的统计显著性检验。
+  - 💡 **收益亮点**: 以真实代码和无偏见测试集为依托，量化展示 Jev 在离散决策场景下的速度与成本优势。
+
 ---
 
 <a id="voice-conversation-zh"></a>
@@ -895,6 +1183,14 @@
   - 🎯 **核心决策**: 结合转写文本和停顿时长，估计是否应该继续等待，再由配置决定何时结束这一轮。
   - 💡 **收益亮点**: 为固定静音计时补充语义线索；这是可选的语音轮次判断组件。
 
+- [**OpenWhisper**](https://github.com/Knuckles92/OpenWhisper) `★ 185` - 本地语音听写与会议记录平台：通过 Jev 对会议文本段落进行实时议题归类与发言要点裁决。
+  - 🎯 **核心决策**: 对实时转录出的语音片段判断其所属议程主题、待办事项类型或闲聊噪音。
+  - 💡 **收益亮点**: 边录边分，无需在会议结束后等待漫长的全文重推理即可得到结构化纪要草稿。
+
+- [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) `★ 1` - B2B 销售外呼与语音智能体：在多轮通话中集成 Jev 进行实时客户意向与回复分支裁决。
+  - 🎯 **核心决策**: 在语音识别转录完成后，300ms 内裁决客户核心意向（如拒绝、询问价格、预约演示）。
+  - 💡 **收益亮点**: 超低延迟的意图判定缩短对话停顿时间，显著提升外呼交互的自然度与成单率。
+
 ---
 
 <a id="creative-tools-zh"></a>
@@ -905,6 +1201,14 @@
 - [**json-render**](https://github.com/vercel-labs/json-render) `★ 16519` - Vercel Labs 出品的 Generative UI 极速渲染库，用 Jev 离散评估替换流式 JSON 生成，将 UI 选型与拼装耗时从 3.21 秒压缩至 880 毫秒。
   - 🎯 **核心决策**: 在一次请求中并行评估组件树匹配度，直接输出结构化组件选择与插槽动作。
   - 💡 **收益亮点**: 摆脱传统逐 token 吐 JSON 的慢速解析，首屏界面毫秒级直出。
+
+- [**jevmeter**](https://github.com/ChetasLua/jevmeter) `★ 57` - 视频内容实时打分仪表盘：对视频字幕每句话由 Jev 进行打分，并将动态仪表叠加渲染进 16:9 视频中。
+  - 🎯 **核心决策**: 对视频转录字幕逐句评估观赏吸引力、幽默度或干货价值，输出离散评分与评语标签。
+  - 💡 **收益亮点**: 将语义评估直接可视化为视频特效元素，极大提高短视频后期制作与数据洞察效率。
+
+- [**refgarden**](https://github.com/AlbionaHoti/refgarden) `★ 15` - 创作者空间灵感参考库：利用 Jev 对设计素材、截图与文字灵感进行自动标签归类与关联聚类。
+  - 🎯 **核心决策**: 根据素材的描述文本与视觉上下文，从预设设计设计风格候选中挑出最契合的分类。
+  - 💡 **收益亮点**: 让创作者专注于视觉构思，后台自动完成素材整理归档与跨媒介关联发现。
 
 - [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - 用一句话描述想听的音乐，让 Jev 逐小节选音符，生成能编辑、播放和导出的多轨 MIDI。
   - 🎯 **核心决策**: 依次选择曲式、乐器、和弦、节奏和整小节模式，本地程序把选择变成音符。

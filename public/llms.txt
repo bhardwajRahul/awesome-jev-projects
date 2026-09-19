@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 183 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 259 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (183 Projects)
+## Curated Projects Directory (259 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1473,3 +1473,611 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): Jev-cu：面向 Codex 桌面端 Computer Use 的决策助手，将「下一步点哪里」交给 Jev System One 从候选文字中离散选择，只传文本不传截图。
 - Jev Decision Role: 从可访问性树与界面文字候选中，由 Jev 裁决下一个操作目标元素、动作类型、完成度与风险分级。
 - Core Benefit: 只传文字不传截图，大幅降低多模态 token 消耗与延迟，结合本地白名单策略拦截敏感系统操作。
+
+### jev-pruner
+- Repository: https://github.com/tamaratran/jev-pruner
+- Category: Context GC & Filter
+- Overview (EN): Claude Code plugin trimming voluminous Bash and command outputs with Jev before model ingestion.
+- Overview (ZH): Claude Code 插件：在超长 Bash 与终端输出送入模型上下文前，由 Jev 判断哪些行是关键错误与堆栈，过滤冗余输出。
+- Jev Decision Role: 评估终端输出每一块的错误相关性与上下文价值，裁决保留或静默修剪。
+- Core Benefit: 大幅缩减后续推理 token 消耗与延迟，避免上下文窗口被冗余日志污染。
+
+### typesafe-adblock
+- Repository: https://github.com/realZachi/typesafe-adblock
+- Category: Security & Guardrails
+- Overview (EN): Experimental Chrome extension querying Jev whether a DOM element is an ad and removing it directly.
+- Overview (ZH): 实验性 Chrome 扩展：将疑似广告的 DOM 元素文本提取并交由 Jev 判断是否为推广广告，在前端直接移除该节点。
+- Jev Decision Role: 基于 DOM 节点的文本与属性判定是否属于原生广告或赞助内容。
+- Core Benefit: 无需维护庞大的静态规则列表，依靠语义理解识别具有正常外观的隐蔽推广卡片。
+
+### jev-cvss
+- Repository: https://github.com/Red5d/jev-cvss
+- Category: Security & Guardrails
+- Overview (EN): Security vulnerability triage utility evaluating CVE descriptions to predict CVSS v3.1 metrics.
+- Overview (ZH): 安全漏洞研判工具：输入 CVE 漏洞描述，由 Jev 快速预测 CVSS v3.1 核心度量指标与严重度评分。
+- Jev Decision Role: 从非结构化漏洞描述中抽取攻击向量、复杂性、特权要求与影响程度的离散枚举值。
+- Core Benefit: 毫秒级输出确定性漏洞分级向量，比传统大模型推理更快且格式完全合规。
+
+### typesafe-playground
+- Repository: https://github.com/kavehmz/typesafe-playground
+- Category: Evaluation & Observability
+- Overview (EN): Interactive sandbox testing Jev from support ticket routing to 3D autonomous driving simulations.
+- Overview (ZH): Jev 交互式实验沙盒：涵盖客服工单多分类路由与 3D 自动驾驶模拟环境中的连续避障决策。
+- Jev Decision Role: 在工单分流中匹配最佳业务队列，在 3D 仿真中实时评估传感器输入并选择转向操作。
+- Core Benefit: 直观呈现 Jev 在静态文本分类与高频动态决策两类场景下的延迟与置信度表现。
+
+### ruby_decision_model
+- Repository: https://github.com/obie/ruby_decision_model
+- Category: SDK & Decision Frameworks
+- Overview (EN): Ruby client library providing strongly typed request builders and retries for TypeSafe Jev.
+- Overview (ZH): 面向 Ruby 社区的决策模型客户端：提供针对 TypeSafe Jev 的强类型调用封装与异常重试。
+- Jev Decision Role: 把 Ruby 哈希与枚举问题构造成 Jev System One 规范请求并解码结构化答案。
+- Core Benefit: 符合 Ruby 习惯的流畅语法，避免手写原始 HTTP 请求与散乱的 JSON 解析代码。
+
+### plasmallm
+- Repository: https://github.com/joshuaeroman/plasmallm
+- Category: Browser & OS Action
+- Overview (EN): KDE Plasma desktop widget adapter introducing Jev decision gates for desktop interactions.
+- Overview (ZH): KDE Plasma 桌面小部件适配器：引入 Jev 决策适配层，用于本地桌面交互动作与指令分流。
+- Jev Decision Role: 评估用户桌面操作意图并分流为本地快捷动作、对话生成或系统工具调用。
+- Core Benefit: 毫秒级判定用户意图，无需唤醒昂贵的云端多模态模型即可完成高频桌面指令决策。
+
+### goodwatch-monorepo
+- Repository: https://github.com/alp82/goodwatch-monorepo
+- Category: Domain & Vertical Tools
+- Overview (EN): Movie and TV show discovery platform using Jev for prototype comparisons and taste affinity scoring.
+- Overview (ZH): 影视推荐发现系统：集成 Jev 原型比对模块，通过影视 DNA 与用户偏好特征进行离散推荐裁决。
+- Jev Decision Role: 根据电影多维元数据特征与用户历史喜好，判定候选影视作品的推荐契合度。
+- Core Benefit: 比纯向量余弦相似度更契合复杂偏好边界，有效挖掘长尾高质量电影。
+
+### mk-jev-fly-brain
+- Repository: https://github.com/lavallee/mk-jev-fly-brain
+- Category: High-Frequency & Simulation
+- Overview (EN): Connectome meets language model: biological spiking neural network fights Jev in mk.js simulation.
+- Overview (ZH): 果蝇脑连接组 vs 语言模型：在 mk.js 格斗游戏中将生物脉冲神经网络与 Jev 决策模型实时对战。
+- Jev Decision Role: 在每帧游戏状态中评估双方血量、距离与对手动作，裁决下一个攻击、跳跃或防御输入。
+- Core Benefit: 在高频动作博弈中验证离散决策模型的低延迟响应与战术对抗策略。
+
+### SpecPi
+- Repository: https://github.com/TannerMidd/SpecPi
+- Category: Routing & Cost Optimization
+- Overview (EN): Minimal harness for Pi coding agent featuring Jev advisor extension for parameter optimization.
+- Overview (ZH): Pi 编程 Agent 的轻量级 Harness：内置 Jev 顾问扩展，根据任务复杂度与上下文规格动态优化执行参数。
+- Jev Decision Role: 在任务派发前判定代码改动规模与依赖深度，推荐对应模型档位与上下文保留策略。
+- Core Benefit: 轻量化架构避免引入冗余中介抽象，直接利用 Jev 裁决降低长会话 token 开销。
+
+### rift
+- Repository: https://github.com/exYze/rift
+- Category: CLI & Pipelines
+- Overview (EN): High-performance Rust terminal TUI embedding Jev decision components for code assistance.
+- Overview (ZH): Rust 打造的高性能终端 TUI：内嵌 Jev 决策组件，用于终端代码辅助与快捷动作裁决。
+- Jev Decision Role: 分析终端上下文与光标所在代码块，裁决最契合的补全类型或重构动作建议。
+- Core Benefit: Rust 零开销运行时结合 Jev 亚秒级决策，提供极度丝滑的终端键盘操作流。
+
+### Jev-Moderation-Bot
+- Repository: https://github.com/brainstormity/Jev-Moderation-Bot
+- Category: Security & Guardrails
+- Overview (EN): Chat moderation bot using Jev for low-latency violation triage and automated enforcement.
+- Overview (ZH): 社区聊天审核机器人：利用 Jev 快速对用户聊天信息进行多标签违规筛查与自动静音裁决。
+- Jev Decision Role: 评估消息是否存在骚扰、垃圾推广、仇恨言论或诱导链接，输出违规类型与置信度。
+- Core Benefit: 无需调用昂贵的长文本大模型，毫秒级完成海量群聊消息的内容合规拦截。
+
+### leadgenrationaivoiceagent
+- Repository: https://github.com/sumitrevolt/leadgenrationaivoiceagent
+- Category: Voice & Conversation
+- Overview (EN): B2B voice sales agent integrating Jev for real-time customer intent classification and turn routing.
+- Overview (ZH): B2B 销售外呼与语音智能体：在多轮通话中集成 Jev 进行实时客户意向与回复分支裁决。
+- Jev Decision Role: 在语音识别转录完成后，300ms 内裁决客户核心意向（如拒绝、询问价格、预约演示）。
+- Core Benefit: 超低延迟的意图判定缩短对话停顿时间，显著提升外呼交互的自然度与成单率。
+
+### Agent
+- Repository: https://github.com/AgentiLoop/Agent
+- Category: Browser & OS Action
+- Overview (EN): macOS native autonomous agent bundling TypeSafeKit for fast OS action decisions and scripting.
+- Overview (ZH): macOS 原生自主智能体：内置 TypeSafeKit 模块，将系统自动化动作与脚本调用交给 Jev 决策。
+- Jev Decision Role: 从当前应用状态与用户任务出发，裁决下一步调用的 macOS 原生自动化接口与参数。
+- Core Benefit: Swift 原生实现与 Jev 结构化判断深度结合，极大减少高阶操作的规划等待时间。
+
+### captaincore
+- Repository: https://github.com/CaptainCore/captaincore
+- Category: CLI & Pipelines
+- Overview (EN): WordPress site management CLI incorporating Jev for update risk scoring and plugin compatibility.
+- Overview (ZH): WordPress 站点运维命令行工具：集成 Jev 进行插件兼容性风险与更新决策预判。
+- Jev Decision Role: 评估待更新插件的版本变更说明与已知冲突信息，裁决自动更新或人工复核。
+- Core Benefit: 在批量站点自动化维护中加入语义风控，有效预防插件更新导致的白屏故障。
+
+### OpenWhisper
+- Repository: https://github.com/Knuckles92/OpenWhisper
+- Category: Voice & Conversation
+- Overview (EN): Local speech-to-text platform using Jev for real-time meeting topic classification and segment triage.
+- Overview (ZH): 本地语音听写与会议记录平台：通过 Jev 对会议文本段落进行实时议题归类与发言要点裁决。
+- Jev Decision Role: 对实时转录出的语音片段判断其所属议程主题、待办事项类型或闲聊噪音。
+- Core Benefit: 边录边分，无需在会议结束后等待漫长的全文重推理即可得到结构化纪要草稿。
+
+### jev
+- Repository: https://github.com/BorisLeMeec/jev
+- Category: Routing & Cost Optimization
+- Overview (EN): Claude Code Go plugin utilizing Jev for rapid model tiering and context optimization.
+- Overview (ZH): Go 编写的 Claude Code 插件：利用 Jev 对会话状态与文件改动进行快速模型分流与上下文瘦身。
+- Jev Decision Role: 根据当前改动文件的复杂度和工程师指令，裁决该轮由轻量模型响应还是升级至顶级模型。
+- Core Benefit: 编译为单一 Go 二进制插件，无外部运行时代价，显著降低日常编码调试的 API 费用。
+
+### runline
+- Repository: https://github.com/Michaelliv/runline
+- Category: CLI & Pipelines
+- Overview (EN): Agent code execution runtime embedding Jev plugins to validate shell command security.
+- Overview (ZH): 面向智能体的命令行交互运行环境：集成 Jev 判定插件，把控智能体生成的 Shell 指令安全性。
+- Jev Decision Role: 在命令实际执行前，裁决 Shell 脚本是否涉及敏感目录破坏、权限提权或未知网络外联。
+- Core Benefit: 比固定正则更具泛化能力，为智能体全自动终端操作建立坚实的最后一道安全护栏。
+
+### super-jev
+- Repository: https://github.com/Kevthetech143/super-jev
+- Category: SDK & Decision Frameworks
+- Overview (EN): Extensible decision-to-action harness mapping Jev discrete choices to deterministic handlers.
+- Overview (ZH): 紧凑可扩展的 Jev 决策-执行 Harness：把多选题结果映射为确定性业务动作或函数调用。
+- Jev Decision Role: 解析业务场景问题，调用 Jev 获取离散 Choice / Noul 判定并触发绑定的回调函数。
+- Core Benefit: 免去冗余的 JSON Schema 解析与重试环节，将不可预测的生成式输出收敛为有限状态机跳转。
+
+### tenbin
+- Repository: https://github.com/simota/tenbin
+- Category: MCP & Integrations
+- Overview (EN): MCP server and agent skill decomposing judgments into Choice/Score/Noul queries with calibration.
+- Overview (ZH): TypeSafe Jev MCP 服务器与 Agent Skill：将复杂判定拆解为 Choice/Score/Noul 问题并在有标数据上校准。
+- Jev Decision Role: 为接入的智能体提供规范的 Jev 结构化问答工具，并在代码层提供校准过的阈值检查。
+- Core Benefit: 规范化提示词设计与置信度校准，帮助开发者写出高确定性、可测试的智能体判断逻辑。
+
+### jev-git
+- Repository: https://github.com/AkashPriyadarshii/jev-git
+- Category: CLI & Pipelines
+- Overview (EN): Sub-second Git pre-commit and pre-push semantic reflex gate powered by TypeSafe Jev.
+- Overview (ZH): 亚秒级 Git pre-commit 与 pre-push 语义反射门禁：在本地提交阶段拦截潜在逻辑错误与敏感凭证泄露。
+- Jev Decision Role: 扫描 staged diff 的新增与删除行，判定代码改动是否违反预设工程规范或包含硬编码密钥。
+- Core Benefit: 纯 Rust 实现，执行耗时通常低于 300ms，为每次 git commit 提供无缝贴合的语义守护。
+
+### qualm
+- Repository: https://github.com/qddegtya/qualm
+- Category: SDK & Decision Frameworks
+- Overview (EN): System One decision library enforcing explicit fallback strategies when Jev signals low confidence.
+- Overview (ZH): 面向不确定性处理的 System One 决策封装库：在 Jev 输出低置信度时强制开发者提供回退策略。
+- Jev Decision Role: 查询 Jev 的概率分布，当最大概率未达安全阈值时主动抛出或触发 Qualm 回退机制。
+- Core Benefit: 从类型系统层面杜绝盲目信任模型预测的隐患，构建防御性智能体决策链路。
+
+### your-signal
+- Repository: https://github.com/MithrilMan/your-signal
+- Category: Context GC & Filter
+- Overview (EN): Open-source BYOK Chrome extension using Jev to filter spam and low-signal posts from X timelines.
+- Overview (ZH): 开源 BYOK Chrome 扩展：通过 Jev 对 X/Twitter 关注流进行个性化降噪，过滤水帖与广告推文。
+- Jev Decision Role: 分析推文文本与上下文，裁决该推文是属于有价值的行业技术讨论还是无营养的营销造势。
+- Core Benefit: 用户自带 API Key，前端纯本地静默隐藏不相关推文，并支持一键恢复原貌。
+
+### jev-scout
+- Repository: https://github.com/AkashPriyadarshii/jev-scout
+- Category: Codebase & Graph Pathfinding
+- Overview (EN): Zero-hallucination repo and crate scout combining web search with Jev System One scoring.
+- Overview (ZH): 零幻觉开源项目与 Rust Crate 探查器：结合 DuckDuckGo 与 Jev 快速为需求挑选最适配的代码库。
+- Jev Decision Role: 评估搜索结果中候选仓库的 README、维护活跃度与技术栈匹配度，挑选出最佳候选。
+- Core Benefit: 完全杜绝大模型编造不存在的假开源包名，秒级返回真实存在且源码对齐的优质项目。
+
+### jev-play-ping-pong
+- Repository: https://github.com/Icohen007/jev-play-ping-pong
+- Category: High-Frequency & Simulation
+- Overview (EN): Real-time browser ping-pong simulation where Jev evaluates table telemetry to steer the paddle.
+- Overview (ZH): 实时网页乒乓球对战：Jev 接收球台坐标遥测，毫秒级裁决球拍移动指令与击球时机。
+- Jev Decision Role: 根据乒乓球实时坐标、速度矢量与球拍当前位置，做出上移、下移或保持动作选择。
+- Core Benefit: 完全剥离了笨重的生成式 Prompt，以低延迟离散动作调用满足实时球类物理反射要求。
+
+### typesafe-rs
+- Repository: https://github.com/AbdelStark/typesafe-rs
+- Category: SDK & Decision Frameworks
+- Overview (EN): Latency-first Rust SDK for TypeSafe System One featuring zero-copy parsing and connection pooling.
+- Overview (ZH): 面向超低延迟场景的 Rust SDK：封装 TypeSafe System One API，具备极致序列化性能与连接复用。
+- Jev Decision Role: 将强类型 Rust 结构体序列化为标准 Jev 请求，并以极致速度解析返回的概率分布。
+- Core Benefit: 零不必要内存分配，为高频量化、系统守护进程与终端工具提供最底层性能保证。
+
+### jevmeter
+- Repository: https://github.com/ChetasLua/jevmeter
+- Category: Creative Tools
+- Overview (EN): Video caption rating pipeline scoring every sentence with Jev and rendering dynamic meters on 16:9 edits.
+- Overview (ZH): 视频内容实时打分仪表盘：对视频字幕每句话由 Jev 进行打分，并将动态仪表叠加渲染进 16:9 视频中。
+- Jev Decision Role: 对视频转录字幕逐句评估观赏吸引力、幽默度或干货价值，输出离散评分与评语标签。
+- Core Benefit: 将语义评估直接可视化为视频特效元素，极大提高短视频后期制作与数据洞察效率。
+
+### loki
+- Repository: https://github.com/wundercorp/loki
+- Category: Decision Tools
+- Overview (EN): Self-evolving agent framework using Jev client to grade intermediate step completion and milestones.
+- Overview (ZH): 可自主演进的智能体框架：接入 Jev 决策客户端，在执行复杂长流程时对步骤完成度进行打分。
+- Jev Decision Role: 评估智能体当前执行环境状态与预期目标，裁决是否达到阶段性验收标准。
+- Core Benefit: 避免智能体陷入死循环或未完成即提前退出，提供可靠的外部轻量验收裁判。
+
+### snifftest
+- Repository: https://github.com/DanRWilloughby/snifftest
+- Category: Security & Guardrails
+- Overview (EN): Prose linter detecting AI writing patterns using deterministic rules and Jev decision scoring.
+- Overview (ZH): AI 文本痕迹检测与散文 Linter：通过确定性规则与 Jev 混合研判段落是否存在典型的 AI 套话腔调。
+- Jev Decision Role: 对长文本段落判断是否存在陈词滥调、假大空过渡词、机械对称句式等 AI 写作特征。
+- Core Benefit: 零笨重依赖，将机械统计指标与深度语义判断相结合，提供可精细定位到句的审查建议。
+
+### refgarden
+- Repository: https://github.com/AlbionaHoti/refgarden
+- Category: Creative Tools
+- Overview (EN): Spatial reference library for creators using Jev to categorize design assets and cluster visual ideas.
+- Overview (ZH): 创作者空间灵感参考库：利用 Jev 对设计素材、截图与文字灵感进行自动标签归类与关联聚类。
+- Jev Decision Role: 根据素材的描述文本与视觉上下文，从预设设计设计风格候选中挑出最契合的分类。
+- Core Benefit: 让创作者专注于视觉构思，后台自动完成素材整理归档与跨媒介关联发现。
+
+### jev-axi
+- Repository: https://github.com/shiftynick/jev-axi
+- Category: CLI & Pipelines
+- Overview (EN): Ergonomic CLI suite for Jev executing pick, rate, check, rank, triage, and guard commands from shell.
+- Overview (ZH): 面向智能体开发者的实用命令行套件：在终端一键执行 pick、rate、check、rank、triage 与 guard 任务。
+- Jev Decision Role: 根据传入的子命令分别执行多项选择、数值评分、真伪核实、候选排序与输入拦截。
+- Core Benefit: 将所有 Jev 核心原语包装为 Unix 友好的单行命令，轻松插入 Bash 脚本与自动化管道。
+
+### typesafe-skill-router
+- Repository: https://github.com/DECRUX9812/typesafe-skill-router
+- Category: Routing & Cost Optimization
+- Overview (EN): Skill router for Hermes Agent selecting the single optimal skill to load prior to model calls.
+- Overview (ZH): Hermes Agent 专用技能路由器：在调用大模型前先由 Jev 选出唯一值得加载的 Skill，单轮仅需 ~$0.001。
+- Jev Decision Role: 在数十个可用 Agent Skill 列表中，比对用户指令并挑出最关键的一个，拒绝加载冗余技能。
+- Core Benefit: 无需将所有工具定义全量塞入 Prompt，极大地释放上下文空间并降低首字生成延迟。
+
+### jev-calibration-audit
+- Repository: https://github.com/jujumilk3/jev-calibration-audit
+- Category: Evaluation & Observability
+- Overview (EN): Independent calibration audit measuring Jev prediction accuracy, ECE error, and probability fidelity.
+- Overview (ZH): Jev 模型置信度校准评测套件：通过独立 API 批量测试 Jev 的预测准确率、ECE 误差与概率可靠性。
+- Jev Decision Role: 在标准基准数据集上提取 Jev 输出的离散概率值，并与真实标注标签进行可靠性对齐计算。
+- Core Benefit: 提供第三方客观的置信度可靠性数据支撑，帮助工程团队设定严谨的业务拒绝与放行阈值。
+
+### openclaw-typesafe-ai
+- Repository: https://github.com/Olli0103/openclaw-typesafe-ai
+- Category: Browser & OS Action
+- Overview (EN): OpenClaw web scraping adapter incorporating Jev decisions for target selection and captcha triage.
+- Overview (ZH): OpenClaw 网页抓取框架适配插件：引入 Jev 结构化决策，用于抓取目标定位与验证码风险判决。
+- Jev Decision Role: 评估页面结构并裁决列表翻页按钮、动态加载触发点或是否存在反爬阻断元素。
+- Core Benefit: 以确定性类型字段驱动爬虫引擎，在复杂多变的现代前端页面中大幅提高采集鲁棒性。
+
+### typesafe-sdk-java
+- Repository: https://github.com/Premo-Cloud/typesafe-sdk-java
+- Category: SDK & Decision Frameworks
+- Overview (EN): Community Java SDK and Spring Boot Starter providing autoconfigured TypeSafe Jev clients.
+- Overview (ZH): 社区 Java 客户端与 Spring Boot Starter：在微服务架构中开箱即用注入 Jev 判定能力。
+- Jev Decision Role: 通过 Java 注解与 POJO 强类型封装发起 Jev System One 请求，自动处理反序列化。
+- Core Benefit: 完美契合企业级 Spring 生态，支持配置类自动装配、连接池管理与优雅超时回退。
+
+### typesafe-go
+- Repository: https://github.com/2389-research/typesafe-go
+- Category: SDK & Decision Frameworks
+- Overview (EN): Zero-dependency Go client for TypeSafe System One API relying solely on the Go standard library.
+- Overview (ZH): 零第三方依赖的 Go 客户端：仅依靠标准库实现对 TypeSafe System One API 的类型安全调用。
+- Jev Decision Role: 将 Go 原生类型安全地转换为 Jev 请求载荷，并解析 Choice/Score/Noul 结构化响应。
+- Core Benefit: 极简实现，零供应链污染风险，体积轻量且可无缝交叉编译至各类嵌入式与容器环境。
+
+### typesafe-go
+- Repository: https://github.com/cole-gillespie/typesafe-go
+- Category: SDK & Decision Frameworks
+- Overview (EN): Unofficial Go SDK for TypeSafe AI featuring exponential retries, context cancellation, and typing.
+- Overview (ZH): 非官方 Go SDK：具备完善的指数退避重试、上下文取消控制与强类型答案解析功能。
+- Jev Decision Role: 处理 HTTP 连接生命周期，将 Jev 概率输出转换为 Go 结构体中的强类型枚举。
+- Core Benefit: 针对高并发云服务优化，支持 context.Context 超时熔断与智能重试。
+
+### pi-typesafe
+- Repository: https://github.com/DevMortimer/pi-typesafe
+- Category: MCP & Integrations
+- Overview (EN): Extension suite for Pi coding agent providing batch Jev evaluation, terminal playground, and APIs.
+- Overview (ZH): Pi 编程智能体扩展套件：提供批量 Jev 评估工具、终端演练场与给插件作者使用的类型安全 API。
+- Jev Decision Role: 在 Pi 编码会话中批量评估候选文件相关性或代码修复方案，返回结构化采纳建议。
+- Core Benefit: 为 Pi 扩展开发者提供一站式决策接口与终端交互测试环境，加速智能体功能迭代。
+
+### typesafe-sdk-swift
+- Repository: https://github.com/marandaneto/typesafe-sdk-swift
+- Category: SDK & Decision Frameworks
+- Overview (EN): Swift native client porting official SDK ergonomics to Swift modern async/await concurrency.
+- Overview (ZH): Swift 原生移植客户端：将官方 JS/Python SDK 的核心功能移植到 Swift 现代异步并发体系中。
+- Jev Decision Role: 通过 Swift async/await 接口发起 Jev 决策调用，并利用 Codable 完成无缝数据解析。
+- Core Benefit: 适配 iOS、macOS 与 Linux 上的 Swift 应用程序，充分享受 Swift 强类型系统的安全保障。
+
+### typesafe-sdk-rust
+- Repository: https://github.com/codeitlikemiley/typesafe-sdk-rust
+- Category: SDK & Decision Frameworks
+- Overview (EN): Rust SDK for TypeSafe AI providing constants, serialization models, and HTTP client wrappers.
+- Overview (ZH): TypeSafe AI API 的 Rust SDK：提供轻量常数定义、序列化模型与网络客户端封装。
+- Jev Decision Role: 在 Rust 代码中构造 Jev System One 交互载荷，处理端点路由与身份认证。
+- Core Benefit: 利用 Rust 所有权与类型系统消除非法请求格式，编译期捕获字段缺失错误。
+
+### typesafe-sdk-php
+- Repository: https://github.com/Butochnikov/typesafe-sdk-php
+- Category: SDK & Decision Frameworks
+- Overview (EN): PHP SDK for modern PHP 8+ applications providing typed clients and query builders for Jev.
+- Overview (ZH): PHP 生态客户端：为现代 PHP 8+ 应用提供接入 TypeSafe Jev 的强类型客户端与请求构建器。
+- Jev Decision Role: 封装 HTTP Guzzle/Curl 请求，将 PHP 关联数组与枚举转换为符合规范的 Jev 问题载荷。
+- Core Benefit: 让 Laravel、Symfony 等 PHP Web 框架轻松引入 Jev 毫秒级决策能力，无需单独搭建 Python 微服务。
+
+### typesafe-sdk-js
+- Repository: https://github.com/typesafe-ai/typesafe-sdk-js
+- Category: SDK & Decision Frameworks
+- Overview (EN): Official TypeScript/JavaScript SDK for TypeSafe AI providing authoritative Jev bindings.
+- Overview (ZH): TypeSafe 官方 TypeScript/JavaScript 客户端：提供最权威、最新的 Jev 核心接口绑定与类型定义。
+- Jev Decision Role: 全面支持 System One 的 Choice、Score、Noul 与批处理决策请求，提供类型推导与流式支持。
+- Core Benefit: 官方维护，始终与最新 API 规范保持一致，是整个 Jev 生态大部分 JS/TS 项目的基石。
+
+### jev-browser-use
+- Repository: https://github.com/wy-coliney/jev-browser-use
+- Category: Browser & OS Action
+- Overview (EN): Browser automation by EZCollegeApp where Jev handles clicks and Codex plans, speeding ops 5–10x.
+- Overview (ZH): EZCollegeApp 出品的极速浏览器自动化：Jev 负责点击与交互裁决，Codex 负责宏观思考与结果复核，提速 5-10 倍。
+- Jev Decision Role: 在每一步页面交互中，由 Jev 从轻量 DOM 候选中裁决具体点击的目标元素与滚动动作。
+- Core Benefit: 解耦高频局部操作与低频全局规划，不仅速度提升 5-10 倍，更大幅节省大模型多模态调用费用。
+
+### goodall
+- Repository: https://github.com/bensyverson/goodall
+- Category: Decision Tools
+- Overview (EN): Simple and extensible agent loop for Go projects integrating TypeSafe Jev for decision branches.
+- Overview (ZH): Go 语言简单可扩展的智能体循环：集成 TypeSafe 客户端作为离散决策分支内核。
+- Jev Decision Role: 在每轮智能体循环中评估上下文观察结果，裁决下一步调用哪个本地 Go 工具或结束循环。
+- Core Benefit: 代码结构极度清晰，为 Go 开发者构建自主智能体提供了一个轻便、易测的基准架构。
+
+### jev-go
+- Repository: https://github.com/Gaurav-Gosain/jev-go
+- Category: SDK & Decision Frameworks
+- Overview (EN): Go client for TypeSafe Jev focusing on typed judgments and calibrated probabilities.
+- Overview (ZH): 专注于结构化判断的 Go 客户端：输出经过校准的置信度概率而非随机生成的非结构化长文本。
+- Jev Decision Role: 将业务问题与候选选项序列化，提交给 Jev 并返回带有校准概率分布的 Choice 结果。
+- Core Benefit: 严格对齐 System One 接口契约，适合对结果确定性与概率度量有严苛要求的生产服务。
+
+### swift-typesafe
+- Repository: https://github.com/ainame/swift-typesafe
+- Category: SDK & Decision Frameworks
+- Overview (EN): Unofficial Swift SDK providing idiomatic Apple platform wrappers for TypeSafe Jev.
+- Overview (ZH): 非官方 Swift 客户端库：为 Apple 平台开发者提供原生、符合 Swift 语法习惯的 Jev 接口封装。
+- Jev Decision Role: 通过强类型 Swift 结构体定义问题并接收 Jev 的离散选择与评分结果。
+- Core Benefit: 无缝集成进 Xcode 工程与 Swift 现代并发工作流，无第三方臃肿依赖。
+
+### typesafe_sdk
+- Repository: https://github.com/nshkrdotcom/typesafe_sdk
+- Category: SDK & Decision Frameworks
+- Overview (EN): Idiomatic Elixir SDK providing unified LLM and System One Jev interfaces with OTP concurrency.
+- Overview (ZH): 符合 Elixir 习惯的类型安全 AI SDK：统一 LLM 与 System One Jev 接口，提供高并发 Actor 模型支持。
+- Jev Decision Role: 在 Elixir 进程中发起非阻塞 Jev 决策请求，以模式匹配直接处理分类与评分结果。
+- Core Benefit: 将 Jev 极速判定带入 Erlang/OTP 容错体系，轻松支撑百万级并发长连接的实时决策。
+
+### typesafe-ai
+- Repository: https://github.com/Twister915/typesafe-ai
+- Category: SDK & Decision Frameworks
+- Overview (EN): Typed Rust SDK for TypeSafe AI featuring async/blocking backends and observable retries.
+- Overview (ZH): 类型安全的 Rust 客户端：同时提供异步与阻塞后端支持，内置可观察重试与详细遥测。
+- Jev Decision Role: 管理对 Jev System One API 的网络握手、鉴权与强类型请求编解码。
+- Core Benefit: 同时满足 Tokio 异步运行时与轻量 CLI 同步脚本需求，具有极高的工程灵活性。
+
+### typesafe-ai-rs
+- Repository: https://github.com/gilljon/typesafe-ai-rs
+- Category: SDK & Decision Frameworks
+- Overview (EN): Independent async and blocking Rust SDK for TypeSafe AI System One with zero-overhead error handling.
+- Overview (ZH): 独立 Rust SDK：专注于 TypeSafe AI System One API 的严密类型化与零开销异常处理。
+- Jev Decision Role: 将业务分类与评分问题解析为结构化枚举，并安全映射来自服务端的浮点概率数组。
+- Core Benefit: 清晰的错误类型枚举设计，方便上层调用方进行精细化故障降级处理。
+
+### typesafe-sdk
+- Repository: https://github.com/joshmn/typesafe-sdk
+- Category: SDK & Decision Frameworks
+- Overview (EN): Lightweight Ruby client for typesafe.ai providing clean request wrappers and response mapping.
+- Overview (ZH): 面向 Ruby 社区的轻量客户端：为 typesafe.ai 提供简洁现代的 Ruby 请求包装与结果映射。
+- Jev Decision Role: 以 Ruby Hash 构造题目与选项列表，发起 HTTP 请求并解析返回的离散判断数据。
+- Core Benefit: 简单直接，依赖极少，适合快速将 Jev 嵌入已有的 Rails 项目或后台自动化作业中。
+
+### typesafe-sdk-go
+- Repository: https://github.com/Tangerg/typesafe-sdk-go
+- Category: SDK & Decision Frameworks
+- Overview (EN): Go SDK for TypeSafe AI API: typed questions in, calibrated probability distributions out.
+- Overview (ZH): 规范的 Go SDK：输入强类型问题，输出精确校准的离散概率分布，专为分布式系统设计。
+- Jev Decision Role: 为 Go 后端服务提供标准 Jev 问答接口，完成结构化 JSON 编码与网络重试。
+- Core Benefit: 线程安全，支持并发调用，为微服务架构提供稳定的低延迟决策通道。
+
+### hermes-jev
+- Repository: https://github.com/keeltrace/hermes-jev
+- Category: Routing & Cost Optimization
+- Overview (EN): Typed System One decisions, ranking, and opt-in tool gating for Hermes Agent using Jev.
+- Overview (ZH): Hermes Agent 决策与工具门禁系统：利用 Jev 进行类型化判定、技能排序与可选工具准入。
+- Jev Decision Role: 在任务各阶段对候选工具打分并裁决是否准入，拦截无关工具调用以防模型偏离任务目标。
+- Core Benefit: 将智能体的工具候选集严格收缩至必需范围，大幅提升复杂长链任务的执行准确率。
+
+### jev-browser
+- Repository: https://github.com/Ying-Kai-Liao/jev-browser
+- Category: Browser & OS Action
+- Overview (EN): Hybrid browser automation where an LLM plans and Jev decides low-level clicks and interactions.
+- Overview (ZH): 混合架构浏览器自动化：大模型负责高层规划，Jev 负责底层每一步点击与交互的毫秒级决策。
+- Jev Decision Role: 从页面可访问性树和候选动作中，由 Jev 选定具体执行的控件选择器与事件类型。
+- Core Benefit: 提供 Library、CLI 与 MCP Server 三种使用方式，全方位降低网页自动化探索中的等待与成本。
+
+### jev-ego
+- Repository: https://github.com/romaluev/jev-ego
+- Category: Browser & OS Action
+- Overview (EN): Fast browser agent for ego lite executing one TypeSafe request per step to pick the next move.
+- Overview (ZH): 面向 ego-lite 的极速浏览器智能体：每一步仅需单次 TypeSafe 请求，由 Jev 直接挑出下一步动作。
+- Jev Decision Role: 评估当前页面关键交互元素列表，裁决是点击、输入文字、滚动还是提交表单。
+- Core Benefit: 单步无需多次大模型推理回合，极大压缩了浏览器智能体在表单填写与多步导航中的耗时。
+
+### pg_typesafe
+- Repository: https://github.com/giuliosmall/pg_typesafe
+- Category: Data & Search
+- Overview (EN): Pre-alpha PostgreSQL C extension calling Jev directly within SQL queries for categorical classification.
+- Overview (ZH): PostgreSQL 原生 C 扩展：在 SQL 语句中直接调用 Jev 对数据表字段进行语义类别分类。
+- Jev Decision Role: 对 SQL 查询流经的每一行文本数据，实时请求 Jev 并将离散分类结果作为 SQL 列返回。
+- Core Benefit: 无需将数据导出到外部 Python 脚本，直接利用数据库内部流水线完成海量数据的语义分类与过滤。
+
+### ruby_llm-typesafe
+- Repository: https://github.com/kieranklaassen/ruby_llm-typesafe
+- Category: SDK & Integrations
+- Overview (EN): TypeSafe structured-output provider driver for RubyLLM 2 unified model framework.
+- Overview (ZH): RubyLLM 2 适配插件：为 Ruby 生态统一大模型框架提供 TypeSafe 结构化输出提供商驱动。
+- Jev Decision Role: 将 RubyLLM 定义的结构化 Schema 转换为 Jev 问题，接管分类与选择类判断。
+- Core Benefit: 无缝融入现有 RubyLLM 应用代码，无需更改上层业务逻辑即可将特定分支切换为 Jev 极速推理。
+
+### jev-seo
+- Repository: https://github.com/AkashPriyadarshii/jev-seo
+- Category: Domain & Vertical Tools
+- Overview (EN): Free agent-first SEO & GEO CLI suite and MCP server combining DuckDuckGo with Jev scoring.
+- Overview (ZH): 完全免费的终端 SEO 与 GEO 分析套件：结合 DuckDuckGo 与 Jev 评估搜索排名与内容相关性。
+- Jev Decision Role: 评估搜索结果摘要与网页内容的意图匹配度、关键词密度与生成式回答推荐概率。
+- Core Benefit: 无需购买昂贵的商业 SEO 会员，依靠开源命令行与 Jev 语义打分实现高质量的站点优化审计。
+
+### leanest
+- Repository: https://github.com/baronunread/leanest
+- Category: Codebase & Graph Pathfinding
+- Overview (EN): Local-first test selector using Jev judgments to pinpoint tests affected by code changes.
+- Overview (ZH): 本地优先的智能测试用例选择器：通过 Jev 研判代码改动，精准挑选受影响需要重新执行的测试。
+- Jev Decision Role: 分析 Git diff 的修改逻辑与函数签名，从海量单测中筛选出逻辑强相关的测试用例子集。
+- Core Benefit: 避免在单次小改动后全量跑漫长的测试套件，在大型工程中将本地反馈循环从数分钟缩减至数秒。
+
+### typesafe-ai-benchmark
+- Repository: https://github.com/iammrduncan/typesafe-ai-benchmark
+- Category: Evaluation & Observability
+- Overview (EN): LLM Gateway and benchmark suite contrasting structured outputs against genuine Jev performance.
+- Overview (ZH): LLM 网关与基准对比套件：模拟 TypeSafe 结构化输出并对标真实 Jev 在延迟与确定性上的差异。
+- Jev Decision Role: 对比传统生成式模型做强类型输出与 Jev 原生 System One 输出在耗时与解析失败率上的表现。
+- Core Benefit: 提供翔实的实测对比数据，证明 Jev 在特定分类与离散判断场景下对传统模型的碾压级性能。
+
+### jev-dsl
+- Repository: https://github.com/inanna-malick/jev-dsl
+- Category: SDK & Decision Frameworks
+- Overview (EN): Agent-first Haskell DSL for TypeSafe Jev featuring type inference and labeled answer packets.
+- Overview (ZH): 面向智能体的 Haskell 领域特定语言：为 TypeSafe Jev 带来强类型推导与带标签的答案映射。
+- Jev Decision Role: 利用 Haskell 类型系统为判断问题声明严格的返回类型，并在解析时实施完备性保证。
+- Core Benefit: 纯函数式安全范式，确保每个进入下游业务逻辑的 Jev 判断结果在编译期即被证明完全合法。
+
+### typesafe-go
+- Repository: https://github.com/zhirschtritt/typesafe-go
+- Category: SDK & Decision Frameworks
+- Overview (EN): Idiomatic Go SDK for TypeSafe AI API providing ergonomic client interfaces and context control.
+- Overview (ZH): 符合 Go 语言工程习惯的 SDK：为 TypeSafe AI API 提供优雅的客户端调用接口与完备的上下文传递。
+- Jev Decision Role: 管理底层 HTTP 通信与 JSON 编解码，把 Jev 的多项选择与评分结果结构化注入业务代码。
+- Core Benefit: 接口设计简洁明了，无多余设计负担，便于集成进现有的 Go 后端微服务或命令行工具中。
+
+### Canny
+- Repository: https://github.com/qkal/Canny
+- Category: Evaluation & Observability
+- Overview (EN): Stops AI coding agents from claiming tasks are done without evidence, aided by Jev advice.
+- Overview (ZH): 智能体工作完成度验收门禁：防止 AI 编程智能体在没有证据的情况下擅自宣称任务已完成，由 Jev 协助裁决。
+- Jev Decision Role: 分析终端命令执行结果、代码改动差异与验收标准，裁决智能体是否真正达成了验收里程碑。
+- Core Benefit: 确定性 Hook 与 Jev 语义裁决双重把关，配合只增账本记录，彻底消除智能体「假装完成」的幻觉。
+
+### commit-miner
+- Repository: https://github.com/devanshbatham/commit-miner
+- Category: Codebase & Graph Pathfinding
+- Overview (EN): Classify Git commit diffs and messages with Jev into bug fixes, security CWEs, and change types.
+- Overview (ZH): Git 提交语义分类器：利用 Jev 自动化分析 Commit Diff 与日志，精准标注 Bug 修复、安全补丁与 CWE 编号。
+- Jev Decision Role: 扫描代码改动的核心 hunk 与 commit message，裁决该提交属于常规重构、功能新增还是特定安全漏洞修复。
+- Core Benefit: Rust 高性能实现，批量挖掘数万条历史提交仅需极低耗时，为安全审计与代码库分析提供自动化支持。
+
+### skillranker
+- Repository: https://github.com/Dicklesworthstone/skillranker
+- Category: Routing & Cost Optimization
+- Overview (EN): Rust CLI using Jev to rank agent skills for the next step based on live session context.
+- Overview (ZH): 智能体技能实时排序器：基于当前会话上下文由 Jev 为下一步动作推荐最匹配的 Agent Skill，支持 Claude Code。
+- Jev Decision Role: 在每步操作前对候选 Skill 库进行打分与重排，裁决最契合当前调试进度的技能或选择弃权。
+- Core Benefit: 提供 Claude Code 钩子脚本与结构化 JSON 输出，避免模型在过多工具中迷航，提升智能体决策准确率。
+
+### pi-jev-compact
+- Repository: https://github.com/ilkerulusoy/pi-jev-compact
+- Category: Context GC & Filter
+- Overview (EN): Context compression extension for Pi coding agent using Jev to identify and prune redundancy.
+- Overview (ZH): Pi 编程智能体上下文紧缩插件：利用 Jev 识别冗长会话历史中的冗余信息并执行安全紧缩。
+- Jev Decision Role: 评估大段历史日志与对话记录对于解决当前编程任务的必要性，标记可压缩的上下文段落。
+- Core Benefit: 在超长编程会话中动态释放宝贵上下文窗口，延缓大模型推理疲劳与上下文饱和。
+
+### pi-jev-context
+- Repository: https://github.com/kevinpita/pi-jev-context
+- Category: Context GC & Filter
+- Overview (EN): Reversible context pruning for Pi powered by Jev, keeping useful context without deleting history.
+- Overview (ZH): Pi 智能体可逆上下文修剪器：基于 Jev 语义判定，在不删除底层会话记录的前提下智能精简投喂给模型的上下文。
+- Jev Decision Role: 逐条检查终端命令结果与历史回答，裁决该条目是否保留、折叠或在必要时由指针召回。
+- Core Benefit: 完全可逆的设计，既保证了当前 Prompt 的精炼度，又确保在需要追溯历史时原始信息完好无损。
+
+### duckdb-jev
+- Repository: https://github.com/colliber/duckdb-jev
+- Category: Data & Search
+- Overview (EN): DuckDB extension exposing typed Jev answers directly as native SQL types and expressions.
+- Overview (ZH): DuckDB 扩展：将 Jev 的强类型决策作为原生 SQL 函数暴露，直接把语义判断映射为 SQL 原生数据类型。
+- Jev Decision Role: 在执行 SQL 查询时，对表格行中的文本表达式由 Jev 进行离散分类或打分，直接生成结构化列。
+- Core Benefit: 无需复杂的外部数据迁移，在单机列式数据库分析流水线内直接实现超高速语义打标与智能过滤。
+
+### jev-reviewer
+- Repository: https://github.com/choxos/jev-reviewer
+- Category: Domain & Vertical Tools
+- Overview (EN): Data extraction tool for systematic literature reviews quoting evidence lines with Jev assistance.
+- Overview (ZH): 医学与文献系统综述数据提取器：按照 RoB 2 / ROBINS-I 等标准模板由 Jev 定位原始论文依据并逐行标注。
+- Jev Decision Role: 在临床试验报告与论文补充材料中，判断具体行是否回答了提取表单中的特定偏倚风险评估项。
+- Core Benefit: 所有答案直接关联原文逐字引用和页码，所有文献保留在浏览器本地，满足严苛学术审查要求。
+
+### jevsql
+- Repository: https://github.com/EugeneBoondock/jevsql
+- Category: Data & Search
+- Overview (EN): SQL engine with natural-language predicates powered by Jev for semantic filtering and ranking.
+- Overview (ZH): 自然语言谓词 SQL 引擎：在标准 SQL 中通过 Jev 实现由语义含义驱动的 WHERE、ORDER BY 与打分过滤。
+- Jev Decision Role: 在 SQL 执行计划中，对候选行记录由 Jev 批量评估自然语言条件匹配度，决定行的筛选与排序权重。
+- Core Benefit: 具备自动批处理、结果内容缓存与成本配额保护机制，让传统数据库瞬间具备语义理解能力。
+
+### n8n-nodes-typesafe-jev
+- Repository: https://github.com/n3ndor/n8n-nodes-typesafe-jev
+- Category: MCP & Integrations
+- Overview (EN): n8n community node introducing TypeSafe Jev structured AI decision capabilities to workflows.
+- Overview (ZH): n8n 自动化工作流社区节点：为低代码工作流平台引入 TypeSafe Jev 结构化 AI 决策节点。
+- Jev Decision Role: 在 n8n 工作流分支节点中，由 Jev 裁决输入事件的业务分类、评分或布尔真伪，触发下游不同动作。
+- Core Benefit: 无需编写代码即可在企业现有的自动化流程中添加低延迟、确定性的语义分支判断。
+
+### tax-doc-classifier
+- Repository: https://github.com/kyotofin/tax-doc-classifier
+- Category: Domain & Vertical Tools
+- Overview (EN): Tax document page classifier built on Jev achieving 100% accuracy across 261 IRS forms.
+- Overview (ZH): 税务文档页面分类器：通过 Jev 对 261 种美国 IRS 税表实现 100% 严格分类准确率，单页成本约 $0.001。
+- Jev Decision Role: 分析扫描件提取的 OCR 文本片段，从 261 个税表编号候选中精确裁决具体所属税表类型。
+- Core Benefit: 获得 150+ GitHub Stars，在庞大候选空间中达成 100% 准确率，大幅颠覆传统金融报税处理成本。
+
+### jev-experiments
+- Repository: https://github.com/dabit3/jev-experiments
+- Category: CLI & Pipelines
+- Overview (EN): Developer experimentation suite by Nader Dabit featuring commit sentry and intent triage with Jev.
+- Overview (ZH): Nader Dabit 打造的 Jev 实验库与 Commit Sentry：包含代码提交守护、意图判定等前沿探索范例。
+- Jev Decision Role: 在 commit-sentry 示例中对提交差异进行风险分级，拦截潜在问题提交并推荐改进建议。
+- Core Benefit: 获得 250+ GitHub Stars，以极具启发性的实战代码展示了 Jev 在开发者工具链中的无限可能。
+
+### jevscape
+- Repository: https://github.com/Skyvern-AI/jevscape
+- Category: High-Frequency & Simulation
+- Overview (EN): RuneBench harness for TypeSafe Jev featuring bounded action catalogs and tick-mode controllers.
+- Overview (ZH): RuneBench 智能体基准测试 Harness：为 Jev 接入有界动作目录、Tick 模式控制器与实时监控面板。
+- Jev Decision Role: 在每个游戏 Tick 周期内，读取游戏状态数据并在有界动作空间中挑选最合理的行进或操作动作。
+- Core Benefit: 为复杂游戏环境提供可量化、高可控的决策测试平台，展示 Jev 在有界离散动作空间中的卓越表现。
+
+### killmyidea
+- Repository: https://github.com/monteduro/killmyidea
+- Category: Decision Tools
+- Overview (EN): Startup idea triage tool: describe your idea and Jev decides whether to kill it, fix it, or ship it.
+- Overview (ZH): 创业点子速决器：向 Jev 描述你的创业想法，毫秒级判定该想法应当 Kill 掉、继续修复完善还是立即上线。
+- Jev Decision Role: 根据产品描述评估市场痛点真实度、技术可行性与护城河，输出 kill / fix / ship 离散裁决。
+- Core Benefit: 毫不留情的客观裁决，杜绝大模型的逢迎阿谀，帮助创业者在数秒内识别想法中的致命缺陷。
+
+### vibecheck
+- Repository: https://github.com/RafalWilinski/vibecheck
+- Category: Security & Guardrails
+- Overview (EN): Chrome extension vibe-checking X posts with TypeSafe Jev before hitting Post.
+- Overview (ZH): 推文安全自检 Chrome 扩展：在点击 Post 发推前，由 Jev 对推文内容进行风格、语气与冒犯性风险自检。
+- Jev Decision Role: 检查待发布的推文草稿，裁决是否存在无意义争吵倾向、刻薄语气或不慎泄露的敏感言论。
+- Core Benefit: 为社交媒体输出加上一道毫秒级的前置反思保护，帮助技术人员与创作者维护良好公众声誉。
+
+### jev-behavior-study
+- Repository: https://github.com/RINNECODER/jev-behavior-study
+- Category: Evaluation & Observability
+- Overview (EN): Independent Jev 1.13.0 behavior study featuring controlled prompt tests and offline verification.
+- Overview (ZH): Jev 1.13.0 行为实证研究：包含详尽测试报告、受控提示词对比实验、原始测试数据与离线验证套件。
+- Jev Decision Role: 在不同温度参数、提示词长度与选项扰动下，系统性记录 Jev 的输出稳定性与概率漂移规律。
+- Core Benefit: 为学术界与工业界提供了珍贵的第一手实证行为图谱，深入揭示 System One 模型的决策特性。
+
+### jev-eval
+- Repository: https://github.com/4esv/jev-eval
+- Category: Evaluation & Observability
+- Overview (EN): Independent evaluation benchmarking TypeSafe Jev against frontier models on accuracy, calibration, and latency.
+- Overview (ZH): 独立横向评测套件：将 TypeSafe Jev 与前沿模型在准确率、置信度校准、时延与成本四个维度进行全面对标。
+- Jev Decision Role: 在标准化多选与真伪判断测试集上，并行执行 Jev 与基准模型并对输出做严格的统计显著性检验。
+- Core Benefit: 以真实代码和无偏见测试集为依托，量化展示 Jev 在离散决策场景下的速度与成本优势。
