@@ -294,6 +294,10 @@ export function createSummaryEnricher({
         signal: AbortSignal.timeout(timeoutMs),
       });
       if (!response.ok) {
+        if (process.env.INGEST_MODELS_PROBE === "true") {
+          const errText = await response.text().catch(() => "");
+          console.error("DEBUG_PROBE_HTTP_ERROR:", response.status, redact(errText, token).slice(0, 300));
+        }
         enrichment.ai.status = "http-error";
         if (Number.isInteger(response.status))
           enrichment.ai.httpStatus = response.status;
@@ -308,6 +312,9 @@ export function createSummaryEnricher({
         return result;
       }
       const payload = await response.json();
+      if (process.env.INGEST_MODELS_PROBE === "true") {
+        console.error("DEBUG_PROBE_PAYLOAD:", redact(JSON.stringify(payload), token).slice(0, 500));
+      }
       const content = payload.choices?.[0]?.message?.content;
       if (typeof content !== "string" || content.length > 8000)
         throw new Error("invalid-response");
@@ -337,6 +344,9 @@ export function createSummaryEnricher({
             ? "partial"
             : "invalid-output";
     } catch (error) {
+      if (process.env.INGEST_MODELS_PROBE === "true") {
+        console.error("DEBUG_PROBE_ERROR:", error?.name, redact(error?.message || "", token), redact(String(error?.cause?.message || error?.cause?.code || error?.cause || ""), token));
+      }
       // Never retain upstream error messages: a transport may echo Authorization or response text.
       enrichment.ai.status = ["TimeoutError", "AbortError"].includes(
         error?.name,
