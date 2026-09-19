@@ -26397,5 +26397,87 @@
     "sourceReviewedAt": "2026-09-19T06:53:39.508919+00:00",
     "archived": false,
     "sourcePath": "src/jev.ts"
+  },
+  {
+    "id": "valentynkit:jev-commit",
+    "name": "jev-commit",
+    "author": "valentynkit",
+    "url": "https://github.com/valentynkit/jev-commit",
+    "repoId": 1376389177,
+    "category": "Decision Tools",
+    "plainSummary": "jev-commit：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "typed-decisions",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Pre-commit hook for the commit-msg stage: one Jev call judges the message against the staged diff, then warns and gets out of the way, except on a credential on an added line, which it blocks.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T20:11:08Z",
+    "lastCommitAt": "2026-09-19T07:47:00Z",
+    "headSha": "311e163b8abb9c333132155bc2e0bbfac4f36283",
+    "metadataFetchedAt": "2026-09-19T09:51:28.219Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35431524?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T09:51:28.219Z",
+    "evidence": [
+      {
+        "url": "https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/jev_commit/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "311e163b8abb9c333132155bc2e0bbfac4f36283",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/README.md",
+          "hash": "774488b00437b8c2c64f2c6dbc2ebf54737538076a1909497b197a32933d2efb"
+        },
+        {
+          "path": "jev_commit/jev.py",
+          "url": "https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/jev_commit/jev.py",
+          "hash": "008f2f2f3e6fb1fc9e24011f97ae076cbe69b7216f19b81f01ea2dec02607328"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 18,
+      "issueBodySha256": "b7476f9ba6c47ed99065ea0ce4ee840e2d7aeead98cfc64a9bd6b7b2449e9c46",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/18"
+    }
   }
 ]
