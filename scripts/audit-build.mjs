@@ -29,6 +29,7 @@ for (const file of files) {
   );
   if (textExtensions.test(file)) {
     const body = await readFile(file, "utf8");
+    if (file.endsWith(".css")) assert.ok(!/data:font\//i.test(body), `Inline font violates self-only font CSP: ${file}`);
     assert.ok(
       !forbidden.test(body),
       `Credential or private-path pattern detected in ${file}`,
