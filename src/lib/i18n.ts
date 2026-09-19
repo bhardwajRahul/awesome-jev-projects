@@ -217,6 +217,7 @@ export const english: Record<string, string> = {
   "Agent Skill": "Agent Skill",
   "查看 Agent Skill 与接入指南": "View Agent Skill & integration guide",
   "Agent Skill 接入": "Agent Skill Integration",
+  "对这个项目或 Jev 落地有想法？与维护者交流：": "Thoughts on this project or Jev architecture? Connect with maintainer:",
 };
 export const categoryEnglish: Record<string, string> = {
   "Browser & OS Action": "Browser & OS Action",
@@ -436,7 +437,8 @@ export const japanese: Record<string, string> = {
   "已取消收藏，本次浏览有效；浏览器未允许保存": "この閲覧中の保存を解除しました。ブラウザの保存領域は利用できません。",
   "输入 → 判断": "入力 → 判断",
   "Fork 数": "Fork 数",
-  "Star on GitHub": "GitHub に Star"
+  "Star on GitHub": "GitHub に Star",
+  "对这个项目或 Jev 落地有想法？与维护者交流：": "このプロジェクトや Jev 活用についてメンテナーと交流：",
 };
 export const korean: Record<string, string> = {
   "生态入口": "생태계",
@@ -635,7 +637,8 @@ export const korean: Record<string, string> = {
   "已取消收藏，本次浏览有效；浏览器未允许保存": "이번 방문에서 저장을 해제했습니다. 브라우저 저장 공간을 사용할 수 없습니다.",
   "输入 → 判断": "입력 → 판단",
   "Fork 数": "Fork 수",
-  "Star on GitHub": "GitHub에 Star"
+  "Star on GitHub": "GitHub에 Star",
+  "对这个项目或 Jev 落地有想法？与维护者交流：": "이 프로젝트나 Jev 도입에 대한 메인테이너와의 소통:",
 };
 
 const categoryTranslations: Record<string, Partial<Record<Locale, string>>> = {

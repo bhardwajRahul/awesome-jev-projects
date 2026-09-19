@@ -102,11 +102,17 @@ for (const locale of LOCALES) {
   const languageNav = LOCALES.map(l => (l === locale ? `<b>${languageLabels[l]}</b>` : `<a href="${files[l]}">${languageLabels[l]}</a>`)).join(" &nbsp;•&nbsp; ");
   const skillAnchor = locale === 'zh' ? 'agent-skill-接入' : locale === 'en' ? 'install-the-agent-skill' : locale === 'ja' ? 'agent-skill-の導入' : 'agent-skill-설치';
   const catAnchor = locale === 'zh' ? '分类' : locale === 'en' ? 'categories' : locale === 'ja' ? 'カテゴリ' : '분류';
+  const submitNavLabel = {
+    zh: '🚀 <b>提交项目 (Issue 专用通道)</b>',
+    en: '🚀 <b>Submit a project (Issue only)</b>',
+    ja: '🚀 <b>プロジェクトを投稿 (Issue 経由)</b>',
+    ko: '🚀 <b>프로젝트 제출 (Issue 전용)</b>'
+  }[locale];
   const navLinks = [
     `<a href="${homepage}">🌐 <b>${c.explore} ↗</b></a>`,
     `<a href="#${skillAnchor}">🤖 <b>${additions[locale].agent}</b></a>`,
     `<a href="#${catAnchor}">📂 <b>${c.categories}</b></a>`,
-    `<a href="${REPOSITORY}/issues/new?template=project.yml">🚀 <b>${c.submit}</b></a>`
+    `<a href="${REPOSITORY}/issues/new?template=project.yml">${submitNavLabel}</a>`
   ].join(" &nbsp;｜&nbsp; ");
   const whyTitle = {
     zh: "💡 **为什么关注 Jev 与 System-1 决策架构？**",
@@ -183,6 +189,13 @@ for (const locale of LOCALES) {
 - 🔍 **100% 커밋 고정 소스 검증**: 수록된 모든 프로젝트는 공개 소스 코드의 구체적인 결정 지점과 직접 연결됩니다.`
   };
 
+  const submissionTip = {
+    zh: `> [!TIP]\n> **📢 项目收录通道**：欢迎大家提交自己的 Jev 开源项目！为保障格式规范与自动化索引，本项目**统一通过 [Issue 专用模板](${REPOSITORY}/issues/new?template=project.yml) 提交收录**，仓库**不接收 Pull Request**。填写仓库地址即可提交。\n\n`,
+    en: `> [!TIP]\n> **Project Submissions**: We welcome your Jev projects! All project submissions and updates are handled **exclusively via [GitHub Issues](${REPOSITORY}/issues/new?template=project.yml)**. This repository **does not accept Pull Requests**. Simply fill out the issue template with your repository URL.\n\n`,
+    ja: `> [!TIP]\n> **プロジェクトの投稿について**: Jev プロジェクトの推薦・投稿を歓迎します。本ディレクトリの収録・更新は **[GitHub Issue 専門テンプレート](${REPOSITORY}/issues/new?template=project.yml)** 経由でのみ受け付けており、Pull Request は受け付けておりません。\n\n`,
+    ko: `> [!TIP]\n> **프로젝트 제출 안내**: Jev 프로젝트 제출을 환영합니다! 본 저장소는 **[GitHub Issue 전용 템플릿](${REPOSITORY}/issues/new?template=project.yml)**을 통해서만 등록을 진행하며, Pull Request는 받지 않습니다. 저장소 주소만 작성하여 제출해 주세요.\n\n`
+  }[locale];
+
   let out = `<div align="center">\n\n` +
     `<a href="${homepage}"><img src="${bannerFile}" alt="Awesome Jev" width="100%" /></a>\n\n` +
     `# ${localeMeta[locale].title}\n\n` +
@@ -191,10 +204,11 @@ for (const locale of LOCALES) {
     `  <a href="${homepage}"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>\n` +
     `  <a href="#${catAnchor}"><img src="https://img.shields.io/badge/Curated%20Projects-${projects.length}%2B-2563eb?style=flat-square" alt="Projects Count" /></a>\n` +
     `  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>\n` +
-    `  <a href="${REPOSITORY}/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>\n` +
+    `  <a href="${REPOSITORY}/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>\n` +
     `</p>\n\n` +
     `<p align="center">\n  ${languageNav}\n</p>\n\n` +
     `<p align="center">\n  ${navLinks}\n</p>\n\n` +
+    submissionTip +
     `</div>\n\n` +
     `## ${whyTitle}\n\n${whyBody}\n\n${comparisonTable[locale]}\n\n${discoveryHighlights[locale]}\n\n` +
     `> **[${c.explore} ↗](${homepage})** · **${projects.length} ${t.count}**\n\n` +
@@ -214,7 +228,7 @@ for (const locale of LOCALES) {
       out+=`  - [${t.details}](${SITE+projectRoute(p.id,locale)}) · ${c.license}: ${md(p.license||c.unknown)}\n\n`;
     }
   }
-  out+=`## ${t.development}\n\nNode.js 22+\n\n\`\`\`bash\nnpm ci --ignore-scripts\nnpm run dev\nnpm test\nnpm run build\nnpm run build:readme\n\`\`\`\n\n## ${t.workflow}\n\n${t.flow}\n\n## ${additions[locale].privacy}\n\n${additions[locale].privacyText}\n\n## ${c.submit}\n\n${t.submission}\n\n[${c.submit}](${REPOSITORY}/issues/new?template=project.yml)\n\n## ${t.policies}\n\n- [${t.review}](docs/catalog-review-2026-09-19.md)\n- [Security](SECURITY.md)\n\n${t.warning}\n\nMIT © [logicrw](https://github.com/logicrw) — directory code only; project licenses are separate.\n`;
+  out+=`## ${t.development}\n\nNode.js 22+\n\n\`\`\`bash\nnpm ci --ignore-scripts\nnpm run dev\nnpm test\nnpm run build\nnpm run build:readme\n\`\`\`\n\n## ${t.workflow}\n\n${t.flow}\n\n## ${additions[locale].privacy}\n\n${additions[locale].privacyText}\n\n## ${c.submit}\n\n${t.submission}\n\n[${c.submit}](${REPOSITORY}/issues/new?template=project.yml)\n\n## ${t.policies}\n\n- [${t.review}](docs/catalog-review-2026-09-19.md)\n- [Security](SECURITY.md)\n\n${t.warning}\n\nMIT © [logicrw](https://github.com/logicrw) · [X @0xLogicrw](https://x.com/0xLogicrw) — directory code only; project licenses are separate.\n`;
   await writeFile(new URL(files[locale],root),out);
 
   const subtitle=locale==='zh'?'System-1 Agent 架构雷达 · 把选择题交给 Jev':locale==='ja'?'System-1 Agent アーキテクチャ · 選択は Jev に':locale==='ko'?'System-1 Agent 아키텍처 · 선택은 Jev에':'System-1 Agent Architecture Radar · Let Jev choose';

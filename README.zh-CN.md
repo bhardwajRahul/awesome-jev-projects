@@ -9,7 +9,7 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-287%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
-  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
 
 <p align="center">
@@ -17,8 +17,11 @@
 </p>
 
 <p align="center">
-  <a href="https://logicrw.github.io/awesome-jev-projects/">🌐 <b>搜索与筛选 ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-接入">🤖 <b>Agent Skill 接入</b></a> &nbsp;｜&nbsp; <a href="#分类">📂 <b>分类</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>提交项目</b></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/">🌐 <b>搜索与筛选 ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-接入">🤖 <b>Agent Skill 接入</b></a> &nbsp;｜&nbsp; <a href="#分类">📂 <b>分类</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>提交项目 (Issue 专用通道)</b></a>
 </p>
+
+> [!TIP]
+> **📢 项目收录通道**：欢迎大家提交自己的 Jev 开源项目！为保障格式规范与自动化索引，本项目**统一通过 [Issue 专用模板](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml) 提交收录**，仓库**不接收 Pull Request**。填写仓库地址即可提交。
 
 </div>
 
@@ -1612,4 +1615,4 @@ npm run build:readme
 
 发现安全问题请勿在公开 Issue 中粘贴 Token、私钥或其他凭据。
 
-MIT © [logicrw](https://github.com/logicrw) — directory code only; project licenses are separate.
+MIT © [logicrw](https://github.com/logicrw) · [X @0xLogicrw](https://x.com/0xLogicrw) — directory code only; project licenses are separate.

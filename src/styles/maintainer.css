@@ -1,0 +1,218 @@
+/* Maintainer / Curator touchpoints: Sidebar card, Hero seal, and Detail modal bar.
+   Designed to blend seamlessly with the engineering aesthetic without screaming. */
+
+/* 1. Left Sidebar Maintainer Card */
+.maintainer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.maintainer-card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+.maintainer-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.maintainer-avatar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--text);
+  flex-shrink: 0;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+.maintainer-card:hover .maintainer-avatar-wrap {
+  border-color: var(--border-strong);
+  transform: scale(1.05);
+}
+.maintainer-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+.maintainer-role {
+  font-size: 10px;
+  font-weight: 550;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.maintainer-handle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--mono);
+  letter-spacing: -0.01em;
+}
+.maintainer-handle:hover {
+  color: var(--accent-text);
+}
+.maintainer-bio {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+}
+.maintainer-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: all 180ms ease;
+}
+.maintainer-action-btn:hover {
+  border-color: var(--primary-bg);
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+.maintainer-action-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .maintainer-card {
+    display: none;
+  }
+}
+
+/* 2. Hero Curator Seal */
+.hero-links-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+.hero-tactile .hero-links-row .text-link {
+  margin-top: 0;
+  font-size: 11px;
+}
+.hero-curator-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+.hero-curator-seal:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-raised);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-1px);
+}
+.hero-curator-seal svg {
+  color: var(--text);
+}
+.hero-curator-seal b {
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+/* 3. Project Detail Modal Connect Bar */
+.detail-connect-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0 20px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+.detail-connect-bar:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-raised);
+}
+.detail-connect-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.detail-connect-info svg {
+  color: var(--text);
+  flex-shrink: 0;
+}
+.detail-connect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 550;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 180ms ease;
+}
+.detail-connect-btn:hover {
+  border-color: var(--primary-bg);
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+.detail-connect-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 560px) {
+  .detail-connect-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .detail-connect-btn {
+    align-self: flex-start;
+  }
+}

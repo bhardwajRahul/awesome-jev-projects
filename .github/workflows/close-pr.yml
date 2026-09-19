@@ -1,0 +1,23 @@
+name: Close pull requests
+on:
+  pull_request_target:
+    types: [opened]
+permissions:
+  pull-requests: write
+jobs:
+  close:
+    if: github.repository == 'logicrw/awesome-jev-projects'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Respond and close PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr comment "$PR_NUMBER" --body "👋 感谢关注！本项目所有项目收录与更新统一通过 [Issue 专用通道](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml) 处理，仓库暂不接收 Pull Request。本 PR 已自动关闭，请前往上述 Issue 链接提交您的项目，感谢理解与支持！
+
+---
+
+*Thank you for your interest! All project submissions and catalog updates are handled exclusively via [GitHub Issues](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml). This repository does not accept Pull Requests and this PR has been closed automatically.*"
+          gh pr close "$PR_NUMBER"

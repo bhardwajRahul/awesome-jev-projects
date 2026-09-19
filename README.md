@@ -9,7 +9,7 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-287%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
-  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
 
 <p align="center">
@@ -17,8 +17,11 @@
 </p>
 
 <p align="center">
-  <a href="https://logicrw.github.io/awesome-jev-projects/en/">🌐 <b>Search and filter ↗</b></a> &nbsp;｜&nbsp; <a href="#install-the-agent-skill">🤖 <b>Install the Agent Skill</b></a> &nbsp;｜&nbsp; <a href="#categories">📂 <b>Categories</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>Submit a project</b></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/en/">🌐 <b>Search and filter ↗</b></a> &nbsp;｜&nbsp; <a href="#install-the-agent-skill">🤖 <b>Install the Agent Skill</b></a> &nbsp;｜&nbsp; <a href="#categories">📂 <b>Categories</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>Submit a project (Issue only)</b></a>
 </p>
+
+> [!TIP]
+> **Project Submissions**: We welcome your Jev projects! All project submissions and updates are handled **exclusively via [GitHub Issues](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)**. This repository **does not accept Pull Requests**. Simply fill out the issue template with your repository URL.
 
 </div>
 
@@ -1612,4 +1615,4 @@ Submissions are welcome! Please provide the repository URL, core use case, and c
 
 Never paste tokens, private keys or other credentials into public security reports.
 
-MIT © [logicrw](https://github.com/logicrw) — directory code only; project licenses are separate.
+MIT © [logicrw](https://github.com/logicrw) · [X @0xLogicrw](https://x.com/0xLogicrw) — directory code only; project licenses are separate.

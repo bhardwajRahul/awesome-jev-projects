@@ -9,7 +9,7 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/ja/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#カテゴリ"><img src="https://img.shields.io/badge/Curated%20Projects-287%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
-  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
 
 <p align="center">
@@ -17,8 +17,11 @@
 </p>
 
 <p align="center">
-  <a href="https://logicrw.github.io/awesome-jev-projects/ja/">🌐 <b>検索・絞り込み ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-の導入">🤖 <b>Agent Skill の導入</b></a> &nbsp;｜&nbsp; <a href="#カテゴリ">📂 <b>カテゴリ</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>プロジェクトを投稿</b></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/ja/">🌐 <b>検索・絞り込み ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-の導入">🤖 <b>Agent Skill の導入</b></a> &nbsp;｜&nbsp; <a href="#カテゴリ">📂 <b>カテゴリ</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>プロジェクトを投稿 (Issue 経由)</b></a>
 </p>
+
+> [!TIP]
+> **プロジェクトの投稿について**: Jev プロジェクトの推薦・投稿を歓迎します。本ディレクトリの収録・更新は **[GitHub Issue 専門テンプレート](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)** 経由でのみ受け付けており、Pull Request は受け付けておりません。
 
 </div>
 
@@ -1612,4 +1615,4 @@ Cookie を使用しない軽量な Cloudflare Web Analytics を採用し、DNT/G
 
 公開の問題報告に Token、秘密鍵などの認証情報を貼り付けないでください。
 
-MIT © [logicrw](https://github.com/logicrw) — directory code only; project licenses are separate.
+MIT © [logicrw](https://github.com/logicrw) · [X @0xLogicrw](https://x.com/0xLogicrw) — directory code only; project licenses are separate.

@@ -48,7 +48,9 @@ import { DailyProject } from "./components/DailyProject.tsx";
 import { GachaDialog } from "./components/GachaDialog.tsx";
 import { CardDispenser } from "./components/CardDispenser.tsx";
 import { Jevy } from "./components/Jevy.tsx";
+import { MaintainerCard } from "./components/MaintainerCard.tsx";
 import "./styles/hero-engineering.css";
+import "./styles/maintainer.css";
 import { eligibleProjects } from "./lib/discovery.mjs";
 import { sponsorCopy } from "./lib/sponsors.mjs";
 import { resolveTagId, tagLabel, tagDescription, tagOptions } from "./lib/tags.mjs";
@@ -1004,15 +1006,30 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               <div className="hero-maker-copy">
                 <p>{heroStatus.note}</p>
                 <span>{heroStatus.detail}</span>
-            <a
-              className="text-link"
-              href="https://typesafe.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("认识 TypeSafe 的决策模型")}
-              <ArrowUpRight size={15} />
-            </a>
+            <div className="hero-links-row">
+              <a
+                className="text-link"
+                href="https://typesafe.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("认识 TypeSafe 的决策模型")}
+                <ArrowUpRight size={15} />
+              </a>
+              <a
+                className="hero-curator-seal"
+                href="https://x.com/0xLogicrw"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="X (Twitter) @0xLogicrw"
+              >
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span>Curated by <b>@0xLogicrw</b></span>
+                <ArrowUpRight size={11} aria-hidden="true" />
+              </a>
+            </div>
               </div>
               <Jevy locale={locale} />
             </div>
@@ -1133,6 +1150,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
         <section className="explorer" id="explore">
           <aside className="sidebar">
             <DailyProject projects={projects} locale={locale} initialDay={initialDay} onOpen={openProject} />
+            <MaintainerCard locale={locale} />
             <div className="side-title">
               {t("分类")} <span>{categories.length}</span>
             </div>
@@ -1978,6 +1996,24 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <span>
               {t("数据更新")}：{date(active.metadataFetchedAt, locale)}
             </span>
+          </div>
+          <div className="detail-connect-bar">
+            <div className="detail-connect-info">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>{t("对这个项目或 Jev 落地有想法？与维护者交流：")}</span>
+            </div>
+            <a
+              href="https://x.com/0xLogicrw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="detail-connect-btn"
+              title="X (Twitter) @0xLogicrw"
+            >
+              <span>@0xLogicrw</span>
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </a>
           </div>
           {shareFallback?.id === active.id && (
             <label className="share-fallback">
