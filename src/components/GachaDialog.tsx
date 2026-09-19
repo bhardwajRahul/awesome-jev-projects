@@ -209,15 +209,25 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
       if (mounted.current && ticket === revision.current) { setFallback(text); setFeedback('failed'); }
     }
   }
+  const shareSnippet = p
+    ? locale === 'zh'
+      ? `🎲 我在 Awesome Jev 抽到了灵感卡【${p.name}】（${p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)}★）\n💡 用途：${plain.text}\n⚡ Jev 决策点：${decision.text}\n🔗 探索项目：${link}`
+      : locale === 'ja'
+      ? `🎲 Awesome Jev でひらめきカード【${p.name}】（${p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)}★）を引きました！\n💡 用途：${plain.text}\n⚡ Jev の判断ポイント：${decision.text}\n🔗 探索する：${link}`
+      : locale === 'ko'
+      ? `🎲 Awesome Jev에서 영감 카드 [${p.name}] (${p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)}★)을(를) 뽑았습니다!\n💡 용도: ${plain.text}\n⚡ Jev 판단 지점: ${decision.text}\n🔗 둘러보기: ${link}`
+      : `🎲 Drew an inspiration card on Awesome Jev: [${p.name}] (${p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)}★)\n💡 Purpose: ${plain.text}\n⚡ Jev decision point: ${decision.text}\n🔗 Discover: ${link}`
+    : '';
+
   async function share() {
     if (!p) return;
-    if (!navigator.share) { await copyText(link); return; }
+    if (!navigator.share) { await copyText(shareSnippet); return; }
     const ticket = ++revision.current;
     try {
-      await navigator.share({ title: p.name, text: plain.text, url: link });
+      await navigator.share({ title: `${p.name} — Awesome Jev`, text: shareSnippet, url: link });
       if (mounted.current && ticket === revision.current) { setFeedback('shared'); setFallback(''); }
     } catch (error) {
-      if (mounted.current && ticket === revision.current && !(error instanceof DOMException && error.name === 'AbortError')) await copyText(link);
+      if (mounted.current && ticket === revision.current && !(error instanceof DOMException && error.name === 'AbortError')) await copyText(shareSnippet);
     }
   }
   function tilt(event: React.PointerEvent<HTMLElement>) {

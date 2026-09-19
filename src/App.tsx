@@ -24,6 +24,7 @@ import {
   Radar,
   RotateCcw,
   Search,
+  Share2,
   ShieldCheck,
   SlidersHorizontal,
   Sparkles,
@@ -708,6 +709,23 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   };
   const share = async (p: Project) => {
     const url = `${location.origin}${projectPath(p.id, locale, import.meta.env.BASE_URL)}`;
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        const plain = localizedProjectText(p, "plainSummary", locale);
+        await navigator.share({
+          title: `${p.name} — Awesome Jev`,
+          text: `${p.name}: ${plain.text}`,
+          url,
+        });
+        setShareFallback(null);
+        setToast(t("已打开分享"));
+        return;
+      } catch (err) {
+        if (err instanceof DOMException && err.name === "AbortError") {
+          return;
+        }
+      }
+    }
     try {
       await navigator.clipboard.writeText(url);
       setShareFallback(null);
@@ -716,6 +734,30 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
       setShareFallback({ id: p.id, url });
       openProject(p);
       setToast(t("无法自动复制，请使用详情中的项目链接。"));
+    }
+  };
+  const shareSite = async () => {
+    const url = `${location.origin}${import.meta.env.BASE_URL}`;
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({
+          title: "Awesome Jev — System-1 Agent 架构雷达",
+          text: t("把思考留给大模型，把选择题交给 Jev。"),
+          url,
+        });
+        setToast(t("已打开分享"));
+        return;
+      } catch (err) {
+        if (err instanceof DOMException && err.name === "AbortError") {
+          return;
+        }
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setToast(t("本站链接已复制"));
+    } catch {
+      setToast(t("本站链接已复制"));
     }
   };
   const openProject = (p: Project) => {
@@ -1334,6 +1376,19 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                     className="project-card"
                     key={p.id}
                     data-project-id={p.id}
+                    onClick={(event) => {
+                      const target = event.target as HTMLElement | null;
+                      if (target?.closest("button, a, input, select, textarea, label")) {
+                        return;
+                      }
+                      const selection = window.getSelection();
+                      if (selection && selection.toString().trim().length > 0) {
+                        return;
+                      }
+                      if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                        openProject(p);
+                      }
+                    }}
                   >
                     <div className="card-top">
                       <div className="project-identity">
@@ -1425,11 +1480,17 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                       <div className="repo-actions">
                         <CopyCloneButton url={p.url} locale={locale} />
                         <button
-                          className="icon-button"
-                          aria-label={`${t("分享")} ${p.name}`}
-                          onClick={() => share(p)}
+                          type="button"
+                          className="share-link-button"
+                          aria-label={`${t("分享链接")}: ${p.name}`}
+                          title={t("分享链接")}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            share(p);
+                          }}
                         >
-                          <Copy size={15} />
+                          <Share2 size={13} aria-hidden="true" />
+                          <span>{t("分享")}</span>
                         </button>
                         <a
                           className="github-link"
@@ -1534,6 +1595,15 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <Zap size={16} />
             {t("Awesome Jev · 项目目录")}
           </a>
+          <button
+            type="button"
+            className="footer-link-button"
+            onClick={shareSite}
+            title={t("分享本站")}
+          >
+            <Share2 size={13} aria-hidden="true" />
+            {t("分享本站")}
+          </button>
           <button
             type="button"
             className="footer-link-button"
@@ -1872,10 +1942,26 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <a className="button" href={projectPath(active.id, locale, import.meta.env.BASE_URL)}>
               <ExternalLink size={15} />{t("独立项目页")}
             </a>
-            <button className="button" onClick={() => share(active)}>
-              <Copy size={15} />
-              {t("复制链接")}
+            <button className="button" onClick={() => share(active)} title={t("分享链接")}>
+              <Share2 size={15} />
+              {t("分享链接")}
             </button>
+            <a
+              className="button twitter-share-btn"
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                locale === "zh"
+                  ? `在 Awesome Jev 发现了开源项目【${active.name}】：${projectText(active, "plainSummary")}`
+                  : `Discovered ${active.name} on Awesome Jev: ${projectText(active, "plainSummary")}`
+              )}&url=${encodeURIComponent(`${location.origin}${projectPath(active.id, locale, import.meta.env.BASE_URL)}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={t("分享到 X")}
+            >
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>{t("分享到 X")}</span>
+            </a>
           </div>
         </Modal>
       )}
