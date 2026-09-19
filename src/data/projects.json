@@ -29971,5 +29971,1436 @@
         }
       ]
     }
+  },
+  {
+    "id": "coo-quack:jev-pii-checker",
+    "name": "jev-pii-checker",
+    "author": "coo-quack",
+    "url": "https://github.com/coo-quack/jev-pii-checker",
+    "repo": "coo-quack/jev-pii-checker",
+    "repoId": 1377219925,
+    "category": "Security & Guardrails",
+    "plainSummary": "把文本交给 TypeSafe Jev 做 PII 类别 Noul 和敏感度 Score，再用正则与分词标出跨度。",
+    "plainSummaryEn": "A CLI that sends text to TypeSafe Jev for PII category Nouls and a sensitivity Score, then locates spans with regex and segmentation.",
+    "plainSummaryJa": "テキストを TypeSafe Jev に送り、PII 種別の Noul と感度 Score を取り、正規表現と分かち書きで範囲を付ける CLI。",
+    "plainSummaryKo": "텍스트를 TypeSafe Jev에 보내 PII 종류 Noul과 민감도 Score를 받은 뒤, 정규식과 분절로 구간을 표시하는 CLI.",
+    "jevDecisionPoint": "对每个文本块并行询问 12 类 PII 是否出现，并给出 none / low / high 敏感度。",
+    "jevDecisionPointEn": "For each text chunk, asks twelve PII-category Nouls and a three-level sensitivity Score.",
+    "jevDecisionPointJa": "テキスト塊ごとに 12 種類の PII Noul と none/low/high の感度 Score を同時に尋ねる。",
+    "jevDecisionPointKo": "텍스트 조각마다 12가지 PII Noul과 none/low/high 민감도 Score를 함께 묻는다.",
+    "highlightBenefit": "判定在 TypeSafe 服务器上完成；本地只提取跨度，不能当作离线保密扫描。",
+    "highlightBenefitEn": "Judgment runs on TypeSafe servers; local code only locates spans, so this is not an offline privacy scanner.",
+    "highlightBenefitJa": "判定は TypeSafe 側で行われ、ローカルは範囲抽出のみ。オフラインの機密スキャンではない。",
+    "highlightBenefitKo": "판정은 TypeSafe 서버에서 이뤄지고 로컬은 구간 추출만 한다. 오프라인 기밀 스캐너가 아니다.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions",
+      "cli-git-gates"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 1,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T13:57:58Z",
+    "updatedAt": "2026-09-19T15:50:27Z",
+    "pushedAt": "2026-09-19T15:50:26Z",
+    "lastCommitAt": "2026-09-19T15:38:37Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/260753136?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "ai-tools",
+      "bun",
+      "cli",
+      "jev",
+      "pii",
+      "privacy",
+      "typesafe",
+      "typescript"
+    ],
+    "archived": false,
+    "headSha": "6ad02cdc0d7ca563897ce9eff881b7a7b017d426",
+    "sourceUrl": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/judge.ts",
+    "sourcePath": "src/judge.ts",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/judge.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/gate.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/chata/status/2101331708662698304",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "6ad02cdc0d7ca563897ce9eff881b7a7b017d426",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "src/judge.ts",
+          "url": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/judge.ts",
+          "hash": "614b9b27d1e2bfd7bfeb0ba36ff661b39dd08ec89eee314c7038e6e2c2942b59",
+          "hashType": "sha256"
+        },
+        {
+          "path": "src/gate.ts",
+          "url": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/gate.ts",
+          "hash": "fdb9612d5f3b02da664bab6ba07e182990681e639b8cc7b03ef38b146c805e46",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/README.md",
+          "hash": "e7cda2173e129fcebdcb7b1a9d132a91b1f441de0e7a2523eb683059c8e91bf7",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "fazalaali:jev-robotics-demo",
+    "name": "jev-robotics-demo",
+    "author": "FazalAAli",
+    "url": "https://github.com/FazalAAli/jev-robotics-demo",
+    "repo": "FazalAAli/jev-robotics-demo",
+    "repoId": 1377297123,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "MuJoCo 机械臂叠方块演示：程序提出候选动作，Jev 选择目标、抓放和是否完成。",
+    "plainSummaryEn": "A MuJoCo arm demo where local code proposes candidate moves and Jev chooses the target, grasp or release, and completion.",
+    "plainSummaryJa": "MuJoCo のアームが積み木をするデモ。プログラムが候補動作を出し、Jev が目標・把持/解放・完了を選ぶ。",
+    "plainSummaryKo": "MuJoCo 팔 시연: 프로그램이 후보 동작을 내고 Jev가 목표, 집기/놓기, 완료 여부를 고른다.",
+    "jevDecisionPoint": "在候选目标、是否抓放、任务是否完成之间做 Choice 和 Noul。",
+    "jevDecisionPointEn": "Chooses among candidate targets, grasp or release, and a done Noul.",
+    "jevDecisionPointJa": "候補目標、把持/解放、完了の Noul を Choice / Noul で選ぶ。",
+    "jevDecisionPointKo": "후보 목표, 집기/놓기, 완료 Noul을 Choice와 Noul로 고른다.",
+    "highlightBenefit": "动作候选在本地物理副本里生成，选择交给 Jev；作者对照数字未经本站复测。",
+    "highlightBenefitEn": "Candidate motions are generated in a local physics copy; Jev only chooses. Author-reported timings were not retested here.",
+    "highlightBenefitJa": "候補動作はローカル物理コピーで作り、選択だけ Jev に渡す。作者の所要時間は未再測。",
+    "highlightBenefitKo": "후보 동작은 로컬 물리 사본에서 만들고 선택만 Jev에 맡긴다. 저자 시간 수치는 여기서 재측정하지 않았다.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions",
+      "domain-workflows"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T15:09:19Z",
+    "updatedAt": "2026-09-19T15:09:28Z",
+    "pushedAt": "2026-09-19T15:09:24Z",
+    "lastCommitAt": "2026-09-19T15:08:10Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/37760883?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "531de61a75f386b0847f5f6f809a11424a75c29b",
+    "sourceUrl": "https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/jev_agent.py",
+    "sourcePath": "jev_agent.py",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/jev_agent.py",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/FazAliDev/status/2101327974335422525",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "531de61a75f386b0847f5f6f809a11424a75c29b",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "jev_agent.py",
+          "url": "https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/jev_agent.py",
+          "hash": "d9c91af796a62f0cf395187e6746bd1d9e70e10e59a8c6755d2c3597f1c1091a",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/README.md",
+          "hash": "884f100fb553a975d42d5a3315d15af5a32b2ed4c9e49f8a282b1996bffc6cc6",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "uehaj:jev-semgrep",
+    "name": "jev-semgrep",
+    "author": "uehaj",
+    "url": "https://github.com/uehaj/jev-semgrep",
+    "repo": "uehaj/jev-semgrep",
+    "repoId": 1376671563,
+    "category": "Data & Search",
+    "plainSummary": "用 Jev 给每一行打“是否符合某含义”的分，可用 AND/OR/NOT 组合，并支持跨语言查询。",
+    "plainSummaryEn": "A semantic grep that scores each line with Jev against a meaning, including AND/OR/NOT and cross-language queries.",
+    "plainSummaryJa": "各行が意味に合うかを Jev で採点する grep。AND/OR/NOT と言語をまたいだ検索ができる。",
+    "plainSummaryKo": "각 행이 어떤 의미에 맞는지 Jev로 채점하는 grep. AND/OR/NOT과 언어를 넘나드는 검색이 된다.",
+    "jevDecisionPoint": "每批约 30 行，对每行向 `jev-latest` 发 Score 或 Noul，问它是否匹配给定含义。",
+    "jevDecisionPointEn": "Batches about thirty lines and asks jev-latest a Score or Noul per line for the stated meaning.",
+    "jevDecisionPointJa": "約 30 行をまとめ、行ごとに jev-latest へ Score または Noul を送り、意味に合うか聞く。",
+    "jevDecisionPointKo": "약 30행을 묶어 행마다 jev-latest에 Score 또는 Noul을 보내 해당 의미와 맞는지 묻는다.",
+    "highlightBenefit": "零运行时依赖的语义 grep；查询文本会发到 TypeSafe。",
+    "highlightBenefitEn": "A zero-runtime-dependency semantic grep; query text is sent to TypeSafe.",
+    "highlightBenefitJa": "実行時依存のない意味 grep。クエリ文字列は TypeSafe に送られる。",
+    "highlightBenefitKo": "런타임 의존성이 없는 의미 grep. 질의 텍스트는 TypeSafe로 전송된다.",
+    "tags": [
+      "search-retrieval",
+      "cli-git-gates",
+      "typed-decisions"
+    ],
+    "stars": 50,
+    "forks": 2,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T03:18:28Z",
+    "updatedAt": "2026-09-19T15:57:27Z",
+    "pushedAt": "2026-09-19T14:51:00Z",
+    "lastCommitAt": "2026-09-19T14:50:58Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/59012?v=4",
+    "language": "JavaScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "21120e9ee634defdb279b7243e03ea84aaeed2da",
+    "sourceUrl": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/semgrep.mjs",
+    "sourcePath": "semgrep.mjs",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/semgrep.mjs",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/mohritaroh/status/2101325806119035332",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "21120e9ee634defdb279b7243e03ea84aaeed2da",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "semgrep.mjs",
+          "url": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/semgrep.mjs",
+          "hash": "e96aec05bd1817257ae04f3e52a08f12dd2d45cc8b0c0e4a0786bacbd7742c6b",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/README.md",
+          "hash": "8fd30cb4a23962049027c82b95a79e63c1521cb8effea580c208d4c026cda917",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/LICENSE",
+          "hash": "123eca725b85e55e17138e788a342be0192bad5d634ab4064775d188883dadbd",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "ddnim:jev-tweet-radar",
+    "name": "jev-tweet-radar",
+    "author": "DDnim",
+    "url": "https://github.com/DDnim/jev-tweet-radar",
+    "repo": "DDnim/jev-tweet-radar",
+    "repoId": 1377183779,
+    "category": "Browser & OS Action",
+    "plainSummary": "Chrome 扩展对 X 时间线里每条帖子发一次 Jev Noul 请求，显示互动价值和可选标签概率。",
+    "plainSummaryEn": "A Chrome extension that scores each X timeline post with one Jev Noul batch for engagement value and optional tags.",
+    "plainSummaryJa": "X タイムラインの各投稿を 1 回の Jev Noul で採点し、交流価値と任意タグの確率を出す Chrome 拡張。",
+    "plainSummaryKo": "X 타임라인의 각 게시물을 Jev Noul 한 번으로 채점해 상호작용 가치와 선택 태그 확률을 보여주는 Chrome 확장.",
+    "jevDecisionPoint": "一次 System One 请求里对“是否值得互动”以及 spam、buzz、AI 等内容标签做 Noul。",
+    "jevDecisionPointEn": "One System One request asks Nouls for worth-engaging plus optional tags such as spam, buzz, and AI-ish.",
+    "jevDecisionPointJa": "1 回の System One で「交流する価値」と spam / buzz / AI などの Noul を聞く。",
+    "jevDecisionPointKo": "System One 요청 한 번에 ‘상호작용할 가치’와 spam, buzz, AI 같은 Noul을 묻는다.",
+    "highlightBenefit": "把时间线筛选做成可检查的概率，而不是生成评论文本。帖子正文会发到 TypeSafe。",
+    "highlightBenefitEn": "Turns timeline filtering into inspectable probabilities instead of generated commentary. Post text is sent to TypeSafe.",
+    "highlightBenefitJa": "タイムライン選別を生成文ではなく確認できる確率にする。投稿本文は TypeSafe に送られる。",
+    "highlightBenefitKo": "타임라인 선별을 생성 댓글이 아니라 확인할 수 있는 확률로 만든다. 게시 본문은 TypeSafe로 전송된다.",
+    "tags": [
+      "browser-automation",
+      "classification-ranking",
+      "typed-decisions"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T13:24:22Z",
+    "updatedAt": "2026-09-19T15:10:43Z",
+    "pushedAt": "2026-09-19T15:10:39Z",
+    "lastCommitAt": "2026-09-19T15:10:38Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/5253392?v=4",
+    "language": "JavaScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "b5057858ab5de6f7d665527a192f009eff8d0e76",
+    "sourceUrl": "https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/background.js",
+    "sourcePath": "background.js",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/background.js",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/WarlockTome/status/2101312284308172803",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "b5057858ab5de6f7d665527a192f009eff8d0e76",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "background.js",
+          "url": "https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/background.js",
+          "hash": "27e926acd70ae30c5cb783e8789e527504f06f6b2b5ec61ec33072f8d654bb45",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/README.md",
+          "hash": "c2c7f38a17358addab198dd905aaaebdea5df3771e37d37323dfb93af25eefce",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "thestral12:pr-sieve",
+    "name": "pr-sieve",
+    "author": "Thestral12",
+    "url": "https://github.com/Thestral12/pr-sieve",
+    "repo": "Thestral12/pr-sieve",
+    "repoId": 1376153616,
+    "category": "CLI & Pipelines",
+    "plainSummary": "GitHub Action 把 `.jev.yml` 规则编译成 Jev 问题，按数值决定 fail、comment 或 pass。",
+    "plainSummaryEn": "A GitHub Action that compiles `.jev.yml` rules into Jev questions and fails, comments, or passes from the numbers.",
+    "plainSummaryJa": "`.jev.yml` の規則を Jev の質問にし、数値で fail / comment / pass を決める GitHub Action。",
+    "plainSummaryKo": "`.jev.yml` 규칙을 Jev 질문으로 바꿔 숫자로 fail, comment, pass를 정하는 GitHub Action.",
+    "jevDecisionPoint": "规则编成最多 12 个问题（`src/types.ts` 的 `MAX_JEV_QUESTIONS`）；`AKIA…` 与私钥装甲由 `src/redact.ts` 命中后，`src/pipeline.ts` 本地失败且不调用 Jev。",
+    "jevDecisionPointEn": "Rules become at most twelve questions (`MAX_JEV_QUESTIONS` in src/types.ts). AKIA and private-key armor from src/redact.ts fail locally in src/pipeline.ts with no Jev call.",
+    "jevDecisionPointJa": "規則は最大 12 問（src/types.ts の MAX_JEV_QUESTIONS）。AKIA と秘密鍵装甲は src/redact.ts が当て、src/pipeline.ts が Jev を呼ばず失敗する。",
+    "jevDecisionPointKo": "규칙은 최대 12개 질문(src/types.ts의 MAX_JEV_QUESTIONS). AKIA와 개인키 아머는 src/redact.ts가 잡고 src/pipeline.ts가 Jev를 부르지 않고 실패한다.",
+    "highlightBenefit": "不写审查文、不给补丁、不自动批准；策略读自 base 分支配置。",
+    "highlightBenefitEn": "Does not write reviews, suggest patches, or approve. Policy is read from the base-ref config.",
+    "highlightBenefitJa": "レビュー文もパッチも自動承認もしない。方針は base 側の設定から読む。",
+    "highlightBenefitKo": "리뷰 문장, 패치, 자동 승인은 하지 않는다. 정책은 base 설정에서 읽는다.",
+    "tags": [
+      "cli-git-gates",
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T16:41:32Z",
+    "updatedAt": "2026-09-18T17:27:03Z",
+    "pushedAt": "2026-09-18T17:26:24Z",
+    "lastCommitAt": "2026-09-18T16:56:20Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/183735965?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "9f37d439e37d99a145bc8367d982fe68df030e57",
+    "sourceUrl": "https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/src/jev/client.ts",
+    "sourcePath": "src/jev/client.ts",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/src/jev/client.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/scottyfost/status/2100999355486339348",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "9f37d439e37d99a145bc8367d982fe68df030e57",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "src/jev/client.ts",
+          "url": "https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/src/jev/client.ts",
+          "hash": "c447c5d069f62aa0d55b726e7255ca31c48f69339daf3bd59694327102aad97f",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/README.md",
+          "hash": "1d40fabe4ac87b178fb2a7d9aa8219a1cbd47c76cbddf6751a75e71092fa11d5",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "nitoba:questions",
+    "name": "questions",
+    "author": "nitoba",
+    "url": "https://github.com/nitoba/questions",
+    "repo": "nitoba/questions",
+    "repoId": 1374214390,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "TypeScript 决策库：用 Zod 或原生问题描述判断，默认请求 TypeSafe Jev，也可改用 Vercel 或生成式适配器。",
+    "plainSummaryEn": "A TypeScript decision library that asks typed questions via Zod or native batches, defaulting to TypeSafe Jev, with optional Vercel or generative adapters.",
+    "plainSummaryJa": "Zod または素の質問で判断する TypeScript ライブラリ。既定は TypeSafe Jev で、Vercel や生成モデルにも差し替えられる。",
+    "plainSummaryKo": "Zod 또는 기본 질문으로 판단하는 TypeScript 라이브러리. 기본은 TypeSafe Jev이며 Vercel이나 생성 어댑터로 바꿀 수 있다.",
+    "jevDecisionPoint": "把 state 和 Choice / Score / Noul 发到 `/v1/systemone`，默认模型 `jev-latest`。",
+    "jevDecisionPointEn": "Posts state plus Choice, Score, or Noul questions to `/v1/systemone`, defaulting to jev-latest.",
+    "jevDecisionPointJa": "state と Choice / Score / Noul を `/v1/systemone` へ送る。既定モデルは jev-latest。",
+    "jevDecisionPointKo": "state와 Choice, Score, Noul을 `/v1/systemone`으로 보낸다. 기본 모델은 jev-latest.",
+    "highlightBenefit": "同一套问题定义可以换 TypeSafe、Vercel 或生成式后端，不改调用代码。",
+    "highlightBenefitEn": "The same question definitions can target TypeSafe, Vercel, or a generative backend without rewriting callers.",
+    "highlightBenefitJa": "同じ質問定義のまま TypeSafe、Vercel、生成バックエンドを切り替えられる。",
+    "highlightBenefitKo": "같은 질문 정의로 TypeSafe, Vercel, 생성 백엔드를 호출부 수정 없이 바꿀 수 있다.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "stars": 4,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T09:34:38Z",
+    "updatedAt": "2026-09-19T12:47:42Z",
+    "pushedAt": "2026-09-17T21:51:02Z",
+    "lastCommitAt": "2026-09-17T21:51:02Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/38570443?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "37501199437e3f3be11e185c157d30fa7a00601a",
+    "sourceUrl": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/typesafe.ts",
+    "sourcePath": "src/providers/typesafe.ts",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/typesafe.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/system-one.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/nito_b_a/status/2100949243485700547",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "37501199437e3f3be11e185c157d30fa7a00601a",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "src/providers/typesafe.ts",
+          "url": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/typesafe.ts",
+          "hash": "01de030026cbc15b8e3207b9e50b92c4a5d84bd4eb7e03405ff3f586a7562a26",
+          "hashType": "sha256"
+        },
+        {
+          "path": "src/providers/system-one.ts",
+          "url": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/system-one.ts",
+          "hash": "b3b5982eea5c22d5aa26e636700d0b7db7ed826dcb327983eb40c5eacb06b6e9",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/README.md",
+          "hash": "343280dc8359702489d52699e4cc0b15d46ebaf7411150aeb2cc0e320673d312",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "kentcdodds:kody",
+    "name": "kody",
+    "author": "kentcdodds",
+    "url": "https://github.com/kentcdodds/kody",
+    "repo": "kentcdodds/kody",
+    "repoId": 1185768353,
+    "category": "Data & Search",
+    "plainSummary": "可选的二段检索：先扩大混合召回，再用 Cloudflare Workers AI 上的 `typesafe/jev` Score 重排。",
+    "plainSummaryEn": "Optional second-stage search: widen the hybrid pool, then Score-rerank candidates with Workers AI typesafe/jev.",
+    "plainSummaryJa": "任意の二段検索。ハイブリッド候補を広げたあと、Workers AI の typesafe/jev Score で並べ替える。",
+    "plainSummaryKo": "선택적 2단 검색: 혼합 후보를 넓힌 뒤 Workers AI typesafe/jev Score로 다시 정렬한다.",
+    "jevDecisionPoint": "对每个候选发 Score 问题，按分数重排并丢掉低分结果；模型 ID 为 `typesafe/jev`。",
+    "jevDecisionPointEn": "Sends a Score question per candidate, reorders and drops low scores; the model id is typesafe/jev.",
+    "jevDecisionPointJa": "候補ごとに Score を送り、低分を落として並べ替える。モデル ID は typesafe/jev。",
+    "jevDecisionPointKo": "후보마다 Score를 보내 낮은 점수를 버리고 다시 정렬한다. 모델 ID는 typesafe/jev.",
+    "highlightBenefit": "把 Jev 重排接到现有 MCP 搜索，而不是改写召回本身。许可证是 Fair Source FSL-1.1-ALv2，不是 OSI 开源。",
+    "highlightBenefitEn": "Attaches Jev rerank to existing MCP search instead of replacing retrieval. License is Fair Source FSL-1.1-ALv2, not OSI open source.",
+    "highlightBenefitJa": "既存の MCP 検索に Jev 再順位付けを足す。ライセンスは Fair Source FSL-1.1-ALv2 で OSI オープンソースではない。",
+    "highlightBenefitKo": "기존 MCP 검색에 Jev 재정렬을 붙인다. 라이선스는 Fair Source FSL-1.1-ALv2이며 OSI 오픈소스가 아니다.",
+    "tags": [
+      "search-retrieval",
+      "mcp-integrations",
+      "classification-ranking"
+    ],
+    "stars": 654,
+    "forks": 65,
+    "openIssues": 27,
+    "license": "FSL-1.1-ALv2",
+    "licenseStatus": "custom",
+    "createdAt": "2026-03-18T23:30:18Z",
+    "updatedAt": "2026-09-19T15:39:57Z",
+    "pushedAt": "2026-09-19T15:39:55Z",
+    "lastCommitAt": "2026-09-19T15:39:52Z",
+    "metadataFetchedAt": "2026-09-19T16:15:35.441Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1500684?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "agents",
+      "ai-assistant",
+      "cloudflare-workers",
+      "code-mode",
+      "mcp",
+      "personal-assistant"
+    ],
+    "archived": false,
+    "headSha": "ed9275186dc817530dd2289e62c208ac3809391f",
+    "sourceUrl": "https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/packages/worker/src/mcp/tools/search-jev-rerank.ts",
+    "sourcePath": "packages/worker/src/mcp/tools/search-jev-rerank.ts",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。许可证为 FSL-1.1-ALv2。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. The license is FSL-1.1-ALv2. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。ライセンスは FSL-1.1-ALv2。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 라이선스는 FSL-1.1-ALv2입니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/packages/worker/src/mcp/tools/search-jev-rerank.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/kodykoala/status/2100943346575253515",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "ed9275186dc817530dd2289e62c208ac3809391f",
+      "reviewedAt": "2026-09-19T15:50:00.000Z",
+      "files": [
+        {
+          "path": "packages/worker/src/mcp/tools/search-jev-rerank.ts",
+          "url": "https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/packages/worker/src/mcp/tools/search-jev-rerank.ts",
+          "hash": "5c4c1dfda53012a6d794e29cc48a1db881af4a26d9ebac83e756211e1f269e3c",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/LICENSE",
+          "hash": "63baeced1adb574db8c62a72f46c438e4df4a3251fee4011f1dfb2dd5f933626",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T15:50:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "jandalhuysen:jev-clash-royale-test",
+    "name": "jev-clash-royale-test",
+    "author": "JanDalhuysen",
+    "url": "https://github.com/JanDalhuysen/jev-clash-royale-test",
+    "repo": "JanDalhuysen/jev-clash-royale-test",
+    "repoId": 1377046152,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "Clash Royale 风格沙盒里，Jev 在一次请求中决定是否出牌、出哪张、哪条路和站位深度。",
+    "plainSummaryEn": "A Clash Royale-style sandbox whose Jev bot decides play-or-hold, card, lane, and depth in one System One call.",
+    "plainSummaryJa": "Clash Royale 風サンドボックス。Jev が 1 回の要求で出す/待つ、カード、レーン、配置深さを決める。",
+    "plainSummaryKo": "Clash Royale 풍 샌드박스. Jev가 한 요청에서 낼지, 어떤 카드, 어느 레인, 배치 깊이를 정한다.",
+    "jevDecisionPoint": "`should_play` Noul 加上手牌 Choice、路线 Choice 和站位 Choice，一次 `systemOne`。",
+    "jevDecisionPointEn": "One systemOne call with a should_play Noul plus card, lane, and depth Choices.",
+    "jevDecisionPointJa": "should_play の Noul とカード・レーン・深さの Choice を 1 回の systemOne で聞く。",
+    "jevDecisionPointKo": "should_play Noul과 카드, 레인, 깊이 Choice를 systemOne 한 번에 묻는다.",
+    "highlightBenefit": "把出牌选择做成可检查的概率；package.json 写 ISC，仓库没有 LICENSE 文件。",
+    "highlightBenefitEn": "Makes play choices inspectable probabilities. package.json says ISC; there is no LICENSE file.",
+    "highlightBenefitJa": "出す選択を確認できる確率にする。package.json は ISC だが LICENSE ファイルはない。",
+    "highlightBenefitKo": "출수 선택을 확인할 수 있는 확률로 만든다. package.json은 ISC지만 LICENSE 파일은 없다.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-19T10:57:30Z",
+    "updatedAt": "2026-09-19T11:10:57Z",
+    "pushedAt": "2026-09-19T11:10:57Z",
+    "lastCommitAt": "2026-09-19T11:10:48Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/58688790?v=4",
+    "language": "JavaScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "d25d0c7b4325a2c2f1449d40e1d834ff50069e21",
+    "sourceUrl": "https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/jev_bot_loop.js",
+    "sourcePath": "jev_bot_loop.js",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。package.json 写明 ISC，但没有 LICENSE 文件。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. package.json lists ISC but there is no LICENSE file. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。package.json は ISC ですが LICENSE ファイルはありません。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. package.json은 ISC이지만 LICENSE 파일은 없습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/jev_bot_loop.js",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/JanDalhuysen/status/2101334340353318993",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "d25d0c7b4325a2c2f1449d40e1d834ff50069e21",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "jev_bot_loop.js",
+          "url": "https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/jev_bot_loop.js",
+          "hash": "08407a12085043cef912f2a64ee085e75cd57c637cad64f190e7da8fb2a6d757",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/README.md",
+          "hash": "41a20e8688a41f757abddf572f63ee5302e37f2fd052772dcfb3895167360990",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "jaewgwon:jevis",
+    "name": "jevis",
+    "author": "jaewgwon",
+    "url": "https://github.com/jaewgwon/jevis",
+    "repo": "jaewgwon/jevis",
+    "repoId": 1376734139,
+    "category": "Browser & OS Action",
+    "plainSummary": "Flutter integration_test 包：注册允许的 UI 动作，Jev 根据当前界面选下一步并判断目标是否达成。",
+    "plainSummaryEn": "A Flutter integration_test package that registers allowed UI actions and lets Jev pick the next action and whether the goal is done.",
+    "plainSummaryJa": "Flutter の integration_test 用。許可した UI 操作を登録し、Jev が次の操作と目標達成を選ぶ。",
+    "plainSummaryKo": "Flutter integration_test 패키지. 허용 UI 동작을 등록하고 Jev가 다음 동작과 목표 달성을 고른다.",
+    "jevDecisionPoint": "默认 `jev-latest` 向 `/v1/systemone` POST：目标是 Noul，下一步是已注册动作上的 Choice。",
+    "jevDecisionPointEn": "POSTs to /v1/systemone as jev-latest: a goal Noul and a Choice over registered Flutter actions.",
+    "jevDecisionPointJa": "既定 jev-latest で /v1/systemone に POST。目標は Noul、次の操作は登録済み Choice。",
+    "jevDecisionPointKo": "기본 jev-latest로 /v1/systemone에 POST. 목표는 Noul, 다음 동작은 등록된 Choice.",
+    "highlightBenefit": "把自然语言测试收成封闭动作表上的选择，而不是让模型自由点屏幕。",
+    "highlightBenefitEn": "Turns natural-language tests into choices over a closed action list instead of free-form tapping.",
+    "highlightBenefitJa": "自然言語テストを、自由なタップではなく閉じた操作表からの選択にする。",
+    "highlightBenefitKo": "자연어 테스트를 자유 탭이 아니라 닫힌 동작 표에서의 선택으로 만든다.",
+    "tags": [
+      "desktop-os",
+      "typed-decisions"
+    ],
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T04:41:49Z",
+    "updatedAt": "2026-09-19T09:55:39Z",
+    "pushedAt": "2026-09-19T09:55:39Z",
+    "lastCommitAt": "2026-09-19T09:00:06Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/40692132?v=4",
+    "language": "Dart",
+    "topics": [
+      "e2e",
+      "flutter",
+      "mobile",
+      "test",
+      "testing"
+    ],
+    "archived": false,
+    "headSha": "ab5630590288706ce56bb5665680358fe0bd95e8",
+    "sourceUrl": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/lib/src/jevis_policy.dart",
+    "sourcePath": "lib/src/jevis_policy.dart",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/lib/src/jevis_policy.dart",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/jake_gwon/status/2101194639948787818",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "ab5630590288706ce56bb5665680358fe0bd95e8",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "lib/src/jevis_policy.dart",
+          "url": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/lib/src/jevis_policy.dart",
+          "hash": "d338c6cb94ceb7301209bfcb9d7a62735794e097fcb524c277bc5e8163c59f11",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/README.md",
+          "hash": "e1b4b8f171bc85c4663f7c4520590d6b86e6d06088d115caffe347e4f8efd0ce",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/LICENSE",
+          "hash": "36168ff55df26f9bc0c8386f7b148554f41074240d29b9bb3851c48dbc13d8db",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "hnegishi:typesafe-ai-ruby",
+    "name": "typesafe-ai-ruby",
+    "author": "hnegishi",
+    "url": "https://github.com/hnegishi/typesafe-ai-ruby",
+    "repo": "hnegishi/typesafe-ai-ruby",
+    "repoId": 1376648594,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "无第三方运行时依赖的 Ruby 客户端，把 Choice / Score / Noul 发到 TypeSafe System One。",
+    "plainSummaryEn": "A stdlib-only Ruby client that sends Choice, Score, or Noul questions to TypeSafe System One.",
+    "plainSummaryJa": "第三者 runtime に依存しない Ruby クライアント。Choice / Score / Noul を TypeSafe System One へ送る。",
+    "plainSummaryKo": "서드파티 런타임 없이 Choice, Score, Noul을 TypeSafe System One으로 보내는 Ruby 클라이언트.",
+    "jevDecisionPoint": "`system_one` POST 到 `/v1/systemone`，默认 `https://api.typesafe.ai` 与 `jev-latest`。",
+    "jevDecisionPointEn": "system_one POSTs to /v1/systemone, defaulting to https://api.typesafe.ai and jev-latest.",
+    "jevDecisionPointJa": "system_one が /v1/systemone へ POST。既定は https://api.typesafe.ai と jev-latest。",
+    "jevDecisionPointKo": "system_one이 /v1/systemone으로 POST. 기본은 https://api.typesafe.ai와 jev-latest.",
+    "highlightBenefit": "给 Ruby 程序一条标准库路径去问 Jev，不必再包一层生成式 SDK。",
+    "highlightBenefitEn": "Gives Ruby programs a stdlib path to ask Jev without wrapping a generative SDK.",
+    "highlightBenefitJa": "生成 SDK を挟まず、Ruby から Jev に聞く標準ライブラリ経路を提供する。",
+    "highlightBenefitKo": "생성 SDK를 감싸지 않고 Ruby에서 Jev를 묻는 표준 라이브러리 경로를 제공한다.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T02:44:15Z",
+    "updatedAt": "2026-09-19T04:32:24Z",
+    "pushedAt": "2026-09-19T04:32:24Z",
+    "lastCommitAt": "2026-09-19T04:32:19Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/30515665?v=4",
+    "language": "Ruby",
+    "topics": [],
+    "archived": false,
+    "headSha": "4ab8c243fbd9e9d5526b59186595d0534785d963",
+    "sourceUrl": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/client.rb",
+    "sourcePath": "lib/typesafe/client.rb",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/client.rb",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/constants.rb",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/LICENSE.txt",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/hik4_n/status/2101173099425345927",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "4ab8c243fbd9e9d5526b59186595d0534785d963",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "lib/typesafe/client.rb",
+          "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/client.rb",
+          "hash": "fa1ce40f5090cd2ed2818746cb170b8035c75b1304cfaa2c1b539e61e986383c",
+          "hashType": "sha256"
+        },
+        {
+          "path": "lib/typesafe/constants.rb",
+          "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/constants.rb",
+          "hash": "3701971aee30ff6c477f5eac39328af09abd443d8c6b34f884d806d4c847d72d",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/README.md",
+          "hash": "29647d4ef4de31920a39df3ca6510bb2b7f50c9a0327e135d8cb0031c63e3dfc",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/LICENSE.txt",
+          "hash": "e6369ae20c4ad72759c335f1eb90c1b1198c463c6babdc5f508e23443bf76470",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "kuldeepsinh19:jev-decision-gateway",
+    "name": "jev-decision-gateway",
+    "author": "kuldeepsinh19",
+    "url": "https://github.com/kuldeepsinh19/jev-decision-gateway",
+    "repo": "kuldeepsinh19/jev-decision-gateway",
+    "repoId": 1376695369,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "把是否继续、用哪个工具、要不要校验交给 Jev，只有策略允许时才调用生成式 LLM。",
+    "plainSummaryEn": "A gateway that asks Jev continue / tool / verify questions and invokes a generative LLM only when policy says generation is needed.",
+    "plainSummaryJa": "続けるか、どのツールか、検証するかを Jev に聞き、方針が許すときだけ生成 LLM を呼ぶ。",
+    "plainSummaryKo": "계속할지, 어떤 도구인지, 검증할지를 Jev에 묻고 정책이 허용할 때만 생성 LLM을 부른다.",
+    "jevDecisionPoint": "`TypeSafeClient.systemOne` 回答策略问题；适配器根据答案决定是否把请求交给生成模型。",
+    "jevDecisionPointEn": "TypeSafeClient.systemOne answers policy questions; the adapter then decides whether a generative model runs.",
+    "jevDecisionPointJa": "TypeSafeClient.systemOne が方針の質問に答え、アダプタが生成モデルを呼ぶかを決める。",
+    "jevDecisionPointKo": "TypeSafeClient.systemOne이 정책 질문에 답하고, 어댑터가 생성 모델을 부를지 정한다.",
+    "highlightBenefit": "把贵的生成调用挡在 Jev 门禁之后；作者给出的省调用数字未经本站复测。",
+    "highlightBenefitEn": "Places expensive generation behind a Jev gate. Author-reported call savings were not retested here.",
+    "highlightBenefitJa": "高価な生成呼び出しを Jev の門の後ろに置く。作者の削減数は未再測。",
+    "highlightBenefitKo": "비싼 생성 호출을 Jev 문 뒤에 둔다. 저자가 적은 절감 숫자는 여기서 재측정하지 않았다.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions",
+      "coding-agents"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T03:51:46Z",
+    "updatedAt": "2026-09-19T03:51:53Z",
+    "pushedAt": "2026-09-19T03:51:53Z",
+    "lastCommitAt": "2026-09-19T03:49:28Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/125124603?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "67111792e840e150239d12337a1d939be68be0e6",
+    "sourceUrl": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/adapter.ts",
+    "sourcePath": "packages/core/src/jev/adapter.ts",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/client.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/adapter.ts",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/Kuldeepzzz/status/2101166296973119555",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "67111792e840e150239d12337a1d939be68be0e6",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "packages/core/src/jev/client.ts",
+          "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/client.ts",
+          "hash": "0c0b668a59d711b49fd56ec5a434ac9469ad9649e8b4cb8100d6d9699ace9e72",
+          "hashType": "sha256"
+        },
+        {
+          "path": "packages/core/src/jev/adapter.ts",
+          "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/adapter.ts",
+          "hash": "b439023f9b1a868bcbc127f1226d4906ea521d35e8b59aa2554f6e0bf3c67866",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/README.md",
+          "hash": "4150f3bca64abc97206d41e191b9da342bd5ae2474916eb6d572a30f72309b53",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/LICENSE",
+          "hash": "59a40baacfa25d91df127996a6e1ddf01592bbe2e5ce1ef1c10d8e4e471ebef0",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "thruwire:foreman",
+    "name": "foreman",
+    "author": "thruwire",
+    "url": "https://github.com/thruwire/foreman",
+    "repo": "thruwire/foreman",
+    "repoId": 1374349137,
+    "category": "CLI & Pipelines",
+    "plainSummary": "独立监督环读取编码工人的 diff、日志和测试，用 Jev Noul 判断卡住、跑偏、该验证，再由 Python 策略干预。",
+    "plainSummaryEn": "An independent supervisor loop that reads worker diffs, logs and tests, asks Jev Nouls about stuck / off-track / verify, then applies a Python policy.",
+    "plainSummaryJa": "作業者の diff・ログ・テストを読み、Jev の Noul で停滞・逸脱・検証を判断し、Python 方針で介入する監督ループ。",
+    "plainSummaryKo": "작업자의 diff, 로그, 테스트를 읽고 Jev Noul로 멈춤, 이탈, 검증을 판단한 뒤 Python 정책으로 개입하는 감독 루프.",
+    "jevDecisionPoint": "`AsyncTypeSafeClient.system_one`，默认 `jev-latest`，对监督问题发 Noul。",
+    "jevDecisionPointEn": "AsyncTypeSafeClient.system_one with default jev-latest sends Noul questions for supervision.",
+    "jevDecisionPointJa": "既定 jev-latest の AsyncTypeSafeClient.system_one が監督用 Noul を送る。",
+    "jevDecisionPointKo": "기본 jev-latest의 AsyncTypeSafeClient.system_one이 감독용 Noul을 보낸다.",
+    "highlightBenefit": "监督不代替工人写代码；与目录里的 `Shifty-Eye-Games/foreman-jev` 不是同一个仓库。",
+    "highlightBenefitEn": "Supervision does not write the worker's code. Distinct from cataloged Shifty-Eye-Games/foreman-jev.",
+    "highlightBenefitJa": "監督は作業者のコードを書かない。掲載済み Shifty-Eye-Games/foreman-jev とは別リポジトリ。",
+    "highlightBenefitKo": "감독은 작업자 코드를 쓰지 않는다. 수록된 Shifty-Eye-Games/foreman-jev와는 다른 저장소다.",
+    "tags": [
+      "coding-agents",
+      "typed-decisions",
+      "cli-git-gates"
+    ],
+    "stars": 344,
+    "forks": 23,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T11:46:13Z",
+    "updatedAt": "2026-09-19T16:08:32Z",
+    "pushedAt": "2026-09-19T16:08:32Z",
+    "lastCommitAt": "2026-09-19T12:27:46Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/214398454?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "209182dac7a3467033fd093ab4ca47d21279984a",
+    "sourceUrl": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/src/foreman/foreman/jev.py",
+    "sourcePath": "src/foreman/foreman/jev.py",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/src/foreman/foreman/jev.py",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/JoshARosen/status/2100573432089866717",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "209182dac7a3467033fd093ab4ca47d21279984a",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "src/foreman/foreman/jev.py",
+          "url": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/src/foreman/foreman/jev.py",
+          "hash": "cb23d9df7497a038e160486cfcf260c84965832a51df278db7960d834b1da591",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/README.md",
+          "hash": "f455b739efe9b9d89b01878e749c0c4dd7bbe8dcccb2adec43fccdbf3c1afa2d",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/LICENSE",
+          "hash": "7d173fa71020f1a220de90251f92abbaaf001567a2443747a0753ade1cb63f68",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "stas4000:jev-clerk",
+    "name": "jev-clerk",
+    "author": "stas4000",
+    "url": "https://github.com/stas4000/jev-clerk",
+    "repo": "stas4000/jev-clerk",
+    "repoId": 1377245813,
+    "category": "Browser & OS Action",
+    "plainSummary": "在 macOS 桌面上把供应商发票录入会计软件：Jev 每步从封闭动作表里选点击对象，深度模型只改剧本。",
+    "plainSummaryEn": "A macOS desktop clerk that books supplier invoices: Jev picks each click from a closed action list; a deep model only rewrites the playbook.",
+    "plainSummaryJa": "macOS で仕入先請求を会計ソフトへ入力する。Jev が閉じた操作表からクリック先を選び、深いモデルは台本だけ直す。",
+    "plainSummaryKo": "macOS에서 공급 인보이스를 회계 앱에 입력한다. Jev가 닫힌 동작 표에서 클릭을 고르고, 깊은 모델은 대본만 고친다.",
+    "jevDecisionPoint": "POST `https://api.typesafe.ai/v1/systemone`，默认 `jev-latest`，每步做封闭动作 Choice。",
+    "jevDecisionPointEn": "POSTs https://api.typesafe.ai/v1/systemone as jev-latest with a closed action Choice each step.",
+    "jevDecisionPointJa": "既定 jev-latest で /v1/systemone に POST し、各ステップで閉じた操作 Choice を聞く。",
+    "jevDecisionPointKo": "기본 jev-latest로 /v1/systemone에 POST하고 단계마다 닫힌 동작 Choice를 묻는다.",
+    "highlightBenefit": "屏幕动作由 Jev 的封闭选择驱动；作者演示数字未经本站复测。GitHub SPDX 为空，LICENSE 文件是 MIT。",
+    "highlightBenefitEn": "Screen actions follow Jev's closed choices. Author demo numbers were not retested here. GitHub SPDX is empty; the LICENSE file is MIT.",
+    "highlightBenefitJa": "画面操作は Jev の閉じた選択に従う。作者のデモ数値は未再測。GitHub SPDX は空で、LICENSE は MIT。",
+    "highlightBenefitKo": "화면 동작은 Jev의 닫힌 선택을 따른다. 저자 데모 숫자는 재측정하지 않았다. GitHub SPDX는 비어 있고 LICENSE는 MIT다.",
+    "tags": [
+      "desktop-os",
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-19T14:22:55Z",
+    "updatedAt": "2026-09-19T14:50:01Z",
+    "pushedAt": "2026-09-19T14:50:01Z",
+    "lastCommitAt": "2026-09-19T14:49:54Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/16101773?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "b471384e56bd9cec8f56ba8415f69b1006ce43e9",
+    "sourceUrl": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/jev_clerk/jev.py",
+    "sourcePath": "jev_clerk/jev.py",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/jev_clerk/jev.py",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/stas_sorokin_/status/2101335212131012644",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "b471384e56bd9cec8f56ba8415f69b1006ce43e9",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "jev_clerk/jev.py",
+          "url": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/jev_clerk/jev.py",
+          "hash": "cf42c48097efc3afd8f8097b686f48c90aa381ef7eab9fb76424de63c47dd5c6",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/README.md",
+          "hash": "5cc77176812a1263d3ea2148f6a48825c08a8f918825b521947a9840ce633e81",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/LICENSE",
+          "hash": "d9775b16dab5ae856595cb7a3eb71bae963071dd044877a1264d9e3c22f8d836",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "florian-hoenicke:jev-gpt",
+    "name": "jev-gpt",
+    "author": "florian-hoenicke",
+    "url": "https://github.com/florian-hoenicke/jev-gpt",
+    "repo": "florian-hoenicke/jev-gpt",
+    "repoId": 1377295551,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "用级联 Choice 把 Jev 当成逐词分类器，在词树上逐层选出下一个词。",
+    "plainSummaryEn": "Cascaded Choice questions that make Jev pick the next word from a word tree instead of generating text.",
+    "plainSummaryJa": "段々の Choice で Jev を単語分類器にし、語彙木から次の語を選ぶ。",
+    "plainSummaryKo": "연쇄 Choice로 Jev를 단어 분류기로 써서 단어 나무에서 다음 단어를 고른다.",
+    "jevDecisionPoint": "POST `/v1/systemone`，`jev-latest`，每层一个 `type: choice` 问题。",
+    "jevDecisionPointEn": "POSTs /v1/systemone as jev-latest with one type:choice question per tree level.",
+    "jevDecisionPointJa": "jev-latest で /v1/systemone に POST し、階層ごとに type:choice を 1 問出す。",
+    "jevDecisionPointKo": "jev-latest로 /v1/systemone에 POST하고 계층마다 type:choice 질문 하나를 낸다.",
+    "highlightBenefit": "展示 Jev 不生成长文时如何拼出短句；仓库没有 LICENSE 文件。",
+    "highlightBenefitEn": "Shows how Jev can assemble short text without generating prose. No LICENSE file is present.",
+    "highlightBenefitJa": "長文を生成せず短い文を組み立てる例。LICENSE ファイルはない。",
+    "highlightBenefitKo": "긴 글을 생성하지 않고 짧은 문장을 조립하는 예. LICENSE 파일은 없다.",
+    "tags": [
+      "typed-decisions",
+      "creative-multimedia"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-19T15:07:43Z",
+    "updatedAt": "2026-09-19T15:17:09Z",
+    "pushedAt": "2026-09-19T15:17:09Z",
+    "lastCommitAt": "2026-09-19T15:17:02Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/11627845?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "25751a7f6a87ee31ee4ed2eb381fd746ca59c645",
+    "sourceUrl": "https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/generate.py",
+    "sourcePath": "generate.py",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。仓库没有 LICENSE 文件。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. There is no LICENSE file. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。LICENSE ファイルはありません。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. LICENSE 파일이 없습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/generate.py",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/florianhoenicke/status/2101333502369083690",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "25751a7f6a87ee31ee4ed2eb381fd746ca59c645",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "generate.py",
+          "url": "https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/generate.py",
+          "hash": "447293c7e7e194d17fb4b29258c5ac3a38e40a37db16f11f88103ccb5218f65c",
+          "hashType": "sha256"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/README.md",
+          "hash": "522419c7fbab20ace73e7880e97131a4efaf0e7c23d3ae1d8f4462c70899f762",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
+  },
+  {
+    "id": "dotnetvibecoderz:vibe_sdk",
+    "name": "TypeSafeSDK",
+    "author": "DotNetVibeCoderz",
+    "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK",
+    "repo": "DotNetVibeCoderz/Vibe_SDK",
+    "repoId": 1319314142,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "非官方 .NET 客户端向 TypeSafe `/v1/systemone` 发送 state 与 typed questions；父仓库还混有与 Jev 无关的 SDK。",
+    "plainSummaryEn": "An unofficial .NET client that POSTs state and typed questions to TypeSafe /v1/systemone. The parent repo also contains unrelated SDK dumps.",
+    "plainSummaryJa": "非公式 .NET クライアントが TypeSafe /v1/systemone に state と typed questions を POST する。親リポジトリには Jev と無関係な SDK も混ざる。",
+    "plainSummaryKo": "비공식 .NET 클라이언트가 TypeSafe /v1/systemone에 state와 typed questions를 POST한다. 부모 저장소에는 Jev와 무관한 SDK도 섞여 있다.",
+    "jevDecisionPoint": "`TypeSafeClient.SystemOneAsync` POST `{Endpoint}/v1/systemone`，默认 `https://api.typesafe.ai` 与 `jev-latest`。",
+    "jevDecisionPointEn": "TypeSafeClient.SystemOneAsync POSTs {Endpoint}/v1/systemone, defaulting to https://api.typesafe.ai and jev-latest.",
+    "jevDecisionPointJa": "TypeSafeClient.SystemOneAsync が {Endpoint}/v1/systemone へ POST。既定は https://api.typesafe.ai と jev-latest。",
+    "jevDecisionPointKo": "TypeSafeClient.SystemOneAsync가 {Endpoint}/v1/systemone으로 POST. 기본은 https://api.typesafe.ai와 jev-latest.",
+    "highlightBenefit": "给 .NET 一条 HTTP 路径问 Jev；不要把父仓库里的其他 SDK 当成 Jev 集成。与已收录的 `saibimajdi/typesafeai-dotnet-sdk` 不是同一仓库。",
+    "highlightBenefitEn": "Gives .NET an HTTP path to ask Jev. Other SDKs in the parent dump are not Jev integrations. Distinct from cataloged saibimajdi/typesafeai-dotnet-sdk.",
+    "highlightBenefitJa": ".NET から Jev に聞く HTTP 経路。親ダンプ内の他 SDK は Jev 連携ではない。掲載済み saibimajdi/typesafeai-dotnet-sdk とは別。",
+    "highlightBenefitKo": ".NET에서 Jev를 묻는 HTTP 경로. 부모 덤프의 다른 SDK는 Jev 연동이 아니다. 수록된 saibimajdi/typesafeai-dotnet-sdk와는 다르다.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-08-01T13:24:46Z",
+    "updatedAt": "2026-09-19T12:21:42Z",
+    "pushedAt": "2026-09-19T12:21:42Z",
+    "lastCommitAt": "2026-09-19T12:21:39Z",
+    "metadataFetchedAt": "2026-09-19T16:31:06.000Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/257091371?v=4",
+    "language": "C#",
+    "topics": [],
+    "archived": false,
+    "headSha": "09c77029c00df6aa707b059e560512f17896b059",
+    "sourceUrl": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/TypeSafeSdk/TypeSafeClient.cs",
+    "sourcePath": "TypeSafeSDK/TypeSafeSdk/TypeSafeClient.cs",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "claimStatus": "固定版本的公开源码已核对。本站未执行该项目，也未独立测量性能或安全性。",
+    "claimStatusEn": "Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.",
+    "claimStatusJa": "固定バージョンの公開ソースを確認済みです。当サイトによる実行、性能測定、安全性監査は行っていません。",
+    "claimStatusKo": "고정 버전의 공개 소스를 확인했습니다. 이 사이트에서 직접 실행하거나 성능을 측정하거나 보안을 감사하지는 않았습니다.",
+    "evidence": [
+      {
+        "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/TypeSafeSdk/TypeSafeClient.cs",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/README.md",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/LICENSE",
+        "note": "固定版本源码已核对；本站未执行该项目。"
+      },
+      {
+        "url": "https://x.com/Mifmasterz/status/2101296433408417841",
+        "note": "X discovery lead; integration is proven by the pinned GitHub files, not by the post."
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "09c77029c00df6aa707b059e560512f17896b059",
+      "reviewedAt": "2026-09-19T16:30:00.000Z",
+      "files": [
+        {
+          "path": "TypeSafeSDK/TypeSafeSdk/TypeSafeClient.cs",
+          "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/TypeSafeSdk/TypeSafeClient.cs",
+          "hash": "b30e0472b4acd0c6b63915e1510bae15ad9b46a321d3a77bd6eaebc0a40b6378",
+          "hashType": "sha256"
+        },
+        {
+          "path": "TypeSafeSDK/README.md",
+          "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/README.md",
+          "hash": "2d9bf0f61a6c83f96590b178b94cc9ea16b1d0826b7e7c7f0c92394c49084236",
+          "hashType": "sha256"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/LICENSE",
+          "hash": "47dfb46491a736c1f4a1f8eee320cf8f444146dfebc3336b869a82f0bd5937b1",
+          "hashType": "sha256"
+        }
+      ]
+    },
+    "sourceReviewedAt": "2026-09-19T16:30:00.000Z",
+    "pinned": false
   }
 ]
