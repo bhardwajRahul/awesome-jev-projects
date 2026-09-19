@@ -22,6 +22,7 @@ import {
   Network,
   Plus,
   Radar,
+  RotateCcw,
   Search,
   ShieldCheck,
   SlidersHorizontal,
@@ -478,6 +479,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   } | null>(null);
   const submissionFormRef = useRef<HTMLFormElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const searchRowRef = useRef<HTMLDivElement>(null);
   const tagFilterRef = useRef<HTMLSelectElement>(null);
   const categoryListRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -566,6 +568,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   const tags = useMemo(() => tagOptions(projects, locale), [projects, locale]);
   const selectedTag = tags.find((option) => option.id === tag);
   const fuse = useMemo(() => createProjectSearch(projects), [projects]);
+  const activeFilterCount = (tag !== "all" ? 1 : 0) + (quickFilter !== "all" ? 1 : 0) + (onlySaved ? 1 : 0);
   const selectTag = (next: string, focusFilter = false) => {
     const nextState = tagSelectionState({ q: query, category, tag, quickFilter, sort, onlySaved }, next, projects, saved);
     setTag(nextState.tag);
@@ -574,9 +577,30 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     setOnlySaved(nextState.onlySaved);
     setQuery(nextState.q);
     setSearchTerm(nextState.q);
-    setShowFilters(true);
+    if (!focusFilter) setShowFilters(true);
     if (focusFilter) window.requestAnimationFrame(() => tagFilterRef.current?.focus({ preventScroll: true }));
   };
+  useEffect(() => {
+    if (!showFilters) return;
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (searchRowRef.current && !searchRowRef.current.contains(event.target as Node)) {
+        setShowFilters(false);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setShowFilters(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showFilters]);
   useEffect(() => {
     const context = (
       document as Document & {
@@ -1083,7 +1107,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             </a>
           </aside>
           <div className="results" id="project-results" tabIndex={-1}>
-            <div className="search-row">
+            <div className="search-row" ref={searchRowRef}>
               <div className="search-box">
                 <Search size={19} />
                 <input
@@ -1112,7 +1136,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 )}
               </div>
               <button
-                className={`filter-button ${showFilters ? "selected" : ""}`}
+                className={`filter-button ${showFilters ? "selected" : ""} ${activeFilterCount > 0 ? "has-active" : ""}`}
                 aria-label={t("展开筛选")}
                 aria-expanded={showFilters}
                 aria-controls="filter-panel"
@@ -1120,8 +1144,131 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               >
                 <Filter size={17} />
                 <span>{t("筛选")}</span>
-                {tag !== "all" && <i />}
+                {activeFilterCount > 0 ? (
+                  <span className="filter-badge" aria-hidden="true">{activeFilterCount}</span>
+                ) : (
+                  tag !== "all" && <i />
+                )}
               </button>
+              {showFilters && (
+                <div
+                  id="filter-panel"
+                  className="filter-panel filter-popover"
+                  role="region"
+                  aria-label={t("筛选")}
+                >
+                  <div className="filter-popover-header">
+                    <div className="filter-popover-title">
+                      <Filter size={15} aria-hidden="true" />
+                      <span>{t("筛选")}</span>
+                      {activeFilterCount > 0 && <span className="filter-badge">{activeFilterCount}</span>}
+                    </div>
+                    <div className="filter-popover-actions">
+                      {activeFilterCount > 0 && (
+                        <button type="button" className="filter-reset-link" onClick={reset}>
+                          <RotateCcw size={12} aria-hidden="true" />
+                          <span>{t("重置筛选")}</span>
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className="filter-close-btn"
+                        onClick={() => setShowFilters(false)}
+                        aria-label={t("关闭弹窗")}
+                      >
+                        <X size={15} aria-hidden="true" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="filter-section">
+                    <span className="filter-section-title">{t("快速浏览")}</span>
+                    <div className="filter-quick-chips" role="group" aria-label={t("快速浏览")}>
+                      {(Object.keys(quickFilterCopy) as ExplorerState["quickFilter"][]).map((mode) => {
+                        const QuickIcon = quickFilterCopy[mode].icon;
+                        const active = quickFilter === mode;
+                        return (
+                          <button
+                            key={mode}
+                            type="button"
+                            className={`filter-chip ${active ? "active" : ""}`}
+                            aria-pressed={active}
+                            onClick={() => setQuickFilter(active && mode !== "all" ? "all" : mode)}
+                            title={t(quickFilterCopy[mode].description)}
+                          >
+                            <QuickIcon size={13} aria-hidden="true" />
+                            <span>{t(quickFilterCopy[mode].label)}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="filter-section">
+                    <div className="filter-section-header">
+                      <span className="filter-section-title">{t("技术标签")}</span>
+                      {tag !== "all" && (
+                        <span className="filter-section-hint">{tagLabel(tag, locale)}</span>
+                      )}
+                    </div>
+                    <div className="filter-tag-chips" role="group" aria-label={t("技术标签")}>
+                      <button
+                        type="button"
+                        className={`filter-chip ${tag === "all" ? "active" : ""}`}
+                        aria-pressed={tag === "all"}
+                        onClick={() => selectTag("all")}
+                      >
+                        <span>{t("全部标签")}</span>
+                      </button>
+                      {tags.map((option) => {
+                        const active = tag === option.id;
+                        return (
+                          <button
+                            key={option.id}
+                            type="button"
+                            className={`filter-chip ${active ? "active" : ""}`}
+                            aria-pressed={active}
+                            onClick={() => selectTag(active ? "all" : option.id)}
+                            title={option.description}
+                          >
+                            <span>{option.name}</span>
+                            <span className="filter-chip-count">{option.count}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <select
+                      ref={tagFilterRef}
+                      className="sr-only"
+                      aria-label={t("技术标签")}
+                      aria-describedby={selectedTag ? "tag-filter-description" : undefined}
+                      title={selectedTag?.optionLabel ?? t("全部标签")}
+                      value={tag}
+                      onChange={(event) => selectTag(event.target.value)}
+                      tabIndex={-1}
+                    >
+                      <option value="all">{t("全部标签")}</option>
+                      {tags.map((option) => (
+                        <option key={option.id} value={option.id}>{option.optionLabel}</option>
+                      ))}
+                    </select>
+                    {selectedTag && (
+                      <p id="tag-filter-description" className="tag-filter-description" title={selectedTag.description}>
+                        {selectedTag.description}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="filter-popover-footer">
+                    <span className="filter-popover-count">
+                      {visible.length} {locale === "zh" ? "个匹配项目" : locale === "ja" ? "件の一致" : locale === "ko" ? "개 프로젝트 일치" : `${visible.length === 1 ? "project" : "projects"} matched`}
+                    </span>
+                    <button type="button" className="button dark filter-done-btn" onClick={() => setShowFilters(false)}>
+                      {locale === "zh" ? "查看结果" : locale === "ja" ? "結果を見る" : locale === "ko" ? "결과 보기" : "View results"}
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="search-suggestions" role="group" aria-label={t("热门搜索")}>
               <span>{t("热门搜索")}</span>
@@ -1142,35 +1289,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               })}
             </div>
             {quickFilter !== "all" && <p className="quick-filter-description">{t(quickFilterCopy[quickFilter].description)}</p>}
-            {showFilters && (
-              <div id="filter-panel" className="filter-panel">
-                <label className="tag-filter-field">
-                  {t("技术标签")}
-                  <select
-                    ref={tagFilterRef}
-                    aria-label={t("技术标签")}
-                    aria-describedby={selectedTag ? "tag-filter-description" : undefined}
-                    title={selectedTag?.optionLabel ?? t("全部标签")}
-                    value={tag}
-                    onChange={(event) => selectTag(event.target.value)}
-                  >
-                    <option value="all">{t("全部标签")}</option>
-                    {tags.map((option) => (
-                      <option key={option.id} value={option.id}>{option.optionLabel}</option>
-                    ))}
-                  </select>
-                </label>
-                <button className="text-link" onClick={reset}>
-                  {t("重置筛选")}
-                  <X size={13} />
-                </button>
-                {selectedTag && (
-                  <p id="tag-filter-description" className="tag-filter-description" title={selectedTag.description}>
-                    {selectedTag.description}
-                  </p>
-                )}
-              </div>
-            )}
             {(query || tag !== "all" || quickFilter !== "all" || onlySaved) && (
               <div className="active-filters" aria-label={t("筛选结果")}>
                 {query && <button onClick={clearSearch} aria-label={`${t("清空搜索")}: ${query}`}>{query}<X size={13} /></button>}
