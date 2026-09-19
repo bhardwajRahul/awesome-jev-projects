@@ -7,7 +7,43 @@ import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { createGitHubClient } from "./github-client.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
-import { inspectRepository, hasOpenRouterJevSource } from "./project-source.mjs";
+import { inspectRepository, hasOpenRouterJevSource, NEW_ROW_CATALOG_STATUS } from "./project-source.mjs";
+
+/** Manual/editorial copy must survive metadata sync. Keep existing statuses; curated is the same class. */
+export const PROTECTED_SUMMARY_SOURCES = Object.freeze([
+  "source-reviewed",
+  "human-reviewed",
+  "curated",
+]);
+export const PROTECTED_EDITORIAL_KEYS = Object.freeze([
+  "plainSummary",
+  "plainSummaryEn",
+  "plainSummaryJa",
+  "plainSummaryKo",
+  "jevDecisionPoint",
+  "jevDecisionPointEn",
+  "jevDecisionPointJa",
+  "jevDecisionPointKo",
+  "highlightBenefit",
+  "highlightBenefitEn",
+  "highlightBenefitJa",
+  "highlightBenefitKo",
+  "category",
+  "tags",
+  "evidence",
+  "summarySource",
+  "claimStatus",
+  "claimStatusEn",
+  "claimStatusJa",
+  "claimStatusKo",
+  "sourceVerification",
+  "sourceReviewedAt",
+  "verificationStatus",
+  "runtimeVerified",
+]);
+export function isProtectedSummarySource(value) {
+  return PROTECTED_SUMMARY_SOURCES.includes(value);
+}
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const normalizeRepo = (value) => {
   try {
@@ -94,13 +130,7 @@ export function summarize(repo, readme, taxonomy) {
     ?.replace(/https?:\/\/\S+/g, "")
     .trim()
     .slice(0, 150);
-  const category =
-    rule?.category ??
-    ((repo.topics ?? []).find(
-      (t) =>
-        !["ai", "jev", "typesafe", "typesafe-ai", "llm", "agent"].includes(t),
-    ) ||
-      "Decision Tools");
+  const category = rule?.category ?? "Decision Tools";
   const tags = [
     ...new Set(
       [
@@ -174,6 +204,13 @@ export function refreshMetadata(
       avatarUrl: meta.owner?.avatar_url,
       archived: meta.archived,
     });
+  }
+  if (project.pinned || isProtectedSummarySource(project.summarySource)) {
+    for (const key of PROTECTED_EDITORIAL_KEYS) {
+      if (Object.prototype.hasOwnProperty.call(project, key)) {
+        refreshed[key] = project[key];
+      }
+    }
   }
   delete refreshed.metadataError;
   return refreshed;
@@ -472,6 +509,7 @@ export async function main() {
         avatarUrl: repo.owner.avatar_url,
         verificationStatus: "integration-detected",
         runtimeVerified: false,
+        catalogStatus: NEW_ROW_CATALOG_STATUS,
         discoveredAt: started,
         evidence: [{ url: sourceUrl, note: "自动发现的 Jev 集成证据" }],
         sourceVerification: {
@@ -490,7 +528,6 @@ export async function main() {
         sourceUrl,
         sourceHash: project.sourceHash,
         evidence: evidence.evidence,
-        enrichment: summary.enrichment,
         readmeSources: nativeReadmes.map(({ path, url, hash }) => ({
           path,
           url,

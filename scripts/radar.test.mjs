@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { normalizeRepo, verifyIntegration, summarize, refreshMetadata } from "./radar-sync.mjs";
+import { normalizeRepo, verifyIntegration, summarize, refreshMetadata, isProtectedSummarySource, PROTECTED_SUMMARY_SOURCES } from "./radar-sync.mjs";
 const taxonomy = JSON.parse(
   await readFile(new URL("../src/data/taxonomy.json", import.meta.url), "utf8"),
 );
@@ -56,7 +56,13 @@ test("summary supports new taxonomy and never invents performance numbers", () =
     "Jev AI from typesafe import jev",
     taxonomy,
   );
-  assert.equal(novel.category, "astronomy");
+  assert.equal(novel.category, "Decision Tools");
+  const spam = summarize(
+    { name: "spam", topics: ["jev", "free-airdrop", "ai"] },
+    "no taxonomy phrases here",
+    taxonomy,
+  );
+  assert.equal(spam.category, "Decision Tools");
 });
 test("shipped data preserves fourteen seeds, unique identifiers and source evidence", async () => {
   const rows = JSON.parse(
@@ -160,7 +166,8 @@ test("all fourteen original projects are pinned and metadata changes only permit
 
 test("untrusted repository metadata cannot replace any source-reviewed prose or evidence", async () => {
   const projects = JSON.parse(await readFile(new URL("../src/data/projects.json", import.meta.url), "utf8"));
-  const reviewed = projects.filter((p) => ["source-reviewed", "human-reviewed"].includes(p.summarySource));
+  assert.deepEqual([...PROTECTED_SUMMARY_SOURCES], ["source-reviewed", "human-reviewed", "curated"]);
+  const reviewed = projects.filter((p) => isProtectedSummarySource(p.summarySource));
   assert.ok(reviewed.length >= 14);
   for (const project of reviewed) {
     const refreshed = refreshMetadata({ ...project, pinned: false }, hostileMetadata, latestCommit);
@@ -168,6 +175,39 @@ test("untrusted repository metadata cannot replace any source-reviewed prose or 
       assert.deepEqual(refreshed[key], project[key], `${project.id}.${key} was overwritten`);
     assert.equal(refreshed.forks, 9999, "ordinary project metadata still refreshes");
   }
+});
+
+test("curated copy is protected like human-reviewed and source-reviewed statuses", () => {
+  const curated = {
+    pinned: false,
+    summarySource: "curated",
+    plainSummary: "人工精炼的中文说明，不得被同步覆盖。",
+    plainSummaryEn: "Curated English prose must survive metadata sync.",
+    jevDecisionPoint: "保留原决策点。",
+    highlightBenefit: "保留原用途说明。",
+    category: "Context GC & Filter",
+    tags: ["typed-decisions"],
+    evidence: [{ url: "https://github.com/example/curated/blob/sha/src/main.ts" }],
+    claimStatus: "人工审校。",
+    verificationStatus: "integration-detected",
+    runtimeVerified: false,
+    stars: 3,
+  };
+  const refreshed = refreshMetadata(curated, hostileMetadata, latestCommit);
+  assert.equal(refreshed.summarySource, "curated");
+  assert.equal(refreshed.plainSummary, curated.plainSummary);
+  assert.equal(refreshed.plainSummaryEn, curated.plainSummaryEn);
+  assert.equal(refreshed.jevDecisionPoint, curated.jevDecisionPoint);
+  assert.equal(refreshed.highlightBenefit, curated.highlightBenefit);
+  assert.equal(refreshed.category, curated.category);
+  assert.deepEqual(refreshed.tags, curated.tags);
+  assert.deepEqual(refreshed.evidence, curated.evidence);
+  assert.equal(refreshed.stars, 9999);
+  assert.equal(refreshed.forks, 9999);
+  assert.equal(isProtectedSummarySource("curated"), true);
+  assert.equal(isProtectedSummarySource("human-reviewed"), true);
+  assert.equal(isProtectedSummarySource("source-reviewed"), true);
+  assert.equal(isProtectedSummarySource("readme-extractive"), false);
 });
 
 test("invalid remote star counts cannot erase core data", () => {

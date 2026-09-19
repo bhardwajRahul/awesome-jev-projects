@@ -9,6 +9,7 @@ import {
   extractSubmittedTags,
   extractSubmittedCategory,
   inspectRepository,
+  NEW_ROW_CATALOG_STATUS,
 } from "./project-source.mjs";
 import { inferCanonicalTags } from "../src/lib/tags.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
@@ -20,7 +21,7 @@ export const bodyHash = (body) =>
     .update(body ?? "")
     .digest("hex");
 export const successComment =
-  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并在雷达站成功收录上线：https://logicrw.github.io/awesome-jev-projects/";
+  "🎉 感谢提交！项目已通过 Jev 源码集成检查，已写入待复核队列（不会立刻作为已确认推荐上线）：https://logicrw.github.io/awesome-jev-projects/";
 const OWNER_REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
 function requireOwner(repository) {
   if (!OWNER_REPO.test(repository ?? ""))
@@ -45,17 +46,19 @@ function sameProject(a, b) {
     (Number.isSafeInteger(a.repoId) && a.repoId === b.repoId)
   );
 }
-function isSubmission(issue) {
-  return (
-    /^\s*\[project\]/i.test(issue.title ?? "") ||
-    /^\s*(?:submit\s+project|project\s+submission|submit|project)[\s:：]/i.test(issue.title ?? "") ||
+export function isSubmission(issue) {
+  const labeled = (issue.labels ?? []).some(
+    (label) => (typeof label === "string" ? label : label?.name) === "project-submission",
+  );
+  const titled = /^\s*\[project\]/i.test(issue.title ?? "");
+  const headed =
     /^#{1,6}\s+(?:GitHub repository|Project repository|项目仓库|仓库地址|repository)\s*$/im.test(
       issue.body ?? "",
     ) ||
     /^\s*(?:repository|github repository|project repository|项目仓库|仓库地址)[\s:：]+\s*https?:\/\/github\.com\//im.test(
       issue.body ?? "",
-    )
-  );
+    );
+  return labeled || titled || headed;
 }
 export async function prepareSubmission({
   issue,
@@ -160,6 +163,7 @@ export async function prepareSubmission({
     avatarUrl: repo.owner?.avatar_url,
     verificationStatus: "integration-detected",
     runtimeVerified: false,
+    catalogStatus: NEW_ROW_CATALOG_STATUS,
     discoveredAt: now(),
     claimStatus:
       "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -455,11 +459,16 @@ async function main() {
     const exclusions = JSON.parse(
       await readFile(resolve(root, "radar/exclusions.json"), "utf8"),
     );
-    const enrich = createSummaryEnricher();
-    let result;
-    if (process.env.INGEST_MODELS_PROBE === "true") {
+    const modelsProbe = process.env.INGEST_MODELS_PROBE === "true";
+    if (modelsProbe) {
       if (process.env.GITHUB_EVENT_NAME !== "workflow_dispatch")
         throw new Error("Models probes require manual workflow dispatch");
+      delete process.env.MUSE_API_KEY;
+      delete process.env.GH_MODELS_TOKEN;
+    }
+    const enrich = createSummaryEnricher(modelsProbe ? { token: "" } : {});
+    let result;
+    if (modelsProbe) {
       const repo = {
         name: "jev-probe",
         description:
@@ -498,6 +507,10 @@ async function main() {
     if (!/^[a-f\d]{40}$/.test(reviewedSourceSha ?? ""))
       throw new Error("Exact review checkout SHA is required");
     result = { ...result, reviewedSourceSha };
+    if (result.project && Object.prototype.hasOwnProperty.call(result.project, "enrichment")) {
+      const { enrichment: _omit, ...project } = result.project;
+      result = { ...result, project };
+    }
     await mkdir(dirname(resultPath), { recursive: true });
     await atomicJSON(resultPath, result);
     await output({

@@ -8,6 +8,8 @@ const MAX_FILE_BYTES = 90_000;
 const MAX_READMES = 3;
 const MAX_CODE_FILES = 8;
 const SHA = /^[a-f\d]{40,64}$/i;
+/** New issue/radar rows stay out of the public recommendation set until a maintainer ACK. */
+export const NEW_ROW_CATALOG_STATUS = "review-pending";
 const REPOSITORY_FIELD =
   /^(?:github repository|project repository|repository|项目仓库|仓库地址|github 仓库)$/i;
 const TAGS_FIELD =
@@ -164,12 +166,18 @@ export function extractSubmittedCategory(issueBody, taxonomy = []) {
     const trimmed = line.replace(/^[-*•\d.)\s]+/, "").trim();
     if (!trimmed) continue;
     const head = trimmed.split(/[\s(（]/)[0].trim();
-    const candidate = taxonomy.find(
-      (t) =>
-        t.category.toLowerCase() === trimmed.toLowerCase() ||
-        t.category.toLowerCase() === head.toLowerCase() ||
-        trimmed.toLowerCase().includes(t.category.toLowerCase()),
-    );
+    const full = trimmed.toLowerCase();
+    const headLower = head.toLowerCase();
+    const candidate = taxonomy.find((t) => {
+      const cat = t.category.toLowerCase();
+      return (
+        full === cat ||
+        headLower === cat ||
+        full.startsWith(`${cat} `) ||
+        full.startsWith(`${cat}(`) ||
+        full.startsWith(`${cat}（`)
+      );
+    });
     if (candidate) return candidate.category;
   }
   return null;
@@ -377,11 +385,19 @@ function hasOpenRouterJevIntegration(code) {
 /** Static implementation evidence must come from executable sources, not README installs. */
 function hasImplementationEvidence(text, path) {
   const code = stripSourceComments(text, path);
-  if (/(?<![\w.-])api\.typesafe\.ai(?![\w.-])/i.test(code)) return true;
   if (hasOpenRouterJevIntegration(code)) return true;
   const providerImport = /\bfrom\s+typesafe(?:_ai|_sdk)?(?:\.[\w.]+)?\s+import\b|\bimport\s+(?:[\w.]+\.)?typesafe(?:_ai|_sdk)?(?:\.[\w.]+)*\b|\b(?:from|require\s*\(|import\s*\()\s*["'](?:@typesafe\/(?:jev|sdk)|typesafe(?:-ai|-sdk)?)["']/i.test(code);
   const sdkCall = /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient))\s*\(|\.\s*(?:choice|score|noul|decision|query|ask|systemOne|system_one)\s*\(/i.test(code);
-  return providerImport && sdkCall;
+  if (providerImport && sdkCall) return true;
+  const typesafeHttp =
+    /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai\//i.test(
+      code,
+    );
+  const jevIdentity =
+    /["'`]~?typesafe\/jev-(?:latest|\d)|(?:TypeSafeClient|JevClient)\s*\(|\.\s*(?:systemOne|system_one)\s*\(/i.test(
+      code,
+    );
+  return typesafeHttp && jevIdentity;
 }
 
 /** Check metadata, immutable README/source evidence and duplicate/exclusion identities. */
@@ -425,6 +441,8 @@ export async function inspectRepository({
     (repo.visibility && repo.visibility !== "public")
   )
     return { status: "rejected", reason: "repository is not public" };
+  if (repo.fork === true)
+    return { status: "rejected", reason: "forks are not ingested", repo };
   const names = new Set([repository.toLowerCase(), canonical.toLowerCase()]);
   if (
     existingProjects.some((project) => identityMatches(project, names, repo.id))
