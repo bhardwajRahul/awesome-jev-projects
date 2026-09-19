@@ -288,7 +288,7 @@ export function createSummaryEnricher({
         ],
       };
       if (isMuse) {
-        requestBody.reasoning_effort = "minimal";
+        requestBody.reasoning_effort = "low";
       }
       const response = await fetchImpl(resolvedEndpoint, {
         method: "POST",

@@ -214,7 +214,7 @@ export async function main() {
     status: "partial",
     sources: [],
     newProjects: 0,
-    schedule: "0 */12 * * *",
+    schedule: "0 */6 * * *",
     schedulerStatus:
       process.env.GITHUB_ACTIONS === "true"
         ? "active"

@@ -200,7 +200,7 @@
     }
   ],
   "newProjects": 32,
-  "schedule": "0 */12 * * *",
+  "schedule": "0 */6 * * *",
   "schedulerStatus": "active",
   "submissionRepository": "logicrw/awesome-jev-projects",
   "metadata": {
