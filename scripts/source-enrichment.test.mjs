@@ -465,3 +465,49 @@ test("partial model output is validated independently per language", async () =>
   assert.equal(result.enrichment.plainSummaryEn.source, "rules");
   assert.equal(result.enrichment.ai.status, "partial");
 });
+
+test("MUSE Spark 1.3 Contributor API routes to Meta endpoint with contributor model and source", async () => {
+  let calledUrl = "";
+  let calledModel = "";
+  let calledAuth = "";
+  const enrich = createSummaryEnricher({
+    token: "muse-contrib-secret-key-12345",
+    source: "muse-spark",
+    fetchImpl: async (url, options) => {
+      calledUrl = url;
+      calledAuth = options.headers.Authorization;
+      const body = JSON.parse(options.body);
+      calledModel = body.model;
+      return reply({ plainSummary: chinese, plainSummaryEn: english });
+    },
+  });
+  const result = await enrich({ repo: { ...repo, description: "" }, fallback });
+  assert.equal(calledUrl, "https://api.meta.ai/v1/chat/completions");
+  assert.equal(calledModel, "muse-spark-1.3-contributor");
+  assert.equal(calledAuth, "Bearer muse-contrib-secret-key-12345");
+  assert.equal(result.enrichment.plainSummary.source, "muse-spark");
+  assert.equal(result.enrichment.ai.status, "completed");
+});
+
+test("MUSE Spark OpenRouter key routes to OpenRouter endpoint with referrer headers", async () => {
+  let calledUrl = "";
+  let calledModel = "";
+  let calledReferer = "";
+  const enrich = createSummaryEnricher({
+    token: "sk-or-v1-abcdef1234567890abcdef1234567890",
+    source: "muse-spark",
+    fetchImpl: async (url, options) => {
+      calledUrl = url;
+      calledReferer = options.headers["HTTP-Referer"];
+      const body = JSON.parse(options.body);
+      calledModel = body.model;
+      return reply({ plainSummary: chinese, plainSummaryEn: english });
+    },
+  });
+  const result = await enrich({ repo: { ...repo, description: "" }, fallback });
+  assert.equal(calledUrl, "https://openrouter.ai/api/v1/chat/completions");
+  assert.equal(calledModel, "meta/muse-spark-1.3-contributor");
+  assert.equal(calledReferer, "https://logicrw.github.io/awesome-jev-projects");
+  assert.equal(result.enrichment.plainSummary.source, "muse-spark");
+});
+

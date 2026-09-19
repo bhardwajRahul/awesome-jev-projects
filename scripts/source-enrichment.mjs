@@ -167,11 +167,41 @@ function canonicalTerms(text) {
 
 /** One factory per run: unusable/rate-limited Models endpoints are tried at most once. */
 export function createSummaryEnricher({
-  token = process.env.GH_MODELS_TOKEN,
+  token = process.env.MUSE_API_KEY || process.env.GH_MODELS_TOKEN,
+  endpoint,
+  model,
+  source,
   fetchImpl = fetch,
   timeoutMs = 20000,
 } = {}) {
   let circuit = null;
+  const isMuse = Boolean(
+    (token && token === process.env.MUSE_API_KEY) ||
+      process.env.MUSE_API_KEY ||
+      source === "muse-spark" ||
+      endpoint?.includes("meta.ai") ||
+      endpoint?.includes("openrouter.ai") ||
+      model?.includes("muse")
+  );
+  const resolvedEndpoint =
+    endpoint ||
+    process.env.MUSE_ENDPOINT ||
+    process.env.MODELS_URL ||
+    (isMuse
+      ? token?.startsWith("sk-or-")
+        ? "https://openrouter.ai/api/v1/chat/completions"
+        : "https://api.meta.ai/v1/chat/completions"
+      : MODELS_URL);
+  const resolvedModel =
+    model ||
+    process.env.MUSE_MODEL ||
+    process.env.MODELS_MODEL ||
+    (isMuse
+      ? token?.startsWith("sk-or-")
+        ? "meta/muse-spark-1.3-contributor"
+        : "muse-spark-1.3-contributor"
+      : "gpt-4o-mini");
+  const modelSource = source || (isMuse ? "muse-spark" : "github-models");
   return async function enrich({
     repo,
     readme = "",
@@ -223,15 +253,21 @@ export function createSummaryEnricher({
     }
     enrichment.ai.attempted = true;
     try {
-      const response = await fetchImpl(MODELS_URL, {
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      };
+      if (resolvedEndpoint.includes("openrouter.ai")) {
+        headers["HTTP-Referer"] =
+          "https://logicrw.github.io/awesome-jev-projects";
+        headers["X-Title"] = "Awesome Jev Projects";
+      }
+      const response = await fetchImpl(resolvedEndpoint, {
         method: "POST",
         redirect: "error",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
+        headers,
         body: JSON.stringify({
-          model: "gpt-4o-mini",
+          model: resolvedModel,
           response_format: { type: "json_object" },
           temperature: 0,
           max_tokens: 600,
@@ -291,7 +327,7 @@ export function createSummaryEnricher({
             : "";
         if (!isSummary(text, language, token)) continue;
         result[field] = text;
-        enrichment[field] = { source: "github-models" };
+        enrichment[field] = { source: modelSource };
         accepted += 1;
       }
       enrichment.ai.status =
