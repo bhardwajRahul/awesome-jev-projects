@@ -4,7 +4,7 @@ A community directory of Jev open-source and publicly available source projects.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 260
+Catalog entries: 267
 
 ## Install the Agent Skill
 
@@ -35,16 +35,16 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [CLI & Pipelines](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/): 12
 - [Classification & Taxonomy](https://logicrw.github.io/awesome-jev-projects/en/categories/classification-taxonomy/): 2
 - [Codebase & Graph Pathfinding](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/): 11
-- [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 14
+- [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 15
 - [Creative Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/): 9
 - [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 10
-- [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 7
+- [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 12
 - [Domain & Vertical Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/): 14
 - [Evaluation & Observability](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/): 29
 - [High-Frequency & Simulation](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/): 17
 - [MCP & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/mcp-integrations/): 18
 - [Routing & Cost Optimization](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/): 19
-- [SDK & Decision Frameworks](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/): 47
+- [SDK & Decision Frameworks](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/): 48
 - [SDK & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-integrations/): 6
 - [Security & Guardrails](https://logicrw.github.io/awesome-jev-projects/en/categories/security-guardrails/): 18
 - [Voice & Conversation](https://logicrw.github.io/awesome-jev-projects/en/categories/voice-conversation/): 4

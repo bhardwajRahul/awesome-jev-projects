@@ -1,0 +1,141 @@
+{
+  "reviewedAt": "2026-09-19T10:34:33.417699+00:00",
+  "scope": [
+    "typesafe-ai:typesafe-sdk-python"
+  ],
+  "baselineCommit": "fa118e06d88f6b49cf3adbe1252e5cec1a158040",
+  "baselineCount": 260,
+  "catalogRecords": 261,
+  "preservedBaselineRecords": 260,
+  "reviews": [
+    {
+      "id": "typesafe-ai:typesafe-sdk-python",
+      "verdict": "keep",
+      "reason": "官方 Python SDK 有可识别的同步、异步 System One 调用实现；补全四语说明，修正草稿的仓库 ID、失效源码路径、空文件哈希及未经验证的性能和确定性表述。",
+      "checkedSha": "2ce5c65f13646cab6e6f782328194c9d85f3300a",
+      "categoryBefore": "SDK & Decision Frameworks",
+      "categoryAfter": "SDK & Decision Frameworks",
+      "license": "MIT",
+      "licenseStatus": "confirmed",
+      "sources": [
+        {
+          "path": "src/typesafe_sdk/_core/client/sync/client.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/sync/client.py#L206-L221",
+          "hash": "2cca25f62fff4700b4b44184ece1a02ec7f1addf37a10e01a14d4e2b957e8f26",
+          "hashType": "sha256",
+          "lines": [
+            206,
+            221
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/client/aio/client.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/aio/client.py#L216-L243",
+          "hash": "46f46c00e1a3fafd6d40433577ee4efb8828474fb5bbda4245f417f99f632f91",
+          "hashType": "sha256",
+          "lines": [
+            216,
+            243
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/endpoints.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/endpoints.py#L17-L34",
+          "hash": "933954a8f19e3978d64f0703d6476eac549728eb10dd6a17985c628e7faf383c",
+          "hashType": "sha256",
+          "lines": [
+            17,
+            34
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/question_types.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/question_types.py#L77-L113",
+          "hash": "55b212d7a3bc9277fd9961ad4ea69bac754deb9ae0b9a76b2bc02b120452a109",
+          "hashType": "sha256",
+          "lines": [
+            77,
+            113
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/response_types.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/response_types.py#L99-L139",
+          "hash": "cf06ac0dffa02b3fd1abcf26f962c4bed13b146064b56b11b19dfbef87dfe0df",
+          "hashType": "sha256",
+          "lines": [
+            99,
+            139
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/constants.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/constants.py#L18-L19",
+          "hash": "53be709ac7cde59cb10b9c29efd058d572b03cce2c0e6f7dc5186d6322999fff",
+          "hashType": "sha256",
+          "lines": [
+            18,
+            19
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/README.md#L13-L29",
+          "hash": "06aa97c3d7b31ea2eb0b43d3f2f687ad3e48e29802d539064331aaff8243adad",
+          "hashType": "sha256",
+          "lines": [
+            13,
+            29
+          ]
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/pyproject.toml#L1-L10",
+          "hash": "42b81115e9507a6dd94ce279e341236f41aa8d9e756f4d6ac42235e893f64222",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            10
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/LICENSE#L1-L21",
+          "hash": "002c2696d92b5c8cf956c11072baa58eaf9f6ade995c031ea635c6a1ee342ad1",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            21
+          ]
+        }
+      ]
+    }
+  ],
+  "metadataEvidence": {
+    "url": "https://api.github.com/repos/typesafe-ai/typesafe-sdk-python",
+    "fetchedAt": "2026-09-19T10:32:45.020292+00:00",
+    "repoId": 1357590729,
+    "visibility": "public",
+    "private": false,
+    "stars": 101,
+    "forks": 11,
+    "openIssues": 2,
+    "defaultBranch": "main",
+    "headSha": "2ce5c65f13646cab6e6f782328194c9d85f3300a"
+  },
+  "verification": {
+    "submittedRepositoryExecuted": false,
+    "runtimeVerified": false,
+    "fourLocalesComplete": true,
+    "englishAndKoreanHanCharacters": 0,
+    "duplicateIds": [],
+    "duplicateRepositoryUrls": [],
+    "duplicateRepositoryIds": [],
+    "baselineRecordsUnchanged": true
+  },
+  "limitations": [
+    "只核对公开 GitHub 元数据与固定提交文件，未执行 SDK 或调用 TypeSafe API。",
+    "MIT 许可全文及 pyproject.toml 的声明一致；LICENSE 的 copyright 行仍含上游 year/fullname 占位符。",
+    "Stars 和其他仓库统计为 fetchedAt 时的快照。"
+  ]
+}

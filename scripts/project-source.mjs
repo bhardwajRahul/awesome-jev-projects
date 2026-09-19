@@ -246,7 +246,7 @@ function codeCandidate(entry) {
     !/(?:^|\/)(?:package(?:-lock)?\.json|models\.json|catalog\.json)|(?:\.min\.[cm]?js|\.lock|\.generated\.[^/]+|\.g\.[^/]+)$/i.test(
       path,
     ) &&
-    /\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh)$/i.test(
+    /\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua)$/i.test(
       path,
     )
   );
@@ -259,6 +259,8 @@ function stripSourceComments(text, path) {
     : text;
   const commentsAndStrings = /\.(?:py|rb|sh)$/i.test(path)
     ? /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|#[^\n]*/g
+    : /\.(?:lua)$/i.test(path)
+    ? /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|--[^\n]*/g
     : /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|`(?:\\[\s\S]|[^`\\])*`|\/\*[\s\S]*?\*\/|\/\/[^\n]*/g;
   return code.replace(commentsAndStrings, (token) => /^["'`]/.test(token) ? token : " ");
 }
@@ -395,8 +397,8 @@ export async function inspectRepository({
         (a, b) =>
           Number(/typesafe|jev/i.test(posix.basename(b.path))) -
             Number(/typesafe|jev/i.test(posix.basename(a.path))) ||
-          Number(/(?:^|\/)(?:decision|backend|client|agent|model|service)/i.test(b.path)) -
-            Number(/(?:^|\/)(?:decision|backend|client|agent|model|service)/i.test(a.path)) ||
+          Number(/(?:^|\/)(?:decision|backend|client|agent|model|service|policy)/i.test(b.path)) -
+            Number(/(?:^|\/)(?:decision|backend|client|agent|model|service|policy)/i.test(a.path)) ||
           Number(/jev|typesafe/i.test(b.path)) -
             Number(/jev|typesafe/i.test(a.path)) ||
           Number(/(?:^|\/)(?:src|lib|app|main|client|agent)/i.test(b.path)) -

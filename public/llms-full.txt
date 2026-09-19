@@ -4,7 +4,7 @@ A community directory of Jev open-source and publicly available source projects.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 260
+Catalog entries: 267
 
 ## Install the Agent Skill
 
@@ -3847,3 +3847,104 @@ Pre-commit hook for the commit-msg stage: one Jev call judges the message agains
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-commit/
 - Source evidence: https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/README.md
 - Source evidence: https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/jev_commit/jev.py
+
+## jev-belay
+
+Claude Code Stop hook that blocks an unverified done. It reads the turn transcript locally and only spends a Jev call when files changed and no check has passed since; every error path lets the turn end.
+
+- Repository: https://github.com/valentynkit/jev-belay
+- Category: Decision Tools
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-belay/
+- Source evidence: https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/README.md
+- Source evidence: https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/tools/fake-jev.mjs
+- Source evidence: https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/belay.mjs
+
+## jev.nvim
+
+Neovim plugin: type a plain-language question, every function in the buffer gets judged, answers land in quickfix ranked by probability.
+
+- Repository: https://github.com/valentynkit/jev.nvim
+- Category: Decision Tools
+- Jev decision: Treesitter splits the buffer into functions; one request scores each function against the question; implementation in lua/. The README compares against a regex grep on a twelve-file fixture corpus, no accuracy claim beyond that.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev.nvim/
+- Source evidence: https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/README.md
+- Source evidence: https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/plugin/jev.lua
+- Source evidence: https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/lua/jev/client.lua
+
+## jev-skip
+
+Browser extension that skips YouTube sponsor reads on videos nobody has labeled, from the caption track alone, and paints a probability per segment on the seek bar.
+
+- Repository: https://github.com/valentynkit/jev-skip
+- Category: Decision Tools
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-skip/
+- Source evidence: https://github.com/valentynkit/jev-skip/blob/6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628/README.md
+- Source evidence: https://github.com/valentynkit/jev-skip/blob/6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628/lib/jev.ts
+
+## jev-plays-pokemon-red
+
+Pokemon Red on PyBoy where code owns the route and the arithmetic and Jev picks only where the game branches.
+
+- Repository: https://github.com/valentynkit/jev-plays-pokemon-red
+- Category: Decision Tools
+- Jev decision: Choice questions at battle actions, blocked-tile sidesteps and dialogue menus; a Noul faints\_this\_turn on every battle turn is labelled from RAM on the next turn and scored by Brier in uv run measure. Speed and cost numbers are deliberately blank in the README until a full playthrough is measured; implementation in src/.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-plays-pokemon-red/
+- Source evidence: https://github.com/valentynkit/jev-plays-pokemon-red/blob/cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af/README.md
+- Source evidence: https://github.com/valentynkit/jev-plays-pokemon-red/blob/cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af/src/jpp/policy.py
+
+## elons-job
+
+Local-first Chrome extension that uses Jev to filter sexual and solicitation content in X replies with reversible hidden placeholders.
+
+- Repository: https://github.com/bugkiwi/elons-job
+- Category: Context GC & Filter
+- Jev decision: Scores X reply text with Jev Noul questions for sexual content, solicitation, and spam, then combines probabilities with local thresholds and structural signals.
+- Purpose: Combines local rules, caching, concurrency and cost controls, and fail-open handling; it requires no X API and keeps hidden comments recoverable.
+- Review scope: The README and source show TypeSafe System One integration and deterministic mock tests; not independently run or performance-tested by this site.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/bugkiwi/elons-job/
+- Source evidence: https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/README.md
+- Source evidence: https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/background.js#L46-L101
+- Source evidence: https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/shared/core.js#L220-L327
+
+## turing-jail
+
+Interactive three-level AI interrogation game powered by TypeSafe Jev; write responses and pass plea, logic, and paradox verdicts to earn release.
+
+- Repository: https://github.com/bugkiwi/turing-jail
+- Category: Decision Tools
+- Jev decision: For each level, Jev evaluates release probability plus plea, logic, and paradox signals, then selects a persuasion tactic and scores persuasiveness.
+- Purpose: Turns structured Jev judgments into playable feedback, pass thresholds, and leaderboard results that show how arguments affect release probability.
+- Review scope: Source-reviewed integration record; runtime behavior and performance were not independently retested by this site.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/bugkiwi/turing-jail/
+- Source evidence: https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/README.md
+- Source evidence: https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/server.ts#L91-L123
+
+## typesafe-sdk-python
+
+The official Python library for the TypeSafe API, offering synchronous and asynchronous clients with type definitions for Jev.
+
+- Repository: https://github.com/typesafe-ai/typesafe-sdk-python
+- Category: SDK & Decision Frameworks
+- Jev decision: Wraps systemOne requests with typed input state and structured decision outputs in Python.
+- Purpose: Official foundation library featuring Pydantic validation and async concurrency support.
+- Review scope: Official open-source foundation library from TypeSafe; reviewed source code and API contracts.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/typesafe-ai/typesafe-sdk-python/
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/README.md
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/src/typesafe/client.py

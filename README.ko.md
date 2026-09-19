@@ -6,7 +6,7 @@
 
 [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
 
-**[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **260 개 프로젝트**
+**[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **267 개 프로젝트**
 
 커뮤니티가 운영하는 TypeSafe 비공식 Jev 디렉터리입니다. 공개 설명과 소스 코드를 근거로 수록합니다. 연동 코드를 확인했다는 것은 이 사이트가 실행, 성능 측정 또는 보안 감사를 했다는 뜻이 아닙니다.
 
@@ -39,16 +39,16 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [CLI 및 파이프라인 (12)](https://logicrw.github.io/awesome-jev-projects/ko/categories/cli-pipelines/)
 - [분류 및 카탈로그 (2)](https://logicrw.github.io/awesome-jev-projects/ko/categories/classification-taxonomy/)
 - [코드 및 그래프 탐색 (11)](https://logicrw.github.io/awesome-jev-projects/ko/categories/codebase-graph-pathfinding/)
-- [Context GC 및 메모리 (14)](https://logicrw.github.io/awesome-jev-projects/ko/categories/context-gc-filter/)
+- [Context GC 및 메모리 (15)](https://logicrw.github.io/awesome-jev-projects/ko/categories/context-gc-filter/)
 - [음악 및 UI 제작 (9)](https://logicrw.github.io/awesome-jev-projects/ko/categories/creative-tools/)
 - [데이터 및 검색 (10)](https://logicrw.github.io/awesome-jev-projects/ko/categories/data-search/)
-- [판단 도구 (7)](https://logicrw.github.io/awesome-jev-projects/ko/categories/decision-tools/)
+- [판단 도구 (12)](https://logicrw.github.io/awesome-jev-projects/ko/categories/decision-tools/)
 - [분야별 도구 (14)](https://logicrw.github.io/awesome-jev-projects/ko/categories/domain-vertical-tools/)
 - [평가 및 관측성 (29)](https://logicrw.github.io/awesome-jev-projects/ko/categories/evaluation-observability/)
 - [게임 및 실시간 판단 (17)](https://logicrw.github.io/awesome-jev-projects/ko/categories/high-frequency-simulation/)
 - [MCP 및 연동 (18)](https://logicrw.github.io/awesome-jev-projects/ko/categories/mcp-integrations/)
 - [모델 라우팅 (19)](https://logicrw.github.io/awesome-jev-projects/ko/categories/routing-cost-optimization/)
-- [SDK 및 판단 프레임워크 (47)](https://logicrw.github.io/awesome-jev-projects/ko/categories/sdk-decision-frameworks/)
+- [SDK 및 판단 프레임워크 (48)](https://logicrw.github.io/awesome-jev-projects/ko/categories/sdk-decision-frameworks/)
 - [SDK 및 호환 연동 (6)](https://logicrw.github.io/awesome-jev-projects/ko/categories/sdk-integrations/)
 - [보안 및 콘텐츠 검토 (18)](https://logicrw.github.io/awesome-jev-projects/ko/categories/security-guardrails/)
 - [음성 및 대화 (4)](https://logicrw.github.io/awesome-jev-projects/ko/categories/voice-conversation/)
@@ -337,6 +337,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **프로젝트의 용도**: 원본 세션 파일을 유지하며 정리 판단을 기록한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/joelhooks/pi-fast-jev-compaction/) · 라이선스: MIT
 
+- [**elons-job**](https://github.com/bugkiwi/elons-job) — Local-first Chrome extension that uses Jev to filter sexual and solicitation content in X replies with reversible hidden placeholders.
+  - **Jev가 판단하는 지점**: Scores X reply text with Jev Noul questions for sexual content, solicitation, and spam, then combines probabilities with local thresholds and structural signals.
+  - **프로젝트의 용도**: Combines local rules, caching, concurrency and cost controls, and fail-open handling; it requires no X API and keeps hidden comments recoverable.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/bugkiwi/elons-job/) · 라이선스: 명시되지 않음
+
 - [**jev-skill-gate**](https://github.com/ShivamPansuriya/jev-skill-gate) — 현재 프로젝트에 대한 Claude Code 스킬 관련도를 평가해 기본으로 로드할 설명을 줄인다.
   - **Jev가 판단하는 지점**: 기술 스택, 디렉터리, README에 비춰 관련성을 판단하고 설명 노출 수준을 조정한다.
   - **프로젝트의 용도**: 필요한 설명을 유지하면서 나머지 스킬도 수동으로 호출할 수 있다.
@@ -496,15 +501,30 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **프로젝트의 용도**: 연동 아이디어, 질문 설계, 평가 방법을 연결한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/altryne/jevify/) · 라이선스: MIT
 
+- [**jev-belay**](https://github.com/valentynkit/jev-belay) — Claude Code Stop hook that blocks an unverified done. It reads the turn transcript locally and only spends a Jev call when files changed and no check has passed since; every error path lets the turn end.
+  - **Jev가 판단하는 지점**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/valentynkit/jev-belay/) · 라이선스: MIT
+
 - [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) — 상태와 선택·평가 질문을 입력하고 Jev 답변과 확률 분포를 살펴보는 웹 실험 도구.
   - **Jev가 판단하는 지점**: 여러 Noul, Choice, Score 질문을 하나의 요청에 담는다.
   - **프로젝트의 용도**: 애플리케이션 코드를 작성하기 전에 질문과 선택지를 시험할 수 있다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/little-planet-labs/jev-playground/) · 라이선스: 명시되지 않음
 
+- [**jev-plays-pokemon-red**](https://github.com/valentynkit/jev-plays-pokemon-red) — Pokemon Red on PyBoy where code owns the route and the arithmetic and Jev picks only where the game branches.
+  - **Jev가 판단하는 지점**: Choice questions at battle actions, blocked-tile sidesteps and dialogue menus; a Noul faints\_this\_turn on every battle turn is labelled from RAM on the next turn and scored by Brier in uv run measure. Speed and cost numbers are deliberately blank in the README until a full playthrough is measured; implementation in src/.
+  - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/valentynkit/jev-plays-pokemon-red/) · 라이선스: MIT
+
 - [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) — 규칙과 증거로 다른 skill의 닫힌 선택지 결론을 예측하는 Agent용 레시피.
   - **Jev가 판단하는 지점**: Jev가 닫힌 선택지 판단이 가능한지 평가한 뒤 대상 skill의 결론 후보를 선택한다.
   - **프로젝트의 용도**: API 호출·응답 검사 예제를 포함하며 대상 skill 자체를 실행하지 않는다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/danielkillenberger/jev-predict-skill/) · 라이선스: 명시되지 않음
+
+- [**jev-skip**](https://github.com/valentynkit/jev-skip) — Browser extension that skips YouTube sponsor reads on videos nobody has labeled, from the caption track alone, and paints a probability per segment on the seek bar.
+  - **Jev가 판단하는 지점**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/valentynkit/jev-skip/) · 라이선스: MIT
 
 - [**jevchat**](https://github.com/kt3k/jevchat) — 미리 정의하거나 직접 만든 선택지에서 답을 고르는 채팅형 Jev 데모.
   - **Jev가 판단하는 지점**: 답변 스타일을 Choice로 변환하고 질문 조각에서 대화 제목도 선택한다.
@@ -515,6 +535,16 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
   - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/valentynkit/jev-commit/) · 라이선스: MIT
+
+- [**jev.nvim**](https://github.com/valentynkit/jev.nvim) — Neovim plugin: type a plain-language question, every function in the buffer gets judged, answers land in quickfix ranked by probability.
+  - **Jev가 판단하는 지점**: Treesitter splits the buffer into functions; one request scores each function against the question; implementation in lua/. The README compares against a regex grep on a twelve-file fixture corpus, no accuracy claim beyond that.
+  - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/valentynkit/jev.nvim/) · 라이선스: MIT
+
+- [**turing-jail**](https://github.com/bugkiwi/turing-jail) — Interactive three-level AI interrogation game powered by TypeSafe Jev; write responses and pass plea, logic, and paradox verdicts to earn release.
+  - **Jev가 판단하는 지점**: For each level, Jev evaluates release probability plus plea, logic, and paradox signals, then selects a persuasion tactic and scores persuasiveness.
+  - **프로젝트의 용도**: Turns structured Jev judgments into playable feedback, pass thresholds, and leaderboard results that show how arguments affect release probability.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/bugkiwi/turing-jail/) · 라이선스: 명시되지 않음
 
 
 ## 분야별 도구
@@ -1083,6 +1113,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: Jev의 확률·선택·채점을 상태 전환이나 모델 선택에 사용한다.
   - **프로젝트의 용도**: Effect 의존성·오류 처리에 통합하며 재시도와 기한은 앱에서 설정한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/danieljvdm/effect-agent/) · 라이선스: MIT
+
+- [**typesafe-sdk-python**](https://github.com/typesafe-ai/typesafe-sdk-python) — The official Python library for the TypeSafe API, offering synchronous and asynchronous clients with type definitions for Jev.
+  - **Jev가 판단하는 지점**: Wraps systemOne requests with typed input state and structured decision outputs in Python.
+  - **프로젝트의 용도**: Official foundation library featuring Pydantic validation and async concurrency support.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/typesafe-ai/typesafe-sdk-python/) · 라이선스: MIT
 
 - [**jev-visual**](https://github.com/hr98w/jev-visual) — Jev에서 영감을 받은 Qwen/MLX 로컬 실험이며 TypeSafe Jev 모델 연동은 아닙니다. 관련 연구로 보존하되 실제 연동과 구분합니다.
   - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.

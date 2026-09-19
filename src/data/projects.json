@@ -26479,5 +26479,563 @@
       "issueBodySha256": "b7476f9ba6c47ed99065ea0ce4ee840e2d7aeead98cfc64a9bd6b7b2449e9c46",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/18"
     }
+  },
+  {
+    "id": "valentynkit:jev-belay",
+    "name": "jev-belay",
+    "author": "valentynkit",
+    "url": "https://github.com/valentynkit/jev-belay",
+    "repoId": 1376389349,
+    "category": "Decision Tools",
+    "plainSummary": "jev-belay：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "typed-decisions",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Claude Code Stop hook that blocks an unverified done. It reads the turn transcript locally and only spends a Jev call when files changed and no check has passed since; every error path lets the turn end.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T20:11:17Z",
+    "lastCommitAt": "2026-09-19T09:11:26Z",
+    "headSha": "98f39e04492068e39b48962183acf43b4337da32",
+    "metadataFetchedAt": "2026-09-19T10:38:58.878Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35431524?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T10:38:58.878Z",
+    "evidence": [
+      {
+        "url": "https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/tools/fake-jev.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/belay.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "98f39e04492068e39b48962183acf43b4337da32",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/README.md",
+          "hash": "6bd14bd49ca79055c3e1e00bc310af5470acfcb9f10343f1b5a187adc97914ce"
+        },
+        {
+          "path": "tools/fake-jev.mjs",
+          "url": "https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/tools/fake-jev.mjs",
+          "hash": "935b99c88b6d949fb4a1d7f1087ffbcf5420f9a6b3470a2d99bdd58329794d22"
+        },
+        {
+          "path": "belay.mjs",
+          "url": "https://github.com/valentynkit/jev-belay/blob/98f39e04492068e39b48962183acf43b4337da32/belay.mjs",
+          "hash": "ce5832eca4cf9dc94dcaf34089a58d1e660f3b000f75d4f60da1354d15a6b863"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 17,
+      "issueBodySha256": "66f2e19aa545f83d50561c07b519f16be24b6dedf266c08be2d1479f482b9d6a",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/17"
+    }
+  },
+  {
+    "id": "valentynkit:jev.nvim",
+    "name": "jev.nvim",
+    "author": "valentynkit",
+    "url": "https://github.com/valentynkit/jev.nvim",
+    "repoId": 1376389440,
+    "category": "Decision Tools",
+    "plainSummary": "jev.nvim：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPointEn": "Treesitter splits the buffer into functions; one request scores each function against the question; implementation in lua/. The README compares against a regex grep on a twelve-file fixture corpus, no accuracy claim beyond that.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "typed-decisions",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Neovim plugin: type a plain-language question, every function in the buffer gets judged, answers land in quickfix ranked by probability.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      },
+      "jevDecisionPointEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T20:11:23Z",
+    "lastCommitAt": "2026-09-19T07:52:26Z",
+    "headSha": "a1577b0ec874208377e5f38496577d2b8797ab11",
+    "metadataFetchedAt": "2026-09-19T10:39:10.754Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35431524?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T10:39:10.754Z",
+    "evidence": [
+      {
+        "url": "https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/plugin/jev.lua",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/lua/jev/client.lua",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "a1577b0ec874208377e5f38496577d2b8797ab11",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/README.md",
+          "hash": "6d24731fccc2c60f2e3c4386d021660d9aff73923483f7b7bd640bcb3644f5ca"
+        },
+        {
+          "path": "plugin/jev.lua",
+          "url": "https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/plugin/jev.lua",
+          "hash": "5204ac289610ce805ad956473f63502bd301399a1f876c510d1e6ce9fb20cd6d"
+        },
+        {
+          "path": "lua/jev/client.lua",
+          "url": "https://github.com/valentynkit/jev.nvim/blob/a1577b0ec874208377e5f38496577d2b8797ab11/lua/jev/client.lua",
+          "hash": "9016fbd57f4394a56f92257a4038e820bc186f6dff40bf89c2fc9d1d5bf239e1"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 19,
+      "issueBodySha256": "73fdb2b10858c1bebbfb58c4259be80ccebf6998044f291e58f6d3a948e2528f",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/19"
+    }
+  },
+  {
+    "id": "valentynkit:jev-skip",
+    "name": "jev-skip",
+    "author": "valentynkit",
+    "url": "https://github.com/valentynkit/jev-skip",
+    "repoId": 1376393874,
+    "category": "Decision Tools",
+    "plainSummary": "jev-skip：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "typed-decisions",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Browser extension that skips YouTube sponsor reads on videos nobody has labeled, from the caption track alone, and paints a probability per segment on the seek bar.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T20:16:28Z",
+    "lastCommitAt": "2026-09-19T09:38:56Z",
+    "headSha": "6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628",
+    "metadataFetchedAt": "2026-09-19T10:39:21.231Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35431524?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T10:39:21.231Z",
+    "evidence": [
+      {
+        "url": "https://github.com/valentynkit/jev-skip/blob/6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev-skip/blob/6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628/lib/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/valentynkit/jev-skip/blob/6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628/README.md",
+          "hash": "7bc2d8ce7df56036cedcde60d770bd07a5882d8c0165694e2b810fb86795945b"
+        },
+        {
+          "path": "lib/jev.ts",
+          "url": "https://github.com/valentynkit/jev-skip/blob/6837e3e0f1a48cbfc48c85415d99bcfe3eaf0628/lib/jev.ts",
+          "hash": "268bdb8bd25253e01056bd764cefb5ce668c6f03e5a215c0258ea457f3dba7ac"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 20,
+      "issueBodySha256": "57122618ca624b42ee97684947dc6528107fbac26d92aa3b691eae5b5e29a7b3",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/20"
+    }
+  },
+  {
+    "id": "valentynkit:jev-plays-pokemon-red",
+    "name": "jev-plays-pokemon-red",
+    "author": "valentynkit",
+    "url": "https://github.com/valentynkit/jev-plays-pokemon-red",
+    "repoId": 1376389550,
+    "category": "Decision Tools",
+    "plainSummary": "jev-plays-pokemon-red：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPointEn": "Choice questions at battle actions, blocked-tile sidesteps and dialogue menus; a Noul faints_this_turn on every battle turn is labelled from RAM on the next turn and scored by Brier in uv run measure. Speed and cost numbers are deliberately blank in the README until a full playthrough is measured; implementation in src/.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "typed-decisions",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Pokemon Red on PyBoy where code owns the route and the arithmetic and Jev picks only where the game branches.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      },
+      "jevDecisionPointEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T20:11:29Z",
+    "lastCommitAt": "2026-09-19T09:30:51Z",
+    "headSha": "cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af",
+    "metadataFetchedAt": "2026-09-19T10:39:31.715Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35431524?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T10:39:31.715Z",
+    "evidence": [
+      {
+        "url": "https://github.com/valentynkit/jev-plays-pokemon-red/blob/cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/valentynkit/jev-plays-pokemon-red/blob/cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af/src/jpp/policy.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/valentynkit/jev-plays-pokemon-red/blob/cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af/README.md",
+          "hash": "b1b7d686cde0f8566d4053c48bc056d04f00a198ebdd21679decd91d573551b8"
+        },
+        {
+          "path": "src/jpp/policy.py",
+          "url": "https://github.com/valentynkit/jev-plays-pokemon-red/blob/cbe5387aeb6c7b3ef6b1f67d4a95e284aee3b0af/src/jpp/policy.py",
+          "hash": "1cda5eb3eec11e7e3fc57b008a145e8074011173a5b51dc12e72962935c98f57"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 21,
+      "issueBodySha256": "678b7b0e555f183a1d5613a899ddb8e3a9cb4fbd665c1c74826caedea03b2cb1",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/21"
+    }
+  },
+  {
+    "id": "bugkiwi:elons-job",
+    "pinned": false,
+    "name": "elons-job",
+    "author": "bugkiwi",
+    "url": "https://github.com/bugkiwi/elons-job",
+    "category": "Context GC & Filter",
+    "plainSummary": "本地优先的 Chrome 扩展：先用规则筛选 X 回复，再让 Jev 判断色情、性暗示和引流内容，并提供可恢复的隐藏占位符。",
+    "plainSummaryEn": "Local-first Chrome extension that uses Jev to filter sexual and solicitation content in X replies with reversible hidden placeholders.",
+    "jevDecisionPoint": "将 X 详情页回复编译为 Jev Noul 判断问题，由本地阈值、规则和重复模板信号共同决定是否隐藏。",
+    "jevDecisionPointEn": "Scores X reply text with Jev Noul questions for sexual content, solicitation, and spam, then combines probabilities with local thresholds and structural signals.",
+    "highlightBenefit": "结合本地规则、缓存、并发与成本保护以及 Fail-Open 设计；不需要 X 官方 API，隐藏内容可以恢复。",
+    "highlightBenefitEn": "Combines local rules, caching, concurrency and cost controls, and fail-open handling; it requires no X API and keeps hidden comments recoverable.",
+    "claimStatus": "README 与源码展示 TypeSafe System One 接入及确定性 mock 测试；本站未独立运行或复测。",
+    "claimStatusEn": "The README and source show TypeSafe System One integration and deterministic mock tests; not independently run or performance-tested by this site.",
+    "tags": [
+      "context-compaction",
+      "browser-automation",
+      "security-guardrails"
+    ],
+    "evidenceNote": "src/background.js 与 src/shared/core.js 固定于 be01f86，分别实现 TypeSafe System One 客户端和 Jev Noul 规则编译/判定。",
+    "metricLabel": "Reply Filter",
+    "metricContext": "X 回复内容治理",
+    "repo": "bugkiwi/elons-job",
+    "repoId": 1375432241,
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-18T05:46:42Z",
+    "pushedAt": "2026-09-19T03:55:14Z",
+    "lastCommitAt": "2026-09-19T03:54:42Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1936250?v=4",
+    "language": "JavaScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "be01f869871fcda5841fb77df3df6e46abbda493",
+    "sourceUrl": "https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/background.js#L46-L101",
+    "sourcePath": "src/background.js",
+    "evidenceLines": "L46-L101",
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "source-reviewed",
+    "metadataFetchedAt": "2026-09-19T10:39:31.715Z",
+    "evidence": [
+      {
+        "url": "https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/README.md",
+        "note": "固定版本的 Jev 集成与项目说明"
+      },
+      {
+        "url": "https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/background.js#L46-L101",
+        "note": "TypeSafe System One 客户端与 Noul 请求实现"
+      },
+      {
+        "url": "https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/shared/core.js#L220-L327",
+        "note": "Jev Noul 规则编译、概率解析与阈值判定"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "be01f869871fcda5841fb77df3df6e46abbda493",
+      "files": [
+        {
+          "path": "src/background.js",
+          "url": "https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/background.js",
+          "hash": "e1756e2aa3178d8dfde59f48f87b962485c73cf6"
+        },
+        {
+          "path": "src/shared/core.js",
+          "url": "https://github.com/bugkiwi/elons-job/blob/be01f869871fcda5841fb77df3df6e46abbda493/src/shared/core.js",
+          "hash": "131e5c4ad4417b7659dfe403f9d31dab0fa842db"
+        }
+      ]
+    }
+  },
+  {
+    "id": "bugkiwi:turing-jail",
+    "pinned": false,
+    "name": "turing-jail",
+    "author": "bugkiwi",
+    "url": "https://github.com/bugkiwi/turing-jail",
+    "category": "Decision Tools",
+    "plainSummary": "由 TypeSafe Jev System One 驱动的三关 AI 审讯游戏：通过求情、逻辑与悖论测试，争取获得释放。",
+    "plainSummaryEn": "Interactive three-level AI interrogation game powered by TypeSafe Jev; write responses and pass plea, logic, and paradox verdicts to earn release.",
+    "jevDecisionPoint": "每一关评估 prisoner_response 的释放概率、求情、逻辑与悖论信号，同时用 Choice 识别说服策略、用 Score 评估说服力。",
+    "jevDecisionPointEn": "For each level, Jev evaluates release probability plus plea, logic, and paradox signals, then selects a persuasion tactic and scores persuasiveness.",
+    "highlightBenefit": "把结构化 Jev 判断变成可玩的反馈、门槛和排行榜结果，让用户直观看见不同论证如何影响释放概率。",
+    "highlightBenefitEn": "Turns structured Jev judgments into playable feedback, pass thresholds, and leaderboard results that show how arguments affect release probability.",
+    "claimStatus": "开源 TypeScript Web 游戏，支持中文、英文和德文，并将每次完成的三关结果保存为可分享记录。",
+    "claimStatusEn": "Source-reviewed integration record; runtime behavior and performance were not independently retested by this site.",
+    "tags": [
+      "typed-decisions",
+      "games-simulation"
+    ],
+    "evidenceNote": "server.ts 固定于 629ff1b，直连 Jev System One，并提交 noul、score、choice 三类问题；本站未独立复测运行或性能。",
+    "metricLabel": "3 levels",
+    "metricContext": "Plea · Logic · Paradox",
+    "repo": "bugkiwi/turing-jail",
+    "repoId": 1374144235,
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-17T08:23:53Z",
+    "updatedAt": "2026-09-18T03:19:24Z",
+    "pushedAt": "2026-09-18T03:19:20Z",
+    "lastCommitAt": "2026-09-18T03:18:57Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1936250?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "629ff1b5617800d851811ce4379845f5ac59f729",
+    "sourceUrl": "https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/server.ts#L91-L123",
+    "sourcePath": "server.ts",
+    "evidenceLines": "L91-L123",
+    "verificationStatus": "verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "metadataFetchedAt": "2026-09-19T10:39:31.715Z",
+    "evidence": [
+      {
+        "url": "https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/README.md",
+        "note": "固定版本的项目说明"
+      },
+      {
+        "url": "https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/server.ts#L91-L123",
+        "note": "固定版本的 Jev 集成与源码实现"
+      }
+    ],
+    "sourceVerification": {
+      "method": "human-source-review",
+      "sha": "629ff1b5617800d851811ce4379845f5ac59f729",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/README.md",
+          "hash": "f665215b3117429d80499c57989a9cb58f3d593c",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "server.ts",
+          "url": "https://github.com/bugkiwi/turing-jail/blob/629ff1b5617800d851811ce4379845f5ac59f729/server.ts",
+          "hash": "21b84d3af0e85c320e451c7ed29af900549078de",
+          "hashType": "git-blob-sha1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "typesafe-ai:typesafe-sdk-python",
+    "pinned": false,
+    "name": "typesafe-sdk-python",
+    "author": "typesafe-ai",
+    "url": "https://github.com/typesafe-ai/typesafe-sdk-python",
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "TypeSafe 官方发布的 Python SDK，提供与 Jev 交互的异步与同步客户端以及类型定义。",
+    "plainSummaryEn": "The official Python library for the TypeSafe API, offering synchronous and asynchronous clients with type definitions for Jev.",
+    "jevDecisionPoint": "封装 systemOne 请求，支持同步与异步提交状态并获取类型化决策判定。",
+    "jevDecisionPointEn": "Wraps systemOne requests with typed input state and structured decision outputs in Python.",
+    "highlightBenefit": "官方核心基础库，支持 Pydantic 模型校验与现代 Python 异步并发。",
+    "highlightBenefitEn": "Official foundation library featuring Pydantic validation and async concurrency support.",
+    "claimStatus": "TypeSafe 官方开源基础组件，已核验源码与 API 契约。",
+    "claimStatusEn": "Official open-source foundation library from TypeSafe; reviewed source code and API contracts.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "evidenceNote": "TypeSafe 官方 Python SDK，直连 Jev System One 端点。",
+    "metricLabel": "Official SDK",
+    "metricContext": "TypeSafe 官方库",
+    "repo": "typesafe-ai/typesafe-sdk-python",
+    "repoId": 1357590729,
+    "stars": 101,
+    "forks": 11,
+    "openIssues": 2,
+    "license": "MIT",
+    "createdAt": "2026-09-04T21:01:31Z",
+    "updatedAt": "2026-09-19T09:47:30Z",
+    "pushedAt": "2026-09-18T09:11:54Z",
+    "lastCommitAt": "2026-09-18T09:11:54Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/171090879?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "581dc225f6e8fa134d193d567c9c8e8efb54a242",
+    "sourceUrl": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/src/typesafe/client.py",
+    "sourcePath": "src/typesafe/client.py",
+    "evidenceLines": [],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "metadataFetchedAt": "2026-09-19T10:39:31.715Z",
+    "evidence": [
+      {
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/README.md",
+        "note": "官方 Python SDK 说明与文档"
+      },
+      {
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/src/typesafe/client.py",
+        "note": "TypeSafeClient 客户端实现"
+      }
+    ]
   }
 ]
