@@ -189,9 +189,9 @@ test('tag selection preserves compatible context and clears conflicting filters 
     const {tagSelectionState} = await server.ssrLoadModule('/src/App.tsx');
     const rows = [{id:'logicrw:example',category:'Browser & OS Action',stars:1200,tags:['browser-automation']}, {id:'logicrw:other',category:'MCP & Integrations',stars:5,tags:['mcp-integrations']}];
     const state = {q:'specific project', category:'Browser & OS Action', tag:'all', quickFilter:'popular', sort:'updated', onlySaved:true};
-    assert.deepEqual(tagSelectionState(state,'browser-automation',rows,['logicrw:example']), {...state,q:'',tag:'browser-automation'});
-    assert.deepEqual(tagSelectionState(state,'MCP',rows,['logicrw:example']), {...state,q:'',tag:'mcp-integrations',category:'all',quickFilter:'all',onlySaved:false});
-    assert.deepEqual(tagSelectionState(state,'all',rows), {...state,q:'',tag:'all'});
+    assert.deepEqual(tagSelectionState(state,'browser-automation',rows,['logicrw:example']), {...state,tag:'browser-automation'});
+    assert.deepEqual(tagSelectionState(state,'MCP',rows,['logicrw:example']), {...state,tag:'mcp-integrations',category:'all',quickFilter:'all',onlySaved:false});
+    assert.deepEqual(tagSelectionState(state,'all',rows), {...state,tag:'all'});
   } finally { await server.close(); }
 });
 

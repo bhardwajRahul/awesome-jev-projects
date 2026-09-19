@@ -190,6 +190,32 @@ const validProject = (x: unknown): x is Project => {
         )))
   );
 };
+export const CATALOG_REVALIDATE_MS = 60_000;
+export const EXPLORER_URL_DEBOUNCE_MS = 250;
+export function parseProjectSnapshot(rows: unknown): Project[] | null {
+  if (!Array.isArray(rows) || rows.length === 0) return null;
+  const validRows = rows.filter(validProject);
+  return validRows.length === 0 ? null : validRows;
+}
+export function catalogAddedCount(
+  previous: readonly Pick<Project, "id">[],
+  next: readonly Pick<Project, "id">[],
+): number {
+  const previousIds = new Set(previous.map((project) => project.id));
+  return next.reduce((count, project) => count + (previousIds.has(project.id) ? 0 : 1), 0);
+}
+export function catalogFingerprint(
+  rows: readonly Pick<Project, "id" | "stars" | "metadataFetchedAt">[],
+): string {
+  return rows.map((project) => `${project.id}:${project.stars ?? ""}:${project.metadataFetchedAt ?? ""}`).join("\n");
+}
+export function shouldRevalidateCatalog(
+  lastAt: number,
+  now: number,
+  minInterval = CATALOG_REVALIDATE_MS,
+): boolean {
+  return now - lastAt >= minInterval;
+}
 function ProjectAvatar({ project }: { project: Project }) {
   const [result, setResult] = useState<{ src: string; ok: boolean } | null>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -323,9 +349,7 @@ export function readExplorerState(search = "", projects?: readonly Pick<Project,
     onlySaved: params.get("saved") === "1",
   };
 }
-export function localeNavigationUrl(currentUrl: string, next: Locale, state: ExplorerState, base = "/awesome-jev-projects/"): URL {
-  const url = new URL(currentUrl);
-  url.pathname = `${base}${next === "zh" ? "" : `${next}/`}`;
+export function writeExplorerSearchParams(params: URLSearchParams, state: ExplorerState): URLSearchParams {
   for (const [key, value] of Object.entries({
     q: state.q,
     category: state.category === "all" ? "" : state.category,
@@ -334,11 +358,18 @@ export function localeNavigationUrl(currentUrl: string, next: Locale, state: Exp
     stars: "",
     sort: state.sort === "stars" ? "" : state.sort,
     saved: state.onlySaved ? "1" : "",
-    lang: next === "zh" ? "zh" : "",
   })) {
-    if (value) url.searchParams.set(key, value);
-    else url.searchParams.delete(key);
+    if (value) params.set(key, value);
+    else params.delete(key);
   }
+  return params;
+}
+export function localeNavigationUrl(currentUrl: string, next: Locale, state: ExplorerState, base = "/awesome-jev-projects/"): URL {
+  const url = new URL(currentUrl);
+  url.pathname = `${base}${next === "zh" ? "" : `${next}/`}`;
+  writeExplorerSearchParams(url.searchParams, state);
+  if (next === "zh") url.searchParams.set("lang", "zh");
+  else url.searchParams.delete("lang");
   return url;
 }
 const projectHasTag = (project: Pick<Project, "tags">, id: string) =>
@@ -347,7 +378,7 @@ export function tagSelectionState(
   state: ExplorerState, requested: string,
   projects: readonly Project[], saved: readonly string[] = [],
 ): ExplorerState {
-  const next = { ...state, tag: resolveTagId(requested) ?? "all", q: "" };
+  const next = { ...state, tag: resolveTagId(requested) ?? "all" };
   if (next.tag === "all" || projects.some((project) =>
     projectHasTag(project, next.tag) &&
     (next.category === "all" || project.category === next.category) &&
@@ -397,36 +428,72 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     document.querySelector('meta[name="description"]')?.setAttribute("content", localeMeta[locale].description);
   }, [locale]);
   const [projects, setProjects] = useState<Project[]>(() => initialProjects?.filter(validProject) ?? []);
+  const projectsRef = useRef(projects);
+  projectsRef.current = projects;
+  const catalogEtagRef = useRef<string | null>(null);
+  const lastCatalogRevalidateAt = useRef(0);
+  const [catalogAdded, setCatalogAdded] = useState(0);
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">(
     initialProjects ? "ready" : "loading",
   );
   const [loadAttempt, setLoadAttempt] = useState(0);
   useEffect(() => {
-    if (initialProjects && loadAttempt === 0) return;
+    if (typeof window === "undefined") return;
     const controller = new AbortController();
-    setLoadState("loading");
-    fetch(`${import.meta.env.BASE_URL}projects.json`, {
-      signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15000)]),
-    })
-      .then((response) => {
-        if (!response.ok) throw new Error("Project snapshot unavailable");
-        return response.json();
+    let cancelled = false;
+    const revalidate = (force = false) => {
+      const now = Date.now();
+      if (!force && !shouldRevalidateCatalog(lastCatalogRevalidateAt.current, now)) return;
+      lastCatalogRevalidateAt.current = now;
+      if (projectsRef.current.length === 0) setLoadState("loading");
+      const headers = new Headers();
+      if (catalogEtagRef.current) headers.set("If-None-Match", catalogEtagRef.current);
+      fetch(`${import.meta.env.BASE_URL}projects.json`, {
+        cache: "no-cache",
+        headers,
+        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15000)]),
       })
-      .then((rows) => {
-        if (!Array.isArray(rows) || rows.length === 0) {
-          throw new Error("Empty project snapshot");
-        }
-        const validRows = rows.filter(validProject);
-        if (validRows.length === 0) {
-          throw new Error("No valid projects found");
-        }
-        setProjects(validRows);
-        setLoadState("ready");
-      })
-      .catch(() => {
-        if (!controller.signal.aborted) setLoadState("error");
-      });
-    return () => controller.abort();
+        .then(async (response) => {
+          const etag = response.headers.get("ETag");
+          if (etag) catalogEtagRef.current = etag;
+          if (response.status === 304) return null;
+          if (!response.ok) throw new Error("Project snapshot unavailable");
+          return response.json();
+        })
+        .then((rows) => {
+          if (cancelled || rows == null) return;
+          const validRows = parseProjectSnapshot(rows);
+          if (!validRows) throw new Error("Empty project snapshot");
+          const previous = projectsRef.current;
+          if (catalogFingerprint(previous) === catalogFingerprint(validRows)) {
+            setLoadState("ready");
+            return;
+          }
+          const added = catalogAddedCount(previous, validRows);
+          setProjects(validRows);
+          setLoadState("ready");
+          if (added > 0 && previous.length > 0) setCatalogAdded(added);
+        })
+        .catch(() => {
+          if (cancelled || controller.signal.aborted) return;
+          if (projectsRef.current.length === 0) setLoadState("error");
+        });
+    };
+    revalidate(true);
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") revalidate(false);
+    };
+    const onPageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) revalidate(false);
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("pageshow", onPageShow);
+    return () => {
+      cancelled = true;
+      controller.abort();
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("pageshow", onPageShow);
+    };
   }, [loadAttempt, initialProjects]);
   const updatedAt = useMemo(
     () =>
@@ -449,6 +516,34 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   const [saved, setSaved] = useState<string[]>(getSaved);
   const [onlySaved, setOnlySaved] = useState(initialExplorer.onlySaved);
   const [showFilters, setShowFilters] = useState(initialExplorer.tag !== "all");
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onPopState = () => {
+      const next = readExplorerState(window.location.search, projectsRef.current);
+      setQuery(next.q);
+      setSearchTerm(next.q);
+      setCategory(next.category);
+      setTag(next.tag);
+      setQuickFilter(next.quickFilter);
+      setSort(next.sort);
+      setOnlySaved(next.onlySaved);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const timer = window.setTimeout(() => {
+      const url = new URL(window.location.href);
+      writeExplorerSearchParams(url.searchParams, {
+        q: query, category, tag, quickFilter, sort, onlySaved,
+      });
+      const next = `${url.pathname}${url.search}${url.hash}`;
+      const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+      if (next !== current) history.replaceState(history.state, "", next);
+    }, EXPLORER_URL_DEBOUNCE_MS);
+    return () => window.clearTimeout(timer);
+  }, [query, category, tag, quickFilter, sort, onlySaved]);
   useEffect(() => {
     if (loadState !== "ready") return;
     if (category !== "all" && !projects.some((p) => p.category === category)) setCategory("all");
@@ -516,6 +611,11 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
       return () => clearTimeout(t);
     }
   }, [toast]);
+  useEffect(() => {
+    if (!catalogAdded) return;
+    const timer = setTimeout(() => setCatalogAdded(0), 5600);
+    return () => clearTimeout(timer);
+  }, [catalogAdded]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.isComposing) return;
@@ -886,6 +986,11 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   return (
     <>
       <a className="skip-link" href="#project-results">{t("跳转到项目列表")}</a>
+      {catalogAdded > 0 && (
+        <div className="catalog-notice" role="status">
+          {t("目录已更新 (新增 N 个项目)，已自动同步").replace("N", String(catalogAdded))}
+        </div>
+      )}
       <header className="header">
         <a
           className="brand"
