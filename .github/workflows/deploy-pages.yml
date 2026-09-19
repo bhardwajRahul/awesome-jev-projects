@@ -71,10 +71,18 @@ jobs:
       - run: npm ci --ignore-scripts --no-fund --no-audit
       - run: npm test
       - run: npm run build
-      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+      # upload-pages-artifact excludes every hidden path, including .well-known.
+      # Archive only the audited dist, then verify every file survives packaging.
+      - name: Package complete Pages site
+        run: |
+          tar -C dist -cf "$RUNNER_TEMP/artifact.tar" .
+          node scripts/audit-pages-archive.mjs "$RUNNER_TEMP/artifact.tar"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          path: dist
-          include-hidden-files: true
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
   deploy:
     needs: build
     permissions:
