@@ -36,6 +36,10 @@ export const english: Record<string, string> = {
   "接入证据待复核，暂不作为已验证项目推荐。": "Integration evidence is under review; this is not a verified recommendation.",
 
   "许可未声明": "License not declared",
+  "暂无开源协议": "No license specified",
+  "开源协议": "License",
+  "代码已公开开源，作者暂未指定标准许可证文件": "Source code is publicly available; standard license file not yet specified",
+  "代码公开可用，未附带标准 LICENSE 文件": "Source code is publicly available; standard LICENSE file not included",
   "收集 Jev 开源与公开源码项目。": "Explore Jev open-source projects and public code.",
 
   "来源摘要": "Source summary",
@@ -294,6 +298,10 @@ export const japanese: Record<string, string> = {
   "Agent Skill 接入": "Agent Skill を導入",
 
   "许可未声明": "ライセンス未記載",
+  "暂无开源协议": "ライセンス未指定",
+  "开源协议": "ライセンス",
+  "代码已公开开源，作者暂未指定标准许可证文件": "ソースコードは公開されていますが、標準ライセンスは未指定です",
+  "代码公开可用，未附带标准 LICENSE 文件": "ソースコードは公開されていますが、標準 LICENSE ファイルは含まれていません",
   "收集 Jev 开源与公开源码项目。": "Jev のオープンソースと公開コードを探す。",
 
   "来源摘要": "出典からの要約",
@@ -489,6 +497,10 @@ export const korean: Record<string, string> = {
   "Agent Skill 接入": "Agent Skill 연동",
 
   "许可未声明": "라이선스 미명시",
+  "暂无开源协议": "라이선스 미지정",
+  "开源协议": "라이선스",
+  "代码已公开开源，作者暂未指定标准许可证文件": "소스 코드는 공개되어 있으나 표준 라이선스는 미지정 상태입니다",
+  "代码公开可用，未附带标准 LICENSE 文件": "소스 코드는 공개되어 있으나 표준 LICENSE 파일은 포함되어 있지 않습니다",
   "收集 Jev 开源与公开源码项目。": "Jev 오픈소스 및 공개 소스 코드 프로젝트를 살펴보세요.",
 
   "来源摘要": "출처 요약",

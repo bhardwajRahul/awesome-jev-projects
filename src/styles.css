@@ -394,8 +394,10 @@ p { margin: 0; }
 .active-filters .reset-all { background: transparent; text-decoration: underline; }
 .load-more { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 28px 0 8px; }
 .load-more .button { min-width: 190px; min-height: 44px; justify-content: center; }
-.result-footer > span:last-child > svg { margin-top: 3px; }
-.license-note { color: var(--brass); background: var(--brass-soft); border-radius: 4px; padding: 2px 6px; font-size: 10px; white-space: nowrap; }
+.license-note { display: inline-flex; align-items: center; color: var(--text-muted); background: var(--surface-inset); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-size: 10px; line-height: 1.5; white-space: nowrap; font-weight: 500; letter-spacing: 0.01em; transition: border-color 150ms ease; }
+.license-note:hover { border-color: var(--border-strong); }
+.license-note.is-unconfirmed { opacity: 0.9; }
+.license-hint { font-size: 12px; color: var(--text-muted); font-weight: normal; }
 .agent-copy-status { font-size: 12px; line-height: 1.6; color: var(--text-muted); }
 .agent-copy-status:empty { display: none; }
 .footer .footer-link-button { min-height: 36px; font-size: 12px; color: var(--text-muted); }
