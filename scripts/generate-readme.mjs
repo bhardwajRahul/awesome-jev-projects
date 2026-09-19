@@ -109,10 +109,10 @@ for (const locale of LOCALES) {
     `<a href="${REPOSITORY}/issues/new?template=project.yml">🚀 <b>${c.submit}</b></a>`
   ].join(" &nbsp;｜&nbsp; ");
   const whyTitle = {
-    zh: "💡 为什么关注 Jev 与 System-1 决策架构？",
-    en: "💡 Why Jev & System-1 Decision Architecture?",
-    ja: "💡 なぜ Jev と System-1 意思決定アーキテクチャなのか？",
-    ko: "💡 왜 Jev와 System-1 결정 아키텍처인가?"
+    zh: "💡 **为什么关注 Jev 与 System-1 决策架构？**",
+    en: "💡 **Why Jev & System-1 Decision Architecture?**",
+    ja: "💡 **なぜ Jev と System-1 意思決定アーキテクチャなのか？**",
+    ko: "💡 **왜 Jev와 System-1 결정 아키텍처인가?**"
   }[locale];
   const whyBody = {
     zh: `构建自主智能体（Agent）时，如果把每一个分支选项都交给秒级响应的大推理模型（System 2），不仅**延迟高、成本高**，而且极易发生上下文漂移。\n\n**TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：\n- ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。\n- 🎯 **原生确定性输出**：原生支持 \`Choice\`（多选一）、\`Score\`（打分）与 \`Noul\`（二元逻辑与概率），免去易碎的正则提取。\n- 🛡️ **严格拒绝概念炒作**：全网严选 **${projects.length}+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。`,

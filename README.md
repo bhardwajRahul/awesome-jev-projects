@@ -22,7 +22,7 @@
 
 </div>
 
-## 💡 Why Jev & System-1 Decision Architecture?
+## 💡 **Why Jev & System-1 Decision Architecture?**
 
 When building autonomous agents, routing every small branching decision to a heavy reasoning model (System 2) incurs seconds of latency, runaway token costs, and context drift.
 
