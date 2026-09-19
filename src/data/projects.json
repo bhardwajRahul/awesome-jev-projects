@@ -25797,19 +25797,19 @@
     "url": "https://github.com/valentynkit/jev-commit",
     "repoId": 1376389177,
     "category": "Decision Tools",
-    "plainSummary": "commit-msg 钩子：一次 Jev 调用对照暂存 diff 判断提交说明，默认只警告；新增行里像密钥的内容才会拦住提交。",
-    "jevDecisionPoint": "一次请求里用五个 Noul 判断：说明是否可核对、是否与 hunk 相符、是否留下调试代码、是否有未提及改动、新增行是否像密钥。",
-    "jevDecisionPointEn": "Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines.",
+    "plainSummary": "commit-msg 钩子：一次 Jev 请求对照暂存 diff 给提交说明打五个 Noul，默认只警告。默认拦住提交的是本地正则腰带对新增行的高置信命中；secret_shaped Noul 只在 --strict 时参与拦截。",
+    "jevDecisionPoint": "一次请求里五个 Noul：说明是否可核对、是否与 hunk 相符、是否留下调试代码、是否有未提及改动、新增行是否像密钥。默认拦截来自正则腰带；secret_shaped 只在 --strict 下参与拦截。",
+    "jevDecisionPointEn": "Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines. Default blocking is the regex belt; secret_shaped participates only under --strict.",
     "highlightBenefit": "把提交说明核对做成可设阈值的概率，而不是再读一段模型评语；接口失败时仍放行提交。",
     "highlightBenefitEn": "Turns commit-message review into thresholded probabilities instead of prose; API failures still allow the commit.",
     "tags": [
       "typed-decisions",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充。自动检查已确认 Jev 集成证据。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
-    "plainSummaryEn": "A commit-msg hook that uses one Jev call to judge the message against the staged diff; it warns by default and only blocks a credential-shaped added line.",
+    "plainSummaryEn": "A commit-msg hook that scores the message against the staged diff with one Jev request of five Nouls and warns by default. Default blocking is a local regex belt on high-precision added-line hits; the secret_shaped Noul blocks only with --strict.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -25870,7 +25870,13 @@
       "issueNumber": 18,
       "issueBodySha256": "b7476f9ba6c47ed99065ea0ce4ee840e2d7aeead98cfc64a9bd6b7b2449e9c46",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/18"
-    }
+    },
+    "plainSummaryJa": "commit-msg フック。1 回の Jev リクエストで staged diff と照合し 5 つの Noul を付け、既定では警告のみ。既定の停止は追加行に対するローカル正規表現ベルトの高信頼ヒット。secret_shaped Noul は --strict のときだけ止める。",
+    "plainSummaryKo": "commit-msg 훅. Jev 요청 한 번으로 staged diff와 대조해 Noul 다섯 개를 매기고 기본은 경고만 한다. 기본으로 커밋을 막는 것은 추가 줄에 대한 로컬 정규식 벨트의 고정밀 적중이다. secret_shaped Noul은 --strict일 때만 막는다.",
+    "jevDecisionPointJa": "1 リクエストで 5 つの Noul。メッセージが照合可能か、hunk と一致するか、デバッグ残骸があるか、未言及の変更があるか、追加行が認証情報らしいか。既定の停止は正規表現ベルト。secret_shaped は --strict のときだけ。",
+    "jevDecisionPointKo": "한 요청에서 Noul 다섯 개. 메시지가 대조 가능한지, hunk와 맞는지, 디버그 잔여물이 있는지, 언급되지 않은 변경이 있는지, 추가 줄이 자격 증명처럼 보이는지. 기본 차단은 정규식 벨트다. secret_shaped는 --strict에서만 참여한다.",
+    "highlightBenefitJa": "コミットメッセージの照合をしきい値付き確率にし、モデルの評論文を読まなくてよい。API 失敗時もコミットは通す。",
+    "highlightBenefitKo": "커밋 메시지 대조를 임계값 있는 확률로 만들어 모델 평문을 읽지 않아도 된다. API가 실패해도 커밋은 통과한다."
   },
   {
     "id": "valentynkit:jev-belay",
@@ -25888,7 +25894,7 @@
       "typed-decisions",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充。自动检查已确认 Jev 集成证据。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
     "plainSummaryEn": "A Claude Code Stop hook that reads the turn transcript locally and calls Jev only when files changed and no check has passed, blocking an unverified “done”.",
@@ -25961,7 +25967,13 @@
       "issueNumber": 17,
       "issueBodySha256": "66f2e19aa545f83d50561c07b519f16be24b6dedf266c08be2d1479f482b9d6a",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/17"
-    }
+    },
+    "plainSummaryJa": "Claude Code の Stop フック。まずローカルで今ターンにファイル変更があったか、通過した検査があるかを見、そのときだけ Jev に終了文が未確認の完了宣言かを問う。",
+    "plainSummaryKo": "Claude Code Stop 훅. 먼저 로컬에서 이번 턴에 파일이 바뀌었는지, 통과한 검사가 있는지를 보고, 그때만 Jev에게 마무리 말이 확인되지 않은 완료 선언인지 묻는다.",
+    "jevDecisionPointJa": "4 問。終了文が完了を主張するか、検査通過を主張するか、このタスクに検査が意味を持つか、および complete / partial / blocked / other。",
+    "jevDecisionPointKo": "질문 네 개. 마무리 말이 완료를 주장하는지, 검사 통과를 주장하는지, 이 작업에 검사가 의미 있는지, 그리고 complete / partial / blocked / other.",
+    "highlightBenefitJa": "通過した検査があればリクエストを出さない。エラー時は通して、フックがセッションを止めない。",
+    "highlightBenefitKo": "통과한 검사가 있으면 요청을 보내지 않는다. 오류 시에는 통과시켜 훅이 세션을 멈추지 않게 한다."
   },
   {
     "id": "valentynkit:jev.nvim",
@@ -25970,19 +25982,19 @@
     "url": "https://github.com/valentynkit/jev.nvim",
     "repoId": 1376389440,
     "category": "Decision Tools",
-    "plainSummary": "Neovim 插件：用自然语言问当前 buffer，Treesitter 按函数切开，Jev 给每个函数打概率，结果按概率排进 quickfix。",
-    "jevDecisionPoint": "把同一问题套到每个函数的源码上，返回概率；达到阈值的写入 quickfix，低于阈值的只标记不丢弃。",
-    "jevDecisionPointEn": "Scores each Treesitter function against the user question in one request and ranks hits in quickfix by probability.",
+    "plainSummary": "Neovim 插件：用自然语言问当前 buffer，Treesitter 按函数切开，Jev 给每个函数打概率；全部命中按概率进入 quickfix。",
+    "jevDecisionPoint": "把同一问题套到每个函数的源码上，返回概率；装不下就拆成多次请求。全部命中写入 quickfix，只有达到阈值的才打 virtual text 标记。",
+    "jevDecisionPointEn": "Scores each Treesitter function against the user question, splitting across requests if the buffer does not fit. Every hit is listed in quickfix; only hits at or above the threshold get buffer marks.",
     "highlightBenefit": "用问题而不是正则找“会拼 SQL”这类跨语言形状，并直接接上已有的 quickfix 编辑流。",
     "highlightBenefitEn": "Finds cross-language shapes that grep misses, and lands the ranked hits in the existing quickfix loop.",
     "tags": [
       "typed-decisions",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充。自动检查已确认 Jev 集成证据。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
-    "plainSummaryEn": "A Neovim plugin that asks a plain-language question of every function in the buffer and ranks Jev probabilities in quickfix.",
+    "plainSummaryEn": "A Neovim plugin that asks a plain-language question of every function in the buffer and lists every Jev hit in quickfix, ranked by probability.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -26055,7 +26067,13 @@
       "issueNumber": 19,
       "issueBodySha256": "73fdb2b10858c1bebbfb58c4259be80ccebf6998044f291e58f6d3a948e2528f",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/19"
-    }
+    },
+    "plainSummaryJa": "Neovim プラグイン。自然言語で今の buffer に問い、Treesitter が関数単位に切り、Jev が各関数に確率を付ける。命中はすべて確率順で quickfix に入る。",
+    "plainSummaryKo": "Neovim 플러그인. 자연어로 현재 buffer에 묻고, Treesitter가 함수 단위로 나눈 뒤 Jev가 함수마다 확률을 매긴다. 모든 적중은 확률 순으로 quickfix에 올라간다.",
+    "jevDecisionPointJa": "同じ質問を各関数のソースに当てて確率を返す。収まらなければリクエストを分割する。命中はすべて quickfix に入り、しきい値以上だけ virtual text の印が付く。",
+    "jevDecisionPointKo": "같은 질문을 각 함수 소스에 대어 확률을 반환한다. 한 번에 안 들어가면 요청을 나눈다. 모든 적중은 quickfix에 들어가고, 임계값 이상만 virtual text 표시가 붙는다.",
+    "highlightBenefitJa": "正規表現ではなく質問で、SQL を文字列連結するといった言語横断の形を探し、既存の quickfix 編集に載せる。",
+    "highlightBenefitKo": "정규식이 아니라 질문으로 SQL을 이어 붙이는 같은 언어 간 모양을 찾고, 기존 quickfix 편집 흐름에 올린다."
   },
   {
     "id": "valentynkit:jev-skip",
@@ -26064,19 +26082,19 @@
     "url": "https://github.com/valentynkit/jev-skip",
     "repoId": 1376393874,
     "category": "Decision Tools",
-    "plainSummary": "Chrome 扩展：只读字幕，一次 Jev 调用给每段字幕分类，在进度条上画出片段，并按阈值跳过尚未人工标注的赞助口播。",
-    "jevDecisionPoint": "每个字幕片段一个 Choice：content、sponsor、intro、outro、self_promo、recap 或 other；达到阈值的 sponsor 才跳过。",
-    "jevDecisionPointEn": "One Choice per caption segment among content, sponsor, intro, outro, self_promo, recap, and other; only sponsor slices over the threshold are skipped.",
+    "plainSummary": "Chrome 扩展：只读字幕，把片段交给 Jev 分类（段数或 Token 预算超限就拆请求），在进度条上画出五类片段，并对达到阈值的 sponsor、self_promo、intro、outro、recap 自动跳过。",
+    "jevDecisionPoint": "每个字幕片段一个 Choice：content、sponsor、intro、outro、self_promo、recap 或 other。绘制并跳过的是 PAINTED 五类（sponsor、self_promo、intro、outro、recap）里概率达到阈值的片段；content 和 other 不跳过。",
+    "jevDecisionPointEn": "One Choice per caption segment among content, sponsor, intro, outro, self_promo, recap, and other. Painted categories sponsor, self_promo, intro, outro, and recap skip when probability is at or above the threshold; content and other never skip.",
     "highlightBenefit": "不必等 SponsorBlock 人工打点；没有字幕就不判断、也不跳过。",
     "highlightBenefitEn": "Works on videos nobody has labeled yet; with no captions it does nothing.",
     "tags": [
       "typed-decisions",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充。自动检查已确认 Jev 集成证据。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
-    "plainSummaryEn": "A browser extension that classifies YouTube caption segments with Jev and skips unlabeled sponsor reads, painting a probability per slice on the seek bar.",
+    "plainSummaryEn": "A browser extension that classifies YouTube caption segments with Jev, splitting requests when the segment or token budget is exceeded, paints five categories on the seek bar, and auto-skips those painted slices over the threshold.",
     "enrichment": {
       "issueTextTrusted": true,
       "ai": {
@@ -26137,7 +26155,13 @@
       "issueNumber": 20,
       "issueBodySha256": "57122618ca624b42ee97684947dc6528107fbac26d92aa3b691eae5b5e29a7b3",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/20"
-    }
+    },
+    "plainSummaryJa": "Chrome 拡張。字幕だけを読み、区間を Jev に分類させる（区間数や Token 予算を超えたらリクエストを分割）。シークバーに五類を描き、しきい値以上の sponsor、self_promo、intro、outro、recap を自動で飛ばす。",
+    "plainSummaryKo": "Chrome 확장. 자막만 읽고 구간을 Jev에 분류하며, 구간 수나 Token 예산이 넘으면 요청을 나눈다. 시크바에 다섯 종류를 그리고 임계값 이상인 sponsor, self_promo, intro, outro, recap을 자동으로 건너뛴다.",
+    "jevDecisionPointJa": "字幕区間ごとに Choice。content、sponsor、intro、outro、self_promo、recap、other。描画して飛ばすのは PAINTED の五類（sponsor、self_promo、intro、outro、recap）でしきい値以上のもの。content と other は飛ばさない。",
+    "jevDecisionPointKo": "자막 구간마다 Choice 하나. content, sponsor, intro, outro, self_promo, recap, other. 그리고 건너뛰는 것은 PAINTED 다섯 종류(sponsor, self_promo, intro, outro, recap) 중 임계값 이상인 구간이다. content와 other는 건너뛰지 않는다.",
+    "highlightBenefitJa": "SponsorBlock の人手打点を待たない。字幕がなければ判断もスキップもしない。",
+    "highlightBenefitKo": "SponsorBlock 사람 표시를 기다리지 않는다. 자막이 없으면 판단도 건너뛰기도 하지 않는다."
   },
   {
     "id": "valentynkit:jev-plays-pokemon-red",
@@ -26155,7 +26179,7 @@
       "typed-decisions",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充。自动检查已确认 Jev 集成证据。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
     "plainSummaryEn": "Pokemon Red on PyBoy where Python owns the route and the arithmetic, and Jev chooses only among legal actions at actual branches.",
@@ -26222,7 +26246,13 @@
       "issueNumber": 21,
       "issueBodySha256": "678b7b0e555f183a1d5613a899ddb8e3a9cb4fbd665c1c74826caedea03b2cb1",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/21"
-    }
+    },
+    "plainSummaryJa": "PyBoy 上の Pokemon Red。経路と算術はコードが持ち、ゲームが本当に分岐するときだけ Jev が既に合法な動作から 1 つ選ぶ。",
+    "plainSummaryKo": "PyBoy에서 Pokemon Red. 경로와 산술은 코드가 맡고, 게임이 실제로 갈라질 때만 Jev가 이미 적법한 동작 중 하나를 고른다.",
+    "jevDecisionPointJa": "合法動作の上で Choice。戦闘ターンは今ターンで倒れるか、逃げるべきかの Noul も問う。認識できない答えはコードの既定に従う。",
+    "jevDecisionPointKo": "적법한 동작에서 Choice. 전투 턴에는 이번 턴에 쓰러지는지, 도망가야 하는지도 Noul로 묻는다. 알아볼 수 없는 답은 코드 기본값을 쓴다.",
+    "highlightBenefitJa": "モデルは閉集合の選択だけし、局全体は計画しない。失敗してもスクリプトより緩くならない。",
+    "highlightBenefitKo": "모델은 닫힌 집합 선택만 하고 판 전체를 계획하지 않는다. 실패해도 스크립트보다 느슨해지지 않는다."
   },
   {
     "id": "bugkiwi:elons-job",
@@ -27172,7 +27202,7 @@
       "multilanguage-sdk",
       "typed-decisions"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "stars": 3,
     "forks": 0,
     "openIssues": 0,
@@ -27584,7 +27614,7 @@
       "search-retrieval",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "stars": 3,
     "forks": 0,
     "openIssues": 0,
@@ -28096,7 +28126,7 @@
       "llm-routing-cost",
       "coding-agents"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "stars": 174,
     "forks": 11,
     "openIssues": 8,
@@ -28230,25 +28260,25 @@
     "category": "Routing & Cost Optimization",
     "plainSummary": "OpenCode 编排器：会话停在廉价父模型上，Jev 判定本轮偏难时才通过工具拉起更强的子 Agent。",
     "jevDecisionPoint": "三个 Score 衡量任务、推理和工具复杂度，再 Choice 选出 fast / balanced / strong / long；本地策略决定停留、升级或并行。",
-    "highlightBenefit": "父模型上下文可以复用；只有判定为难的轮次才另开子 Agent。",
+    "highlightBenefit": "会话停在廉价父模型上；只有判定为难的轮次才另开更强的子 Agent。",
     "claimStatus": "源码已核验。包含决策提取与子智能体派发逻辑；子任务上下文隔离与合并质量取决于任务切分边界。",
     "plainSummaryEn": "An OpenCode orchestrator that keeps a cheap sticky parent model and, when Jev flags a hard turn, escalates through a child subagent.",
     "jevDecisionPointEn": "Scores task, reasoning, and tool complexity, then chooses fast / balanced / strong / long; local policy stays, escalates, or fans out.",
-    "highlightBenefitEn": "Keeps the parent model’s cache warm and opens a stronger child only when Jev flags a hard turn.",
+    "highlightBenefitEn": "Keeps a cheap sticky parent model and opens a stronger child only when Jev flags a hard turn.",
     "claimStatusEn": "Source code verified against pinned commit. Core routing and subagent dispatching verified; synthesis quality depends on task boundaries.",
     "plainSummaryJa": "OpenCode のオーケストレータ。セッションは安い親モデルに留め、Jev がこのターンを難しいと判定したときだけツール経由で強い子 Agent を立てる。",
     "jevDecisionPointJa": "3 つの Score でタスク・推論・ツールの複雑さを測り、Choice で fast / balanced / strong / long を選ぶ。ローカル方針が残留・エスカレーション・並列を決める。",
-    "highlightBenefitJa": "親モデルのコンテキストを再利用できる。難しいと判定されたターンだけ子 Agent を別途立てる。",
+    "highlightBenefitJa": "セッションは安い親モデルに留める。難しいと判定されたターンだけ、より強い子 Agent を別途立てる。",
     "claimStatusJa": "固定コミットのソースを確認済み。ルーティングおよびサブエージェント制御を確認。統合精度はタスク分割の粒度に依存します。",
     "plainSummaryKo": "OpenCode 오케스트레이터. 세션은 저비용 부모 모델에 두고, Jev가 이번 턴을 어렵다고 볼 때만 도구로 더 강한 자식 Agent를 띄운다.",
     "jevDecisionPointKo": "Score 셋으로 작업·추론·도구 복잡도를 재고 Choice로 fast / balanced / strong / long을 고른다. 로컬 정책이 유지, 승격, 병렬을 정한다.",
-    "highlightBenefitKo": "부모 모델의 컨텍스트를 재사용할 수 있다. 어렵다고 판정된 턴만 자식 Agent를 따로 연다.",
+    "highlightBenefitKo": "세션은 저비용 부모 모델에 둔다. 어렵다고 판정된 턴만 더 강한 자식 Agent를 따로 연다.",
     "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 라우팅 및 서브 에이전트 위임 로직을 확인했으나 분할 경계 설정에 영향을 받습니다.",
     "tags": [
       "llm-routing-cost",
       "coding-agents"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "stars": 0,
     "forks": 0,
     "openIssues": 0,
@@ -29755,7 +29785,7 @@
       "search-retrieval",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
     "plainSummaryEn": "A Polars library for parallel provider inference that also calls Jev per row as Noul, Choice, and Score questions, or as one typed contract over a document.",
@@ -29819,7 +29849,13 @@
       "issueNumber": 23,
       "issueBodySha256": "adf0163891fe2d30fe863e353f4a10862203ef55e0c1fbf4da9ed3750024e430",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/23"
-    }
+    },
+    "plainSummaryJa": "Polars 上の並列推論ライブラリ。チャットモデルは各社の補完 API を使い、Jev は行ごとに Noul、Choice、Score、または文書全体に型付き契約を当てる。",
+    "plainSummaryKo": "Polars 위의 병렬 추론 라이브러리. 채팅 모델은 각 제공자 완성 API를 쓰고, Jev는 행마다 Noul, Choice, Score를 하거나 문서 전체에 타입이 있는 계약을 씌운다.",
+    "jevDecisionPointJa": "行ごとに 1 つの state。複数の typed questions を 1 リクエストで返し、Noul / Choice / Score を信頼度付きの普通の列にする。",
+    "jevDecisionPointKo": "행마다 state 하나. typed questions 여러 개를 한 요청으로 돌려 Noul / Choice / Score를 신뢰도가 있는 일반 열로 만든다.",
+    "highlightBenefitJa": "閉集合の判断を既存の Polars バッチ列に載せ、チャット補完をもう一度走らせなくてよい。",
+    "highlightBenefitKo": "닫힌 집합 판단을 기존 Polars 배치 열에 붙여, 채팅 완성을 한 번 더 돌리지 않아도 된다."
   },
   {
     "id": "chy4pro:jevbrowserext",
@@ -29829,15 +29865,15 @@
     "repoId": 1376447184,
     "category": "Browser & OS Action",
     "plainSummary": "把 jev-ultrafast 做成 Manifest V3 Chrome 扩展：Jev 在当前标签里选操作和 DOM 元素，只有输入文字时才调用小型对话模型。",
-    "jevDecisionPoint": "一次请求选择 CLICK / TYPE_TEXT / SELECT / SCROLL / WAIT / DONE / BLOCKED 以及对应元素；另用独立是非题核对目标是否已达成、动作是否卡住。",
-    "jevDecisionPointEn": "Chooses an operation and its DOM target in one request, with separate yes/no checks for goal completion and a stuck loop.",
+    "jevDecisionPoint": "一次请求选择 CLICK、TYPE_TEXT、SELECT、SCROLL_DOWN、SCROLL_UP、PRESS_ENTER、WAIT、DONE 或 BLOCKED 以及对应元素；PRESS_ENTER 是独立按键控件。另用独立是非题核对目标是否已达成、动作是否卡住。",
+    "jevDecisionPointEn": "Chooses CLICK, TYPE_TEXT, SELECT, SCROLL_DOWN, SCROLL_UP, PRESS_ENTER, WAIT, DONE, or BLOCKED and the matching DOM target in one request; PRESS_ENTER is a separate key control. Separate yes/no checks cover goal completion and a stuck loop.",
     "highlightBenefit": "在用户自己的标签里跑，不截图；操作、目标元素和输入文案可以分开检查。",
     "highlightBenefitEn": "Runs in the user’s own tabs without screenshots, and keeps the action, target, and typed string inspectable.",
     "tags": [
       "browser-automation",
       "typed-decisions"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
     "plainSummaryEn": "A Manifest V3 Chrome port of jev-ultrafast: Jev picks the operation and DOM element in one request per step; a small chat model fills TYPE_TEXT.",
@@ -29908,7 +29944,13 @@
       "issueNumber": 22,
       "issueBodySha256": "809aa7f313981ba0822542903112087d422d4a86c42bc2cad681f909452a3334",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/22"
-    }
+    },
+    "plainSummaryJa": "jev-ultrafast を Manifest V3 Chrome 拡張にしたもの。Jev が今のタブで操作と DOM 要素を選び、文字入力が必要なときだけ小型の対話モデルを呼ぶ。",
+    "plainSummaryKo": "jev-ultrafast를 Manifest V3 Chrome 확장으로 옮긴 것. Jev가 현재 탭에서 동작과 DOM 요소를 고르고, 글자를 넣을 때만 작은 대화 모델을 부른다.",
+    "jevDecisionPointJa": "1 リクエストで CLICK、TYPE_TEXT、SELECT、SCROLL_DOWN、SCROLL_UP、PRESS_ENTER、WAIT、DONE、BLOCKED と対応要素を選ぶ。PRESS_ENTER は独立したキー操作。目標達成と動作停滞は別の是非問で確認する。",
+    "jevDecisionPointKo": "한 요청에서 CLICK, TYPE_TEXT, SELECT, SCROLL_DOWN, SCROLL_UP, PRESS_ENTER, WAIT, DONE, BLOCKED와 해당 요소를 고른다. PRESS_ENTER는 별도의 키 컨트롤이다. 목표 달성과 동작 정체는 별도의 예/아니오로 확인한다.",
+    "highlightBenefitJa": "ユーザー自身のタブで動き、スクリーンショットは撮らない。操作、対象要素、入力文を分けて確認できる。",
+    "highlightBenefitKo": "사용자 자신의 탭에서 돌고 스크린샷은 찍지 않는다. 동작, 대상 요소, 입력 문장을 나눠 볼 수 있다."
   },
   {
     "id": "newuser7171:antivirus",
@@ -29927,7 +29969,7 @@
       "security-guardrails",
       "classification-ranking"
     ],
-    "summarySource": "human-reviewed",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
     "stars": 0,
@@ -29970,7 +30012,13 @@
           "hash": "ef88b02eb3135547a7410b1eccecaec0b493fa84d21dc2a07b669a4b325d603a"
         }
       ]
-    }
+    },
+    "plainSummaryJa": "ファイルの静的特徴から state を作り、Jev に判定、0–4 の重大度、いくつかの是非指標を出させ、ローカル規則が隔離・通過・再確認を決める。",
+    "plainSummaryKo": "파일 정적 특징으로 state를 만들어 Jev에게 판정, 0–4 심각도, 몇 가지 예/아니오 지표를 받게 한 뒤, 로컬 규칙이 격리, 통과, 재확인을 정한다.",
+    "jevDecisionPointJa": "Choice は clean / suspicious_pua / malicious。Score は脅威 0–4。Noul は梱包難読化、遠隔ダウンロード、永続化、注入回避。",
+    "jevDecisionPointKo": "Choice는 clean / suspicious_pua / malicious. Score는 위협 0–4. Noul은 패킹 난독화, 원격 다운로드, 지속성, 주입 회피.",
+    "highlightBenefitJa": "ヒューリスティックな特徴をしきい値付きの構造化判断にし、アンチウイルスの評論文にはしない。本サイトは実行も防護効果の検証もしていない。",
+    "highlightBenefitKo": "휴리스틱 특징을 임계값 있는 구조화 판단으로 만들고 백신 평문으로 쓰지 않는다. 이 사이트는 실행하거나 방어 효과를 검증하지 않았다."
   },
   {
     "id": "coo-quack:jev-pii-checker",

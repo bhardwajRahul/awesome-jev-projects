@@ -225,7 +225,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/ddnim/jev-tweet-radar/) · License: MIT
 
 - [**JevBrowserExt**](https://github.com/chy4pro/JevBrowserExt) — A Manifest V3 Chrome port of jev-ultrafast: Jev picks the operation and DOM element in one request per step; a small chat model fills TYPE\_TEXT.
-  - **Where Jev makes a decision**: Chooses an operation and its DOM target in one request, with separate yes/no checks for goal completion and a stuck loop.
+  - **Where Jev makes a decision**: Chooses CLICK, TYPE\_TEXT, SELECT, SCROLL\_DOWN, SCROLL\_UP, PRESS\_ENTER, WAIT, DONE, or BLOCKED and the matching DOM target in one request; PRESS\_ENTER is a separate key control. Separate yes/no checks cover goal completion and a stuck loop.
   - **What this project offers**: Runs in the user’s own tabs without screenshots, and keeps the action, target, and typed string inspectable.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/chy4pro/jevbrowserext/) · License: MIT
 
@@ -635,8 +635,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **What this project offers**: Includes API-call and response-check examples; it predicts the outcome without executing the target skill.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/danielkillenberger/jev-predict-skill/) · License: Not declared
 
-- [**jev-skip**](https://github.com/valentynkit/jev-skip) — A browser extension that classifies YouTube caption segments with Jev and skips unlabeled sponsor reads, painting a probability per slice on the seek bar.
-  - **Where Jev makes a decision**: One Choice per caption segment among content, sponsor, intro, outro, self\_promo, recap, and other; only sponsor slices over the threshold are skipped.
+- [**jev-skip**](https://github.com/valentynkit/jev-skip) — A browser extension that classifies YouTube caption segments with Jev, splitting requests when the segment or token budget is exceeded, paints five categories on the seek bar, and auto-skips those painted slices over the threshold.
+  - **Where Jev makes a decision**: One Choice per caption segment among content, sponsor, intro, outro, self\_promo, recap, and other. Painted categories sponsor, self\_promo, intro, outro, and recap skip when probability is at or above the threshold; content and other never skip.
   - **What this project offers**: Works on videos nobody has labeled yet; with no captions it does nothing.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-skip/) · License: MIT
 
@@ -645,13 +645,13 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **What this project offers**: Shows answer options and probabilities in a chat UI with customizable answer sets.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/kt3k/jevchat/) · License: Not declared
 
-- [**jev-commit**](https://github.com/valentynkit/jev-commit) — A commit-msg hook that uses one Jev call to judge the message against the staged diff; it warns by default and only blocks a credential-shaped added line.
-  - **Where Jev makes a decision**: Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines.
+- [**jev-commit**](https://github.com/valentynkit/jev-commit) — A commit-msg hook that scores the message against the staged diff with one Jev request of five Nouls and warns by default. Default blocking is a local regex belt on high-precision added-line hits; the secret\_shaped Noul blocks only with --strict.
+  - **Where Jev makes a decision**: Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines. Default blocking is the regex belt; secret\_shaped participates only under --strict.
   - **What this project offers**: Turns commit-message review into thresholded probabilities instead of prose; API failures still allow the commit.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-commit/) · License: MIT
 
-- [**jev.nvim**](https://github.com/valentynkit/jev.nvim) — A Neovim plugin that asks a plain-language question of every function in the buffer and ranks Jev probabilities in quickfix.
-  - **Where Jev makes a decision**: Scores each Treesitter function against the user question in one request and ranks hits in quickfix by probability.
+- [**jev.nvim**](https://github.com/valentynkit/jev.nvim) — A Neovim plugin that asks a plain-language question of every function in the buffer and lists every Jev hit in quickfix, ranked by probability.
+  - **Where Jev makes a decision**: Scores each Treesitter function against the user question, splitting across requests if the buffer does not fit. Every hit is listed in quickfix; only hits at or above the threshold get buffer marks.
   - **What this project offers**: Finds cross-language shapes that grep misses, and lands the ranked hits in the existing quickfix loop.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev.nvim/) · License: MIT
 
@@ -1237,7 +1237,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 - [**opencode-jev-orchestrator**](https://github.com/aaronshaf/opencode-jev-orchestrator) — An OpenCode orchestrator that keeps a cheap sticky parent model and, when Jev flags a hard turn, escalates through a child subagent.
   - **Where Jev makes a decision**: Scores task, reasoning, and tool complexity, then chooses fast / balanced / strong / long; local policy stays, escalates, or fans out.
-  - **What this project offers**: Keeps the parent model’s cache warm and opens a stronger child only when Jev flags a hard turn.
+  - **What this project offers**: Keeps a cheap sticky parent model and opens a stronger child only when Jev flags a hard turn.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/aaronshaf/opencode-jev-orchestrator/) · License: MIT
 
 

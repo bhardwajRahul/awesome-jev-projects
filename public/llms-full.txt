@@ -3731,11 +3731,11 @@ A Pi-based terminal coding Agent whose main model handles reasoning, edits and t
 
 ## jev-commit
 
-A commit-msg hook that uses one Jev call to judge the message against the staged diff; it warns by default and only blocks a credential-shaped added line.
+A commit-msg hook that scores the message against the staged diff with one Jev request of five Nouls and warns by default. Default blocking is a local regex belt on high-precision added-line hits; the secret\_shaped Noul blocks only with --strict.
 
 - Repository: https://github.com/valentynkit/jev-commit
 - Category: Decision Tools
-- Jev decision: Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines.
+- Jev decision: Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines. Default blocking is the regex belt; secret\_shaped participates only under --strict.
 - Purpose: Turns commit-message review into thresholded probabilities instead of prose; API failures still allow the commit.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
@@ -3760,11 +3760,11 @@ A Claude Code Stop hook that reads the turn transcript locally and calls Jev onl
 
 ## jev.nvim
 
-A Neovim plugin that asks a plain-language question of every function in the buffer and ranks Jev probabilities in quickfix.
+A Neovim plugin that asks a plain-language question of every function in the buffer and lists every Jev hit in quickfix, ranked by probability.
 
 - Repository: https://github.com/valentynkit/jev.nvim
 - Category: Decision Tools
-- Jev decision: Scores each Treesitter function against the user question in one request and ranks hits in quickfix by probability.
+- Jev decision: Scores each Treesitter function against the user question, splitting across requests if the buffer does not fit. Every hit is listed in quickfix; only hits at or above the threshold get buffer marks.
 - Purpose: Finds cross-language shapes that grep misses, and lands the ranked hits in the existing quickfix loop.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
@@ -3775,11 +3775,11 @@ A Neovim plugin that asks a plain-language question of every function in the buf
 
 ## jev-skip
 
-A browser extension that classifies YouTube caption segments with Jev and skips unlabeled sponsor reads, painting a probability per slice on the seek bar.
+A browser extension that classifies YouTube caption segments with Jev, splitting requests when the segment or token budget is exceeded, paints five categories on the seek bar, and auto-skips those painted slices over the threshold.
 
 - Repository: https://github.com/valentynkit/jev-skip
 - Category: Decision Tools
-- Jev decision: One Choice per caption segment among content, sponsor, intro, outro, self\_promo, recap, and other; only sponsor slices over the threshold are skipped.
+- Jev decision: One Choice per caption segment among content, sponsor, intro, outro, self\_promo, recap, and other. Painted categories sponsor, self\_promo, intro, outro, and recap skip when probability is at or above the threshold; content and other never skip.
 - Purpose: Works on videos nobody has labeled yet; with no captions it does nothing.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
@@ -4051,7 +4051,7 @@ An OpenCode orchestrator that keeps a cheap sticky parent model and, when Jev fl
 - Repository: https://github.com/aaronshaf/opencode-jev-orchestrator
 - Category: Routing & Cost Optimization
 - Jev decision: Scores task, reasoning, and tool complexity, then chooses fast / balanced / strong / long; local policy stays, escalates, or fans out.
-- Purpose: Keeps the parent model’s cache warm and opens a stronger child only when Jev flags a hard turn.
+- Purpose: Keeps a cheap sticky parent model and opens a stronger child only when Jev flags a hard turn.
 - Review scope: Source code verified against pinned commit. Core routing and subagent dispatching verified; synthesis quality depends on task boundaries.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/aaronshaf/opencode-jev-orchestrator/
@@ -4268,7 +4268,7 @@ A Manifest V3 Chrome port of jev-ultrafast: Jev picks the operation and DOM elem
 
 - Repository: https://github.com/chy4pro/JevBrowserExt
 - Category: Browser & OS Action
-- Jev decision: Chooses an operation and its DOM target in one request, with separate yes/no checks for goal completion and a stuck loop.
+- Jev decision: Chooses CLICK, TYPE\_TEXT, SELECT, SCROLL\_DOWN, SCROLL\_UP, PRESS\_ENTER, WAIT, DONE, or BLOCKED and the matching DOM target in one request; PRESS\_ENTER is a separate key control. Separate yes/no checks cover goal completion and a stuck loop.
 - Purpose: Runs in the user’s own tabs without screenshots, and keeps the action, target, and typed string inspectable.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
