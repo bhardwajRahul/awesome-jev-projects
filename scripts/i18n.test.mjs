@@ -71,7 +71,7 @@ test('catalog server render is browser-independent and initially bounded to 24 c
   const {createServer} = await import('vite');
   const {renderToString} = await import('react-dom/server');
   const {createElement} = await import('react');
-  const server = await createServer({server:{middlewareMode:true},appType:'custom'});
+  const server = await createServer({server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
   try {
     const {default:App} = await server.ssrLoadModule('/src/App.tsx');
     const {tagLabel} = await import('../src/lib/tags.mjs');
@@ -110,7 +110,7 @@ test('catalog server render is browser-independent and initially bounded to 24 c
       assert.ok(!html.includes('jev.choice()'));
       assert.ok(html.includes(localeModule.translate('快速接入',initialLocale)));
       assert.ok(html.includes(localeModule.translate('决策流程',initialLocale)));
-      assert.ok(html.includes(localeModule.translate('宽松许可',initialLocale)));
+      assert.ok(html.includes(localeModule.translate('商业友好',initialLocale)));
       assert.ok(!html.includes('aria-label="'+localeModule.translate('星数范围',initialLocale)+'"'));
       assert.ok(header.includes('class="header-actions"'));
       const chips = html.match(/<div class="tags">([\s\S]*?)<\/div>/)?.[1] ?? '';
@@ -130,7 +130,7 @@ test('catalog server render is browser-independent and initially bounded to 24 c
 
 test('language navigation preserves explorer state and hash while rejecting stale filters', async () => {
   const {createServer} = await import('vite');
-  const server = await createServer({server:{middlewareMode:true},appType:'custom'});
+  const server = await createServer({server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
   try {
     const {readExplorerState, localeNavigationUrl} = await server.ssrLoadModule('/src/App.tsx');
     const projects = [{category:'Browser & OS Action',tags:['MCP','Context GC']}];
@@ -169,7 +169,7 @@ test('English and Korean UI dictionaries do not contain Han characters', () => {
 test('tag search recognizes four-language domains while technical names require project evidence', async () => {
   const {createServer} = await import('vite');
   const {tagLabel} = await import('../src/lib/tags.mjs');
-  const server = await createServer({server:{middlewareMode:true},appType:'custom'});
+  const server = await createServer({server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
   try {
     const {createProjectSearch, searchProjects} = await server.ssrLoadModule('/src/App.tsx');
     const rows = [
@@ -187,7 +187,7 @@ test('tag search recognizes four-language domains while technical names require 
 
 test('tag selection preserves compatible context and clears conflicting filters without an empty dead end', async () => {
   const {createServer} = await import('vite');
-  const server = await createServer({server:{middlewareMode:true},appType:'custom'});
+  const server = await createServer({server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
   try {
     const {tagSelectionState} = await server.ssrLoadModule('/src/App.tsx');
     const rows = [{id:'logicrw:example',category:'Browser & OS Action',stars:1200,tags:['browser-automation']}, {id:'logicrw:other',category:'MCP & Integrations',stars:5,tags:['mcp-integrations']}];

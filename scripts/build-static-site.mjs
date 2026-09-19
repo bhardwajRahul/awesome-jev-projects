@@ -1,3 +1,4 @@
+import { utcDay } from "../src/lib/discovery.mjs";
 import { loadAnalytics, analyticsMarkup } from "./analytics-policy.mjs";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
@@ -17,7 +18,8 @@ const baseHTML = await readFile(resolve(dist, "index.html"), "utf8");
 const assets = [...baseHTML.matchAll(/<(?:script\b[^>]*\bsrc="[^"]+"[^>]*><\/script>|link\b[^>]*(?:rel="stylesheet"|rel="modulepreload")[^>]*>)/g)].map((m) => m[0]).filter(tag => !tag.includes("theme-init.js"));
 const homeAssets = assets.join("\n");
 const styleAssets = assets.filter((tag) => tag.includes('rel="stylesheet"')).join("\n");
-const vite = await createServer({ root, server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const vite = await createServer({ root, server: { middlewareMode: true, hmr: false, ws: false }, appType: "custom", logLevel: "error" });
+const initialDay = utcDay();
 const { renderHome, categoryLabel, localeMeta } = await vite.ssrLoadModule("/src/entry-server.tsx");
 for (const locale of LOCALES) Object.assign(COPY[locale], { title: localeMeta[locale].title, description: localeMeta[locale].description });
 const pages = [];
@@ -63,7 +65,7 @@ try {
   for (const locale of LOCALES) {
     const c = COPY[locale], route = localePrefix(locale);
     const about = `<section class="static-about" aria-label="${e(c.about)}"><h2>${e(c.about)}</h2><p>${e(c.aboutText)}</p><div class="static-about-grid"><div><h3>${e(c.model)}</h3><p>${e(c.modelText)}</p>${link("https://typesafe.ai/", "TypeSafe ↗", true)}</div><div><h3>${e(c.criteria)}</h3><p>${e(c.criteriaText)}</p></div></div><nav>${link(BASE + route + "catalog/", c.catalog)}${categories.map((category) => link(BASE + categoryRoute(category, locale), categoryLabel(category, locale))).join("")}</nav></section>`;
-    const content = `<div id="root">${renderHome(projects, locale)}</div>${about}<script id="initial-projects" type="application/json">${safeJSON({ locale, projects })}</script>`;
+    const content = `<div id="root">${renderHome(projects, locale, initialDay)}</div>${about}<script id="initial-projects" type="application/json">${safeJSON({ locale, projects, day: initialDay })}</script>`;
     await emit(route, frame({ locale, route, title: c.title, description: c.description, alternates: localePrefix, schema: collectionSchema(locale, route, c.title, projects), content, home: true }));
     const catalog = route + "catalog/";
     await emit(catalog, frame({ locale, route: catalog, title: `${c.catalog} — Awesome Jev`, description: c.description, alternates: (l) => localePrefix(l) + "catalog/", schema: collectionSchema(locale, catalog, c.catalog, projects), content: header(locale, (l) => localePrefix(l) + "catalog/") + `<main class="static-main"><h1>${e(c.catalog)}</h1><p class="static-intro">${e(c.description)}</p><nav class="static-categories">${categories.map((category) => link(BASE + categoryRoute(category, locale), `${categoryLabel(category, locale)} (${projects.filter((p) => p.category === category).length})`)).join("")}</nav>${projectList(projects, locale)}</main>` + footer(locale) }));

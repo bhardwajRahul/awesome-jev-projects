@@ -10,11 +10,12 @@ export const english: Record<string, string> = {
 
   "快速浏览": "Quick browse",
   "浏览完整项目目录": "Browse the complete project directory",
-  "热门之选": "Popular",
+  "全部": "All",
+  "1k+ 顶流": "1k+ Stars",
   "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。": "Projects with at least 1,000 GitHub stars. Popularity is not a quality guarantee.",
-  "近期新秀": "Recent arrivals",
+  "潜力新秀": "Rising projects",
   "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。": "Created in the last 90 days with 10–999 stars in the current snapshot.",
-  "宽松许可": "Permissive license",
+  "商业友好": "Commercial-friendly",
   "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。": "Recognized permissive licenses such as MIT, Apache and BSD. Check the original license before use.",
   "按匹配度排序": "Sorted by relevance",
 
@@ -223,11 +224,12 @@ export const japanese: Record<string, string> = {
 
   "快速浏览": "クイックフィルター",
   "浏览完整项目目录": "すべてのプロジェクトを表示",
-  "热门之选": "人気のプロジェクト",
+  "全部": "すべて",
+  "1k+ 顶流": "1k+ Stars",
   "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。": "GitHub Stars が 1,000 以上のプロジェクト。人気は品質の保証ではありません。",
-  "近期新秀": "最近の新顔",
+  "潜力新秀": "新着の注目株",
   "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。": "過去 90 日間に作成され、現在のスナップショットで Stars が 10〜999 のプロジェクト。",
-  "宽松许可": "寛容なライセンス",
+  "商业友好": "商用向け",
   "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。": "MIT、Apache、BSD などの寛容なライセンスを確認。利用前に元のライセンスもご確認ください。",
   "按匹配度排序": "関連度順",
 
@@ -395,11 +397,12 @@ export const korean: Record<string, string> = {
 
   "快速浏览": "빠른 탐색",
   "浏览完整项目目录": "전체 프로젝트 디렉터리 보기",
-  "热门之选": "인기 프로젝트",
+  "全部": "전체",
+  "1k+ 顶流": "1k+ Stars",
   "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。": "GitHub Stars가 1,000 이상인 프로젝트입니다. 인기도가 품질을 보장하지는 않습니다.",
-  "近期新秀": "최근 새 프로젝트",
+  "潜力新秀": "신흥 프로젝트",
   "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。": "최근 90일 내 생성되었으며 현재 스냅샷에서 Stars가 10–999인 프로젝트입니다.",
-  "宽松许可": "허용적 라이선스",
+  "商业友好": "상용 친화적",
   "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。": "MIT, Apache, BSD 등 허용적 라이선스가 확인된 프로젝트입니다. 사용 전 원본 라이선스를 확인하세요.",
   "按匹配度排序": "관련도순",
 

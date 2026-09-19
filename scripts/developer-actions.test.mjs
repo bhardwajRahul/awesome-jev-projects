@@ -109,7 +109,7 @@ test("developer components render on the server in all locales without browser g
   const { createServer } = await import("vite");
   const { createElement } = await import("react");
   const { renderToStaticMarkup } = await import("react-dom/server");
-  const server = await createServer({ server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true, include: [] }, appType: "custom", logLevel: "error" });
+  const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, optimizeDeps: { noDiscovery: true, include: [] }, appType: "custom", logLevel: "error" });
   try {
     const { HelloJev } = await server.ssrLoadModule("/src/components/HelloJev.tsx");
     const { CopyCloneButton } = await server.ssrLoadModule("/src/components/CopyCloneButton.tsx");

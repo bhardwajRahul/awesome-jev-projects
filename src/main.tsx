@@ -5,7 +5,7 @@ import "@fontsource-variable/jetbrains-mono";
 import "./styles.css";
 import App, { type Project } from "./App";
 import { locales, localeFromPath, readLocale, type Locale } from "./lib/i18n";
-function initialSnapshot(): { projects: Project[]; locale: Locale } | undefined {
+function initialSnapshot(): { projects: Project[]; locale: Locale; day?: string } | undefined {
   try {
     const snapshot = JSON.parse(document.getElementById("initial-projects")?.textContent ?? "null");
     if (snapshot && Array.isArray(snapshot.projects) && locales.includes(snapshot.locale)) return snapshot;
@@ -25,7 +25,7 @@ if (snapshot && preferred !== snapshot.locale) {
 } else {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-      <App initialProjects={snapshot?.projects} initialLocale={snapshot?.locale ?? preferred} />
+      <App initialProjects={snapshot?.projects} initialLocale={snapshot?.locale ?? preferred} initialDay={snapshot?.day} />
     </React.StrictMode>,
   );
 }

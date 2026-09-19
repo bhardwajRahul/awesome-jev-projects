@@ -42,6 +42,7 @@ import { SponsorDialog } from "./components/SponsorDialog";
 import { HelloJev } from "./components/HelloJev.tsx";
 import { CopyCloneButton } from "./components/CopyCloneButton.tsx";
 import { ThemeToggle } from "./components/ThemeToggle.tsx";
+import { DailyProject } from "./components/DailyProject.tsx";
 import { sponsorCopy } from "./lib/sponsors.mjs";
 import { resolveTagId, tagLabel, tagDescription, tagOptions } from "./lib/tags.mjs";
 import { createProjectSearch, searchProjects, browseSort, matchesQuickFilter } from "./lib/search.mjs";
@@ -62,7 +63,7 @@ export type Project = {
   forks: number | null;
   openIssues: number | null;
   license: string | null;
-  licenseStatus?: "unconfirmed" | "declared";
+  licenseStatus?: "unconfirmed" | "declared" | "confirmed" | "custom";
   lastCommitAt: string | null;
   createdAt: string | null;
   summarySource: string;
@@ -323,14 +324,14 @@ export function tagSelectionState(
 }
 
 const quickFilterCopy: Record<ExplorerState["quickFilter"], { label: string; description: string; icon: LucideIcon }> = {
-  all: { label: "全部项目", description: "浏览完整项目目录", icon: Layers },
-  popular: { label: "热门之选", description: "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。", icon: Star },
-  rising: { label: "近期新秀", description: "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。", icon: Sparkles },
-  commercial: { label: "宽松许可", description: "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。", icon: ShieldCheck },
+  all: { label: "全部", description: "浏览完整项目目录", icon: Layers },
+  popular: { label: "1k+ 顶流", description: "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。", icon: Star },
+  rising: { label: "潜力新秀", description: "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。", icon: Sparkles },
+  commercial: { label: "商业友好", description: "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。", icon: ShieldCheck },
 };
 
-export type AppProps = { initialProjects?: Project[]; initialLocale?: Locale };
-function App({ initialProjects, initialLocale }: AppProps = {}) {
+export type AppProps = { initialProjects?: Project[]; initialLocale?: Locale; initialDay?: string };
+function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   const [locale] = useState<Locale>(() => initialLocale ?? readLocale());
   const [heroTab, setHeroTab] = useState<"quickstart" | "mechanism">("quickstart");
   const heroId = useId();
@@ -420,7 +421,19 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
     if (category !== "all" && !projects.some((p) => p.category === category)) setCategory("all");
     if (tag !== "all" && !projects.some((p) => projectHasTag(p, tag))) setTag("all");
   }, [projects, loadState, category, tag]);
-  const [modal, setModal] = useState<"submit" | "agentSkill" | "sponsor" | null>(null);
+  const [modal, setModal] = useState<"submit" | "agentSkill" | "sponsor" | "gacha" | null>(null);
+  const [GachaComponent, setGachaComponent] = useState<typeof import("./components/GachaDialog.tsx").GachaDialog | null>(null);
+  const [gachaLoadFailed, setGachaLoadFailed] = useState(false);
+  const [gachaAttempt, setGachaAttempt] = useState(0);
+  useEffect(() => {
+    if (modal !== "gacha" || GachaComponent) return;
+    let current = true;
+    setGachaLoadFailed(false);
+    void import("./components/GachaDialog.tsx")
+      .then((module) => { if (current) setGachaComponent(() => module.GachaDialog); })
+      .catch(() => { if (current) setGachaLoadFailed(true); });
+    return () => { current = false; };
+  }, [modal, GachaComponent, gachaAttempt]);
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("sponsor") === "1") setModal("sponsor");
   }, []);
@@ -495,6 +508,11 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
           e.preventDefault();
           searchRef.current?.focus();
         }
+      }
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === "g" && !editable && !e.repeat && !document.querySelector("dialog[open]")) {
+        e.preventDefault();
+        setActive(null);
+        setModal("gacha");
       }
       if (e.key === "Escape" && !document.querySelector("dialog[open]"))
         searchRef.current?.blur();
@@ -682,6 +700,14 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
     setFormErrors((previous) => ({ ...previous, [field]: undefined }));
     setIssueDraftUrl(null);
   };
+  const discoveryUi = {
+    zh: ["抽张灵感卡", "正在准备卡片…", "卡片暂时无法加载，浏览列表仍可正常使用。", "重试"],
+    en: ["Draw a card", "Preparing a card…", "The card view could not load. The catalog is still available.", "Retry"],
+    ja: ["カードを引く", "カードを準備中…", "カードを読み込めませんでした。一覧は引き続き利用できます。", "再試行"],
+    ko: ["카드 뽑기", "카드를 준비하는 중…", "카드를 불러오지 못했습니다. 목록은 계속 사용할 수 있습니다.", "다시 시도"],
+  }[locale];
+  const discoveryEntry = discoveryUi[0];
+  const openGacha = () => { closeProject(); setModal("gacha"); };
   const openSponsor = () => {
     closeProject();
     setModal("sponsor");
@@ -843,6 +869,7 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
             </a>
           </div>
           <div className="hero-workbench">
+            <div className="hero-tool-row">
             <div className="hero-tabs" role="tablist" aria-label={t("了解与接入 Jev")} onKeyDown={(event) => {
               if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
               event.preventDefault();
@@ -856,6 +883,8 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
               <button id={`${heroId}-mechanism-tab`} type="button" role="tab" aria-selected={heroTab === "mechanism"} aria-controls={`${heroId}-mechanism-panel`} tabIndex={heroTab === "mechanism" ? 0 : -1} onClick={() => setHeroTab("mechanism")}>
                 <Workflow size={14} /> {t("决策流程")}
               </button>
+            </div>
+            <button type="button" className="discovery-entry" onClick={openGacha} aria-haspopup="dialog" aria-keyshortcuts="Meta+G Control+G" title={`${discoveryEntry} · ⌘G / Ctrl+G`}><Sparkles size={14} aria-hidden="true" /><span>{discoveryEntry}</span></button>
             </div>
             <div id={`${heroId}-quickstart-panel`} role="tabpanel" aria-labelledby={`${heroId}-quickstart-tab`} hidden={heroTab !== "quickstart"}>
               <div className="hello-desktop"><HelloJev locale={locale} /></div>
@@ -954,6 +983,7 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
         )}
         <section className="explorer" id="explore">
           <aside className="sidebar">
+            <DailyProject projects={projects} locale={locale} initialDay={initialDay} onOpen={openProject} />
             <div className="side-title">
               {t("分类")} <span>{categories.length}</span>
             </div>
@@ -1387,6 +1417,9 @@ function App({ initialProjects, initialLocale }: AppProps = {}) {
           </a>
         </footer>
       </main>
+      {modal === "gacha" && (GachaComponent
+        ? <GachaComponent projects={projects} locale={locale} onClose={() => setModal(null)} />
+        : <Modal locale={locale} title={discoveryEntry} onClose={() => setModal(null)}><p role="status">{discoveryUi[gachaLoadFailed ? 2 : 1]}</p>{gachaLoadFailed && <button type="button" className="button dark" onClick={() => setGachaAttempt((value) => value + 1)}>{discoveryUi[3]}</button>}</Modal>)}
       {modal === "sponsor" && (
         <SponsorDialog locale={locale} projectCount={projects.length} onClose={() => setModal(null)} />
       )}

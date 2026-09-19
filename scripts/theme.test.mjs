@@ -111,7 +111,7 @@ test('four-language theme button renders without a browser and has no duplicate 
   const { createServer } = await import('vite');
   const { renderToStaticMarkup } = await import('react-dom/server');
   const { createElement } = await import('react');
-  const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' });
+  const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom', logLevel: 'error' });
   try {
     const { ThemeToggle } = await server.ssrLoadModule('/src/components/ThemeToggle.tsx');
     for (const locale of ['zh', 'en', 'ja', 'ko']) {
