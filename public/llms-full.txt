@@ -4,7 +4,7 @@ A community directory of Jev open-source and publicly available source projects.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 267
+Catalog entries: 260
 
 ## Install the Agent Skill
 
@@ -1207,19 +1207,6 @@ Turns UI descriptions into selections from existing shadcn/ui components, fields
 - Source evidence: https://github.com/joevidev/ui-generator-instinct-jev/blob/9a81c2dc23b561980c7a6d4302c71f34e5ab4ae6/lib/decide.ts
 - Source evidence: https://github.com/joevidev/ui-generator-instinct-jev/blob/9a81c2dc23b561980c7a6d4302c71f34e5ab4ae6/lib/typesafe-client.ts
 
-## jev-use
-
-The public repository is currently unavailable, so its integration and earlier description cannot be checked. The record is retained for follow-up, not recommended as verified.
-
-- Repository: https://github.com/vlad-terin/jev-use
-- Category: Browser & OS Action
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: The public repository is currently unavailable, so its integration and earlier description cannot be checked. The record is retained for follow-up, not recommended as verified.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/vlad-terin/jev-use/
-
-
 ## mobile-jev
 
 Controls an Android phone through Mobilerun, with a web studio and CLI showing Jev decisions.
@@ -1307,19 +1294,6 @@ An early language experiment whose current implementation is a Jev request-batch
 - Source evidence: https://github.com/amberwhitehead/jevscript/blob/a01032218d8d57f84c5f310f585cd2da17671c9a/README.md
 - Source evidence: https://github.com/amberwhitehead/jevscript/blob/a01032218d8d57f84c5f310f585cd2da17671c9a/spike/m0.mjs
 - Source evidence: https://github.com/amberwhitehead/jevscript/blob/a01032218d8d57f84c5f310f585cd2da17671c9a/PLAN.md
-
-## grokskill-jev
-
-The public repository is currently unavailable, so its integration and earlier description cannot be checked. The record is retained for follow-up, not recommended as verified.
-
-- Repository: https://github.com/AE-AlphaEdge/grokskill-jev
-- Category: Browser & OS Action
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: The public repository is currently unavailable, so its integration and earlier description cannot be checked. The record is retained for follow-up, not recommended as verified.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/ae-alphaedge/grokskill-jev/
-
 
 ## jev-trade
 
@@ -1940,21 +1914,6 @@ Connects Ego Lite snapshots and browser actions to a bounded Jev decision loop.
 - Source evidence: https://github.com/phd-peter/ego-jev/blob/0da45e4f3a3bdad56402b5c38226ad3a2e10409c/src/jev-client.ts#L1
 - Source evidence: https://github.com/phd-peter/ego-jev/blob/0da45e4f3a3bdad56402b5c38226ad3a2e10409c/README.md
 
-## jev-visual
-
-This is a local Qwen/MLX experiment inspired by Jev, not an integration of the TypeSafe Jev model. It is retained as related research and clearly separated from actual integrations.
-
-- Repository: https://github.com/hr98w/jev-visual
-- Category: SDK & Decision Frameworks
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: This is a local Qwen/MLX experiment inspired by Jev, not an integration of the TypeSafe Jev model. It is retained as related research and clearly separated from actual integrations.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hr98w/jev-visual/
-- Source evidence: https://github.com/hr98w/jev-visual/blob/19af545f096e8db4c4dd5d47aed42d92ec252111/README.md
-- Source evidence: https://github.com/hr98w/jev-visual/blob/19af545f096e8db4c4dd5d47aed42d92ec252111/README.zh-CN.md
-- Source evidence: https://github.com/hr98w/jev-visual/blob/19af545f096e8db4c4dd5d47aed42d92ec252111/jev_visual/server.py
-
 ## bluenoise
 
 An X/Twitter filtering extension using local rules by default, with optional Jev checks for unmatched replies.
@@ -2115,23 +2074,6 @@ Benchmarks Jev on chess moves and identifying which game NPC a player addresses.
 - Source evidence: https://github.com/wondertwins/jev-benchmark/blob/1c2509ac7d5508b8a7ce00ae4df6d7652d05de8b/jevcommon/client.py#L82
 - Source evidence: https://github.com/wondertwins/jev-benchmark/blob/1c2509ac7d5508b8a7ce00ae4df6d7652d05de8b/README.md
 
-## jev-java
-
-Its request and response fields differ from the current official SDK contract, and it has not been executed here. The record remains pending review and is not described as a working SDK.
-
-- Repository: https://github.com/Olti1947/jev-java
-- Category: SDK & Decision Frameworks
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: Its request and response fields differ from the current official SDK contract, and it has not been executed here. The record remains pending review and is not described as a working SDK.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/olti1947/jev-java/
-- Source evidence: https://github.com/Olti1947/jev-java/blob/8f11284464645556945564c49765e1754840a72a/README.md
-- Source evidence: https://github.com/Olti1947/jev-java/blob/8f11284464645556945564c49765e1754840a72a/src/main/java/io/github/Olti1947/jev/JevClient.java
-- Source evidence: https://github.com/Olti1947/jev-java/blob/8f11284464645556945564c49765e1754840a72a/src/main/java/io/github/Olti1947/jev/model/JevRequest.java
-- Source evidence: https://github.com/Olti1947/jev-java/blob/8f11284464645556945564c49765e1754840a72a/src/main/java/io/github/Olti1947/jev/model/JevResponse.java
-- Source evidence: https://github.com/Olti1947/jev-java/blob/8f11284464645556945564c49765e1754840a72a/src/main/java/io/github/Olti1947/jev/model/Choice.java
-
 ## jev-shield
 
 A Chrome ad-filtering extension that uses Jev to assess promotional intent in feed elements.
@@ -2218,23 +2160,6 @@ The jevctl command-line tool connects verification, classification and scoring q
 - Source evidence: https://github.com/Nasrallah-AL/jev-cli/blob/02ca80177aaef0b30a897959207f99df1e0c8446/README.md
 - Source evidence: https://github.com/Nasrallah-AL/jev-cli/blob/02ca80177aaef0b30a897959207f99df1e0c8446/plugin/hooks/fast-jev.ts
 - Source evidence: https://github.com/Nasrallah-AL/jev-cli/blob/02ca80177aaef0b30a897959207f99df1e0c8446/src/provider.ts
-
-## LightJev
-
-This is independent Qwen-based training research, not a confirmed TypeSafe Jev API or model integration. It is retained as related research, not an operational Jev integration.
-
-- Repository: https://github.com/rongxinzy/LightJev
-- Category: CLI & Pipelines
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: This is independent Qwen-based training research, not a confirmed TypeSafe Jev API or model integration. It is retained as related research, not an operational Jev integration.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/rongxinzy/lightjev/
-- Source evidence: https://github.com/rongxinzy/LightJev/blob/dede59a91ff52305921a5e437d4cd1a39bab3be5/src/lightjev/model.py#L1
-- Source evidence: https://github.com/rongxinzy/LightJev/blob/dede59a91ff52305921a5e437d4cd1a39bab3be5/README.md
-- Source evidence: https://github.com/rongxinzy/LightJev/blob/dede59a91ff52305921a5e437d4cd1a39bab3be5/README.zh-CN.md
-- Source evidence: https://github.com/rongxinzy/LightJev/blob/dede59a91ff52305921a5e437d4cd1a39bab3be5/docs/data.md
-- Source evidence: https://github.com/rongxinzy/LightJev/blob/dede59a91ff52305921a5e437d4cd1a39bab3be5/src/lightjev/inference.py
 
 ## hermes-jev-north-star
 
@@ -2989,20 +2914,6 @@ Documentation, an MCP server and a Skill for designing Jev judgments with questi
 - Source evidence: https://github.com/simota/tenbin/blob/80e797986b2334e988bb8c940329a31fe138fbdc/README.md
 - Source evidence: https://github.com/simota/tenbin/blob/80e797986b2334e988bb8c940329a31fe138fbdc/tenbin/src/client.ts
 
-## jev-git
-
-The source permits execution when the key is missing or requests fail, and installation overwrites the existing Git hook. It is not recommended as a reliable security gate pending maintainer clarification or fixes.
-
-- Repository: https://github.com/AkashPriyadarshii/jev-git
-- Category: CLI & Pipelines
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: The source permits execution when the key is missing or requests fail, and installation overwrites the existing Git hook. It is not recommended as a reliable security gate pending maintainer clarification or fixes.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/akashpriyadarshii/jev-git/
-- Source evidence: https://github.com/AkashPriyadarshii/jev-git/blob/eff70dd2dd44eebc3ea372ee6e03eb49c0450938/src/main.rs#L147
-- Source evidence: https://github.com/AkashPriyadarshii/jev-git/blob/eff70dd2dd44eebc3ea372ee6e03eb49c0450938/README.md
-
 ## qualm
 
 A TypeScript wrapper for Jev decisions with an explicit unsure branch.
@@ -3611,22 +3522,6 @@ Classifies Git commit messages and diffs with Jev for bug fixes, security fixes,
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/devanshbatham/commit-miner/
 - Source evidence: https://github.com/devanshbatham/commit-miner/blob/977617ebce07c56b965253a68577b1d92b93fdf1/src/jev.rs
 - Source evidence: https://github.com/devanshbatham/commit-miner/blob/977617ebce07c56b965253a68577b1d92b93fdf1/README.md
-
-## skillranker
-
-The license contains entity-specific restrictions beyond standard MIT. Licensing needs review; working code does not establish an unrestricted open-source license.
-
-- Repository: https://github.com/Dicklesworthstone/skillranker
-- Category: Routing & Cost Optimization
-- Jev decision: This entry is pending review, not a verified Jev integration recommendation.
-- Purpose: The record is preserved for follow-up. Check the review reason and sources first.
-- Review scope: The license contains entity-specific restrictions beyond standard MIT. Licensing needs review; working code does not establish an unrestricted open-source license.
-- License: Not declared
-- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/dicklesworthstone/skillranker/
-- Source evidence: https://github.com/Dicklesworthstone/skillranker/blob/29490ec5c4831d7f08b0ceefd16cd717a9d761a5/README.md
-- Source evidence: https://github.com/Dicklesworthstone/skillranker/blob/29490ec5c4831d7f08b0ceefd16cd717a9d761a5/src/jev/endpoint.rs
-- Source evidence: https://github.com/Dicklesworthstone/skillranker/blob/29490ec5c4831d7f08b0ceefd16cd717a9d761a5/LICENSE
-- Source evidence: https://github.com/Dicklesworthstone/skillranker/blob/29490ec5c4831d7f08b0ceefd16cd717a9d761a5/src/jev/client.rs
 
 ## pi-jev-compact
 

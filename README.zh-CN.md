@@ -7,7 +7,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -31,7 +31,7 @@
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
 - 🛡️ **严格拒绝概念炒作**：全网严选 **267+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **267 个项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **260 个项目**
 
 这是社区维护的 Jev 项目目录，不是 TypeSafe 官方网站。收录依据为可查的项目说明与源码；代码中出现集成，不等于本站已运行、验证效果或审计安全。
 
@@ -60,8 +60,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 ## 分类
 
-- [浏览器与桌面 (23)](https://logicrw.github.io/awesome-jev-projects/categories/browser-os-action/)
-- [命令行与流水线 (12)](https://logicrw.github.io/awesome-jev-projects/categories/cli-pipelines/)
+- [浏览器与桌面 (21)](https://logicrw.github.io/awesome-jev-projects/categories/browser-os-action/)
+- [命令行与流水线 (10)](https://logicrw.github.io/awesome-jev-projects/categories/cli-pipelines/)
 - [分类与目录 (2)](https://logicrw.github.io/awesome-jev-projects/categories/classification-taxonomy/)
 - [代码与图谱 (11)](https://logicrw.github.io/awesome-jev-projects/categories/codebase-graph-pathfinding/)
 - [上下文与记忆 (15)](https://logicrw.github.io/awesome-jev-projects/categories/context-gc-filter/)
@@ -72,8 +72,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
 - [游戏与实时决策 (17)](https://logicrw.github.io/awesome-jev-projects/categories/high-frequency-simulation/)
 - [MCP 与集成 (18)](https://logicrw.github.io/awesome-jev-projects/categories/mcp-integrations/)
-- [模型路由与降本 (19)](https://logicrw.github.io/awesome-jev-projects/categories/routing-cost-optimization/)
-- [SDK 与决策框架 (48)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-decision-frameworks/)
+- [模型路由与降本 (18)](https://logicrw.github.io/awesome-jev-projects/categories/routing-cost-optimization/)
+- [SDK 与决策框架 (46)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-decision-frameworks/)
 - [SDK 与兼容接入 (6)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-integrations/)
 - [安全与内容审核 (18)](https://logicrw.github.io/awesome-jev-projects/categories/security-guardrails/)
 - [语音与对话 (4)](https://logicrw.github.io/awesome-jev-projects/categories/voice-conversation/)
@@ -124,11 +124,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 选择意图、元素、网址或原文片段，并判断口令是否完整、是否涉及敏感动作。
   - **这个项目的用途**: 界面显示概率、动作与请求时间，便于观察语音交互。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/moritzkremb/jev-voice-browser/) · 许可证: MIT
-
-- [**jev-use**](https://github.com/vlad-terin/jev-use) — 当前公开仓库无法访问，暂不能核实集成与原有描述。保留记录等待来源恢复，不作为已验证项目推荐。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/vlad-terin/jev-use/) · 许可证: 未声明
 
 - [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) — 一个实验性 Chrome 扩展，让 Jev 判断候选 DOM 元素是否是广告，再高亮或移除。
   - **Jev 在哪一步做判断**: 对元素文本、标签和链接等信息批量询问 Noul，按阈值应用页面操作。
@@ -190,11 +185,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 用当前快照的引用执行动作，并记录每步状态。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/phd-peter/ego-jev/) · 许可证: MIT
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) — 当前公开仓库无法访问，暂不能核实集成与原有描述。保留记录等待来源恢复，不作为已验证项目推荐。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ae-alphaedge/grokskill-jev/) · 许可证: 未声明
-
 
 ## 命令行与流水线
 
@@ -237,16 +227,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 针对同一份输入做分类、真假判断和分级评分，返回选项及其概率。
   - **这个项目的用途**: 能接收标准输入，把语义校验接进已有脚本和 CI；支持直连 TypeSafe 或走 Vercel 网关。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jtsang4/jev-cli/) · 许可证: MIT
-
-- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) — 源码中缺少密钥或请求失败时会放行，安装逻辑还会覆盖现有 Git hook。待维护者确认或修复前，不作为可靠的安全门禁推荐。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/akashpriyadarshii/jev-git/) · 许可证: 未声明
-
-- [**LightJev**](https://github.com/rongxinzy/LightJev) — 这是基于 Qwen 的独立训练研究，未确认 TypeSafe Jev API 或模型集成。作为相关研究保留，不当作实际 Jev 接入案例。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/rongxinzy/lightjev/) · 许可证: 未声明
 
 - [**TypeSafe AI Playground**](https://github.com/markjaquith/typesafe-ai-playground) — Rust 命令行实验集，可筛查医疗隐私信息、检查代码注释、分析语气并分类行业和职业。
   - **Jev 在哪一步做判断**: 把输入文本交给 Jev，返回独立的 Noul 概率、Score 或候选分类。
@@ -1026,11 +1006,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把模型分配规则和判断记录放在本地，便于回看与调整。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jev-codex-router/) · 许可证: MIT
 
-- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) — 许可证含标准 MIT 之外的主体限制，许可范围待确认；功能存在不等于已确认开源授权。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/dicklesworthstone/skillranker/) · 许可证: 未声明
-
 - [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) — Hono 的实验性 HTTP 语义路由器，让请求描述决定走哪个处理函数。
   - **Jev 在哪一步做判断**: Jev 判断请求与各路由描述的匹配概率，程序选择首个达到阈值的路由。
   - **这个项目的用途**: 适合尝试按语义分流；作者明确禁止把它当作鉴权或授权边界。
@@ -1144,11 +1119,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 官方核心基础库，支持 Pydantic 模型校验与现代 Python 异步并发。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/typesafe-ai/typesafe-sdk-python/) · 许可证: MIT
 
-- [**jev-visual**](https://github.com/hr98w/jev-visual) — 这是 Qwen 与 MLX 的本地 Jev-inspired 实验，不是 TypeSafe Jev 模型接入。作为相关研究保留，不混同实际集成。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hr98w/jev-visual/) · 许可证: 未声明
-
 - [**advocaat**](https://github.com/pithings/advocaat) — 用简短的 TypeScript 调用向 Jev 提问。把同一份数据里的多个判断一次写好，直接拿到概率、选项和分数。
   - **Jev 在哪一步做判断**: 将带类型的问题转成 System One 请求，并把命名答案映射回调用方。
   - **这个项目的用途**: 减少手写请求和解析代码，也支持通过 Vercel 网关调用。
@@ -1238,11 +1208,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
   - **这个项目的用途**: 封装请求和响应解析，便于在应用中接入结构化判断。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/gaurav-gosain/jev-go/) · 许可证: MIT
-
-- [**jev-java**](https://github.com/Olti1947/jev-java) — 请求与响应字段同当前官方 SDK 的契约不一致，尚未执行验证。保留条目待确认，不表述为已经可用的 SDK。
-  - **Jev 在哪一步做判断**: 此条目待复核，暂不作为已确认的 Jev 集成推荐。
-  - **这个项目的用途**: 保留记录供追踪；请先查看复核原因与来源。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/olti1947/jev-java/) · 许可证: 未声明
 
 - [**typesafe\_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) — 面向 Elixir 的 TypeSafe SDK，把 Jev 的类型化问题与概率答案接到 Elixir 应用。
   - **Jev 在哪一步做判断**: 构造状态和 Noul、Choice、Score 请求，解析 System One 的回答。

@@ -7,7 +7,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/ko/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#분류"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#분류"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -31,7 +31,7 @@
 - 🎯 **네이티브 타입 출력**: `Choice`, `Score`, `Noul`을 지원하여 취약한 JSON 정규식 파싱이 필요 없습니다.
 - 🛡️ **과대 광고 배제**: 17개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 267+개 프로젝트만을 엄선했습니다.
 
-> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **267 개 프로젝트**
+> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **260 개 프로젝트**
 
 커뮤니티가 운영하는 TypeSafe 비공식 Jev 디렉터리입니다. 공개 설명과 소스 코드를 근거로 수록합니다. 연동 코드를 확인했다는 것은 이 사이트가 실행, 성능 측정 또는 보안 감사를 했다는 뜻이 아닙니다.
 
@@ -60,8 +60,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 ## 분류
 
-- [브라우저 및 데스크톱 (23)](https://logicrw.github.io/awesome-jev-projects/ko/categories/browser-os-action/)
-- [CLI 및 파이프라인 (12)](https://logicrw.github.io/awesome-jev-projects/ko/categories/cli-pipelines/)
+- [브라우저 및 데스크톱 (21)](https://logicrw.github.io/awesome-jev-projects/ko/categories/browser-os-action/)
+- [CLI 및 파이프라인 (10)](https://logicrw.github.io/awesome-jev-projects/ko/categories/cli-pipelines/)
 - [분류 및 카탈로그 (2)](https://logicrw.github.io/awesome-jev-projects/ko/categories/classification-taxonomy/)
 - [코드 및 그래프 탐색 (11)](https://logicrw.github.io/awesome-jev-projects/ko/categories/codebase-graph-pathfinding/)
 - [Context GC 및 메모리 (15)](https://logicrw.github.io/awesome-jev-projects/ko/categories/context-gc-filter/)
@@ -72,8 +72,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [평가 및 관측성 (29)](https://logicrw.github.io/awesome-jev-projects/ko/categories/evaluation-observability/)
 - [게임 및 실시간 판단 (17)](https://logicrw.github.io/awesome-jev-projects/ko/categories/high-frequency-simulation/)
 - [MCP 및 연동 (18)](https://logicrw.github.io/awesome-jev-projects/ko/categories/mcp-integrations/)
-- [모델 라우팅 (19)](https://logicrw.github.io/awesome-jev-projects/ko/categories/routing-cost-optimization/)
-- [SDK 및 판단 프레임워크 (48)](https://logicrw.github.io/awesome-jev-projects/ko/categories/sdk-decision-frameworks/)
+- [모델 라우팅 (18)](https://logicrw.github.io/awesome-jev-projects/ko/categories/routing-cost-optimization/)
+- [SDK 및 판단 프레임워크 (46)](https://logicrw.github.io/awesome-jev-projects/ko/categories/sdk-decision-frameworks/)
 - [SDK 및 호환 연동 (6)](https://logicrw.github.io/awesome-jev-projects/ko/categories/sdk-integrations/)
 - [보안 및 콘텐츠 검토 (18)](https://logicrw.github.io/awesome-jev-projects/ko/categories/security-guardrails/)
 - [음성 및 대화 (4)](https://logicrw.github.io/awesome-jev-projects/ko/categories/voice-conversation/)
@@ -124,11 +124,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: 의도, 요소, URL, 원문 구간을 고르고 명령 완결성과 민감한 동작을 판단한다.
   - **프로젝트의 용도**: 음성 조작 중 확률, 동작과 요청 시간을 표시한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/moritzkremb/jev-voice-browser/) · 라이선스: MIT
-
-- [**jev-use**](https://github.com/vlad-terin/jev-use) — 공개 저장소에 접근할 수 없어 연동과 기존 설명을 확인할 수 없습니다. 추후 확인을 위해 기록을 보존하며 검증된 추천으로 취급하지 않습니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/vlad-terin/jev-use/) · 라이선스: 명시되지 않음
 
 - [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) — 후보 DOM의 광고 여부를 Jev에 물어 강조하거나 제거하는 실험적 Chrome 확장.
   - **Jev가 판단하는 지점**: 요소 텍스트, 라벨, 링크 정보를 Noul로 평가하고 임계값을 적용한다.
@@ -190,11 +185,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **프로젝트의 용도**: 현재 스냅샷 참조로 실행하고 단계별 상태를 기록한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/phd-peter/ego-jev/) · 라이선스: MIT
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) — 공개 저장소에 접근할 수 없어 연동과 기존 설명을 확인할 수 없습니다. 추후 확인을 위해 기록을 보존하며 검증된 추천으로 취급하지 않습니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/ae-alphaedge/grokskill-jev/) · 라이선스: 명시되지 않음
-
 
 ## CLI 및 파이프라인
 
@@ -237,16 +227,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: 하나의 입력에 타입이 지정된 질문을 적용해 선택 결과와 확률을 JSON으로 받는다.
   - **프로젝트의 용도**: 표준 입력을 지원하며 TypeSafe 직접 호출이나 Vercel gateway를 쓸 수 있다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/jtsang4/jev-cli/) · 라이선스: MIT
-
-- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) — 키가 없거나 요청이 실패하면 통과시키며 설치 시 기존 Git hook을 덮어씁니다. 유지관리자의 확인이나 수정 전에는 신뢰할 수 있는 보안 게이트로 추천하지 않습니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/akashpriyadarshii/jev-git/) · 라이선스: 명시되지 않음
-
-- [**LightJev**](https://github.com/rongxinzy/LightJev) — Qwen 기반의 독립 학습 연구이며 TypeSafe Jev API 또는 모델 연동은 확인되지 않았습니다. 관련 연구로 보존하되 실제 Jev 연동 사례와 구분합니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/rongxinzy/lightjev/) · 라이선스: 명시되지 않음
 
 - [**TypeSafe AI Playground**](https://github.com/markjaquith/typesafe-ai-playground) — 의료정보 검사, 주석 검토, 어조 분석, 업종·직업 분류를 실험하는 Rust CLI다.
   - **Jev가 판단하는 지점**: 텍스트를 Jev에 보내 개별 Noul 확률, 점수 또는 분류 결과를 받는다.
@@ -1026,11 +1006,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **프로젝트의 용도**: 라우팅 규칙과 판단 로그를 로컬에서 검토하고 조정할 수 있다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/jev-codex-router/) · 라이선스: MIT
 
-- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) — 라이선스에 표준 MIT 외의 특정 주체 제한이 있어 이용 조건 확인이 필요합니다. 구현이 있다는 사실만으로 제한 없는 오픈소스 허가가 확인되지는 않습니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/dicklesworthstone/skillranker/) · 라이선스: 명시되지 않음
-
 - [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) — 자연어 경로 설명을 사용하는 Hono의 실험적 HTTP 의미 기반 라우터.
   - **Jev가 판단하는 지점**: Jev의 일치 확률을 이용해 임곗값을 넘는 첫 경로를 코드가 선택한다.
   - **프로젝트의 용도**: 의미 기반 분류 실험용이며 저자는 인증·인가 경계로 사용하지 말라고 명시한다.
@@ -1144,11 +1119,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **프로젝트의 용도**: Official foundation library featuring Pydantic validation and async concurrency support.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/typesafe-ai/typesafe-sdk-python/) · 라이선스: MIT
 
-- [**jev-visual**](https://github.com/hr98w/jev-visual) — Jev에서 영감을 받은 Qwen/MLX 로컬 실험이며 TypeSafe Jev 모델 연동은 아닙니다. 관련 연구로 보존하되 실제 연동과 구분합니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/hr98w/jev-visual/) · 라이선스: 명시되지 않음
-
 - [**advocaat**](https://github.com/pithings/advocaat) — 같은 데이터에 여러 타입 질문을 보내는 작은 TypeScript Jev 클라이언트.
   - **Jev가 판단하는 지점**: 예/아니요·Choice·Score 질문을 묶고 답을 타입 값에 매핑한다.
   - **프로젝트의 용도**: 확률·선택·평가에 공통 인터페이스를 사용한다.
@@ -1238,11 +1208,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: 상태와 질문을 Jev에 보내 Choice, Score, Noul 답변을 처리한다.
   - **프로젝트의 용도**: 요청과 응답 처리를 묶어 앱에 구조화된 판단을 연결한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/gaurav-gosain/jev-go/) · 라이선스: MIT
-
-- [**jev-java**](https://github.com/Olti1947/jev-java) — 요청 및 응답 필드가 현재 공식 SDK 계약과 다르며 여기서 실행 검증하지 않았습니다. 검토 대기로 보존하고 작동이 확인된 SDK라고 표현하지 않습니다.
-  - **Jev가 판단하는 지점**: 이 항목은 검토 대기 중이며 검증된 Jev 연동으로 추천하지 않습니다.
-  - **프로젝트의 용도**: 추후 확인을 위해 기록을 보존합니다. 먼저 검토 사유와 출처를 확인하세요.
-  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/olti1947/jev-java/) · 라이선스: 명시되지 않음
 
 - [**typesafe\_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) — Jev의 타입 질문과 확률 답변을 Elixir 애플리케이션에 연결하는 TypeSafe SDK.
   - **Jev가 판단하는 지점**: 상태와 Noul, Choice, Score 요청을 구성하고 System One 응답을 해석한다.

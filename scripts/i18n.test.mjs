@@ -85,9 +85,6 @@ test('catalog server render is browser-independent and initially bounded to 24 c
       assert.equal((html.match(/data-project-id=/g)||[]).length,24);
       assert.ok(html.includes(localeModule.projectPath('logicrw:tool-59',initialLocale)));
       assert.ok(html.includes(localeModule.translate('加载更多项目',initialLocale)));
-      assert.ok(html.includes('class="catalog-review-note"'));
-      assert.ok(html.includes(localeModule.translate('待复核',initialLocale)));
-      assert.ok(html.includes('class="catalog-review-count"'));
       const ticker = html.match(/<div class="ticker-items">([\s\S]*?)<\/div>/)?.[1] ?? '';
       assert.ok(!ticker.includes('tool-59'));
       assert.ok(!html.includes(localeModule.translate('正在读取项目…',initialLocale)));

@@ -661,7 +661,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     setVisibleLimit(24);
   }, [searchTerm, category, tag, quickFilter, onlySaved, sort]);
   const displayed = visible.slice(0, visibleLimit);
-  const pendingCount = visible.filter((project) => project.catalogStatus === "review-pending").length;
   const trending = useMemo(
     () =>
       [...projects]
@@ -1200,7 +1199,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 </select>
               </label>}
             </div>
-            {pendingCount > 0 && <p className="catalog-review-count">{pendingCount} {t("个项目待复核，已在卡片中标明。")}</p>}
             <span className="sr-only" role="status" aria-live="polite">
               {loadState === "ready"
                 ? `${visible.length} ${t("个匹配项目")}`
@@ -1261,9 +1259,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                         <span className="auto-label">{t("来源摘要")}</span>
                       )}
                     </div>
-                    {p.catalogStatus === "review-pending" && (
-                      <p className="catalog-review-note"><CircleHelp size={14} /><span><strong>{t("待复核")}</strong> · {t("接入证据待复核，暂不作为已验证项目推荐。")}</span></p>
-                    )}
                     <p className="plain-summary">
                       {projectText(p, "plainSummary")}
                     </p>
@@ -1683,9 +1678,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <span>{active.author}</span>
             <span className="tag">{label(active.category)}</span>
           </div>
-          {active.catalogStatus === "review-pending" && (
-            <p className="catalog-review-note"><CircleHelp size={14} /><span><strong>{t("待复核")}</strong> · {t("接入证据待复核，暂不作为已验证项目推荐。")}</span></p>
-          )}
           <p className="detail-summary">
             {projectText(active, "plainSummary")}
           </p>
@@ -1721,7 +1713,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           </dl>
           <div className="evidence">
             <h3>{t("来源与说明")}</h3>
-            {active.catalogStatus === "review-pending" && active.reviewReason && <p>{projectText(active, "reviewReason")}</p>}
             <p>{projectText(active, "claimStatus")}</p>
             {active.evidence?.map((e, i) => (
               <a key={i} href={safeUrl(e.url)} target="_blank" rel="noopener noreferrer">

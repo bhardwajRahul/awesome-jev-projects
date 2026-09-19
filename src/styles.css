@@ -206,9 +206,6 @@ p { margin: 0; }
 .tag-filter-description { flex: 0 1 100%; min-width: 0; margin: 0; color: var(--text-muted); font-size: 12px; line-height: 1.6; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .tags button[aria-pressed="true"] { color: var(--accent-text); background: var(--accent-soft); border-color: var(--border-strong); }
 .tags button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
-.catalog-review-note { display: flex; align-items: flex-start; gap: 7px; margin: 2px 0 12px; padding: 8px 10px; border: 1px solid var(--brass); border-radius: 6px; color: var(--brass); background: var(--brass-soft); font-size: 12px; line-height: 1.6; }
-.catalog-review-note svg { flex: 0 0 14px; margin-top: 3px; }
-.catalog-review-count { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; margin: 0 0 16px; border-radius: 6px; font-size: 11px; line-height: 1.4; color: var(--text-muted); background: var(--surface-inset); border: 1px solid var(--border); }
 .quick-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; min-width: 0; }
 .quick-filters button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; padding: 7px 12px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--text-muted); font-size: 12px; line-height: 1.5; }
 .quick-filters button[aria-pressed="true"] { color: var(--accent-text); background: var(--accent-soft); border-color: transparent; }

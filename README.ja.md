@@ -7,7 +7,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/ja/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#カテゴリ"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#カテゴリ"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -31,7 +31,7 @@ Agent を構築する際、すべての分岐判断を巨大な推論モデル�
 - 🎯 **ネイティブな型安全出力**：`Choice`、`Score`、`Noul` を直接返し、壊れやすい正規表現パースが不要です。
 - 🛡️ **誇大広告を排除**：17 の実用分野にわたる 267+ 件の検証済みオープンソースコードのみを厳選掲載しています。
 
-> **[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **267 件のプロジェクト**
+> **[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **260 件のプロジェクト**
 
 コミュニティが運営する、TypeSafe 非公式の Jev ディレクトリです。公開説明とソースコードに基づいて掲載しています。連携コードの確認は、当サイトによる実行、性能測定、安全性監査を意味しません。
 
@@ -60,8 +60,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 ## カテゴリ
 
-- [ブラウザ・デスクトップ (23)](https://logicrw.github.io/awesome-jev-projects/ja/categories/browser-os-action/)
-- [CLI・パイプライン (12)](https://logicrw.github.io/awesome-jev-projects/ja/categories/cli-pipelines/)
+- [ブラウザ・デスクトップ (21)](https://logicrw.github.io/awesome-jev-projects/ja/categories/browser-os-action/)
+- [CLI・パイプライン (10)](https://logicrw.github.io/awesome-jev-projects/ja/categories/cli-pipelines/)
 - [分類・カタログ (2)](https://logicrw.github.io/awesome-jev-projects/ja/categories/classification-taxonomy/)
 - [コード・グラフ探索 (11)](https://logicrw.github.io/awesome-jev-projects/ja/categories/codebase-graph-pathfinding/)
 - [Context GC・メモリ (15)](https://logicrw.github.io/awesome-jev-projects/ja/categories/context-gc-filter/)
@@ -72,8 +72,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [評価・可観測性 (29)](https://logicrw.github.io/awesome-jev-projects/ja/categories/evaluation-observability/)
 - [ゲーム・リアルタイム判断 (17)](https://logicrw.github.io/awesome-jev-projects/ja/categories/high-frequency-simulation/)
 - [MCP・連携 (18)](https://logicrw.github.io/awesome-jev-projects/ja/categories/mcp-integrations/)
-- [モデルルーティング (19)](https://logicrw.github.io/awesome-jev-projects/ja/categories/routing-cost-optimization/)
-- [SDK・判断フレームワーク (48)](https://logicrw.github.io/awesome-jev-projects/ja/categories/sdk-decision-frameworks/)
+- [モデルルーティング (18)](https://logicrw.github.io/awesome-jev-projects/ja/categories/routing-cost-optimization/)
+- [SDK・判断フレームワーク (46)](https://logicrw.github.io/awesome-jev-projects/ja/categories/sdk-decision-frameworks/)
 - [SDK・互換連携 (6)](https://logicrw.github.io/awesome-jev-projects/ja/categories/sdk-integrations/)
 - [安全対策・コンテンツ審査 (18)](https://logicrw.github.io/awesome-jev-projects/ja/categories/security-guardrails/)
 - [音声・会話 (4)](https://logicrw.github.io/awesome-jev-projects/ja/categories/voice-conversation/)
@@ -124,11 +124,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev が判断する箇所**: 意図、要素、URL、原文範囲を選び、命令の完結性や注意を要する操作を判断する。
   - **このプロジェクトの用途**: 音声操作中の確率、動作、リクエスト時間を表示する。
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/moritzkremb/jev-voice-browser/) · ライセンス: MIT
-
-- [**jev-use**](https://github.com/vlad-terin/jev-use) — 公開リポジトリにアクセスできず、連携や以前の説明を確認できません。追跡用に記録を保持し、検証済みの推奨項目としては扱いません。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vlad-terin/jev-use/) · ライセンス: 記載なし
 
 - [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) — 候補 DOM が広告かを Jev に尋ね、強調表示や削除を行う実験的 Chrome 拡張。
   - **Jev が判断する箇所**: 要素の文字、ラベル、リンク情報を Noul で評価し、閾値を適用する。
@@ -190,11 +185,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **このプロジェクトの用途**: 現在の参照で操作し、各段階の状態を記録する。
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/phd-peter/ego-jev/) · ライセンス: MIT
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) — 公開リポジトリにアクセスできず、連携や以前の説明を確認できません。追跡用に記録を保持し、検証済みの推奨項目としては扱いません。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ae-alphaedge/grokskill-jev/) · ライセンス: 記載なし
-
 
 ## CLI・パイプライン
 
@@ -237,16 +227,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev が判断する箇所**: 一つの入力に型付き質問を適用し、選択結果と確率を JSON で返す。
   - **このプロジェクトの用途**: 標準入力を受け取り、TypeSafe 直結と Vercel gateway に対応する。
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jtsang4/jev-cli/) · ライセンス: MIT
-
-- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) — キー未設定やリクエスト失敗時に処理を通過させ、インストール時に既存 Git hook を上書きします。管理者の確認・修正までは信頼できる安全ゲートとして推奨しません。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/akashpriyadarshii/jev-git/) · ライセンス: 記載なし
-
-- [**LightJev**](https://github.com/rongxinzy/LightJev) — Qwen ベースの独立した学習研究であり、TypeSafe Jev API やモデルの連携は確認されていません。関連研究として保持し、Jev 接続事例とは区別します。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rongxinzy/lightjev/) · ライセンス: 記載なし
 
 - [**TypeSafe AI Playground**](https://github.com/markjaquith/typesafe-ai-playground) — 医療情報の検査、コメント確認、語調分析、業種・職業分類を試せる Rust CLI。
   - **Jev が判断する箇所**: 入力文を Jev に送り、個別の Noul 確率、スコア、分類結果を受け取る。
@@ -1026,11 +1006,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **このプロジェクトの用途**: 振り分けルールと判断ログを手元で確認し調整できる。
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jev-codex-router/) · ライセンス: MIT
 
-- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) — ライセンスには標準 MIT 以外の主体別の制限があります。利用条件を確認中で、実装の存在は制限のないオープンソース許諾を意味しません。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/dicklesworthstone/skillranker/) · ライセンス: 記載なし
-
 - [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) — 自然言語のルート説明を使う Hono の実験的 HTTP セマンティックルーター。
   - **Jev が判断する箇所**: Jev の一致確率から、閾値を超えた最初のルートをコードが選ぶ。
   - **このプロジェクトの用途**: 意味による振り分けの実験用で、認証・認可の境界としての利用は禁止されている。
@@ -1144,11 +1119,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **このプロジェクトの用途**: Official foundation library featuring Pydantic validation and async concurrency support.
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/typesafe-ai/typesafe-sdk-python/) · ライセンス: MIT
 
-- [**jev-visual**](https://github.com/hr98w/jev-visual) — Jev に着想を得た Qwen/MLX のローカル実験で、TypeSafe Jev モデルの連携ではありません。関連研究として保持し、実際の連携とは区別します。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/hr98w/jev-visual/) · ライセンス: 記載なし
-
 - [**advocaat**](https://github.com/pithings/advocaat) — 同じデータに複数の型付き質問を送る、小さな TypeScript 製 Jev クライアント。
   - **Jev が判断する箇所**: Yes/No・Choice・Score をまとめ、回答を型付き値へ変換する。
   - **このプロジェクトの用途**: 確率・選択・評価に共通インターフェースを使える。
@@ -1238,11 +1208,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
   - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/gaurav-gosain/jev-go/) · ライセンス: MIT
-
-- [**jev-java**](https://github.com/Olti1947/jev-java) — リクエスト・レスポンスのフィールドが現行公式 SDK の契約と異なり、当サイトでは実行していません。確認待ちとして保持し、動作確認済み SDK とは表記しません。
-  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
-  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
-  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/olti1947/jev-java/) · ライセンス: 記載なし
 
 - [**typesafe\_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) — Jev の型付き質問と確率的回答を Elixir アプリに組み込む TypeSafe SDK。
   - **Jev が判断する箇所**: 状態と Noul、Choice、Score のリクエストを作り、System One の応答を解析する。

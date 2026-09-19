@@ -7,7 +7,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -31,7 +31,7 @@ When building autonomous agents, routing every small branching decision to a hea
 - 🎯 **Native Typed Outputs**: Built-in primitives for `Choice`, `Score`, and `Noul` without fragile JSON regex parsing.
 - 🛡️ **Zero Vaporware**: 267+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
 
-> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **267 projects**
+> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **260 projects**
 
 A community-maintained Jev directory, independent of TypeSafe. Entries are grounded in public descriptions and source code. Detecting an integration does not mean this site has run, benchmarked or security-audited it.
 
@@ -60,8 +60,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 ## Categories
 
-- [Browser & OS Action (23)](https://logicrw.github.io/awesome-jev-projects/en/categories/browser-os-action/)
-- [CLI & Pipelines (12)](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/)
+- [Browser & OS Action (21)](https://logicrw.github.io/awesome-jev-projects/en/categories/browser-os-action/)
+- [CLI & Pipelines (10)](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/)
 - [Classification (2)](https://logicrw.github.io/awesome-jev-projects/en/categories/classification-taxonomy/)
 - [Code Navigation (11)](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/)
 - [Context GC (15)](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/)
@@ -72,8 +72,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Evaluation & Observability (29)](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/)
 - [High-Frequency / Games (17)](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/)
 - [MCP & Integrations (18)](https://logicrw.github.io/awesome-jev-projects/en/categories/mcp-integrations/)
-- [Model Routing (19)](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/)
-- [SDK & Decision Frameworks (48)](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/)
+- [Model Routing (18)](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/)
+- [SDK & Decision Frameworks (46)](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/)
 - [SDK Integrations (6)](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-integrations/)
 - [Security & Guardrails (18)](https://logicrw.github.io/awesome-jev-projects/en/categories/security-guardrails/)
 - [Voice & Conversation (4)](https://logicrw.github.io/awesome-jev-projects/en/categories/voice-conversation/)
@@ -124,11 +124,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Chooses intent, elements, URLs or verbatim spans and judges command completeness and sensitive actions.
   - **What this project offers**: Shows probabilities, actions and request timing during voice interaction.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/moritzkremb/jev-voice-browser/) · License: MIT
-
-- [**jev-use**](https://github.com/vlad-terin/jev-use) — The public repository is currently unavailable, so its integration and earlier description cannot be checked. The record is retained for follow-up, not recommended as verified.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/vlad-terin/jev-use/) · License: Not declared
 
 - [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) — An experimental Chrome extension that asks Jev whether candidate DOM elements are ads, then highlights or removes them.
   - **Where Jev makes a decision**: Batches element text, labels, and link information into Noul questions and applies a threshold.
@@ -190,11 +185,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **What this project offers**: Executes against current snapshot references and records step state.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/phd-peter/ego-jev/) · License: MIT
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) — The public repository is currently unavailable, so its integration and earlier description cannot be checked. The record is retained for follow-up, not recommended as verified.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/ae-alphaedge/grokskill-jev/) · License: Not declared
-
 
 ## CLI & Pipelines
 
@@ -237,16 +227,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Evaluates typed questions over one input and returns choices and probabilities as JSON.
   - **What this project offers**: Accepts standard input and supports direct TypeSafe calls or a Vercel gateway.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/jtsang4/jev-cli/) · License: MIT
-
-- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) — The source permits execution when the key is missing or requests fail, and installation overwrites the existing Git hook. It is not recommended as a reliable security gate pending maintainer clarification or fixes.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/akashpriyadarshii/jev-git/) · License: Not declared
-
-- [**LightJev**](https://github.com/rongxinzy/LightJev) — This is independent Qwen-based training research, not a confirmed TypeSafe Jev API or model integration. It is retained as related research, not an operational Jev integration.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/rongxinzy/lightjev/) · License: Not declared
 
 - [**TypeSafe AI Playground**](https://github.com/markjaquith/typesafe-ai-playground) — Rust CLI experiments for health-information screening, comment review, tone analysis and business or occupation classification.
   - **Where Jev makes a decision**: Sends text to Jev for separate Noul probabilities, scores or category choices.
@@ -1026,11 +1006,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **What this project offers**: Keeps routing policy and decision logs local for inspection and tuning.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/jev-codex-router/) · License: MIT
 
-- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) — The license contains entity-specific restrictions beyond standard MIT. Licensing needs review; working code does not establish an unrestricted open-source license.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/dicklesworthstone/skillranker/) · License: Not declared
-
 - [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) — An experimental semantic HTTP router for Hono using natural-language route descriptions.
   - **Where Jev makes a decision**: Jev scores request-to-description matches; code selects the first route above its threshold.
   - **What this project offers**: Explores semantic routing; the author explicitly warns against using it for authentication or authorization.
@@ -1144,11 +1119,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **What this project offers**: Official foundation library featuring Pydantic validation and async concurrency support.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/typesafe-ai/typesafe-sdk-python/) · License: MIT
 
-- [**jev-visual**](https://github.com/hr98w/jev-visual) — This is a local Qwen/MLX experiment inspired by Jev, not an integration of the TypeSafe Jev model. It is retained as related research and clearly separated from actual integrations.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/hr98w/jev-visual/) · License: Not declared
-
 - [**advocaat**](https://github.com/pithings/advocaat) — A small TypeScript client for asking Jev multiple typed questions about the same data.
   - **Where Jev makes a decision**: Combines yes/no, Choice and Score questions and maps responses to typed values.
   - **What this project offers**: Reuses one interface for probabilities, choices and scores.
@@ -1238,11 +1208,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Sends application state and questions to Jev and parses Choice, Score or Noul answers.
   - **What this project offers**: Packages requests and response parsing for typed decisions in applications.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/gaurav-gosain/jev-go/) · License: MIT
-
-- [**jev-java**](https://github.com/Olti1947/jev-java) — Its request and response fields differ from the current official SDK contract, and it has not been executed here. The record remains pending review and is not described as a working SDK.
-  - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
-  - **What this project offers**: The record is preserved for follow-up. Check the review reason and sources first.
-  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/olti1947/jev-java/) · License: Not declared
 
 - [**typesafe\_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) — An Elixir TypeSafe SDK that brings Jev’s typed questions and probabilistic answers into Elixir applications.
   - **Where Jev makes a decision**: Builds state and Noul, Choice, and Score requests and parses System One responses.
