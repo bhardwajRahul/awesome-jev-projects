@@ -59,7 +59,7 @@
 
 首发合作伙伴招募中，目前没有付费赞助商。
 
-[查看合作方案与联系方式](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
+[查看合作方案与联系方式 (中文)](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.zh-CN.md) · [English](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
 赞助不影响收录审核、项目描述或自然排序。
 
