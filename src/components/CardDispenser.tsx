@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import type { Locale } from "../lib/i18n";
 import "../styles/card-dispenser.css";
 
@@ -13,18 +14,42 @@ export function CardDispenser({ locale, projectCount, onDraw }: {
   projectCount: number;
   onDraw: () => void;
 }) {
+  const [pressed, setPressed] = useState(false);
+  const pressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (pressTimer.current !== null) clearTimeout(pressTimer.current);
+  }, []);
+
+  function draw() {
+    if (pressTimer.current !== null) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      onDraw();
+      return;
+    }
+    setPressed(true);
+    pressTimer.current = setTimeout(() => {
+      pressTimer.current = null;
+      setPressed(false);
+      onDraw();
+    }, 120);
+  }
+
   const t = copy[locale];
   const count = `${projectCount.toLocaleString(locale)} ${t.count}`;
   return (
-    <button type="button" className="card-dispenser" onClick={onDraw} aria-haspopup="dialog" aria-label={`${t.draw} · ${count}`}>
-      <span className="cd-plate" aria-hidden="true"><span>JEV / DISCOVERY</span><span className="cd-index">System 1</span></span>
-      <span className="cd-deck" aria-hidden="true">
-        <span className="cd-card cd-back" />
-        <span className="cd-card cd-middle" />
-        <span className="cd-card cd-front">
-          <span className="cd-card-heading"><span>choice</span><span className="cd-contact" /></span>
-          <strong>{t.next}</strong>
-          <span className="cd-options">{t.options.map((option, index) => <span className={index === 0 ? "is-chosen" : undefined} key={option}>{option}</span>)}</span>
+    <button type="button" className="card-dispenser" data-pressed={pressed || undefined} onClick={draw} aria-haspopup="dialog" aria-label={`${t.draw} · ${count}`}>
+      <span className="cd-plate" aria-hidden="true"><span>JEV-01 <span className="cd-plate-divider">//</span> TACTILE DISPATCHER</span><span className="cd-led" /></span>
+      <span className="cd-stage" aria-hidden="true">
+        <span className="cd-feed" />
+        <span className="cd-deck">
+          <span className="cd-card cd-back" />
+          <span className="cd-card cd-middle" />
+          <span className="cd-card cd-front">
+            <span className="cd-card-heading"><span>choice</span><span className="cd-seal"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="m7 12 3 3 7-7M6 19h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></span></span>
+            <strong>{t.next}</strong>
+            <span className="cd-options">{t.options.map((option, index) => <span className={index === 0 ? "is-chosen" : undefined} key={option}>{option}</span>)}</span>
+          </span>
         </span>
       </span>
       <span className="cd-count">{count}</span>

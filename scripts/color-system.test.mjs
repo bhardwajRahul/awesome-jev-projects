@@ -67,6 +67,13 @@ for (const mode of ['light', 'dark']) {
     }
   });
 
+  test(`${mode} material surfaces keep functional text readable across both metal stops`, () => {
+    const { resolve } = palette(mode);
+    for (const surface of ['metal-top', 'metal-bottom']) for (const text of ['text', 'text-muted']) {
+      assert.ok(contrast(resolve(`--${text}`), resolve(`--${surface}`)) >= 4.5, `${mode}: ${text} on ${surface}`);
+    }
+  });
+
   test(`${mode} compatibility aliases and the persistent dark discovery stage use the same semantic system`, () => {
     const { resolve } = palette(mode);
     for (const [alias, role] of Object.entries({ 'page-bg': 'canvas', 'theme-panel': 'surface', 'theme-raised': 'surface-raised', 'theme-text': 'text', 'theme-muted': 'text-muted', line: 'border', muted: 'text-muted', lime: 'accent' })) {
@@ -95,7 +102,7 @@ test('canvas and electric lime honor the brand while theme rules avoid component
 
 
 test('theme changes do not crossfade foreground independently from backgrounds', () => {
-  for (const file of ['src/styles.css','src/styles/theme.css','src/styles/daily-project.css','src/styles/sponsors.css','src/styles/discovery.css','src/styles/developer-actions.css','src/styles/card-dispenser.css','public/directory.css']) {
+  for (const file of ['src/styles.css','src/styles/theme.css','src/styles/daily-project.css','src/styles/sponsors.css','src/styles/discovery.css','src/styles/developer-actions.css','src/styles/card-dispenser.css','src/styles/hero-engineering.css','src/styles/jevy.css','public/directory.css']) {
     const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8');
     for (const match of source.matchAll(/transition\s*:\s*([^;}]+)/g)) {
       assert.ok(!match[1].split(',').some(part => /^\s*(?:color|background(?:-color)?)\s/.test(part)), `${file}: palette changes must remain atomic`);

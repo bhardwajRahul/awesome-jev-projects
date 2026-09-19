@@ -44,6 +44,8 @@ import { CopyCloneButton } from "./components/CopyCloneButton.tsx";
 import { ThemeToggle } from "./components/ThemeToggle.tsx";
 import { DailyProject } from "./components/DailyProject.tsx";
 import { CardDispenser } from "./components/CardDispenser.tsx";
+import { Jevy } from "./components/Jevy.tsx";
+import "./styles/hero-engineering.css";
 import { eligibleProjects } from "./lib/discovery.mjs";
 import { sponsorCopy } from "./lib/sponsors.mjs";
 import { resolveTagId, tagLabel, tagDescription, tagOptions } from "./lib/tags.mjs";
@@ -718,6 +720,12 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     ko: ["카드 뽑기", "카드를 준비하는 중…", "카드를 불러오지 못했습니다. 목록은 계속 사용할 수 있습니다.", "다시 시도"],
   }[locale];
   const discoveryEntry = discoveryUi[0];
+  const heroStatus = {
+    zh: { ready: "System-1 雷达就绪", count: "个项目已索引", note: "把状态变成选项。", detail: "Choice · Score · Noul", status: "目录状态，非模型 API 的实时运行状态" },
+    en: { ready: "System-1 Radar Ready", count: "repos indexed", note: "Turn state into choices.", detail: "Choice · Score · Noul", status: "Catalog status, not live model API health" },
+    ja: { ready: "System-1 レーダー稼働", count: "件を索引済み", note: "状態を、選択肢へ。", detail: "Choice · Score · Noul", status: "カタログの状態です。モデル API の稼働監視ではありません" },
+    ko: { ready: "System-1 레이더 준비", count: "개 프로젝트 색인", note: "상태를 선택지로.", detail: "Choice · Score · Noul", status: "카탈로그 상태이며 모델 API의 실시간 상태가 아닙니다" },
+  }[locale];
   const openGacha = () => { closeProject(); setModal("gacha"); };
   const openSponsor = () => {
     closeProject();
@@ -864,10 +872,19 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
         </div>
       </header>
       <main className="page">
-        <section className="hero" aria-labelledby="hero-heading">
+        <section className="hero hero-tactile" aria-labelledby="hero-heading">
           <div className="hero-copy">
+            <div className="hero-engine-status" title={heroStatus.status}>
+              <span className="hero-led" aria-hidden="true" />
+              <span>{heroStatus.ready}</span>
+              <span className="hero-index-count"><b>{projects.length.toLocaleString(locale)}</b> {heroStatus.count}</span>
+            </div>
             <h1 id="hero-heading"><span>{t("把思考留给大模型，")}</span><strong>{t("把选择题交给 Jev。")}</strong></h1>
             <p>{t("从社区源码里，查看 Jev 的接入方式与决策位置。")}</p>
+            <div className="hero-maker-row">
+              <div className="hero-maker-copy">
+                <p>{heroStatus.note}</p>
+                <span>{heroStatus.detail}</span>
             <a
               className="text-link"
               href="https://typesafe.ai/"
@@ -877,6 +894,9 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               {t("认识 TypeSafe 的决策模型")}
               <ArrowUpRight size={15} />
             </a>
+              </div>
+              <Jevy locale={locale} />
+            </div>
           </div>
           <div className="hero-workbench">
             <div className="hero-tool-row">
