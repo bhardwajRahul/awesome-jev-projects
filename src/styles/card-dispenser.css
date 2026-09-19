@@ -1,7 +1,7 @@
 .card-dispenser {
   position: relative; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto auto; justify-items: center;
-  width: 100%; min-width: 0; height: 300px; padding: 16px 20px 18px; overflow: hidden;
-  border: 1px solid var(--border-strong); border-radius: 18px; color: var(--text);
+  width: 100%; min-width: 0; height: 200px; padding: 12px 16px; overflow: hidden;
+  border: 1px solid var(--border-strong); border-radius: 16px; color: var(--text);
   background: linear-gradient(155deg, var(--metal-top, var(--surface-raised)), var(--metal-bottom, var(--surface-inset)));
   box-shadow: var(--shadow-material, var(--shadow-hover)); cursor: pointer; text-align: left;
   transform: translateY(0); transition: transform 140ms ease-out, box-shadow 180ms ease-out;
@@ -20,12 +20,12 @@
 .cd-led::after { content: ""; position: absolute; inset: 1px; border-radius: inherit; background: var(--accent); opacity: .45; animation: cd-breathe 3.6s ease-in-out infinite; }
 
 /* Stage & Feed slot */
-.cd-stage { position: relative; display: grid; place-items: center; width: min(100%, 286px); min-height: 174px; perspective: 900px; }
+.cd-stage { position: relative; display: grid; place-items: center; width: min(100%, 240px); min-height: 0; perspective: 900px; }
 .cd-feed { position: absolute; inset: auto 12px 14px; height: 22px; border: 1px solid var(--border-strong); border-radius: 999px; background: var(--night-canvas); box-shadow: inset 0 4px 10px color-mix(in srgb, black 65%, transparent), 0 1px 2px color-mix(in srgb, white 8%, transparent); }
 .cd-feed-lip { position: absolute; inset: 2px 6px auto; height: 3px; border-radius: 2px; background: color-mix(in srgb, var(--accent) 30%, transparent); opacity: .6; }
 
 /* Card Deck */
-.cd-deck { position: relative; width: 200px; height: 134px; margin-bottom: 8px; transform: rotateX(12deg); transform-style: preserve-3d; }
+.cd-deck { position: relative; width: 156px; height: 96px; margin-bottom: 2px; transform: rotateX(12deg); transform-style: preserve-3d; }
 .cd-card { position: absolute; inset: 0; border: 1px solid var(--border-strong); border-radius: 10px; transform-origin: 50% 90%; box-shadow: inset 0 1px 0 color-mix(in srgb, white 25%, transparent), 0 2px 6px color-mix(in srgb, var(--night-canvas) 14%, transparent), 0 8px 20px -2px color-mix(in srgb, var(--night-canvas) 22%, transparent); transition: transform 420ms cubic-bezier(.2, 1.4, .4, 1), box-shadow 360ms ease-out; }
 
 /* Back cards: Dark-tech geometric card-back texture */
@@ -65,7 +65,7 @@
 /* Front card */
 .cd-front {
   display: flex; flex-direction: column; justify-content: space-between;
-  padding: 11px 13px 10px;
+  padding: 8px 10px 8px;
   color: var(--text);
   background: linear-gradient(140deg, var(--surface-raised) 35%, var(--surface) 80%, color-mix(in srgb, var(--accent) 6%, var(--surface)));
   transform: rotate(-2.5deg) translateZ(8px);
@@ -95,8 +95,8 @@
 }
 .cd-card-title {
   position: relative; z-index: 1;
-  display: block; margin: 6px 0 5px;
-  font-size: 13.5px; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; color: var(--text);
+  display: block; margin: 4px 0 3px;
+  font-size: 12px; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; color: var(--text);
 }
 .cd-card-tags { position: relative; z-index: 1; display: flex; flex-wrap: nowrap; gap: 3px; }
 .cd-card-tag {
@@ -121,11 +121,11 @@
 .cd-card-serial { font: 8px/1 var(--mono, ui-monospace, monospace); color: var(--text-quiet); letter-spacing: .06em; }
 
 /* Count & Slot */
-.cd-count { margin: 0 0 9px; font-size: 10px; line-height: 1.4; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.cd-count { margin: 0 0 6px; font-size: 10px; line-height: 1.4; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .cd-slot {
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  width: 100%; min-height: 41px; padding: 10px 14px;
+  width: 100%; min-height: 36px; padding: 8px 12px;
   border: 1px solid var(--border-strong); border-radius: 8px;
   color: var(--night-text); background: var(--night-canvas);
   box-shadow: inset 0 2px 6px color-mix(in srgb, black 50%, transparent), 0 1px 2px color-mix(in srgb, var(--text) 8%, transparent);

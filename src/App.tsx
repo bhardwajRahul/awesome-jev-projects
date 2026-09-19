@@ -531,13 +531,13 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           searchRef.current?.focus();
         }
       }
-      if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === "g" && !editable && !e.repeat && !document.querySelector("dialog[open]")) {
-        e.preventDefault();
-        setActive(null);
-        setModal("gacha");
-      }
-      if (e.key === "Escape" && !document.querySelector("dialog[open]"))
+      if (e.key === "Escape" && !document.querySelector("dialog[open]")) {
+        if (showFilters) {
+          setShowFilters(false);
+          return;
+        }
         searchRef.current?.blur();
+      }
     };
     window.addEventListener("keydown", handler);
     const fromHash = () => {
@@ -553,7 +553,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
       window.removeEventListener("keydown", handler);
       window.removeEventListener("hashchange", fromHash);
     };
-  }, [projects]);
+  }, [projects, showFilters]);
   const categories = useMemo(
     () => [...new Set(projects.map((p) => p.category))],
     [projects],
@@ -1045,7 +1045,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 <Workflow size={14} /> {t("决策流程")}
               </button>
             </div>
-            <button type="button" className="discovery-entry" hidden={heroTab === "discover"} onClick={openGacha} aria-haspopup="dialog" aria-keyshortcuts="Meta+G Control+G" title={`${discoveryEntry} · ⌘G / Ctrl+G`}><Sparkles size={14} aria-hidden="true" /><span>{discoveryEntry}</span></button>
+            <button type="button" className="discovery-entry" hidden={heroTab === "discover"} onClick={openGacha} aria-haspopup="dialog"><Sparkles size={14} aria-hidden="true" /><span>{discoveryEntry}</span></button>
             </div>
             <div id={`${heroId}-discover-panel`} role="tabpanel" aria-labelledby={`${heroId}-discover-tab`} hidden={heroTab !== "discover"}>
               <CardDispenser locale={locale} projectCount={explorableCount} onDraw={openGacha} />
@@ -1195,11 +1195,24 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           </aside>
           <div className="results" id="project-results" tabIndex={-1}>
             <div className="search-row" ref={searchRowRef}>
-              <div className="search-box">
-                <Search size={19} />
+              <form
+                className="search-box"
+                role="search"
+                onSubmit={(event) => event.preventDefault()}
+              >
+                <Search size={19} aria-hidden="true" />
                 <input
                   ref={searchRef}
+                  id="project-search"
+                  name="q"
+                  type="search"
+                  enterKeyHint="search"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  spellCheck={false}
                   aria-label={t("搜索项目")}
+                  aria-controls="project-results"
                   value={query}
                   maxLength={200}
                   onChange={(e) => setQuery(e.target.value)}
@@ -1209,6 +1222,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 />
                 {query ? (
                   <button
+                    type="button"
                     className="clear-search"
                     onClick={() => {
                       clearSearch();
@@ -1216,24 +1230,23 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                     }}
                     aria-label={t("清空搜索")}
                   >
-                    <X size={16} />
+                    <X size={16} aria-hidden="true" />
                   </button>
                 ) : (
-                  <kbd>/</kbd>
+                  <kbd aria-hidden="true">/</kbd>
                 )}
-              </div>
+              </form>
               <button
                 type="button"
                 className="toolbar-gacha-button"
                 onClick={openGacha}
                 aria-haspopup="dialog"
-                aria-keyshortcuts="Meta+G Control+G"
-                title={`${discoveryEntry} · ⌘G / Ctrl+G`}
               >
                 <Sparkles size={15} aria-hidden="true" />
                 <span>{t("抽张灵感")}</span>
               </button>
               <button
+                type="button"
                 className={`filter-button ${showFilters ? "selected" : ""} ${activeFilterCount > 0 ? "has-active" : ""}`}
                 aria-label={t("展开筛选")}
                 aria-expanded={showFilters}

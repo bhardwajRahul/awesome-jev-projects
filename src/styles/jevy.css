@@ -15,11 +15,11 @@
   border-radius: var(--radius-lg);
   background: transparent;
   color: var(--text);
-  cursor: pointer;
+  cursor: default;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 .jevy svg { display: block; width: 100%; height: auto; overflow: visible; }
-.jevy:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .jevy-outline { stroke: var(--jevy-edge); stroke-width: 1.5; }
 .jevy-edge { stroke: var(--jevy-edge); }
 .jevy-brass-stroke { stroke: var(--jevy-brass-light); }
@@ -42,9 +42,9 @@
 .jevy-assembly { transform-origin: 92px 145px; transition: transform 480ms cubic-bezier(.2, 1.6, .4, 1); }
 .jevy-head { transform-origin: 92px 96px; transition: transform 480ms cubic-bezier(.2, 1.6, .4, 1); }
 .jevy-gaze { transition: transform 220ms var(--motion-ease); }
-.jevy:hover .jevy-assembly, .jevy:focus-visible .jevy-assembly { transform: translateY(-3px) rotate(-2deg); }
-.jevy:hover .jevy-head, .jevy:focus-visible .jevy-head { transform: rotate(4deg); }
-.jevy:hover .jevy-gaze, .jevy:focus-visible .jevy-gaze { transform: translate(1px, -1px); }
+.jevy:hover .jevy-assembly { transform: translateY(-3px) rotate(-2deg); }
+.jevy:hover .jevy-head { transform: rotate(4deg); }
+.jevy:hover .jevy-gaze { transform: translate(1px, -1px); }
 .jevy-antenna-light { animation: jevy-signal 3s ease-in-out infinite; }
 .jevy-cog { animation: jevy-turn 24s linear infinite; }
 .jevy-key { animation: jevy-turn 36s linear infinite reverse; }
