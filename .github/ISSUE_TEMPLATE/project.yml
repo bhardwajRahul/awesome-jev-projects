@@ -1,26 +1,122 @@
-name: Submit a Jev project
-description: Share an open-source tool that uses Jev
-title: "[Project] "
-labels: []
+name: 🚀 提交 Jev 开源项目 (Submit a Jev Project)
+description: 提交使用 Jev 进行 System-1 架构决策的开源项目，自动进入雷达扫描与官网收录
+title: "[Project]: "
+labels: ["project-submission"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🛰️ Awesome Jev 项目收录提交流程
+        感谢向 **Awesome Jev 开源雷达** 贡献项目！
+        - **全自动扫描**：提交后，雷达后台会在 **6 小时内** 自动扫描仓库、核查固定源码中的 Jev 原语调用，并自动同步上线至官网。
+        - **收录标准**：必须为公开可访问的开源仓库、包含开源许可证（如 MIT、Apache-2.0 等），且代码中有真实的 Jev 原语调用（非空壳占位项目）。
+        - *中英文均可提交 (Both English and Chinese are welcome)*。
+
   - type: input
     id: repository
     attributes:
-      label: GitHub repository
-      placeholder: https://github.com/owner/repo
+      label: GitHub repository (项目仓库地址)
+      description: 请输入完整的 GitHub 仓库链接，或直接输入 owner/repo
+      placeholder: https://github.com/owner/your-repo
     validations:
       required: true
+
   - type: textarea
     id: purpose
     attributes:
-      label: What does it do?
-      description: Describe it in plain language.
+      label: What does it do? (项目核心用途)
+      description: 用一两句通俗精炼的话说明这个项目解决什么问题（建议 15~100 字）。
+      placeholder: "例如：基于 Jev 的极速 CLI 代码审查路由分发器，在 50ms 内判定并将任务派发给专门的模型或工具链。"
     validations:
       required: true
+
+  - type: dropdown
+    id: primitives
+    attributes:
+      label: Jev Primitives used (使用的 Jev 核心原语)
+      description: 您的项目主要使用了哪些 Jev 原语做决策？(可多选)
+      multiple: true
+      options:
+        - "⚡ Choice (离散动作/分支多选一 · N-Pick-1)"
+        - "🎯 Score (连续置信度打分 · Continuous Evaluation)"
+        - "🛡️ Noul (二元门禁与安全拦截 · True/False Gate)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Primary Category (建议主分类)
+      description: 请选择最契合您项目的场景主分类
+      options:
+        - "CLI & Pipelines (命令行与流水线管道)"
+        - "Routing & Cost Optimization (模型路由与成本优化)"
+        - "Security & Guardrails (安全门禁与合规拦截)"
+        - "MCP & Integrations (MCP 工具集成与协议调度)"
+        - "Browser & OS Action (浏览器与桌面自动化)"
+        - "Codebase & Graph Pathfinding (代码图谱与寻路)"
+        - "Context GC & Filter (上下文垃圾回收与过滤)"
+        - "Decision Tools (通用决策与判断工具)"
+        - "Data & Search (数据检索与意图识别)"
+        - "Evaluation & Observability (评测与可观测性)"
+        - "Voice & Conversation (语音对话与实时交互)"
+        - "Creative Tools (创意与生成工具)"
+        - "Domain & Vertical Tools (垂直行业与专门工具)"
+        - "High-Frequency & Simulation (高频仿真与游戏)"
+        - "SDK & Decision Frameworks (SDK 与决策框架)"
+        - "SDK & Integrations (SDK 原生接入与封装)"
+        - "Classification & Taxonomy (分类与分类学系统)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tags
+    attributes:
+      label: Project Tags (项目场景标签，建议选 1~3 个)
+      description: 请选择最符合您项目技术特性的标签，网站将据此自动归类。
+      multiple: true
+      options:
+        - "llm-routing-cost (模型路由与成本 / LLM Routing & Cost)"
+        - "security-guardrails (安全与护栏 / Security & Guardrails)"
+        - "cli-git-gates (CLI 与 Git 门禁 / CLI & Git Gates)"
+        - "mcp-integrations (MCP 与工具集成 / MCP & Integrations)"
+        - "browser-automation (浏览器自动化 / Browser Automation)"
+        - "desktop-os (桌面与移动端 / Desktop & Mobile)"
+        - "context-compaction (上下文压缩 / Context Compaction)"
+        - "coding-agents (编程 Agent / Coding Agents)"
+        - "ast-code-graph (代码导航与图谱 / AST & Code Graph)"
+        - "multilanguage-sdk (多语言 SDK / Multi-Language SDK)"
+        - "search-retrieval (搜索与检索 / Search & Retrieval)"
+        - "voice-conversation (语音与对话 / Voice & Conversation)"
+        - "database-vector (数据库与向量 / Database & Vector)"
+        - "evaluation-benchmarks (评测与可观测性 / Evaluation & Benchmarks)"
+        - "finance-quant (金融与量化 / Finance & Quant)"
+        - "creative-multimedia (创作与多媒体 / Creative & Multimedia)"
+        - "games-simulation (游戏与仿真 / Games & Simulation)"
+        - "domain-workflows (行业与业务流程 / Domain Workflows)"
+        - "classification-ranking (分类与排序 / Classification & Ranking)"
+        - "typed-decisions (结构化决策 / Typed Decisions)"
+    validations:
+      required: true
+
   - type: textarea
     id: decision
     attributes:
-      label: Where does Jev make a decision?
-      description: Include a link to the implementation or README and benchmark conditions, if any.
+      label: Where does Jev make a decision? (Jev 在哪里做决策 / 源码证据)
+      description: 请提供具体的源码文件路径或代码链接（例如 src/router.ts#L42），证明项目中真实调用了 Jev。
+      placeholder: "代码链接：https://github.com/owner/repo/blob/main/src/router.ts#L35\n决策说明：在进入 Agent 循环前，使用 Jev Choice 快速判断是否走高速通道。"
     validations:
       required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist (收录合规确认)
+      description: 提交前请确认以下事项
+      options:
+        - label: 该仓库是公开可访问的真实开源项目（非私有、非空壳/占位项目）
+          required: true
+        - label: 仓库根目录或代码中包含声明清晰的开源协议（如 MIT、Apache-2.0、GPL 等）
+          required: true
+        - label: 我已知晓项目将由自动化流水线进行固定版本源码核查与自动归档
+          required: true

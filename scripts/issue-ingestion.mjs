@@ -6,8 +6,11 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { createGitHubClient } from "./github-client.mjs";
 import {
   extractSubmittedRepository,
+  extractSubmittedTags,
+  extractSubmittedCategory,
   inspectRepository,
 } from "./project-source.mjs";
+import { inferCanonicalTags } from "../src/lib/tags.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
 import { summarize, verifyIntegration, atomicJSON } from "./radar-sync.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -111,12 +114,24 @@ export async function prepareSubmission({
       (issue.user.login.toLowerCase() === repo.owner?.login?.toLowerCase() ||
         ["OWNER", "MEMBER", "COLLABORATOR"].includes(issue.author_association)),
   );
+  const submittedCategory = extractSubmittedCategory(issue.body ?? "", taxonomy);
+  const submittedTags = extractSubmittedTags(issue.body ?? "");
+  const baseSummary = summarize(repo, readme, taxonomy);
+  if (submittedCategory) {
+    baseSummary.category = submittedCategory;
+  }
+  if (submittedTags.length) {
+    baseSummary.tags = inferCanonicalTags({
+      category: baseSummary.category,
+      tags: submittedTags,
+    });
+  }
   const editorial = await enrich({
     repo,
     readme,
     issueBody: issue.body ?? "",
     issueTrusted,
-    fallback: summarize(repo, readme, taxonomy),
+    fallback: baseSummary,
   });
   const [author, name] = repo.full_name.split("/");
   const project = {

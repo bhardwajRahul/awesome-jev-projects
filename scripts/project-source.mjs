@@ -2,6 +2,7 @@
 import { createHash } from "node:crypto";
 import { posix } from "node:path";
 import { normalizeRepository } from "../src/lib/submission.mjs";
+import { resolveTagId } from "../src/lib/tags.mjs";
 
 const MAX_FILE_BYTES = 90_000;
 const MAX_READMES = 3;
@@ -9,6 +10,10 @@ const MAX_CODE_FILES = 8;
 const SHA = /^[a-f\d]{40,64}$/i;
 const REPOSITORY_FIELD =
   /^(?:github repository|project repository|repository|项目仓库|仓库地址|github 仓库)$/i;
+const TAGS_FIELD =
+  /^(?:project tags?|tags?|项目标签|标签|scenario tags?)$/i;
+const CATEGORY_FIELD =
+  /^(?:primary category|category|项目分类|分类|所属分类)$/i;
 const REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
 const pathPart = (path) => path.split("/").map(encodeURIComponent).join("/");
 const hash = (text) => createHash("sha256").update(text).digest("hex");
@@ -78,6 +83,96 @@ export function extractSubmittedRepository(issueBody) {
   return uniqueRepository([
     body.replace(/^\s*(?:```|~~~)[\s\S]*?^\s*(?:```|~~~).*$/gm, ""),
   ]);
+}
+
+/** Extract explicit tags selected by the submitter in the issue body. */
+export function extractSubmittedTags(issueBody) {
+  if (typeof issueBody !== "string" || issueBody.length > 100_000) return [];
+  const body = issueBody.replace(/<!--[\s\S]*?-->/g, "");
+  const lines = [];
+  let capturing = false;
+  let fenced = false;
+  for (const line of body.split(/\r?\n/)) {
+    if (/^\s*(?:```|~~~)/.test(line)) {
+      fenced = !fenced;
+      continue;
+    }
+    if (fenced) continue;
+    const heading = /^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$/.exec(line);
+    if (heading) {
+      const title = heading[1]
+        .replace(/[*_]/g, "")
+        .replace(/[:：]\s*$/, "")
+        .trim();
+      capturing = TAGS_FIELD.test(title);
+    } else if (capturing) {
+      lines.push(line);
+    }
+  }
+  const candidates = [];
+  for (const line of lines) {
+    const trimmed = line.replace(/^[-*•\d.)\s]+/, "").trim();
+    if (!trimmed) continue;
+    const direct = resolveTagId(trimmed);
+    if (direct) {
+      candidates.push(direct);
+      continue;
+    }
+    const head = trimmed.split(/[\s(（]/)[0].trim();
+    const headResolved = resolveTagId(head);
+    if (headResolved) {
+      candidates.push(headResolved);
+      continue;
+    }
+    const parts = trimmed.split(/[/()（）]/).map((s) => s.trim()).filter(Boolean);
+    for (const part of parts) {
+      const partResolved = resolveTagId(part);
+      if (partResolved) {
+        candidates.push(partResolved);
+        break;
+      }
+    }
+  }
+  return [...new Set(candidates)];
+}
+
+/** Extract explicit primary category selected by the submitter in the issue body. */
+export function extractSubmittedCategory(issueBody, taxonomy = []) {
+  if (typeof issueBody !== "string" || issueBody.length > 100_000) return null;
+  const body = issueBody.replace(/<!--[\s\S]*?-->/g, "");
+  const lines = [];
+  let capturing = false;
+  let fenced = false;
+  for (const line of body.split(/\r?\n/)) {
+    if (/^\s*(?:```|~~~)/.test(line)) {
+      fenced = !fenced;
+      continue;
+    }
+    if (fenced) continue;
+    const heading = /^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$/.exec(line);
+    if (heading) {
+      const title = heading[1]
+        .replace(/[*_]/g, "")
+        .replace(/[:：]\s*$/, "")
+        .trim();
+      capturing = CATEGORY_FIELD.test(title);
+    } else if (capturing) {
+      lines.push(line);
+    }
+  }
+  for (const line of lines) {
+    const trimmed = line.replace(/^[-*•\d.)\s]+/, "").trim();
+    if (!trimmed) continue;
+    const head = trimmed.split(/[\s(（]/)[0].trim();
+    const candidate = taxonomy.find(
+      (t) =>
+        t.category.toLowerCase() === trimmed.toLowerCase() ||
+        t.category.toLowerCase() === head.toLowerCase() ||
+        trimmed.toLowerCase().includes(t.category.toLowerCase()),
+    );
+    if (candidate) return candidate.category;
+  }
+  return null;
 }
 
 function safePath(value) {

@@ -387,6 +387,23 @@ test("source-first ingestion without Models still satisfies all four English fie
   assert.equal(result.project.plainSummaryEn, meta.description);
 });
 
+test("submitted category and tags in issue body are extracted and canonicalized", async () => {
+  const result = await prepareSubmission({
+    repository,
+    projects: [],
+    taxonomy: [{ category: "CLI & Pipelines", patterns: ["cli"], tags: ["CLI"] }],
+    api: async () => {},
+    issue: {
+      ...issue,
+      body: `### GitHub repository\nhttps://github.com/example/jev-tool\n\n### Primary Category\nCLI & Pipelines\n\n### Project Tags\n- cli-git-gates (CLI 与 Git 门禁 / CLI & Git Gates)\n- security-guardrails (安全与护栏 / Security & Guardrails)\n\n### What does it do?\nCLI gate tool with Jev.\n\n### Where does Jev make a decision?\nsrc/jev.ts#L10`,
+    },
+    inspect: async () => inspected,
+    enrich: createSummaryEnricher({ token: "" }),
+  });
+  assert.equal(result.status, "ready");
+  assert.equal(result.project.category, "CLI & Pipelines");
+  assert.deepEqual(result.project.tags, ["cli-git-gates", "security-guardrails"]);
+});
 
 test("invalid prepared identities cannot select API paths or mutate the catalog", async () => {
   for (const patch of [
