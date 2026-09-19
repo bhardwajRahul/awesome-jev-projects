@@ -1,0 +1,349 @@
+{
+  "reviewedAt": "2026-09-19T12:26:10.249214+00:00",
+  "baselineCommit": "21bf5366d0032f25787623c5be1d0720e077e02e",
+  "baselineCount": 260,
+  "catalogCount": 262,
+  "preservedBaselineRecords": 260,
+  "executedSubmittedCode": false,
+  "reviews": [
+    {
+      "id": "grayrepo-byte:jev_filter_for_x",
+      "verdict": "include-prototype",
+      "reason": "已确认从入口到 Jev API、结果处理的实际代码路径；作为原型收录，保留模拟模式、功能边界和许可证未确认说明。",
+      "checkedSha": "62cb4a602026b5449a9caa94c193c534e0a19c01",
+      "category": "Browser & OS Action",
+      "tags": [
+        "browser-automation",
+        "classification-ranking"
+      ],
+      "stars": 1,
+      "forks": 0,
+      "license": null,
+      "licenseStatus": "unconfirmed",
+      "runtimeVerified": false,
+      "limitations": "仅核对固定提交源码，未运行或验证准确率、延迟、成本。无 Key 的模拟结果与真实结果共用 30 天缓存，补 Key 后不会重算既有缓存；兴趣/价值偏好未接入过滤，缺失的 API 评分按 0 分处理。联网模式向 TypeSafe 发送帖子文本、作者和 ID；Key 存本机。公开源码未发现许可证。",
+      "sourceVerification": {
+        "method": "source-review",
+        "sha": "62cb4a602026b5449a9caa94c193c534e0a19c01",
+        "reviewedAt": "2026-09-19T12:23:06.263963+00:00",
+        "files": [
+          {
+            "path": "src/core/jev.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/jev.ts#L35-L255",
+            "hash": "abdcacf78856354deb23ec546552463f27c1fa0ad444b3682500f8116ebc6e9e",
+            "hashType": "sha256",
+            "lines": [
+              35,
+              255
+            ]
+          },
+          {
+            "path": "src/core/classifier.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/classifier.ts#L28-L66",
+            "hash": "ac94f285de2ba91d6e852229b9c440b9d383e60f8db15e168c30ef6f406566aa",
+            "hashType": "sha256",
+            "lines": [
+              28,
+              66
+            ]
+          },
+          {
+            "path": "src/core/policy.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/policy.ts#L11-L47",
+            "hash": "0f8f745cbdc59869d29ae697c1dd52060d61ea2ba77840ed10a730ca442a3e4b",
+            "hashType": "sha256",
+            "lines": [
+              11,
+              47
+            ]
+          },
+          {
+            "path": "src/core/scoring.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/scoring.ts#L3-L29",
+            "hash": "0535901ecb6fa671a037ef2c85963271954cc213f0a2f168de0f9c45d7356db2",
+            "hashType": "sha256",
+            "lines": [
+              3,
+              29
+            ]
+          },
+          {
+            "path": "src/core/orchestrator.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/orchestrator.ts#L171-L247",
+            "hash": "6bd2e2c71dfdd7201aefd22b3c77f20ff0efaf9d00fdd98d411d9f5403d10cfa",
+            "hashType": "sha256",
+            "lines": [
+              171,
+              247
+            ]
+          },
+          {
+            "path": "src/core/extractor.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/extractor.ts#L8-L34",
+            "hash": "fb5c3f660f1dfcdb83b0f13cf66d85f3be5d050628401a3091407b2f036355a5",
+            "hashType": "sha256",
+            "lines": [
+              8,
+              34
+            ]
+          },
+          {
+            "path": "src/core/queue.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/queue.ts#L3-L64",
+            "hash": "6224206ea2dedb4077b825b65d04cacc9c6d994c468d1c351d93b76666c3c91c",
+            "hashType": "sha256",
+            "lines": [
+              3,
+              64
+            ]
+          },
+          {
+            "path": "src/entrypoints/content/index.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/entrypoints/content/index.ts#L7-L29",
+            "hash": "3062ad54a4b98eeb2e822df0563747b1d4d35e324bfd807f6a75130f0bdb113f",
+            "hashType": "sha256",
+            "lines": [
+              7,
+              29
+            ]
+          },
+          {
+            "path": "src/entrypoints/background/index.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/entrypoints/background/index.ts#L21-L43",
+            "hash": "13d1beece71b8dfb8e25c50f5c744261bdc42f23e08d429468ab767d8c137754",
+            "hashType": "sha256",
+            "lines": [
+              21,
+              43
+            ]
+          },
+          {
+            "path": "src/storage/cache.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/storage/cache.ts#L7-L64",
+            "hash": "589812052564ea6193f276eea906967b5288a341526bea22c818f6d0e185d8bc",
+            "hashType": "sha256",
+            "lines": [
+              7,
+              64
+            ]
+          },
+          {
+            "path": "src/storage/settings.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/storage/settings.ts#L4-L44",
+            "hash": "0db26b0f32f8d10b538e71424bdb07f4be0b95a4352d5de95b1c0d20fac63e85",
+            "hashType": "sha256",
+            "lines": [
+              4,
+              44
+            ]
+          },
+          {
+            "path": "src/ui/options/SignalFeedOptions.tsx",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/ui/options/SignalFeedOptions.tsx#L117-L165",
+            "hash": "aa5030f5303dc243fe83da9821ccea3aa9178a8bc655ea00cac2ec0de10a1d60",
+            "hashType": "sha256",
+            "lines": [
+              117,
+              165
+            ]
+          },
+          {
+            "path": "src/ui/badge.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/ui/badge.ts#L48-L78",
+            "hash": "fe5540bbd9c31b5d3a67157bb86e08cc7aeeddc8f4b9504076bbb88bf45c011c",
+            "hashType": "sha256",
+            "lines": [
+              48,
+              78
+            ]
+          },
+          {
+            "path": "wxt.config.ts",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/wxt.config.ts#L24-L33",
+            "hash": "14a9f59c0bcb7d88e89283fcd639e3065f16edab9952a084363dacac1011ca94",
+            "hashType": "sha256",
+            "lines": [
+              24,
+              33
+            ]
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/README.md#L19-L106",
+            "hash": "38715c20fd6d17b94c8b673ec72c9c9822ccf972499bdc336a9b0087d9efb46b",
+            "hashType": "sha256",
+            "lines": [
+              19,
+              106
+            ]
+          },
+          {
+            "path": "README.zh-CN.md",
+            "url": "https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/README.zh-CN.md#L1-L3",
+            "hash": "794889bfde12051b818e3866d2c92f42a44ff7a1ce4ed9bdc6eb941c0e00ae4c",
+            "hashType": "sha256",
+            "lines": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "hqman:jevscout",
+      "verdict": "include-prototype",
+      "reason": "已确认从入口到 Jev API、结果处理的实际代码路径；作为原型收录，保留模拟模式、功能边界和许可证未确认说明。",
+      "checkedSha": "b51390be0c3ca28b5407ab6d8c8044912a03bb31",
+      "category": "Domain & Vertical Tools",
+      "tags": [
+        "browser-automation",
+        "domain-workflows",
+        "classification-ranking"
+      ],
+      "stars": 22,
+      "forks": 4,
+      "license": null,
+      "licenseStatus": "unconfirmed",
+      "runtimeVerified": false,
+      "limitations": "演示版 MVP，仅核对固定提交源码，未运行浏览器或真实 API。扫描有数量与文本上限；mock 的分数和延迟为模拟值，仍可操作真实 Chrome。不能视为严格只读流程；跨站覆盖、匹配准确率与性能未验证，未确认开源许可。",
+      "sourceVerification": {
+        "method": "source-review",
+        "sha": "b51390be0c3ca28b5407ab6d8c8044912a03bb31",
+        "reviewedAt": "2026-09-19T12:22:02.798187+00:00",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/README.md#L1-L30",
+            "hash": "959367eb2f6f69a1af3da0d41df63eef5098bff55ed4352bfecfa8318f76a6bd",
+            "hashType": "sha256",
+            "lines": [
+              1,
+              30
+            ]
+          },
+          {
+            "path": "pyproject.toml",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/pyproject.toml#L1-L26",
+            "hash": "50b8c1ee4ba311a8500ca5f4d4c89541a609aca3ee300498f861a249a64cdabf",
+            "hashType": "sha256",
+            "lines": [
+              1,
+              26
+            ]
+          },
+          {
+            "path": "config/companies.yaml",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/config/companies.yaml#L1-L24",
+            "hash": "8a91ce3d82e6339a68cc7174b180f2c6c51d0ead1a62f938dca1749bdb459cf5",
+            "hashType": "sha256",
+            "lines": [
+              1,
+              24
+            ]
+          },
+          {
+            "path": "jev_job_hunter/cli.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/cli.py#L173-L203",
+            "hash": "4088307cd7380cc1bc96d502ac7bee502e2a2e7e544c69cbe580d87ecfe64ab2",
+            "hashType": "sha256",
+            "lines": [
+              173,
+              203
+            ]
+          },
+          {
+            "path": "jev_job_hunter/jev.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/jev.py#L220-L305",
+            "hash": "c9791e73a8f09f2211f1646609d9eeb7de834a5e1e7e2d008e2ba6f496a3f562",
+            "hashType": "sha256",
+            "lines": [
+              220,
+              305
+            ]
+          },
+          {
+            "path": "jev_job_hunter/questions.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/questions.py#L3-L88",
+            "hash": "44ae38ada1c8a20fe41be94be2a435e6d8f4fa15ede44daa57b73215acf616a5",
+            "hashType": "sha256",
+            "lines": [
+              3,
+              88
+            ]
+          },
+          {
+            "path": "jev_job_hunter/runner.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/runner.py#L70-L112",
+            "hash": "f87d7661e485e644b9fee2694c126cd55d5deb8a09721f1f21545a495ac2039b",
+            "hashType": "sha256",
+            "lines": [
+              70,
+              112
+            ]
+          },
+          {
+            "path": "jev_job_hunter/policy.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/policy.py#L88-L177",
+            "hash": "7d370ce89a65d0e7801116c0c055566224b1cec21ff0a19d921985d91ce88d48",
+            "hashType": "sha256",
+            "lines": [
+              88,
+              177
+            ]
+          },
+          {
+            "path": "jev_job_hunter/filters.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/filters.py#L15-L46",
+            "hash": "258b30fc77808e20720409e2c30d7a957bc008b31fd61dd6867e3e575dc512dd",
+            "hashType": "sha256",
+            "lines": [
+              15,
+              46
+            ]
+          },
+          {
+            "path": "jev_job_hunter/links.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/links.py#L108-L115",
+            "hash": "c56adbd971ef71f855c3ca6895c896f0fd052220890c7c0f3f7c9e0b34f6dd5c",
+            "hashType": "sha256",
+            "lines": [
+              108,
+              115
+            ]
+          },
+          {
+            "path": "jev_job_hunter/store.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/store.py#L220-L249",
+            "hash": "bbac17890ef12b73265bbc77716eda5604e86038f9f88fdc6398b236f363e46a",
+            "hashType": "sha256",
+            "lines": [
+              220,
+              249
+            ]
+          },
+          {
+            "path": "jev_job_hunter/extract.js",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/extract.js#L1-L43",
+            "hash": "2613dca38e16c8499a20cc12f832157cfe9ac9f153f7149f9c544fd609979f3a",
+            "hashType": "sha256",
+            "lines": [
+              1,
+              43
+            ]
+          },
+          {
+            "path": "jev_job_hunter/chrome.py",
+            "url": "https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/chrome.py#L478-L550",
+            "hash": "02db972ff8bf540347125b147248ebb8baa9927c47a5c412a2c5c64a66f0627c",
+            "hashType": "sha256",
+            "lines": [
+              478,
+              550
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

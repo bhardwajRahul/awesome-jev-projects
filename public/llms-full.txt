@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 260
+Catalog entries: 262
 
 ## Install the Agent Skill
 
@@ -3847,3 +3847,39 @@ Official TypeSafe Python SDK with synchronous and asynchronous clients for Jev S
 - Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/constants.py#L18-L19
 - Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/README.md#L13-L29
 - Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/LICENSE#L1-L21
+
+## JevFilterForX
+
+A browser extension that scores and filters X posts in real time with Jev, folding low-signal content while keeping it expandable. Without an API key, it defaults to local mock scoring.
+
+- Repository: https://github.com/grayrepo-byte/jev_filter_for_x
+- Category: Browser & OS Action
+- Jev decision: Jev classifies posts with Choice, rates signal, actionability and originality with Score, and assigns Noul labels; local thresholds and noise rules decide whether to fold each post.
+- Purpose: Adds scores, labels and adjustable filtering thresholds to the X feed, with reversible folding of posts and their attached media.
+- Review scope: Fixed-commit source review only; no runtime, accuracy, latency or cost validation. Mock and live results share a 30-day cache that is not invalidated when a key is added. Interest/value preferences do not affect filtering; missing API scores become zero. Online mode sends post text, author and ID to TypeSafe; the key is stored locally. Public source has no identified license.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/grayrepo-byte/jev_filter_for_x/
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/jev.ts#L35-L255
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/classifier.ts#L28-L66
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/core/policy.ts#L11-L47
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/entrypoints/background/index.ts#L21-L43
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/storage/cache.ts#L7-L64
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/storage/settings.ts#L4-L44
+- Source evidence: https://github.com/grayrepo-byte/jev_filter_for_x/blob/62cb4a602026b5449a9caa94c193c534e0a19c01/src/ui/options/SignalFeedOptions.tsx#L117-L165
+
+## JevScout
+
+A demo job-search Skill for coding Agents that browses company careers pages in Chrome, uses Jev to screen AI and software-engineering roles, and saves the results.
+
+- Repository: https://github.com/hqman/JevScout
+- Category: Domain & Vertical Tools
+- Jev decision: Jev uses Choice to classify pages and Noul to assess careers links, role relevance, filter controls and candidate fit; local thresholds select navigation, job details and saved results.
+- Purpose: Connects careers navigation, role screening and detail matching in one CLI workflow, with local JSON and Markdown reports.
+- Review scope: Demo MVP reviewed at a fixed commit; no browser or live API run. Scanning has count and text limits. Mock scores and latency are simulated, while mock mode can still operate real Chrome. The workflow is not guaranteed read-only. Site coverage, matching accuracy and performance were not validated; no open-source license was confirmed.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hqman/jevscout/
+- Source evidence: https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/README.md#L1-L30
+- Source evidence: https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/jev.py#L220-L305
+- Source evidence: https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/questions.py#L3-L88
+- Source evidence: https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/runner.py#L70-L112
+- Source evidence: https://github.com/hqman/JevScout/blob/b51390be0c3ca28b5407ab6d8c8044912a03bb31/jev_job_hunter/policy.py#L88-L177
