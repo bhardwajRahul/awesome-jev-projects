@@ -1,5 +1,6 @@
 /* Same-origin, pre-paint theme preference. No cookies or network requests. */
-(()=>{const key="awesome-jev-theme",root=document.documentElement,media=window.matchMedia("(prefers-color-scheme: dark)");let mode="system";
+(()=>{try{if(window.top&&window.top!==window)window.top.location=window.location}catch{document.documentElement.replaceChildren?.()}
+const key="awesome-jev-theme",root=document.documentElement,media=window.matchMedia("(prefers-color-scheme: dark)");let mode="system";
 const valid=v=>v==="light"||v==="dark"||v==="system";
 try{const saved=localStorage.getItem(key);if(valid(saved))mode=saved}catch{}
 const resolved=()=>mode==="system"?(media.matches?"dark":"light"):mode;

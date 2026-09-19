@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { validateSubmission, createIssueUrl } from "./lib/submission.mjs";
+import { safePublicUrl } from "./lib/safe-url.mjs";
 import type { SubmissionErrors, SubmissionValues } from "./lib/submission.mjs";
 import { translate, categoryLabel, readLocale, locales, localeMeta, localizedProjectText, projectPath, popularSearches } from "./lib/i18n";
 import type { Locale } from "./lib/i18n";
@@ -133,18 +134,7 @@ const date = (s: string | null | undefined, locale: Locale) =>
         hour12: false,
       })
     : "—";
-const safeUrl = (u: string | null | undefined): string => {
-  if (!u) return "#";
-  try {
-    const parsed = new URL(u, "https://github.com");
-    if (parsed.protocol === "https:" && !parsed.username && !parsed.password) {
-      return parsed.href;
-    }
-  } catch {
-    // fallback
-  }
-  return "#";
-};
+const safeUrl = (u: string | null | undefined): string => safePublicUrl(u);
 const validProject = (x: unknown): x is Project => {
   if (!x || typeof x !== "object") return false;
   const p = x as Project;

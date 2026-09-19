@@ -3,6 +3,7 @@ import test from "node:test";
 import { createHash } from "node:crypto";
 import {
   extractSubmittedRepository,
+  extractSubmittedCategory,
   inspectRepository,
   readLocalizedReadmes,
 } from "./project-source.mjs";
@@ -417,12 +418,28 @@ test("strict ingestion requires source usage beyond SDK installs, metadata, comm
   }
 });
 
-test("strict ingestion accepts immutable provider endpoint or TypeSafe SDK decision calls", async () => {
+test("strict ingestion rejects a bare provider URL or identifier stub as implementation evidence", async () => {
   const cases = [
     ["src/main.py", 'response = requests.post("https://api.typesafe.ai/v1/choice", json=payload)'],
+    ["src/jev.js", 'const endpoint = "https://api.typesafe.ai/v1";\nexport const product = "jev";\nexport const kind = "agent";\n'],
+  ];
+  for (const [path, text] of cases) {
+    const f = fixture({
+      [`/repos/${repository}/git/trees/${sha}?recursive=1`]: { tree: [{ type: "blob", path, mode: "100644", size: text.length }] },
+      [`/repos/${repository}/contents/${path}?ref=${sha}`]: encoded(text, path),
+    });
+    const result = await inspect(f, { requireCodeEvidence: true });
+    assert.equal(result.status, "rejected", path + ": " + text);
+    assert.equal(result.reason, "no implementation source evidence");
+  }
+});
+
+test("strict ingestion accepts TypeSafe SDK decision calls", async () => {
+  const cases = [
     ["src/main.py", 'from typesafe import Client\nclient = Client()\nresult = client.choice(options)'],
     ["src/main.ts", 'import { TypeSafeClient } from "@typesafe/sdk";\nconst client = new TypeSafeClient();\nconst result = await client.choice(options);'],
     ["core/decision/TypeSafeBackend.kt", 'import me.ethanxu.typesafe.sdk.TypeSafeClient\nval client = TypeSafeClient()\nval decision = client.systemOne(input)'],
+    ["src/call.js", 'const model = "typesafe/jev-latest";\nawait fetch("https://api.typesafe.ai/v1/choice", { method: "POST", body: JSON.stringify({ model }) });'],
   ];
   for (const [path, text] of cases) {
     const f = fixture({
@@ -486,4 +503,42 @@ test("strict ingestion recognizes precise Jev models only with an OpenRouter req
     assert.equal(result.status, accepted ? "accepted" : "rejected", text);
     assert.equal(result.evidence.implementationFiles.length, Number(accepted));
   }
+});
+
+test("inspectRepository rejects forks before source scans", async () => {
+  const text = 'from typesafe import Client\nclient = Client()\nresult = client.choice(options)';
+  const path = "src/main.py";
+  const f = fixture({
+    [`/repos/${repository}`]: { ...repo, fork: true },
+    [`/repos/${repository}/git/trees/${sha}?recursive=1`]: { tree: [{ type: "blob", path, mode: "100644", size: text.length }] },
+    [`/repos/${repository}/contents/${path}?ref=${sha}`]: encoded(text, path),
+  });
+  const result = await inspect(f, { requireCodeEvidence: true });
+  assert.equal(result.status, "rejected");
+  assert.equal(result.reason, "forks are not ingested");
+  assert.equal(f.requests.some((path) => path.includes("/git/trees/")), false);
+});
+
+test("submitted categories require an exact or prefixed taxonomy name, not a substring", () => {
+  const taxonomy = [
+    { category: "Browser & OS Action" },
+    { category: "CLI & Pipelines" },
+    { category: "Decision Tools" },
+  ];
+  assert.equal(
+    extractSubmittedCategory("## 项目分类\nCLI & Pipelines (命令行与流水线管道)\n", taxonomy),
+    "CLI & Pipelines",
+  );
+  assert.equal(
+    extractSubmittedCategory("## Primary category\nBrowser & OS Action\n", taxonomy),
+    "Browser & OS Action",
+  );
+  assert.equal(
+    extractSubmittedCategory("## 项目分类\nnot Browser & OS Action\n", taxonomy),
+    null,
+  );
+  assert.equal(
+    extractSubmittedCategory("## 项目分类\nfree-airdrop\n", taxonomy),
+    null,
+  );
 });

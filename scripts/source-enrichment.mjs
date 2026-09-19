@@ -28,11 +28,15 @@ function redact(value, token = "") {
     .replace(
       /([?&](?:api[_-]?key|token|access_token)=)[^\s&#]+/gi,
       "$1[REDACTED]",
+    )
+    .replace(
+      /\b(?:AIza[A-Za-z\d_-]{35}|npm_[A-Za-z\d]{20,}|xox[baprs]-[A-Za-z\d-]{10,}|hf_[A-Za-z\d]{20,})\b/g,
+      "[REDACTED]",
     );
 }
 
 /** Transparent quality gate: short prose, adequate language content, and a concrete function. */
-function isSummary(value, language, token) {
+export function isSummary(value, language, token) {
   if (typeof value !== "string") return false;
   const text = value.trim();
   if (text.length > 500 || text.length < 12 || redact(text, token) !== text)
@@ -45,6 +49,17 @@ function isSummary(value, language, token) {
     return false;
   if (
     /ignore (?:all |any |previous |prior )*(?:instructions|rules)|system prompt|reveal (?:the |your )?(?:secret|token)|忽略.{0,8}(?:指令|规则)|泄露.{0,8}(?:密钥|令牌)/i.test(
+      text,
+    )
+  )
+    return false;
+  if (
+    /\p{Script=Latin}/u.test(text) &&
+    (/\p{Script=Cyrillic}/u.test(text) || /\p{Script=Greek}/u.test(text))
+  )
+    return false;
+  if (
+    /(?:treat|consider|regard)\s[\s\S]{0,80}(?:as\s+trusted|as trusted configuration|as\s+(?:system|developer)\s+(?:prompt|instructions?))|from now on|you (?:must|should|will) (?:ignore|follow|obey)|(?:ignore|disregard)\b[\s\S]{0,24}\b(?:instruction|prompt|rule)|hidden instruction|attacker-supplied|untrusted (?:input|text|content|readme) as trusted|将[\s\S]{0,20}(?:视为|当作)(?:可信|系统提示|指令)|从现在起[\s\S]{0,12}(?:忽略|服从)|隐藏指令/i.test(
       text,
     )
   )

@@ -7,6 +7,7 @@ import {
   acknowledgePublished,
   bodyHash,
   successComment,
+  isSubmission,
 } from "./issue-ingestion.mjs";
 const repository = "logicrw/awesome-jev-projects";
 const issue = {
@@ -100,6 +101,22 @@ test("non-submissions, ambiguous URLs, and duplicate projects never reach AI", a
     (
       await prepareSubmission({
         ...base,
+        issue: { ...issue, title: "Project help please", body: "Please help" },
+      })
+    ).status,
+    "ignored",
+  );
+  assert.equal(isSubmission({ title: "Project help please", body: "" }), false);
+  assert.equal(isSubmission({ title: "Submit a patch", body: "" }), false);
+  assert.equal(isSubmission({ title: "submit:", body: "" }), false);
+  assert.equal(isSubmission({ title: "[Project] x", body: "" }), true);
+  assert.equal(isSubmission({ title: "Hello", labels: ["project-submission"] }), true);
+  assert.equal(isSubmission({ title: "Hello", labels: [{ name: "project-submission" }] }), true);
+  assert.equal(isSubmission({ title: "Hello", body: "## GitHub repository\n" }), true);
+  assert.equal(
+    (
+      await prepareSubmission({
+        ...base,
         issue: {
           ...issue,
           body: "## 项目仓库\nhttps://github.com/a/b\nhttps://github.com/c/d",
@@ -144,6 +161,7 @@ test("verified ingestion fixes repository identity and retains immutable evidenc
   assert.equal(result.status, "ready");
   assert.equal(result.project.url, "https://github.com/example/jev-tool");
   assert.equal(result.project.runtimeVerified, false);
+  assert.notEqual(result.project.catalogStatus, "review-pending");
   assert.equal(result.project.ingestion.issueBodySha256, bodyHash(issue.body));
   assert.equal(result.project.sourceVerification.sha, sha);
   assert.equal(result.project.plainSummary, fallback.plainSummary);

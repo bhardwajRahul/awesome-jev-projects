@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { normalizeRepo, verifyIntegration, summarize, refreshMetadata } from "./radar-sync.mjs";
+import { normalizeRepo, verifyIntegration, summarize, refreshMetadata, isProtectedSummarySource, PROTECTED_SUMMARY_SOURCES } from "./radar-sync.mjs";
 const taxonomy = JSON.parse(
   await readFile(new URL("../src/data/taxonomy.json", import.meta.url), "utf8"),
 );
@@ -56,7 +56,13 @@ test("summary supports new taxonomy and never invents performance numbers", () =
     "Jev AI from typesafe import jev",
     taxonomy,
   );
-  assert.equal(novel.category, "astronomy");
+  assert.equal(novel.category, "Decision Tools");
+  const spam = summarize(
+    { name: "spam", topics: ["jev", "free-airdrop", "ai"] },
+    "no taxonomy phrases here",
+    taxonomy,
+  );
+  assert.equal(spam.category, "Decision Tools");
 });
 test("shipped data preserves fourteen seeds, unique identifiers and source evidence", async () => {
   const rows = JSON.parse(
@@ -160,7 +166,8 @@ test("all fourteen original projects are pinned and metadata changes only permit
 
 test("untrusted repository metadata cannot replace any source-reviewed prose or evidence", async () => {
   const projects = JSON.parse(await readFile(new URL("../src/data/projects.json", import.meta.url), "utf8"));
-  const reviewed = projects.filter((p) => ["source-reviewed", "human-reviewed"].includes(p.summarySource));
+  assert.deepEqual([...PROTECTED_SUMMARY_SOURCES], ["source-reviewed", "human-reviewed", "curated"]);
+  const reviewed = projects.filter((p) => isProtectedSummarySource(p.summarySource));
   assert.ok(reviewed.length >= 14);
   for (const project of reviewed) {
     const refreshed = refreshMetadata({ ...project, pinned: false }, hostileMetadata, latestCommit);
@@ -168,6 +175,102 @@ test("untrusted repository metadata cannot replace any source-reviewed prose or 
       assert.deepEqual(refreshed[key], project[key], `${project.id}.${key} was overwritten`);
     assert.equal(refreshed.forks, 9999, "ordinary project metadata still refreshes");
   }
+});
+
+/** IDs from data commit 946935b; this branch does not cherry-pick that catalog. */
+const CURATED_INTEGRATION_IDS = Object.freeze([
+  "valentynkit:jev-commit",
+  "valentynkit:jev-belay",
+  "valentynkit:jev.nvim",
+  "valentynkit:jev-skip",
+  "valentynkit:jev-plays-pokemon-red",
+  "chy4pro:jevbrowserext",
+  "pnthn-ai:polar_llama",
+  "newuser7171:antivirus",
+  "jamesward:zio-typesafe-ai",
+  "hev:reranker",
+  "gargpratyush:jev-router",
+  "aaronshaf:opencode-jev-orchestrator",
+]);
+
+test("curated copy is protected like human-reviewed and source-reviewed statuses", () => {
+  const curated = {
+    pinned: false,
+    summarySource: "curated",
+    plainSummary: "人工精炼的中文说明，不得被同步覆盖。",
+    plainSummaryEn: "Curated English prose must survive metadata sync.",
+    plainSummaryJa: "日本語の要約はメタデータ同期で上書きしない。",
+    plainSummaryKo: "한국어 요약은 메타데이터 동기화에서 덮어쓰지 않습니다.",
+    jevDecisionPoint: "保留原决策点。",
+    jevDecisionPointEn: "Keep the curated decision point.",
+    jevDecisionPointJa: "判断点は保持する。",
+    jevDecisionPointKo: "판단 지점을 유지합니다.",
+    highlightBenefit: "保留原用途说明。",
+    highlightBenefitEn: "Keep the curated purpose.",
+    highlightBenefitJa: "用途説明は保持する。",
+    highlightBenefitKo: "용도 설명을 유지합니다.",
+    category: "Browser & OS Action",
+    tags: ["browser-automation", "typed-decisions"],
+    evidence: [{ url: "https://github.com/example/curated/blob/sha/src/main.ts" }],
+    claimStatus: "人工审校。",
+    claimStatusEn: "Human-curated.",
+    claimStatusJa: "人手で確認済み。",
+    claimStatusKo: "사람이 확인함.",
+    verificationStatus: "integration-detected",
+    runtimeVerified: false,
+    stars: 3,
+  };
+  const refreshed = refreshMetadata(curated, hostileMetadata, latestCommit);
+  assert.equal(refreshed.summarySource, "curated");
+  for (const key of [
+    "plainSummary",
+    "plainSummaryEn",
+    "plainSummaryJa",
+    "plainSummaryKo",
+    "jevDecisionPoint",
+    "jevDecisionPointEn",
+    "jevDecisionPointJa",
+    "jevDecisionPointKo",
+    "highlightBenefit",
+    "highlightBenefitEn",
+    "highlightBenefitJa",
+    "highlightBenefitKo",
+    "category",
+    "tags",
+    "claimStatus",
+    "claimStatusEn",
+    "claimStatusJa",
+    "claimStatusKo",
+  ])
+    assert.deepEqual(refreshed[key], curated[key], key);
+  assert.deepEqual(refreshed.evidence, curated.evidence);
+  assert.equal(refreshed.stars, 9999);
+  assert.equal(refreshed.forks, 9999);
+  assert.equal(isProtectedSummarySource("curated"), true);
+  assert.equal(isProtectedSummarySource("human-reviewed"), true);
+  assert.equal(isProtectedSummarySource("source-reviewed"), true);
+  assert.equal(isProtectedSummarySource("readme-extractive"), false);
+});
+
+test("catalog curated rows keep summaries, category and tags if 946935b has been integrated", async () => {
+  const projects = JSON.parse(await readFile(new URL("../src/data/projects.json", import.meta.url), "utf8"));
+  let seen = 0;
+  for (const id of CURATED_INTEGRATION_IDS) {
+    const project = projects.find((row) => row.id === id);
+    if (!project || project.summarySource !== "curated") continue;
+    seen += 1;
+    const snapshot = structuredClone(project);
+    const refreshed = refreshMetadata({ ...project, pinned: false }, hostileMetadata, latestCommit);
+    assert.equal(refreshed.summarySource, "curated", id);
+    assert.equal(refreshed.plainSummary, project.plainSummary, id);
+    assert.equal(refreshed.plainSummaryEn, project.plainSummaryEn, id);
+    assert.equal(refreshed.plainSummaryJa, project.plainSummaryJa, id);
+    assert.equal(refreshed.plainSummaryKo, project.plainSummaryKo, id);
+    assert.equal(refreshed.category, project.category, id);
+    assert.deepEqual(refreshed.tags, project.tags, id);
+    assert.deepEqual(project, snapshot, id);
+  }
+  assert.ok(seen === 0 || seen === CURATED_INTEGRATION_IDS.length, `partial curated integration: ${seen}`);
 });
 
 test("invalid remote star counts cannot erase core data", () => {

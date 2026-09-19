@@ -104,6 +104,7 @@ test('static page buttons are labeled after parsing and their nested icons toggl
 
 test('pre-paint initializer remains below 2 KB and has no network, cookies or dynamic execution', () => {
   assert.ok(Buffer.byteLength(source) < 2048);
+  assert.match(source, /window\.top/);
   assert.doesNotMatch(source, /\bfetch\b|XMLHttpRequest|sendBeacon|document\.cookie|eval\(|new Function/);
 });
 
