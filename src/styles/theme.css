@@ -38,12 +38,12 @@
   --shadow-hover: 0 12px 30px #20271e0b, 0 2px 6px #20271e09;
   --shadow-dialog: 0 32px 100px #10191038, 0 8px 24px #1019101f;
   /* Shared physical surfaces: top bevel, contact shadow, ambient lift. */
-  --material-edge: #ffffffd9;
+  --material-edge: rgba(255, 255, 255, 0.45);
   --metal-top: #f7f8f1;
   --metal-bottom: #dce2d4;
   --shadow-material: inset 0 1px 0 var(--material-edge), inset 0 -1px 0 #20271e0a, 0 3px 5px -2px #20271e33, 0 12px 28px -13px #20271e47;
   --shadow-material-hover: inset 0 1px 0 var(--material-edge), inset 0 -1px 0 #20271e0a, 0 5px 8px -3px #20271e38, 0 18px 34px -14px #20271e52;
-  --shadow-recess: inset 0 2px 3px #20271e21, inset 0 6px 10px -7px #20271e52, 0 1px 0 var(--material-edge);
+  --shadow-recess: inset 0 2px 4px rgba(32, 39, 30, 0.12), inset 0 4px 8px -4px rgba(32, 39, 30, 0.2);
   /* The discovery stage stays dark in both themes and shares this palette. */
   --night-canvas: #101310;
   --night-surface: #1a201a;
@@ -70,12 +70,12 @@
   --night-shadow-soft: 0 2px 8px #03060320, 0 1px 2px #03060318;
   --night-shadow-hover: 0 12px 30px #03060340, 0 2px 6px #03060330;
   --night-shadow-dialog: 0 32px 100px #03060388, 0 8px 24px #03060366;
-  --night-material-edge: #b9d3a52e;
+  --night-material-edge: rgba(255, 255, 255, 0.08);
   --night-metal-top: #313d2f;
   --night-metal-bottom: #1b231a;
   --night-shadow-material: inset 0 1px 0 var(--material-edge), inset 0 -1px 0 #03060366, 0 3px 5px -1px #0306038c, 0 14px 30px -10px #030603a6;
   --night-shadow-material-hover: inset 0 1px 0 var(--material-edge), inset 0 -1px 0 #03060366, 0 5px 8px -2px #03060399, 0 20px 36px -12px #030603bf;
-  --night-shadow-recess: inset 0 2px 4px #03060399, inset 0 7px 12px -7px #030603cc, 0 1px 0 var(--material-edge);
+  --night-shadow-recess: inset 0 2px 4px rgba(3, 6, 3, 0.6), inset 0 4px 8px -4px rgba(3, 6, 3, 0.8);
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;

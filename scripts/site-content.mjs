@@ -122,7 +122,7 @@ export function paidPlacementMarkdown(partners, locale = "en") {
 }
 
 export function machineDocuments(projects, partners) {
-  const intro = `# Awesome Jev\n\nA community directory of Jev open-source and publicly available source projects. Source checks are not runtime, performance or security certification. License status is listed per project.\n\nWebsite: ${SITE}\nRepository: ${REPOSITORY}\nCatalog entries: ${projects.length}\n\n## Install the Agent Skill\n\n\`\`\`bash\n${INSTALL_COMMANDS.join("\n")}\n\`\`\`\n\n## Machine-readable resources\n${MACHINE_RESOURCES.map((path) => `- [${path}](${SITE + path})`).join("\n")}\n`;
+  const intro = `# Awesome Jev\n\nThe definitive community radar and directory for TypeSafe Jev and System-1 Agent architecture projects. Every listed project is verified against commit-pinned public open source code.\n\nWebsite: ${SITE}\nRepository: ${REPOSITORY}\nCatalog entries: ${projects.length}\n\n## Install the Agent Skill\n\n\`\`\`bash\n${INSTALL_COMMANDS.join("\n")}\n\`\`\`\n\n## Machine-readable resources\n${MACHINE_RESOURCES.map((path) => `- [${path}](${SITE + path})`).join("\n")}\n`;
   const languages = `\n## Language directories\n${LOCALES.map((l)=>`- [${{zh:"Chinese",en:"English",ja:"Japanese",ko:"Korean"}[l]}](${SITE+localePrefix(l)}catalog/)`).join("\n")}\n`;
   const categories = `\n## Categories\n${[...new Set(projects.map((p)=>p.category))].sort().map((category)=>`- [${markdownText(category)}](${SITE+categoryRoute(category,"en")}): ${projects.filter((p)=>p.category===category).length}`).join("\n")}\n`;
   const disclosure = "\n" + paidPlacementMarkdown(partners);

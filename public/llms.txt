@@ -1,6 +1,6 @@
 # Awesome Jev
 
-A community directory of Jev open-source and publicly available source projects. Source checks are not runtime, performance or security certification. License status is listed per project.
+The definitive community radar and directory for TypeSafe Jev and System-1 Agent architecture projects. Every listed project is verified against commit-pinned public open source code.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects

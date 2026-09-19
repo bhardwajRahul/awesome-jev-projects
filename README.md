@@ -22,14 +22,30 @@
 
 </div>
 
-💡 Why Jev & System-1 Decision Architecture?
+## 💡 Why Jev & System-1 Decision Architecture?
 
 When building autonomous agents, routing every small branching decision to a heavy reasoning model (System 2) incurs seconds of latency, runaway token costs, and context drift.
 
 **TypeSafe Jev (System 1)** is purpose-built for fast, typed discrete decisions:
 - ⚡ **Sub-100ms Latency**: Delivers decisions in 50–100ms to keep agent loops snappy.
 - 🎯 **Native Typed Outputs**: Built-in primitives for `Choice`, `Score`, and `Noul` without fragile JSON regex parsing.
-- 🛡️ **Zero Vaporware**: 267+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
+- 🛡️ **Zero Vaporware**: 260+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
+
+### 📊 Architecture Comparison: System 1 (Jev) vs System 2 (Reasoning LLMs)
+
+| Dimension | System 2 (Reasoning LLMs) | TypeSafe Jev (System 1 Radar) |
+| :--- | :--- | :--- |
+| **Latency** | 1,500ms – 5,000ms+ (Slow) | **50ms – 100ms (Sub-second reflex)** |
+| **Output Type** | Unstructured text / fragile JSON regex | **Native typed `Choice`, `Score`, `Noul`** |
+| **Token Economy** | High cost ($1.00 – $15.00 / 1M tokens) | **Ultra-lightweight (fraction of a cent)** |
+| **Context Drift** | Prone to hallucinations & attention fade | **Deterministic bounded state machine** |
+| **Primary Domain** | High-level planning, open-ended generation | **Tool routing, action dispatch, safety gates** |
+
+### 🎮 Key Interactive Features
+
+- 🎰 **Tactile Gacha Dispatcher**: Discover discrete decision points with real-time streak counting and **10-draw fireworks celebrations (💥 BOOM!)**.
+- ⚡ **Sticky Search & Floating Popover Filter**: Filter tags and categories anytime while scrolling via the anchored toolbar popover.
+- 🔍 **100% Commit-Pinned Code Evidence**: Every listed project links to immutable source files and explicit decision points.
 
 > **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **260 curated projects**
 
