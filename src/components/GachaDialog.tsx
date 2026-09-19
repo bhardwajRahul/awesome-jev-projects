@@ -28,7 +28,7 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
   const revision = useRef(0);
   const mounted = useRef(false);
   const [draw, setDraw] = useState(() => ({ project: drawProject(projects), turn: 0 }));
-  const [avatarFailed, setAvatarFailed] = useState(false);
+  const [avatarResult, setAvatarResult] = useState<{ src: string; ok: boolean } | null>(null);
   const [feedback, setFeedback] = useState<'copied' | 'shared' | 'failed' | null>(null);
   const [fallback, setFallback] = useState('');
   const p = draw.project;
@@ -37,6 +37,8 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
   const link = p ? `https://logicrw.github.io${projectPath(p.id, locale)}` : '';
   const summary = p ? `${p.name} — ${p.author}\n${plain.text}\n${t.decision}: ${decision.text}\n${link}` : '';
   const avatar = p?.avatarUrl && /^https:\/\/avatars\.githubusercontent\.com\//.test(p.avatarUrl) ? p.avatarUrl : null;
+  const avatarReady = Boolean(avatar && avatarResult?.src === avatar && avatarResult.ok);
+  const avatarFailed = Boolean(avatar && avatarResult?.src === avatar && !avatarResult.ok);
 
   useEffect(() => { closeHandler.current = onClose; }, [onClose]);
   useEffect(() => {
@@ -109,7 +111,7 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
 
   function redraw() {
     revision.current++;
-    setFeedback(null); setFallback(''); setAvatarFailed(false);
+    setFeedback(null); setFallback(''); setAvatarResult(null);
     cancelAnimationFrame(tiltFrame.current);
     setDraw((previous) => ({ project: drawProject(projects, previous.project?.id) as Project | null, turn: previous.turn + 1 }));
   }
@@ -162,7 +164,13 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
         <div className="gacha-stage">
           <article ref={card} key={draw.turn} className="gacha-card" data-rarity={rarity(p)} onPointerMove={tilt} onPointerLeave={resetTilt} onPointerCancel={resetTilt}>
             <div className="gacha-card-top"><span className="gacha-tier"><Star size={13} aria-hidden="true" />{rarity(p) === 'ssr' ? 'SSR · 1k+' : t.rising}</span><span className="gacha-stars">{p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)} Stars</span></div>
-            <div className="gacha-identity">{avatar && !avatarFailed ? <img src={avatar} alt="" className="gacha-avatar" width="42" height="42" referrerPolicy="no-referrer" onError={() => setAvatarFailed(true)} /> : <span className="gacha-avatar gacha-initial" aria-hidden="true">{p.author.slice(0, 1).toUpperCase()}</span>}<div><h3>{p.name}</h3><span className="gacha-author">{p.author}</span></div></div>
+            <div className="gacha-identity">
+              <span className="gacha-avatar-frame" aria-hidden="true">
+                <span className="gacha-avatar gacha-initial" hidden={avatarReady}>{p.author.slice(0, 2).toUpperCase()}</span>
+                {avatar && !avatarFailed && <img key={avatar} src={avatar} alt="" className="gacha-avatar" width="42" height="42" decoding="async" referrerPolicy="no-referrer" data-ready={avatarReady} onLoad={() => setAvatarResult({ src: avatar, ok: true })} onError={() => setAvatarResult({ src: avatar, ok: false })} />}
+              </span>
+              <div><h3>{p.name}</h3><span className="gacha-author">{p.author}</span></div>
+            </div>
             <span className="gacha-category">{categoryLabel(p.category, locale)}</span>
             <p className="gacha-summary" lang={localeMeta[plain.language].language}>{plain.text}</p>
             <div className="gacha-decision"><span>{t.decision}</span><p lang={localeMeta[decision.language].language}>{decision.text}</p></div>

@@ -60,3 +60,22 @@ test('draw text exposes its actual fallback language to assistive technology', a
     }
   } finally { await server.close(); }
 });
+
+test('draw avatars have visible initials before loading and reject untrusted image hosts', async () => {
+  const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
+  try {
+    const { GachaDialog } = await server.ssrLoadModule('/src/components/GachaDialog.tsx');
+    const project = { ...rows.find((row) => row.catalogStatus !== 'review-pending'), author: 'logicrw' };
+    for (const avatarUrl of ['https://avatars.githubusercontent.com/u/1?v=4', undefined, 'https://example.com/avatar.png']) {
+      const html = renderToStaticMarkup(createElement(GachaDialog, { projects: [{ ...project, avatarUrl }], locale: 'en', onClose() {} }));
+      const avatar = html.match(/<span class="gacha-avatar-frame"[\s\S]*?<\/span>(?:<img[^>]*\/>)?<\/span>/)?.[0];
+      assert.ok(avatar, 'The avatar always reserves its own space');
+      assert.match(avatar, /class="gacha-avatar gacha-initial">LO<\/span>/, 'Initials are visible while the image is pending or absent');
+      if (avatarUrl?.startsWith('https://avatars.githubusercontent.com/')) {
+        assert.match(avatar, /<img[^>]+data-ready="false"/);
+      } else {
+        assert.doesNotMatch(avatar, /<img/);
+      }
+    }
+  } finally { await server.close(); }
+});

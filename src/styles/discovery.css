@@ -25,7 +25,10 @@
 .gacha-identity > div { min-width: 0; }
 .gacha-identity h3 { margin: 0 0 4px; font-size: clamp(21px, 5vw, 28px); line-height: 1.2; letter-spacing: -.025em; overflow-wrap: anywhere; }
 .gacha-avatar { flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; object-fit: cover; }
-.gacha-initial { display: grid; place-items: center; background: var(--night-surface-raised); color: var(--accent); font-size: 21px; }
+.gacha-avatar-frame { position: relative; display: inline-flex; width: 42px; height: 42px; flex: 0 0 42px; }
+.gacha-avatar-frame img { position: absolute; inset: 0; opacity: 0; }
+.gacha-avatar-frame img[data-ready='true'] { opacity: 1; }
+.gacha-initial { display: grid; place-items: center; background: var(--night-surface-raised); color: var(--accent); font-family: var(--mono); font-size: 16px; }
 .gacha-author { color: var(--night-text-muted); font-size: 12px; overflow-wrap: anywhere; }
 .gacha-category { display: inline-block; margin-top: 18px; padding: 4px 8px; background: var(--night-surface-inset); color: var(--night-text-muted); border-radius: 5px; font-size: 11px; }
 .gacha-summary { margin: 15px 0 22px; font-size: 15px; line-height: 1.7; overflow-wrap: anywhere; }
