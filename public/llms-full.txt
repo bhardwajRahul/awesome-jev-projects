@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 287
+Catalog entries: 305
 
 ## Install the Agent Skill
 
@@ -3731,12 +3731,12 @@ A Pi-based terminal coding Agent whose main model handles reasoning, edits and t
 
 ## jev-commit
 
-Pre-commit hook for the commit-msg stage: one Jev call judges the message against the staged diff, then warns and gets out of the way, except on a credential on an added line, which it blocks.
+A commit-msg hook that uses one Jev call to judge the message against the staged diff; it warns by default and only blocks a credential-shaped added line.
 
 - Repository: https://github.com/valentynkit/jev-commit
 - Category: Decision Tools
-- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
-- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Jev decision: Five Noul questions in one request: checkable message, hunk match, debug leftovers, unmentioned work, and credential-shaped added lines.
+- Purpose: Turns commit-message review into thresholded probabilities instead of prose; API failures still allow the commit.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-commit/
@@ -3745,12 +3745,12 @@ Pre-commit hook for the commit-msg stage: one Jev call judges the message agains
 
 ## jev-belay
 
-Claude Code Stop hook that blocks an unverified done. It reads the turn transcript locally and only spends a Jev call when files changed and no check has passed since; every error path lets the turn end.
+A Claude Code Stop hook that reads the turn transcript locally and calls Jev only when files changed and no check has passed, blocking an unverified “done”.
 
 - Repository: https://github.com/valentynkit/jev-belay
 - Category: Decision Tools
-- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
-- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Jev decision: Four questions: whether the closing message claims done, claims checks passed, whether verification applies, and a complete / partial / blocked / other choice.
+- Purpose: Skips the model when a check already passed; every error path lets the turn end.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-belay/
@@ -3760,12 +3760,12 @@ Claude Code Stop hook that blocks an unverified done. It reads the turn transcri
 
 ## jev.nvim
 
-Neovim plugin: type a plain-language question, every function in the buffer gets judged, answers land in quickfix ranked by probability.
+A Neovim plugin that asks a plain-language question of every function in the buffer and ranks Jev probabilities in quickfix.
 
 - Repository: https://github.com/valentynkit/jev.nvim
 - Category: Decision Tools
-- Jev decision: Treesitter splits the buffer into functions; one request scores each function against the question; implementation in lua/. The README compares against a regex grep on a twelve-file fixture corpus, no accuracy claim beyond that.
-- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Jev decision: Scores each Treesitter function against the user question in one request and ranks hits in quickfix by probability.
+- Purpose: Finds cross-language shapes that grep misses, and lands the ranked hits in the existing quickfix loop.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev.nvim/
@@ -3775,12 +3775,12 @@ Neovim plugin: type a plain-language question, every function in the buffer gets
 
 ## jev-skip
 
-Browser extension that skips YouTube sponsor reads on videos nobody has labeled, from the caption track alone, and paints a probability per segment on the seek bar.
+A browser extension that classifies YouTube caption segments with Jev and skips unlabeled sponsor reads, painting a probability per slice on the seek bar.
 
 - Repository: https://github.com/valentynkit/jev-skip
 - Category: Decision Tools
-- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
-- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Jev decision: One Choice per caption segment among content, sponsor, intro, outro, self\_promo, recap, and other; only sponsor slices over the threshold are skipped.
+- Purpose: Works on videos nobody has labeled yet; with no captions it does nothing.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-skip/
@@ -3789,12 +3789,12 @@ Browser extension that skips YouTube sponsor reads on videos nobody has labeled,
 
 ## jev-plays-pokemon-red
 
-Pokemon Red on PyBoy where code owns the route and the arithmetic and Jev picks only where the game branches.
+Pokemon Red on PyBoy where Python owns the route and the arithmetic, and Jev chooses only among legal actions at actual branches.
 
 - Repository: https://github.com/valentynkit/jev-plays-pokemon-red
 - Category: Decision Tools
-- Jev decision: Choice questions at battle actions, blocked-tile sidesteps and dialogue menus; a Noul faints\_this\_turn on every battle turn is labelled from RAM on the next turn and scored by Brier in uv run measure. Speed and cost numbers are deliberately blank in the README until a full playthrough is measured; implementation in src/.
-- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Jev decision: A Choice over legal actions at each branch; battle turns also ask Noul faints\_this\_turn and should\_flee; failures take the code default.
+- Purpose: The model only picks among code-proven legal moves; a failed call never loosens the script.
 - Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-plays-pokemon-red/
@@ -3900,12 +3900,12 @@ Community .NET SDK for TypeSafe AI and Jev, providing asynchronous typed evaluat
 
 ## zio-typesafe-ai
 
-A Scala 3 and ZIO library for TypeSafe AI and Jev, integrating discrete decision endpoints into a purely functional effect system.
+A Scala 3 / ZIO client that asks typed Noul, Choice, and Score questions in one round-trip and returns a NamedTuple of answers.
 
 - Repository: https://github.com/jamesward/zio-typesafe-ai
 - Category: SDK & Decision Frameworks
-- Jev decision: Models Jev System One queries as ZIO effects, submitting state and typed questions concurrently with robust schema decoding.
-- Purpose: Enables functional Scala applications to leverage Jev fast decision-making with fiber-based concurrency and structured error management.
+- Jev decision: Encodes state and typed questions as a System One request and decodes Probability, Choice distributions, and Score values.
+- Purpose: Keeps Jev questions and answers as compile-time field names in ZIO, without raw JSON key lookups.
 - Review scope: Source code verified against pinned commit. Complete effect wrapper and test specifications; no live load benchmark.
 - License: Apache-2.0
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/jamesward/zio-typesafe-ai/
@@ -3956,12 +3956,12 @@ Local coding workspace and agent decoupling tool routing via Jev from detailed a
 
 ## reranker
 
-Python library utilizing Jev System One as a calibrated reranker, scoring up to 30 candidate documents per single API call.
+A Python reranker that packs a query and up to 30 candidates into one Jev state, with one Noul relevance question per document.
 
 - Repository: https://github.com/hev/reranker
 - Category: Data & Search
-- Jev decision: Packs a search query and documents into state, issuing parallel Noul questions to obtain calibrated relevance probabilities.
-- Purpose: Evaluates entire batches concurrently without generative overhead, providing scores suitable for absolute thresholding and ranking.
+- Jev decision: One Noul relevance question per document; long lists are chunked and scored, then filtered by threshold or sorted.
+- Purpose: Uses a probability as a threshold or sort key instead of a generative reranker.
 - Review scope: Source code verified against pinned commit. Includes pipeline examples and concurrency handling; retrieval gains vary across datasets.
 - License: Apache-2.0
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hev/reranker/
@@ -4028,12 +4028,12 @@ CLI security scanner using Jev to inspect source files, build scripts, and CI co
 
 ## jev-router
 
-High-throughput semantic router for Claude Code and CLI tools, directing requests to the most cost-effective model via Jev.
+A Claude Code and CLI proxy that asks Jev to score task complexity and pick a model from the account’s available set.
 
 - Repository: https://github.com/gargpratyush/jev-router
 - Category: Routing & Cost Optimization
-- Jev decision: Classifies task complexity with Jev discrete choice queries, dispatching trivial edits to lightweight models and reserving large models for complex logic.
-- Purpose: Reduces aggregate API costs for developer tools while preserving quality on challenging architectural questions.
+- Jev decision: Scores task, reasoning, and tool complexity, then chooses among the exact models the account can run; failures keep the current model.
+- Purpose: Makes model choice an inspectable closed-set decision, and never blocks a prompt when Jev is down.
 - Review scope: Source code verified against pinned commit. Includes wrapper binaries and policy configs; cost savings vary with workload distribution.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/gargpratyush/jev-router/
@@ -4046,12 +4046,12 @@ High-throughput semantic router for Claude Code and CLI tools, directing request
 
 ## opencode-jev-orchestrator
 
-OpenCode orchestrator that keeps a sticky affordable parent model and delegates difficult turns to subagents using Jev difficulty decisions.
+An OpenCode orchestrator that keeps a cheap sticky parent model and, when Jev flags a hard turn, escalates through a child subagent.
 
 - Repository: https://github.com/aaronshaf/opencode-jev-orchestrator
 - Category: Routing & Cost Optimization
-- Jev decision: Evaluates turn complexity before execution, triggering specialized subagents powered by premium models only when escalation criteria are met.
-- Purpose: Maximizes context cache hits on low-cost models while preserving high-tier reasoning capabilities for challenging code changes.
+- Jev decision: Scores task, reasoning, and tool complexity, then chooses fast / balanced / strong / long; local policy stays, escalates, or fans out.
+- Purpose: Keeps the parent model’s cache warm and opens a stronger child only when Jev flags a hard turn.
 - Review scope: Source code verified against pinned commit. Core routing and subagent dispatching verified; synthesis quality depends on task boundaries.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/aaronshaf/opencode-jev-orchestrator/
@@ -4247,3 +4247,282 @@ Retrieval evaluation system measuring Jev reranking against lexical, embedding, 
 - Source evidence: https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/cli.py
 - Source evidence: https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/evaluate.py
 - Source evidence: https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/README.md
+
+## polar\_llama
+
+A Polars library for parallel provider inference that also calls Jev per row as Noul, Choice, and Score questions, or as one typed contract over a document.
+
+- Repository: https://github.com/pnthn-ai/polar_llama
+- Category: Data & Search
+- Jev decision: One System One request per row: Noul, Choice, or Score answers land as ordinary typed columns with confidences.
+- Purpose: Puts closed-set Jev answers on existing Polars columns instead of another chat-completion pass.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/pnthn-ai/polar_llama/
+- Source evidence: https://github.com/pnthn-ai/polar_llama/blob/d10d48db20af9d5a33e696c39f660187677257f7/README.md
+- Source evidence: https://github.com/pnthn-ai/polar_llama/blob/d10d48db20af9d5a33e696c39f660187677257f7/src/model_client/typesafe.rs
+
+## JevBrowserExt
+
+A Manifest V3 Chrome port of jev-ultrafast: Jev picks the operation and DOM element in one request per step; a small chat model fills TYPE\_TEXT.
+
+- Repository: https://github.com/chy4pro/JevBrowserExt
+- Category: Browser & OS Action
+- Jev decision: Chooses an operation and its DOM target in one request, with separate yes/no checks for goal completion and a stuck loop.
+- Purpose: Runs in the user’s own tabs without screenshots, and keeps the action, target, and typed string inspectable.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/chy4pro/jevbrowserext/
+- Source evidence: https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/README.md
+- Source evidence: https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/README_CN.md
+- Source evidence: https://github.com/chy4pro/JevBrowserExt/blob/0e4c5294ab3de8db09e6ddbc523ce8004406e199/src/shared/providers/typesafe.ts
+
+## antivirus
+
+A file scanner that sends extracted features to Jev for a verdict, a 0–4 severity score, and Noul indicators, then applies local quarantine or review rules.
+
+- Repository: https://github.com/newuser7171/antivirus
+- Category: Security & Guardrails
+- Jev decision: Choice clean / suspicious\_pua / malicious, Score 0–4, and Noul questions for packing, C2, persistence, and injection; local policy maps the answers.
+- Purpose: Turns heuristic file features into thresholded structured answers rather than a prose verdict; this site has not run or validated protection.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/newuser7171/antivirus/
+- Source evidence: https://github.com/newuser7171/antivirus/blob/4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9/README.md
+- Source evidence: https://github.com/newuser7171/antivirus/blob/4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9/jev_scanner.py
+
+## jev-pii-checker
+
+A CLI that sends text to TypeSafe Jev for PII category Nouls and a sensitivity Score, then locates spans with regex and segmentation.
+
+- Repository: https://github.com/coo-quack/jev-pii-checker
+- Category: Security & Guardrails
+- Jev decision: For each text chunk, asks twelve PII-category Nouls and a three-level sensitivity Score.
+- Purpose: Judgment runs on TypeSafe servers; local code only locates spans, so this is not an offline privacy scanner.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/coo-quack/jev-pii-checker/
+- Source evidence: https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/judge.ts
+- Source evidence: https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/src/gate.ts
+- Source evidence: https://github.com/coo-quack/jev-pii-checker/blob/6ad02cdc0d7ca563897ce9eff881b7a7b017d426/README.md
+- Source evidence: https://x.com/chata/status/2101331708662698304
+
+## jev-robotics-demo
+
+A MuJoCo arm demo where local code proposes candidate moves and Jev chooses the target, grasp or release, and completion.
+
+- Repository: https://github.com/FazalAAli/jev-robotics-demo
+- Category: High-Frequency & Simulation
+- Jev decision: Chooses among candidate targets, grasp or release, and a done Noul.
+- Purpose: Candidate motions are generated in a local physics copy; Jev only chooses. Author-reported timings were not retested here.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/fazalaali/jev-robotics-demo/
+- Source evidence: https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/jev_agent.py
+- Source evidence: https://github.com/FazalAAli/jev-robotics-demo/blob/531de61a75f386b0847f5f6f809a11424a75c29b/README.md
+- Source evidence: https://x.com/FazAliDev/status/2101327974335422525
+
+## jev-semgrep
+
+A semantic grep that scores each line with Jev against a meaning, including AND/OR/NOT and cross-language queries.
+
+- Repository: https://github.com/uehaj/jev-semgrep
+- Category: Data & Search
+- Jev decision: Batches about thirty lines and asks jev-latest a Score or Noul per line for the stated meaning.
+- Purpose: A zero-runtime-dependency semantic grep; query text is sent to TypeSafe.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/uehaj/jev-semgrep/
+- Source evidence: https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/semgrep.mjs
+- Source evidence: https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/README.md
+- Source evidence: https://github.com/uehaj/jev-semgrep/blob/21120e9ee634defdb279b7243e03ea84aaeed2da/LICENSE
+- Source evidence: https://x.com/mohritaroh/status/2101325806119035332
+
+## jev-tweet-radar
+
+A Chrome extension that scores each X timeline post with one Jev Noul batch for engagement value and optional tags.
+
+- Repository: https://github.com/DDnim/jev-tweet-radar
+- Category: Browser & OS Action
+- Jev decision: One System One request asks Nouls for worth-engaging plus optional tags such as spam, buzz, and AI-ish.
+- Purpose: Turns timeline filtering into inspectable probabilities instead of generated commentary. Post text is sent to TypeSafe.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/ddnim/jev-tweet-radar/
+- Source evidence: https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/background.js
+- Source evidence: https://github.com/DDnim/jev-tweet-radar/blob/b5057858ab5de6f7d665527a192f009eff8d0e76/README.md
+- Source evidence: https://x.com/WarlockTome/status/2101312284308172803
+
+## pr-sieve
+
+A GitHub Action that compiles \`.jev.yml\` rules into Jev questions and fails, comments, or passes from the numbers.
+
+- Repository: https://github.com/Thestral12/pr-sieve
+- Category: CLI & Pipelines
+- Jev decision: Rules become at most twelve questions (\`MAX\_JEV\_QUESTIONS\` in src/types.ts). AKIA and private-key armor from src/redact.ts fail locally in src/pipeline.ts with no Jev call.
+- Purpose: Does not write reviews, suggest patches, or approve. Policy is read from the base-ref config.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/thestral12/pr-sieve/
+- Source evidence: https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/src/jev/client.ts
+- Source evidence: https://github.com/Thestral12/pr-sieve/blob/9f37d439e37d99a145bc8367d982fe68df030e57/README.md
+- Source evidence: https://x.com/scottyfost/status/2100999355486339348
+
+## questions
+
+A TypeScript decision library that asks typed questions via Zod or native batches, defaulting to TypeSafe Jev, with optional Vercel or generative adapters.
+
+- Repository: https://github.com/nitoba/questions
+- Category: SDK & Decision Frameworks
+- Jev decision: Posts state plus Choice, Score, or Noul questions to \`/v1/systemone\`, defaulting to jev-latest.
+- Purpose: The same question definitions can target TypeSafe, Vercel, or a generative backend without rewriting callers.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/nitoba/questions/
+- Source evidence: https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/typesafe.ts
+- Source evidence: https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/src/providers/system-one.ts
+- Source evidence: https://github.com/nitoba/questions/blob/37501199437e3f3be11e185c157d30fa7a00601a/README.md
+- Source evidence: https://x.com/nito_b_a/status/2100949243485700547
+
+## kody
+
+Optional second-stage search: widen the hybrid pool, then Score-rerank candidates with Workers AI typesafe/jev.
+
+- Repository: https://github.com/kentcdodds/kody
+- Category: Data & Search
+- Jev decision: Sends a Score question per candidate, reorders and drops low scores; the model id is typesafe/jev.
+- Purpose: Attaches Jev rerank to existing MCP search instead of replacing retrieval. License is Fair Source FSL-1.1-ALv2, not OSI open source.
+- Review scope: Pinned public source was reviewed. The license is FSL-1.1-ALv2. This site did not execute the project or independently measure performance or safety.
+- License: FSL-1.1-ALv2
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/kentcdodds/kody/
+- Source evidence: https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/packages/worker/src/mcp/tools/search-jev-rerank.ts
+- Source evidence: https://github.com/kentcdodds/kody/blob/ed9275186dc817530dd2289e62c208ac3809391f/LICENSE
+- Source evidence: https://x.com/kodykoala/status/2100943346575253515
+
+## jev-clash-royale-test
+
+A Clash Royale-style sandbox whose Jev bot decides play-or-hold, card, lane, and depth in one System One call.
+
+- Repository: https://github.com/JanDalhuysen/jev-clash-royale-test
+- Category: High-Frequency & Simulation
+- Jev decision: One systemOne call with a should\_play Noul plus card, lane, and depth Choices.
+- Purpose: Makes play choices inspectable probabilities. package.json says ISC; there is no LICENSE file.
+- Review scope: Pinned public source was reviewed. package.json lists ISC but there is no LICENSE file. This site did not execute the project or independently measure performance or safety.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/jandalhuysen/jev-clash-royale-test/
+- Source evidence: https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/jev_bot_loop.js
+- Source evidence: https://github.com/JanDalhuysen/jev-clash-royale-test/blob/d25d0c7b4325a2c2f1449d40e1d834ff50069e21/README.md
+- Source evidence: https://x.com/JanDalhuysen/status/2101334340353318993
+
+## jevis
+
+A Flutter integration\_test package that registers allowed UI actions and lets Jev pick the next action and whether the goal is done.
+
+- Repository: https://github.com/jaewgwon/jevis
+- Category: Browser & OS Action
+- Jev decision: POSTs to /v1/systemone as jev-latest: a goal Noul and a Choice over registered Flutter actions.
+- Purpose: Turns natural-language tests into choices over a closed action list instead of free-form tapping.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/jaewgwon/jevis/
+- Source evidence: https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/lib/src/jevis_policy.dart
+- Source evidence: https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/README.md
+- Source evidence: https://github.com/jaewgwon/jevis/blob/ab5630590288706ce56bb5665680358fe0bd95e8/LICENSE
+- Source evidence: https://x.com/jake_gwon/status/2101194639948787818
+
+## typesafe-ai-ruby
+
+A stdlib-only Ruby client that sends Choice, Score, or Noul questions to TypeSafe System One.
+
+- Repository: https://github.com/hnegishi/typesafe-ai-ruby
+- Category: SDK & Decision Frameworks
+- Jev decision: system\_one POSTs to /v1/systemone, defaulting to https://api.typesafe.ai and jev-latest.
+- Purpose: Gives Ruby programs a stdlib path to ask Jev without wrapping a generative SDK.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hnegishi/typesafe-ai-ruby/
+- Source evidence: https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/client.rb
+- Source evidence: https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/lib/typesafe/constants.rb
+- Source evidence: https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/README.md
+- Source evidence: https://github.com/hnegishi/typesafe-ai-ruby/blob/4ab8c243fbd9e9d5526b59186595d0534785d963/LICENSE.txt
+- Source evidence: https://x.com/hik4_n/status/2101173099425345927
+
+## jev-decision-gateway
+
+A gateway that asks Jev continue / tool / verify questions and invokes a generative LLM only when policy says generation is needed.
+
+- Repository: https://github.com/kuldeepsinh19/jev-decision-gateway
+- Category: Routing & Cost Optimization
+- Jev decision: TypeSafeClient.systemOne answers policy questions; the adapter then decides whether a generative model runs.
+- Purpose: Places expensive generation behind a Jev gate. Author-reported call savings were not retested here.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/kuldeepsinh19/jev-decision-gateway/
+- Source evidence: https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/client.ts
+- Source evidence: https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/packages/core/src/jev/adapter.ts
+- Source evidence: https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/README.md
+- Source evidence: https://github.com/kuldeepsinh19/jev-decision-gateway/blob/67111792e840e150239d12337a1d939be68be0e6/LICENSE
+- Source evidence: https://x.com/Kuldeepzzz/status/2101166296973119555
+
+## foreman
+
+An independent supervisor loop that reads worker diffs, logs and tests, asks Jev Nouls about stuck / off-track / verify, then applies a Python policy.
+
+- Repository: https://github.com/thruwire/foreman
+- Category: CLI & Pipelines
+- Jev decision: AsyncTypeSafeClient.system\_one with default jev-latest sends Noul questions for supervision.
+- Purpose: Supervision does not write the worker's code. Distinct from cataloged Shifty-Eye-Games/foreman-jev.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/thruwire/foreman/
+- Source evidence: https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/src/foreman/foreman/jev.py
+- Source evidence: https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/README.md
+- Source evidence: https://github.com/thruwire/foreman/blob/209182dac7a3467033fd093ab4ca47d21279984a/LICENSE
+- Source evidence: https://x.com/JoshARosen/status/2100573432089866717
+
+## jev-clerk
+
+A macOS desktop clerk that books supplier invoices: Jev picks each click from a closed action list; a deep model only rewrites the playbook.
+
+- Repository: https://github.com/stas4000/jev-clerk
+- Category: Browser & OS Action
+- Jev decision: POSTs https://api.typesafe.ai/v1/systemone as jev-latest with a closed action Choice each step.
+- Purpose: Screen actions follow Jev's closed choices. Author demo numbers were not retested here. GitHub SPDX is empty; the LICENSE file is MIT.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/stas4000/jev-clerk/
+- Source evidence: https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/jev_clerk/jev.py
+- Source evidence: https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/README.md
+- Source evidence: https://github.com/stas4000/jev-clerk/blob/b471384e56bd9cec8f56ba8415f69b1006ce43e9/LICENSE
+- Source evidence: https://x.com/stas_sorokin_/status/2101335212131012644
+
+## jev-gpt
+
+Cascaded Choice questions that make Jev pick the next word from a word tree instead of generating text.
+
+- Repository: https://github.com/florian-hoenicke/jev-gpt
+- Category: High-Frequency & Simulation
+- Jev decision: POSTs /v1/systemone as jev-latest with one type:choice question per tree level.
+- Purpose: Shows how Jev can assemble short text without generating prose. No LICENSE file is present.
+- Review scope: Pinned public source was reviewed. There is no LICENSE file. This site did not execute the project or independently measure performance or safety.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/florian-hoenicke/jev-gpt/
+- Source evidence: https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/generate.py
+- Source evidence: https://github.com/florian-hoenicke/jev-gpt/blob/25751a7f6a87ee31ee4ed2eb381fd746ca59c645/README.md
+- Source evidence: https://x.com/florianhoenicke/status/2101333502369083690
+
+## TypeSafeSDK
+
+An unofficial .NET client that POSTs state and typed questions to TypeSafe /v1/systemone. The parent repo also contains unrelated SDK dumps.
+
+- Repository: https://github.com/DotNetVibeCoderz/Vibe_SDK
+- Category: SDK & Decision Frameworks
+- Jev decision: TypeSafeClient.SystemOneAsync POSTs {Endpoint}/v1/systemone, defaulting to https://api.typesafe.ai and jev-latest.
+- Purpose: Gives .NET an HTTP path to ask Jev. Other SDKs in the parent dump are not Jev integrations. Distinct from cataloged saibimajdi/typesafeai-dotnet-sdk.
+- Review scope: Pinned public source was reviewed. This site did not execute the project or independently measure performance or safety.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/dotnetvibecoderz/vibe_sdk/
+- Source evidence: https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/TypeSafeSdk/TypeSafeClient.cs
+- Source evidence: https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/README.md
+- Source evidence: https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/LICENSE
+- Source evidence: https://x.com/Mifmasterz/status/2101296433408417841
