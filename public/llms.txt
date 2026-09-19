@@ -16,10 +16,19 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Security & Guardrails: Pre-commit git gates, command risk evaluation, prompt injection filtering.
 - SDK & Decision Frameworks: Native SDK wrappers in TypeScript, Python, Rust, Go, Scala.
 
+## Agent Skill & Machine-Readable Usage
+For AI coding agents (Claude Code, Cursor, Copilot, Windsurf, Devin), this site provides an open-standard Agent Skill:
+- Canonical Skill Definition: https://logicrw.github.io/awesome-jev-projects/skill.md
+- Well-Known Discovery Endpoint (RFC v0.2.0): https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/index.json
+- Well-Known Discovery Endpoint (v0.1.0): https://logicrw.github.io/awesome-jev-projects/.well-known/skills/default/skill.md
+- Install via GitHub: `npx skills add logicrw/awesome-jev-projects`
+- Install via Web URL: `npx skills add https://logicrw.github.io/awesome-jev-projects/`
+
 ## Full Catalog (259 Projects)
 For exhaustive details on all 259 projects, see:
 - Full text catalog: https://logicrw.github.io/awesome-jev-projects/llms-full.txt
 - Raw JSON dataset: https://logicrw.github.io/awesome-jev-projects/projects.json
+- Agent Skill: https://logicrw.github.io/awesome-jev-projects/skill.md
 
 ### Top Featured Projects
 - [jev-ultrafast](https://github.com/browser-use/jev-ultrafast): Ultra-fast browser agent using Jev for per-step DOM action decisions. Complete Google Flights search in ~7.1s. (Browser & OS Action)

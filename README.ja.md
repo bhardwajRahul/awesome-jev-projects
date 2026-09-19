@@ -24,6 +24,7 @@
 
 <p>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>🌐 ライブ対話型レーダーを開く</strong></a> • 
+  <a href="https://logicrw.github.io/awesome-jev-projects/skill.md"><strong>🤖 Agent スキル (SKILL.md)</strong></a> • 
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 プロジェクトを申請</strong></a>
 </p>
 
@@ -35,7 +36,9 @@
 
 > **Awesome Jev とは？**  
 > 長文生成モデルとは異なり、TypeSafe AIのJevはサブ100ミリ秒の高速構造化判断（`Choice` 選択、`Score` スコアリング、`Noul` 確率推定）に特化しています。  
-> 本リポジトリは、Jevを中核の意思決定エンジンとして実装した実用的なソフトウェアのみを厳選・掲載しています。
+> 本リポジトリは、Jevを中核の意思決定エンジンとして実装した実用的なソフトウェアのみを厳選・掲載しています。  
+>  
+> **Agent 対応:** `npx skills add logicrw/awesome-jev-projects` でエージェントスキルを導入できます。[`skill.md`](https://logicrw.github.io/awesome-jev-projects/skill.md) や [`llms.txt`](https://logicrw.github.io/awesome-jev-projects/llms.txt) も利用可能です。
 
 ---
 <a id="contents"></a>

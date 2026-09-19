@@ -120,6 +120,31 @@ export const english: Record<string, string> = {
     "Want to showcase your AI / Jev tool to developers worldwide?",
   立即联系: "Promote here",
   推荐位: "Featured placement",
+  "Agent Skill 与接入指南": "Agent Skill & Integration Guide",
+  "为 AI 编码助手（Claude Code、Cursor、Windsurf、Copilot）提供开箱即用的专业能力包。":
+    "Ready-to-use capability package for AI coding assistants (Claude Code, Cursor, Windsurf, Copilot).",
+  "一键安装 Skill（推荐）": "One-click install (Recommended)",
+  "安装命令已复制": "Install command copied",
+  "无法自动复制，请手动复制命令。": "Unable to copy automatically; please copy manually.",
+  "复制命令": "Copy command",
+  "复制": "Copy",
+  "Agent 可用核心能力": "Core capabilities for agents",
+  "项目检索与推荐：": "Project discovery & recommendations:",
+  "按 18 个专业分类检索 259+ 实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。":
+    "Query 259+ real-world open-source projects across 18 categories, including DOM decisions, routing, and context GC.",
+  "架构模式与源码证据：": "Architectural patterns & code evidence:",
+  "获取 System-1 决策协同器架构，查阅每个项目的真实 Jev 决策点与 GitHub 源码证据。":
+    "Learn System-1 decision co-processor patterns with verified Jev decision points and commit-pinned code evidence.",
+  "标准化 Issue 提交规范：": "Standardized submission protocol:",
+  "指导 Agent 或开发者按照雷达格式规范提交新的 Jev 项目。":
+    "Guide agents and developers to submit new verified Jev projects conforming to the radar schema.",
+  "机器可读接口": "Machine-readable endpoints",
+  "Agent Skill 标准定义 (Markdown)": "Standard Agent Skill definition (Markdown)",
+  "精简路线图与重点项目 (Markdown)": "Curated roadmap & top projects (Markdown)",
+  "完整 259+ 项目结构化数据集 (JSON)": "Full 259+ projects structured dataset (JSON)",
+  "Agent Skill": "Agent Skill",
+  "查看 Agent Skill 与接入指南": "View Agent Skill & integration guide",
+  "Agent Skill 接入": "Agent Skill Integration",
 };
 export const categoryEnglish: Record<string, string> = {
   "Browser & OS Action": "Browser & OS Action",

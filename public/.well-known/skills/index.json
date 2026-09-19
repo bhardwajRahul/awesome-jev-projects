@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "$schema": "https://agentskills.io/schema/v0.2.0/discovery.json",
+  "skills": [
+    {
+      "name": "awesome-jev",
+      "description": "Query, filter, and inspect vetted real-world open-source projects using TypeSafe Jev as a sub-100ms System-One decision co-processor.",
+      "url": "https://logicrw.github.io/awesome-jev-projects/.well-known/skills/awesome-jev/SKILL.md",
+      "path": "/.well-known/skills/awesome-jev/SKILL.md"
+    },
+    {
+      "name": "default",
+      "description": "Default agent skill for Awesome Jev project discovery, architecture patterns, and catalog querying.",
+      "url": "https://logicrw.github.io/awesome-jev-projects/.well-known/skills/default/skill.md",
+      "path": "/.well-known/skills/default/skill.md"
+    }
+  ]
+}

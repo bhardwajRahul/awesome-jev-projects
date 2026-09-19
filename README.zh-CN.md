@@ -24,6 +24,7 @@
 
 <p>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>🌐 访问在线交互雷达站</strong></a> • 
+  <a href="https://logicrw.github.io/awesome-jev-projects/skill.md"><strong>🤖 Agent 技能包 (SKILL.md)</strong></a> • 
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
@@ -35,7 +36,9 @@
 
 > **为什么建立 Awesome Jev？**  
 > 与长文本自回归生成模型不同，TypeSafe AI 的 Jev 专攻 100 毫秒以内的结构化决策判断（`Choice` 选项抉择、`Score` 离散评分与 `Noul` 概率推理）。  
-> 本雷达站专为开发者呈现真正将 Jev 落地为核心决策单元的开源项目。纯净真实、代码可查、开箱即用。
+> 本雷达站专为开发者呈现真正将 Jev 落地为核心决策单元的开源项目。纯净真实、代码可查、开箱即用。  
+>  
+> **Agent 友好接入：** AI 编码助手可通过 `npx skills add logicrw/awesome-jev-projects` 或 `npx skills add https://logicrw.github.io/awesome-jev-projects/` 一键加载能力，或直接访问 [`skill.md`](https://logicrw.github.io/awesome-jev-projects/skill.md) / [`llms.txt`](https://logicrw.github.io/awesome-jev-projects/llms.txt)。
 
 ---
 <a id="contents"></a>

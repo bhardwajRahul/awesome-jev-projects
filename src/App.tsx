@@ -345,7 +345,7 @@ function App() {
   const [saved, setSaved] = useState<string[]>(getSaved);
   const [onlySaved, setOnlySaved] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
-  const [modal, setModal] = useState<"submit" | null>(null);
+  const [modal, setModal] = useState<"submit" | "agentSkill" | null>(null);
   const [active, setActive] = useState<Project | null>(null);
   const [toast, setToast] = useState("");
   const [repo, setRepo] = useState("");
@@ -685,6 +685,18 @@ function App() {
           </button>
         </div>
         <div className="header-actions">
+          <button
+            className="button agent-skill-btn"
+            onClick={() => {
+              closeProject();
+              setModal("agentSkill");
+            }}
+            aria-label={t("查看 Agent Skill 与接入指南")}
+            title={t("查看 Agent Skill 与接入指南")}
+          >
+            <Sparkles size={15} />
+            <span>{t("Agent Skill")}</span>
+          </button>
           <a
             className="button github-star"
             href="https://github.com/logicrw/awesome-jev-projects"
@@ -1174,6 +1186,17 @@ function App() {
             <Zap size={16} />
             {t("Awesome Jev · 开源项目雷达")}
           </a>
+          <button
+            type="button"
+            className="footer-link-button"
+            onClick={() => {
+              closeProject();
+              setModal("agentSkill");
+            }}
+          >
+            <Sparkles size={13} />
+            {t("Agent Skill 接入")}
+          </button>
           <span>{t("GitHub 数据定时同步")}</span>
           <a
             href="https://github.com/logicrw/awesome-jev-projects"
@@ -1307,6 +1330,124 @@ function App() {
               )}
             </p>
           </form>
+        </Modal>
+      )}
+      {modal === "agentSkill" && (
+        <Modal
+          locale={locale}
+          title={t("Agent Skill 与接入指南")}
+          onClose={() => setModal(null)}
+        >
+          <p className="modal-intro">
+            {t("为 AI 编码助手（Claude Code、Cursor、Windsurf、Copilot）提供开箱即用的专业能力包。")}
+          </p>
+          <div className="agent-skill-dialog">
+            <div className="agent-skill-section">
+              <label className="agent-skill-label">{t("一键安装 Skill（推荐）")}</label>
+              <div className="agent-command-box">
+                <code>npx skills add logicrw/awesome-jev-projects</code>
+                <button
+                  type="button"
+                  className="button"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(
+                        "npx skills add logicrw/awesome-jev-projects",
+                      );
+                      setToast(t("安装命令已复制"));
+                    } catch {
+                      setToast(t("无法自动复制，请手动复制命令。"));
+                    }
+                  }}
+                  title={t("复制命令")}
+                >
+                  <Copy size={14} />
+                  <span>{t("复制")}</span>
+                </button>
+              </div>
+              <div className="agent-command-box" style={{ marginTop: "6px" }}>
+                <code>npx skills add https://logicrw.github.io/awesome-jev-projects/</code>
+                <button
+                  type="button"
+                  className="button"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(
+                        "npx skills add https://logicrw.github.io/awesome-jev-projects/",
+                      );
+                      setToast(t("安装命令已复制"));
+                    } catch {
+                      setToast(t("无法自动复制，请手动复制命令。"));
+                    }
+                  }}
+                  title={t("复制命令")}
+                >
+                  <Copy size={14} />
+                  <span>{t("复制")}</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="agent-skill-section">
+              <label className="agent-skill-label">{t("Agent 可用核心能力")}</label>
+              <ul className="agent-feature-list">
+                <li>
+                  <strong>{t("项目检索与推荐：")}</strong>
+                  {t("按 18 个专业分类检索 259+ 实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。")}
+                </li>
+                <li>
+                  <strong>{t("架构模式与源码证据：")}</strong>
+                  {t("获取 System-1 决策协同器架构，查阅每个项目的真实 Jev 决策点与 GitHub 源码证据。")}
+                </li>
+                <li>
+                  <strong>{t("标准化 Issue 提交规范：")}</strong>
+                  {t("指导 Agent 或开发者按照雷达格式规范提交新的 Jev 项目。")}
+                </li>
+              </ul>
+            </div>
+
+            <div className="agent-skill-section">
+              <label className="agent-skill-label">{t("机器可读接口")}</label>
+              <div className="agent-endpoints-grid">
+                <a
+                  className="agent-endpoint-card"
+                  href={`${import.meta.env.BASE_URL}skill.md`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <strong>skill.md</strong>
+                    <span>{t("Agent Skill 标准定义 (Markdown)")}</span>
+                  </div>
+                  <ExternalLink size={14} />
+                </a>
+                <a
+                  className="agent-endpoint-card"
+                  href={`${import.meta.env.BASE_URL}llms.txt`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <strong>llms.txt</strong>
+                    <span>{t("精简路线图与重点项目 (Markdown)")}</span>
+                  </div>
+                  <ExternalLink size={14} />
+                </a>
+                <a
+                  className="agent-endpoint-card"
+                  href={`${import.meta.env.BASE_URL}projects.json`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <strong>projects.json</strong>
+                    <span>{t("完整 259+ 项目结构化数据集 (JSON)")}</span>
+                  </div>
+                  <ExternalLink size={14} />
+                </a>
+              </div>
+            </div>
+          </div>
         </Modal>
       )}
       {active && (

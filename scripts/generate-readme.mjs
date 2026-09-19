@@ -274,16 +274,24 @@ function buildHeader(lang) {
   const missionText = {
     en: `> **Why Awesome Jev?**  
 > Unlike autoregressive generative models, TypeSafe AI's Jev specializes in sub-100ms structured \`Choice\`, \`Score\`, and \`Noul\` (probability) judgements.  
-> This directory curates real-world software where Jev acts as the high-speed decision core. Every repository is strictly verified against commit-pinned source code.`,
+> This directory curates real-world software where Jev acts as the high-speed decision core. Every repository is strictly verified against commit-pinned source code.  
+>  
+> **Agent-Ready Access:** Install our Agent Skill via \`npx skills add logicrw/awesome-jev-projects\` or read [\`skill.md\`](https://logicrw.github.io/awesome-jev-projects/skill.md) / [\`llms.txt\`](https://logicrw.github.io/awesome-jev-projects/llms.txt).`,
     zh: `> **为什么建立 Awesome Jev？**  
 > 与长文本自回归生成模型不同，TypeSafe AI 的 Jev 专攻 100 毫秒以内的结构化决策判断（\`Choice\` 选项抉择、\`Score\` 离散评分与 \`Noul\` 概率推理）。  
-> 本雷达站专为开发者呈现真正将 Jev 落地为核心决策单元的开源项目。纯净真实、代码可查、开箱即用。`,
+> 本雷达站专为开发者呈现真正将 Jev 落地为核心决策单元的开源项目。纯净真实、代码可查、开箱即用。  
+>  
+> **Agent 友好接入：** AI 编码助手可通过 \`npx skills add logicrw/awesome-jev-projects\` 或 \`npx skills add https://logicrw.github.io/awesome-jev-projects/\` 一键加载能力，或直接访问 [\`skill.md\`](https://logicrw.github.io/awesome-jev-projects/skill.md) / [\`llms.txt\`](https://logicrw.github.io/awesome-jev-projects/llms.txt)。`,
     ja: `> **Awesome Jev とは？**  
 > 長文生成モデルとは異なり、TypeSafe AIのJevはサブ100ミリ秒の高速構造化判断（\`Choice\` 選択、\`Score\` スコアリング、\`Noul\` 確率推定）に特化しています。  
-> 本リポジトリは、Jevを中核の意思決定エンジンとして実装した実用的なソフトウェアのみを厳選・掲載しています。`,
+> 本リポジトリは、Jevを中核の意思決定エンジンとして実装した実用的なソフトウェアのみを厳選・掲載しています。  
+>  
+> **Agent 対応:** \`npx skills add logicrw/awesome-jev-projects\` でエージェントスキルを導入できます。[\`skill.md\`](https://logicrw.github.io/awesome-jev-projects/skill.md) や [\`llms.txt\`](https://logicrw.github.io/awesome-jev-projects/llms.txt) も利用可能です。`,
     ko: `> **Awesome Jev 프로젝트란?**  
 > 텍스트 생성 모델과 달리, TypeSafe AI의 Jev는 100ms 미만의 고속 구조화 판단(\`Choice\` 선택, \`Score\` 채점, \`Noul\` 확률 판정)에 특화되어 있습니다.  
-> 본 디렉터리는 Jev를 핵심 의사결정 엔진으로 직접 활용하는 실제 오픈소스 소프트웨어만을 검증하여 수록합니다.`
+> 본 디렉터리는 Jev를 핵심 의사결정 엔진으로 직접 활용하는 실제 오픈소스 소프트웨어만을 검증하여 수록합니다.  
+>  
+> **Agent 지원:** \`npx skills add logicrw/awesome-jev-projects\` 명령어로 에이전트 스킬을 설치하거나 [\`skill.md\`](https://logicrw.github.io/awesome-jev-projects/skill.md) / [\`llms.txt\`](https://logicrw.github.io/awesome-jev-projects/llms.txt) 문서를 참조할 수 있습니다.`
   };
 
   const navLabels = {
@@ -294,10 +302,26 @@ function buildHeader(lang) {
   };
 
   const actionLabels = {
-    en: { radar: "🌐 Explore Live Interactive Radar", submit: "📝 Submit a Project" },
-    zh: { radar: "🌐 访问在线交互雷达站", submit: "📝 提交开源项目" },
-    ja: { radar: "🌐 ライブ対話型レーダーを開く", submit: "📝 プロジェクトを申請" },
-    ko: { radar: "🌐 실시간 인터랙티브 레이더 열기", submit: "📝 프로젝트 등록 신청" }
+    en: {
+      radar: "🌐 Explore Live Interactive Radar",
+      skill: "🤖 Agent Skill (SKILL.md)",
+      submit: "📝 Submit a Project",
+    },
+    zh: {
+      radar: "🌐 访问在线交互雷达站",
+      skill: "🤖 Agent 技能包 (SKILL.md)",
+      submit: "📝 提交开源项目",
+    },
+    ja: {
+      radar: "🌐 ライブ対話型レーダーを開く",
+      skill: "🤖 Agent スキル (SKILL.md)",
+      submit: "📝 プロジェクトを申請",
+    },
+    ko: {
+      radar: "🌐 실시간 인터랙티브 레이더 열기",
+      skill: "🤖 Agent 스킬 (SKILL.md)",
+      submit: "📝 프로젝트 등록 신청",
+    },
   };
 
   const banner = lang === "zh" ? BANNER_ZH_URL : BANNER_URL;
@@ -328,6 +352,7 @@ function buildHeader(lang) {
 
 <p>
   <a href="${SITE_URL}"><strong>${actionLabels[lang].radar}</strong></a> • 
+  <a href="${SITE_URL}skill.md"><strong>${actionLabels[lang].skill}</strong></a> • 
   <a href="${ISSUE_SUBMIT_URL}"><strong>${actionLabels[lang].submit}</strong></a>
 </p>
 

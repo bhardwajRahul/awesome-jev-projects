@@ -24,6 +24,7 @@
 
 <p>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>🌐 실시간 인터랙티브 레이더 열기</strong></a> • 
+  <a href="https://logicrw.github.io/awesome-jev-projects/skill.md"><strong>🤖 Agent 스킬 (SKILL.md)</strong></a> • 
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 프로젝트 등록 신청</strong></a>
 </p>
 
@@ -35,7 +36,9 @@
 
 > **Awesome Jev 프로젝트란?**  
 > 텍스트 생성 모델과 달리, TypeSafe AI의 Jev는 100ms 미만의 고속 구조화 판단(`Choice` 선택, `Score` 채점, `Noul` 확률 판정)에 특화되어 있습니다.  
-> 본 디렉터리는 Jev를 핵심 의사결정 엔진으로 직접 활용하는 실제 오픈소스 소프트웨어만을 검증하여 수록합니다.
+> 본 디렉터리는 Jev를 핵심 의사결정 엔진으로 직접 활용하는 실제 오픈소스 소프트웨어만을 검증하여 수록합니다.  
+>  
+> **Agent 지원:** `npx skills add logicrw/awesome-jev-projects` 명령어로 에이전트 스킬을 설치하거나 [`skill.md`](https://logicrw.github.io/awesome-jev-projects/skill.md) / [`llms.txt`](https://logicrw.github.io/awesome-jev-projects/llms.txt) 문서를 참조할 수 있습니다.
 
 ---
 <a id="contents"></a>

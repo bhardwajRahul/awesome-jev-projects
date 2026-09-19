@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "awesome-jev",
+      "type": "skill-md",
+      "description": "Query, filter, and inspect vetted real-world open-source projects using TypeSafe Jev as a sub-100ms System-One decision co-processor.",
+      "url": "https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/awesome-jev/SKILL.md",
+      "digest": "sha256:ca0fa8e090180e45b0b8bbced198dd2535f11cd0482851898af44553a01d1f9b"
+    }
+  ]
+}

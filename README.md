@@ -24,6 +24,7 @@
 
 <p>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>🌐 Explore Live Interactive Radar</strong></a> • 
+  <a href="https://logicrw.github.io/awesome-jev-projects/skill.md"><strong>🤖 Agent Skill (SKILL.md)</strong></a> • 
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 Submit a Project</strong></a>
 </p>
 
@@ -35,7 +36,9 @@
 
 > **Why Awesome Jev?**  
 > Unlike autoregressive generative models, TypeSafe AI's Jev specializes in sub-100ms structured `Choice`, `Score`, and `Noul` (probability) judgements.  
-> This directory curates real-world software where Jev acts as the high-speed decision core. Every repository is strictly verified against commit-pinned source code.
+> This directory curates real-world software where Jev acts as the high-speed decision core. Every repository is strictly verified against commit-pinned source code.  
+>  
+> **Agent-Ready Access:** Install our Agent Skill via `npx skills add logicrw/awesome-jev-projects` or read [`skill.md`](https://logicrw.github.io/awesome-jev-projects/skill.md) / [`llms.txt`](https://logicrw.github.io/awesome-jev-projects/llms.txt).
 
 ---
 <a id="contents"></a>
