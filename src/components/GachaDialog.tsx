@@ -31,6 +31,7 @@ const copy = {
     nextMilestone: '距灵感共振还剩 {n} 抽',
     milestoneReached: '✨ 灵感共振达成 · 10 连里程碑',
     milestoneTag: 'RESONANCE',
+    tweet: '分享到 X',
   },
   en: {
     title: 'Draw an inspiration card',
@@ -55,6 +56,7 @@ const copy = {
     nextMilestone: '{n} draws to Resonance',
     milestoneReached: 'Resonance reached · 10-draw milestone',
     milestoneTag: 'RESONANCE',
+    tweet: 'Share on X',
   },
   ja: {
     title: 'ひらめきのカードを引く',
@@ -79,6 +81,7 @@ const copy = {
     nextMilestone: 'インスピレーション共鳴まであと {n} 回',
     milestoneReached: '✨ 共鳴達成 · 10回連続マイルストーン',
     milestoneTag: 'RESONANCE',
+    tweet: 'X で共有',
   },
   ko: {
     title: '영감 카드 뽑기',
@@ -103,6 +106,7 @@ const copy = {
     nextMilestone: '영감 공명까지 {n}회 남음',
     milestoneReached: '영감 공명 달성 · 10회 마일스톤',
     milestoneTag: 'RESONANCE',
+    tweet: 'X에 공유',
   },
 } satisfies Record<Locale, Record<string, string>>;
 
@@ -328,7 +332,24 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
           </article>
         </div>
         <p className="gacha-sr-only" role="status" aria-live="polite" aria-atomic="true">{t.drawBadge.replace('{n}', String(draw.turn + 1))}: {t.drawn}: {p.name}, {p.author}</p>
-        <div className="gacha-actions"><button type="button" className="gacha-redraw" onClick={redraw}><RotateCw size={16} aria-hidden="true" />{t.again}</button><button type="button" onClick={() => void copyText(summary)}><Copy size={16} aria-hidden="true" />{t.summary}</button><button type="button" onClick={() => void share()}><Share2 size={16} aria-hidden="true" />{t.share}</button><button type="button" onClick={() => void copyText(link)}><Link size={16} aria-hidden="true" />{t.link}</button></div>
+        <div className="gacha-actions">
+          <button type="button" className="gacha-redraw" onClick={redraw}><RotateCw size={16} aria-hidden="true" />{t.again}</button>
+          <button type="button" onClick={() => void copyText(summary)}><Copy size={16} aria-hidden="true" />{t.summary}</button>
+          <button type="button" onClick={() => void share()}><Share2 size={16} aria-hidden="true" />{t.share}</button>
+          <a
+            className="gacha-tweet"
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareSnippet)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={t.tweet}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            {t.tweet}
+          </a>
+          <button type="button" onClick={() => void copyText(link)}><Link size={16} aria-hidden="true" />{t.link}</button>
+        </div>
         <p className="gacha-feedback" role="status" aria-live="polite">{feedback === 'copied' && <Check size={14} aria-hidden="true" />}{feedback ? t[feedback] : ''}</p>
         {feedback === 'failed' && <textarea ref={manual} className="gacha-manual" aria-label={t.manual} value={fallback} readOnly rows={4} spellCheck={false} onFocus={(event) => event.currentTarget.select()} />}
         <p className="gacha-note">{formatStreak(t.streak, draw.turn + 1, locale)} · {t.note}</p>

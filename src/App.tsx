@@ -707,14 +707,29 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
       setToast(t(next.includes(id) ? "已收藏，本次浏览有效；浏览器未允许保存" : "已取消收藏，本次浏览有效；浏览器未允许保存"));
     }
   };
+  const getShareText = (p: Project, url: string) => {
+    const plain = localizedProjectText(p, "plainSummary", locale);
+    const decision = localizedProjectText(p, "jevDecisionPoint", locale);
+    if (locale === "zh") {
+      return `⚡ 在 Awesome Jev 发现了【${p.name}】（${p.stars == null ? "—" : format(p.stars)}★）\n💡 用途：${plain.text}\n🎯 Jev 决策点：${decision.text}\n🔗 探索项目：${url}`;
+    }
+    if (locale === "ja") {
+      return `⚡ Awesome Jev で【${p.name}】（${p.stars == null ? "—" : format(p.stars)}★）を発見！\n💡 用途：${plain.text}\n🎯 Jev 判断：${decision.text}\n🔗 詳細：${url}`;
+    }
+    if (locale === "ko") {
+      return `⚡ Awesome Jev에서 [${p.name}] (${p.stars == null ? "—" : format(p.stars)}★) 발견!\n💡 용도: ${plain.text}\n🎯 Jev 판단: ${decision.text}\n🔗 둘러보기: ${url}`;
+    }
+    return `⚡ Discovered ${p.name} (${p.stars == null ? "—" : format(p.stars)}★) on Awesome Jev\n💡 Purpose: ${plain.text}\n🎯 Jev Decision: ${decision.text}\n🔗 Explore: ${url}`;
+  };
+
   const share = async (p: Project) => {
     const url = `${location.origin}${projectPath(p.id, locale, import.meta.env.BASE_URL)}`;
+    const text = getShareText(p, url);
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
-        const plain = localizedProjectText(p, "plainSummary", locale);
         await navigator.share({
           title: `${p.name} — Awesome Jev`,
-          text: `${p.name}: ${plain.text}`,
+          text,
           url,
         });
         setShareFallback(null);
@@ -727,12 +742,34 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
       }
     }
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(text);
       setShareFallback(null);
-      setToast(t("项目链接已复制"));
+      setToast(t("项目分享文案已复制"));
     } catch {
       setShareFallback({ id: p.id, url });
       openProject(p);
+      setToast(t("无法自动复制，请使用详情中的项目链接。"));
+    }
+  };
+
+  const copyMarkdown = async (p: Project) => {
+    const plain = localizedProjectText(p, "plainSummary", locale);
+    const md = `[${p.name}](${p.url}) — ${plain.text}`;
+    try {
+      await navigator.clipboard.writeText(md);
+      setToast(t("Markdown 引用已复制"));
+    } catch {
+      setToast(t("无法自动复制，请使用详情中的项目链接。"));
+    }
+  };
+
+  const copyBadge = async (p: Project) => {
+    const url = `${location.origin}${projectPath(p.id, locale, import.meta.env.BASE_URL)}`;
+    const badgeMd = `[![Featured in Awesome Jev](https://img.shields.io/badge/Awesome%20Jev-Featured-2563eb?style=flat-square)](${url})`;
+    try {
+      await navigator.clipboard.writeText(badgeMd);
+      setToast(t("README 徽章已复制"));
+    } catch {
       setToast(t("无法自动复制，请使用详情中的项目链接。"));
     }
   };
@@ -1177,6 +1214,17 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                   <kbd>/</kbd>
                 )}
               </div>
+              <button
+                type="button"
+                className="toolbar-gacha-button"
+                onClick={openGacha}
+                aria-haspopup="dialog"
+                aria-keyshortcuts="Meta+G Control+G"
+                title={`${discoveryEntry} · ⌘G / Ctrl+G`}
+              >
+                <Sparkles size={15} aria-hidden="true" />
+                <span>{t("抽张灵感")}</span>
+              </button>
               <button
                 className={`filter-button ${showFilters ? "selected" : ""} ${activeFilterCount > 0 ? "has-active" : ""}`}
                 aria-label={t("展开筛选")}
@@ -1946,13 +1994,19 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               <Share2 size={15} />
               {t("分享链接")}
             </button>
+            <button className="button" onClick={() => copyMarkdown(active)} title={t("复制 Markdown 引用")}>
+              <Copy size={15} />
+              {t("复制 Markdown 引用")}
+            </button>
+            <button className="button" onClick={() => copyBadge(active)} title={t("复制 README 徽章")}>
+              <Code2 size={15} />
+              {t("复制 README 徽章")}
+            </button>
             <a
               className="button twitter-share-btn"
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                locale === "zh"
-                  ? `在 Awesome Jev 发现了开源项目【${active.name}】：${projectText(active, "plainSummary")}`
-                  : `Discovered ${active.name} on Awesome Jev: ${projectText(active, "plainSummary")}`
-              )}&url=${encodeURIComponent(`${location.origin}${projectPath(active.id, locale, import.meta.env.BASE_URL)}`)}`}
+                getShareText(active, `${location.origin}${projectPath(active.id, locale, import.meta.env.BASE_URL)}`)
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               title={t("分享到 X")}

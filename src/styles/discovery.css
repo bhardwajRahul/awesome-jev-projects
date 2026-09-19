@@ -41,10 +41,12 @@
 .gacha-github { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 44px; margin-top: auto; color: var(--night-text); font-size: 13px; text-decoration: none; border-top: 1px solid var(--night-border); padding-top: 12px; }
 .gacha-github:hover { color: var(--accent); }
 .gacha-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
-.gacha-actions button { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 8px; background: var(--night-surface); border: 1px solid var(--night-border-strong); border-radius: 8px; color: var(--night-text); font-size: 12px; transition: border-color 180ms ease; }
+.gacha-actions .gacha-redraw { grid-column: 1 / -1; }
+.gacha-actions button, .gacha-actions a { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 8px; background: var(--night-surface); border: 1px solid var(--night-border-strong); border-radius: 8px; color: var(--night-text); font-size: 12px; transition: border-color 180ms ease; text-decoration: none; cursor: pointer; }
 .gacha-actions .gacha-redraw { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
-.gacha-actions button:hover, .gacha-close:hover { border-color: var(--night-accent-text); background: var(--night-surface-raised); color: var(--night-text); }
+.gacha-actions button:hover, .gacha-actions a:hover, .gacha-close:hover { border-color: var(--night-accent-text); background: var(--night-surface-raised); color: var(--night-text); }
 .gacha-actions .gacha-redraw:hover { background: var(--accent); color: var(--on-accent); }
+.gacha-actions .gacha-tweet svg { flex-shrink: 0; }
 .gacha-dialog :is(button, a, textarea):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .gacha-feedback { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 18px; margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: var(--accent); }
 .gacha-manual { width: 100%; margin: 8px 0; padding: 12px; color: var(--night-text); background: var(--night-surface); border: 1px solid var(--night-border-strong); border-radius: 8px; font: inherit; font-size: 12px; resize: vertical; }
