@@ -19,6 +19,7 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
   const introId = useId();
   const dialog = useRef<HTMLDialogElement>(null);
   const card = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const close = useRef<HTMLButtonElement>(null);
   const manual = useRef<HTMLTextAreaElement>(null);
@@ -39,6 +40,12 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
   const avatar = p?.avatarUrl && /^https:\/\/avatars\.githubusercontent\.com\//.test(p.avatarUrl) ? p.avatarUrl : null;
   const avatarReady = Boolean(avatar && avatarResult?.src === avatar && avatarResult.ok);
   const avatarFailed = Boolean(avatar && avatarResult?.src === avatar && !avatarResult.ok);
+
+  useEffect(() => {
+    if (avatar && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
+      setAvatarResult({ src: avatar, ok: true });
+    }
+  }, [avatar, draw.turn]);
 
   useEffect(() => { closeHandler.current = onClose; }, [onClose]);
   useEffect(() => {
@@ -167,7 +174,7 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
             <div className="gacha-identity">
               <span className="gacha-avatar-frame" aria-hidden="true">
                 <span className="gacha-avatar gacha-initial" hidden={avatarReady}>{p.author.slice(0, 2).toUpperCase()}</span>
-                {avatar && !avatarFailed && <img key={avatar} src={avatar} alt="" className="gacha-avatar" width="42" height="42" decoding="async" referrerPolicy="no-referrer" data-ready={avatarReady} onLoad={() => setAvatarResult({ src: avatar, ok: true })} onError={() => setAvatarResult({ src: avatar, ok: false })} />}
+                {avatar && !avatarFailed && <img ref={imageRef} key={avatar} src={avatar} alt="" className="gacha-avatar" width="42" height="42" decoding="async" referrerPolicy="no-referrer" data-ready={avatarReady} onLoad={() => setAvatarResult({ src: avatar, ok: true })} onError={() => setAvatarResult({ src: avatar, ok: false })} />}
               </span>
               <div><h3>{p.name}</h3><span className="gacha-author">{p.author}</span></div>
             </div>

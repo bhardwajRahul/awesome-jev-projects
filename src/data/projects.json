@@ -26381,21 +26381,21 @@
     "author": "typesafe-ai",
     "url": "https://github.com/typesafe-ai/typesafe-sdk-python",
     "category": "SDK & Decision Frameworks",
-    "plainSummary": "TypeSafe 官方发布的 Python SDK，提供与 Jev 交互的异步与同步客户端以及类型定义。",
-    "plainSummaryEn": "The official Python library for the TypeSafe API, offering synchronous and asynchronous clients with type definitions for Jev.",
-    "jevDecisionPoint": "封装 systemOne 请求，支持同步与异步提交状态并获取类型化决策判定。",
-    "jevDecisionPointEn": "Wraps systemOne requests with typed input state and structured decision outputs in Python.",
-    "highlightBenefit": "官方核心基础库，支持 Pydantic 模型校验与现代 Python 异步并发。",
-    "highlightBenefitEn": "Official foundation library featuring Pydantic validation and async concurrency support.",
-    "claimStatus": "TypeSafe 官方开源基础组件，已核验源码与 API 契约。",
-    "claimStatusEn": "Official open-source foundation library from TypeSafe; reviewed source code and API contracts.",
+    "plainSummary": "TypeSafe 官方 Python SDK，提供 Jev System One 的同步、异步客户端及问题和回答类型。",
+    "plainSummaryEn": "Official TypeSafe Python SDK with synchronous and asynchronous clients for Jev System One, plus question and answer types.",
+    "jevDecisionPoint": "system_one 将上下文与选择、评分或是非问题提交到 API，并按问题名称解析返回的回答。",
+    "jevDecisionPointEn": "system_one sends context and choice, score or yes/no questions to the API, then parses answers by question name.",
+    "highlightBenefit": "在 Python 中复用请求、类型化回答和连接管理，支持 with 与 async with。",
+    "highlightBenefitEn": "Reuses request handling, typed answers and connection management in Python, with support for with and async with.",
+    "claimStatus": "已核对固定版本 README、客户端源码与 MIT 许可证；未运行项目，未独立验证性能或安全性。",
+    "claimStatusEn": "Reviewed the fixed-version README, client source and MIT license; the project was not run and performance or security was not independently verified.",
     "tags": [
       "multilanguage-sdk",
       "typed-decisions"
     ],
-    "evidenceNote": "TypeSafe 官方 Python SDK，直连 Jev System One 端点。",
-    "metricLabel": "Official SDK",
-    "metricContext": "TypeSafe 官方库",
+    "evidenceNote": "已核对固定版本 README、客户端源码与 MIT 许可证；未运行项目，未独立验证性能或安全性。",
+    "metricLabel": "",
+    "metricContext": "",
     "repo": "typesafe-ai/typesafe-sdk-python",
     "repoId": 1357590729,
     "stars": 101,
@@ -26405,29 +26405,161 @@
     "createdAt": "2026-09-04T21:01:31Z",
     "updatedAt": "2026-09-19T09:47:30Z",
     "pushedAt": "2026-09-18T09:11:54Z",
-    "lastCommitAt": "2026-09-18T09:11:54Z",
+    "lastCommitAt": "2026-09-18T09:11:48Z",
+    "lastSyncedAt": "2026-09-19T10:32:45.020292+00:00",
     "avatarUrl": "https://avatars.githubusercontent.com/u/171090879?v=4",
     "language": "Python",
     "topics": [],
     "archived": false,
-    "headSha": "581dc225f6e8fa134d193d567c9c8e8efb54a242",
-    "sourceUrl": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/src/typesafe/client.py",
-    "sourcePath": "src/typesafe/client.py",
-    "evidenceLines": [],
+    "headSha": "2ce5c65f13646cab6e6f782328194c9d85f3300a",
+    "sourceUrl": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/sync/client.py#L206-L221",
+    "sourcePath": "src/typesafe_sdk/_core/client/sync/client.py",
+    "evidenceLines": [
+      206,
+      221
+    ],
     "verificationStatus": "source-verified",
     "runtimeVerified": false,
     "metadataStatus": "ok",
     "summarySource": "human-reviewed",
-    "metadataFetchedAt": "2026-09-19T10:39:31.715Z",
+    "metadataFetchedAt": "2026-09-19T10:32:45.020292+00:00",
     "evidence": [
       {
-        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/README.md",
-        "note": "官方 Python SDK 说明与文档"
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/sync/client.py#L206-L221",
+        "note": "同步客户端提交状态与问题，并解析类型化响应 / Synchronous client submits state and questions and parses typed responses"
       },
       {
-        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/main/src/typesafe/client.py",
-        "note": "TypeSafeClient 客户端实现"
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/aio/client.py#L216-L243",
+        "note": "异步客户端及连接生命周期 / Asynchronous client and connection lifecycle"
+      },
+      {
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/question_types.py#L77-L113",
+        "note": "选择、评分与是非问题类型 / Choice, score and yes/no question types"
+      },
+      {
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/constants.py#L18-L19",
+        "note": "默认模型为 jev-latest / Default model is jev-latest"
+      },
+      {
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/README.md#L13-L29",
+        "note": "固定版本快速入门 / Fixed-version quickstart"
+      },
+      {
+        "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/LICENSE#L1-L21",
+        "note": "固定版本 MIT 许可证全文 / Fixed-version MIT license text"
       }
-    ]
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "2ce5c65f13646cab6e6f782328194c9d85f3300a",
+      "reviewedAt": "2026-09-19T10:34:33.417699+00:00",
+      "files": [
+        {
+          "path": "src/typesafe_sdk/_core/client/sync/client.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/sync/client.py#L206-L221",
+          "hash": "2cca25f62fff4700b4b44184ece1a02ec7f1addf37a10e01a14d4e2b957e8f26",
+          "hashType": "sha256",
+          "lines": [
+            206,
+            221
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/client/aio/client.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/aio/client.py#L216-L243",
+          "hash": "46f46c00e1a3fafd6d40433577ee4efb8828474fb5bbda4245f417f99f632f91",
+          "hashType": "sha256",
+          "lines": [
+            216,
+            243
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/endpoints.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/endpoints.py#L17-L34",
+          "hash": "933954a8f19e3978d64f0703d6476eac549728eb10dd6a17985c628e7faf383c",
+          "hashType": "sha256",
+          "lines": [
+            17,
+            34
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/question_types.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/question_types.py#L77-L113",
+          "hash": "55b212d7a3bc9277fd9961ad4ea69bac754deb9ae0b9a76b2bc02b120452a109",
+          "hashType": "sha256",
+          "lines": [
+            77,
+            113
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/_core/response_types.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/response_types.py#L99-L139",
+          "hash": "cf06ac0dffa02b3fd1abcf26f962c4bed13b146064b56b11b19dfbef87dfe0df",
+          "hashType": "sha256",
+          "lines": [
+            99,
+            139
+          ]
+        },
+        {
+          "path": "src/typesafe_sdk/constants.py",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/constants.py#L18-L19",
+          "hash": "53be709ac7cde59cb10b9c29efd058d572b03cce2c0e6f7dc5186d6322999fff",
+          "hashType": "sha256",
+          "lines": [
+            18,
+            19
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/README.md#L13-L29",
+          "hash": "06aa97c3d7b31ea2eb0b43d3f2f687ad3e48e29802d539064331aaff8243adad",
+          "hashType": "sha256",
+          "lines": [
+            13,
+            29
+          ]
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/pyproject.toml#L1-L10",
+          "hash": "42b81115e9507a6dd94ce279e341236f41aa8d9e756f4d6ac42235e893f64222",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            10
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/LICENSE#L1-L21",
+          "hash": "002c2696d92b5c8cf956c11072baa58eaf9f6ade995c031ea635c6a1ee342ad1",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            21
+          ]
+        }
+      ]
+    },
+    "plainSummaryJa": "TypeSafe 公式の Python SDK。Jev System One の同期・非同期クライアントと、質問・回答の型を提供する。",
+    "metricContextEn": "",
+    "claimStatusKo": "고정 버전의 README, 클라이언트 소스와 MIT 라이선스를 확인했다. 직접 실행하거나 성능 및 보안을 독립적으로 검증하지는 않았다.",
+    "licenseStatus": "confirmed",
+    "highlightBenefitKo": "Python에서 요청 처리, 타입이 있는 응답, 연결 관리를 재사용하며 with와 async with를 지원한다.",
+    "claimStatusJa": "固定バージョンの README、クライアント実装、MIT ライセンスを確認済み。実行および性能・安全性の独立検証は行っていない。",
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T10:34:33.417699+00:00"
+    },
+    "jevDecisionPointJa": "system_one が文脈と選択・採点・はい／いいえの質問を API に送り、質問名ごとに回答を読み取る。",
+    "jevDecisionPointKo": "system_one이 맥락과 선택·점수·예/아니요 질문을 API에 보내고, 질문 이름별로 응답을 파싱한다.",
+    "plainSummaryKo": "TypeSafe 공식 Python SDK로, Jev System One의 동기 및 비동기 클라이언트와 질문·응답 타입을 제공한다.",
+    "highlightBenefitJa": "Python でリクエスト処理、型付き回答、接続管理を共用でき、with と async with に対応する。",
+    "sourceReviewedAt": "2026-09-19T10:34:33.417699+00:00"
   }
 ]

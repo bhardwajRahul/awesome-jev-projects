@@ -196,12 +196,23 @@ const validProject = (x: unknown): x is Project => {
   );
 };
 function ProjectAvatar({ project }: { project: Project }) {
-  const [failed, setFailed] = useState(false);
+  const [result, setResult] = useState<{ src: string; ok: boolean } | null>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   const src = project.avatarUrl;
+  const ready = Boolean(src && result?.src === src && result.ok);
+  const failed = Boolean(src && result?.src === src && !result.ok);
+  useEffect(() => {
+    if (src && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
+      setResult({ src, ok: true });
+    }
+  }, [src]);
   return (
     <span className="avatar-frame" aria-hidden="true">
-      {src && !failed ? (
+      <span className="avatar-fallback" hidden={ready}>{project.author.slice(0, 2).toUpperCase()}</span>
+      {src && !failed && (
         <img
+          ref={imageRef}
+          key={src}
           src={src}
           alt=""
           className="avatar"
@@ -210,10 +221,10 @@ function ProjectAvatar({ project }: { project: Project }) {
           loading="lazy"
           decoding="async"
           referrerPolicy="no-referrer"
-          onError={() => setFailed(true)}
+          data-ready={ready}
+          onLoad={() => setResult({ src, ok: true })}
+          onError={() => setResult({ src, ok: false })}
         />
-      ) : (
-        <span className="avatar-fallback">{project.author.slice(0, 2).toUpperCase()}</span>
       )}
     </span>
   );

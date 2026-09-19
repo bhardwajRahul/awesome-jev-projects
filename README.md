@@ -1114,9 +1114,9 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **What this project offers**: Integrates decisions into Effect dependencies and errors; applications configure retries and deadlines.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/danieljvdm/effect-agent/) · License: MIT
 
-- [**typesafe-sdk-python**](https://github.com/typesafe-ai/typesafe-sdk-python) — The official Python library for the TypeSafe API, offering synchronous and asynchronous clients with type definitions for Jev.
-  - **Where Jev makes a decision**: Wraps systemOne requests with typed input state and structured decision outputs in Python.
-  - **What this project offers**: Official foundation library featuring Pydantic validation and async concurrency support.
+- [**typesafe-sdk-python**](https://github.com/typesafe-ai/typesafe-sdk-python) — Official TypeSafe Python SDK with synchronous and asynchronous clients for Jev System One, plus question and answer types.
+  - **Where Jev makes a decision**: system\_one sends context and choice, score or yes/no questions to the API, then parses answers by question name.
+  - **What this project offers**: Reuses request handling, typed answers and connection management in Python, with support for with and async with.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/typesafe-ai/typesafe-sdk-python/) · License: MIT
 
 - [**advocaat**](https://github.com/pithings/advocaat) — A small TypeScript client for asking Jev multiple typed questions about the same data.
