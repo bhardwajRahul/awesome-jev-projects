@@ -29909,5 +29909,67 @@
       "issueBodySha256": "809aa7f313981ba0822542903112087d422d4a86c42bc2cad681f909452a3334",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/22"
     }
+  },
+  {
+    "id": "newuser7171:antivirus",
+    "name": "antivirus",
+    "author": "newuser7171",
+    "url": "https://github.com/newuser7171/antivirus",
+    "repoId": 1376013450,
+    "category": "Security & Guardrails",
+    "plainSummary": "基于 Jev System One 的文件杀毒与进程 EDR 威胁分诊工具，结合结构化特征提取对恶意载荷做分级评估与自动防护。",
+    "plainSummaryEn": "An AI-powered file antivirus and endpoint EDR sentinel integrating TypeSafe Jev for threat severity scoring, malicious payload classification, and automated triage.",
+    "jevDecisionPoint": "调用 Jev 的 Choice、Score 和 Noul 原语评估文件与进程的威胁等级（0-4）并决定是否终止进程。",
+    "jevDecisionPointEn": "Uses Jev System One Choice, Score, and Noul primitives to evaluate file entropy, process lineage, and threat severity (0-4) to determine quarantine or termination actions.",
+    "highlightBenefit": "通过 Jev 结构化判断将启发式反病毒特征转换为低延迟、零幻觉的安全分诊决策。",
+    "highlightBenefitEn": "Delivers calibrated, zero-hallucination security triage decisions directly from structural file and process telemetry.",
+    "tags": [
+      "security-guardrails",
+      "classification-ranking"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-19T08:52:16Z",
+    "lastCommitAt": "2026-09-19T10:14:00Z",
+    "headSha": "4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9",
+    "metadataFetchedAt": "2026-09-19T15:29:30.039Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/233076778?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T15:29:30.040Z",
+    "evidence": [
+      {
+        "url": "https://github.com/newuser7171/antivirus/blob/4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/newuser7171/antivirus/blob/4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9/jev_scanner.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9",
+      "reviewedAt": "2026-09-19T15:29:30.040Z",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/newuser7171/antivirus/blob/4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9/README.md",
+          "hash": "45dc2018cc82b0d4f51572e4203269cd822233a17986a0ae07ccad8435df923d"
+        },
+        {
+          "path": "jev_scanner.py",
+          "url": "https://github.com/newuser7171/antivirus/blob/4a9ea18ecf6c5c77991aa584aa86eb2822e8b6c9/jev_scanner.py",
+          "hash": "ef88b02eb3135547a7410b1eccecaec0b493fa84d21dc2a07b669a4b325d603a"
+        }
+      ]
+    }
   }
 ]

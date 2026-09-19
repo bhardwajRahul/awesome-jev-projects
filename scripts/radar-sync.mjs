@@ -27,7 +27,7 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
   // identifier and provider request marker are both required; names alone fail.
   const routerDecision = codeSources.some(hasOpenRouterJevSource);
   const exact = routerDecision ||
-    /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe\s+import|typesafe(?:_ai|-ai)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\b(?:JevClient|TypeSafeClient)\b/i.test(
+    /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe(?:_ai|_sdk)?\s+import|typesafe(?:_ai|-ai|_sdk|-sdk)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\b(?:JevClient|TypeSafeClient)\b/i.test(
       text,
     );
   const context =
@@ -36,7 +36,7 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
       text,
     );
   const implementation = routerDecision ||
-    /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|from\s+typesafe\s+import|(?:import|require|npm\s+(?:i|install)|pip\s+install|uv\s+add).{0,100}(?:typesafe|jev)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|TypeSafeClient|JevClient|TYPESAFE_API_KEY|JEV_API_KEY|typesafe\.Client|typesafe\.AsyncClient/i.test(
+    /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|from\s+typesafe(?:_ai|_sdk)?\s+import|(?:import|require|npm\s+(?:i|install)|pip\s+install|uv\s+add).{0,100}(?:typesafe|jev)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|TypeSafeClient|JevClient|TYPESAFE_API_KEY|JEV_API_KEY|typesafe\.Client|typesafe\.AsyncClient/i.test(
       text,
     );
   const listOnly =
