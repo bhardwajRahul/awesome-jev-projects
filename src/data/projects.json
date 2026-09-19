@@ -9236,59 +9236,108 @@
     "author": "jarrodwatts",
     "url": "https://github.com/jarrodwatts/jev-trader",
     "category": "High-Frequency & Simulation",
-    "plainSummary": "部署在 Monad 测试网上的链上做市高频交易机器人，在每个 ~300ms 区块中调用 Jev 分析 Kuru 订单簿并决策挂单方向。",
-    "plainSummaryEn": "jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.",
-    "jevDecisionPoint": "输入当前盘口价差、近 100 区块收益率与吃单量流向，预测未来 30 个区块价格变动方向。",
-    "jevDecisionPointEn": "Consumes spread, rolling returns, and taker flow over 100 blocks to predict mid-price direction over the next 30 blocks.",
-    "highlightBenefit": "单次推理延迟低至 80ms 左右，完美嵌入高频区块链出块周期。",
-    "highlightBenefitEn": "Inference latency around 80ms fits cleanly within sub-second blockchain block times.",
-    "claimStatus": "作者公开现场演示与在线面板（jev-trader.vercel.app），含完整 Bun/TypeScript 源码。实盘盈利性未独立审计。",
-    "claimStatusEn": "Author published live demo and dashboard with full Bun/TypeScript source. Real-money profitability not independently audited.",
+    "plainSummary": "在 Monad 的 Kuru MON-USDC 订单簿上，每个区块让 Jev 选择买卖方向；可用 dry run 按真实行情模拟挂单与成交，也支持配置钱包发送真实 post-only 限价单。",
+    "plainSummaryEn": "On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.",
+    "jevDecisionPoint": "Jev 读取盘口价差、深度与失衡、滚动收益、近期成交和吃单量流向，判断约 100 个区块后价格更可能上涨还是下跌，并返回买卖概率。",
+    "jevDecisionPointEn": "Jev uses spread, depth and imbalance, rolling returns, recent trades, and taker flow to estimate whether price will be higher or lower roughly 100 blocks later and returns buy/sell probabilities.",
+    "highlightBenefit": "把结构化 Jev 判断接入逐区块挂单循环，并用同一事件流展示决策、挂单、成交、持仓和 P&L，便于先在 dry run 中观察行为再决定是否启用真实交易。",
+    "highlightBenefitEn": "It connects structured Jev decisions to a per-block quoting loop and exposes decisions, quotes, fills, positions, and P&L in one event stream, so behavior can be observed in dry run before enabling real transactions.",
+    "claimStatus": "已核对固定版本源码。支持 dry run，也包含配置钱包后的真实链上交易路径；README 的约 80ms 为 mock model 耗时，不能视为 Jev 推理延迟。本站未运行策略、验证盈利或审计交易安全。",
+    "claimStatusEn": "Fixed-version source reviewed. The code supports dry run and real on-chain execution when configured with a wallet. The README latency near 80 ms used a mock model, not Jev inference. This site has not run the strategy, verified profitability, or audited trading safety.",
     "tags": [
       "Monad",
-      "Trading Bot",
-      "DeFi",
+      "Kuru",
+      "Market Making",
+      "Paper Trading",
       "TypeScript",
-      "On-Chain"
+      "Jev"
     ],
-    "evidenceNote": "src/model.ts 中通过 @ai-sdk/typesafe-ai 绑定 Jev evaluationModel，在 ~300ms 区块周期内执行实时判定。",
-    "metricLabel": "~81 ms",
-    "metricContext": "作者单区块推理时延测量",
+    "evidenceNote": "src/model.ts 使用 @ai-sdk/typesafe-ai 与 experimental_evaluate 调用 Jev；src/market.ts 分开处理 dry run 和真实签名交易。",
+    "metricLabel": "Block decisions",
+    "metricContext": "逐区块决策；无独立 Jev 延迟基准",
     "repo": "jarrodwatts/jev-trader",
-    "stars": 902,
-    "forks": 88,
-    "openIssues": 6,
+    "stars": 934,
+    "forks": 175,
+    "openIssues": 3,
     "license": "MIT",
-    "createdAt": "2026-09-16T18:00:00Z",
-    "updatedAt": "2026-09-19T03:37:47Z",
-    "pushedAt": "2026-09-19T03:37:47Z",
-    "lastCommitAt": "2026-09-19T03:37:47Z",
-    "lastSyncedAt": "2026-09-19T03:37:47Z",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/35650605",
+    "createdAt": "2026-09-16T21:36:20Z",
+    "updatedAt": "2026-09-19T06:05:34Z",
+    "pushedAt": "2026-09-17T02:48:22Z",
+    "lastCommitAt": "2026-09-17T02:48:21Z",
+    "lastSyncedAt": "2026-09-19T06:12:29.042491+00:00",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35651410?v=4",
     "language": "TypeScript",
-    "topics": [
-      "monad",
-      "trading",
-      "kuru",
-      "typesafe",
-      "jev"
-    ],
+    "topics": [],
     "archived": false,
-    "headSha": "b587759e55a90caee38fc6f200c8f5f4b46c8e37",
-    "sourceUrl": "https://github.com/jarrodwatts/jev-trader/blob/b587759e55a90caee38fc6f200c8f5f4b46c8e37/src/model.ts#L45-L65",
+    "headSha": "b587759e459ea049590102e54a0b07800864cdc3",
+    "sourceUrl": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/model.ts#L58-L75",
     "sourcePath": "src/model.ts",
-    "evidenceLines": "L45-L65",
+    "evidenceLines": "L58-L75",
     "verificationStatus": "verified",
     "runtimeVerified": false,
     "metadataStatus": "ok",
     "summarySource": "human-reviewed",
-    "metadataFetchedAt": "2026-09-19T03:37:47Z",
+    "metadataFetchedAt": "2026-09-19T06:12:29.042491+00:00",
     "evidence": [
       {
-        "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e55a90caee38fc6f200c8f5f4b46c8e37/src/model.ts#L45-L65",
-        "note": "查看固定版本的来源证据"
+        "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/README.md",
+        "note": "固定版本源码：模型调用、dry run/真实交易边界及 mock benchmark。"
+      },
+      {
+        "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/model.ts",
+        "note": "固定版本源码：模型调用、dry run/真实交易边界及 mock benchmark。"
+      },
+      {
+        "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/trader.ts",
+        "note": "固定版本源码：模型调用、dry run/真实交易边界及 mock benchmark。"
+      },
+      {
+        "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/market.ts",
+        "note": "固定版本源码：模型调用、dry run/真实交易边界及 mock benchmark。"
+      },
+      {
+        "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/config.ts",
+        "note": "固定版本源码：模型调用、dry run/真实交易边界及 mock benchmark。"
       }
-    ]
+    ],
+    "repoId": 1373659194,
+    "metricContextEn": "Per-block decisions; no independently verified Jev latency benchmark",
+    "sourceVerification": {
+      "method": "human-source-review",
+      "sha": "b587759e459ea049590102e54a0b07800864cdc3",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/README.md",
+          "hash": "f84691a188a7380ed35ae315b7ab18ff4a19c9408de1f6b755f6690296091861",
+          "hashType": "sha256"
+        },
+        {
+          "path": "src/model.ts",
+          "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/model.ts",
+          "hash": "8d40f0cde3fb412b4c5ea67d90c52e149510280ce9bc597b782600fde213ef32",
+          "hashType": "sha256"
+        },
+        {
+          "path": "src/trader.ts",
+          "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/trader.ts",
+          "hash": "e4c32c3246f51a1962dbd2498a5cede008114c5b22081325cd51045ddad2fb10",
+          "hashType": "sha256"
+        },
+        {
+          "path": "src/market.ts",
+          "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/market.ts",
+          "hash": "f5a9900ec3e8441d309a7fd75792db8bbb6d0a60cf56be1ae84c1399a3f9955d",
+          "hashType": "sha256"
+        },
+        {
+          "path": "src/config.ts",
+          "url": "https://github.com/jarrodwatts/jev-trader/blob/b587759e459ea049590102e54a0b07800864cdc3/src/config.ts",
+          "hash": "f8c0e68d097c61ff6924a7feee6da8d1af6070f17c256ce4f65c6c695c98fa6d",
+          "hashType": "sha256"
+        }
+      ]
+    }
   },
   {
     "id": "awlevin:typesafe-computer-use",
@@ -9760,5 +9809,181 @@
         }
       ]
     }
+  },
+  {
+    "id": "tonyzdev:pij",
+    "name": "PiJ",
+    "author": "tonyzdev",
+    "url": "https://github.com/tonyzdev/PiJ",
+    "repoId": 1374980421,
+    "category": "Codebase & Graph Pathfinding",
+    "plainSummary": "一个基于 Pi 的终端编码 Agent。主模型负责推理、改代码和调用工具；Jev 提供技能建议、源码候选排序和工具失败分流，同时保留原始路径、行号、源码与错误输出。",
+    "jevDecisionPoint": "技能建议先用 noul 判断是否需要，再用 choice 选候选并以 noul 复核；pij_search 和可选的 source briefing 用 noul 给真实源码候选排序；工具失败则用 choice 分到代码、环境、依赖、网络、权限或未知，再附固定检查清单。结果均为建议。",
+    "jevDecisionPointEn": "Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.",
+    "highlightBenefit": "把技能筛选、源码候选排序和失败分流交给 Jev 做小判断，同时保留原始证据和本地检查路径；服务不可用时仍可回到普通 coding agent 与字面搜索。",
+    "highlightBenefitEn": "Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.",
+    "tags": [
+      "Coding Agent",
+      "Code Search",
+      "CLI"
+    ],
+    "summarySource": "human-reviewed",
+    "claimStatus": "已核对固定版本源码：Jev 输出仅作建议，source briefing 默认关闭。作者实验数字存在前后不一致，未用于本条目；本站未运行项目或复测性能。",
+    "claimStatusEn": "Fixed-version source reviewed: Jev outputs are advisory and source briefing is off by default. Inconsistent figures in the author experiments were omitted. This site has not run the project or independently benchmarked it.",
+    "plainSummaryEn": "A terminal coding agent built on Pi. The coding model handles reasoning, edits, and tool use; Jev provides advisory skill suggestions, reranks source candidates, and triages tool failures while preserving original paths, line numbers, source text, and error output.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "not-needed",
+        "requestedFields": []
+      },
+      "plainSummary": {
+        "source": "human-reviewed"
+      },
+      "plainSummaryEn": {
+        "source": "human-reviewed"
+      },
+      "jevDecisionPoint": {
+        "source": "human-reviewed"
+      },
+      "jevDecisionPointEn": {
+        "source": "human-reviewed"
+      },
+      "highlightBenefit": {
+        "source": "human-reviewed"
+      },
+      "highlightBenefitEn": {
+        "source": "human-reviewed"
+      }
+    },
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T19:31:31Z",
+    "lastCommitAt": "2026-09-19T02:13:21Z",
+    "headSha": "9588d6078af3f3be2b52906e0968ccf8e1542d74",
+    "metadataFetchedAt": "2026-09-19T06:06:59.642Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/69023709?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T06:06:59.643Z",
+    "evidence": [
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/README.md",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/README.zh-CN.md",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/decisions.ts",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/extension.ts",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/jev.ts",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/gateway.ts",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/config.ts",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/docs/swebench-retrieval-experiment.md",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/docs/unfamiliar-repo-experiment.md",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      },
+      {
+        "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/package.json",
+        "note": "固定版本源码与说明；运行及性能未由本站复测。"
+      }
+    ],
+    "sourceVerification": {
+      "method": "human-source-review",
+      "sha": "9588d6078af3f3be2b52906e0968ccf8e1542d74",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/README.md",
+          "hash": "8d6fb06c06fc05c78952da12ce0bd3b93c22bbc0",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/README.zh-CN.md",
+          "hash": "9d654b4da47cac9b9b7dc9c7d31e9e439f462727",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "src/decisions.ts",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/decisions.ts",
+          "hash": "bc002c5a9b698bda8dd88dd01bab58f7531c2ce7",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "src/extension.ts",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/extension.ts",
+          "hash": "570b0b843361e92575898752d2b8e4412ad57441",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "src/jev.ts",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/jev.ts",
+          "hash": "d6d2f02860225413f5916375efadfd598872f028",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "src/gateway.ts",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/gateway.ts",
+          "hash": "1e0151334dfe9ed822cae97ba057fb5625370044",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "src/config.ts",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/config.ts",
+          "hash": "8f838746efdcaa318089de158763613ba9368c5e",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "docs/swebench-retrieval-experiment.md",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/docs/swebench-retrieval-experiment.md",
+          "hash": "0d12d7f8df221a8c0ae156794770a770f1a2c4da",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "docs/unfamiliar-repo-experiment.md",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/docs/unfamiliar-repo-experiment.md",
+          "hash": "19a651917afa29ef322b6b0df6bbfcb310483d4b",
+          "hashType": "git-blob-sha1"
+        },
+        {
+          "path": "package.json",
+          "url": "https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/package.json",
+          "hash": "1bb0ab8a89e16cd352e73ab3461d286b258c00df",
+          "hashType": "git-blob-sha1"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 12,
+      "issueBodySha256": "4ed8bba071ba5fbe20df3c0d338e382b2cd8cde3e15ea87fc8f55a0bd8b83675",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/12"
+    },
+    "pinned": false
   }
 ]

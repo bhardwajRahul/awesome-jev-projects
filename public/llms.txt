@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 183 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 184 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (183 Projects)
+## Curated Projects Directory (184 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1413,10 +1413,10 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 ### jev-trader
 - Repository: https://github.com/jarrodwatts/jev-trader
 - Category: High-Frequency & Simulation
-- Overview (EN): jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
-- Overview (ZH): 部署在 Monad 测试网上的链上做市高频交易机器人，在每个 ~300ms 区块中调用 Jev 分析 Kuru 订单簿并决策挂单方向。
-- Jev Decision Role: 输入当前盘口价差、近 100 区块收益率与吃单量流向，预测未来 30 个区块价格变动方向。
-- Core Benefit: 单次推理延迟低至 80ms 左右，完美嵌入高频区块链出块周期。
+- Overview (EN): On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.
+- Overview (ZH): 在 Monad 的 Kuru MON-USDC 订单簿上，每个区块让 Jev 选择买卖方向；可用 dry run 按真实行情模拟挂单与成交，也支持配置钱包发送真实 post-only 限价单。
+- Jev Decision Role: Jev 读取盘口价差、深度与失衡、滚动收益、近期成交和吃单量流向，判断约 100 个区块后价格更可能上涨还是下跌，并返回买卖概率。
+- Core Benefit: 把结构化 Jev 判断接入逐区块挂单循环，并用同一事件流展示决策、挂单、成交、持仓和 P&L，便于先在 dry run 中观察行为再决定是否启用真实交易。
 
 ### typesafe-computer-use
 - Repository: https://github.com/awlevin/typesafe-computer-use
@@ -1473,3 +1473,11 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): Jev-cu：面向 Codex 桌面端 Computer Use 的决策助手，将「下一步点哪里」交给 Jev System One 从候选文字中离散选择，只传文本不传截图。
 - Jev Decision Role: 从可访问性树与界面文字候选中，由 Jev 裁决下一个操作目标元素、动作类型、完成度与风险分级。
 - Core Benefit: 只传文字不传截图，大幅降低多模态 token 消耗与延迟，结合本地白名单策略拦截敏感系统操作。
+
+### PiJ
+- Repository: https://github.com/tonyzdev/PiJ
+- Category: Codebase & Graph Pathfinding
+- Overview (EN): A terminal coding agent built on Pi. The coding model handles reasoning, edits, and tool use; Jev provides advisory skill suggestions, reranks source candidates, and triages tool failures while preserving original paths, line numbers, source text, and error output.
+- Overview (ZH): 一个基于 Pi 的终端编码 Agent。主模型负责推理、改代码和调用工具；Jev 提供技能建议、源码候选排序和工具失败分流，同时保留原始路径、行号、源码与错误输出。
+- Jev Decision Role: 技能建议先用 noul 判断是否需要，再用 choice 选候选并以 noul 复核；pij_search 和可选的 source briefing 用 noul 给真实源码候选排序；工具失败则用 choice 分到代码、环境、依赖、网络、权限或未知，再附固定检查清单。结果均为建议。
+- Core Benefit: 把技能筛选、源码候选排序和失败分流交给 Jev 做小判断，同时保留原始证据和本地检查路径；服务不可用时仍可回到普通 coding agent 与字面搜索。

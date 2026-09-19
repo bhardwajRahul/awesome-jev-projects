@@ -119,12 +119,20 @@ export function summarize(repo, readme, taxonomy) {
     jevDecisionPoint:
       rule?.decision ??
       "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    jevDecisionPointEn:
+      rule?.decisionEn ??
+      "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
     highlightBenefit:
       rule?.benefit ?? "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    highlightBenefitEn:
+      rule?.benefitEn ??
+      "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     tags,
     summarySource: "readme-extractive",
     claimStatus:
       "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
+    claimStatusEn:
+      "Based on repository metadata and README with rule-based classification; pending human review, with no independent runtime or performance verification.",
   };
 }
 /** An allowlist keeps upstream descriptions and metadata out of reviewed copy. */

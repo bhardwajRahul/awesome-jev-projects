@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-184%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 Submit a Project</strong></a>
 </p>
 
-<p>A source-verified, zero-hype directory of **183+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
+<p>A source-verified, zero-hype directory of **184+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
 
 </div>
 
@@ -50,7 +50,7 @@
 - [🧹 Context GC & Noise Filtering (7)](#context-gc-filter-en)
 - [🛡️ Security & Guardrails (11)](#security-guardrails-en)
 - [🧩 MCP Protocols & Tool Endpoints (29)](#mcp-integrations-en)
-- [🧭 Codebase Analysis & Knowledge Graphs (9)](#codebase-graph-pathfinding-en)
+- [🧭 Codebase Analysis & Knowledge Graphs (10)](#codebase-graph-pathfinding-en)
 - [🔀 Model Routing & Cost Reduction (10)](#routing-cost-optimization-en)
 - [📊 Domain-Specific & Enterprise Tools (15)](#domain-vertical-tools-en)
 - [🎯 General Decision & Evaluation Tools (11)](#decision-tools-en)
@@ -68,9 +68,9 @@
 
 *Real-time decision loops for games, robotics, and interactive tick-based simulations.*
 
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 902` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
-  - 🎯 **What Jev Decides**: Consumes spread, rolling returns, and taker flow over 100 blocks to predict mid-price direction over the next 30 blocks.
-  - 💡 **Key Advantage**: Inference latency around 80ms fits cleanly within sub-second blockchain block times.
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.
+  - 🎯 **What Jev Decides**: Jev uses spread, depth and imbalance, rolling returns, recent trades, and taker flow to estimate whether price will be higher or lower roughly 100 blocks later and returns buy/sell probabilities.
+  - 💡 **Key Advantage**: It connects structured Jev decisions to a per-block quoting loop and exposes decisions, quotes, fills, positions, and P&L in one event stream, so behavior can be observed in dry run before enabling real transactions.
 
 - [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
   - 🎯 **What Jev Decides**: Evaluates Mario motion speed, jump trajectories, and upcoming enemies to decide NES controller inputs.
@@ -688,6 +688,10 @@
 - [**jev-flash-review**](https://github.com/TheBous/jev-flash-review) `★ 1` - Local-first code review triage engine returning structured verdicts on candidate diff hunks.
   - 🎯 **What Jev Decides**: Evaluates diff chunks against business intent to identify high-risk code paths before deep review.
   - 💡 **Key Advantage**: Narrows review scope to high-risk hunks while keeping source code local and private.
+
+- [**PiJ**](https://github.com/tonyzdev/PiJ) `★ 1` - A terminal coding agent built on Pi. The coding model handles reasoning, edits, and tool use; Jev provides advisory skill suggestions, reranks source candidates, and triages tool failures while preserving original paths, line numbers, source text, and error output.
+  - 🎯 **What Jev Decides**: Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.
+  - 💡 **Key Advantage**: Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.
 
 - [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - foreman-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
   - 🎯 **What Jev Decides**: Assigns relevance probabilities to candidate files or graph edges to direct exploration.

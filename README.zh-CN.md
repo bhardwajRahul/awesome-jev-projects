@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-184%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
-<p>严谨收录 **183+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
+<p>严谨收录 **184+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
 
 </div>
 
@@ -50,7 +50,7 @@
 - [🧹 上下文垃圾回收与降噪 (7)](#context-gc-filter-zh)
 - [🛡️ 安全防御与输入护栏 (11)](#security-guardrails-zh)
 - [🧩 MCP 协议与工具扩展 (29)](#mcp-integrations-zh)
-- [🧭 代码库分析与图谱寻路 (9)](#codebase-graph-pathfinding-zh)
+- [🧭 代码库分析与图谱寻路 (10)](#codebase-graph-pathfinding-zh)
 - [🔀 模型路由与成本优化 (10)](#routing-cost-optimization-zh)
 - [📊 垂直行业与专业业务系统 (15)](#domain-vertical-tools-zh)
 - [🎯 通用决策与启发式评估 (11)](#decision-tools-zh)
@@ -68,9 +68,9 @@
 
 *在游戏对战、机器人与高频仿真模拟闭环中做出毫秒级离散动作抉择。*
 
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 902` - 部署在 Monad 测试网上的链上做市高频交易机器人，在每个 ~300ms 区块中调用 Jev 分析 Kuru 订单簿并决策挂单方向。
-  - 🎯 **核心决策**: 输入当前盘口价差、近 100 区块收益率与吃单量流向，预测未来 30 个区块价格变动方向。
-  - 💡 **收益亮点**: 单次推理延迟低至 80ms 左右，完美嵌入高频区块链出块周期。
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - 在 Monad 的 Kuru MON-USDC 订单簿上，每个区块让 Jev 选择买卖方向；可用 dry run 按真实行情模拟挂单与成交，也支持配置钱包发送真实 post-only 限价单。
+  - 🎯 **核心决策**: Jev 读取盘口价差、深度与失衡、滚动收益、近期成交和吃单量流向，判断约 100 个区块后价格更可能上涨还是下跌，并返回买卖概率。
+  - 💡 **收益亮点**: 把结构化 Jev 判断接入逐区块挂单循环，并用同一事件流展示决策、挂单、成交、持仓和 P&L，便于先在 dry run 中观察行为再决定是否启用真实交易。
 
 - [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - 无需截图输入的任天堂红白机超级马力欧实时游戏控制器，直接解析模拟器 RAM 结构化状态，由 Jev 决策手柄按键。
   - 🎯 **核心决策**: 输入马力欧运动速度、起跳轨迹、前方障碍物与敌人物体列表，裁决手柄按键。
@@ -688,6 +688,10 @@
 - [**jev-flash-review**](https://github.com/TheBous/jev-flash-review) `★ 1` - jev-flash-review 在代码或图谱中缩小需要查看的范围。
   - 🎯 **核心决策**: 评估候选代码或关系与目标的相关程度，选择下一条路径。
   - 💡 **收益亮点**: 把下一步调查集中到更相关的证据上。
+
+- [**PiJ**](https://github.com/tonyzdev/PiJ) `★ 1` - 一个基于 Pi 的终端编码 Agent。主模型负责推理、改代码和调用工具；Jev 提供技能建议、源码候选排序和工具失败分流，同时保留原始路径、行号、源码与错误输出。
+  - 🎯 **核心决策**: 技能建议先用 noul 判断是否需要，再用 choice 选候选并以 noul 复核；pij_search 和可选的 source briefing 用 noul 给真实源码候选排序；工具失败则用 choice 分到代码、环境、依赖、网络、权限或未知，再附固定检查清单。结果均为建议。
+  - 💡 **收益亮点**: 把技能筛选、源码候选排序和失败分流交给 Jev 做小判断，同时保留原始证据和本地检查路径；服务不可用时仍可回到普通 coding agent 与字面搜索。
 
 - [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - 给 Codex 工人配一个 Jev 监督员。它评估进展，但完成前还必须跑程序员指定的验收命令。
   - 🎯 **核心决策**: 对工作状态和证据做进展与完成判断，本地运行验收命令并检查源码在验证期间是否变化。

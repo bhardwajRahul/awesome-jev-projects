@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-184%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 프로젝트 등록 신청</strong></a>
 </p>
 
-<p>TypeSafe AI의 Jev 모델을 탑재한 **183+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
+<p>TypeSafe AI의 Jev 모델을 탑재한 **184+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
 
 </div>
 
@@ -50,7 +50,7 @@
 - [🧹 컨텍스트 압축 및 가비지 컬렉션 (7)](#context-gc-filter-ko)
 - [🛡️ 보안 및 가드레일 (11)](#security-guardrails-ko)
 - [🧩 MCP 프로토콜 및 도구 확장 (29)](#mcp-integrations-ko)
-- [🧭 코드베이스 분석 및 지식 그래프 탐색 (9)](#codebase-graph-pathfinding-ko)
+- [🧭 코드베이스 분석 및 지식 그래프 탐색 (10)](#codebase-graph-pathfinding-ko)
 - [🔀 모델 라우팅 및 비용 최적화 (10)](#routing-cost-optimization-ko)
 - [📊 도메인 특화 및 엔터프라이즈 도구 (15)](#domain-vertical-tools-ko)
 - [🎯 범용 의사결정 및 휴리스틱 평가 (11)](#decision-tools-ko)
@@ -68,9 +68,9 @@
 
 *게임, 로보틱스 및 인터랙티브 시뮬레이션 루프를 위한 실시간 밀리초 단위 의사결정.*
 
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 902` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
-  - 🎯 **Jev의 역할**: 스프레드, 100블록 이동 수익률, 테이커 흐름을 분석하여 향후 30블록의 중간 가격 변동 방향을 예측.
-  - 💡 **핵심 장점**: 약 80ms의 추론 지연 시간으로 1초 미만 블록체인 블록 생성 주기에 완벽하게 부합.
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.
+  - 🎯 **Jev의 역할**: Jev uses spread, depth and imbalance, rolling returns, recent trades, and taker flow to estimate whether price will be higher or lower roughly 100 blocks later and returns buy/sell probabilities.
+  - 💡 **핵심 장점**: It connects structured Jev decisions to a per-block quoting loop and exposes decisions, quotes, fills, positions, and P&L in one event stream, so behavior can be observed in dry run before enabling real transactions.
 
 - [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
   - 🎯 **Jev의 역할**: 마리오의 이동 속도, 점프 궤적, 전방의 적 상태를 평가하여 패미컴 컨트롤러 입력을 실시간 결정.
@@ -688,6 +688,10 @@
 - [**jev-flash-review**](https://github.com/TheBous/jev-flash-review) `★ 1` - Local-first code review triage engine returning structured verdicts on candidate diff hunks.
   - 🎯 **Jev의 역할**: 비즈니스 의도에 따라 코드 차이점을 평가하여 정밀 리뷰 전 고위험 경로를 식별.
   - 💡 **핵심 장점**: 소스 코드의 프라이버시를 보장하면서 검토 범위를 고위험 변경점으로 좁힙니다.
+
+- [**PiJ**](https://github.com/tonyzdev/PiJ) `★ 1` - A terminal coding agent built on Pi. The coding model handles reasoning, edits, and tool use; Jev provides advisory skill suggestions, reranks source candidates, and triages tool failures while preserving original paths, line numbers, source text, and error output.
+  - 🎯 **Jev의 역할**: Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.
+  - 💡 **핵심 장점**: Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.
 
 - [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - foreman-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
   - 🎯 **Jev의 역할**: 후보 파일 또는 지식 그래프 엣지에 연관성 확률을 부여하여 탐색 경로를 유도.

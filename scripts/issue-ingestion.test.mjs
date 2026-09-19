@@ -1,4 +1,5 @@
 import test from "node:test";
+import { createSummaryEnricher } from "./source-enrichment.mjs";
 import assert from "node:assert/strict";
 import {
   prepareSubmission,
@@ -365,4 +366,32 @@ test("third-party Issue prose is not treated as repository-author copy", async (
     });
     assert.equal(result.status, "ready");
   }
+});
+
+
+test("source-first ingestion without Models still satisfies all four English fields", async () => {
+  const result = await prepareSubmission({
+    issue,
+    repository,
+    projects: [],
+    taxonomy: [],
+    api: async () => {},
+    inspect: async () => ({
+      ...inspected,
+      repo: { ...meta, language: "TypeScript" },
+    }),
+    enrich: createSummaryEnricher({ token: "" }),
+  });
+  assert.equal(result.status, "ready");
+  for (const key of [
+    "plainSummaryEn",
+    "jevDecisionPointEn",
+    "highlightBenefitEn",
+    "claimStatusEn",
+  ]) {
+    assert.equal(typeof result.project[key], "string", key);
+    assert.ok(result.project[key].trim(), key);
+    assert.ok(!/\p{Script=Han}/u.test(result.project[key]), key);
+  }
+  assert.equal(result.project.plainSummaryEn, meta.description);
 });
