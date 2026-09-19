@@ -148,91 +148,97 @@ test("verified ingestion fixes repository identity and retains immutable evidenc
   assert.equal(result.project.sourceVerification.sha, sha);
   assert.equal(result.project.plainSummary, fallback.plainSummary);
 });
-test("compare-and-swap retries preserve another concurrent submission", async () => {
-  let writes = 0;
-  const other = { id: "other:repo", url: "https://github.com/other/repo" };
-  let snapshot = [];
+function publisher({ rows = [], head = sha, afterTree, onRef, large = false } = {}) {
+  const calls = [];
+  const preparedCommit = "c".repeat(40);
+  let currentHead = head;
   const api = async (path, options = {}) => {
+    calls.push({ path, ...options });
     if (path.endsWith("/issues/12")) return issue;
     if (path === "/repos/example/jev-tool") return meta;
-    if (!options.method) return contents(snapshot);
-    writes++;
-    if (writes === 1) {
-      snapshot = [other];
-      throw Object.assign(new Error("conflict"), { status: 409 });
+    if (path.endsWith("/git/ref/heads/main")) return { object: { sha: currentHead } };
+    if (path.includes("/contents/")) {
+      assert.ok(path.endsWith(`?ref=${sha}`), "snapshot must be read at the reviewed immutable revision");
+      return large ? { sha: "immutable-blob", encoding: "none", size: 1_100_000 } : contents(rows);
     }
-    const next = JSON.parse(
-      Buffer.from(options.body.content, "base64").toString(),
-    );
-    assert.deepEqual(next, [other, project]);
-    assert.equal(options.body.sha, "blob-sha");
-    assert.equal(options.body.branch, "main");
-    return { commit: { sha: "commit-sha" } };
+    if (path.includes("/git/blobs/")) return contents(rows);
+    if (path.endsWith(`/git/commits/${sha}`)) return { tree: { sha: "b".repeat(40) } };
+    if (path.endsWith("/git/trees")) {
+      assert.equal(options.method, "POST");
+      assert.equal(options.body.base_tree, "b".repeat(40));
+      assert.equal(options.body.tree.length, 1);
+      assert.equal(options.body.tree[0].path, "src/data/projects.json");
+      assert.deepEqual(JSON.parse(options.body.tree[0].content), [...rows, project]);
+      if (afterTree) currentHead = afterTree;
+      return { sha: "d".repeat(40) };
+    }
+    if (path.endsWith("/git/commits")) {
+      assert.equal(options.method, "POST");
+      assert.deepEqual(options.body.parents, [sha]);
+      assert.equal(options.body.tree, "d".repeat(40));
+      return { sha: preparedCommit };
+    }
+    if (path.endsWith("/git/refs/heads/main")) {
+      assert.equal(options.method, "PATCH");
+      assert.deepEqual(options.body, { sha: preparedCommit, force: false });
+      if (onRef) return onRef({ setHead: (value) => { currentHead = value; }, preparedCommit });
+      currentHead = preparedCommit;
+      return {};
+    }
+    assert.fail(`Unexpected request ${path}`);
   };
-  assert.deepEqual(await publishSubmission({ api, repository, project }), {
-    status: "ingested",
-    changed: true,
-    commit: "commit-sha",
-  });
-  assert.equal(writes, 2);
+  return { api, calls, preparedCommit, run: () => publishSubmission({ api, repository, project, reviewedSourceSha: sha }) };
+}
+test("publication preserves the reviewed snapshot and atomically advances only its parent", async () => {
+  const other = { id: "other:repo", url: "https://github.com/other/repo" };
+  const f = publisher({ rows: [other] });
+  assert.deepEqual(await f.run(), { status: "ingested", changed: true, commit: f.preparedCommit });
+  assert.equal(f.calls.filter((c) => c.path.endsWith("/git/refs/heads/main")).length, 1);
 });
-test("unknown write outcome is read back without appending twice", async () => {
-  let saved = false,
-    writes = 0;
-  const api = async (path, options = {}) => {
-    if (path.endsWith("/issues/12")) return issue;
-    if (path === "/repos/example/jev-tool") return meta;
-    if (!options.method) return contents(saved ? [project] : []);
-    writes++;
-    saved = true;
+test("a code or schema commit after review blocks publication before every mutation", async () => {
+  const f = publisher({ head: "e".repeat(40) });
+  const result = await f.run();
+  assert.equal(result.status, "changed");
+  assert.equal(result.retryable, true);
+  assert.equal(f.calls.filter((c) => c.method).length, 0);
+});
+test("an advanced main during object preparation never updates the branch", async () => {
+  const f = publisher({ afterTree: "e".repeat(40) });
+  assert.equal((await f.run()).status, "changed");
+  assert.equal(f.calls.filter((c) => c.method === "PATCH").length, 0);
+});
+test("a main update in the final check-write window is rejected rather than overwritten", async () => {
+  const f = publisher({ onRef: ({ setHead }) => {
+    setHead("e".repeat(40));
+    throw Object.assign(new Error("Update is not a fast forward"), { status: 422 });
+  } });
+  assert.equal((await f.run()).status, "changed");
+  assert.equal(f.calls.filter((c) => c.method === "PATCH").length, 1);
+  assert.ok(f.calls.filter((c) => c.method === "PATCH").every((c) => c.body.force === false));
+});
+test("unknown branch-write outcome is read back without a second mutation", async () => {
+  const f = publisher({ onRef: ({ setHead, preparedCommit }) => {
+    setHead(preparedCommit);
     throw new TypeError("lost response");
-  };
-  assert.deepEqual(await publishSubmission({ api, repository, project }), {
-    status: "ingested",
-    changed: false,
-  });
-  assert.equal(writes, 1);
+  } });
+  assert.deepEqual(await f.run(), { status: "ingested", changed: true, commit: f.preparedCommit });
+  assert.equal(f.calls.filter((c) => c.method === "PATCH").length, 1);
 });
 test("edited or closed submissions and privatized repositories do not publish", async () => {
-  for (const changed of [
-    { ...issue, body: "withdrawn" },
-    { ...issue, state: "closed" },
-  ]) {
+  for (const changed of [{ ...issue, body: "withdrawn" }, { ...issue, state: "closed" }]) {
     let calls = 0;
-    const r = await publishSubmission({
-      repository,
-      project,
-      api: async () => {
-        calls++;
-        return changed;
-      },
-    });
-    assert.equal(r.status, "changed");
-    assert.equal(calls, 1);
+    const r = await publishSubmission({ repository, project, reviewedSourceSha: sha, api: async () => { calls++; return changed; } });
+    assert.equal(r.status, "changed"); assert.equal(calls, 1);
   }
-  const r = await publishSubmission({
-    repository,
-    project,
-    api: async (path) =>
-      path.endsWith("/issues/12") ? issue : { ...meta, private: true },
-  });
+  const r = await publishSubmission({ repository, project, reviewedSourceSha: sha,
+    api: async (path) => path.endsWith("/issues/12") ? issue : { ...meta, private: true } });
   assert.equal(r.status, "changed");
 });
 test("a different submission of the same project does not overwrite the winner", async () => {
-  const old = {
-    ...project,
-    ingestion: { ...project.ingestion, issueNumber: 9 },
-  };
-  const api = async (path, options = {}) => {
-    assert.equal(options.method, undefined);
-    if (path.endsWith("/issues/12")) return issue;
-    if (path === "/repos/example/jev-tool") return meta;
-    return contents([old]);
-  };
-  assert.equal(
-    (await publishSubmission({ api, repository, project })).status,
-    "duplicate",
-  );
+  const old = { ...project, ingestion: { ...project.ingestion, issueNumber: 9 } };
+  const f = publisher({ rows: [old] });
+  assert.equal((await f.run()).status, "duplicate");
+  assert.equal(f.calls.filter((c) => c.method).length, 0);
 });
 function notifier({
   published = [project],
@@ -327,25 +333,10 @@ test("a previously committed submission can resume deployment without calling AI
   assert.equal(result.project, prior);
   assert.equal(modelCalls, 0);
 });
-test("large canonical files are read through their immutable blob without overwriting concurrent data", async () => {
-  let blobRead = false;
-  const api = async (path, options = {}) => {
-    if (path.endsWith("/issues/12")) return issue;
-    if (path === "/repos/example/jev-tool") return meta;
-    if (path.includes("/git/blobs/")) {
-      blobRead = true;
-      return contents([]);
-    }
-    if (!options.method)
-      return { sha: "immutable-blob", encoding: "none", size: 1_100_000 };
-    assert.equal(options.body.sha, "immutable-blob");
-    return { commit: { sha: "new" } };
-  };
-  assert.equal(
-    (await publishSubmission({ api, repository, project })).status,
-    "ingested",
-  );
-  assert.equal(blobRead, true);
+test("large canonical files use their immutable blob and retain branch CAS", async () => {
+  const f = publisher({ large: true });
+  assert.equal((await f.run()).status, "ingested");
+  assert.ok(f.calls.some((c) => c.path.endsWith("/git/blobs/immutable-blob")));
 });
 
 
@@ -394,4 +385,34 @@ test("source-first ingestion without Models still satisfies all four English fie
     assert.ok(!/\p{Script=Han}/u.test(result.project[key]), key);
   }
   assert.equal(result.project.plainSummaryEn, meta.description);
+});
+
+
+test("invalid prepared identities cannot select API paths or mutate the catalog", async () => {
+  for (const patch of [
+    { url: "https://github.com/example/jev-tool/issues" },
+    { url: "https://user:password@github.com/example/jev-tool" },
+    { url: "https://github.com/example/jev-tool?redirect=evil" },
+    { url: "https://github.com.evil.example/example/jev-tool" },
+    { repoId: -1 },
+    { id: "other:project" },
+  ]) {
+    let calls = 0;
+    await assert.rejects(publishSubmission({ repository, project: { ...project, ...patch }, api: async () => { calls++; } }), /Invalid prepared project identity/);
+    assert.equal(calls, 0);
+  }
+});
+
+test("automatic acknowledgement describes integration evidence, never a security certification", () => {
+  assert.match(successComment, /源码集成检查/);
+  assert.doesNotMatch(successComment, /代码审查|安全认证|安全审查/);
+});
+
+
+test("publication without a reviewed SHA fails before any API request", async () => {
+  for (const reviewedSourceSha of [undefined, "main", "x".repeat(40)]) {
+    let calls = 0;
+    await assert.rejects(publishSubmission({ repository, project, reviewedSourceSha, api: async () => { calls++; } }), /Exact reviewed source SHA/);
+    assert.equal(calls, 0);
+  }
 });

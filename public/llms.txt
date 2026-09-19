@@ -1,111 +1,58 @@
-# Awesome Jev Projects (llms.txt)
-> Vetted catalog of 259 real-world open-source projects using TypeSafe Jev as a fast decision co-processor.
-> Canonical URL: https://logicrw.github.io/awesome-jev-projects/
-> GitHub: https://github.com/logicrw/awesome-jev-projects
+# Awesome Jev
 
-## What is Jev?
-Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured System-One choices (0-1 classifications, routing, intent gating, ranking, tool guards) operating at sub-100ms speeds.
+A community directory of Jev open-source and publicly available source projects. Source checks are not runtime, performance or security certification. License status is listed per project.
 
-## Core Categories
-- Routing & Cost Optimization: Dynamic LLM routing, cache warming, intent gating.
-- Context GC & Filter: Message pruning, token compaction, sliding memory windows.
-- Codebase & Graph Pathfinding: AST search pruning, agent skill selection, diff risk audit.
-- Browser & OS Action: Web action pruning, modal classification, computer-use planning.
-- Voice & Conversation: Real-time turn taking, voice intent interruption, live triage.
-- High-Frequency & Simulation: Game bot decisions, simulation cycles, trading sanity checks.
-- Security & Guardrails: Pre-commit git gates, command risk evaluation, prompt injection filtering.
-- SDK & Decision Frameworks: Native SDK wrappers in TypeScript, Python, Rust, Go, Scala.
+Website: https://logicrw.github.io/awesome-jev-projects/
+Repository: https://github.com/logicrw/awesome-jev-projects
+Catalog entries: 259
 
-## Agent Skill & Machine-Readable Usage
-For AI coding agents (Claude Code, Cursor, Copilot, Windsurf, Devin), this site provides an open-standard Agent Skill:
-- Canonical Skill Definition: https://logicrw.github.io/awesome-jev-projects/skill.md
-- Well-Known Discovery Endpoint (RFC v0.2.0): https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/index.json
-- Well-Known Discovery Endpoint (v0.1.0): https://logicrw.github.io/awesome-jev-projects/.well-known/skills/default/skill.md
-- Install via GitHub: `npx skills add logicrw/awesome-jev-projects`
-- Install via Web URL: `npx skills add https://logicrw.github.io/awesome-jev-projects/`
+## Install the Agent Skill
 
-## Full Catalog (259 Projects)
-For exhaustive details on all 259 projects, see:
-- Full text catalog: https://logicrw.github.io/awesome-jev-projects/llms-full.txt
-- Raw JSON dataset: https://logicrw.github.io/awesome-jev-projects/projects.json
-- Agent Skill: https://logicrw.github.io/awesome-jev-projects/skill.md
+```bash
+npx skills add logicrw/awesome-jev-projects
+npx skills add https://logicrw.github.io/awesome-jev-projects/
+```
 
-### Top Featured Projects
-- [jev-ultrafast](https://github.com/browser-use/jev-ultrafast): Ultra-fast browser agent using Jev for per-step DOM action decisions. Complete Google Flights search in ~7.1s. (Browser & OS Action)
-- [typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp): MCP server connecting Jev directly into Claude Code, Claude Desktop, and Codex as a decision co-processor. (MCP & Integrations)
-- [jev-mcp](https://github.com/jkudish/jev-mcp): Pragmatic MCP utility suite packaging real-time fact-checking, prompt injection guards, and semantic reranking. (MCP & Integrations)
-- [SemDecide](https://github.com/sharziki/semdecide): Unix command-line utility bringing Jev into terminal pipes and CI pipelines for semantic filtering and scoring. (CLI & Pipelines)
-- [Jev Codex Router](https://github.com/0xNatoshi/jev-codex-router): Smart request router evaluating turn difficulty with Jev to route between cheap and frontier models. (Routing & Cost Optimization)
-- [Winnow](https://github.com/GhalebDweikat/winnow): Context garbage collector for Claude Code pruning voluminous bash, grep, and file outputs. (Context GC & Filter)
-- [Jev Review](https://github.com/devagrawal09/jev-review): Code review triage engine assessing correctness, security, reliability, and compatibility before deep review. (Codebase & Graph Pathfinding)
-- [Blink](https://github.com/ellipsis-dev/blink): Semantic pathfinder navigating large codebases without vector indexes using beam search. (Codebase & Graph Pathfinding)
-- [neo4jev](https://github.com/jexp/neo4jev): Knowledge graph pathfinder scoring candidate edges with Jev and traversing paths via beam search. (Codebase & Graph Pathfinding)
-- [jev-desktop](https://github.com/lahfir/agent-desktop): Desktop GUI automation co-processor navigating native accessibility trees to pick next buttons, menus, and controls step-by-step. (Browser & OS Action)
-- [TypeSafe AI Playground](https://github.com/markjaquith/typesafe-ai-playground): Rust CLI playground experimenting with PHI detection, code comment review, and sentiment classification. (CLI & Pipelines)
-- [Prism](https://github.com/irfndi/prism-liquidity-agent): DeFi liquidity agent detecting toxic flow, market stress, and pool distribution in shadow mode. (Domain & Vertical Tools)
-- [1v1 Jev](https://github.com/emrickgarrett/OneVOneJev): Real-time 1v1 browser FPS duel where Jev evaluates tick-based battlefield telemetry to decide movement, aim, and firing actions. (High-Frequency & Simulation)
-- [Safer with Jev](https://github.com/andrelandgraf/typesafe-on-neon): Serverless request router on Neon evaluating incoming queries and dispatching to specialized frontier models. (Security & Guardrails)
-- [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction): fast-jev-compaction: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context. (Context GC & Filter)
-- [jev-review](https://github.com/NiazMorshed2007/jev-review): Code review triage engine assessing correctness, security, reliability, and compatibility before deep review. (Codebase & Graph Pathfinding)
-- [pg-jev](https://github.com/realZachi/pg-jev): pg-jev: Semantic query and classification layer applied over tabular databases and search indexes. (Data & Search)
-- [jevpilot](https://github.com/standardagents/jevpilot): Autonomous vehicle simulator where Jev selects optimal steering paths and speed profiles from pre-calculated candidate trajectories. (High-Frequency & Simulation)
-- [jev-browser](https://github.com/jkudish/jev-browser): End-to-end browser agent navigating URLs, clicking controls, filling forms, and logging per-step action audit trails. (Browser & OS Action)
-- [pi-jev](https://github.com/y0usaf/pi-jev): Risk guard for Pi coding agent verifying command boundaries pre-execution and auditing logs post-execution for secret leakage. (Security & Guardrails)
-- [jev-use](https://github.com/vlad-terin/jev-use): Computer-use co-processor where Codex defines high-level goals while Jev selects consecutive UI controls for execution. (Browser & OS Action)
-- [mobile-jev](https://github.com/droidrun/mobile-jev): Android automation agent where Jev selects target apps and UI elements while Mobilerun performs clicks and inputs. (Browser & OS Action)
-- [ai](https://github.com/vercel/ai): Optional TypeSafe provider for Vercel AI SDK querying Jev for multiple choices, scores, and booleans via a unified evaluate interface. (SDK & Integrations)
-- [langchain](https://github.com/langchain-ai/langchain): Optional Jev classification node for Python LangChain pipelines returning categories, calibrated probabilities, and tier scores. (SDK & Integrations)
-- [oh-my-pi](https://github.com/can1357/oh-my-pi): Decision companion for Oh My Pi agent evaluating reasoning effort depth, unexpected stalls, and git staging classifications. (Routing & Cost Optimization)
-- [eliza](https://github.com/elizaOS/eliza): Optional TypeSafe HTTP adapter in Eliza framework allowing agents to dispatch structured decision queries on demand. (SDK & Integrations)
-- [composio](https://github.com/ComposioHQ/composio): Decision layer for Composio toolsets selecting optimal tools from catalogs and populating enumerated parameter fields. (MCP & Integrations)
-- [pydantic-ai](https://github.com/pydantic/pydantic-ai): Optional Jev model provider for Pydantic AI converting schema boolean and enum fields into typed questions. (SDK & Integrations)
-- [litellm](https://github.com/BerriAI/litellm): Complexity-based request router for LiteLLM evaluating task difficulty via Jev before dispatching to appropriate model tiers. (Routing & Cost Optimization)
-- [langchainjs](https://github.com/langchain-ai/langchainjs): Optional Jev classifier for LangChain.js returning programmatic categories and scores from typed state questions. (SDK & Integrations)
-- [firstmate](https://github.com/kunchenguid/firstmate): Task assignment assistant for Firstmate evaluating job briefs to match dispatch rules and select specialized agent configs. (Routing & Cost Optimization)
-- [openchamber](https://github.com/openchamber/openchamber): Automated model router for OpenChamber classifying prompt intent to select mapped models and reasoning effort tiers. (Routing & Cost Optimization)
-- [ax](https://github.com/ax-llm/ax): Optional TypeSafe client for Ax framework querying Jev via boolean or categorical signatures with raw probabilities. (SDK & Integrations)
-- [agentgateway](https://github.com/agentgateway/agentgateway): Security guardrail example for Agentgateway auditing model requests and responses for jailbreaks, harm, and secret leakage. (Security & Guardrails)
-- [omg.dev](https://github.com/BennyKok/omg.dev): Mobile test runner for omg.dev inspecting accessibility trees via Jev to pick controls and detect step completion or stalls. (Browser & OS Action)
-- [pi-fabric](https://github.com/monotykamary/pi-fabric): Programmable decision loop extension for Pi tool runtime executing observe-judge-act cycles within fixed budgets. (SDK & Decision Frameworks)
-- [latitude-llm](https://github.com/latitude-dev/latitude-llm): Sidecar evaluator for Latitude conversation auditing logging which checks Jev considers necessary to benchmark against baseline pipelines. (Evaluation & Observability)
-- [instructor-php](https://github.com/cognesy/instructor-php): Unified decision adapter for Instructor PHP submitting business state queries to Jev and returning typed choices, scores, and probabilities. (SDK & Decision Frameworks)
-- [atomic](https://github.com/bastani-inc/atomic): Optional decision backend for Atomic coding agent delegating discrete routing choices to Jev while reserving code generation for LLMs. (Routing & Cost Optimization)
-- [WrongStack](https://github.com/WrongStack/WrongStack): Dispatch assistant for WrongStack coding agent selecting the most suitable specialist sub-agent when multiple experts match. (Routing & Cost Optimization)
-- [celesto](https://github.com/CelestoAI/celesto): PR review assistant for Celesto verifying whether suspected issues are introduced by the diff, supported by evidence, and worth fixing. (Codebase & Graph Pathfinding)
-- [req_llm](https://github.com/agentjido/req_llm): TypeSafe integration for Elixir ReqLLM evaluating state questions via evaluate endpoints while routing conversational text to other models. (SDK & Decision Frameworks)
-- [vellum-assistant](https://github.com/vellum-ai/vellum-assistant): vellum-assistant: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP). (MCP & Integrations)
-- [vexjoy-agent](https://github.com/notque/vexjoy-agent): Task dispatch router for VexJoy agent classifying requirements to select expert agents, skills, and execution workflows. (Routing & Cost Optimization)
-- [aiavatarkit](https://github.com/uezo/aiavatarkit): Conversational turn-taking arbitrator for AIAvatarKit evaluating whether a speaker has completed their turn or merely paused to think. (Voice & Conversation)
-- [taskuary](https://github.com/ldbumble/taskuary): taskuary: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP). (MCP & Integrations)
-- [orchestkit](https://github.com/yonatangross/orchestkit): Session classifier for OrchestKit categorizing coding sessions into debugging, development, or maintenance to drive UI badges. (CLI & Pipelines)
-- [skillbox](https://github.com/kitze/skillbox): skillbox: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context. (Context GC & Filter)
-- [interlinked-cli](https://github.com/QuentinCody/interlinked-cli): Rule audit evaluator for coding agents combining deterministic checks with Jev semantic scoring for supplementary judgment. (Security & Guardrails)
-- [effect-agent](https://github.com/danieljvdm/effect-agent): TypeSafe Jev integration for Effect Agent allowing TypeScript applications to evaluate typed question packets and select models. (SDK & Decision Frameworks)
-- [pi-warden](https://github.com/DevMortimer/pi-warden): Rule inspector for Pi coding agent verifying file modifications against repository conventions and checking command risks before execution. (Security & Guardrails)
-- [advocaat](https://github.com/pithings/advocaat): Concise TypeScript wrapper for Jev querying multiple judgments against shared state in a single call with probabilities and scores. (SDK & Decision Frameworks)
-- [ai](https://github.com/hackclub/ai): ai: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP). (MCP & Integrations)
-- [unclutter](https://github.com/kitze/unclutter): Distraction-free browser extension using Jev to detect ads, promo banners, and paywall popups, caching clean CSS rules locally. (Security & Guardrails)
-- [openai-scala-client](https://github.com/cequence-io/openai-scala-client): Scala multi-model client module providing TypeSafe Jev integrations to query structured answers from state and typed questions. (SDK & Decision Frameworks)
-- [jev-visual](https://github.com/hr98w/jev-visual): Local Jev-like visual inference experiment on Apple Silicon Mac. Scores and classifies single images across multiple questions with 3 playable game demos. (SDK & Decision Frameworks)
-- [bluenoise](https://github.com/rokcso/bluenoise): X/Twitter browser extension filtering noise. Uses local rules first, batching ambiguous replies to Jev for noise probability scoring (filters at >=0.9). (Context GC & Filter)
-- [json-render](https://github.com/vercel-labs/json-render): json-render: Vercel Labs generative UI library replacing token streaming with Jev discrete evaluations, cutting render latency from 3.21s to 880ms. (Creative Tools)
-- [cua](https://github.com/trycua/cua): cua: Open-source computer use infrastructure using jev-use driver for discrete desktop and browser actions, with open-source CUA-S1 model family. (Browser & OS Action)
-- [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund): ai-hedge-fund: Multi-agent AI hedge fund simulation with native JevLLM adapter calling System One endpoints for deterministic financial decisions. (Decision Tools)
-- [jev-model-router](https://github.com/davila7/claude-code-templates): jev-model-router: Claude Code mod using Jev to evaluate task difficulty, reasoning effort, and blast radius in one call to route subagents dynamically. (Routing & Cost Optimization)
-- [rig-typesafeai](https://github.com/0xPlaygrounds/rig): rig-typesafeai: Official Rig crate bringing native type-safe Choice, Score, and Noul System One decision primitives to the Rust LLM ecosystem. (SDK & Decision Frameworks)
-- [jev-trader](https://github.com/jarrodwatts/jev-trader): jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook. (High-Frequency & Simulation)
-- [typesafe-computer-use](https://github.com/awlevin/typesafe-computer-use): typesafe-computer-use: Ultra-low-cost macOS computer use combining deterministic OCR with Jev discrete action choices at ~$0.0002 per step. (Browser & OS Action)
-- [typesafe-mario](https://github.com/fhshaik/typesafe-mario): typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time. (High-Frequency & Simulation)
-- [jev-drone](https://github.com/RomanSlack/jev-drone): jev-drone: Autonomous quadrotor in MuJoCo obstacle course using onboard camera buffers with Jev tactical judgment at 2.5Hz backed by 50Hz/500Hz flight controllers. (High-Frequency & Simulation)
-- [typesafe-adblock](https://github.com/realZachi/typesafe-adblock): Experimental Chrome extension querying Jev whether a DOM element is an ad and removing it directly. (Security & Guardrails)
-- [Agent](https://github.com/AgentiLoop/Agent): macOS native autonomous agent bundling TypeSafeKit for fast OS action decisions and scripting. (Browser & OS Action)
-- [captaincore](https://github.com/CaptainCore/captaincore): WordPress site management CLI incorporating Jev for update risk scoring and plugin compatibility. (CLI & Pipelines)
-- [OpenWhisper](https://github.com/Knuckles92/OpenWhisper): Local speech-to-text platform using Jev for real-time meeting topic classification and segment triage. (Voice & Conversation)
-- [runline](https://github.com/Michaelliv/runline): Agent code execution runtime embedding Jev plugins to validate shell command security. (CLI & Pipelines)
-- [jevmeter](https://github.com/ChetasLua/jevmeter): Video caption rating pipeline scoring every sentence with Jev and rendering dynamic meters on 16:9 edits. (Creative Tools)
-- [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js): Official TypeScript/JavaScript SDK for TypeSafe AI providing authoritative Jev bindings. (SDK & Decision Frameworks)
-- [jev-browser-use](https://github.com/wy-coliney/jev-browser-use): Browser automation by EZCollegeApp where Jev handles clicks and Codex plans, speeding ops 5–10x. (Browser & OS Action)
-- [pg_typesafe](https://github.com/giuliosmall/pg_typesafe): Pre-alpha PostgreSQL C extension calling Jev directly within SQL queries for categorical classification. (Data & Search)
-- [skillranker](https://github.com/Dicklesworthstone/skillranker): Rust CLI using Jev to rank agent skills for the next step based on live session context. (Routing & Cost Optimization)
-- [tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier): Tax document page classifier built on Jev achieving 100% accuracy across 261 IRS forms. (Domain & Vertical Tools)
-- [jev-experiments](https://github.com/dabit3/jev-experiments): Developer experimentation suite by Nader Dabit featuring commit sentry and intent triage with Jev. (CLI & Pipelines)
+## Machine-readable resources
+- [projects.json](https://logicrw.github.io/awesome-jev-projects/projects.json)
+- [llms.txt](https://logicrw.github.io/awesome-jev-projects/llms.txt)
+- [llms-full.txt](https://logicrw.github.io/awesome-jev-projects/llms-full.txt)
+- [skill.md](https://logicrw.github.io/awesome-jev-projects/skill.md)
+- [.well-known/skills/index.json](https://logicrw.github.io/awesome-jev-projects/.well-known/skills/index.json)
+- [.well-known/agent-skills/index.json](https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/index.json)
+- [.well-known/skills/default/skill.md](https://logicrw.github.io/awesome-jev-projects/.well-known/skills/default/skill.md)
+- [.well-known/skills/awesome-jev/SKILL.md](https://logicrw.github.io/awesome-jev-projects/.well-known/skills/awesome-jev/SKILL.md)
+- [.well-known/agent-skills/awesome-jev/SKILL.md](https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/awesome-jev/SKILL.md)
+
+## Language directories
+- [Chinese](https://logicrw.github.io/awesome-jev-projects/catalog/)
+- [English](https://logicrw.github.io/awesome-jev-projects/en/catalog/)
+- [Japanese](https://logicrw.github.io/awesome-jev-projects/ja/catalog/)
+- [Korean](https://logicrw.github.io/awesome-jev-projects/ko/catalog/)
+
+## Categories
+- [Browser & OS Action](https://logicrw.github.io/awesome-jev-projects/en/categories/browser-os-action/): 23
+- [CLI & Pipelines](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/): 12
+- [Classification & Taxonomy](https://logicrw.github.io/awesome-jev-projects/en/categories/classification-taxonomy/): 2
+- [Codebase & Graph Pathfinding](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/): 11
+- [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 14
+- [Creative Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/): 9
+- [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 10
+- [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 6
+- [Domain & Vertical Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/): 14
+- [Evaluation & Observability](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/): 29
+- [High-Frequency & Simulation](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/): 17
+- [MCP & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/mcp-integrations/): 18
+- [Routing & Cost Optimization](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/): 19
+- [SDK & Decision Frameworks](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/): 47
+- [SDK & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-integrations/): 6
+- [Security & Guardrails](https://logicrw.github.io/awesome-jev-projects/en/categories/security-guardrails/): 18
+- [Voice & Conversation](https://logicrw.github.io/awesome-jev-projects/en/categories/voice-conversation/): 4
+
+## Sponsorship · Paid placements
+
+Founding partner slots are open. There are no paid sponsors yet.
+
+[Plans and contact](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
+
+Sponsorship does not change inclusion review, project descriptions, or organic ranking. Placement is not an endorsement or performance guarantee.

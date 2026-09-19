@@ -4,15 +4,15 @@
   "skills": [
     {
       "name": "awesome-jev",
-      "description": "Query, filter, and inspect vetted real-world open-source projects using TypeSafe Jev as a sub-100ms System-One decision co-processor.",
+      "description": "Find TypeSafe Jev projects, SDKs and integrations using source evidence and explicit review limits.",
       "url": "https://logicrw.github.io/awesome-jev-projects/.well-known/skills/awesome-jev/SKILL.md",
-      "path": "/.well-known/skills/awesome-jev/SKILL.md"
+      "path": "/awesome-jev-projects/.well-known/skills/awesome-jev/SKILL.md"
     },
     {
       "name": "default",
-      "description": "Default agent skill for Awesome Jev project discovery, architecture patterns, and catalog querying.",
+      "description": "Find TypeSafe Jev projects, SDKs and integrations using source evidence and explicit review limits.",
       "url": "https://logicrw.github.io/awesome-jev-projects/.well-known/skills/default/skill.md",
-      "path": "/.well-known/skills/default/skill.md"
+      "path": "/awesome-jev-projects/.well-known/skills/default/skill.md"
     }
   ]
 }

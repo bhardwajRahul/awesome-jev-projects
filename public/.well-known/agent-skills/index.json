@@ -4,9 +4,9 @@
     {
       "name": "awesome-jev",
       "type": "skill-md",
-      "description": "Query, filter, and inspect vetted real-world open-source projects using TypeSafe Jev as a sub-100ms System-One decision co-processor.",
+      "description": "Find TypeSafe Jev projects, SDKs and integrations using source evidence and explicit review limits.",
       "url": "https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/awesome-jev/SKILL.md",
-      "digest": "sha256:ca0fa8e090180e45b0b8bbced198dd2535f11cd0482851898af44553a01d1f9b"
+      "digest": "sha256:f062536588012de5efd1340761009eccef1a348cbb8190ead611a97268b958f4"
     }
   ]
 }

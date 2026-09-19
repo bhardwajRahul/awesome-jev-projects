@@ -1,0 +1,117 @@
+/* Theme preferences are applied by the self-hosted pre-paint theme-init.js. */
+:root {
+  color-scheme: light;
+  --page-bg: #fafafa;
+  --theme-panel: #fff;
+  --theme-raised: #f2f5ed;
+  --theme-text: #202320;
+  --theme-muted: #626e57;
+}
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--theme-muted);
+  background: var(--theme-panel);
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+.theme-toggle:hover { color: var(--theme-text); background: var(--theme-raised); }
+.theme-toggle .theme-icon-light { display: none; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-light { display: block; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-dark { display: none; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #121412;
+  --theme-panel: #1c201c;
+  --theme-raised: #252c23;
+  --theme-text: #eef2e9;
+  --theme-muted: #aebba5;
+  --muted: var(--theme-muted);
+  --line: #394335;
+  --lime: #d7fa91;
+  color: var(--theme-text);
+  background: var(--page-bg);
+  scrollbar-color: #5b6a52 var(--page-bg);
+}
+:root[data-theme="dark"] body { color: var(--theme-text); background: var(--page-bg); }
+:root[data-theme="dark"] ::selection { color: #202620; background: var(--lime); }
+:root[data-theme="dark"] :is(input, textarea) { caret-color: var(--lime); }
+:root[data-theme="dark"] :is(button, a, input, select, textarea):focus-visible { outline-color: var(--lime); }
+:root[data-theme="dark"] :is(.project-card, .stats, .modal, .search-box, .filter-button, .language-control, .button, .quick-filters button, .featured-partner-card, .sponsor-dialog, .sponsor-dialog-toolbar, .sponsor-dialog-toolbar select) {
+  color: var(--theme-text);
+  background-color: var(--theme-panel);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] :is(.project-card, .project-card:hover) { box-shadow: none; }
+:root[data-theme="dark"] :is(.project-card:hover, .featured-partner-card:hover) { border-color: #7c9361; }
+:root[data-theme="dark"] :is(.brand-icon, .agent-command-box) { background: #252e22; color: var(--lime); }
+:root[data-theme="dark"] :is(.beta, .nav-count, .results-heading h2 > span, .search-box kbd, .avatar-fallback, .flow-in, .flow-out span, .mini-radar, .decision-block, .form-note, .tags button, .tag, .active-filters button, .agent-endpoint-card, .static-review, .static-categories a, .static-about nav a) {
+  color: var(--theme-muted);
+  background-color: var(--theme-raised);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] :is(.search-box input, .language-toggle, .sort-label select, .filter-panel select, .submit-form input, .submit-form textarea, .share-fallback input) {
+  color: var(--theme-text);
+  background-color: var(--theme-panel);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] :is(.search-box input::placeholder, .submit-form input::placeholder, .submit-form textarea::placeholder) { color: var(--theme-muted); opacity: 1; }
+:root[data-theme="dark"] :is(.detail-author, .modal-intro, .detail-grid dt, .evidence p, .evidence > span, .field-hint, .fine-print, .share-fallback span, .side-source, .result-footer, .ticker-note, .ticker-label, .ticker-items button span, .search-box kbd, .sort-label, .category, .category b, .author, .card-category, .tags button, .side-title, .canvas-footer, .canvas-heading, .canvas-heading .mono, .stats > div > span:last-child, .scan-stat > span > span, .hero-copy > p, .hero h1 span, .side-note p, .footer, .footer-brand, .detail-benefit, .decision-block > div, .repo-metrics span, .tag, .github-link, .sort-label select, .filter-button, .card-category .auto-label, .nav-item, .benefit, .filter-panel label, .submit-form label, .source-list small, .load-more > span, .tag-filter-description, .quick-filter-description, .hero-tabs button, .agent-feature-list, .agent-endpoint-card span, .agent-skill-label, .featured-partners-heading, .featured-partner-card p, .sponsor-audience, .sponsor-price, .sponsor-tier p, .sponsor-benefits li, .sponsor-terms, .sponsor-contact > p, .sponsor-contact-value, .sponsor-contact .sponsor-payment-note, .static-intro, .static-lede, .static-eyebrow, .static-project-list p, .static-project-list .static-owner, .static-breadcrumb, .static-facts dt, .static-footer, .static-about > p, .static-about-grid p, .static-brand span) { color: var(--theme-muted); }
+:root[data-theme="dark"] :is(.plain-summary, .decision-block p, .hero-copy strong, .detail-grid dd, .agent-feature-list strong, .agent-endpoint-card strong, .empty-state h3, .sponsor-intro, .sponsor-price strong, .sponsor-tier .sponsor-placement, .project-document section > p) { color: var(--theme-text); }
+:root[data-theme="dark"] :is(.avatar, .card-bottom, .source-list > div, .sponsor-tier, .sponsor-contact, .sponsor-contact-row, .static-github, .static-review, .empty-state) { border-color: var(--line); }
+:root[data-theme="dark"] .decision-canvas {
+  background-color: #191e17;
+  background-image: radial-gradient(#394632 .7px, transparent .7px);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] .connector { background: #647853; }
+:root[data-theme="dark"] .connector::after { border-color: #647853; }
+:root[data-theme="dark"] :is(.stat-value svg, .scan-stat > svg, .search-box > svg, .project-title svg, .icon-button, .clear-search, .featured-partner-top > svg:last-child) { color: var(--theme-muted); }
+:root[data-theme="dark"] :is(.nav-item.active, .project-title:hover, .github-link:hover, .hero .text-link, .text-link:hover, .side-note button, .save-button.saved, .evidence a, .agent-copy-status, .agent-skill-btn svg, .footer .footer-link-button, .featured-partner-label, .featured-partner-action, .sponsor-contact .sponsor-copy-status, .sponsor-contact-row > button, .static-evidence a) { color: var(--lime); }
+:root[data-theme="dark"] .nav-item.active::after { background: var(--lime); }
+@media (max-width: 850px) {
+  /* The horizontal category bar gives every pill its own light-theme surface. */
+  :root[data-theme="dark"] .category:not(.active) {
+    color: var(--theme-muted);
+    background-color: var(--theme-panel);
+    border-color: var(--line);
+  }
+}
+:root[data-theme="dark"] :is(.category:hover, .icon-button:hover, .tags button:hover, .quick-filters button:hover, .hero-tabs button:hover, .agent-endpoint-card:hover, .featured-partner-card:hover, .sponsor-close:hover, .sponsor-contact-row > button:hover, .static-categories a:hover, .static-about nav a:hover) { color: var(--theme-text); background-color: var(--theme-raised); }
+:root[data-theme="dark"] :is(.category.active, .category.active b, .tags button[aria-pressed="true"], .quick-filters button[aria-pressed="true"], .filter-button.selected, .static-header nav a[aria-current="page"]) { color: var(--lime); background-color: #2b3822; border-color: #617747; }
+:root[data-theme="dark"] .hero-tabs button[aria-selected="true"] { color: var(--lime); border-bottom-color: var(--lime); }
+:root[data-theme="dark"] :is(.agent-skill-btn, .sponsor-entry-button, .github-star-btn, .github-star, .sponsor-plan-action) { color: var(--theme-text); background: var(--theme-raised); border-color: #516344; }
+:root[data-theme="dark"] :is(.agent-skill-btn:hover, .sponsor-entry-button:hover, .github-star-btn:hover, .github-star:hover, .sponsor-plan-action:hover) { color: var(--lime); background: #303e25; border-color: #8ca873; }
+:root[data-theme="dark"] :is(.button.dark, .static-primary, .sponsor-tier-headline .sponsor-plan-action) { color: #202620; background: var(--lime); border-color: var(--lime); }
+:root[data-theme="dark"] :is(.button.dark:hover, .static-primary:hover, .sponsor-tier-headline .sponsor-plan-action:hover) { color: #202620; background: #e3ffad; border-color: #e3ffad; }
+:root[data-theme="dark"] :is(.active-filters .reset-all) { color: var(--lime); background: transparent; }
+:root[data-theme="dark"] .sponsor-tier-headline { background: #242e1e; border-color: #617747; }
+:root[data-theme="dark"] .sponsor-dialog { scrollbar-color: #5b6a52 var(--theme-panel); }
+:root[data-theme="dark"] :is(.modal, .sponsor-dialog)::backdrop { background: #050805b8; }
+:root[data-theme="dark"] .toast { background: #293723; color: var(--theme-text); border: 1px solid #617747; }
+:root[data-theme="dark"] :is(.license-note, .catalog-review-note, .form-error-summary) { color: #efcf8d; background: #332a19; border-color: #756137; }
+:root[data-theme="dark"] :is(.unconfirmed, .catalog-review-count) { color: #efcf8d; }
+:root[data-theme="dark"] :is(.field-error, .form-error, .sponsor-contact .sponsor-copy-error) { color: #ffb1a5; }
+:root[data-theme="dark"] :is(.submit-form input, .submit-form textarea)[aria-invalid="true"] { border-color: #f7a496; }
+:root[data-theme="dark"] :is(.static-header a:hover, .static-footer a:hover, .static-breadcrumb a:hover) { color: var(--lime); }
+:root[data-theme="dark"] .featured-partner-placeholder:is(:hover, :focus-visible) { border-color: #d7fa91; }
+:root[data-theme="dark"] :is(.hello-jev, .developer-manual-copy) { color: var(--theme-text); background: var(--theme-panel); border-color: var(--line); }
+:root[data-theme="dark"] :is(.hello-jev-intro, .hello-jev-preview-label, .hello-jev-setup) { color: var(--theme-muted); }
+:root[data-theme="dark"] .hello-jev-code { color: #e2efcf; background: #151b12; scrollbar-color: #5b6a52 #151b12; }
+:root[data-theme="dark"] :is(.hello-jev-toolbar a, .hello-jev-expand) { color: var(--lime); }
+:root[data-theme="dark"] :is(.hello-jev-code, .developer-manual-copy):focus-visible { outline-color: var(--lime); }
+:root[data-theme="dark"] .developer-copy-button { color: var(--theme-muted); background: var(--theme-raised); }
+:root[data-theme="dark"] :is(.developer-copy-button:hover, .developer-copy-dismiss:hover) { color: var(--theme-text); background: #34422a; }
+:root[data-theme="dark"] .developer-copy-button[data-copied="true"] { color: #202620; background: var(--lime); }
+:root[data-theme="dark"] .developer-copy-feedback { color: #ffb1a5; }
+@media (pointer: coarse) { .theme-toggle { min-width: 44px; min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
+  :root[data-theme] :is(.project-card, .featured-partner-placeholder, .hero-tabs button) { animation: none; transition: none; }
+}

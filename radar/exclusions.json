@@ -28,5 +28,69 @@
     "reason": "命中文档明确声明不安装 typesafe-sdk、不调用 api.typesafe.ai；只借用 Jev 的题型设计做本地确定性匹配，不符合 Jev 可执行集成收录条件。",
     "source": "https://github.com/IgorGanapolsky/ThumbGate/blob/0123da701b0efc844c252e037e646c60cbcd170d/docs/agents/typesafe-typed-questions.md",
     "reviewedAt": "2026-09-18T07:09:01.742653+00:00"
+  },
+  {
+    "repo": "vlad-terin/jev-use",
+    "repoId": null,
+    "status": "quarantine",
+    "reason": "当前仓库metadata端点返回404，无法区分已删除、改为私有或其他不可访问原因；不是根据旧SHA失效推断无集成。保留旧记录待来源恢复。",
+    "source": "https://github.com/vlad-terin/jev-use",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "AE-AlphaEdge/grokskill-jev",
+    "repoId": null,
+    "status": "quarantine",
+    "reason": "当前仓库metadata端点返回404，无法区分已删除、改为私有或其他不可访问原因；不是根据旧SHA失效推断无集成。保留旧记录待来源恢复。",
+    "source": "https://github.com/AE-AlphaEdge/grokskill-jev",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "hr98w/jev-visual",
+    "repoId": null,
+    "status": "remove",
+    "reason": "README 明确本地模型为 Qwen3.5-0.8B + MLX，仅借鉴 Jev-like logits scoring；不集成 TypeSafe Jev。移出实际 Jev 集成目录，项目本身并非低质量。",
+    "source": "https://github.com/hr98w/jev-visual/blob/19af545f096e8db4c4dd5d47aed42d92ec252111/README.md",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "Olti1947/jev-java",
+    "repoId": 1375763624,
+    "status": "quarantine",
+    "reason": "真实 HTTP 代码存在但请求/响应契约不匹配：JevRequest 发送 evaluations 数组而非 questions 对象，evaluateChoice 读取 results[0].value 而非 answers；对照同批官方 TypeSafe SDK。未执行第三方代码或实际 API，不把该 SDK 描述为已可用。 未确认开源许可证。",
+    "source": "https://github.com/Olti1947/jev-java/blob/8f11284464645556945564c49765e1754840a72a/README.md",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "rongxinzy/LightJev",
+    "repoId": 1375873237,
+    "status": "remove",
+    "reason": "范围不符：独立 Qwen3-0.6B 训练项目，README.zh-CN.md:157 明确只用程序真值、排除 Jev 教师输出；未集成 TypeSafe/Jev API 或模型。不是因质量或 Star 数剔除。",
+    "source": "https://github.com/rongxinzy/LightJev/blob/dede59a91ff52305921a5e437d4cd1a39bab3be5/src/lightjev/model.py#L1",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-git",
+    "repoId": 1375756600,
+    "status": "quarantine",
+    "reason": "安全门禁核心存在 fail-open：src/main.rs:113–114 缺 Key 成功返回，156–163 API/解析错误成功返回，167–192 缺少答案也可 PASS；95 覆盖原 pre-commit 且未设置可执行位。暂停推荐直到上游修复，不将演示时延或概率包装成安全保证。",
+    "source": "https://github.com/AkashPriyadarshii/jev-git/blob/eff70dd2dd44eebc3ea372ee6e03eb49c0450938/src/main.rs#L147",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "Dicklesworthstone/skillranker",
+    "repoId": 1374059973,
+    "status": "quarantine",
+    "reason": "固定 SHA 的 LICENSE 含针对特定主体的限制性 rider，不是普通 MIT；按开源目录许可范围暂缓收录，不代表功能质量差。",
+    "source": "https://github.com/Dicklesworthstone/skillranker/blob/29490ec5c4831d7f08b0ceefd16cd717a9d761a5/README.md",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
+  },
+  {
+    "repo": "alxcrt/is-odd-jev",
+    "repoId": null,
+    "status": "maintainer-removed",
+    "reason": "已由维护者在前一版目录移除；避免自动扫描重新加入。",
+    "source": "https://github.com/alxcrt/is-odd-jev",
+    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
   }
 ]

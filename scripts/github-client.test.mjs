@@ -251,6 +251,7 @@ test("POST is not automatically retried after an unknown write outcome", async (
   let requests = 0;
   const api = createGitHubClient({
     token: "test-token",
+    writeRepository: "logicrw/test",
     fetchImpl: async () => {
       requests++;
       throw new TypeError("lost connection");
@@ -267,6 +268,7 @@ test("POST is not automatically retried after an unknown write outcome", async (
 });
 test("JSON mutations use request bodies and support an empty 204 response", async () => {
   const api = createGitHubClient({
+    writeRepository: "logicrw/test",
     fetchImpl: async (url, options) => {
       assert.equal(options.method, "PATCH");
       assert.equal(options.headers["Content-Type"], "application/json");
@@ -281,4 +283,56 @@ test("JSON mutations use request bodies and support an empty 204 response", asyn
     }),
     null,
   );
+});
+
+
+test("read clients reject every mutation before sending a token", async () => {
+  const f = fixture([]);
+  for (const method of ["POST", "PUT", "PATCH", "DELETE", "post"])
+    await assert.rejects(f.api("/repos/logicrw/test/issues/1", { method }), /write scope/);
+  assert.equal(f.calls.length, 0);
+});
+
+test("write scope cannot mutate another repository, account settings, arbitrary files or redirect", async () => {
+  for (const path of ["/user/keys", "/repos/other/test/issues/1", "/repos/logicrw/test/contents/.github/workflows/evil.yml", "/repos/logicrw/test/issues/1?anything=1"])
+    await assert.rejects(fixture([], { writeRepository: "logicrw/test" }).api(path, { method: "PUT" }), /write scope/);
+  const f = fixture([{ status: 307, headers: { location: "/user/keys" } }], { writeRepository: "logicrw/test" });
+  await assert.rejects(f.api("/repos/logicrw/test/issues/1/comments", { method: "POST", body: { body: "ok" } }), /redirect rejected/);
+  assert.equal(f.calls.length, 1);
+});
+
+test("non-canonical and control-character API paths never reach fetch", async () => {
+  const f = fixture([]);
+  for (const path of ["/repos/a/../../user", "/repos/a/%2e%2e/", "/repos/a/\\b", "/repos/a/b#fragment", "/repos/a/b\n"])
+    await assert.rejects(f.api(path));
+  assert.equal(f.calls.length, 0);
+});
+
+test("transport failures redact a token from thrown messages", async () => {
+  const f = fixture([new Error("network test-token")], { maxAttempts: 1 });
+  await assert.rejects(f.api("/repos/a/b"), { message: "network [redacted]" });
+});
+
+
+test("Git object writes allow only one fixed JSON file and non-force main updates", async () => {
+  const sha = "a".repeat(40);
+  const validTree = { base_tree: sha, tree: [{ path: "src/data/projects.json", mode: "100644", type: "blob", content: "[]" }] };
+  for (const [path, method, body] of [
+    ["git/trees", "POST", { ...validTree, tree: [{ ...validTree.tree[0], path: ".github/workflows/evil.yml" }] }],
+    ["git/trees", "POST", { ...validTree, tree: [validTree.tree[0], validTree.tree[0]] }],
+    ["git/trees", "POST", { ...validTree, tree: [{ ...validTree.tree[0], mode: "120000" }] }],
+    ["git/commits", "POST", { tree: sha, parents: [] }],
+    ["git/refs/heads/main", "PATCH", { sha, force: true }],
+    ["git/refs/heads/other", "PATCH", { sha, force: false }],
+    ["contents/src/data/projects.json", "PUT", { content: "[]" }],
+  ]) {
+    const f = fixture([], { writeRepository: "logicrw/test" });
+    await assert.rejects(f.api(`/repos/logicrw/test/${path}`, { method, body }), /write scope/);
+    assert.equal(f.calls.length, 0);
+  }
+  const f = fixture([{}, {}, {}], { writeRepository: "logicrw/test" });
+  await f.api("/repos/logicrw/test/git/trees", { method: "POST", body: validTree });
+  await f.api("/repos/logicrw/test/git/commits", { method: "POST", body: { tree: sha, parents: [sha] } });
+  await f.api("/repos/logicrw/test/git/refs/heads/main", { method: "PATCH", body: { sha, force: false } });
+  assert.equal(f.calls.length, 3);
 });

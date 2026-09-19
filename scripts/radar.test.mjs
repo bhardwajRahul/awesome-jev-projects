@@ -103,11 +103,14 @@ test("host suffixes and hidden comments are not provider proof", () => {
 test('documentation mirrors are not runnable Jev projects', () => {
   assert.equal(verifyIntegration({name:'litellm-docs'}, 'Jev AI from typesafe import jev').verified, false);
 });
-test('reviewed exclusions cannot appear in the published dataset', async () => {
+test('reviewed exclusions can only remain as explicitly pending records', async () => {
   const projects=JSON.parse(await readFile(new URL('../src/data/projects.json',import.meta.url),'utf8'));
   const exclusions=JSON.parse(await readFile(new URL('../radar/exclusions.json',import.meta.url),'utf8'));
-  const urls=new Set(projects.map(p=>normalizeRepo(p.url).toLowerCase()));
-  for(const item of exclusions)assert.equal(urls.has(item.repo.toLowerCase()),false);
+  const byRepo=new Map(projects.map(p=>[normalizeRepo(p.url).toLowerCase(),p]));
+  for(const item of exclusions) {
+    const project = byRepo.get(item.repo.toLowerCase());
+    if (project) assert.equal(project.catalogStatus, 'review-pending', item.repo);
+  }
 });
 
 const seedIds = [
@@ -157,11 +160,11 @@ test("all fourteen original projects are pinned and metadata changes only permit
 
 test("untrusted repository metadata cannot replace any source-reviewed prose or evidence", async () => {
   const projects = JSON.parse(await readFile(new URL("../src/data/projects.json", import.meta.url), "utf8"));
-  const reviewed = projects.filter((p) => p.summarySource === "source-reviewed");
+  const reviewed = projects.filter((p) => ["source-reviewed", "human-reviewed"].includes(p.summarySource));
   assert.ok(reviewed.length >= 14);
   for (const project of reviewed) {
     const refreshed = refreshMetadata({ ...project, pinned: false }, hostileMetadata, latestCommit);
-    for (const key of ["plainSummary", "jevDecisionPoint", "highlightBenefit", "category", "tags", "evidence", "summarySource", "claimStatus", "verificationStatus", "runtimeVerified"])
+    for (const key of ["plainSummary", "plainSummaryEn", "plainSummaryJa", "plainSummaryKo", "jevDecisionPoint", "jevDecisionPointEn", "jevDecisionPointJa", "jevDecisionPointKo", "highlightBenefit", "highlightBenefitEn", "highlightBenefitJa", "highlightBenefitKo", "category", "tags", "evidence", "summarySource", "claimStatus", "claimStatusEn", "claimStatusJa", "claimStatusKo", "sourceVerification", "sourceReviewedAt", "verificationStatus", "runtimeVerified"])
       assert.deepEqual(refreshed[key], project[key], `${project.id}.${key} was overwritten`);
     assert.equal(refreshed.forks, 9999, "ordinary project metadata still refreshes");
   }

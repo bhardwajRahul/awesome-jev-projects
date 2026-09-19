@@ -1,1269 +1,1434 @@
-<div align="center">
+[![Live Website](https://img.shields.io/badge/Website-Awesome%20Jev%20Radar-black?style=flat-square&logo=safari)](https://logicrw.github.io/awesome-jev-projects/ja/)
 
-<a href="https://logicrw.github.io/awesome-jev-projects/">
-  <img src="https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner.svg" alt="Awesome Jev Projects Banner" width="880" style="max-width: 100%; border-radius: 12px;" />
-</a>
+[![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-ja.svg)](https://logicrw.github.io/awesome-jev-projects/ja/)
 
-<br/><br/>
+# Awesome Jev — Jev オープンソース・公開コード一覧
 
-<p>
-  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
-  <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-259%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
-  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
-</p>
+[中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
-<p>
-  <strong>言語切り替え:</strong>&nbsp;
-  <a href="README.md">English</a> • 
-  <a href="README.zh-CN.md">简体中文</a> • 
-  <a href="README.ja.md">日本語</a> • 
-  <a href="README.ko.md">한국어</a>
-</p>
+**[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **259 件のプロジェクト**
 
-<p>
-  <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>🌐 ライブ対話型レーダーを開く</strong></a> • 
-  <a href="https://logicrw.github.io/awesome-jev-projects/skill.md"><strong>🤖 Agent スキル (SKILL.md)</strong></a> • 
-  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 プロジェクトを申請</strong></a>
-</p>
+コミュニティが運営する、TypeSafe 非公式の Jev ディレクトリです。公開説明とソースコードに基づいて掲載しています。連携コードの確認は、当サイトによる実行、性能測定、安全性監査を意味しません。
 
-<p>TypeSafe AIのJevモデルを採用した **259+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
+固定バージョンの説明とソースを確認しています。独立した実行、性能測定、安全性監査や収益保証ではありません。互換実装は使用する基盤モデルを明示します。
 
-</div>
+利用条件は各プロジェクトのライセンスに従います。未記載・独自ライセンスは別途表示します。
 
----
+## スポンサー · 有料掲載
 
-> **Awesome Jev とは？**  
-> 長文生成モデルとは異なり、TypeSafe AIのJevはサブ100ミリ秒の高速構造化判断（`Choice` 選択、`Score` スコアリング、`Noul` 確率推定）に特化しています。  
-> 本リポジトリは、Jevを中核の意思決定エンジンとして実装した実用的なソフトウェアのみを厳選・掲載しています。  
->  
-> **Agent 対応:** `npx skills add logicrw/awesome-jev-projects` でエージェントスキルを導入できます。[`skill.md`](https://logicrw.github.io/awesome-jev-projects/skill.md) や [`llms.txt`](https://logicrw.github.io/awesome-jev-projects/llms.txt) も利用可能です。
+最初のパートナーを募集中です。現在、有料スポンサーはいません。
 
----
-<a id="contents"></a>
-## 目次
+[プランとお問い合わせ](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
-- [⚡ 高頻度シミュレーション・リアルタイムゲーム (20)](#high-frequency-simulation-ja)
-- [🛠️ SDK・意思決定フレームワーク (32)](#sdk-decision-frameworks-ja)
-- [🔌 エコシステム統合・アダプター (7)](#sdk-integrations-ja)
-- [💻 CLI・自動化パイプライン (32)](#cli-pipelines-ja)
-- [💾 データベース拡張・セマンティック検索 (7)](#data-search-ja)
-- [🌐 ブラウザ・デスクトップ自動化 (22)](#browser-os-action-ja)
-- [🧹 コンテキスト圧縮・ノイズ除去 (11)](#context-gc-filter-ja)
-- [🛡️ セキュリティ・ガードレール (17)](#security-guardrails-ja)
-- [🧩 MCP プロトコル・ツール拡張 (33)](#mcp-integrations-ja)
-- [🧭 コードベース解析・グラフ探索 (13)](#codebase-graph-pathfinding-ja)
-- [🔀 モデルルーティング・コスト最適化 (16)](#routing-cost-optimization-ja)
-- [📊 専門分野・バーティカルツール (17)](#domain-vertical-tools-ja)
-- [🎯 意思決定支援・ヒューリスティック評価 (14)](#decision-tools-ja)
-- [🏷️ テキスト分類・タキソノミー (1)](#classification-taxonomy-ja)
-- [📈 ベンチマーク・可観測性 (7)](#evaluation-observability-ja)
-- [🎙️ 音声対話・リアルタイム会話 (4)](#voice-conversation-ja)
-- [🎨 クリエイティブツール・メディア生成 (6)](#creative-tools-ja)
-- [📖 ローカル開発とアーキテクチャ](#dev-arch-ja)
-- [🤝 プロジェクトの掲載申請](#submit-guide-ja)
+スポンサー契約は掲載審査、説明、通常の表示順を変えません。掲載は推奨や性能保証ではありません。
 
----
+## Agent Skill の導入
 
-<a id="high-frequency-simulation-ja"></a>
-## ⚡ 高頻度シミュレーション・リアルタイムゲーム
-
-*ゲームやロボティクス、高頻度シミュレーションループにおけるミリ秒単位の意思決定。*
-
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
-  - 🎯 **Jevの判断箇所**: スプレッド、過去100ブロックのリターン、テイカーフローを入力し、今後30ブロックの中間価格の方向を予測。
-  - 💡 **主な特徴**: 約80ミリ秒の推論レイテンシにより、サブセカンド級ブロックチェーンの生成間隔に完全に適合。
-
-- [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
-  - 🎯 **Jevの判断箇所**: マリオの移動速度、ジャンプ軌道、前方の敵を評価し、ファミコンのコントローラー入力を決定。
-  - 💡 **主な特徴**: 生のピクセル認識を決定的オブジェクトテレメトリに次元削減し、厳しいフレーム予算内で有効なアクションを出力。
-
-- [**jev-drone**](https://github.com/RomanSlack/jev-drone) `★ 63` - jev-drone: Autonomous quadrotor in MuJoCo obstacle course using onboard camera buffers with Jev tactical judgment at 2.5Hz backed by 50Hz/500Hz flight controllers.
-  - 🎯 **Jevの判断箇所**: 古典的CVによる距離セクターと障害物高さを読み取り、上昇、ブレーキ、間隙通過などの戦術機動を選択。
-  - 💡 **主な特徴**: 階層化制御アーキテクチャ：Jevがマクロ戦術判断を担当し、決定論的コードが飛行の安全性を保証。
-
-- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - Autonomous vehicle simulator where Jev selects optimal steering paths and speed profiles from pre-calculated candidate trajectories.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**tsai-sc**](https://github.com/phyous/tsai-sc) `★ 15` - tsai-sc: TypeSafe Jev harness completing the original 1998 StarCraft Strongarm combat mission across 421 verified decisions with full visual replay proof.
-  - 🎯 **Jevの判断箇所**: 構造化された戦況とリソースデータを読み取り、内政建築と戦闘ユニットの操作を独立して意思決定。
-  - 💡 **主な特徴**: 複雑なリアルタイムストラテジーの状況を離散的なセマンティック決定へ分解可能であることを実証。
-
-- [**jevscape**](https://github.com/Skyvern-AI/jevscape) `★ 6` - RuneBench harness for TypeSafe Jev featuring bounded action catalogs and tick-mode controllers.
-  - 🎯 **Jevの判断箇所**: ゲームのTick状態を読み取り、有界カタログから最適なキャラクター行動と対象を選択。
-  - 💡 **主な特徴**: Tick制ゲーム世界においてJevの意思決定反射神経を厳格に評価できる再現可能なベンチマーク。
-
-- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - Real-time 1v1 browser FPS duel where Jev evaluates tick-based battlefield telemetry to decide movement, aim, and firing actions.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - Top-down vehicle simulator where Jev chooses lane changes and throttle rates, running side-by-side against conversational model baselines.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**jev-shield**](https://github.com/vmendes90/jev-shield) `★ 2` - Semantic content blocker distinguishing sponsored feed cards and native ads from organic content using real-time Jev judgments.
-  - 🎯 **Jevの判断箇所**: フィードカードのDOM構造を検査し、通常の投稿と同一スタイルを持つスポンサー広告を分類。
-  - 💡 **主な特徴**: 従来のCSSセレクターやURLブロックリストでは対処できないファーストパーティネイティブ広告を除去。
-
-- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - Flappy Bird game agent calculating candidate flight trajectories in code and querying Jev to select the safest flap path in real time.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - Doom game controller consuming structured combat state to select movement headings, target locks, and firing timings.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**jev-curate**](https://github.com/AkashPriyadarshii/jev-curate) `★ 1` - High-throughput pretraining dataset sifter streaming, filtering, and scoring Parquet and JSONL rows via Jev.
-  - 🎯 **Jevの判断箇所**: 毎秒1,500行以上の速度でデータセットの各行に対してScoreおよびNoulのバッチ判定を実行。
-  - 💡 **主な特徴**: 高負荷なモデル学習の前に、低品質または有害な合成データを事前分離。
-
-- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - Browser-based dual Doom game agent evaluating game state tables to select tactical navigation and combat actions.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**jev-gomoku**](https://github.com/XieChengYuan/jev-gomoku) `★ 1` - Dual-Jev 9x9 Gomoku workbench evaluating how input representations affect placement decisions, featuring replay and live play.
-  - 🎯 **Jevの判断箇所**: 1手ごとに1つのChoice問題を解決：盤面状態、候補手、ルールに基づき次の着手座標を決定。
-  - 💡 **主な特徴**: ターンごとのリクエスト、モデル確率、レイテンシを可視化。棋譜の無料再生とOpenRouter対戦に対応。
-  - 🌐 [オンラインデモ](https://xiechengyuan.github.io/jev-gomoku/)
-
-- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - Island airport traffic simulator querying Jev to arbitrate landing priorities, holding patterns, diversions, and runway clearance.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**jevarena**](https://github.com/raihankhan-rk/jevarena) `★ 1` - Interactive evaluation arena staging click-only browser game duels between competing Jev agents.
-  - 🎯 **Jevの判断箇所**: ライブブラウザキャンバスのフレームから離散的なUI座標とクリック操作を選択。
-  - 💡 **主な特徴**: 高頻度な意思決定の反射神経をテストするための視覚的対戦ベンチマークを提供。
-
-- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - Maze navigation benchmark testing single-step and multi-step Jev spatial decisions against path dead-ends and loops.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - Real-time game experiments where Jev plays Chrome Dino and 2D shooter arenas via structured telemetry and discrete action inputs.
-  - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
-  - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
-
-- [**jev-play-ping-pong**](https://github.com/Icohen007/jev-play-ping-pong) - Real-time browser ping-pong simulation where Jev evaluates table telemetry to steer the paddle.
-  - 🎯 **Jevの判断箇所**: ボールの位置、速度ベクトル、パドルの座標を評価し、上移動・下移動・静止を選択。
-  - 💡 **主な特徴**: 生成プロンプトの負荷を排除し、物理演算に追従する低遅延の離散アクションを実現。
-
-- [**mk-jev-fly-brain**](https://github.com/lavallee/mk-jev-fly-brain) - Connectome meets language model: biological spiking neural network fights Jev in mk.js simulation.
-  - 🎯 **Jevの判断箇所**: フレームごとの体力、距離、敵の姿勢を評価し、格闘ゲームの即時入力を決定。
-  - 💡 **主な特徴**: 連続的な格闘ゲームループにおいて低遅延の反射神経と戦術的意思決定を検証。
-
----
-
-<a id="sdk-decision-frameworks-ja"></a>
-## 🛠️ SDK・意思決定フレームワーク
-
-*Jevの構造化呼び出しと型安全な対話をカプセル化するクライアントライブラリ群。*
-
-- [**rig-typesafeai**](https://github.com/0xPlaygrounds/rig) `★ 8669` - rig-typesafeai: Official Rig crate bringing native type-safe Choice, Score, and Noul System One decision primitives to the Rust LLM ecosystem.
-  - 🎯 **Jevの判断箇所**: Rustのジェネリック構造体で問いと答えのレイアウトを一度だけ宣言し、Jev経由で強型フィールドへ直接デコード。
-  - 💡 **主な特徴**: 手動のJSONプロンプト作成や実行時スキーマ検証が不要な、Rustネイティブのゼロコスト抽象化。
-
-- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - TypeSafe integration for Elixir ReqLLM evaluating state questions via evaluate endpoints while routing conversational text to other models.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - Unified decision adapter for Instructor PHP submitting business state queries to Jev and returning typed choices, scores, and probabilities.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - Scala multi-model client module providing TypeSafe Jev integrations to query structured answers from state and typed questions.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - Programmable decision loop extension for Pi tool runtime executing observe-judge-act cycles within fixed budgets.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**typesafe-sdk-js**](https://github.com/typesafe-ai/typesafe-sdk-js) `★ 138` - Official TypeScript/JavaScript SDK for TypeSafe AI providing authoritative Jev bindings.
-  - 🎯 **Jevの判断箇所**: System OneのChoice、Score、Noulエンドポイントを型推論と再試行付きで完全にサポート。
-  - 💡 **主な特徴**: 公式に保守されるリファレンス実装であり、JS/TSエコシステム全体の強固な基盤として機能。
-
-- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - TypeSafe Jev integration for Effect Agent allowing TypeScript applications to evaluate typed question packets and select models.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-visual**](https://github.com/hr98w/jev-visual) `★ 95` - Local Jev-like visual inference experiment on Apple Silicon Mac. Scores and classifies single images across multiple questions with 3 playable game demos.
-  - 🎯 **Jevの判断箇所**: 自己回帰生成を行わず、マルチモーダル視覚コンテキストを再利用してロジットから候補回答を直接スコアリング。
-  - 💡 **主な特徴**: Apple SiliconのエッジビジョンにJevスタイルの1パス複数判定スコアリングを導入。
-
-- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - Concise TypeScript wrapper for Jev querying multiple judgments against shared state in a single call with probabilities and scores.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ruby_decision_model**](https://github.com/obie/ruby_decision_model) `★ 36` - Ruby client library providing strongly typed request builders and retries for TypeSafe Jev.
-  - 🎯 **Jevの判断箇所**: Rubyのハッシュと列挙型からSystem Oneパケットを構築し、構造化回答をデコード。
-  - 💡 **主な特徴**: 慣用的なRuby構文と型スキーマを提供し、HTTPリクエストやJSONデコードのボイラープレートを排除。
-
-- [**typesafe-ai**](https://github.com/Twister915/typesafe-ai) `★ 8` - Typed Rust SDK for TypeSafe AI featuring async/blocking backends and observable retries.
-  - 🎯 **Jevの判断箇所**: Jev System Oneエンドポイントに対する通信ハンドシェイク、認証、強型付けコーデックを管理。
-  - 💡 **主な特徴**: Tokio非同期ランタイムとシンプルなブロッキングCLIの両方に柔軟に対応。
-
-- [**typesafe-sdk-go**](https://github.com/Tangerg/typesafe-sdk-go) `★ 7` - Go SDK for TypeSafe AI API: typed questions in, calibrated probability distributions out.
-  - 🎯 **Jevの判断箇所**: Goバックエンド向けに標準Jevインターフェースを提供し、JSONマーシャリングと再試行を管理。
-  - 💡 **主な特徴**: スレッドセーフで並行呼び出しに対応し、マイクロサービスに安定した低遅延チャネルを提供。
-
-- [**jev-dsl**](https://github.com/inanna-malick/jev-dsl) `★ 6` - Agent-first Haskell DSL for TypeSafe Jev featuring type inference and labeled answer packets.
-  - 🎯 **Jevの判断箇所**: Haskellの型システムを通じて厳密な戻り値を定義し、パース時の網羅性を保証。
-  - 💡 **主な特徴**: 純粋関数型の安全パラダイムにより、Jevの判定結果の正当性をコンパイル時に検証。
-
-- [**swift-typesafe**](https://github.com/ainame/swift-typesafe) `★ 6` - Unofficial Swift SDK providing idiomatic Apple platform wrappers for TypeSafe Jev.
-  - 🎯 **Jevの判断箇所**: 強型付けされたSwift構造体で問題を定義し、Jevの離散的な選択とスコア結果をデコード。
-  - 💡 **主な特徴**: XcodeプロジェクトやSwiftの現代的な並行処理ワークフローに無駄な依存なく統合。
-
-- [**super-jev**](https://github.com/Kevthetech143/super-jev) `★ 5` - Extensible decision-to-action harness mapping Jev discrete choices to deterministic handlers.
-  - 🎯 **Jevの判断箇所**: JevのChoice/Noul判定を通じてドメイン固有の問題を解決し、対応するコールバックを起動。
-  - 💡 **主な特徴**: 確率的出力を決定論的なステートマシン遷移に収束させ、JSONパースやリトライを排除。
-
-- [**typesafe-sdk**](https://github.com/joshmn/typesafe-sdk) `★ 4` - Lightweight Ruby client for typesafe.ai providing clean request wrappers and response mapping.
-  - 🎯 **Jevの判断箇所**: Rubyのハッシュからクエリを構築し、離散判断レスポンスをRubyオブジェクトへパース。
-  - 💡 **主な特徴**: 依存が少なくシンプルで、Railsのバックグラウンドジョブ等へ容易に組み込み可能。
-
-- [**typesafe-ai-rs**](https://github.com/gilljon/typesafe-ai-rs) `★ 3` - Independent async and blocking Rust SDK for TypeSafe AI System One with zero-overhead error handling.
-  - 🎯 **Jevの判断箇所**: 分類問題を構造化列挙型にマッピングし、サーバーの浮動小数点確率配列を安全にパース。
-  - 💡 **主な特徴**: 明確なエラー列挙型設計により、ミッションクリティカルなアプリでのフォールバックを支援。
-
-- [**typesafe-sdk-java**](https://github.com/Premo-Cloud/typesafe-sdk-java) `★ 3` - Community Java SDK and Spring Boot Starter providing autoconfigured TypeSafe Jev clients.
-  - 🎯 **Jevの判断箇所**: Java POJOとアノテーションでJev System Oneクエリをカプセル化し、自動デシリアライズを実行。
-  - 💡 **主な特徴**: エンタープライズSpringスタックに自動構成やスレッドプール管理でシームレスに統合。
-
-- [**jev-go**](https://github.com/Gaurav-Gosain/jev-go) `★ 2` - Go client for TypeSafe Jev focusing on typed judgments and calibrated probabilities.
-  - 🎯 **Jevの判断箇所**: 質問と候補選択肢をシリアライズしてJevに送信し、較正された確率分布付きChoice結果を返却。
-  - 💡 **主な特徴**: System One契約に厳格に準拠し、結果の決定論的性質が求められる本番サービスに最適。
-
-- [**jev-java**](https://github.com/Olti1947/jev-java) `★ 2` - Idiomatic Java SDK and type-safe client library for TypeSafe AI Jev decision engine.
-  - 🎯 **Jevの判断箇所**: HTTP System Oneエンドポイントを強く型付けされたJava POJOと非同期リアクティブフローにラップ。
-  - 💡 **主な特徴**: Jev駆動マイクロサービスにネイティブなエンタープライズJava互換性を実現。
-
-- [**typesafe_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) `★ 2` - Idiomatic Elixir SDK providing unified LLM and System One Jev interfaces with OTP concurrency.
-  - 🎯 **Jevの判断箇所**: Elixirプロセスで非同期Jev判定を実行し、パターンマッチングで結果を処理。
-  - 💡 **主な特徴**: Erlang/OTP耐障害性アーキテクチャにサブセカンド判定を導入し、大規模並行処理を支援。
-
-- [**typesafe-go**](https://github.com/2389-research/typesafe-go) `★ 2` - Zero-dependency Go client for TypeSafe System One API relying solely on the Go standard library.
-  - 🎯 **Jevの判断箇所**: ネイティブGo構造体をJevリクエストに変換し、Choice/Score/Noul出力を解析。
-  - 💡 **主な特徴**: サプライチェーンリスクのないミニマル設計で、組み込み環境へのクロスコンパイルも容易。
-
-- [**typesafe-go**](https://github.com/cole-gillespie/typesafe-go) `★ 2` - Unofficial Go SDK for TypeSafe AI featuring exponential retries, context cancellation, and typing.
-  - 🎯 **Jevの判断箇所**: HTTPライフサイクルを管理し、Jevの確率分布を強型付けされたGo列挙型へデコード。
-  - 💡 **主な特徴**: context.Contextキャンセルと再試行ポリシーを備え、並行バックエンドサービスに最適化。
-
-- [**typesafe-sdk-rust**](https://github.com/codeitlikemiley/typesafe-sdk-rust) `★ 2` - Rust SDK for TypeSafe AI providing constants, serialization models, and HTTP client wrappers.
-  - 🎯 **Jevの判断箇所**: Rust内でSystem Oneペイロードを構築し、エンドポイントルーティングと認証ヘッダーを管理。
-  - 💡 **主な特徴**: Rustの所有権と型チェックを活用し、不正なリクエスト形式をコンパイル時に未然防止。
-
-- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - Application scaffold routing Jev decisions to automated handlers, fallback models, or human review while tracking rule performance.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - Asynchronous Python client for Jev querying multiple typed questions in a single request and returning structured probability objects.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jevify**](https://github.com/altryne/jevify) `★ 1` - CLI installer and integration assistant configuring Jev decision endpoints for Claude Code, Codex, and Cursor.
-  - 🎯 **Jevの判断箇所**: 開発エージェント環境全体に構造化されたJev意思決定フックを構築する対話型設定CLI。
-  - 💡 **主な特徴**: マルチエージェント環境構築を自動化し、手動の設定作業を不要に。
-
-- [**qualm**](https://github.com/qddegtya/qualm) `★ 1` - System One decision library enforcing explicit fallback strategies when Jev signals low confidence.
-  - 🎯 **Jevの判断箇所**: Jevの確率分布を検査し、信頼度が安全基準を下回る場合に明示的なフォールバックを起動。
-  - 💡 **主な特徴**: モデルの不確実性を型レベルで処理することを強制し、自律パイプラインでの暗黙の障害を防止。
-
-- [**typesafe-go**](https://github.com/zhirschtritt/typesafe-go) `★ 1` - Idiomatic Go SDK for TypeSafe AI API providing ergonomic client interfaces and context control.
-  - 🎯 **Jevの判断箇所**: HTTP通信とJSONコーデックを管理し、Jevの選択およびスコアをGoコードへ注入。
-  - 💡 **主な特徴**: 簡潔で直感的なAPI設計により、GoバックエンドやCLIツールへの容易な組み込みを実現。
-
-- [**typesafe-sdk-php**](https://github.com/Butochnikov/typesafe-sdk-php) `★ 1` - PHP SDK for modern PHP 8+ applications providing typed clients and query builders for Jev.
-  - 🎯 **Jevの判断箇所**: PHPの連想配列や列挙型を規格に適合したJevクエリペイロードへと変換。
-  - 💡 **主な特徴**: LaravelやSymfonyが外部Pythonデーモンなしでミリ秒単位の判断能力を導入可能。
-
-- [**typesafe-rs**](https://github.com/AbdelStark/typesafe-rs) - Latency-first Rust SDK for TypeSafe System One featuring zero-copy parsing and connection pooling.
-  - 🎯 **Jevの判断箇所**: 型付きRust構造体をJevリクエストにシリアライズし、確率分布データを最小負荷でデコード。
-  - 💡 **主な特徴**: 不要なメモリ割り当てを排除し、デーモンや高頻度取引、CLIに最大の処理スループットを提供。
-
-- [**typesafe-sdk-swift**](https://github.com/marandaneto/typesafe-sdk-swift) - Swift native client porting official SDK ergonomics to Swift modern async/await concurrency.
-  - 🎯 **Jevの判断箇所**: Swiftのasync/awaitインターフェースでJevクエリを実行し、Codableでレスポンスをデコード。
-  - 💡 **主な特徴**: iOS、macOS、LinuxのSwiftアプリでコンパイル時安全性を活かしたJev判定を利用可能。
-
----
-
-<a id="sdk-integrations-ja"></a>
-## 🔌 エコシステム統合・アダプター
-
-*既存のエージェントフレームワークやランタイムをJevと接続するアダプター群。*
-
-- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - Optional Jev classification node for Python LangChain pipelines returning categories, calibrated probabilities, and tier scores.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ai**](https://github.com/vercel/ai) `★ 26825` - Optional TypeSafe provider for Vercel AI SDK querying Jev for multiple choices, scores, and booleans via a unified evaluate interface.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - Optional Jev model provider for Pydantic AI converting schema boolean and enum fields into typed questions.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - Optional TypeSafe HTTP adapter in Eliza framework allowing agents to dispatch structured decision queries on demand.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - Optional Jev classifier for LangChain.js returning programmatic categories and scores from typed state questions.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - Optional TypeSafe client for Ax framework querying Jev via boolean or categorical signatures with raw probabilities.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ruby_llm-typesafe**](https://github.com/kieranklaassen/ruby_llm-typesafe) `★ 12` - TypeSafe structured-output provider driver for RubyLLM 2 unified model framework.
-  - 🎯 **Jevの判断箇所**: RubyLLMのスキーマをJevクエリに変換し、分類や選択判断のタスクを高速に代行。
-  - 💡 **主な特徴**: 既存のRubyLLMアプリに適合し、業務コードを変更せずに高速Jev推論へ切り替え可能。
-
----
-
-<a id="cli-pipelines-ja"></a>
-## 💻 CLI・自動化パイプライン
-
-*ターミナルコマンド、Unixパイプ、CI/CDにセマンティック判定を組み込むツール群。*
-
-- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - Session classifier for OrchestKit categorizing coding sessions into debugging, development, or maintenance to drive UI badges.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-experiments**](https://github.com/dabit3/jev-experiments) `★ 255` - Developer experimentation suite by Nader Dabit featuring commit sentry and intent triage with Jev.
-  - 🎯 **Jevの判断箇所**: コミット差分を評価してリスクを分類し、問題のあるコミットを遮断して改善案を提示。
-  - 💡 **主な特徴**: 開発者ツールチェーンにおけるJevの有用性を示す実践的なコード群を提供。
-
-- [**runline**](https://github.com/Michaelliv/runline) `★ 162` - Agent code execution runtime embedding Jev plugins to validate shell command security.
-  - 🎯 **Jevの判断箇所**: 提案されたシェルコマンドを評価し、セキュリティリスク、パス破壊、不正な通信を分類。
-  - 💡 **主な特徴**: 静的正規表現を超えた汎用的なセマンティック検証により、自律エージェントの安全な実行を担保。
-
-- [**captaincore**](https://github.com/CaptainCore/captaincore) `★ 71` - WordPress site management CLI incorporating Jev for update risk scoring and plugin compatibility.
-  - 🎯 **Jevの判断箇所**: プラグインの更新履歴と競合情報を評価し、自動更新か手動レビューかを判定。
-  - 💡 **主な特徴**: 一括メンテナンスタスクにセマンティックガードレールを導入し、更新による障害を未然に防止。
-
-- [**jev-voice-browser**](https://github.com/moritzkremb/jev-voice-browser) `★ 35` - Control a real browser with sub-300ms voice commands, using Jev to resolve intent and target elements before sentences finish.
-  - 🎯 **Jevの判断箇所**: 発話ごとに約300ミリ秒で音声入力を対象DOMコントロールと操作に分類。
-  - 💡 **主な特徴**: 発話が完了する前に操作を開始できるほど高速な音声駆動ブラウジングを実現。
-
-- [**supercov**](https://github.com/supercorp-ai/supercov) `★ 32` - Code quality and test coverage for coding agents: Jev scores each source file so the agent knows what to fix first. Coverage runs locally with no account.
-  - 🎯 **Jevの判断箇所**: 1回のリクエストで各ソースファイルの12個のNoulプロパティを照会し、CLI側でスコア計算とファイル並び替えを実行。
-  - 💡 **主な特徴**: スコアはファイルごとに検証可能なプロパティに分解され、コンテンツに応じてキャッシュ。
-
-- [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) `★ 19` - Semantic HTTP request router for Hono applications powered by TypeSafe Jev discrete classifications.
-  - 🎯 **Jevの判断箇所**: 静的なURLパスではなく、セマンティックな意味に基づいて受信HTTPリクエストをルーティング。
-  - 💡 **主な特徴**: 軽量なエッジやサーバーレスWeb APIに意図ベースのルーティングを組み込み。
-
-- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - MoonBit playground testing Jev on Gomoku board decisions, simplified MOBA unit control, and command risk triage.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**openjev**](https://github.com/razorback16/openjev) `★ 14` - Open-source, self-hostable Jev-compatible System One decision server built on DiffusionGemma.
-  - 🎯 **Jevの判断箇所**: TypeSafeのAPI仕様に準拠したChoice、Score、Noulの構造化推論リクエストを処理。
-  - 💡 **主な特徴**: ローカルのJev互換意思決定ループ向けに、即座に置き換え可能なOSS選択肢を提供。
-
-- [**jev-axi**](https://github.com/shiftynick/jev-axi) `★ 13` - Ergonomic CLI suite for Jev executing pick, rate, check, rank, triage, and guard commands from shell.
-  - 🎯 **Jevの判断箇所**: サブコマンドに応じて、シェル入力をChoice、Score、Noul、ランキング、ガードゲートに振り分け。
-  - 💡 **主な特徴**: Jevの全決定プリミティブをUnixライクなコマンドにまとめ、Bashパイプラインへ容易に統合。
-
-- [**rift**](https://github.com/exYze/rift) `★ 9` - High-performance Rust terminal TUI embedding Jev decision components for code assistance.
-  - 🎯 **Jevの判断箇所**: ターミナルコンテキストとカーソル位置のコードを分析し、最適な補完やリファクタリングを選択。
-  - 💡 **主な特徴**: Rustのゼロオーバーヘッドとサブセカンド判定を融合し、軽快なターミナル操作性を実現。
-
-- [**SemDecide**](https://github.com/sharziki/semdecide) `★ 5` - Unix command-line utility bringing Jev into terminal pipes and CI pipelines for semantic filtering and scoring.
-  - 🎯 **Jevの判断箇所**: Unixテキストストリーム上でリアルタイムの分類、スコアリング、しきい値ガードを直接実行。
-  - 💡 **主な特徴**: Python実行オーバーヘッドなしでBashスクリプトやCI/CDパイプラインに直接組み込み可能。
-
-- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - Experimental language decoder framing next-token generation as discrete choice queries to assemble sentences and select draft completions.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**typesafe-jev-workflow**](https://github.com/GiesN/typesafe-jev-workflow) `★ 4` - Async LangGraph workflow routing simulated emails to typed destination handlers via Jev Choice judgments.
-  - 🎯 **Jevの判断箇所**: 受信メールペイロードを離散的なカテゴリ選択（請求書 vs 一般問い合わせ等）に分類。
-  - 💡 **主な特徴**: 冗長なプロンプトオーバーヘッドなしで、決定論的なステートマシン分岐を提供。
-
-- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - Research chat decoder repeatedly querying Jev to select words or phrases from candidates, chaining choices into conversational responses.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - Terminal utility sending text or JSON to Jev to receive discrete booleans, choices, and scores directly into Unix script pipelines.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**jev-pref**](https://github.com/doeixd/jev-pref) `★ 2` - Turn AGENTS.md preferences into a fast, Jev-powered AI linter: define project-specific review rules in jev-pref.json, check hunks, staged files or PRs with Jev, and feed findings back to your coding agent.
-  - 🎯 **Jevの判断箇所**: 各設定ルールおよびコード変更ハンクごとに、変更がルールに違反しているかを判定。
-  - 💡 **主な特徴**: pre-commitやPR、エージェント向けのCLI。警告とブロッキングを明確に分離。
-
-- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - Terminal Q&A tool where generative models draft answers while Jev selects response personas, checks drafts, and triggers rewrites.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**jevcal**](https://github.com/abhixhek/jevcal) `★ 2` - Calibration and drift-detection toolkit for typed decision models against frontier LLM teachers.
-  - 🎯 **Jevの判断箇所**: 較正曲線、最適な信頼度しきい値、および経時的な分布ドリフトを計算。
-  - 💡 **主な特徴**: 信頼度の妥当性を体系的に検証し、意思決定の品質劣化を防止。
-
-- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - Fast context compaction utility for Pi coding agent pruning obsolete tool logs while preserving verbatim conversation text.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**todo-jev**](https://github.com/maker-KK/todo-jev) `★ 2` - Intelligent task classifier and 3-tier routing engine organizing todo items via Jev decisions.
-  - 🎯 **Jevの判断箇所**: タスクメモを優先度階層、実行コンテキスト、スケジュール枠に自動分類。
-  - 💡 **主な特徴**: 100ms未満の応答速度でバックログ整理とタスク優先度判定を自動化。
-
-- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - Windows Codex terminal command :jev verifying task progress and execution evidence against goal criteria.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) `★ 1` - Robot arm manipulation controller selecting discrete action primitives and target objects via high-speed Jev decisions.
-  - 🎯 **Jevの判断箇所**: シミュレーション状態に基づき、離散的なロボット基本スキルと目標座標を選択。
-  - 💡 **主な特徴**: 高レベルな離散スキル選択と低レベルなPDモーター制御を分離。
-
-- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - Command-line tool querying Jev with categorical, boolean, or scoring questions, returning structured JSON for shell scripting.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**jev-cli**](https://github.com/Nasrallah-AL/jev-cli) `★ 1` - Command-line interface for testing, dry-running, and piping structured Jev decisions in shell pipelines.
-  - 🎯 **Jevの判断箇所**: 標準入力から型付きJevクエリを実行し、パイプ処理用のJSONまたは構造化終了コードを出力。
-  - 💡 **主な特徴**: 標準的なBashおよびCIスクリプトにSystem One判定ゲートをシームレスに組み込み。
-
-- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - Experimental coding terminal using Jev for constrained grammatical choices to assemble AST syntax nodes and invoke local tools.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) `★ 1` - Sub-second Git pre-commit and pre-push semantic reflex gate powered by TypeSafe Jev.
-  - 🎯 **Jevの判断箇所**: ステージされた差分を走査し、ルール違反、アーキテクチャの逸脱、ハードコードされた秘密を分類。
-  - 💡 **主な特徴**: 約300msで動作する純Rustバイナリにより、コミットごとにシームレスな品質ゲートを適用。
-
-- [**jev-synergy-screening**](https://github.com/PistachioAIHQ/jev-synergy-screening) `★ 1` - High-throughput biomedical literature abstract triage pipeline for systematic reviews using typed Jev decisions.
-  - 🎯 **Jevの判断箇所**: 論文のタイトルと抄録（TIAB）を評価し、関連性を分類して採用確率をスコアリング。
-  - 💡 **主な特徴**: 高速セマンティック事前フィルタリングによりシステマティックレビューを劇的に加速。
-
-- [**LightJev**](https://github.com/rongxinzy/LightJev) `★ 1` - Lightweight training and evaluation framework for typed decision backbones, exploring CE/Brier loss on offline decision tasks.
-  - 🎯 **Jevの判断箇所**: ベンチマークデータセット全体で候補確率と離散選択の精度を評価。
-  - 💡 **主な特徴**: コンパクトなSystem One意思決定モデルのオフライン実験と評価を可能に。
-
-- [**pi-jev-compaction**](https://github.com/Wang-auspicious/pi-jev-compaction) `★ 1` - Context compaction utility for Pi retaining critical instructions and tool records via Jev scoring.
-  - 🎯 **Jevの判断箇所**: 過去のツール呼び出しの有用性をスコアリングし、モデル入力前に非本質的な出力をフィルタリング。
-  - 💡 **主な特徴**: 長時間のマルチステップコーディングセッションでもエージェントメモリをクリーンに維持。
-
-- [**TypeSafe AI Playground**](https://github.com/markjaquith/typesafe-ai-playground) `★ 1` - Rust CLI playground experimenting with PHI detection, code comment review, and sentiment classification.
-  - 🎯 **Jevの判断箇所**: 短いテキストに対してサブミリ秒のセマンティックパターンマッチングと属性判定を実行。
-  - 💡 **主な特徴**: ローカル環境でJevの判定プリミティブをテストする開発者に最適なサンドボックス。
-
-- [**jevscript**](https://github.com/amberwhitehead/jevscript) - Experimental language prototype embedding semantic judgment primitives directly into code scripts to evaluate bundled questions.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
----
-
-<a id="data-search-ja"></a>
-## 💾 データベース拡張・セマンティック検索
-
-*拡張機能不要のネイティブSQLセマンティック拡張、行レベルフィルタリング、リランキング。*
-
-- [**pg-jev**](https://github.com/realZachi/pg-jev) `★ 137` - pg-jev: Semantic query and classification layer applied over tabular databases and search indexes.
-  - 🎯 **Jevの判断箇所**: テーブルレコードに対してバッチセマンティックマッチングと条件評価を実行。
-  - 💡 **主な特徴**: 既存のSQLクエリ内で自然言語によるセマンティックフィルタリングを直接実現。
-
-- [**pg_typesafe**](https://github.com/giuliosmall/pg_typesafe) `★ 76` - Pre-alpha PostgreSQL C extension calling Jev directly within SQL queries for categorical classification.
-  - 🎯 **Jevの判断箇所**: SQL実行中に行テキストのJev分類を実行し、結果をSQLカラムとして返却。
-  - 💡 **主な特徴**: 外部スクリプトへのデータ転送を伴わずに、DBエンジン内で直接セマンティック分類を実行。
-
-- [**jev-search**](https://github.com/superagents-lab/jev-search) `★ 38` - jev-search: Semantic query and classification layer applied over tabular databases and search indexes.
-  - 🎯 **Jevの判断箇所**: テーブルレコードに対してバッチセマンティックマッチングと条件評価を実行。
-  - 💡 **主な特徴**: 既存のSQLクエリ内で自然言語によるセマンティックフィルタリングを直接実現。
-
-- [**duckdb-jev**](https://github.com/colliber/duckdb-jev) `★ 8` - DuckDB extension exposing typed Jev answers directly as native SQL types and expressions.
-  - 🎯 **Jevの判断箇所**: DuckDBクエリ内で行テキストに対してJev分類およびスコア判定を実行し、型付き列を生成。
-  - 💡 **主な特徴**: 列指向分析パイプライン内で直接、超高速なセマンティックラベリングとフィルタリングを実現。
-
-- [**jevsql**](https://github.com/EugeneBoondock/jevsql) `★ 3` - SQL engine with natural-language predicates powered by Jev for semantic filtering and ranking.
-  - 🎯 **Jevの判断箇所**: データセット行全体で自然言語条件の一致度を評価し、フィルタリングと並び替え順序を決定。
-  - 💡 **主な特徴**: 自動バッチ処理、コンテンツキャッシュ、コスト制限を備え、SQLにセマンティック認識を付与。
-
-- [**jevql**](https://github.com/kylemclaren/jevql) `★ 2` - Semantic SQL for vanilla Postgres without database extensions. Query rows with WHERE jev(), jev_prob, jev_choice, and jev_score via CLI and Go/TS/Python SDKs.
-  - 🎯 **Jevの判断箇所**: Noul、Choice、Scoreの判定を用いてテーブル行候補を評価し、クライアント側のセマンティックフィルタリングやソートを実行。
-  - 💡 **主な特徴**: 自動バッチ処理、並行処理プール、コンテンツ連動キャッシュを備えた2パスクライアント実行。
-  - 🌐 [オンラインデモ](https://jevql.fly.dev/)
-
-- [**llama-index-jev**](https://github.com/WiktorB2004/llama-index-jev) `★ 2` - Reranker and semantic router for LlamaIndex leveraging Jev for typed document scoring and choice.
-  - 🎯 **Jevの判断箇所**: 候補ドキュメントの関連度をスコアリングし、特化型インデックスコレクションへクエリを振り分け。
-  - 💡 **主な特徴**: 重いLLM-as-a-judgeリランキングに代わる、より高速で経済的な選択肢。
-
----
-
-<a id="browser-os-action-ja"></a>
-## 🌐 ブラウザ・デスクトップ自動化
-
-*DOMアクセシビリティツリー解析、自律型ブラウザ操作、デスクトップGUI自動化。*
-
-- [**cua**](https://github.com/trycua/cua) `★ 23548` - cua: Open-source computer use infrastructure using jev-use driver for discrete desktop and browser actions, with open-source CUA-S1 model family.
-  - 🎯 **Jevの判断箇所**: 有界なUI状態と画面領域テーブルを評価し、具体的なクリック、フォーカス、ショートカット操作を決定。
-  - 💡 **主な特徴**: OS制御を高速な離散アクションに分解することで、低速なマルチモーダル計画ループをバイパス。
-
-- [**jev-ultrafast**](https://github.com/browser-use/jev-ultrafast) `★ 4673` - Ultra-fast browser agent using Jev for per-step DOM action decisions. Complete Google Flights search in ~7.1s.
-  - 🎯 **Jevの判断箇所**: 1回のリクエストで次のアクションと対象DOM要素を決定し、テキスト入力のみをテキストモデルに委譲。
-  - 💡 **主な特徴**: UI操作とテキスト生成を分離し、冗長なページ評価を大幅に削減。
-
-- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - Desktop GUI automation co-processor navigating native accessibility trees to pick next buttons, menus, and controls step-by-step.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**Agent**](https://github.com/AgentiLoop/Agent) `★ 616` - macOS native autonomous agent bundling TypeSafeKit for fast OS action decisions and scripting.
-  - 🎯 **Jevの判断箇所**: アプリ状態とユーザー目標を評価し、次のmacOSネイティブ自動化アクションと引数を選択。
-  - 💡 **主な特徴**: Swiftネイティブ実装とJevの構造化判断を統合し、OS操作の計画遅延を最小化。
-
-- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - Mobile test runner for omg.dev inspecting accessibility trees via Jev to pick controls and detect step completion or stalls.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**typesafe-computer-use**](https://github.com/awlevin/typesafe-computer-use) `★ 237` - typesafe-computer-use: Ultra-low-cost macOS computer use combining deterministic OCR with Jev discrete action choices at ~$0.0002 per step.
-  - 🎯 **Jevの判断箇所**: 目標に照らして画面要素リストを比較し、候補の中から次のアトミックなクリックまたはキーストロークを選択。
-  - 💡 **主な特徴**: マルチモーダルLLMへの高解像度スクリーンショット送信を回避し、莫大なトークン費用と画像処理の遅延を解消。
-
-- [**jev-browser-use**](https://github.com/wy-coliney/jev-browser-use) `★ 132` - Browser automation by EZCollegeApp where Jev handles clicks and Codex plans, speeding ops 5–10x.
-  - 🎯 **Jevの判断箇所**: 軽量DOM候補から具体的なクリック対象、フォーム入力、スクロール操作を決定。
-  - 💡 **主な特徴**: 局所的操作と大局的計画を分離し、処理速度を5〜10倍向上させつつマルチモーダルコストを削減。
-
-- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - Android automation agent where Jev selects target apps and UI elements while Mobilerun performs clicks and inputs.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - Computer-use co-processor where Codex defines high-level goals while Jev selects consecutive UI controls for execution.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - End-to-end browser agent navigating URLs, clicking controls, filling forms, and logging per-step action audit trails.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**plasmallm**](https://github.com/joshuaeroman/plasmallm) `★ 28` - KDE Plasma desktop widget adapter introducing Jev decision gates for desktop interactions.
-  - 🎯 **Jevの判断箇所**: デスクトップでのユーザー意図を評価し、ローカルショートカット、対話、ツール呼び出しを分岐。
-  - 💡 **主な特徴**: 日常的なデスクトップ操作において、重いクラウドモデルを呼ばずに100ms未満で意図を分類。
-
-- [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) `★ 14` - Jev-cu: Desktop Computer Use co-processor delegating "where to click next" to Jev System One from text candidates without raw screenshots.
-  - 🎯 **Jevの判断箇所**: UIテキストの候補から次の操作対象、アクション種別、完了度、およびリスクレベルを直接評価。
-  - 💡 **主な特徴**: テキストのみの候補評価によりマルチモーダルトークンの消費と遅延を大幅削減し、厳格なローカルポリシーゲートを適用。
-
-- [**jev-browser**](https://github.com/Ying-Kai-Liao/jev-browser) `★ 12` - Hybrid browser automation where an LLM plans and Jev decides low-level clicks and interactions.
-  - 🎯 **Jevの判断箇所**: アクセシビリティツリーから具体的なDOMセレクタとインタラクション種別を選択。
-  - 💡 **主な特徴**: ライブラリ、CLI、MCPを提供し、Web自動化における探索待機時間とコストを抑制。
-
-- [**jev-ego**](https://github.com/romaluev/jev-ego) `★ 4` - Fast browser agent for ego lite executing one TypeSafe request per step to pick the next move.
-  - 🎯 **Jevの判断箇所**: 操作可能な要素を評価し、クリック、テキスト入力、スクロール、フォーム送信を選択。
-  - 💡 **主な特徴**: ステップごとの多段推論ループを排除し、フォーム入力やナビゲーションを大幅に高速化。
-
-- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - Browser copilot executing button clicks and form fills while enforcing policy pauses on high-risk actions like payments or deletions.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - macOS application control in Go using Jev to pick UI controls and next actions directly from accessibility trees.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - Decision co-processor for Aside browser agent selecting the next atomic action from candidate lists before DOM execution.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - Playwright automation library driven by Jev decisions for clicking controls, filling forms, and scraping data via CLI, MCP, and SDK.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**ego-jev**](https://github.com/phd-peter/ego-jev) - Integrates Jev with Ego Lite browser agent. Reads semantic snapshots to decide DOM clicks and wheel scrolls, delegating text entry to LLMs.
-  - 🎯 **Jevの判断箇所**: ページスナップショットから候補アクション空間を評価し、単一リクエストで対象コントロールと操作種別を選択。
-  - 💡 **主な特徴**: 1秒未満のブラウザループのために、重いビジョンモデルを軽量セマンティックスナップショットに置き換え。
-
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - Grok Build integration connecting Jev Ultrafast to existing Chrome browser tabs with PowerShell startup scripts.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - macOS local interaction loop reading on-screen OCR and accessibility elements, querying Jev to pick and click the next target.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**openclaw-typesafe-ai**](https://github.com/Olli0103/openclaw-typesafe-ai) - OpenClaw web scraping adapter incorporating Jev decisions for target selection and captcha triage.
-  - 🎯 **Jevの判断箇所**: ページ構造を分析し、ページネーションセレクタ、動的トリガー、スクレイピング防止壁を判別。
-  - 💡 **主な特徴**: 決定論的な型セレクタでスクレイピングを制御し、動的Webレイアウトに対する耐性を向上。
-
----
-
-<a id="context-gc-filter-ja"></a>
-## 🧹 コンテキスト圧縮・ノイズ除去
-
-*トークン節約、プロンプトコンテキストの不要情報整理、タイムラインのノイズ除去。*
-
-- [**fast-jev-compaction**](https://github.com/tamaratran/fast-jev-compaction) `★ 2645` - fast-jev-compaction: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.
-  - 🎯 **Jevの判断箇所**: 現在のタスク目標に対する関連性を1行ずつ判定し、冗長なトークンノイズを破棄。
-  - 💡 **主な特徴**: コンテキストウィンドウの消費を抑え、長時間セッションでの推論劣化を防止。
-
-- [**skillbox**](https://github.com/kitze/skillbox) `★ 149` - skillbox: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.
-  - 🎯 **Jevの判断箇所**: 現在のタスク目標に対する関連性を1行ずつ判定し、冗長なトークンノイズを破棄。
-  - 💡 **主な特徴**: コンテキストウィンドウの消費を抑え、長時間セッションでの推論劣化を防止。
-
-- [**bluenoise**](https://github.com/rokcso/bluenoise) `★ 82` - X/Twitter browser extension filtering noise. Uses local rules first, batching ambiguous replies to Jev for noise probability scoring (filters at >=0.9).
-  - 🎯 **Jevの判断箇所**: 1リクエストあたり最大25件の返信候補をバッチ処理し、ノイズ確率（Noul）を判定してDOM表示を制御。
-  - 💡 **主な特徴**: X API依存ゼロ。高速なローカル一致とJevセマンティック判定を組み合わせタイムラインを浄化。
-
-- [**jev-pruner**](https://github.com/tamaratran/jev-pruner) `★ 17` - Claude Code plugin trimming voluminous Bash and command outputs with Jev before model ingestion.
-  - 🎯 **Jevの判断箇所**: コマンド出力ブロックのエラー関連性とコンテキスト有用性を評価し、保持またはトリミングを決定。
-  - 💡 **主な特徴**: 後続のプロンプトトークン消費を大幅に削減し、ノイズの多いログによるコンテキスト飽和を防止。
-
-- [**Winnow**](https://github.com/GhalebDweikat/winnow) `★ 13` - Context garbage collector for Claude Code pruning voluminous bash, grep, and file outputs.
-  - 🎯 **Jevの判断箇所**: ターミナルやツールの出力を瞬時にフィルタリングし、現在のバグに直接関連する行のみを抽出。
-  - 💡 **主な特徴**: ノイズの多いログによるエージェントのコンテキスト飽和と推論能力低下を防止。
-
-- [**jevlogs**](https://github.com/reachjalil/jevlogs) `★ 5` - jevlogs: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.
-  - 🎯 **Jevの判断箇所**: 現在のタスク目標に対する関連性を1行ずつ判定し、冗長なトークンノイズを破棄。
-  - 💡 **主な特徴**: コンテキストウィンドウの消費を抑え、長時間セッションでの推論劣化を防止。
-
-- [**jev-skill-gate**](https://github.com/ShivamPansuriya/jev-skill-gate) `★ 2` - jev-skill-gate: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.
-  - 🎯 **Jevの判断箇所**: 現在のタスク目標に対する関連性を1行ずつ判定し、冗長なトークンノイズを破棄。
-  - 💡 **主な特徴**: コンテキストウィンドウの消費を抑え、長時間セッションでの推論劣化を防止。
-
-- [**pi-jev-context**](https://github.com/kevinpita/pi-jev-context) `★ 2` - Reversible context pruning for Pi powered by Jev, keeping useful context without deleting history.
-  - 🎯 **Jevの判断箇所**: ツール実行結果と対話を検査し、保持・折りたたみ・参照ポインタへの置き換えを決定。
-  - 💡 **主な特徴**: プロンプトの簡潔さを維持しながら元の履歴を保持する完全可逆設計を実現。
-
-- [**jev-context**](https://github.com/zbush/jev-context) `★ 1` - jev-context: Prunes extraneous tool outputs, logs, and grep results before feeding LLM context.
-  - 🎯 **Jevの判断箇所**: 現在のタスク目標に対する関連性を1行ずつ判定し、冗長なトークンノイズを破棄。
-  - 💡 **主な特徴**: コンテキストウィンドウの消費を抑え、長時間セッションでの推論劣化を防止。
-
-- [**your-signal**](https://github.com/MithrilMan/your-signal) `★ 1` - Open-source BYOK Chrome extension using Jev to filter spam and low-signal posts from X timelines.
-  - 🎯 **Jevの判断箇所**: ツイート本文と文脈を評価し、有益な技術的議論と無価値な宣伝ノイズを判別。
-  - 💡 **主な特徴**: 無関係な投稿をクライアント側でスマートに非表示化し、いつでも即座に復元可能。
-
-- [**pi-jev-compact**](https://github.com/ilkerulusoy/pi-jev-compact) - Context compression extension for Pi coding agent using Jev to identify and prune redundancy.
-  - 🎯 **Jevの判断箇所**: 現在のタスクに対する過去ログや対話ターンの必要性を評価し、圧縮対象を特定。
-  - 💡 **主な特徴**: 長時間のコーディングセッションにおいてコンテキスト領域を回復し、推論の劣化を防止。
-
----
-
-<a id="security-guardrails-ja"></a>
-## 🛡️ セキュリティ・ガードレール
-
-*プロンプトインジェクション防御、コンテンツモデレーション、ポリシー適合性検査。*
-
-- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - Security guardrail example for Agentgateway auditing model requests and responses for jailbreaks, harm, and secret leakage.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - Rule audit evaluator for coding agents combining deterministic checks with Jev semantic scoring for supplementary judgment.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - Risk guard for Pi coding agent verifying command boundaries pre-execution and auditing logs post-execution for secret leakage.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - Distraction-free browser extension using Jev to detect ads, promo banners, and paywall popups, caching clean CSS rules locally.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - Rule inspector for Pi coding agent verifying file modifications against repository conventions and checking command risks before execution.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) `★ 50` - Experimental Chrome extension querying Jev whether a DOM element is an ad and removing it directly.
-  - 🎯 **Jevの判断箇所**: DOMノードのテキストと属性を評価し、ネイティブ広告やスポンサーコンテンツを分類。
-  - 💡 **主な特徴**: 膨大な静的ルールリストを回避し、通常のデザインに偽装した広告をセマンティックに検知。
-
-- [**vibecheck**](https://github.com/RafalWilinski/vibecheck) `★ 30` - Chrome extension vibe-checking X posts with TypeSafe Jev before hitting Post.
-  - 🎯 **Jevの判断箇所**: 投稿前のドラフトを走査し、炎上リスク、攻撃的表現、プライバシーリスクを分類。
-  - 💡 **主な特徴**: SNS投稿前に即座に自己点検ゲートを提供し、オンライン上での評判リスクを保護。
-
-- [**Jev-Moderation-Bot**](https://github.com/brainstormity/Jev-Moderation-Bot) `★ 28` - Chat moderation bot using Jev for low-latency violation triage and automated enforcement.
-  - 🎯 **Jevの判断箇所**: チャットメッセージ内の嫌がらせ、スパム、ヘイト、悪意あるリンクを信頼度付きで判定。
-  - 💡 **主な特徴**: 高価な生成モデルを介さずに、高スループットなチャットルームをミリ秒単位で保護。
-
-- [**snifftest**](https://github.com/DanRWilloughby/snifftest) `★ 14` - Prose linter detecting AI writing patterns using deterministic rules and Jev decision scoring.
-  - 🎯 **Jevの判断箇所**: 文章段落を評価し、定型的な接続詞、不自然な過剰表現、機械的な対称構文を検知。
-  - 💡 **主な特徴**: 構文統計とセマンティック判定を組み合わせ、文単位の精緻なフィードバックを依存ゼロで提供。
-
-- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - Execution gatekeeper for Pi coding agent passing safe commands immediately while routing ambiguous actions to Jev with default-deny policies.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**Safer with Jev**](https://github.com/andrelandgraf/typesafe-on-neon) `★ 3` - Serverless request router on Neon evaluating incoming queries and dispatching to specialized frontier models.
-  - 🎯 **Jevの判断箇所**: コールドスタートなしでユーザー意図（簡単なQ&A vs 複雑なコーディング vs 推論）を瞬時に分類。
-  - 💡 **主な特徴**: モデルの階層化を最適化しながらグローバルレイテンシを最小化。
-
-- [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) `★ 2` - JevNoiseGate: Android notification and SMS noise gate using Jev to classify and suppress spam ads while strictly failing open on OTP verification codes.
-  - 🎯 **Jevの判断箇所**: キャプチャした通知やSMSのテキストをJevに送信し、メッセージが広告ノイズであるかを判定。
-  - 💡 **主な特徴**: 脆弱なキーワードブラックリストを堅牢なセマンティックフィルタリングに置き換え、認証コードの誤遮断をゼロに。
-
-- [**jev-cvss**](https://github.com/Red5d/jev-cvss) `★ 2` - Security vulnerability triage utility evaluating CVE descriptions to predict CVSS v3.1 metrics.
-  - 🎯 **Jevの判断箇所**: 非構造化な説明文から攻撃ベクトル、複雑性、特権要件、影響度の離散値を抽出。
-  - 💡 **主な特徴**: JSONフォーマット崩れなしにミリ秒単位で確定的な脆弱性ベクトルスコアを出力。
-
-- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - Tool invocation guardrail for coding agents checking command safety, user intent alignment, and prompt injection in tool outputs.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - Pre-action judgment gate for coding agents deciding whether to prompt the user, reject risky commands, or retry on failures.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**oc-auto-perms**](https://github.com/OpeOginni/oc-plugins) `★ 2` - oc-auto-perms: Intent-aware permission plugin for OpenCode V2 using natural language policies evaluated by Jev across shell and network tool invocations.
-  - 🎯 **Jevの判断箇所**: ユーザーの対話履歴とツールの引数を総合評価し、実行意図がセキュリティポリシー規則に適合しているかを判定。
-  - 💡 **主な特徴**: 静的な正規表現マッチングを超越：ツール選択に依存せずセマンティックな意図からポリシー違反を検知。
-
-- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - Tool permission gate for Vercel AI SDK vetting tool requests before execution and filtering out unused tool schemas.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
----
-
-<a id="mcp-integrations-ja"></a>
-## 🧩 MCP プロトコル・ツール拡張
-
-*Model Context Protocol（MCP）に準拠した標準意思決定サーバーとツール群。*
-
-- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - Decision layer for Composio toolsets selecting optimal tools from catalogs and populating enumerated parameter fields.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**vellum-assistant**](https://github.com/vellum-ai/vellum-assistant) `★ 1285` - vellum-assistant: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**ai**](https://github.com/hackclub/ai) `★ 133` - ai: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**taskuary**](https://github.com/ldbumble/taskuary) `★ 102` - taskuary: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jev-mcp**](https://github.com/jkudish/jev-mcp) `★ 67` - Pragmatic MCP utility suite packaging real-time fact-checking, prompt injection guards, and semantic reranking.
-  - 🎯 **Jevの判断箇所**: 出力の安全性と事実整合性を即座に2値判定し、候補のリランキングを実施。
-  - 💡 **主な特徴**: 最先端モデルの極めてわずかなコストで軽量な安全ガードレールを適用。
-
-- [**typesafe-mcp**](https://github.com/itsmostafa/typesafe-mcp) `★ 59` - MCP server connecting Jev directly into Claude Code, Claude Desktop, and Codex as a decision co-processor.
-  - 🎯 **Jevの判断箇所**: 自律型LLMエージェントに対してオンデマンドで構造化判断（Choice / Score / Noul）を提供。
-  - 💡 **主な特徴**: 最先端モデルの遅延なしに、エージェントが100ms未満で多肢選択決定を行えるよう支援。
-
-- [**synkora-ai**](https://github.com/getsynkora/synkora-ai) `★ 34` - synkora-ai: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**pi-typesafe**](https://github.com/DevMortimer/pi-typesafe) `★ 14` - Extension suite for Pi coding agent providing batch Jev evaluation, terminal playground, and APIs.
-  - 🎯 **Jevの判断箇所**: Piセッション内で候補ファイルやコード修正案を一括評価し、構造化された推奨事項を返却。
-  - 💡 **主な特徴**: Pi拡張機能開発者向けに即座に利用可能な判断ツールと対話型サンドボックスを提供。
-
-- [**Jevbridge**](https://github.com/gamesonrblx/Jevbridge) `★ 13` - Jevbridge: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**cline-plugin-jev-browser**](https://github.com/abeatrix/cline-plugin-jev-browser) `★ 12` - cline-plugin-jev-browser: Cline desktop browser plugin routing through Vercel AI Gateway to execute DOM element selection and sub-second clicks via Jev.
-  - 🎯 **Jevの判断箇所**: 軽量DOMツリーとタスクコンテキストを受け取り、ページ操作アクションと対象セレクタを返却。
-  - 💡 **主な特徴**: ブラウザ操作を型安全な決定的列挙型に制約し、エージェントの誤動作や迷走を低減。
-
-- [**jev**](https://github.com/dannote/jev) `★ 10` - jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jev-mcp**](https://github.com/blakestone-x/jev-mcp) `★ 7` - Pragmatic MCP utility suite packaging real-time fact-checking, prompt injection guards, and semantic reranking.
-  - 🎯 **Jevの判断箇所**: 出力の安全性と事実整合性を即座に2値判定し、候補のリランキングを実施。
-  - 💡 **主な特徴**: 最先端モデルの極めてわずかなコストで軽量な安全ガードレールを適用。
-
-- [**pi-jev**](https://github.com/TheoOliveira/pi-jev) `★ 6` - pi-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**zod-jev**](https://github.com/jomatsu/zod-jev) `★ 6` - zod-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**JevRouter**](https://github.com/BillionsBobby/JevRouter) `★ 4` - Local-first agent capability router coordinating models, tools, and subagents with Jev decision gates.
-  - 🎯 **Jevの判断箇所**: 安全性と権限ポリシーを適用しながら、最適な実行エージェントとツールを選択。
-  - 💡 **主な特徴**: 異種エージェント機能を単一の型安全なルーティング層に統合。
-
-- [**daf-jev**](https://github.com/docxology/daf-jev) `★ 3` - daf-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**hermes-jev-approvals**](https://github.com/anpicasso/hermes-jev-approvals) `★ 3` - hermes-jev-approvals: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jevex**](https://github.com/jvsteiner/jevex) `★ 3` - jevex: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jevwire**](https://github.com/Brainwires/jevwire) `★ 3` - Agent decision layer providing an MCP server, embeddable library, and Claude Code escalation plugin.
-  - 🎯 **Jevの判断箇所**: タスクのリスクと複雑性を評価し、上位モデルへ処理をエスカレーションすべきタイミングを判定。
-  - 💡 **主な特徴**: 組み込み可能な判定ゲートにより、高コストな最先端モデルの不要な呼び出しを削減。
-
-- [**jev-mcp**](https://github.com/rashedInt32/jev-mcp) `★ 2` - Pragmatic MCP utility suite packaging real-time fact-checking, prompt injection guards, and semantic reranking.
-  - 🎯 **Jevの判断箇所**: 出力の安全性と事実整合性を即座に2値判定し、候補のリランキングを実施。
-  - 💡 **主な特徴**: 最先端モデルの極めてわずかなコストで軽量な安全ガードレールを適用。
-
-- [**jev-workbench**](https://github.com/molis-ai/jev-workbench) `★ 2` - jev-workbench: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**laravel-typesafe-jev**](https://github.com/Butochnikov/laravel-typesafe-jev) `★ 2` - laravel-typesafe-jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**tenbin**](https://github.com/simota/tenbin) `★ 2` - MCP server and agent skill decomposing judgments into Choice/Score/Noul queries with calibration.
-  - 🎯 **Jevの判断箇所**: MCPエージェントに標準化されたJevツールを提供し、コード内で較正されたしきい値検査を強制。
-  - 💡 **主な特徴**: プロンプト構造と信頼度較正を標準化し、テスト可能で決定論的なエージェントロジックを実現。
-
-- [**codex-jev-compaction**](https://github.com/Wang-auspicious/codex-jev-compaction) `★ 1` - Jev-powered context curation skill for Codex generating compact, traceable task handoff packages.
-  - 🎯 **Jevの判断箇所**: 過去の会話ステップとツールログを評価し、エージェント引き継ぎに必要な重要コンテキストを抽出。
-  - 💡 **主な特徴**: プロンプトトークンを大幅に節約しながら、幻覚のないコンパクトな引き継ぎ状態を生成。
-
-- [**jev_ampcode**](https://github.com/thesammykins/jev_ampcode) `★ 1` - jev_ampcode: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jev-classifier**](https://github.com/felpsdev/jev-classifier) `★ 1` - Local tool-routing classifier and gateway for coding agents with decision logging.
-  - 🎯 **Jevの判断箇所**: プロンプトの意図を評価し、特化型ツールやエージェントプラグインへタスクを振り分け。
-  - 💡 **主な特徴**: エージェントのツールセットを制御することで、呼び出しの乱立を防ぎ遅延を削減。
-
-- [**jev-go**](https://github.com/Stumble/jev-go) `★ 1` - jev-go: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jev-go**](https://github.com/guillemus/jev-go) `★ 1` - jev-go: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jev-mcp**](https://github.com/BYK/jev-mcp) `★ 1` - Evaluation-first Model Context Protocol (MCP) server providing typed Jev decision tools.
-  - 🎯 **Jevの判断箇所**: 較正されたChoice、Score、Noulの判定機能をClaude DesktopやCursorに直接提供。
-  - 💡 **主な特徴**: あらゆるMCP準拠エージェントに即座に組み込み可能な意思決定プリミティブを提供。
-
-- [**jev-resilience**](https://github.com/Vicente-MD/jev-resilience) `★ 1` - jev-resilience: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jevgo**](https://github.com/fgn/jevgo) `★ 1` - jevgo: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
-  - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
-  - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
-
-- [**jevscan**](https://github.com/jevbook/jevscan) `★ 1` - On-chain token risk scanner providing typed EVM safety verdicts, rug risk, and liquidity health scores.
-  - 🎯 **Jevの判断箇所**: コントラクトのバイトコードと流動性プール指標を評価し、ape/watch/avoidの格付けを出力。
-  - 💡 **主な特徴**: リアルタイムのDeFiテレメトリと即座のマシンリスクスコアリングを融合。
-
-- [**n8n-nodes-typesafe-jev**](https://github.com/n3ndor/n8n-nodes-typesafe-jev) - n8n community node introducing TypeSafe Jev structured AI decision capabilities to workflows.
-  - 🎯 **Jevの判断箇所**: ワークフローイベントデータを評価し、カテゴリ、スコア、真偽判定を出力して処理を分岐。
-  - 💡 **主な特徴**: ノーコード/ローコード環境において、カスタムコード不要で決定論的な判定分岐を導入可能。
-
----
-
-<a id="codebase-graph-pathfinding-ja"></a>
-## 🧭 コードベース解析・グラフ探索
-
-*コード依存関係ナビゲーション、ASTシンボル検査、コードレビュー支援、知識グラフ探索。*
-
-- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - PR review assistant for Celesto verifying whether suspected issues are introduced by the diff, supported by evidence, and worth fixing.
-  - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
-  - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
-
-- [**Jev Review**](https://github.com/devagrawal09/jev-review) `★ 241` - Code review triage engine assessing correctness, security, reliability, and compatibility before deep review.
-  - 🎯 **Jevの判断箇所**: 変更差分のリスク次元を事前にスコアリングし、最先端モデルが精査すべき高リスク箇所を特定。
-  - 💡 **主な特徴**: 定型的な差分ではなく、重要なコード変更に高価なモデル推論を集中。
-
-- [**jev-review**](https://github.com/NiazMorshed2007/jev-review) `★ 111` - Code review triage engine assessing correctness, security, reliability, and compatibility before deep review.
-  - 🎯 **Jevの判断箇所**: 変更差分のリスク次元を事前にスコアリングし、最先端モデルが精査すべき高リスク箇所を特定。
-  - 💡 **主な特徴**: 定型的な差分ではなく、重要なコード変更に高価なモデル推論を集中。
-
-- [**commit-miner**](https://github.com/devanshbatham/commit-miner) `★ 22` - Classify Git commit diffs and messages with Jev into bug fixes, security CWEs, and change types.
-  - 🎯 **Jevの判断箇所**: 差分ハンクとコミットメッセージを走査し、リファクタリング、新機能、CWE修正へ分類。
-  - 💡 **主な特徴**: Rustによる高速実装で、数千件のコミット履歴を迅速に分析してセキュリティ情報を抽出。
-
-- [**neo4jev**](https://github.com/jexp/neo4jev) `★ 16` - Knowledge graph pathfinder scoring candidate edges with Jev and traversing paths via beam search.
-  - 🎯 **Jevの判断箇所**: 低遅延な探索のために候補グラフ関係に遷移確率を割り当て。
-  - 💡 **主な特徴**: マルチホップグラフ推論を桁違いに高速化。
-
-- [**Blink**](https://github.com/ellipsis-dev/blink) `★ 14` - Semantic pathfinder navigating large codebases without vector indexes using beam search.
-  - 🎯 **Jevの判断箇所**: 階層ごとに候補ファイルとディレクトリを評価し、関連性の高いパスへ探索バジェットを配分。
-  - 💡 **主な特徴**: 事前インデックスなしで大規模リポジトリ内の関連ファイルを即座に特定。
-
-- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - Assistant for coding agents locating relevant files, verifying task adherence, and triaging test failure logs and review comments.
-  - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
-  - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
-
-- [**leanest**](https://github.com/baronunread/leanest) `★ 3` - Local-first test selector using Jev judgments to pinpoint tests affected by code changes.
-  - 🎯 **Jevの判断箇所**: 差分ロジックと関数シグネチャを分析し、変更の影響を受けるテストサブセットを抽出。
-  - 💡 **主な特徴**: 軽微な変更で全テストを実行する無駄を省き、開発フィードバックループを数秒に短縮。
-
-- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - Triage reviewer for Claude Code scoring bug hypotheses, troubleshooting ideas, and design options to prioritize engineer attention.
-  - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
-  - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
-
-- [**jev-flash-review**](https://github.com/TheBous/jev-flash-review) `★ 1` - Local-first code review triage engine returning structured verdicts on candidate diff hunks.
-  - 🎯 **Jevの判断箇所**: ビジネス意図に照らしてコード差分を評価し、詳細レビュー前に高リスクパスを特定。
-  - 💡 **主な特徴**: ソースコードのプライバシーを守りながら、レビュー範囲を高リスク箇所に絞り込み。
-
-- [**jev-scout**](https://github.com/AkashPriyadarshii/jev-scout) `★ 1` - Zero-hallucination repo and crate scout combining web search with Jev System One scoring.
-  - 🎯 **Jevの判断箇所**: 候補リポジトリのREADME、活動指標、スタック互換性を評価し、最適な選択肢を抽出。
-  - 💡 **主な特徴**: 存在しない架空パッケージの幻覚を排除し、検証済みの実在リポジトリを瞬時に提示。
-
-- [**PiJ**](https://github.com/tonyzdev/PiJ) `★ 1` - A terminal coding agent built on Pi. The coding model handles reasoning, edits, and tool use; Jev provides advisory skill suggestions, reranks source candidates, and triages tool failures while preserving original paths, line numbers, source text, and error output.
-  - 🎯 **Jevの判断箇所**: Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.
-  - 💡 **主な特徴**: Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.
-
-- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - Supervision gatekeeper for Codex workers evaluating milestone progress and enforcing acceptance command runs prior to completion.
-  - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
-  - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
-
----
-
-<a id="routing-cost-optimization-ja"></a>
-## 🔀 モデルルーティング・コスト最適化
-
-*タスク難易度の自動判定、多層モデルルーティング、API利用コストの大幅削減。*
-
-- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - Complexity-based request router for LiteLLM evaluating task difficulty via Jev before dispatching to appropriate model tiers.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - Decision companion for Oh My Pi agent evaluating reasoning effort depth, unexpected stalls, and git staging classifications.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-model-router**](https://github.com/davila7/claude-code-templates) `★ 30779` - jev-model-router: Claude Code mod using Jev to evaluate task difficulty, reasoning effort, and blast radius in one call to route subagents dynamically.
-  - 🎯 **Jevの判断箇所**: タスクの難易度階層、推論深度、本番リスクを並行評価し、Claude Codeへ最適なモデル設定を動的注入。
-  - 💡 **主な特徴**: 軽微なタスクへの過剰支出を防ぎつつ、高リスクなコード変更に対して厳格な高信頼度しきい値を適用。
-
-- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - Automated model router for OpenChamber classifying prompt intent to select mapped models and reasoning effort tiers.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - Task assignment assistant for Firstmate evaluating job briefs to match dispatch rules and select specialized agent configs.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - Optional decision backend for Atomic coding agent delegating discrete routing choices to Jev while reserving code generation for LLMs.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - Task dispatch router for VexJoy agent classifying requirements to select expert agents, skills, and execution workflows.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - Dispatch assistant for WrongStack coding agent selecting the most suitable specialist sub-agent when multiple experts match.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) `★ 50` - Rust CLI using Jev to rank agent skills for the next step based on live session context.
-  - 🎯 **Jevの判断箇所**: ステップごとに候補スキルをスコアリングして並べ替え、最も適切なツールを選択または棄権。
-  - 💡 **主な特徴**: 過剰なツールによるエージェントの迷走を防ぎ、Claude Codeフックを通じて判断精度を向上。
-
-- [**Jev Codex Router**](https://github.com/0xNatoshi/jev-codex-router) `★ 26` - Smart request router evaluating turn difficulty with Jev to route between cheap and frontier models.
-  - 🎯 **Jevの判断箇所**: モデル実行前に技術タスクの複雑性とコンテキスト深度を事前推定。
-  - 💡 **主な特徴**: 237ターンの実測テストで、API利用料金を約60%削減。
-
-- [**typesafe-skill-router**](https://github.com/DECRUX9812/typesafe-skill-router) `★ 7` - Skill router for Hermes Agent selecting the single optimal skill to load prior to model calls.
-  - 🎯 **Jevの判断箇所**: 多数のエージェントスキル候補からユーザープロンプトを照合し、ロードすべき単一のツールを選択。
-  - 💡 **主な特徴**: 全ツールのスキーマをプロンプトに埋め込む必要がなくなり、トークン消費とTTFTを大幅に短縮。
-
-- [**jev**](https://github.com/BorisLeMeec/jev) `★ 6` - Claude Code Go plugin utilizing Jev for rapid model tiering and context optimization.
-  - 🎯 **Jevの判断箇所**: 変更の複雑さと指示の意図を評価し、軽量モデルと上位モデルの間で処理を振り分け。
-  - 💡 **主な特徴**: 外部依存関係のない単一のGoバイナリプラグインにより、日々の開発APIコストを削減。
-
-- [**hermes-jev**](https://github.com/keeltrace/hermes-jev) `★ 4` - Typed System One decisions, ranking, and opt-in tool gating for Hermes Agent using Jev.
-  - 🎯 **Jevの判断箇所**: 候補ツールを評価してアクセスゲートを適用し、不要なツール呼び出しによる迷走を防止。
-  - 💡 **主な特徴**: ツール選択肢を必要最小限に絞り込み、長時間の複雑タスクにおける実行成功率を向上。
-
-- [**SpecPi**](https://github.com/TannerMidd/SpecPi) `★ 4` - Minimal harness for Pi coding agent featuring Jev advisor extension for parameter optimization.
-  - 🎯 **Jevの判断箇所**: コード変更規模と依存深度を評価し、適切なモデルティアとコンテキスト配分を推奨。
-  - 💡 **主な特徴**: 過剰な抽象化を排除した軽量設計により、的確なルーティングでトークン消費を抑制。
-
-- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - Customer support triage demo evaluating full question sets in a single Jev request to route tickets and escalate to humans.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - Interactive model router playground using Jev to pick optimal LLMs from a candidate pool and comparing output quality.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
----
-
-<a id="domain-vertical-tools-ja"></a>
-## 📊 専門分野・バーティカルツール
-
-*DeFi、クオンツ取引、コンプライアンス、法務など特定領域に特化した業務システム。*
-
-- [**tax-doc-classifier**](https://github.com/kyotofin/tax-doc-classifier) `★ 155` - Tax document page classifier built on Jev achieving 100% accuracy across 261 IRS forms.
-  - 🎯 **Jevの判断箇所**: 抽出されたOCRテキストを分析し、261種類のIRS税務フォーム候補から正確な種別を判定。
-  - 💡 **主な特徴**: 261種類の大規模候補空間において100%の厳格精度を達成し、ページあたり約$0.001で処理。
-
-- [**goodwatch-monorepo**](https://github.com/alp82/goodwatch-monorepo) `★ 38` - Movie and TV show discovery platform using Jev for prototype comparisons and taste affinity scoring.
-  - 🎯 **Jevの判断箇所**: 映画のメタデータ特徴とユーザーの好みを照合し、おすすめ適合度をスコアリング。
-  - 💡 **主な特徴**: 単純なベクトル類似度を超え、複雑な嗜好境界に対応して高適合なニッチ作品を発掘。
-
-- [**Prism**](https://github.com/irfndi/prism-liquidity-agent) `★ 32` - DeFi liquidity agent detecting toxic flow, market stress, and pool distribution in shadow mode.
-  - 🎯 **Jevの判断箇所**: 高頻度推論により平均回帰確率と流動性スキューを瞬時に評価。
-  - 💡 **主な特徴**: 秒単位の金融リスク監視にLLMレベルのセマンティック認識能力を導入。
-
-- [**Jev-Trades**](https://github.com/zadescoxp/Jev-Trades) `★ 7` - High-frequency perp trader on Hyperliquid with live dashboard (jev-trade.com). Evaluates order book every tick to trade.
-  - 🎯 **Jevの判断箇所**: 板の不均衡、深度、スプレッドをティック単位で評価し、売買方向、レバレッジ、指値を決定。
-  - 💡 **主な特徴**: マルチスリーブ分離による1秒未満の分散型デリバティブ取引執行。
-
-- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - Home Assistant integration translating household state telemetry into semantic sensors via Jev (e.g. laundry reminders).
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-seo**](https://github.com/AkashPriyadarshii/jev-seo) `★ 3` - Free agent-first SEO & GEO CLI suite and MCP server combining DuckDuckGo with Jev scoring.
-  - 🎯 **Jevの判断箇所**: 検索スニペットとWebテキストの意図適合性、キーワードカバレッジ、表示可能性を評価。
-  - 💡 **主な特徴**: 高額な商用SEO契約を代替し、オープンソースCLIとJevによるセマンティック監査を実現。
-
-- [**jev-trade**](https://github.com/aowang-ai/jev-trade) `★ 3` - High-frequency perp trader on Hyperliquid with live dashboard (jev-trade.com). Evaluates order book every tick to trade.
-  - 🎯 **Jevの判断箇所**: 板の不均衡、深度、スプレッドをティック単位で評価し、売買方向、レバレッジ、指値を決定。
-  - 💡 **主な特徴**: マルチスリーブ分離による1秒未満の分散型デリバティブ取引執行。
-
-- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - Engineering toolkit featuring eight Jev experiments: design dispatch, simulation log triage, and mechanical part matching via Python rules.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - Game of Thrones text adventure where generative LLMs write narrative while Jev classifies scene locations, mood, and danger levels.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**hermes-jev-north-star**](https://github.com/poponline63/hermes-jev-north-star) `★ 1` - Hermes Agent skill utilizing Jev as a north-star gatekeeper to evaluate unproven task criteria.
-  - 🎯 **Jevの判断箇所**: 未検証の基準をランク付けし、実行結果が受け入れマイルストーンを満たしたかを判定。
-  - 💡 **主な特徴**: 検証済みの完了ゲートを適用することで、エージェントの早期終了を防止。
-
-- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - Multipurpose evaluation lab testing Jev on chess moves, customer ticket routing, document matching, and content moderation.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-exploration**](https://github.com/SamuelSacco/jev-exploration) `★ 1` - Exploratory benchmark and runnable experiment collection examining Jev latency and accuracy.
-  - 🎯 **Jevの判断箇所**: Jevのレイテンシと自己回帰型LLMを比較する管理された意思決定実験を実行。
-  - 💡 **主な特徴**: 導入を検討するエンジニア向けに、実証された性能根拠と再現可能なコードを提供。
-
-- [**jev-review-action**](https://github.com/fatwang2/jev-review-action) `★ 1` - Configurable GitHub Action for PR triage and automated code review classification with Jev.
-  - 🎯 **Jevの判断箇所**: PR差分のリスク次元をスコアリングし、軽微な変更を自動マージへ、複雑な変更を人間レビューへ振り分け。
-  - 💡 **主な特徴**: コードレビュー速度を加速し、定型PRにおけるエンジニアリング負荷を削減。
-
-- [**jev-reviewer**](https://github.com/choxos/jev-reviewer) `★ 1` - Data extraction tool for systematic literature reviews quoting evidence lines with Jev assistance.
-  - 🎯 **Jevの判断箇所**: 治験報告書内の特定テキスト行を特定し、バイアスリスク評価基準への該当性を判定。
-  - 💡 **主な特徴**: 全抽出結果を原文の引用とページ数に紐付け、全ファイルをローカルに保持して機密性を担保。
-
-- [**jevsome-projects**](https://github.com/ozers/jevsome-projects) `★ 1` - Automated index tracking verified open-source repositories integrating TypeSafe Jev model.
-  - 🎯 **Jevの判断箇所**: GitHubのコミットとプルリクエストを走査し、ソースコードレベルの実装シグネチャを検証。
-  - 💡 **主な特徴**: 成長するJevエコシステム全体にわたり、行単位の透明なコード追跡可能性を提供。
-
-- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - Structured resume audit tool checking phrasing, ATS readability, and scoring candidate profile fit against job descriptions.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-trade**](https://github.com/Waxmell114514/jev-trade) - High-frequency perp trader on Hyperliquid with live dashboard (jev-trade.com). Evaluates order book every tick to trade.
-  - 🎯 **Jevの判断箇所**: 板の不均衡、深度、スプレッドをティック単位で評価し、売買方向、レバレッジ、指値を決定。
-  - 💡 **主な特徴**: マルチスリーブ分離による1秒未満の分散型デリバティブ取引執行。
-
----
-
-<a id="decision-tools-ja"></a>
-## 🎯 意思決定支援・ヒューリスティック評価
-
-*汎用的な選択エンジン、ヒューリスティックスコアリング、業務判断支援ツール。*
-
-- [**ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund) `★ 63497` - ai-hedge-fund: Multi-agent AI hedge fund simulation with native JevLLM adapter calling System One endpoints for deterministic financial decisions.
-  - 🎯 **Jevの判断箇所**: マルチソースの市場指標とシグナルを入力し、較正された信頼度付きで売買・保有の判断を出力。
-  - 💡 **主な特徴**: LLMの出力フォーマット崩れやパース失敗を防止し、厳格なしきい値ポリシーによる超高速トレードシグナルを提供。
-
-- [**loki**](https://github.com/wundercorp/loki) `★ 24` - Self-evolving agent framework using Jev client to grade intermediate step completion and milestones.
-  - 🎯 **Jevの判断箇所**: エージェントの環境状態と目標を評価し、中間マイルストーンが達成されたかを判定。
-  - 💡 **主な特徴**: 客観的で軽量な完了判定ゲートを提供し、無限ループや時期尚早な終了を防止。
-
-- [**killmyidea**](https://github.com/monteduro/killmyidea) `★ 17` - Startup idea triage tool: describe your idea and Jev decides whether to kill it, fix it, or ship it.
-  - 🎯 **Jevの判断箇所**: スタートアップの構想を市場の課題、実現性、優位性に照らして評価し、kill/fix/shipを出力。
-  - 💡 **主な特徴**: 過剰な賛美を排した客観的なフィードバックにより、致命的な欠陥を数秒で浮き彫りに。
-
-- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - Comparative benchmark contrasting Jev and GLiNER on classification tasks, measuring accuracy alongside probability calibration curves.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-benchmark**](https://github.com/wondertwins/jev-benchmark) `★ 2` - Interactive benchmark suite and playground evaluating Jev across chess tactics and NPC dialogue routing.
-  - 🎯 **Jevの判断箇所**: ボードゲームでの座標選択や音声書き起こしにおける話者判定の精度を検証。
-  - 💡 **主な特徴**: 現実的な意思決定シナリオ全体で再現可能なレイテンシと精度の基準を提供。
-
-- [**jev-frontend-qa**](https://github.com/Nainish-Rai/jev-frontend-qa) `★ 2` - Automated frontend QA and regression testing suite exercising browser interactions with Jev contract verification.
-  - 🎯 **Jevの判断箇所**: 合成シナリオの契約を評価し、テスト対象UI要素の状態遷移を検証。
-  - 💡 **主な特徴**: 高コストなエンドツーエンドモデルなしでUIの微細な欠陥や動作逸脱を検出。
-
-- [**omp-jev-compaction**](https://github.com/jerryfane/omp-jev-compaction) `★ 2` - Verbatim context reduction plugin for OpenMultiPlatform (omp) scoring token utility via Jev.
-  - 🎯 **Jevの判断箇所**: 会話履歴とツール応答をスコアリングし、正確なテキストを保持しながら不要なコンテキストを整理。
-  - 💡 **主な特徴**: 要約による幻覚を生じさせることなく、プロンプトトークンの消費を劇的に削減。
-
-- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - Failure analysis benchmark for multi-agent workflows using Jev to isolate which agent, step, and error category caused task breakdowns.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - Web playground allowing developers to paste state text, configure Choice/Score questions, and inspect Jev probability distributions.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - Agent skill reading peer rule specifications and collected evidence to predict downstream skill decision conclusions.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - Reranking benchmark evaluating whether Jev can rank search candidate passages with accuracy comparable to dedicated rerankers.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - Research guide and prototype demonstrating task decomposition and multi-agent delegation using Jev alongside Herdr.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jevchat**](https://github.com/kt3k/jevchat) `★ 1` - Lightweight terminal chat utility querying Jev for custom persona answers and binary choices.
-  - 🎯 **Jevの判断箇所**: 定義済みのスタイル選択肢（Yes/No、海賊風、大衆紙風など）から最適な回答を選択。
-  - 💡 **主な特徴**: トークンごとの生成オーバーヘッドなしでゼロレイテンシのスタイル別回答を実現。
-
-- [**goodall**](https://github.com/bensyverson/goodall) - Simple and extensible agent loop for Go projects integrating TypeSafe Jev for decision branches.
-  - 🎯 **Jevの判断箇所**: 各ターンで環境の観測結果を評価し、次に呼び出すローカルツールまたは終了を判定。
-  - 💡 **主な特徴**: 極めて簡潔なコードベースで、Goによる自律エージェント構築のための軽量な基準設計を提供。
-
----
-
-<a id="classification-taxonomy-ja"></a>
-## 🏷️ テキスト分類・タキソノミー
-
-*マルチラベル分類、階層型タキソノミー構築、データセットの自動ラベリング。*
-
-- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - Hierarchical decision tree router querying Jev layer-by-layer to navigate large option spaces down to specific items or workflows.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
----
-
-<a id="evaluation-observability-ja"></a>
-## 📈 ベンチマーク・可観測性
-
-*意思決定プロファイリング、レイテンシ監視、エラーテレメトリ、性能ベンチマーク。*
-
-- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - Sidecar evaluator for Latitude conversation auditing logging which checks Jev considers necessary to benchmark against baseline pipelines.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**typesafe-ai-benchmark**](https://github.com/iammrduncan/typesafe-ai-benchmark) `★ 32` - LLM Gateway and benchmark suite contrasting structured outputs against genuine Jev performance.
-  - 🎯 **Jevの判断箇所**: 従来の生成モデルによる構造化出力とネイティブJevのレイテンシおよびエラー率を比較。
-  - 💡 **主な特徴**: 離散分類においてJevが従来モデルに対して圧倒的な優位性を持つことを実証データで証明。
-
-- [**typesafe-playground**](https://github.com/kavehmz/typesafe-playground) `★ 9` - Interactive sandbox testing Jev from support ticket routing to 3D autonomous driving simulations.
-  - 🎯 **Jevの判断箇所**: チケットに最適なサポートキューを割り当て、3Dセンサー情報から操舵アクションを決定。
-  - 💡 **主な特徴**: 静的テキスト分類と動的シミュレーションの双方でJevのレイテンシと信頼度分布を視覚的に実証。
-
-- [**jev-behavior-study**](https://github.com/RINNECODER/jev-behavior-study) `★ 3` - Independent Jev 1.13.0 behavior study featuring controlled prompt tests and offline verification.
-  - 🎯 **Jevの判断箇所**: 温度パラメータやプロンプト変動におけるJevの出力安定性と確率ドリフトを体系的に記録。
-  - 💡 **主な特徴**: System Oneモデルの意思決定特性を解明する貴重な一次実証エビデンスを提供。
-
-- [**Canny**](https://github.com/qkal/Canny) `★ 1` - Stops AI coding agents from claiming tasks are done without evidence, aided by Jev advice.
-  - 🎯 **Jevの判断箇所**: ツール出力、差分、テスト結果を分析し、エージェントの完了報告が事実に基づいているかを判定。
-  - 💡 **主な特徴**: 確定的なフックとJevのセマンティック助言を組み合わせ、作業完了の幻覚を排除。
-
-- [**jev-calibration-audit**](https://github.com/jujumilk3/jev-calibration-audit) - Independent calibration audit measuring Jev prediction accuracy, ECE error, and probability fidelity.
-  - 🎯 **Jevの判断箇所**: ベンチマークデータセットから予測確率値を収集し、正解ラベルとの整合性を計算。
-  - 💡 **主な特徴**: 客観的な第三者による較正指標を提供し、実運用における信頼度しきい値の設定を支援。
-
-- [**jev-eval**](https://github.com/4esv/jev-eval) - Independent evaluation benchmarking TypeSafe Jev against frontier models on accuracy, calibration, and latency.
-  - 🎯 **Jevの判断箇所**: 標準ベンチマーク上でJevと最先端モデルを並行評価し、厳密な統計的検定を実施。
-  - 💡 **主な特徴**: ベンダーのバイアスを排除し、離散判断におけるJevのレイテンシとコストの優位性を定量化。
-
----
-
-<a id="voice-conversation-ja"></a>
-## 🎙️ 音声対話・リアルタイム会話
-
-*発話権調停、会話の割り込み検出、低遅延リアルタイム音声エージェント。*
-
-- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - Conversational turn-taking arbitrator for AIAvatarKit evaluating whether a speaker has completed their turn or merely paused to think.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**OpenWhisper**](https://github.com/Knuckles92/OpenWhisper) `★ 185` - Local speech-to-text platform using Jev for real-time meeting topic classification and segment triage.
-  - 🎯 **Jevの判断箇所**: リアルタイム書き起こし音声をアジェンダトピック、アクションアイテム、雑談に分類。
-  - 💡 **主な特徴**: 音声ストリームを並行処理し、会議終了後の要約待ち時間なしで構造化されたメモを提供。
-
-- [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) `★ 1` - B2B voice sales agent integrating Jev for real-time customer intent classification and turn routing.
-  - 🎯 **Jevの判断箇所**: 音声認識の書き起こし後、300ms以内に対話相手の意図（反論、価格照会、デモ希望等）を分類。
-  - 💡 **主な特徴**: 300ms未満の意図分類により不自然な会話の空白を排除し、スムーズな音声対話を実現。
-
-- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - Voice routing gate for Home Assistant directing simple lighting commands to device services and complex dialogue to Grok.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
----
-
-<a id="creative-tools-ja"></a>
-## 🎨 クリエイティブツール・メディア生成
-
-*UI動的レイアウト生成、アルゴリズム作曲、MIDIアレンジメントツール。*
-
-- [**json-render**](https://github.com/vercel-labs/json-render) `★ 16519` - json-render: Vercel Labs generative UI library replacing token streaming with Jev discrete evaluations, cutting render latency from 3.21s to 880ms.
-  - 🎯 **Jevの判断箇所**: コンポーネントツリーの適合度を並行評価し、単一パスで構造化されたコンポーネント選択とスロット操作を直接出力。
-  - 💡 **主な特徴**: トークン単位の低速なJSONストリーミングを排除し、ミリ秒単位でUIの初期描画を実現。
-
-- [**jevmeter**](https://github.com/ChetasLua/jevmeter) `★ 57` - Video caption rating pipeline scoring every sentence with Jev and rendering dynamic meters on 16:9 edits.
-  - 🎯 **Jevの判断箇所**: 字幕の文ごとにエンゲージメント、ユーモア、情報密度をスコアリングし、離散指標を出力。
-  - 💡 **主な特徴**: セマンティック評価を画面上のモーショングラフィックスとして可視化し、動画編集を効率化。
-
-- [**refgarden**](https://github.com/AlbionaHoti/refgarden) `★ 15` - Spatial reference library for creators using Jev to categorize design assets and cluster visual ideas.
-  - 🎯 **Jevの判断箇所**: 説明文に基づき、デザインアセットやインスピレーションを美術スタイルやムードボードに分類。
-  - 💡 **主な特徴**: クリエイターが発想に集中できるよう、バックグラウンドで素材の整理と関連付けを自動化。
-
-- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - Text-to-music composition tool where Jev selects notes bar-by-bar to generate editable, playable, and exportable multi-track MIDI files.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - UI layout generator using Jev to select component types, form fields, and styles from a design system, assembling valid interfaces.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - Music theory and harmony experiment querying Jev to solve harmonic exercises and voice-lead electric piano chords.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
----
-
-<a id="dev-arch-ja"></a>
-## 📖 ローカル開発とアーキテクチャ
-
-**Node.js 22+** が必要です。
+用途で一覧を検索し、固定バージョンのソースと確認範囲を参照できます。掲載は動作や安全性の認証ではありません。
 
 ```bash
-# 依存関係のインストール
-npm ci
+npx skills add logicrw/awesome-jev-projects
+npx skills add https://logicrw.github.io/awesome-jev-projects/
+```
 
-# ローカル開発サーバー起動 (Vite + React + Tailwind)
+[Agent Skill](https://logicrw.github.io/awesome-jev-projects/skill.md) · [llms.txt](https://logicrw.github.io/awesome-jev-projects/llms.txt) · [llms-full.txt](https://logicrw.github.io/awesome-jev-projects/llms-full.txt)
+
+## カテゴリ
+
+- [ブラウザ・デスクトップ (23)](https://logicrw.github.io/awesome-jev-projects/ja/categories/browser-os-action/)
+- [CLI・パイプライン (12)](https://logicrw.github.io/awesome-jev-projects/ja/categories/cli-pipelines/)
+- [分類・カタログ (2)](https://logicrw.github.io/awesome-jev-projects/ja/categories/classification-taxonomy/)
+- [コード・グラフ探索 (11)](https://logicrw.github.io/awesome-jev-projects/ja/categories/codebase-graph-pathfinding/)
+- [Context GC・メモリ (14)](https://logicrw.github.io/awesome-jev-projects/ja/categories/context-gc-filter/)
+- [音楽・UI 制作 (9)](https://logicrw.github.io/awesome-jev-projects/ja/categories/creative-tools/)
+- [データ・検索 (10)](https://logicrw.github.io/awesome-jev-projects/ja/categories/data-search/)
+- [判断ツール (6)](https://logicrw.github.io/awesome-jev-projects/ja/categories/decision-tools/)
+- [分野別ツール (14)](https://logicrw.github.io/awesome-jev-projects/ja/categories/domain-vertical-tools/)
+- [評価・可観測性 (29)](https://logicrw.github.io/awesome-jev-projects/ja/categories/evaluation-observability/)
+- [ゲーム・リアルタイム判断 (17)](https://logicrw.github.io/awesome-jev-projects/ja/categories/high-frequency-simulation/)
+- [MCP・連携 (18)](https://logicrw.github.io/awesome-jev-projects/ja/categories/mcp-integrations/)
+- [モデルルーティング (19)](https://logicrw.github.io/awesome-jev-projects/ja/categories/routing-cost-optimization/)
+- [SDK・判断フレームワーク (47)](https://logicrw.github.io/awesome-jev-projects/ja/categories/sdk-decision-frameworks/)
+- [SDK・互換連携 (6)](https://logicrw.github.io/awesome-jev-projects/ja/categories/sdk-integrations/)
+- [安全対策・コンテンツ審査 (18)](https://logicrw.github.io/awesome-jev-projects/ja/categories/security-guardrails/)
+- [音声・会話 (4)](https://logicrw.github.io/awesome-jev-projects/ja/categories/voice-conversation/)
+
+## ブラウザ・デスクトップ
+
+- [**cua**](https://github.com/trycua/cua) — Cua の試験的な jev-use 例が Driver の観察・実行と Jev の候補選択を組み合わせる。
+  - **Jev が判断する箇所**: DOM または対応する視覚領域の説明を読み、提示済みの操作 ID を返す。
+  - **このプロジェクトの用途**: Python と TypeScript のループと、オフライン・実 API の別々の検証経路を備える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/trycua/cua/) · ライセンス: MIT
+
+- [**jev-ultrafast**](https://github.com/browser-use/jev-ultrafast) — Jev が操作とページ要素を選び、入力が必要なときだけテキストモデルを呼ぶブラウザー Agent。
+  - **Jev が判断する箇所**: 現在の DOM から操作と対応する要素を一度に選び、入力文は別モデルが生成する。
+  - **このプロジェクトの用途**: 画面上の選択、文章生成、実行を分け、各ステップを確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jev-ultrafast/) · ライセンス: MIT
+
+- [**jev-desktop**](https://github.com/lahfir/agent-desktop) — agent-desktop のアクセシビリティ情報から操作対象を選ぶ、追加の Jev skill。
+  - **Jev が判断する箇所**: Jev が対象・操作・存在確率・リスクを判定し、ローカル方針が実行を決める。
+  - **このプロジェクトの用途**: 主 Agent に画面ツリー全体を渡さず、選んだ操作を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jev-desktop/) · ライセンス: Apache-2.0
+
+- [**omg.dev**](https://github.com/BennyKok/omg.dev) — omg.dev のモバイルテスト用スクリプトが、アクセシビリティツリーから次の操作を Jev に選ばせる。
+  - **Jev が判断する箇所**: 対象や完了、行き詰まりを判断し、テスト実行器が画面を操作する。
+  - **このプロジェクトの用途**: 現在の画面状態に基づく選択をモバイルテストへ加える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/bennykok/omg.dev/) · ライセンス: MIT
+
+- [**typesafe-computer-use**](https://github.com/awlevin/typesafe-computer-use) — OCR と画面状態から候補を作り、Jev が macOS の操作を選ぶ。文章入力時は別モデルを使う。
+  - **Jev が判断する箇所**: 抽出した要素と操作候補から次の一手を選び、実行器がデスクトップを操作する。
+  - **このプロジェクトの用途**: 画面の読み取り、操作選択、文章生成を分ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/awlevin/typesafe-computer-use/) · ライセンス: MIT
+
+- [**mobile-jev**](https://github.com/droidrun/mobile-jev) — Mobilerun 経由で Android を操作し、ウェブ画面と CLI で Jev の判断を確認できる。
+  - **Jev が判断する箇所**: 画面状態からアプリ、要素、次の操作を選び、Mobilerun が実行する。
+  - **このプロジェクトの用途**: 操作履歴とリクエスト時間を記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/droidrun/mobile-jev/) · ライセンス: MIT
+
+- [**jev-browser-use**](https://github.com/wy-coliney/jev-browser-use) — Codex のブラウザー作業で、Jev が移動、クリック、スクロールを選び、文字入力と最終確認は Codex が行う Skill。
+  - **Jev が判断する箇所**: ページ状態と実行候補を Jev に送り、既存のブラウザー接続で操作する。
+  - **このプロジェクトの用途**: 繰り返す画面選択を独立させ、既存の接続を再利用する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wy-coliney/jev-browser-use/) · ライセンス: MIT
+
+- [**jev-browser**](https://github.com/jkudish/jev-browser) — タスクと URL を受け取りブラウザを操作し、最終ページ、画像、操作履歴を返す。
+  - **Jev が判断する箇所**: DOM の操作候補と完了・停滞を判断する。入力文は別のモデルが補える。
+  - **このプロジェクトの用途**: 提案した操作、実行結果、停止理由を記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jkudish/jev-browser/) · ライセンス: MIT
+
+- [**jev-voice-browser**](https://github.com/moritzkremb/jev-voice-browser) — 音声の逐次書き起こしを Jev に送り、Playwright ブラウザを操作する。
+  - **Jev が判断する箇所**: 意図、要素、URL、原文範囲を選び、命令の完結性や注意を要する操作を判断する。
+  - **このプロジェクトの用途**: 音声操作中の確率、動作、リクエスト時間を表示する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/moritzkremb/jev-voice-browser/) · ライセンス: MIT
+
+- [**jev-use**](https://github.com/vlad-terin/jev-use) — 公開リポジトリにアクセスできず、連携や以前の説明を確認できません。追跡用に記録を保持し、検証済みの推奨項目としては扱いません。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vlad-terin/jev-use/) · ライセンス: 記載なし
+
+- [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) — 候補 DOM が広告かを Jev に尋ね、強調表示や削除を行う実験的 Chrome 拡張。
+  - **Jev が判断する箇所**: 要素の文字、ラベル、リンク情報を Noul で評価し、閾値を適用する。
+  - **このプロジェクトの用途**: 意味的な判断とページ要素の操作を結び付ける例。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/realzachi/typesafe-adblock/) · ライセンス: MIT
+
+- [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) — 画面の文字候補を Jev に送り、観察と実行をデスクトップツールが担う Codex ループ。
+  - **Jev が判断する箇所**: 対象と操作を選び、完了やリスクを判断し、ローカル規則が実行・確認を決める。
+  - **このプロジェクトの用途**: 文字候補を入力にし、既定では dry-run から始める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/sac-y/jev-cu/) · ライセンス: 記載なし
+
+- [**jev-browser**](https://github.com/Ying-Kai-Liao/jev-browser) — 呼び出し側が目標と入力文を渡し、Jev が操作を選ぶブラウザライブラリ、CLI、MCP サーバー。
+  - **Jev が判断する箇所**: 要素、操作、値を選び、完了、エラー、取り消せない操作を評価する。
+  - **このプロジェクトの用途**: 操作ループを計画から分け、状態と履歴を返す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ying-kai-liao/jev-browser/) · ライセンス: MIT
+
+- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) — ローカル OCR とアクセシビリティ情報を使い、Jev が操作を選ぶ macOS 自動化ループ。
+  - **Jev が判断する箇所**: 観測した候補から対象を選び、座標処理と入力実行は Mac が担う。
+  - **このプロジェクトの用途**: Finder の操作を含め、候補と実行確認を追跡できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jcpsimmons/jev-macos-loop/) · ライセンス: AGPL-3.0
+
+- [**jev-ego**](https://github.com/romaluev/jev-ego) — ego lite の操作要素を番号付き一覧にし、Jev が次の動作を選ぶブラウザー Agent。
+  - **Jev が判断する箇所**: 一度の要求で操作と対象を選び、自由文が必要なら別の補助モデルを使う。
+  - **このプロジェクトの用途**: 観測・提案・実行に対応するが、アップロードやダイアログは別のツールを使う。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/romaluev/jev-ego/) · ライセンス: MIT
+
+- [**AskJev**](https://github.com/ranjan2829/AskJev) — MCP で Agent とブラウザーを接続し、Jev がページ操作を選ぶ。支払いや削除などには確認を挟む。
+  - **Jev が判断する箇所**: 現在のページ要素から操作を選び、リスクと取り消し可能性を評価する。
+  - **このプロジェクトの用途**: 自動操作とユーザー確認を同じ手順にまとめる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ranjan2829/askjev/) · ライセンス: MIT
+
+- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) — macOS のアクセシビリティツリーから Jev が対象と操作を選ぶ Go 製のコントローラー。
+  - **Jev が判断する箇所**: ウィンドウ状態から操作、対象、文字入力の要否、完了状態を選ぶ。
+  - **このプロジェクトの用途**: 画面スナップショットに基づく候補と選択過程を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/paulsmith/computer-use-jev/) · ライセンス: MIT
+
+- [**jev-browser**](https://github.com/tontoko/jev-browser) — Playwright と Jev を共通の CLI・MCP・TypeScript SDK から利用するブラウザー自動化ツール。
+  - **Jev が判断する箇所**: ページ観測から Jev が操作・フォーム対応・抽出内容を判断し、Playwright が実行する。
+  - **このプロジェクトの用途**: 永続セッションと画面回読に対応。画面確認だけでは DB 永続化の証明にならない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tontoko/jev-browser/) · ライセンス: Apache-2.0
+
+- [**jev-shield**](https://github.com/vmendes90/jev-shield) — 情報フィードの要素が広告かを Jev で判断する Chrome 拡張。
+  - **Jev が判断する箇所**: 候補 DOM をまとめて TypeSafe に送り、Noul の確率と閾値で折りたたみを決める。
+  - **このプロジェクトの用途**: ローカルの広告ルールに意味に基づく判断を追加する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vmendes90/jev-shield/) · ライセンス: MIT
+
+- [**aside-jev**](https://github.com/himomohi/aside-jev) — Aside ブラウザー Agent に Jev 判断を加える MCP サーバーと skill。
+  - **Jev が判断する箇所**: Agent が候補を用意し、Jev が ID を選択。Aside で実行した後に結果を確認する。
+  - **このプロジェクトの用途**: 選択をアプリ側の動作表に限定し、実行結果は別途検証する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/himomohi/aside-jev/) · ライセンス: MIT
+
+- [**cline-plugin-jev-browser**](https://github.com/abeatrix/cline-plugin-jev-browser) — 独立した Playwright ブラウザーと Vercel AI Gateway 経由の Jev 判断を使う Cline プラグイン。
+  - **Jev が判断する箇所**: DOM 対象表から Jev が操作を選び、必要な入力文は別のテキストモデルが作る。
+  - **このプロジェクトの用途**: 前後のスクリーンショットを保存し、重要操作は制御を返す。完了は結果確認が必要。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/abeatrix/cline-plugin-jev-browser/) · ライセンス: 記載なし
+
+- [**ego-jev**](https://github.com/phd-peter/ego-jev) — Ego Lite のスナップショットと操作を、回数制限のある Jev 判断ループにつなぐ。
+  - **Jev が判断する箇所**: 現在のスナップショットの要素と対応操作から選び、必要な入力文は別モデルで補う。
+  - **このプロジェクトの用途**: 現在の参照で操作し、各段階の状態を記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/phd-peter/ego-jev/) · ライセンス: MIT
+
+- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) — 公開リポジトリにアクセスできず、連携や以前の説明を確認できません。追跡用に記録を保持し、検証済みの推奨項目としては扱いません。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ae-alphaedge/grokskill-jev/) · ライセンス: 記載なし
+
+
+## CLI・パイプライン
+
+- [**orchestkit**](https://github.com/yonatangross/orchestkit) — OrchestKit は任意で Jev にコーディングセッションを分類させ、閾値を満たすと表示色に使う。
+  - **Jev が判断する箇所**: 最初のタスクとブランチ状態から作業種別を選び、ローカルルールが採用か代替処理を決める。
+  - **このプロジェクトの用途**: 作業種別でセッションを区別し、shadow 比較モードも使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/yonatangross/orchestkit/) · ライセンス: MIT
+
+- [**jev-axi**](https://github.com/shiftynick/jev-axi) — Jev の pick、rate、check、rank、triage、guard を使う CLI。Agent のツール実行前 hook にも対応する。
+  - **Jev が判断する箇所**: 状態と選択肢を質問に変換し、結果やローカルポリシー用のリスクスコアを返す。
+  - **このプロジェクトの用途**: スクリプトと Agent で同じ判断コマンドを使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/shiftynick/jev-axi/) · ライセンス: MIT
+
+- [**rift**](https://github.com/exYze/rift) — Rust 製コーディング端末 Rift にある、任意の TypeSafe 判断クライアント。
+  - **Jev が判断する箇所**: 状態と型付き質問を System One に送り、端末処理用に回答を解析する。
+  - **このプロジェクトの用途**: 生成型のコーディングモデルとは別に判断インターフェースを追加する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/exyze/rift/) · ライセンス: MIT
+
+- [**SemDecide**](https://github.com/sharziki/semdecide) — テキストや JSONL を判定・分類・採点・フィルタリングする Python CLI。
+  - **Jev が判断する箇所**: Jev の回答確率とローカル閾値から結果と終了コードを決める。
+  - **このプロジェクトの用途**: Bash や CI に型付き判断と明確な失敗状態を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/semdecide/) · ライセンス: MIT
+
+- [**jev-cli**](https://github.com/tumf/jev-cli) — テキストや JSON を Jev で判断する CLI と stdio MCP サーバー。
+  - **Jev が判断する箇所**: noul・choice・score を問い、JSON または主値を出力する。
+  - **このプロジェクトの用途**: ファイルと stdin に対応し、Shell スクリプトや MCP クライアントに接続できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tumf/jev-cli/) · ライセンス: MIT
+
+- [**jev-cli**](https://github.com/Nasrallah-AL/jev-cli) — 検証・分類・評価の質問を文章入力やスクリプトへ接続する jevctl CLI。
+  - **Jev が判断する箇所**: 入力と固定候補を Jev に送り、ローカル閾値で判断と確率を返す。
+  - **このプロジェクトの用途**: パイプライン・CI 用の結果と、リクエスト確認・dry-run を提供する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/nasrallah-al/jev-cli/) · ライセンス: MIT
+
+- [**jev-code**](https://github.com/rhighs/jev-code) — Jev が AST の要素を選んで Python や Bash を組み立てる実験的 CLI。単独の判断コマンドも備える。
+  - **Jev が判断する箇所**: 限られた構文や操作から選択し、ローカルコードがプログラム生成やツール呼び出しを行う。
+  - **このプロジェクトの用途**: コードの選択とコマンドの判断を履歴で確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rhighs/jev-code/) · ライセンス: 記載なし
+
+- [**jev-cli**](https://github.com/jtsang4/jev-cli) — 文章や JSON を入力し、Jev に分類・Yes/No・評価を質問する CLI。
+  - **Jev が判断する箇所**: 一つの入力に型付き質問を適用し、選択結果と確率を JSON で返す。
+  - **このプロジェクトの用途**: 標準入力を受け取り、TypeSafe 直結と Vercel gateway に対応する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jtsang4/jev-cli/) · ライセンス: MIT
+
+- [**jev-git**](https://github.com/AkashPriyadarshii/jev-git) — キー未設定やリクエスト失敗時に処理を通過させ、インストール時に既存 Git hook を上書きします。管理者の確認・修正までは信頼できる安全ゲートとして推奨しません。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/akashpriyadarshii/jev-git/) · ライセンス: 記載なし
+
+- [**LightJev**](https://github.com/rongxinzy/LightJev) — Qwen ベースの独立した学習研究であり、TypeSafe Jev API やモデルの連携は確認されていません。関連研究として保持し、Jev 接続事例とは区別します。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rongxinzy/lightjev/) · ライセンス: 記載なし
+
+- [**TypeSafe AI Playground**](https://github.com/markjaquith/typesafe-ai-playground) — 医療情報の検査、コメント確認、語調分析、業種・職業分類を試せる Rust CLI。
+  - **Jev が判断する箇所**: 入力文を Jev に送り、個別の Noul 確率、スコア、分類結果を受け取る。
+  - **このプロジェクトの用途**: 構造化された判断を端末で確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/typesafe-ai-playground/) · ライセンス: MIT
+
+- [**jevscript**](https://github.com/amberwhitehead/jevscript) — 意味判断を言語の原語にする初期実験。現状の実装は Jev 要求のバッチ化検証スクリプト。
+  - **Jev が判断する箇所**: 個別・一括質問の回答、使用量、遅延を比較し、言語エンジン本体は設計段階。
+  - **このプロジェクトの用途**: バッチ化の研究用で、完成したコンパイラーやインタープリターではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/amberwhitehead/jevscript/) · ライセンス: 記載なし
+
+
+## 分類・カタログ
+
+- [**typesafe-jev-workflow**](https://github.com/GiesN/typesafe-jev-workflow) — 模擬メールを請求書関連と一般に分類する、非同期 LangGraph の例。
+  - **Jev が判断する箇所**: Jev が invoice または general を返し、graph が処理分岐を選ぶ。
+  - **このプロジェクトの用途**: モデル分類とローカル workflow の振り分けを分離する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/giesn/typesafe-jev-workflow/) · ライセンス: 記載なし
+
+- [**jev-tree**](https://github.com/reachjalil/jev-tree) — 候補が多すぎる目録を階層化し、Jev に枝を順番に選ばせるセレクター。
+  - **Jev が判断する箇所**: 各階層で一つの枝を選び、最終候補まで進む。
+  - **このプロジェクトの用途**: 大きな目録の末尾を黙って切り捨てず、選択経路を返す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/reachjalil/jev-tree/) · ライセンス: MIT
+
+
+## コード・グラフ探索
+
+- [**celesto**](https://github.com/CelestoAI/celesto) — Celesto の PR レビュー例がサンドボックスで検査を準備し、通常モデルと Jev の指摘評価を比較する。
+  - **Jev が判断する箇所**: 問題が今回の変更によるものか、根拠があるか、修正対象かを判断する。
+  - **このプロジェクトの用途**: 実行記録とレビュー判断を同じ画面で確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/celestoai/celesto/) · ライセンス: Apache-2.0
+
+- [**Jev Review**](https://github.com/devagrawal09/jev-review) — Git diff またはコード全体を段階的に確認し、ローカル画面にレビューの手掛かりを表示する。
+  - **Jev が判断する箇所**: リスク、ファイル、根拠箇所、原因、重大度を判断し、規則に従ってレビュー経路を選ぶ。
+  - **このプロジェクトの用途**: 手掛かりを具体的なコードと結び付け、人が確認しやすくする。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jev-review/) · ライセンス: MIT
+
+- [**commit-miner**](https://github.com/devanshbatham/commit-miner) — Git のメッセージと diff を Jev で分類し、バグ修正、安全性修正、CWE、変更種別を整理する。
+  - **Jev が判断する箇所**: 固定カテゴリを質問し、フィルターや HTML/CSV レポート用に保存する。
+  - **このプロジェクトの用途**: 大量の履歴を追加確認しやすい分類記録にする。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/devanshbatham/commit-miner/) · ライセンス: 記載なし
+
+- [**neo4jev**](https://github.com/jexp/neo4jev) — Neo4j のグラフを一段ずつたどり、次に進む関係を Jev に選ばせる。
+  - **Jev が判断する箇所**: Choice で隣接関係を評価し Noul で到達を判定、ローカルの beam search が候補経路を残す。
+  - **このプロジェクトの用途**: 自然言語の目標を確認可能なグラフ経路に結び付ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/neo4jev/) · ライセンス: MIT
+
+- [**Blink**](https://github.com/ellipsis-dev/blink) — 自然言語の質問から複数の walker でディレクトリ木を探索し、ファイルを探す。
+  - **Jev が判断する箇所**: Jev が名前の関連確率を評価し、コードが walker を配分する。
+  - **このプロジェクトの用途**: ベクトル索引なしで探索し、各パスに到達した walker の比率を示す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/blink/) · ライセンス: 記載なし
+
+- [**jev-code**](https://github.com/devagrawal09/jev-code) — コードの位置特定、変更意図の確認、テスト失敗やレビュー指摘の整理を支援する。
+  - **Jev が判断する箇所**: 固定ワークフローを選び、範囲を限定した diff、コード、ログを評価する。
+  - **このプロジェクトの用途**: 確認すべき手掛かりと未確認の範囲を返す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/devagrawal09/jev-code/) · ライセンス: MIT
+
+- [**jev**](https://github.com/BorisLeMeec/jev) — ファイル検索、コード全体への限定質問、大きな読み取りを Jev で扱う Go 製 Claude Code プラグイン。
+  - **Jev が判断する箇所**: ファイル全体を Agent に渡す前に、質問との関連性を選別・確認する。
+  - **このプロジェクトの用途**: 確認対象を絞るためのファイル位置と判断を返す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/borislemeec/jev/) · ライセンス: MIT
+
+- [**leanest**](https://github.com/baronunread/leanest) — diff とテストソースを使い、既存テストランナーの前に Jev 選別を加える。
+  - **Jev が判断する箇所**: 関連性を Jev が判断し、不確実・API 障害・テスト自身の変更時はローカル方針で実行する。
+  - **このプロジェクトの用途**: shadow モードで比較できるが、選別後のテストだけで漏れがないとは保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/baronunread/leanest/) · ライセンス: MIT
+
+- [**claude-jev**](https://github.com/buchmark/claude-jev) — Claude Code の指摘、原因仮説、設計案、検索結果に Jev の確認を追加する。
+  - **Jev が判断する箇所**: 候補の問題や選択肢を定義済みの質問で評価し、ローカル規則で処理する。
+  - **このプロジェクトの用途**: 追加判断と確率を残し、判断の違いを確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/buchmark/claude-jev/) · ライセンス: MIT
+
+- [**jev-review-action**](https://github.com/fatwang2/jev-review-action) — ディレクトリ投稿の確認や PR 分類を行い、定型コメントを更新する GitHub Action。
+  - **Jev が判断する箇所**: 固定版の根拠や PR 差分について方針の質問に答え、コードが分類規則を適用する。
+  - **このプロジェクトの用途**: 質問、しきい値、コメント形式を確認可能な設定に置く。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/fatwang2/jev-review-action/) · ライセンス: MIT
+
+- [**PiJ**](https://github.com/tonyzdev/PiJ) — 主モデルが推論・編集・ツール実行を担い、Jev が補助判断する Pi ベースのターミナル Agent。
+  - **Jev が判断する箇所**: skill 提案・実在するソース候補の再順位付け・失敗分類を行い、自動再試行や権限承認はしない。
+  - **このプロジェクトの用途**: パス・行番号・ソース・エラーを保持。作者の限定実験は一般的効果の保証ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tonyzdev/pij/) · ライセンス: MIT
+
+
+## Context GC・メモリ
+
+- [**fast-jev-compaction**](https://github.com/tamaratran/fast-jev-compaction) — Claude Code の古いツール呼び出しと結果を削減し、残す内容は原文のまま保持する。
+  - **Jev が判断する箇所**: 呼び出しと結果全体の必要性を別々に判断し、コードが保持・短縮・削除する。
+  - **このプロジェクトの用途**: パス、コマンド、エラーを新しい要約に書き換えずに扱える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tamaratran/fast-jev-compaction/) · ライセンス: MIT
+
+- [**bluenoise**](https://github.com/rokcso/bluenoise) — X/Twitter の投稿や返信をローカルルールで整理し、未一致の返信だけ任意で Jev に確認させる拡張。
+  - **Jev が判断する箇所**: 実験的 AI を有効にすると、ルールに該当しない返信を評価し、閾値で非表示を決める。
+  - **このプロジェクトの用途**: 可逆なローカルルールを先に適用し、必要に応じてモデル判断を追加する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rokcso/bluenoise/) · ライセンス: MIT
+
+- [**jev-pruner**](https://github.com/tamaratran/jev-pruner) — Bash 実行後、主モデルへ渡す前に一部の出力を絞る Claude Code プラグイン。
+  - **Jev が判断する箇所**: 長さと内容を確認してから Jev が保持する塊を選び、原文は別途保存する。
+  - **このプロジェクトの用途**: 短い出力・エラー・認識された構造化データやソースは変更せず通す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tamaratran/jev-pruner/) · ライセンス: MIT
+
+- [**Winnow**](https://github.com/GhalebDweikat/winnow) — Claude Code の不要なツール出力を隠し、原文を後から呼び戻せるフィルター。
+  - **Jev が判断する箇所**: Jev が出力の関連性を判定し、ローカルの閾値で必要・不確かな部分を残す。
+  - **このプロジェクトの用途**: 表示する情報を絞りつつ、隠した原文を取得できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/winnow/) · ライセンス: MIT
+
+- [**jevlogs**](https://github.com/reachjalil/jevlogs) — OpenTelemetry ログに Jev の診断価値、優先度、振り分け判断を付ける。
+  - **Jev が判断する箇所**: 各ログを評価し、追加のモデル解析に回す価値があるか判断する。
+  - **このプロジェクトの用途**: 既存の保存経路を維持しながら判断を追記できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/reachjalil/jevlogs/) · ライセンス: MIT
+
+- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) — 古いツール履歴を原文のまま整理し、必要なら Pi 標準の要約へ渡す拡張。
+  - **Jev が判断する箇所**: モデルに送る履歴で、呼び出しと結果を残す必要があるか判断する。
+  - **このプロジェクトの用途**: 元のセッションファイルを保持し、削減の判断を記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/joelhooks/pi-fast-jev-compaction/) · ライセンス: MIT
+
+- [**jev-skill-gate**](https://github.com/ShivamPansuriya/jev-skill-gate) — 現在のプロジェクトに対する Claude Code スキルの関連度を付け、初期表示する説明を絞る。
+  - **Jev が判断する箇所**: 技術構成、ディレクトリ、README に照らして関連性を判定し、説明の表示を調整する。
+  - **このプロジェクトの用途**: 必要な説明を残し、ほかのスキルも手動で呼び出せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/shivampansuriya/jev-skill-gate/) · ライセンス: MIT
+
+- [**omp-jev-compaction**](https://github.com/jerryfane/omp-jev-compaction) — Oh My Pi のツール履歴を整理し、判断を再利用して先頭部分の書き換えを抑える拡張。
+  - **Jev が判断する箇所**: Jev が呼び出しと結果の必要性を判断し、選択した内容を復元用の注記付きで短縮する。
+  - **このプロジェクトの用途**: 削減判断を記憶して後のリクエストに適用する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jerryfane/omp-jev-compaction/) · ライセンス: MIT
+
+- [**pi-jev-context**](https://github.com/kevinpita/pi-jev-context) — 古いメッセージの有用性を Jev で判断する Pi の可逆コンテキストフィルター。
+  - **Jev が判断する箇所**: 履歴断片を評価し、低評価部分を今後の要求から隠すが会話原本は保持する。
+  - **このプロジェクトの用途**: 無効化で全コンテキストへ戻せる。有効時は一部履歴を TypeSafe へ送る。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kevinpita/pi-jev-context/) · ライセンス: MIT
+
+- [**codex-jev-compaction**](https://github.com/Wang-auspicious/codex-jev-compaction) — Jev で過去のツール記録を選別し、採用した原文を残す Codex 向け引き継ぎ支援。
+  - **Jev が判断する箇所**: 対象となる読み取り専用記録の関連性を判断し、必須内容を保護して引き継ぎ資料を作る。
+  - **このプロジェクトの用途**: 出典、選別理由、原文の順序を残す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wang-auspicious/codex-jev-compaction/) · ライセンス: MIT
+
+- [**jev-context**](https://github.com/zbush/jev-context) — ripgrep の候補を Jev で絞り、関連するコードを返す Codex 検索プラグイン。
+  - **Jev が判断する箇所**: 質問との関連性を判断し、No と Unknown の候補を除く。
+  - **このプロジェクトの用途**: 前後の内容を記録し、指定 tokenizer で返却量を比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/zbush/jev-context/) · ライセンス: MIT
+
+- [**pi-jev-compaction**](https://github.com/Wang-auspicious/pi-jev-compaction) — 生成要約ではなく、選んだツール記録の原文を残す Pi 向け Context GC。
+  - **Jev が判断する箇所**: 読み取り専用ツールの呼び出しと返答を一組で判定し、不要な組をコードで除く。
+  - **このプロジェクトの用途**: 原文の証拠と Pi の最近のメッセージ境界を残す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wang-auspicious/pi-jev-compaction/) · ライセンス: MIT
+
+- [**your-signal**](https://github.com/MithrilMan/your-signal) — 自分のキーで Jev に X の投稿を好み別に採点させ、表示を調整する Chrome 拡張。
+  - **Jev が判断する箇所**: 関連性、内容、実用性、宣伝傾向を評価し、ローカルの重みと閾値で表示を決める。
+  - **このプロジェクトの用途**: 個人のフィード設定を調整でき、表示変更を元に戻せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/mithrilman/your-signal/) · ライセンス: MIT
+
+- [**pi-jev-compact**](https://github.com/ilkerulusoy/pi-jev-compact) — 既定では古いツール履歴を、任意で助手の文章も整理する Pi 拡張。
+  - **Jev が判断する箇所**: 候補を残す必要性を Jev が判断し、残る文章は原文のまま返す。
+  - **このプロジェクトの用途**: 削減範囲を設定でき、判断の記録を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ilkerulusoy/pi-jev-compact/) · ライセンス: 記載なし
+
+
+## 音楽・UI 制作
+
+- [**json-render**](https://github.com/vercel-labs/json-render) — json-render のサイト内で、定義済みコンポーネントと属性を Jev が選ぶ UI 組み立て実験。
+  - **Jev が判断する箇所**: Vercel AI Gateway で構成を評価し、composeSpec が UI 仕様にまとめる。
+  - **このプロジェクトの用途**: Token ごとの JSON 生成とは別の、確認可能な構成経路を提供する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vercel-labs/json-render/) · ライセンス: Apache-2.0
+
+- [**jevmeter**](https://github.com/ChetasLua/jevmeter) — 字幕の各文を Jev が指定基準で採点し、メーターを重ねた動画を出力する。
+  - **Jev が判断する箇所**: 書き起こした文を質問と尺度で採点し、動画のタイムライン上で表示する。
+  - **このプロジェクトの用途**: 文のスコアを対応する映像と照合できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/chetaslua/jevmeter/) · ライセンス: MIT
+
+- [**vibecheck**](https://github.com/RafalWilinski/vibecheck) — X への投稿前に、明瞭さ、語調、不快さなどを Jev で採点するカードを表示する。
+  - **Jev が判断する箇所**: 下書きと返信・引用の文脈を送り、複数の評価と投稿の提案を受け取る。
+  - **このプロジェクトの用途**: 送信前に文章を複数の観点から見直せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rafalwilinski/vibecheck/) · ライセンス: 記載なし
+
+- [**refgarden**](https://github.com/AlbionaHoti/refgarden) — The Met・NASA・Cosmos の参考素材を集め、ローカル Explore で Jev を使うギャラリー。
+  - **Jev が判断する箇所**: Jev は画像の画素ではなくタイトルと説明から検索句や注目素材を選ぶ。
+  - **このプロジェクトの用途**: 出典リンクを保持。公開検索デモは Jev を呼ばず、画像クラスタリングの証拠ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/albionahoti/refgarden/) · ライセンス: MIT
+
+- [**snifftest**](https://github.com/DanRWilloughby/snifftest) — ローカル規則と任意の Jev 判断で文章を点検する Markdown・テキスト用 linter。
+  - **Jev が判断する箇所**: 冗長な結び、常套句、過度な留保などの文体規則を段落ごとに評価する。
+  - **このプロジェクトの用途**: ファイル、行、規則を示し、修正は書き手に任せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/danrwilloughby/snifftest/) · ライセンス: MIT
+
+- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) — 音楽の説明から Jev が楽器、和声、小節パターンを選び、編集可能なマルチトラック MIDI を作る。
+  - **Jev が判断する箇所**: 曲構成、楽器、和音、リズムを候補から選び、コードが音符に変換する。
+  - **このプロジェクトの用途**: 編集可能なトラックと判断記録を残し、再生と MIDI 書き出しに対応する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/cocktailpeanut/jevthoven/) · ライセンス: MIT
+
+- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) — UI の説明を既存の shadcn/ui コンポーネント・項目・スタイルの選択へ変換する。
+  - **Jev が判断する箇所**: 要求を選択・採点問題に分け、回答を有限のコンポーネント一覧に対応させる。
+  - **このプロジェクトの用途**: 判断による UI 構成のデモで、Jev 自体はコードや文言を生成しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/joevidev/ui-generator-instinct-jev/) · ライセンス: 記載なし
+
+- [**jev-got**](https://github.com/phureewat29/jev-got) — 別の言語モデルが物語を書き、Jev が場面を分類する Game of Thrones の文章ゲーム。
+  - **Jev が判断する箇所**: 場所・物語の展開・気分・危険・物語内かどうかを判定する。
+  - **このプロジェクトの用途**: 明示的な場面状態で背景・音楽・次のターンを制御する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/phureewat29/got-jev/) · ライセンス: 記載なし
+
+- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) — 和声練習と楽理問題で Jev を試し、和音選択によるピアノ演奏も行う。
+  - **Jev が判断する箇所**: 声部、音高、長さ、和音を選び、コードが採点または再生する。
+  - **このプロジェクトの用途**: 楽理のテストと音で確かめる実験を一つにまとめる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/adammichaelwood/jev-music-theory-1/) · ライセンス: 記載なし
+
+
+## データ・検索
+
+- [**pg-jev**](https://github.com/realZachi/pg-jev) — PostgreSQL の行を自然言語で絞り込み、分類、順位付けする。
+  - **Jev が判断する箇所**: 行の内容を Jev に送り、一致判定、分類、スコアを SQL 条件や並べ替えに使う。
+  - **このプロジェクトの用途**: 既存の SQL に意味的な条件を加え、キャッシュ結果を再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/realzachi/pg-jev/) · ライセンス: PostgreSQL
+
+- [**jev-search**](https://github.com/superagents-lab/jev-search) — Jev が検索元と期間を選び、取得したウェブリンクを並べ替える検索ツール。
+  - **Jev が判断する箇所**: 検索意図、検索元、期間と、各結果の関連度を判断する。
+  - **このプロジェクトの用途**: リンク、抜粋、変更可能な条件、検索元の失敗を表示する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/superagents-lab/jev-search/) · ライセンス: MIT
+
+- [**pg\_typesafe**](https://github.com/giuliosmall/pg_typesafe) — SQL から Jev の分類、二択、採点を呼び出す pre-alpha の PostgreSQL C 拡張。
+  - **Jev が判断する箇所**: SQL 入力を System One リクエストに変え、データベース関数で回答を返す。
+  - **このプロジェクトの用途**: 既存の問い合わせに型付きの意味判断を加える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/giuliosmall/pg_typesafe/) · ライセンス: MIT
+
+- [**duckdb-jev**](https://github.com/colliber/duckdb-jev) — SQL から Jev を呼び、ENUM、数値、STRUCT などで答えを返す DuckDB 拡張。
+  - **Jev が判断する箇所**: 行のテキストを Choice、Score、Noul で評価し、定義に合う SQL 型へ変換する。
+  - **このプロジェクトの用途**: 表や Parquet の問い合わせ中に構造化判断を使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/colliber/duckdb-jev/) · ライセンス: MIT
+
+- [**jev-curate**](https://github.com/AkashPriyadarshii/jev-curate) — Jev の採点でテキストレコードを採用・除外する Rust のデータセット選別実験。
+  - **Jev が判断する箇所**: ローカル前処理後に TypeSafe を呼び、確率とスコアの閾値を適用する。
+  - **このプロジェクトの用途**: ローカル前処理とスコア閾値を備え、レコード単位の選別パイプラインを研究できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/akashpriyadarshii/jev-curate/) · ライセンス: MIT
+
+- [**jevql**](https://github.com/kylemclaren/jevql) — データベース拡張を入れずに、通常の PostgreSQL へ Jev による絞り込み、分類、順位付けを加える。
+  - **Jev が判断する箇所**: CLI やサービス層が jev\_\* 呼び出しを解析し、行テキストの判断結果で問い合わせを処理する。
+  - **このプロジェクトの用途**: CLI、HTTP、MCP、SDK で同じ意味検索 SQL を使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kylemclaren/jevql/) · ライセンス: MIT
+
+- [**jevsql**](https://github.com/EugeneBoondock/jevsql) — SQLite に Jev の意味判断を加え、絞り込み、順位付け、照合と根拠追跡を行う。
+  - **Jev が判断する箇所**: 行データと質問を Jev に送り、回答を SQL で扱える結果へ変換する。
+  - **このプロジェクトの用途**: 一括処理、キャッシュ、予算管理、判断履歴を備える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/eugeneboondock/jevsql/) · ライセンス: MIT
+
+- [**llama-index-jev**](https://github.com/WiktorB2004/llama-index-jev) — LlamaIndex 向けに、検索文章の採点と問い合わせ先の選択を行う Jev 部品を提供する。
+  - **Jev が判断する箇所**: Score で文章の関連性を評価し、Choice で検索エンジンやツールを選ぶ。
+  - **このプロジェクトの用途**: 既存の検索フローに Jev の判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wiktorb2004/llama-index-jev/) · ライセンス: MIT
+
+- [**jev-scout**](https://github.com/AkashPriyadarshii/jev-scout) — 検索で得たリポジトリーと Rust crate の候補を、Jev が依頼に合わせて評価・選択する。
+  - **Jev が判断する箇所**: 候補情報と依頼を比べ、適合度や保守の兆候を評価する。
+  - **このプロジェクトの用途**: 提案を取得済み候補と出典リンクに結び付ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/akashpriyadarshii/jev-scout/) · ライセンス: MIT
+
+- [**jevsome-projects**](https://github.com/ozers/jevsome-projects) — 接続の根拠を保存し、任意で Jev に分類させるプロジェクト一覧と探索パイプライン。
+  - **Jev が判断する箇所**: キー設定時は状態と分類候補を Jev に送り、未設定時はローカルルールを使う。
+  - **このプロジェクトの用途**: プロジェクト一覧と具体的なコード上の根拠をまとめる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ozers/jevsome-projects/) · ライセンス: MIT
+
+
+## 判断ツール
+
+- [**killmyidea**](https://github.com/monteduro/killmyidea) — Jev の複数スコアから KILL・FIX・SHIP を付ける起業アイデア評価デモ。
+  - **Jev が判断する箇所**: 採点・分類・明瞭さを Jev に問い、ローカルの重みとゲートで最終ラベルを計算する。
+  - **このプロジェクトの用途**: 評価手順の例であり、市場検証・成功予測・投資助言ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/monteduro/killmyidea/) · ライセンス: 記載なし
+
+- [**hermes-jev**](https://github.com/keeltrace/hermes-jev) — 関連性・完了・復旧・任意の許可判断を補助する、Hermes Agent 用の非同期 Jev 連携。
+  - **Jev が判断する箇所**: Jev が限定した質問を背景で評価し、推論と実行は Hermes が担う。
+  - **このプロジェクトの用途**: 判断元を記録し、通常処理を妨げない設定を選べる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/keeltrace/hermes-jev/) · ライセンス: MIT
+
+- [**jevify**](https://github.com/altryne/jevify) — Jev に適した判断箇所を探し、質問と比較実験を設計する Agent Skill。
+  - **Jev が判断する箇所**: 用途に応じた質問を作り、付属スクリプトで API を使うケースを実行できる。
+  - **このプロジェクトの用途**: 導入案、質問設計、評価方法を結び付ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/altryne/jevify/) · ライセンス: MIT
+
+- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) — 状態や選択・採点の質問を入力し、Jev の回答と確率分布を見る Web 実験画面。
+  - **Jev が判断する箇所**: 複数の Noul、Choice、Score を一つのリクエストにまとめる。
+  - **このプロジェクトの用途**: アプリのコードを書く前に質問と選択肢を試せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/little-planet-labs/jev-playground/) · ライセンス: 記載なし
+
+- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) — 規則と証拠から別の skill の閉じた選択肢での結論を予測する Agent 用レシピ。
+  - **Jev が判断する箇所**: Jev が閉集合判断の可否を評価し、対象 skill の結論候補から選ぶ。
+  - **このプロジェクトの用途**: API 呼び出しと応答検査の例を含むが、対象 skill 自体は実行しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/danielkillenberger/jev-predict-skill/) · ライセンス: 記載なし
+
+- [**jevchat**](https://github.com/kt3k/jevchat) — 定義済みまたは独自の選択肢から回答する、チャット形式の Jev デモ。
+  - **Jev が判断する箇所**: 回答スタイルを Choice に変換し、質問の断片からチャットタイトルも選ぶ。
+  - **このプロジェクトの用途**: チャット画面で選択肢と確率を確認し、独自の回答集合を試せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kt3k/jevchat/) · ライセンス: 記載なし
+
+
+## 分野別ツール
+
+- [**ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund) — 基金判断の流れに任意の Jev アダプターを持つ、教育用途の AI ヘッジファンド試作。
+  - **Jev が判断する箇所**: 戦略上の質問を System One に送り、回答をプロジェクト共通の形式に変換する。
+  - **このプロジェクトの用途**: 同じ研究フローで Jev やほかのモデルを選べる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/virattt/ai-hedge-fund/) · ライセンス: MIT
+
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) — Monad の Kuru MON-USDC 板で、Jev のブロック単位判断を選択できるマーケットメイク実験。
+  - **Jev が判断する箇所**: Jev モードでは板から売買方向を選び、コードが模擬約定または設定済み指値注文を扱う。
+  - **このプロジェクトの用途**: 既定は mock モデル。秘密鍵なしでは dry run で、模擬結果は収益性を証明しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jarrodwatts/jev-trader/) · ライセンス: MIT
+
+- [**tax-doc-classifier**](https://github.com/kyotofin/tax-doc-classifier) — 事前定義した IRS の書式とページ種別を Jev が選ぶ税務書類分類器。
+  - **Jev が判断する箇所**: PDF ページのテキストを抽出し、書式、ページ種別、確信度を取得する。
+  - **このプロジェクトの用途**: 固定の書式一覧と各ページの分類を後続の処理につなぐ。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kyotofin/tax-doc-classifier/) · ライセンス: Apache-2.0
+
+- [**Prism**](https://github.com/irfndi/prism-liquidity-agent) — Solana 流動性プールを監視し、Jev のシャドー判断をルール判断と比較する Agent。
+  - **Jev が判断する箇所**: 入池分布・有害フロー・保有・ストレス信号を評価し、校正用ログに残す。
+  - **このプロジェクトの用途**: 確定的な取引ルールに比較可能な補助信号を加える。収益は保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/prism-liquidity-agent/) · ライセンス: MIT
+
+- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) — 洗濯物の取り忘れなどを Jev が判断し、Home Assistant のセンサーとして扱う。
+  - **Jev が判断する箇所**: 選択したエンティティの状態から確率、選択肢、スコアを返し、設定した閾値で自動化につなぐ。
+  - **このプロジェクトの用途**: 自然言語の条件を既存のセンサーや通知、シーンに組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/abovecolin/ha-jev/) · ライセンス: MIT
+
+- [**jev-trade**](https://github.com/aowang-ai/jev-trade) — Jev が売買方向と開始、決済、待機を選ぶ Hyperliquid 取引ボットの実験。
+  - **Jev が判断する箇所**: 各資産の口座が相場を Jev に送り、実行コードが注文や取り消しを行う。
+  - **このプロジェクトの用途**: モデルの判断、注文実行、画面の状態を分けて記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/aowang-ai/jev-trade/) · ライセンス: MIT
+
+- [**Jev-Trades**](https://github.com/zadescoxp/Jev-Trades) — 暗号資産の市場データと Jev による模擬取引を表示するダッシュボード。実注文 API は接続しない。
+  - **Jev が判断する箇所**: Jev が確定済みの分足と指標を判定し、Python が制限に従って模擬口座を更新する。
+  - **このプロジェクトの用途**: 市場入力・モデル判断・模擬ポジションをまとめて確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/zadescoxp/jev-trades/) · ライセンス: Apache-2.0
+
+- [**jev-seo**](https://github.com/AkashPriyadarshii/jev-seo) — ページ検査、DuckDuckGo 検索、任意の Jev 評価を組み合わせる実験的な Rust SEO/GEO CLI と MCP。
+  - **Jev が判断する箇所**: 検索意図、直接的回答、内容不足を分類し、独自尺度で引用されやすさを推定する。
+  - **このプロジェクトの用途**: ローカル検査、検索結果、モデル判断をレポートにまとめる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/akashpriyadarshii/jev-seo/) · ライセンス: 記載なし
+
+- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) — タスク振り分け・ログ確認・部品選択を試す、機械・電気工学向けの八つの Jev 実験。
+  - **Jev が判断する箇所**: Jev が工学的な文章や候補を分類し、計算と最終処理は Python が担う。
+  - **このプロジェクトの用途**: 合成例で工学ワークフローへの判断の組み込み方を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/foadsf/jev-for-engineers/) · ライセンス: MIT
+
+- [**jev-reviewer**](https://github.com/choxos/jev-reviewer) — 論文と補足資料から原文の証拠を選び、人が確認して抽出表へ出力するレビュー支援ツール。
+  - **Jev が判断する箇所**: Jev が候補行 ID を選び、コードが原文とファイル・位置をコピーする。
+  - **このプロジェクトの用途**: 引用・出典位置・人による確認状況を対応付ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/choxos/jev-reviewer/) · ライセンス: MIT
+
+- [**jevscan**](https://github.com/jevbook/jevscan) — 市場特徴に基づくリスク判断を、ライブラリー・CLI・MCP で提供する EVM Token ツール。
+  - **Jev が判断する箇所**: 既定はローカル規則で、TypeSafe key を設定すると Jev 判断を使う。
+  - **このプロジェクトの用途**: 特徴量・判断元・スコアを並べて確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jevbook/jevscan/) · ライセンス: MIT
+
+- [**jevsume**](https://github.com/unownone/jevsume) — 履歴書の文章・構成を確認し、特定の求人との適合も調べるアプリ。
+  - **Jev が判断する箇所**: 抽出した履歴書を Jev が質問ごとに評価し、Worker が結果をまとめる。
+  - **このプロジェクトの用途**: 入力と判断を記録し、個々のレビューを後で確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/unownone/jevsume/) · ライセンス: 記載なし
+
+- [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) — マーケティング・音声基盤内の TypeSafe 実験モジュールが、Agent 役割の専門ラベルを選ぶ。
+  - **Jev が判断する箇所**: 役割情報と限定候補を Choice に送り、コードが能力ラベルへ対応付ける。
+  - **このプロジェクトの用途**: 業務アプリでの役割分類の接続例を示す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/sumitrevolt/leadgenrationaivoiceagent/) · ライセンス: MIT
+
+- [**jev-trade**](https://github.com/Waxmell114514/jev-trade) — BTC・ETH の特徴量を Jev に渡し、遅延と売買コストを含めて模擬取引するループ。
+  - **Jev が判断する箇所**: Jev が方向とリスクを判定し、模擬ポジションはローカル方針が決める。
+  - **このプロジェクトの用途**: 判断・遅延・コストを同じ実験記録で比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/waxmell114514/jev-trade/) · ライセンス: 記載なし
+
+
+## 評価・可観測性
+
+- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) — Latitude の任意の Jev 事前分類器が、会話検査の判断と選択理由を記録する。
+  - **Jev が判断する箇所**: 検査の必要性を判断し、しきい値と呼び出し制限を満たす場合に検査を追加する。
+  - **このプロジェクトの用途**: モデル、しきい値、時間、選択理由を元の処理と対照できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/latitude-dev/latitude-llm/) · ライセンス: MIT
+
+- [**jev-review**](https://github.com/NiazMorshed2007/jev-review) — コーディング Agent に複数の品質スコアを返すローカル MCP レビューサーバー。
+  - **Jev が判断する箇所**: Jev が正しさ・複雑度・テスト・セキュリティを採点し、改善項目を整理する。
+  - **このプロジェクトの用途**: チェック間のスコア変化を比較でき、修正は主 Agent が担当する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/niazmorshed2007/jev-review/) · ライセンス: MIT
+
+- [**taskuary**](https://github.com/ldbumble/taskuary) — Taskuary でタスク状態がユーザー定義条件を満たすか点検する任意の Jev モジュール。
+  - **Jev が判断する箇所**: 条件を yes/no 確率質問へ変え、ローカル閾値の判定と確率を返す。
+  - **このプロジェクトの用途**: タスク結果の確認用で、メッセージシステム全体を Jev が制御するわけではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ldbumble/taskuary/) · ライセンス: MIT
+
+- [**supercov**](https://github.com/supercorp-ai/supercov) — Jev によるコード属性確認と、ローカルのカバレッジを組み合わせた Agent 向け CLI。
+  - **Jev が判断する箇所**: ファイルの品質属性を Jev に問い、コードがスコアと順序をまとめる。
+  - **このプロジェクトの用途**: スコアを名前付き属性に分け、内容ごとに結果を保存する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/supercorp-ai/supercov/) · ライセンス: MIT
+
+- [**goodwatch-monorepo**](https://github.com/alp82/goodwatch-monorepo) — GoodWatch 内で、映像作品の特徴に対する Jev の質問設計とバッチ量を比較する実験。
+  - **Jev が判断する箇所**: 定義した特徴の有無・強さを質問し、スコア・遅延・Token を記録する。
+  - **このプロジェクトの用途**: 固定サンプルで評価尺度・入力条件・バッチ方式を比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/alp82/goodwatch-monorepo/) · ライセンス: MIT
+
+- [**typesafe-ai-benchmark**](https://github.com/iammrduncan/typesafe-ai-benchmark) — 共通のタスクで Jev とほかの構造化出力モデルを比べ、誤り、遅延、Token、推定費用を記録する。
+  - **Jev が判断する箇所**: 同じタスクを Choice/Noul に変換し、回答を共通の結果形式にそろえる。
+  - **このプロジェクトの用途**: 比較手順と結果からモデル間の違いを確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/iammrduncan/typesafe-ai-benchmark/) · ライセンス: MIT
+
+- [**jev-playground**](https://github.com/mizchi/jev-playground) — ゲーム・ブラウザー・コマンドリスク・小型言語を扱う MoonBit / TypeScript の Jev 実験集。
+  - **Jev が判断する箇所**: 候補動作や型付き質問を Jev に送り、各プログラムが回答を実行・記録する。
+  - **このプロジェクトの用途**: ソース、実験記録、一部のオフライン再生例で判断設計を比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/mizchi/jev-playground/) · ライセンス: 記載なし
+
+- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) — 文章分類・確率校正・選択的自動化を Jev と GLiNER で比較するベンチマーク。
+  - **Jev が判断する箇所**: 同じラベル付き課題を実行し、確率・遅延・失敗を記録する。
+  - **このプロジェクトの用途**: 課題ごとの精度と、閾値に使う確率の妥当性を調べられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/abdelstark/jev-benchmarks/) · ライセンス: Apache-2.0
+
+- [**typesafe-playground**](https://github.com/kavehmz/typesafe-playground) — 問い合わせ振り分けのプレビューと3D運転シミュレーションを行う Jev 実験集。
+  - **Jev が判断する箇所**: 問い合わせを評価するか、構造化された模擬センサーから車線と速度を選ぶ。
+  - **このプロジェクトの用途**: 入力、確率、続く動作を画面で比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kavehmz/typesafe-playground/) · ライセンス: 記載なし
+
+- [**jev-lm**](https://github.com/y0usaf/jev-lm) — Jev に単語を選ばせ、ローカルで作った続きの文章を検証する生成実験。
+  - **Jev が判断する箇所**: Choice で次の単語を選び、Noul で続きの候補と終了条件を判定する。
+  - **このプロジェクトの用途**: 決定モデルを文章生成に使う際の限界を調べられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/y0usaf/jev-lm/) · ライセンス: MIT
+
+- [**jevcal**](https://github.com/abhixhek/jevcal) — ラベル付きデータで Jev の確率・閾値・モデル更新の影響を調べるツール。
+  - **Jev が判断する箇所**: 固定質問で精度・校正・処理範囲・追加処理率を測定する。
+  - **このプロジェクトの用途**: 閾値選択とモデル変化の確認をレポートや CI に組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/abhixhek/jevcal/) · ライセンス: MIT
+
+- [**jev-behavior-study**](https://github.com/RINNECODER/jev-behavior-study) — 質問表現・入力条件・ゲーム課題における成功と失敗を記録する Jev 1.13.0 の独立研究。
+  - **Jev が判断する箇所**: 固定課題の条件を変え、選択・確率・要求と応答の原記録を残す。
+  - **このプロジェクトの用途**: 簡単な課題の成功を一般化せず、個々の事例を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rinnecoder/jev-behavior-study/) · ライセンス: MIT
+
+- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) — Jev に単語や句を繰り返し選ばせ、コードで回答を組み立てる研究用デコーダー。
+  - **Jev が判断する箇所**: 段階的な Choice デコードと、完成した候補回答の選択を比較する。
+  - **このプロジェクトの用途**: 手法、実験履歴、失敗例を研究用に公開している。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/adhyaay-karnwal/jev-chat/) · ライセンス: MIT
+
+- [**jev-benchmark**](https://github.com/wondertwins/jev-benchmark) — チェスの手選びと、話し掛けられた NPC の識別で Jev を評価する。
+  - **Jev が判断する箇所**: 合法な手を選ぶか、発話が各 NPC に向けられたか判断する。
+  - **このプロジェクトの用途**: 正解ラベル、リクエストと応答、評価コードを公開している。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wondertwins/jev-benchmark/) · ライセンス: MIT
+
+- [**jev-frontend-qa**](https://github.com/Nainish-Rai/jev-frontend-qa) — Jev がブラウザー操作を選び、DOM・HTTP・DB の証拠で仕様を確認するフロントエンド QA。
+  - **Jev が判断する箇所**: 観測した操作と操作部品から選び、期待値と合格条件はテストコードが判定する。
+  - **このプロジェクトの用途**: 探索の記録と仕様の受入確認を区別できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/nainish-rai/jev-frontend-qa/) · ライセンス: 記載なし
+
+- [**jev-pref**](https://github.com/doeixd/jev-pref) — AGENTS.md のプロジェクト方針をルールに整理し、hunk・ステージ済みファイル・PR を Jev で点検する。
+  - **Jev が判断する箇所**: 変更証拠を設定ルールに照らして分類し、コードが結果へ変換する。
+  - **このプロジェクトの用途**: 意味ルールの指摘を Agent に返すが、型検査・テスト・安全監査の代替ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/doeixd/jev-pref/) · ライセンス: MIT
+
+- [**ask-jev**](https://github.com/omni-/ask-jev) — Codex で :jev を使い、記録済みの実行証拠を点検する Windows PowerShell ツール。
+  - **Jev が判断する箇所**: 選択した記録を Jev に送り、結論と証拠の十分さを確率で判断する。
+  - **このプロジェクトの用途**: 明示的に呼んだ時だけ記録を読み送信する。実テストの代替ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/omni-/ask-jev/) · ライセンス: MIT
+
+- [**Canny**](https://github.com/qkal/Canny) — Claude Code / Codex CLI の実行台帳から、変更後に検証が通ったか確認する。
+  - **Jev が判断する箇所**: Jev は完了声明や意味ルールの問題を補助判断し、停止ゲートは台帳とローカル規則で決める。
+  - **このプロジェクトの用途**: 実行証拠とモデル意見を分け、Jev 単独で完了認定しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/qkal/canny/) · ライセンス: MIT
+
+- [**hermes-jev-north-star**](https://github.com/poponline63/hermes-jev-north-star) — 要件を保存し実行プロンプトを作り、完了証拠を点検する Hermes の目標確認 skill。
+  - **Jev が判断する箇所**: 機械で確認できる要件はローカルで、残りの意味条件は Jev で評価する。
+  - **このプロジェクトの用途**: 目標を検査条件に結び付けるが、実際の受入証拠をモデル意見で置き換えない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/poponline63/hermes-jev-north-star/) · ライセンス: MIT
+
+- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) — 複数 Agent の失敗記録から責任 Agent・重要ステップ・エラー種別を予測する評価プロジェクト。
+  - **Jev が判断する箇所**: 記録から候補集合を作り、Jev に三つの choice 質問を送る。
+  - **このプロジェクトの用途**: 評価スクリプトと作者結果を公開。一部ベースラインの自由生成と候補選択では条件が異なる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tokentrim/jev-agent-failure-benchmark/) · ライセンス: Apache-2.0
+
+- [**jev-exploration**](https://github.com/SamuelSacco/jev-exploration) — Jev の主張と限界を記録し、確率校正の実験や実行例を収めた研究リポジトリ。
+  - **Jev が判断する箇所**: 定義した質問とラベル付き例を使い、誤り、校正、難易度の影響を分析する。
+  - **このプロジェクトの用途**: 研究上の主張をコード、データ、根拠の台帳に結び付ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/samuelsacco/jev-exploration/) · ライセンス: 記載なし
+
+- [**jev-flash-review**](https://github.com/TheBous/jev-flash-review) — Agent が渡す diff を明示ルールで評価する MCP コードレビューエンジン。
+  - **Jev が判断する箇所**: Jev が diff を点検し、実在する hunk から証拠位置を選んで指摘を再確認する。
+  - **このプロジェクトの用途**: diff と業務境界は呼び出し側が渡し、エンジン自身はリポジトリを走査しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/thebous/jev-flash-review/) · ライセンス: 記載なし
+
+- [**jev-gomoku**](https://github.com/XieChengYuan/jev-gomoku) — 九つの 15×15 五目並べ盤で、二人の Jev に渡す情報の違いを比較する実験台。
+  - **Jev が判断する箇所**: ローカル生成の着手候補から選び、盤面情報や戦術情報の条件を変える。
+  - **このプロジェクトの用途**: 明示されたリプレイと自分のキーによる対局で、一手ごとの記録を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/xiechengyuan/jev-gomoku/) · ライセンス: 記載なし
+
+- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) — 同じ検索候補で Jev、専用 reranker、チャットモデルの順位付けを比較する。
+  - **Jev が判断する箇所**: Choice、Noul、段階評価で候補を並べ替え、検索指標を計算する。
+  - **このプロジェクトの用途**: 生の応答、評価コード、データセット別結果を公開している。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/anessbelbati/jev-rerank-bench/) · ライセンス: MIT
+
+- [**jev-synergy-screening**](https://github.com/PistachioAIHQ/jev-synergy-screening) — ADHD レビューの題名・抄録を Jev で選別し、Cohen Abstract Triage のラベルと比較する実験。
+  - **Jev が判断する箇所**: 適格性を Choice と Noul で質問し、コードで採用・除外にまとめる。
+  - **このプロジェクトの用途**: データ区分と質問設計ごとの指標から選別ミスを確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/pistachioaihq/jev-synergy-screening/) · ライセンス: 記載なし
+
+- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) — プログラマー指定の受入コマンドを備えた、Codex worker 用の Jev 監督実験。
+  - **Jev が判断する箇所**: Jev が進捗や完了を評価し、最終合格は決定的な受入チェックで確認する。
+  - **このプロジェクトの用途**: モデルの評価と実行可能な完了確認を分離する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/shifty-eye-games/foreman-jev/) · ライセンス: MIT
+
+- [**jev-calibration-audit**](https://github.com/jujumilk3/jev-calibration-audit) — 公開 API とデータで Jev の確率較正、選択肢表現の影響、韓国語判断を調べる。
+  - **Jev が判断する箇所**: Noul と Choice の結果をラベルと比べ、誤差、正確さ、安定性を計算する。
+  - **このプロジェクトの用途**: 呼び出しごとの記録と実験説明で結論の範囲を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jujumilk3/jev-calibration-audit/) · ライセンス: MIT
+
+- [**jev-demos**](https://github.com/Bud-ro/jev-demos) — 迷路で Jev の単一手選択と複数手の先読みを比較する実験。
+  - **Jev が判断する箇所**: 方向候補から移動を選び、衝突、経路、到達を検査する。
+  - **このプロジェクトの用途**: 実験条件と失敗を記録し、限界を調べられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/bud-ro/jev-demos/) · ライセンス: 記載なし
+
+- [**jev-eval**](https://github.com/4esv/jev-eval) — 正解付き分類課題で Jev と OpenRouter モデルの正確さ、較正、遅延、費用を比較する。
+  - **Jev が判断する箇所**: 同じ課題の判断を集め、信頼区間と同一入力の安定性を計算する。
+  - **このプロジェクトの用途**: 前処理、呼び出し、統計コードとモデル別結果を公開する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/4esv/jev-eval/) · ライセンス: 記載なし
+
+
+## ゲーム・リアルタイム判断
+
+- [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) — スクリーンショットではなく NES の RAM と状態を Jev に渡す Mario 操作実験。
+  - **Jev が判断する箇所**: 動き・敵・地形・直近の操作から、定義済みの合法操作を選ぶ。
+  - **このプロジェクトの用途**: 画像入力なしで、モデルに渡した状態と操作を記録できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/fhshaik/typesafe-mario/) · ライセンス: 記載なし
+
+- [**jevpilot**](https://github.com/standardagents/jevpilot) — ローカルで作る経路と速度の候補から Jev が選ぶブラウザー運転シミュレーター。
+  - **Jev が判断する箇所**: 道路と交通状況から行動を選び、幾何計算・衝突予測・制動はローカルで行う。
+  - **このプロジェクトの用途**: シミュレーション中の候補経路と選択確率を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/standardagents/jevpilot/) · ライセンス: 記載なし
+
+- [**jev-drone**](https://github.com/RomanSlack/jev-drone) — カメラのバッファから場面を抽出し、Jev が戦術を助言する MuJoCo ドローン実験。
+  - **Jev が判断する箇所**: 距離区分、障害物の高さ、目標状態から機動、リスク、目標喪失を判断する。
+  - **このプロジェクトの用途**: 戦術判断をローカルの誘導、反射制御、飛行制御と分ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/RomanSlack/jev-drone/) · ライセンス: MIT
+
+- [**tsai-sc**](https://github.com/phyous/tsai-sc) — 状態取得と推論中にゲームを停止し、StarCraft shareware の Strongarm を Jev で操作する。
+  - **Jev が判断する箇所**: 構造化されたゲーム状態からコマンドを選び、マウスとキーボードで実行する。
+  - **このプロジェクトの用途**: 作者による勝利録画と検証報告があるが、限定ミッションの実験でリアルタイム競技の基準ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/phyous/tsai-sc/) · ライセンス: MIT
+
+- [**live-jev**](https://github.com/vinilana/live-jev) — Jev が車線と速度を選ぶブラウザー上の俯瞰型運転シミュレーター。チャットモデルとの比較も可能。
+  - **Jev が判断する箇所**: 車線・速度・危険度・歩行者優先を Jev が判断し、ローカルルールが動作へ変換する。
+  - **このプロジェクトの用途**: 同じシードのコースで比較でき、緊急ブレーキには別のローカル処理がある。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vinilana/live-jev/) · ライセンス: 記載なし
+
+- [**jevscape**](https://github.com/Skyvern-AI/jevscape) — rs-sdk の限定操作候補と Jev で RuneScape タスクを動かす RuneBench 拡張。
+  - **Jev が判断する箇所**: 状態から目標動作、tick 内の介入、次の問い合わせ間隔を選ぶ。
+  - **このプロジェクトの用途**: 動作分布画面、実行記録、burst/tick 制御を提供する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/skyvern-ai/jevscape/) · ライセンス: 記載なし
+
+- [**OneVOneJev**](https://github.com/emrickgarrett/OneVOneJev) — 構造化された戦況を読み、Jev が移動、照準、射撃を選ぶブラウザー版 1v1 FPS。
+  - **Jev が判断する箇所**: 各 tick で移動、視点、照準、射撃、ジャンプを判断し、API 障害時はヒューリスティックに切り替える。
+  - **このプロジェクトの用途**: 対戦ゲームの中で構造化された判断を観察できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/one-v-one-jev/) · ライセンス: 記載なし
+
+- [**JevBird**](https://github.com/leftspace89/JevBird) — コードで候補軌道をシミュレートし、Jev が選ぶ Python 版 Flappy Bird。
+  - **Jev が判断する箇所**: 新しいパイプごとに経路を選び、ゲームが予定された羽ばたきを実行する。
+  - **このプロジェクトの用途**: 候補軌道・確率・選択結果を画面で確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/leftspace89/jevbird/) · ライセンス: MIT
+
+- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) — Jev が航路・譲り合い・緊急放送・着陸順を判断する島の空港シミュレーター。
+  - **Jev が判断する箇所**: 機体と周辺交通の状態を質問にし、回答を模擬動作に反映する。
+  - **このプロジェクトの用途**: 要求・回答・状態を確認でき、別途 mock 経路も備える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/lbotinelly/jev-little-airways/) · ライセンス: MIT
+
+- [**jevarena**](https://github.com/raihankhan-rk/jevarena) — 二つのブラウザー画面で Jev Agent が Snake をプレイし、一手ごとの選択を表示する。
+  - **Jev が判断する箇所**: 構造化した盤面状態から、許可された方向ボタンを選ぶ。
+  - **このプロジェクトの用途**: 候補・操作確率・ゲーム進行を並べて確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/raihankhan-rk/jevarena/) · ライセンス: MIT
+
+- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) — 構造化したゲーム状態から Jev が移動・標的・射撃を選ぶ ViZDoom Agent。
+  - **Jev が判断する箇所**: Jev が戦術目標と動作を選び、細かな照準はローカルの幾何処理が担う。
+  - **このプロジェクトの用途**: ゲームの更新とネットワーク推論を分離する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/amoghcreator/doom-jev/) · ライセンス: 記載なし
+
+- [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) — ManiSkill の模擬ロボットアームで、英語の目標に合わせて既定動作を Jev がつなぐ。
+  - **Jev が判断する箇所**: 物体座標と把持状態から、約30の動作と対象を選ぶ。
+  - **このプロジェクトの用途**: 動作選択と Python の低層制御を分ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/taruntomar122/jev-askable-arm/) · ライセンス: MIT
+
+- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) — チェスを中心に、分類や照合も試せる Jev 実験ワークベンチ。
+  - **Jev が判断する箇所**: ローカルで生成した合法手から選ぶ。Stockfish の評価は操作者に表示する。
+  - **このプロジェクトの用途**: モデルの選択と別のチェス評価を並べて比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/4anti/jev-broadcast-lab/) · ライセンス: 記載なし
+
+- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) — 同じ初期状態から Jev が操作するプレイヤーを比較する、ブラウザー版 Doom 実験。
+  - **Jev が判断する箇所**: 体力・弾薬・対象の構造化情報から操作を選び、ローカル制御器が実行する。
+  - **このプロジェクトの用途**: モデル判断と、明示されたオフライン・代替方針を見分けられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/lukaske/jev-doom-agent/) · ライセンス: 記載なし
+
+- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) — Jev が Chrome の恐竜ゲームやローカル FPS を判断し、Python が操作する。
+  - **Jev が判断する箇所**: 状態からジャンプ、しゃがみ、移動、照準、射撃を選び、ローカルルールを適用する。
+  - **このプロジェクトの用途**: 検査画面で状態、回答、実行された操作を比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/mittal-parth/jev-experiments/) · ライセンス: 記載なし
+
+- [**jev-play-ping-pong**](https://github.com/Icohen007/jev-play-ping-pong) — ブラウザの卓球ゲームで、Jev がサーブ方向、返球角度、強さを選ぶ。
+  - **Jev が判断する箇所**: 構造化された状態を読み、Choice で打球を選んでからコードが入力を実行する。
+  - **このプロジェクトの用途**: 動作、遅延、試合記録を残し、実行を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/icohen007/jev-play-ping-pong/) · ライセンス: MIT
+
+- [**mk-jev-fly-brain**](https://github.com/lavallee/mk-jev-fly-brain) — mk.js 格闘ゲームで、ハエの接続図によるスパイク仮想回路、Jev、規則方式を比較する。
+  - **Jev が判断する箇所**: Jev が試合状態を読み、他の制御器と同じ7動作から選ぶ。
+  - **このプロジェクトの用途**: 対照条件、試合記録、実験説明で各部分の寄与を比較する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/lavallee/mk-jev-fly-brain/) · ライセンス: MIT
+
+
+## MCP・連携
+
+- [**vellum-assistant**](https://github.com/vellum-ai/vellum-assistant) — Vellum Assistant の任意の Jev provider が、会話状態と明示的な質問を TypeSafe に送る。
+  - **Jev が判断する箇所**: 状態と質問を System One に送り、構造化された回答を Assistant に返す。
+  - **このプロジェクトの用途**: 既存のアシスタントに選択、確率、採点を追加できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vellum-ai/vellum-assistant/) · ライセンス: MIT
+
+- [**typesafe-mcp**](https://github.com/itsmostafa/typesafe-mcp) — Claude Code、Claude Desktop、Codex、Pi から Jev に質問する MCP サーバー。
+  - **Jev が判断する箇所**: 状態と Choice・Score・Noul の質問を送り、構造化された回答と確率を返す。
+  - **このプロジェクトの用途**: 呼び出し側で回答を確認し、処理を分岐できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/typesafe-mcp/) · ライセンス: MIT
+
+- [**jev-mcp**](https://github.com/jkudish/jev-mcp) — 引用確認、内容検査、検索、並べ替え、分類、比較、抽出など、8つの MCP 判断ツールを提供する。
+  - **Jev が判断する箇所**: 型付きの質問で、根拠の支持度、内容のリスク、候補の関連度を評価する。
+  - **このプロジェクトの用途**: 判断と確率を返し、しきい値や制御の適用は呼び出し側に任せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jev-mcp/) · ライセンス: MIT
+
+- [**synkora-ai**](https://github.com/getsynkora/synkora-ai) — Synkora は分類、採点、真偽判断向けの任意の TypeSafe ツールを備える。
+  - **Jev が判断する箇所**: 処理の状態と名前付き質問を Jev に送り、回答を Agent に返す。
+  - **このプロジェクトの用途**: 既存のプラットフォーム処理から判断機能を使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/getsynkora/synkora-ai/) · ライセンス: MIT
+
+- [**plasmallm**](https://github.com/joshuaeroman/plasmallm) — KDE Plasma のアシスタント部品で構造化判断を表示する Jev Decisions アダプター。
+  - **Jev が判断する箇所**: 現在のメッセージを質問に変換し、TypeSafe または互換 Decisions 端点から回答を得る。
+  - **このプロジェクトの用途**: 既存のデスクトップ画面で判断モデルを試せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/joshuaeroman/plasmallm/) · ライセンス: GPL-2.0
+
+- [**Jevbridge**](https://github.com/gamesonrblx/Jevbridge) — ACP、MCP、CLI を通じ、Jev や他のモデルを共通の判断インターフェースにつなぐ。
+  - **Jev が判断する箇所**: 状態と限定された質問を選択したバックエンドに送り、オフライン規則も利用できる。
+  - **このプロジェクトの用途**: Agent が共通の入口で判断バックエンドを比較・交換できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/gamesonrblx/jevbridge/) · ライセンス: MIT
+
+- [**pi-jev**](https://github.com/TheoOliveira/pi-jev) — Pi Agent に必要なツールとスキルを探し、構造化評価や任意の履歴フィルターを提供する。
+  - **Jev が判断する箇所**: 候補ツール、スキル、履歴とタスクの関連性を判定し、読み込みや保持に使う。
+  - **このプロジェクトの用途**: 必要な能力を必要なときにワークフローへ加えられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/theooliveira/pi-jev/) · ライセンス: MIT
+
+- [**pi-typesafe**](https://github.com/DevMortimer/pi-typesafe) — 判断ツール・ターミナル実験コマンド・他拡張向け API を提供する Pi の Jev 拡張。
+  - **Jev が判断する箇所**: 共通クライアントが質問を一括送信し、応答を検証して使用量と可用性を記録する。
+  - **このプロジェクトの用途**: キーとクライアントを共通管理し、他拡張でも判断 API を再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/devmortimer/pi-typesafe/) · ライセンス: MIT
+
+- [**jev-mcp**](https://github.com/blakestone-x/jev-mcp) — Jev の分類・採点・二択判断・候補照合を MCP ツールとして公開する。
+  - **Jev が判断する箇所**: MCP サーバーが TypeSafe SDK を呼び、選択肢・確率・スコアを返す。
+  - **このプロジェクトの用途**: MCP 対応クライアントで共通の判断インターフェースを使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/blakestone-x/jev-mcp/) · ライセンス: MIT
+
+- [**jevwire**](https://github.com/Brainwires/jevwire) — Agent 向けの Jev MCP ツール、組込みライブラリ、Claude Code hooks を提供する。
+  - **Jev が判断する箇所**: 順位付け・確認・動作点検・次の一手を Jev に問い、コードが方針を適用する。
+  - **このプロジェクトの用途**: MCP とホストコードで判断層を共用でき、hooks の動作は設定に依存する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/brainwires/jevwire/) · ライセンス: MIT
+
+- [**jev-mcp**](https://github.com/rashedInt32/jev-mcp) — 分類、採点、真偽判断、一括質問を提供する Jev MCP サーバーと Claude Code プラグイン。
+  - **Jev が判断する箇所**: Choice、Score、Noul で TypeSafe を呼び、構造化された回答を返す。
+  - **このプロジェクトの用途**: MCP クライアントから型付き判断を使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/rashedint32/jev-mcp/) · ライセンス: MIT
+
+- [**jev-workbench**](https://github.com/molis-ai/jev-workbench) — ローカル画面で Jev 判断関数を定義、試行、公開し、バックエンドや Agent から固定版を呼ぶ。
+  - **Jev が判断する箇所**: 分類や根拠の確認を Noul、Choice、Score として定義し TypeSafe に送る。
+  - **このプロジェクトの用途**: 複数の呼び出し元で同じ版の判断関数を再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/molis-ai/jev-workbench/) · ライセンス: MIT
+
+- [**tenbin**](https://github.com/simota/tenbin) — 質問 lint・バッチ評価・校正で Jev 判断を設計する文書、MCP server、Skill。
+  - **Jev が判断する箇所**: サンプルを Choice・Score・Noul で評価し、結果からローカル閾値を設計する。
+  - **このプロジェクトの用途**: 質問設計・測定・実行時規則を対応付けられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/simota/tenbin/) · ライセンス: MIT
+
+- [**jev\_ampcode**](https://github.com/thesammykins/jev_ampcode) — 与えられた選択肢、根拠、優先事項を比較する Amp プラグイン。
+  - **Jev が判断する箇所**: Jev Choice で限定された候補を比較し、確認用の確率を返す。
+  - **このプロジェクトの用途**: 候補と判断材料を明示できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/thesammykins/jev_ampcode/) · ライセンス: 記載なし
+
+- [**jev-classifier**](https://github.com/felpsdev/jev-classifier) — コーディング Agent 向けのローカル Jev ツールルーター。MCP の提案インターフェースもある。
+  - **Jev が判断する箇所**: 候補ツールから Jev が次を選び、アダプターにより記録または実際の選択へ反映する。
+  - **このプロジェクトの用途**: 判断ログを保持。一部クライアントは観察のみ、または採用を自身で決める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/felpsdev/jev-classifier/) · ライセンス: MIT
+
+- [**jev-mcp**](https://github.com/BYK/jev-mcp) — 単発質問、一括処理、質問やしきい値の比較を行う評価重視の Jev MCP サーバー。
+  - **Jev が判断する箇所**: 型付き質問を実行し、正解付き標本で正確さや較正を測る。
+  - **このプロジェクトの用途**: 標本結果を使って質問設計としきい値を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/byk/jev-mcp/) · ライセンス: MIT
+
+- [**n8n-nodes-typesafe-jev**](https://github.com/n3ndor/n8n-nodes-typesafe-jev) — TypeSafe Jev に型付き質問を送る n8n のコミュニティノード。
+  - **Jev が判断する箇所**: 入力 item から状態と質問を作り、Jev の回答を追記または単独で出力する。
+  - **このプロジェクトの用途**: フォーム・JSON で質問を設定でき、Agent ツールとしても利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/n3ndor/n8n-nodes-typesafe-jev/) · ライセンス: MIT
+
+- [**openclaw-typesafe-ai**](https://github.com/Olli0103/openclaw-typesafe-ai) — 明示的に呼ぶ typesafe\_decide ツール一つを登録する独立した OpenClaw プラグイン。
+  - **Jev が判断する箇所**: 呼び出し側の状態と質問を TypeSafe に送り、型付き Jev 判断を返す。
+  - **このプロジェクトの用途**: チャット provider・自動 hooks・常駐処理はなく、スクレイピングや CAPTCHA 用ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/olli0103/openclaw-typesafe-ai/) · ライセンス: MIT
+
+
+## モデルルーティング
+
+- [**litellm**](https://github.com/BerriAI/litellm) — LiteLLM の複雑度ルーターで、Jev にリクエストの分類を任せられる。
+  - **Jev が判断する箇所**: 設定済みの複雑度へ分類し、その結果からバックエンドを振り分ける。
+  - **このプロジェクトの用途**: 振り分けの基になる複雑度判断を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/berriai/litellm/) · ライセンス: MIT
+
+- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) — Oh My Pi に含まれる任意の TypeSafe 判断プロバイダーを、Agent の限定的な判断で使える。
+  - **Jev が判断する箇所**: Agent の状態と型付き質問を Jev に送り、回答を解析する。
+  - **このプロジェクトの用途**: 既存の Agent 処理に交換可能な判断プロバイダーを加えられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/can1357/oh-my-pi/) · ライセンス: MIT
+
+- [**jev-model-router**](https://github.com/davila7/claude-code-templates) — Jev で Claude Code の子 Agent のモデル・思考レベルを提案するコミュニティ製 mod。
+  - **Jev が判断する箇所**: タスク段階・推論要件・本番リスクを評価し、ローカル方針で設定へ変換する。
+  - **このプロジェクトの用途**: 振り分け規則と各選択の理由を確認・設定できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/davila7/claude-code-templates/) · ライセンス: MIT
+
+- [**openchamber**](https://github.com/openchamber/openchamber) — Jev でメッセージを分類し、設定済みモデルと思考レベルを選ぶ OpenChamber の任意ルーター。
+  - **Jev が判断する箇所**: Jev がタスク分類を選び、ローカルの対応表でモデル設定を決める。
+  - **このプロジェクトの用途**: 分類とモデルの割り当てを明示できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/openchamber/openchamber/) · ライセンス: MIT
+
+- [**firstmate**](https://github.com/kunchenguid/firstmate) — Firstmate は任意で Jev を使い、タスク概要と派工ルールを照合して Agent 設定を選ぶ。
+  - **Jev が判断する箇所**: 概要と候補ルールを送り、確信度とローカル条件から実行設定を決める。
+  - **このプロジェクトの用途**: 意味的な照合と最終的な派工ポリシーを分ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kunchenguid/firstmate/) · ライセンス: MIT
+
+- [**atomic**](https://github.com/bastani-inc/atomic) — Atomic のコーディング Agent にある任意の Jev バックエンドで、振り分けなどの構造化選択を行う。
+  - **Jev が判断する箇所**: 事前定義の質問を送り回答を呼び出し元で使い、コード生成は通常のモデルが担当する。
+  - **このプロジェクトの用途**: 構造化判断とテキスト生成のインターフェースを分ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/bastani-inc/atomic/) · ライセンス: Custom license
+
+- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) — VexJoy の依頼を専門 Agent・skill・workflow に対応付ける任意の Jev 経路。
+  - **Jev が判断する箇所**: 決定的な振り分け規則の後で、残りの候補と必要な構成要素を判定する。
+  - **このプロジェクトの用途**: 固定規則とモデルによる候補選択を別の段階に分ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/notque/vexjoy-agent/) · ライセンス: MIT
+
+- [**WrongStack**](https://github.com/WrongStack/WrongStack) — WrongStack の専門 Agent を選ぶための、任意の Jev 分類器。
+  - **Jev が判断する箇所**: 適格な専門 Agent とタスクを照合し、ローカル配分規則が結果を使う。
+  - **このプロジェクトの用途**: 既存コーディング Agent に設定可能な専門家選択を追加できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wrongstack/wrongstack/) · ライセンス: MIT
+
+- [**skillbox**](https://github.com/kitze/skillbox) — 任意の Jev 推薦機能を持つ、自前ホスト型の版管理付き Agent skill ライブラリー。
+  - **Jev が判断する箇所**: クライアントが利用できる skill の中で、タスクとの関連性を評価する。
+  - **このプロジェクトの用途**: アクセス範囲を保ったまま、関連 skill を探せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kitze/skillbox/) · ライセンス: MIT
+
+- [**jev-codex-router**](https://github.com/0xNatoshi/jev-codex-router) — Codex の各ターンを Jev が分類し、ローカルルールでモデル、推論の深さ、速度を選ぶ。
+  - **Jev が判断する箇所**: タスクの難易度と推論の必要量を分類し、ローカルポリシーが設定を決める。
+  - **このプロジェクトの用途**: 振り分けルールと判断ログを手元で確認し調整できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jev-codex-router/) · ライセンス: MIT
+
+- [**skillranker**](https://github.com/Dicklesworthstone/skillranker) — ライセンスには標準 MIT 以外の主体別の制限があります。利用条件を確認中で、実装の存在は制限のないオープンソース許諾を意味しません。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/dicklesworthstone/skillranker/) · ライセンス: 記載なし
+
+- [**hono-jev-router**](https://github.com/yusukebe/hono-jev-router) — 自然言語のルート説明を使う Hono の実験的 HTTP セマンティックルーター。
+  - **Jev が判断する箇所**: Jev の一致確率から、閾値を超えた最初のルートをコードが選ぶ。
+  - **このプロジェクトの用途**: 意味による振り分けの実験用で、認証・認可の境界としての利用は禁止されている。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/yusukebe/hono-jev-router/) · ライセンス: MIT
+
+- [**JevRouter**](https://github.com/BillionsBobby/JevRouter) — モデル、Subagent、Skill、MCP、CLI を共通の候補として振り分ける。
+  - **Jev が判断する箇所**: Jev が Choice で選び、ルーターが可用性、権限、リスク、確認方針を別途検査する。
+  - **このプロジェクトの用途**: モデルの選択と実行方針を分けて記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/billionsbobby/jevrouter/) · ライセンス: MIT
+
+- [**loki**](https://github.com/wundercorp/loki) — Loki の任意機能として Jev の判断ツールと、同一 gateway 内の会話モデル選択を追加する。
+  - **Jev が判断する箇所**: 最初のタスクに必要な能力を評価し、選択したモデルを会話中は維持する。
+  - **このプロジェクトの用途**: モデル選択を明示し、会話ごとの経路を保てる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/wundercorp/loki/) · ライセンス: MIT
+
+- [**typesafe-skill-router**](https://github.com/DECRUX9812/typesafe-skill-router) — モデル呼び出し前に関連 skill を一つ提案する、任意の Hermes Agent プラグイン。
+  - **Jev が判断する箇所**: 依頼と skill 一覧を比較し、適切な候補がある場合だけ提案を挿入する。
+  - **このプロジェクトの用途**: Agent が無視する余地を残した、対象を絞る skill ヒントになる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/decrux9812/typesafe-skill-router/) · ライセンス: MIT
+
+- [**todo-jev**](https://github.com/maker-KK/todo-jev) — skill の条件と環境確認から、ルール・skill・大規模モデルを勧めるタスクルーティング実験。
+  - **Jev が判断する箇所**: Jev が要求を分類して skill を照合し、利用不可時はヒューリスティックへ戻る。
+  - **このプロジェクトの用途**: 分類と推薦は実装済みだが、実行ハンドラーは例示応答で実処理の接続が必要。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/maker-kk/todo-jev/) · ライセンス: MIT
+
+- [**jev-research**](https://github.com/sherajdev/jev-research) — Jev と Herdr の連携ガイドと、タスクを各 Agent に振り分ける試作ルーター。
+  - **Jev が判断する箇所**: タスクとリポジトリ状態から実行先、リスク、派遣の準備状況を判断する。
+  - **このプロジェクトの用途**: 複数 Agent への仕事の割り当てを学べる編集可能な例。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/sherajdev/jev-research/) · ライセンス: MIT
+
+- [**jev-demo**](https://github.com/minghanminghan/jev-demo) — Jev にルート判断をまとめて問い、分類結果に沿って処理するカスタマーサービスのデモ。
+  - **Jev が判断する箇所**: 多段分類・人への引き継ぎ希望・不満度を評価し、低確信時にエスカレーションする。
+  - **このプロジェクトの用途**: 分類と人への引き継ぎをまとめ、返信生成はアプリが担当する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/minghanminghan/jev-demo/) · ライセンス: 記載なし
+
+- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) — Jev が候補モデルを選び、利用者が各回答を比較するルーティング実験画面。
+  - **Jev が判断する箇所**: タスクと候補説明からモデルを選び、確率と実行を記録する。
+  - **このプロジェクトの用途**: 結果を出力し、自分の回答評価と選択を比較できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/hugo-alves/jev-router-playground/) · ライセンス: MIT
+
+
+## SDK・判断フレームワーク
+
+- [**composio**](https://github.com/ComposioHQ/composio) — Composio の任意の TypeSafe provider が、ツールや限られた引数候補を Jev に判断させる。
+  - **Jev が判断する箇所**: ツールや操作条件を構造化質問にし、回答をローカルの呼び出し処理に渡す。
+  - **このプロジェクトの用途**: 既存のツールインターフェースに構造化判断を加えられる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/composiohq/composio/) · ライセンス: MIT
+
+- [**ai**](https://github.com/vercel/ai) — AI SDK の TypeSafe provider から、共通の evaluate インターフェースで Jev を呼び出す。
+  - **Jev が判断する箇所**: 選択、採点、二択の質問を System One リクエストに変換し、型付きの結果を解析する。
+  - **このプロジェクトの用途**: AI SDK アプリ内で共通の評価インターフェースを使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vercel/ai/) · ライセンス: Apache-2.0
+
+- [**eliza**](https://github.com/elizaOS/eliza) — Eliza のソースにある任意の TypeSafe HTTP アダプター。既定では Agent 実行系に未登録。
+  - **Jev が判断する箇所**: 明示的な systemOne 呼び出しだけが状態と質問を送り、検証済みの型付き回答を返す。
+  - **このプロジェクトの用途**: 再利用可能なサーバーモジュールであり、実運用での Jev 採用を示すものではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/elizaos/eliza/) · ライセンス: MIT
+
+- [**langchainjs**](https://github.com/langchain-ai/langchainjs) — 状態と定義済み質問を Jev に送る LangChain.js の任意の TypeSafeClassifier 統合。
+  - **Jev が判断する箇所**: invoke から TypeSafe を呼び、choice・noul・score と確率を解析する。
+  - **このプロジェクトの用途**: Jev をチャット生成器に見立てず、LangChain の処理に型付き判断を加える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/langchain-ai/langchainjs/) · ライセンス: MIT
+
+- [**rig-typesafeai**](https://github.com/0xPlaygrounds/rig) — Rust 型で Jev の質問と回答を構成する、Rig 内の実験的な TypeSafe crate。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: 質問と回答でフィールド構成を再利用し、対応する回答を検証する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/0xplaygrounds/rig/) · ライセンス: MIT
+
+- [**req\_llm**](https://github.com/agentjido/req_llm) — Elixir の ReqLLM evaluate インターフェースから Jev を呼ぶ TypeSafe provider。
+  - **Jev が判断する箇所**: 状態と質問を送り、回答を正規化しつつ provider の生データも保持する。
+  - **このプロジェクトの用途**: 判断評価をチャット生成から分離して扱える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/agentjido/req_llm/) · ライセンス: Apache-2.0
+
+- [**instructor-php**](https://github.com/cognesy/instructor-php) — Instructor PHP の Polyglot モジュールにある TypeSafe Decision ドライバー。
+  - **Jev が判断する箇所**: 状態と型付き質問を Jev 要求へ変換し、応答を PHP の判断オブジェクトへ写像する。
+  - **このプロジェクトの用途**: 共通の Decision インターフェースから PHP アプリで Jev を利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/cognesy/instructor-php/) · ライセンス: MIT
+
+- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) — 複数の AI provider に対応する Scala クライアント内の TypeSafe 専用モジュール。
+  - **Jev が判断する箇所**: 共有状態と型付き質問を Jev に送り、構造化回答を解析する。
+  - **このプロジェクトの用途**: Scala アプリで通信とエラー処理の仕組みを再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/cequence-io/openai-scala-client/) · ライセンス: MIT
+
+- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) — Pi のプログラム可能な runtime に、観測・Jev 判断・制限付き実行のループを追加する。
+  - **Jev が判断する箇所**: 記述した質問の回答を、予算制限付きのローカル実行ロジックへ渡す。
+  - **このプロジェクトの用途**: 観測・判断・実行を再利用可能なプログラムとして定義できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/monotykamary/pi-fabric/) · ライセンス: MIT
+
+- [**runline**](https://github.com/Michaelliv/runline) — Runline の Agent JavaScript から呼べるアクションとして Jev 判断を公開する TypeSafe プラグイン。
+  - **Jev が判断する箇所**: evaluate・choice・score・noul が質問を送り、回答と使用量を保持する。
+  - **このプロジェクトの用途**: 他のプラグイン処理と組み合わせられるが、全 Shell コマンドの安全性を自動点検するものではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/michaelliv/runline/) · ライセンス: 記載なし
+
+- [**typesafe-sdk-js**](https://github.com/typesafe-ai/typesafe-sdk-js) — TypeSafe が公開する JavaScript / TypeScript SDK。Jev の要求と回答に型を提供する。
+  - **Jev が判断する箇所**: systemOne が状態と名前付き質問を送り、質問から回答型を推論する。
+  - **このプロジェクトの用途**: ESM・CommonJS・TypeScript 型宣言を含み、アプリへ組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/typesafe-ai/typesafe-sdk-js/) · ライセンス: MIT
+
+- [**ai**](https://github.com/hackclub/ai) — Hack Club AI プロキシの認証・制限・使用量記録を使う Jev 転送エンドポイント。
+  - **Jev が判断する箇所**: 許可された構造化要求を TypeSafe へ転送し、回答と使用量を扱う。
+  - **このプロジェクトの用途**: 既存プロキシに判断 API を加えるもので、MCP サーバーではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/hackclub/ai/) · ライセンス: 記載なし
+
+- [**effect-agent**](https://github.com/danieljvdm/effect-agent) — 型付き質問集合と任意のモデル選択を扱う Effect Agent の TypeSafe provider。
+  - **Jev が判断する箇所**: Jev の確率・選択・採点を、状態遷移やモデル選択に利用する。
+  - **このプロジェクトの用途**: Effect の依存・エラー処理に統合し、再試行と期限はアプリが設定する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/danieljvdm/effect-agent/) · ライセンス: MIT
+
+- [**jev-visual**](https://github.com/hr98w/jev-visual) — Jev に着想を得た Qwen/MLX のローカル実験で、TypeSafe Jev モデルの連携ではありません。関連研究として保持し、実際の連携とは区別します。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/hr98w/jev-visual/) · ライセンス: 記載なし
+
+- [**advocaat**](https://github.com/pithings/advocaat) — 同じデータに複数の型付き質問を送る、小さな TypeScript 製 Jev クライアント。
+  - **Jev が判断する箇所**: Yes/No・Choice・Score をまとめ、回答を型付き値へ変換する。
+  - **このプロジェクトの用途**: 確率・選択・評価に共通インターフェースを使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/pithings/advocaat/) · ライセンス: MIT
+
+- [**openjev**](https://github.com/razorback16/openjev) — Jev API と互換性を持ち、公開モデル DiffusionGemma で動く独立した System One サーバー。
+  - **Jev が判断する箇所**: Jev 形式の状態と質問を受け取り、ローカルモデルで確率を出す。
+  - **このプロジェクトの用途**: 既存の TypeSafe SDK から自己ホストの互換サービスを試せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/razorback16/openjev/) · ライセンス: Apache-2.0
+
+- [**ruby\_decision\_model**](https://github.com/obie/ruby_decision_model) — TypeSafe のネイティブ API または OpenRouter 経由で Jev を呼ぶ Ruby クライアント。
+  - **Jev が判断する箇所**: 共通 Client から状態と質問を送り、選択・確率・スコア・使用量を解析する。
+  - **このプロジェクトの用途**: Ruby 標準ライブラリだけで動き、同じインターフェースで provider を選べる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/obie/ruby_decision_model/) · ライセンス: MIT
+
+- [**jev**](https://github.com/dannote/jev) — Jev を Elixir/OTP の非同期プロセスとして組み込み、GenServer のパターンマッチで応答を処理する。
+  - **Jev が判断する箇所**: 状態と型付き質問を TypeSafe に送り、回答をメッセージで届ける。
+  - **このプロジェクトの用途**: 既存のメッセージ処理や監視の仕組みに判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/dannote/jev/) · ライセンス: MIT
+
+- [**typesafe-ai**](https://github.com/Twister915/typesafe-ai) — 非同期 reqwest または同期 ureq と、観測可能な再試行を備えた Rust TypeSafe クライアント。
+  - **Jev が判断する箇所**: 共有状態に複数の Jev 質問を送り、回答・確率・用量を解析する。
+  - **このプロジェクトの用途**: 同期・非同期を選択し、エラー情報を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/twister915/typesafe-ai/) · ライセンス: Apache-2.0
+
+- [**typesafe-sdk-go**](https://github.com/Tangerg/typesafe-sdk-go) — Go の型で質問を定義し、Jev の選択、点数、確率を読む TypeSafe SDK。
+  - **Jev が判断する箇所**: リクエストを検証して System One を呼び、型付き回答に変換する。
+  - **このプロジェクトの用途**: 認証、リクエスト、エラー処理を Go クライアントで再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tangerg/typesafe-sdk-go/) · ライセンス: MIT
+
+- [**zod-jev**](https://github.com/jomatsu/zod-jev) — 説明との一致や個人情報の有無など、意味に基づくルールを Zod の検証に加える。
+  - **Jev が判断する箇所**: 同じ解析の条件を Jev Noul にまとめ、確率を検証結果に変換する。
+  - **このプロジェクトの用途**: Zod のエラー形式で、問題のあるフィールドを示せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jomatsu/zod-jev/) · ライセンス: MIT
+
+- [**jev-dsl**](https://github.com/inanna-malick/jev-dsl) — ラベル付き Jev 質問を記述し、要求生成と回答解析を行う初期 Haskell DSL。
+  - **Jev が判断する箇所**: 型推論とラベル付き処理器で、Choice の答えを定義済み分岐へ接続する。
+  - **このプロジェクトの用途**: 質問・戻り値の型・分岐処理を一つの定義で確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/inanna-malick/jev-dsl/) · ライセンス: MIT
+
+- [**swift-typesafe**](https://github.com/ainame/swift-typesafe) — 型付き質問・動的質問・応答解析に対応するコミュニティ Swift TypeSafe クライアント。
+  - **Jev が判断する箇所**: systemOne で Jev に問い、Swift 型または動的マップで回答を扱う。
+  - **このプロジェクトの用途**: 文書記載の環境に対応し、必要な Swift・OS 版は対象バージョンで確認する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ainame/swift-typesafe/) · ライセンス: MIT
+
+- [**super-jev**](https://github.com/Kevthetech143/super-jev) — 証拠、Jev の判断、許可された操作、結果の記録をつなぐ TypeScript の実行フレームワーク。
+  - **Jev が判断する箇所**: 型付き質問と回答を検証し、領域ルールが権限や引数を確認して登録ツールを選ぶ。
+  - **このプロジェクトの用途**: 判断、ツール呼び出し、結果の履歴を手元に残す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kevthetech143/super-jev/) · ライセンス: MIT
+
+- [**SpecPi**](https://github.com/TannerMidd/SpecPi) — 能力提案とワークフロー点検用の任意の Jev 顧問を含む Pi の設定・拡張セット。
+  - **Jev が判断する箇所**: 候補機能・出力・状態を Jev が評価し、機能別設定で提案を適用・記録する。
+  - **このプロジェクトの用途**: 顧問の失敗時は元の処理へ戻り、性能や費用の改善を保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/tannermidd/specpi/) · ライセンス: MIT
+
+- [**typesafe-sdk**](https://github.com/joshmn/typesafe-sdk) — 既定で jev-latest を使う TypeSafe System One のコミュニティ Ruby クライアント。
+  - **Jev が判断する箇所**: Choice・Score・Noul で質問を作り、解析した回答を型別に取得する。
+  - **このプロジェクトの用途**: Ruby から選択・スコア・確率を直接読める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/joshmn/typesafe-sdk/) · ライセンス: MIT
+
+- [**daf-jev**](https://github.com/docxology/daf-jev) — Jev の呼び出し・バッチ評価・校正・MCP 接続をまとめた Python ツールキット。
+  - **Jev が判断する箇所**: Noul・Choice・Score の質問を作り、返された確率をローカル関数で組み合わせる。
+  - **このプロジェクトの用途**: 呼び出し・失敗記録・評価の仕組みを実験間で再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/docxology/daf-jev/) · ライセンス: MIT
+
+- [**jevex**](https://github.com/jvsteiner/jevex) — Jev がツール循環を指揮し、チャットモデルが引数・文章、MCP が実行を担う Agent 実験。
+  - **Jev が判断する箇所**: 次の動作と具体的な呼び出しを Jev が判断し、結果を次の状態に戻す。
+  - **このプロジェクトの用途**: 判断・生成・実行を分離し、作者による比較実験を含む。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jvsteiner/jevex/) · ライセンス: MIT
+
+- [**typesafe-ai-rs**](https://github.com/gilljon/typesafe-ai-rs) — 非同期・同期クライアント、再試行、応答メタデータを備える独立開発の Rust SDK。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/gilljon/typesafe-ai-rs/) · ライセンス: MIT
+
+- [**typesafe-sdk-java**](https://github.com/Premo-Cloud/typesafe-sdk-java) — Jev の設定に Spring Boot Starter も使える、コミュニティ製 Java TypeSafe クライアント。
+  - **Jev が判断する箇所**: Java の状態と Noul、Choice、Score を送信し、型付きの結果を解析する。
+  - **このプロジェクトの用途**: Java と Spring Boot でリクエスト、設定、エラー処理を共用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/premo-cloud/typesafe-sdk-java/) · ライセンス: MIT
+
+- [**jev-go**](https://github.com/Stumble/jev-go) — TypeSafe 直結と Vercel AI Gateway に対応するコミュニティ製 Go SDK と CLI。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/stumble/jev-go/) · ライセンス: MIT
+
+- [**jev-go**](https://github.com/Gaurav-Gosain/jev-go) — 型付き質問・回答と一括処理補助を備える Go の TypeSafe System One クライアント。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/gaurav-gosain/jev-go/) · ライセンス: MIT
+
+- [**jev-java**](https://github.com/Olti1947/jev-java) — リクエスト・レスポンスのフィールドが現行公式 SDK の契約と異なり、当サイトでは実行していません。確認待ちとして保持し、動作確認済み SDK とは表記しません。
+  - **Jev が判断する箇所**: この項目は確認待ちであり、検証済みの Jev 連携としては推奨していません。
+  - **このプロジェクトの用途**: 追跡用に記録を保持しています。先に確認待ちの理由と出典をご確認ください。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/olti1947/jev-java/) · ライセンス: 記載なし
+
+- [**typesafe\_sdk**](https://github.com/nshkrdotcom/typesafe_sdk) — Jev の型付き質問と確率的回答を Elixir アプリに組み込む TypeSafe SDK。
+  - **Jev が判断する箇所**: 状態と Noul、Choice、Score のリクエストを作り、System One の応答を解析する。
+  - **このプロジェクトの用途**: Elixir のデータ構造とクライアントを再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/nshkrdotcom/typesafe_sdk/) · ライセンス: MIT
+
+- [**typesafe-go**](https://github.com/2389-research/typesafe-go) — Go 標準ライブラリーだけで Jev の質問送信と構造化回答を扱う TypeSafe クライアント。
+  - **Jev が判断する箇所**: 状態と Noul・Choice・Score を要求へ変換し、回答を検証・解析する。
+  - **このプロジェクトの用途**: Go アプリで通信・型対応・エラー処理を再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/2389-research/typesafe-go/) · ライセンス: MIT
+
+- [**typesafe-go**](https://github.com/cole-gillespie/typesafe-go) — 型付き回答、再試行、context キャンセルを備える非公式 Go SDK。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/cole-gillespie/typesafe-go/) · ライセンス: MIT
+
+- [**typesafe-sdk-rust**](https://github.com/codeitlikemiley/typesafe-sdk-rust) — 非同期と任意の同期呼び出し、型付き質問・回答を備えた TypeSafe 用 Rust クライアント。
+  - **Jev が判断する箇所**: Jev 要求を作り、認証・通信・回答解析を処理する。
+  - **このプロジェクトの用途**: Rust アプリで API モデルと通信ロジックを再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/codeitlikemiley/typesafe-sdk-rust/) · ライセンス: MIT
+
+- [**jev-go**](https://github.com/guillemus/jev-go) — Jev 呼び出しとモデル一覧取得に対応する小さな非公式 Go SDK。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/guillemus/jev-go/) · ライセンス: 記載なし
+
+- [**jev-starter**](https://github.com/hamakyo/jev-starter) — TypeSafe SDK に、しきい値、代替経路、人による確認、評価のパターンを加える TypeScript ツール集。
+  - **Jev が判断する箇所**: Jev の判断を受け、アプリの規則が自動処理、fallback、人の確認を選ぶ。
+  - **このプロジェクトの用途**: モデル呼び出し、実行方針、評価を分けて構成できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/hamakyo/jev-starter/) · ライセンス: MIT
+
+- [**jevclient**](https://github.com/AboveColin/jevclient) — 複数の型付き質問を一度に送れる Jev の非同期 Python クライアント。
+  - **Jev が判断する箇所**: aiohttp で TypeSafe を呼び、選択・スコア・確率をオブジェクトに変換する。
+  - **このプロジェクトの用途**: 生成文の解析なしで既存の非同期アプリに組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/abovecolin/jevclient/) · ライセンス: MIT
+
+- [**jevgo**](https://github.com/fgn/jevgo) — 標準ライブラリのみのコアと、任意の Langfuse 追跡を備える Go クライアント。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/fgn/jevgo/) · ライセンス: MIT
+
+- [**qualm**](https://github.com/qddegtya/qualm) — 不確実な結果を明示的な unsure 分岐で扱う TypeScript の Jev ラッパー。
+  - **Jev が判断する箇所**: 確率と選択肢の型を保持し、不確実なら呼び出し側の代替処理へ渡す。
+  - **このプロジェクトの用途**: 型で不確実性への対応を求めるが、モデルの正しさを保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/qddegtya/qualm/) · ライセンス: MIT
+
+- [**typesafe-go**](https://github.com/zhirschtritt/typesafe-go) — System One 呼び出しとモデル一覧に対応する、外部依存のない非公式 Go クライアント。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/zhirschtritt/typesafe-go/) · ライセンス: MIT
+
+- [**typesafe-sdk-php**](https://github.com/Butochnikov/typesafe-sdk-php) — 同期呼び出しと Guzzle 非同期要求を備える PHP 8.2+ 向けコミュニティ TypeSafe SDK。
+  - **Jev が判断する箇所**: 状態と質問を Jev に送り、Choice、Score、Noul の回答を解析する。
+  - **このプロジェクトの用途**: リクエストと応答解析をまとめ、アプリに型付き判断を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/butochnikov/typesafe-sdk-php/) · ライセンス: MIT
+
+- [**goodall**](https://github.com/bensyverson/goodall) — Go Agent ライブラリー内で、対話モデルとは別に Jev をツールや振り分け判断に使う追加パッケージ。
+  - **Jev が判断する箇所**: 専用クライアントで質問し、ツール・ターン振り分け・メール分類例に使う。
+  - **このプロジェクトの用途**: 型付き判断と生成モデルの Agent ループを分けて接続する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/bensyverson/goodall/) · ライセンス: MIT
+
+- [**typesafe-rs**](https://github.com/AbdelStark/typesafe-rs) — 非同期要求、任意の同期インターフェース、ローカル mock テストに対応するコミュニティ Rust クライアント。
+  - **Jev が判断する箇所**: 状態と名前付き質問を TypeSafe に送り、choice・score・noul を解析する。
+  - **このプロジェクトの用途**: クライアント設定・再試行・エラー型を備え、非同期・同期 Rust アプリに組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/abdelstark/typesafe-rs/) · ライセンス: MIT
+
+- [**typesafe-sdk-swift**](https://github.com/marandaneto/typesafe-sdk-swift) — Swift Package Manager、Swift 並行処理、URLSession を使う実験的 TypeSafe SDK。
+  - **Jev が判断する箇所**: 状態と型付き質問を System One に送り、async/await で回答を受け取る。
+  - **このプロジェクトの用途**: Swift アプリで Jev のリクエストと応答処理を再利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/marandaneto/typesafe-sdk-swift/) · ライセンス: MIT
+
+
+## SDK・互換連携
+
+- [**langchain**](https://github.com/langchain-ai/langchain) — Python LangChain のワークフローに追加する、任意の Jev 分類連携。
+  - **Jev が判断する箇所**: 二値・分類・段階評価の質問を送り、型付き回答と確率を返す。
+  - **このプロジェクトの用途**: 既存 LangChain パイプラインへ分類処理を追加できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/langchain-ai/langchain/) · ライセンス: MIT
+
+- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) — Pydantic AI 向けの任意の TypeSafe provider と Jev モデル連携。
+  - **Jev が判断する箇所**: 対応する構造化出力のフィールドを Jev の質問に変換し、回答を出力モデルへ戻す。
+  - **このプロジェクトの用途**: 対応する分類出力で Pydantic AI の既存インターフェースを使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/pydantic/pydantic-ai/) · ライセンス: MIT
+
+- [**ax**](https://github.com/ax-llm/ax) — Ax は真偽値や有限分類のシグネチャと、Jev のネイティブ回答に対応する TypeSafe 接続を提供する。
+  - **Jev が判断する箇所**: 対応シグネチャを質問へ変換するか、System One リクエストを直接送る。
+  - **このプロジェクトの用途**: Ax の処理内でシグネチャと Jev の確率結果を利用できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ax-llm/ax/) · ライセンス: Apache-2.0
+
+- [**ruby\_llm-typesafe**](https://github.com/kieranklaassen/ruby_llm-typesafe) — 構造化出力を通じて Jev の三種の判断を扱う、RubyLLM 2 用 TypeSafe provider。
+  - **Jev が判断する箇所**: Schema で Noul・Choice・Score を作り、回答を RubyLLM アプリへ返す。
+  - **このプロジェクトの用途**: 既存 RubyLLM プログラムで構造化判断のインターフェースを使える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kieranklaassen/ruby_llm-typesafe/) · ライセンス: MIT
+
+- [**laravel-typesafe-jev**](https://github.com/Butochnikov/laravel-typesafe-jev) — 設定・依存性注入・Facade・リクエスト記録用 fake を備えた Laravel 向け Jev アダプター。
+  - **Jev が判断する箇所**: コミュニティ製 PHP SDK を包み、型付き判断・Promise・例外を扱う。
+  - **このプロジェクトの用途**: Laravel のサービス・キュー・テストへ Jev を組み込める。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/butochnikov/laravel-typesafe-jev/) · ライセンス: MIT
+
+- [**jev-resilience**](https://github.com/Vicente-MD/jev-resilience) — HTTP 200 の本文に隠れたエラーを検出する Spring WebFlux 向け連携。
+  - **Jev が判断する箇所**: Jev がエラーやメンテナンス通知を判定し、閾値に従って例外を発生させる。
+  - **このプロジェクトの用途**: HTTP ステータスに現れない失敗を既存のエラー処理へ渡せる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/vicente-md/jev-resilience/) · ライセンス: 記載なし
+
+
+## 安全対策・コンテンツ審査
+
+- [**agentgateway**](https://github.com/agentgateway/agentgateway) — Agentgateway に含まれる Jev ガードレール例。webhook で要求と応答を点検する。
+  - **Jev が判断する箇所**: 脱獄・有害内容・秘密漏えいを採点し、閾値や評価エラーで要求を拒否する。
+  - **このプロジェクトの用途**: ゲートウェイ統合の例で、すべての攻撃の防止を保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/agentgateway/agentgateway/) · ライセンス: Apache-2.0
+
+- [**Agent**](https://github.com/AgentiLoop/Agent) — TypeSafeKit を備えたネイティブ macOS Agent 内の任意の Jev コマンドリスク顧問。
+  - **Jev が判断する箇所**: ローカル Shell 検査後に破壊的リスクを評価し、設定閾値以上なら拒否する。
+  - **このプロジェクトの用途**: API 障害では通常警告付きで通すため、完全なシステム保護ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/agentiloop/agent/) · ライセンス: MIT
+
+- [**jev-experiments**](https://github.com/dabit3/jev-experiments) — ステージ済み diff を意味的に確認する Commit Sentry など、Jev 開発ツールの実験集。
+  - **Jev が判断する箇所**: 秘密情報の露出や破壊的変更を評価し、ローカル規則が警告・停止する。
+  - **このプロジェクトの用途**: コミット前にリスクラベルと該当 diff を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/dabit3/jev-experiments/) · ライセンス: 記載なし
+
+- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) — Interlinked はローカルの Agent 検査に、任意の Jev 判断と根拠確認を加える。
+  - **Jev が判断する箇所**: テスト名、文書の主張、対応する根拠などを評価する。
+  - **このプロジェクトの用途**: モデルの助言を決定的な規則と分けて記録する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/quentincody/interlinked-cli/) · ライセンス: MIT
+
+- [**unclutter**](https://github.com/kitze/unclutter) — 広告、販促、購読ポップアップを Jev で判定し、再利用可能な非表示ルールを保存する拡張。
+  - **Jev が判断する箇所**: 候補のページ要素を評価し、拡張がローカルの非表示ルールを適用する。
+  - **このプロジェクトの用途**: ページ上の判断を再利用できるルールにする。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kitze/unclutter/) · ライセンス: MIT
+
+- [**captaincore**](https://github.com/CaptainCore/captaincore) — WordPress 運用ツール CaptainCore の Jev コマンドで、構造化質問とマルウェア検出結果の優先順位付けを行う。
+  - **Jev が判断する箇所**: 検出ルール、該当部分、ファイルの文脈から、真陽性の可能性と対応候補を評価する。
+  - **このプロジェクトの用途**: ルールベースの検出を人が確認する順番に整理する。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/captaincore/captaincore/) · ライセンス: MIT
+
+- [**pi-jev**](https://github.com/y0usaf/pi-jev) — Pi のツール実行前にリスクを通知し、実行後に秘密情報や失敗の種類を点検する拡張。
+  - **Jev が判断する箇所**: Jev のリスク評価を設定に従って警告や確認要求に使う。
+  - **このプロジェクトの用途**: 既定は shadow モードで、API エラー時は通過する。独立した安全境界ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/y0usaf/pi-jev/) · ライセンス: MIT
+
+- [**pi-warden**](https://github.com/DevMortimer/pi-warden) — Pi Agent にプロジェクトルール、範囲外の操作、反復失敗、完了宣言のチェックを追加する。
+  - **Jev が判断する箇所**: ルール違反、不可逆操作、タスクの逸脱を Jev が判断し Agent に返す。
+  - **このプロジェクトの用途**: ルール上の問題と確認が必要な操作を現在の作業へ戻す。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/devmortimer/pi-warden/) · ライセンス: MIT
+
+- [**Jev-Moderation-Bot**](https://github.com/brainstormity/Jev-Moderation-Bot) — Jev でスパムや詐欺リンクを確認し、ローカル規則で警告・タイムアウトする Discord Bot。
+  - **Jev が判断する箇所**: メッセージや直近履歴のリスクを評価し、Bot が削除・警告などを行う。
+  - **このプロジェクトの用途**: 判断・対応ログ・手動修正を同じ流れで扱える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/brainstormity/jev-moderation-bot/) · ライセンス: 記載なし
+
+- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) — Pi のコマンドやファイル操作をルールで確認し、追加判断が必要な操作を Jev が評価する。
+  - **Jev が判断する箇所**: 明示的な拒否と許可を先に処理し、bash、write、edit の権限とリスクを確認する。
+  - **このプロジェクトの用途**: ルールと判断ログを見ながら操作の許可条件を調整できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/jomatsu/pi-jev-auto-mode/) · ライセンス: MIT
+
+- [**jev-guard**](https://github.com/leepokai/jev-guard) — コーディング Agent のツール呼び出しで、操作リスク・意図・指示注入の兆候を確認する。
+  - **Jev が判断する箇所**: Jev が会話文脈で入出力を評価し、ローカル規則が許可・警告・遮断する。
+  - **このプロジェクトの用途**: ホストごとの制約に合わせて、ツール前後に確認を追加できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/leepokai/jev-guard/) · ライセンス: MIT
+
+- [**hermes-jev-approvals**](https://github.com/anpicasso/hermes-jev-approvals) — Hermes の auxiliary.approval だけを置き換える実験的なコマンド承認プラグイン。
+  - **Jev が判断する箇所**: Jev の APPROVE・DENY・ESCALATE をローカル閾値と方針で処理する。
+  - **このプロジェクトの用途**: 承認への接続例。作者が概念実証と明記しており、本番の安全性を保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/anpicasso/hermes-jev-approvals/) · ライセンス: MIT
+
+- [**safer-with-jev**](https://github.com/andrelandgraf/safer-with-jev) — Jev で本文を検査し、条件を満たせば HTTPS 宛先に転送するゲートウェイ。
+  - **Jev が判断する箇所**: Jev が指示注入や不適切な内容を判定し、ローカル規則が転送・確認・遮断を決める。
+  - **このプロジェクトの用途**: 既存 HTTP サービスの前に内容確認を追加できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/typesafe-on-neon/) · ライセンス: 記載なし
+
+- [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) — ローカルの認証コード規則を先に適用し、Jev で広告ノイズを判定する Android フィルター。
+  - **Jev が判断する箇所**: ローカル条件を通った文章を分類し、許可・抑制はコードで決める。
+  - **このプロジェクトの用途**: 認証コード処理と不確かな場合の許可方針を確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/ufec/jev-block-android-ad/) · ライセンス: MIT
+
+- [**jev-cvss**](https://github.com/Red5d/jev-cvss) — 脆弱性の説明から Jev が CVSS 指標を選び、Python で v3.0・v3.1・v4.0 の値を計算する。
+  - **Jev が判断する箇所**: 攻撃条件と影響を離散指標へ対応付け、数値はローカルの式で求める。
+  - **このプロジェクトの用途**: 総合点だけでなく、選んだ指標とベクトルを確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/red5d/jev-cvss/) · ライセンス: MIT
+
+- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) — コーディング Agent に権限、操作リスク、失敗原因の判断を追加する。
+  - **Jev が判断する箇所**: 会話と実行結果から、ユーザー確認の必要性、権限範囲、再試行の可否を評価する。
+  - **このプロジェクトの用途**: 立ち止まって確認すべき箇所を明示できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/hyunjunjeon/jev-judgment/) · ライセンス: MIT
+
+- [**oc-plugins**](https://github.com/OpeOginni/oc-plugins) — OpenCode プラグイン集の oc-auto-perms が、自然言語ルールに沿ってツール操作の意図を Jev で確認する。
+  - **Jev が判断する箇所**: 操作案と権限ルールを送り、ローカルロジックが許可、拒否、確認を選ぶ。
+  - **このプロジェクトの用途**: 権限ルールと各操作の判断を対応付ける。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/OpeOginni/oc-plugins/) · ライセンス: 記載なし
+
+- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) — Vercel AI SDK にツール呼び出し承認とツール一覧の絞り込みを加える。
+  - **Jev が判断する箇所**: 確定ルールを先に適用し、残りのリスクと関連性を Jev と閾値で処理する。
+  - **このプロジェクトの用途**: 承認 API の失敗時は人の確認へ回すが、全リスク検知を保証しない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/nicolasmontone/jev-tool-permissions/) · ライセンス: 記載なし
+
+
+## 音声・会話
+
+- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) — AIAvatarKit の任意の部品が、音声の書き起こしから発話終了を Jev に判断させる。
+  - **Jev が判断する箇所**: 発話の完結性と、利用者が話し続けそうかを評価する。
+  - **このプロジェクトの用途**: 無音時間による判定に意味上の情報を加える。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/uezo/aiavatarkit/) · ライセンス: Apache-2.0
+
+- [**OpenWhisper**](https://github.com/Knuckles92/OpenWhisper) — 文字起こしと会議記録のアプリ。Jev で話題変化・記録助手への指示・機密的な文章を任意に確認する。
+  - **Jev が判断する箇所**: 転記した断片を判定し、会議チェックポイント・記録操作・遠隔文章処理前の確認を補助する。
+  - **このプロジェクトの用途**: 確率判断とローカル閾値・切替・失敗時処理を分けて確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/knuckles92/openwhisper/) · ライセンス: MIT
+
+- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) — OpenAI が回答を書き、Jev が方針決定と草稿確認を行う端末の質問応答アプリ。
+  - **Jev が判断する箇所**: LangGraph 内で回答形式、詳しさ、不確実性、草稿品質を判断する。
+  - **このプロジェクトの用途**: 回答と構造化された判断レポートを並べて確認できる。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/haseeb-heaven/jev-system-one/) · ライセンス: MIT
+
+- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) — 簡単な照明指示をデバイスサービスへ、それ以外を Grok へ渡す Home Assistant の会話拡張。
+  - **Jev が判断する箇所**: Jev が発話と公開デバイスを分類し、コードが照明操作か会話かを選ぶ。
+  - **このプロジェクトの用途**: 対応範囲は限定された照明操作で、全家電命令への対応ではない。
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/luxus/ha-conversation-jev/) · ライセンス: 記載なし
+
+## ローカル開発
+
+Node.js 22+
+
+```bash
+npm ci --ignore-scripts
 npm run dev
-
-# 自動テストの実行 (87項目の検証テスト)
 npm test
-
-# プロダクションビルド
 npm run build
-
-# 4言語のREADMEを自動再生成
 npm run build:readme
 ```
 
-### 自律型同期パイプライン
-本プロジェクトは GitHub Actions により完全に自動同期されます：
-1. **定期巡回収集**（12時間ごと）：GitHub全体からJev実装コードを含む新プロジェクトを自律探索。
-2. **Issue自動検証**：提出されたリポジトリのソースコードを静的解析し、確証のないPR/Issueを自動除外。
-3. **自動デプロイ**：テスト通過後、[GitHub Pages](https://logicrw.github.io/awesome-jev-projects/) へ即時配信。
+## 自動化とセキュリティの境界
 
----
+サイトは許可リストに含まれる静的データのみを配信し、GitHub ログインやアカウント認証情報を扱いません。Actions は短期のリポジトリ Token を使用し、収集・ビルドは読み取り専用、データ公開・Pages・Issue 操作は個別の最小権限で実行します。投稿されたコードを実行せず、個人 PAT や終了した GitHub Models の Secret も注入しません。
 
-<a id="submit-guide-ja"></a>
-## 🤝 プロジェクトの掲載申請
+## プライバシーとアクセス情報
 
-Jevを採用したあらゆるOSS、ライブラリ、実験的ツールの掲載を歓迎します！
+本番サイトでは Cloudflare Web Analytics により、Cookie や訪問者のフィンガープリントを使わずに、ページ訪問と性能の集計情報を確認できます。当サイトのローダーは DNT/GPC を尊重します。ブロッカーにより過少計測となる場合があり、掲載件数は訪問者数ではありません。契約前に期間を明示した集計情報をご請求ください。表示回数や成果は保証しません。
 
-1. **Webから申請**：[ライブレーダー](https://logicrw.github.io/awesome-jev-projects/) 右上の「Submit Project」ボタンから。
-2. **GitHub Issueから申請**：[申請用Issueテンプレート](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml) にリポジトリURLとJevの判断箇所を記入。
-3. **掲載基準**：コードベース内に実際にJevを呼び出す実装が含まれていることが必須条件です。
+## プロジェクトを投稿
 
----
+リポジトリのルート URL、用途、Jev が判断する箇所、実装の根拠を添えてください。数値には測定条件が必要です。mock、模擬取引、shadow の助言を本番運用の結果として扱いません。根拠が不十分な場合は確認待ちとなります。
 
-## ライセンス
+[プロジェクトを投稿](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)
 
-MIT © [Logicrw](https://github.com/logicrw).
+## 掲載基準とセキュリティ
+
+- [掲載内容の確認記録](docs/catalog-review-2026-09-19.md)
+- [Security](SECURITY.md)
+
+公開の問題報告に Token、秘密鍵などの認証情報を貼り付けないでください。
+
+MIT © [logicrw](https://github.com/logicrw) — directory code only; project licenses are separate.

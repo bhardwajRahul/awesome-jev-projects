@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { inferCanonicalTags } from "../src/lib/tags.mjs";
 /** Public GitHub radar. No repository code is executed; all remote text is untrusted data. */
 import { readFile, writeFile, rename, mkdir } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -6,7 +7,7 @@ import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { createGitHubClient } from "./github-client.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
-import { readLocalizedReadmes, hasOpenRouterJevSource } from "./project-source.mjs";
+import { inspectRepository, hasOpenRouterJevSource } from "./project-source.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const normalizeRepo = (value) => {
   try {
@@ -127,7 +128,7 @@ export function summarize(repo, readme, taxonomy) {
     highlightBenefitEn:
       rule?.benefitEn ??
       "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
-    tags,
+    tags: inferCanonicalTags({ category, tags }),
     summarySource: "readme-extractive",
     claimStatus:
       "根据仓库简介与 README 自动提炼；决策机制为规则归类，待人工复核，未独立测试性能。",
@@ -423,92 +424,24 @@ export async function main() {
     report.discovery.checked++;
     reviewState[full] = { checkedAt: started };
     try {
-      const repo = await api(`/repos/${full}`);
-      if (repo.private || repo.fork) {
-        receipts.push({
-          repo: full,
-          status: "rejected",
-          reason: "private or fork",
-        });
-        report.discovery.rejected++;
-        continue;
-      }
-      const commits = await api(`/repos/${full}/commits?per_page=1`);
-      const sha = commits[0]?.sha;
-      if (!sha) throw new Error("No immutable commit available");
-      let readme = "";
-      let readmePath = "README.md";
-      let readmeSha = null;
-      try {
-        const r = await api(`/repos/${full}/readme?ref=${sha}`);
-        readme = Buffer.from(r.content ?? "", "base64")
-          .toString("utf8")
-          .slice(0, 90000);
-        readmePath = r.path;
-        readmeSha = r.sha;
-      } catch (e) {
-        if (e.status !== 404) throw e;
-      }
-      let evidence = verifyIntegration(repo, readme),
-        sourcePath = readmePath,
-        sourceContent = readme;
-      if (!evidence.verified) {
-        for (const path of [...candidate.paths].slice(0, 5)) {
-          if (
-            /(?:^|\/)(?:docs?|documentation|node_modules|vendor)(?:\/)|(?:\.env(?:\.[\w.-]+)?|package\.json|\.lock|package-lock\.json|yarn\.lock|pnpm-lock\.yaml|models\.json|catalog\.json)$/.test(
-              path,
-            )
-          ) {
-            receipts.push({
-              repo: full,
-              path,
-              status: "rejected-evidence",
-              reason: "documentation or dependency/catalog metadata only",
-            });
-            continue;
-          }
-          try {
-            const f = await api(
-              `/repos/${full}/contents/${encodeURIComponent(path).replaceAll("%2F", "/")}?ref=${sha}`,
-            );
-            const code = Buffer.from(f.content ?? "", "base64")
-              .toString("utf8")
-              .slice(0, 90000);
-            const found = verifyIntegration(repo, readme + "\n" + code, {
-              codeSources: f.type === "file" ? [{ path, text: code }] : [],
-            });
-            if (found.verified) {
-              evidence = found;
-              sourcePath = path;
-              sourceContent = code;
-              break;
-            }
-          } catch (e) {
-            receipts.push({
-              repo: full,
-              path,
-              status: "evidence-error",
-              error: e.message,
-            });
-          }
-        }
-      }
-      if (!evidence.verified) {
-        receipts.push({
-          repo: full,
-          status: "rejected",
-          reason: evidence.reason,
-        });
-        report.discovery.rejected++;
-        continue;
-      }
-      const nativeReadmes = await readLocalizedReadmes({
+      const inspection = await inspectRepository({
         api,
         repository: full,
-        sha,
-        readme,
-        readmePath,
+        existingProjects: known,
+        exclusions,
+        verifyIntegration,
+        requireCodeEvidence: true,
       });
+      if (inspection.status !== "accepted" || inspection.repo.fork) {
+        receipts.push({ repo: full, status: "rejected", reason: inspection.reason ?? "fork" });
+        report.discovery.rejected++;
+        continue;
+      }
+      const { repo, commits, sha, readme, evidence } = inspection;
+      const implementation = evidence.implementationFiles[0];
+      if (!implementation) throw new Error("No immutable implementation evidence");
+      const sourceContent = implementation.text;
+      const nativeReadmes = inspection.readmeFiles;
       const sourceText =
         nativeReadmes.map((file) => file.text).join("\n\n") || readme;
       const summary = await summarizeWithGitHubModels(
@@ -516,7 +449,7 @@ export async function main() {
         sourceText,
         summarize(repo, sourceText, taxonomy),
       );
-      const sourceUrl = `${repo.html_url}/blob/${sha}/${sourcePath}`;
+      const sourceUrl = implementation.url;
       const project = {
         id: `${repo.owner.login}:${repo.name}`.toLowerCase(),
         name: repo.name,
@@ -541,7 +474,11 @@ export async function main() {
         runtimeVerified: false,
         discoveredAt: started,
         evidence: [{ url: sourceUrl, note: "自动发现的 Jev 集成证据" }],
-        readmeSha,
+        sourceVerification: {
+          method: "bounded-source-heuristic",
+          sha,
+          files: evidence.implementationFiles.map(({path, url, hash}) => ({path, url, hash})),
+        },
         sourceHash: createHash("sha256").update(sourceContent).digest("hex"),
       };
       known.push(project);

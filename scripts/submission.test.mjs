@@ -206,3 +206,20 @@ test("English issue body localizes headings and evidence guidance without changi
   );
   assert.equal(createIssueUrl(values), createIssueUrl(values, "zh"));
 });
+
+test('Japanese and Korean submission errors are localized and preserve validated input', () => {
+  for (const [locale, script] of [['ja', /[ぁ-んァ-ン]/u], ['ko', /\p{Script=Hangul}/u]]) {
+    const {errors} = validateSubmission({repo:'',purpose:'',decision:''}, locale);
+    for (const error of Object.values(errors)) assert.match(error, script);
+    const {errors: longErrors} = validateSubmission({repo:'owner/repo',purpose:'x'.repeat(201),decision:'x'.repeat(601)}, locale);
+    assert.match(longErrors.purpose, /200/);
+    assert.match(longErrors.decision, /600/);
+    const values = {repo:'https://github.com/logicrw/example',purpose:'Routes A&B with Jev',decision:'Preserves #1?body=copy'};
+    const url = new URL(createIssueUrl(values,locale));
+    assert.equal(url.searchParams.get('title'),'[Project] example');
+    assert.ok(url.searchParams.get('body').includes('## Project repository'));
+    assert.ok(url.searchParams.get('body').includes(values.purpose));
+    assert.ok(url.searchParams.get('body').includes(values.decision));
+    assert.match(url.searchParams.get('body').split('## Evidence')[1],script);
+  }
+});

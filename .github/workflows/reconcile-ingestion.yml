@@ -1,0 +1,71 @@
+name: Reconcile queued submissions
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: reconcile-queued-submissions
+  cancel-in-progress: false
+jobs:
+  select:
+    if: github.repository == 'logicrw/awesome-jev-projects' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      issues: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      found: ${{ steps.queue.outputs.found }}
+      issue_number: ${{ steps.queue.outputs.issue_number }}
+      body_sha: ${{ steps.queue.outputs.body_sha }}
+      attempt: ${{ steps.queue.outputs.attempt }}
+      source_sha: ${{ steps.source.outputs.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          persist-credentials: false
+      - id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      - id: queue
+        run: node scripts/ingestion-retry.mjs select
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+  retry:
+    needs: select
+    if: needs.select.outputs.found == 'true'
+    permissions:
+      contents: read
+      issues: write
+      actions: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ needs.select.outputs.source_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      # Built-ins only. Persist the bounded attempt before starting the normal
+      # workflow, which re-reads current main and repeats all validation gates.
+      - id: claim
+        run: node scripts/ingestion-retry.mjs claim
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INGEST_ISSUE_NUMBER: ${{ needs.select.outputs.issue_number }}
+          INGEST_ISSUE_BODY_SHA: ${{ needs.select.outputs.body_sha }}
+          INGEST_RETRY_ATTEMPT: ${{ needs.select.outputs.attempt }}
+      - name: Re-review against current main
+        if: steps.claim.outputs.claimed == 'true'
+        run: >-
+          gh workflow run auto-ingest-issue.yml --repo "$GITHUB_REPOSITORY"
+          --ref main -f "issue_number=$ISSUE_NUMBER" -f dry_run=false
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ needs.select.outputs.issue_number }}

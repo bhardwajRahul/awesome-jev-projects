@@ -76,24 +76,17 @@ export function validateSubmission({ repo, purpose, decision }, locale = "zh") {
     decision: decision.trim(),
   };
   const errors = {};
-  const english = locale === "en";
-  if (!normalized)
-    errors.repo = english
-      ? "Enter a GitHub repository URL or owner/repo."
-      : "请输入 GitHub 仓库地址或 owner/repo";
-  for (const [field, maximum] of [
-    ["purpose", 200],
-    ["decision", 600],
-  ]) {
+  const messages = {
+    zh: { repo: "请输入 GitHub 仓库地址或 owner/repo", short: "请补充说明（至少 5 个字）", long: (maximum) => `请精简说明（最多 ${maximum} 个字）` },
+    en: { repo: "Enter a GitHub repository URL or owner/repo.", short: "Please add a description (at least 5 characters).", long: (maximum) => `Please shorten the description (at most ${maximum} characters).` },
+    ja: { repo: "GitHub の URL または owner/repo を入力してください。", short: "説明を5文字以上で入力してください。", long: (maximum) => `説明を${maximum}文字以内にしてください。` },
+    ko: { repo: "GitHub 저장소 URL 또는 owner/repo를 입력해 주세요.", short: "설명을 5자 이상 입력해 주세요.", long: (maximum) => `설명을 ${maximum}자 이내로 줄여 주세요.` },
+  }[locale] ?? { repo: "Enter a GitHub repository URL or owner/repo.", short: "Please add a description (at least 5 characters).", long: (maximum) => `Please shorten the description (at most ${maximum} characters).` };
+  if (!normalized) errors.repo = messages.repo;
+  for (const [field, maximum] of [["purpose", 200], ["decision", 600]]) {
     const count = Array.from(values[field].replace(/\s/gu, "")).length;
-    if (count < 5)
-      errors[field] = english
-        ? "Please add a description (at least 5 characters)."
-        : "请补充说明（至少 5 个字）";
-    else if (Array.from(values[field]).length > maximum)
-      errors[field] = english
-        ? `Please shorten the description (at most ${maximum} characters).`
-        : `请精简说明（最多 ${maximum} 个字）`;
+    if (count < 5) errors[field] = messages.short;
+    else if (Array.from(values[field]).length > maximum) errors[field] = messages.long(maximum);
   }
   return { values, errors };
 }
@@ -104,8 +97,8 @@ export function createIssueUrl(values, locale = "zh") {
   url.searchParams.set("title", `[Project] ${values.repo.split("/").pop()}`);
   url.searchParams.set(
     "body",
-    locale === "en"
-      ? `## Project repository\n${values.repo}\n\n## What it does\n${values.purpose}\n\n## Where Jev makes decisions\n${values.decision}\n\n## Evidence\nPlease add links to the README or implementation, plus test conditions for any performance claims.`
+    locale !== "zh"
+      ? `## Project repository\n${values.repo}\n\n## What it does\n${values.purpose}\n\n## Where Jev makes decisions\n${values.decision}\n\n## Evidence\n${locale === "ja" ? "README または実装コードへのリンクと、性能に関する記述の測定条件を追記してください。" : locale === "ko" ? "README 또는 구현 코드 링크와 성능 관련 주장의 측정 조건을 추가해 주세요." : "Please add links to the README or implementation, plus test conditions for any performance claims."}`
       : `## 项目仓库\n${values.repo}\n\n## 一句话介绍\n${values.purpose}\n\n## Jev 在哪里做决策\n${values.decision}\n\n## 证据\n请补充 README 或实现代码链接，以及性能数据的测试条件。`,
   );
   return url.toString();

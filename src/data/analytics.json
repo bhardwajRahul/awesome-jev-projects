@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "provider": "cloudflare",
+  "siteToken": "187062bb2b8c40f4a2c9f25c05d0bfb4",
+  "scriptUrl": "https://static.cloudflareinsights.com/beacon.min.js",
+  "hostname": "logicrw.github.io",
+  "pathPrefix": "/awesome-jev-projects/",
+  "respectPrivacySignals": true
+}

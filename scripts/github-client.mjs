@@ -11,6 +11,7 @@ function retryAfterMs(value, now) {
 
 export function createGitHubClient({
   token,
+  writeRepository,
   fetchImpl = fetch,
   now = Date.now,
   sleep = pause,
@@ -18,6 +19,8 @@ export function createGitHubClient({
   maxRateLimitWaitMs = 15 * 60 * 1000,
   onRetry = () => {},
 } = {}) {
+  if (writeRepository && !/^[a-z\d][a-z\d-]{0,38}\/[a-z\d_.-]{1,100}$/i.test(writeRepository))
+    throw new Error("Invalid GitHub write repository");
   let queue = Promise.resolve();
   let nextRequest = 0;
   let nextSearch = 0;
@@ -31,10 +34,35 @@ export function createGitHubClient({
     // A run-wide circuit avoids hammering every remaining repository after the
     // bounded retry allowance has been exhausted. The next run starts fresh.
     if (rateLimitBlocked) throw rateLimitBlocked;
-    if (!path.startsWith("/") || path.startsWith("//")) {
+    if (typeof path !== "string" || !path.startsWith("/") || path.startsWith("//") || /[\\\u0000-\u0020\u007f#]/u.test(path)) {
       throw new Error("GitHub API path must be an absolute API pathname");
     }
-    let requestUrl = "https://api.github.com" + path;
+    const parsed = new URL("https://api.github.com" + path);
+    if (parsed.origin !== "https://api.github.com" || parsed.pathname !== path.split("?")[0])
+      throw new Error("Non-canonical GitHub API path rejected");
+    // Read clients cannot be turned into account/API writers by remote data.
+    // The write client has only the fixed data-publication and Issue mutation shapes this app uses.
+    const mutationPath = writeRepository && `/repos/${writeRepository}/`;
+    const relative = mutationPath && parsed.pathname.startsWith(mutationPath)
+      ? parsed.pathname.slice(mutationPath.length) : null;
+    const sha = (value) => /^[a-f\d]{40}$/.test(value ?? "");
+    const safeTree = body?.tree?.length === 1 && body.tree[0].path === "src/data/projects.json" &&
+      body.tree[0].mode === "100644" && body.tree[0].type === "blob" &&
+      typeof body.tree[0].content === "string" && Buffer.byteLength(body.tree[0].content) <= 10_000_000 &&
+      !body.tree[0].sha && sha(body.base_tree);
+    const allowedWrite = relative && !parsed.search && (
+      (method === "POST" && relative === "git/trees" && safeTree) ||
+      (method === "POST" && relative === "git/commits" && sha(body?.tree) &&
+        body?.parents?.length === 1 && sha(body.parents[0])) ||
+      (method === "PATCH" && relative === "git/refs/heads/main" && body?.force === false && sha(body.sha)) ||
+      (method === "POST" && /^issues\/[1-9]\d*\/comments$/.test(relative)) ||
+      (method === "PATCH" && /^issues\/[1-9]\d*$/.test(relative))
+    );
+    if (method !== "GET" && !allowedWrite)
+      throw new Error("GitHub mutation outside the explicit repository write scope");
+    if (method === "GET" && body !== undefined)
+      throw new Error("GET request bodies are forbidden");
+    let requestUrl = parsed.href;
     let redirects = 0;
     const attempts = method === "POST" ? 1 : maxAttempts;
     for (let attempt = 0; attempt < attempts; attempt++) {
@@ -67,7 +95,8 @@ export function createGitHubClient({
           redirect: "manual",
         });
       } catch (error) {
-        if (attempt === attempts - 1) throw error;
+        if (attempt === attempts - 1)
+          throw new Error(token ? String(error.message).replaceAll(token, "[redacted]") : String(error.message));
         await sleep(1500 * (attempt + 1));
         continue;
       }
@@ -85,6 +114,7 @@ export function createGitHubClient({
           throw error;
         }
         if (
+          method !== "GET" ||
           redirects >= 3 ||
           !destination ||
           destination.origin !== "https://api.github.com" ||

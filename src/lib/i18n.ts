@@ -1,5 +1,50 @@
-export type Locale = "zh" | "en";
+export type Locale = "zh" | "en" | "ja" | "ko";
 export const english: Record<string, string> = {
+  "查看代码示例": "Show code example",
+  "热门搜索": "Popular searches",
+  "快速接入": "Quick start",
+  "决策流程": "Decision flow",
+
+  "了解与接入 Jev": "Understand and integrate Jev",
+  "决策机制": "How it works",
+
+  "快速浏览": "Quick browse",
+  "浏览完整项目目录": "Browse the complete project directory",
+  "热门之选": "Popular",
+  "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。": "Projects with at least 1,000 GitHub stars. Popularity is not a quality guarantee.",
+  "近期新秀": "Recent arrivals",
+  "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。": "Created in the last 90 days with 10–999 stars in the current snapshot.",
+  "宽松许可": "Permissive license",
+  "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。": "Recognized permissive licenses such as MIT, Apache and BSD. Check the original license before use.",
+  "按匹配度排序": "Sorted by relevance",
+
+  "个项目待复核，已在卡片中标明。": "projects are pending review and marked on their cards.",
+  "按标签筛选": "Filter by tag",
+  "待复核": "Review pending",
+  "接入证据待复核，暂不作为已验证项目推荐。": "Integration evidence is under review; this is not a verified recommendation.",
+
+  "许可未声明": "License not declared",
+  "收集 Jev 开源与公开源码项目。": "Explore Jev open-source projects and public code.",
+
+  "来源摘要": "Source summary",
+  "加载更多项目": "Load more projects",
+  "已显示": "Showing",
+
+  "收集有源码可查的 Jev 开源项目。": "Discover Jev open-source projects with source evidence.",
+  "按用途浏览，查看 Jev 的接入方式与项目说明。": "Browse by use case and see where Jev fits in each project.",
+  "选择语言": "Choose language",
+  "独立项目页": "Project page",
+  "跳转到项目列表": "Skip to projects",
+  "筛选结果": "Filtered results",
+  "原文说明": "Original source text",
+  "来源可查，不代表已独立运行或验证性能。": "Source evidence is available. Runtime behavior and performance have not been independently verified.",
+  "相关源码与 README": "Source code & README",
+  "查看项目详情": "View project details",
+  "清除该筛选": "Remove this filter",
+  "已取消收藏，本次浏览有效；浏览器未允许保存": "Removed for this visit. Browser storage is unavailable.",
+  "输入 → 判断": "Input → decision",
+  "Fork 数": "Forks",
+  "Star on GitHub": "Star on GitHub",
   关闭弹窗: "Close dialog",
   主导航: "Main navigation",
   探索项目: "Explore",
@@ -33,10 +78,10 @@ export const english: Record<string, string> = {
   "在做一个 Jev 项目？": "Building with Jev?",
   "把你的下一步，分享给大家。": "Show the community how you use it.",
   提交到雷达: "Submit a project",
-  "Awesome Jev · 开源项目雷达": "Awesome Jev · Open-source radar",
+  "Awesome Jev · 项目目录": "Awesome Jev · Project directory",
   搜索项目: "Search projects",
-  "搜项目、作者，或场景（如：省成本、浏览器、9Hz、上下文）...":
-    "Search projects, authors, or uses: routing, browser, 9Hz, context…",
+  "搜项目、作者或场景（如：Playwright、Claude、降本路由、Rust、上下文）...":
+    "Search projects, authors or use cases: Playwright, Claude, cost routing, Rust, context…",
   清空搜索: "Clear search",
   展开筛选: "Toggle filters",
   筛选: "Filters",
@@ -152,7 +197,7 @@ export const categoryEnglish: Record<string, string> = {
   "Context GC & Filter": "Context GC",
   "Codebase & Graph Pathfinding": "Code Navigation",
   "High-Frequency & Simulation": "High-Frequency / Games",
-  "Domain & Vertical Tools": "Domain & Quant",
+  "Domain & Vertical Tools": "Domain Tools",
   "MCP & Integrations": "MCP & Integrations",
   "CLI & Pipelines": "CLI & Pipelines",
   "SDK & Integrations": "SDK Integrations",
@@ -166,12 +211,520 @@ export const categoryEnglish: Record<string, string> = {
   "Security & Guardrails": "Security & Guardrails",
   "Voice & Conversation": "Voice & Conversation",
 };
-export const translate = (text: string, locale: Locale): string =>
-  locale === "en" ? (english[text] ?? text) : text;
-export function readLocale(): Locale {
-  try {
-    return localStorage.getItem("awesome-jev:locale") === "en" ? "en" : "zh";
-  } catch {
-    return "zh";
+
+export const japanese: Record<string, string> = {
+  "查看代码示例": "コード例を表示",
+  "热门搜索": "よく使う検索",
+  "快速接入": "クイックスタート",
+  "决策流程": "判断の流れ",
+
+  "了解与接入 Jev": "Jev の理解と連携",
+  "决策机制": "判断の仕組み",
+
+  "快速浏览": "クイックフィルター",
+  "浏览完整项目目录": "すべてのプロジェクトを表示",
+  "热门之选": "人気のプロジェクト",
+  "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。": "GitHub Stars が 1,000 以上のプロジェクト。人気は品質の保証ではありません。",
+  "近期新秀": "最近の新顔",
+  "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。": "過去 90 日間に作成され、現在のスナップショットで Stars が 10〜999 のプロジェクト。",
+  "宽松许可": "寛容なライセンス",
+  "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。": "MIT、Apache、BSD などの寛容なライセンスを確認。利用前に元のライセンスもご確認ください。",
+  "按匹配度排序": "関連度順",
+
+  "个项目待复核，已在卡片中标明。": "件は再確認中です。各カードに明記しています。",
+  "按标签筛选": "タグで絞り込む",
+  "待复核": "再確認中",
+  "接入证据待复核，暂不作为已验证项目推荐。": "連携の根拠を再確認中です。検証済みの推奨プロジェクトではありません。",
+
+  "Agent Skill 与接入指南": "Agent Skill と導入ガイド",
+  "为 AI 编码助手（Claude Code、Cursor、Windsurf、Copilot）提供开箱即用的专业能力包。": "AI コーディング支援ツール（Claude Code、Cursor、Windsurf、Copilot）向けの Skill パッケージ。",
+  "一键安装 Skill（推荐）": "コマンドで Skill を導入（推奨）",
+  "安装命令已复制": "インストールコマンドをコピーしました",
+  "无法自动复制，请手动复制命令。": "自動コピーに失敗しました。コマンドを手動でコピーしてください。",
+  "复制命令": "コマンドをコピー",
+  "复制": "コピー",
+  "Agent 可用核心能力": "Agent で使える機能",
+  "项目检索与推荐：": "プロジェクトの検索・推薦：",
+  "按专业分类检索实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。": "DOM 操作、モデルのルーティング、Context GC など、用途別にオープンソースの実装例を探せます。",
+  "架构模式与源码证据：": "設計パターンとソースコード：",
+  "获取 System-1 决策协同器架构，查阅每个项目的真实 Jev 决策点与 GitHub 源码证据。": "System-1 による判断の分担を学び、Jev の判断箇所と GitHub のソースコードを確認できます。",
+  "标准化 Issue 提交规范：": "Issue 投稿の形式：",
+  "指导 Agent 或开发者按照雷达格式规范提交新的 Jev 项目。": "Agent や開発者がディレクトリの形式に沿って Jev プロジェクトを投稿できます。",
+  "机器可读接口": "機械可読のデータ",
+  "Agent Skill 标准定义 (Markdown)": "Agent Skill の定義（Markdown）",
+  "精简路线图与重点项目 (Markdown)": "概要と主要プロジェクト（Markdown）",
+  "完整项目结构化数据集 (JSON)": "全プロジェクトの構造化データ（JSON）",
+  "Agent Skill": "Agent Skill",
+  "查看 Agent Skill 与接入指南": "Agent Skill と導入ガイドを見る",
+  "Agent Skill 接入": "Agent Skill を導入",
+
+  "许可未声明": "ライセンス未記載",
+  "收集 Jev 开源与公开源码项目。": "Jev のオープンソースと公開コードを探す。",
+
+  "来源摘要": "出典からの要約",
+  "加载更多项目": "さらに表示",
+  "已显示": "表示中",
+
+  "关闭弹窗": "ダイアログを閉じる",
+  "主导航": "メインナビゲーション",
+  "探索项目": "プロジェクトを探す",
+  "我的收藏": "保存済み",
+  "提交项目": "プロジェクトを投稿",
+  "到 GitHub 支持这个项目": "GitHub でこのプロジェクトを応援",
+  "Star on GitHub（新标签页打开）": "GitHub に Star（新しいタブで開く）",
+  "拿到 Jev，然后呢？": "Jev で、何をつくる？",
+  "收集社区里真跑起来了的开源项目。": "Jev を活用したオープンソースの事例。",
+  "看看别人怎么拿它做选择、省成本和跑高频。": "選択、コスト削減、連続した判断への活用を見てみましょう。",
+  "认识 TypeSafe 的决策模型": "TypeSafe の判断モデルについて",
+  "Jev 决策机制示意": "Jev による判断の仕組み",
+  "任务与选项": "タスクと選択肢",
+  "选一个": "選択",
+  "打个分": "評価",
+  "下一步": "次の操作",
+  "把重活留给大模型，把选择题交给 Jev。": "大きな処理は LLM に、選択は Jev に。",
+  "生态统计": "掲載プロジェクトの統計",
+  "收录项目": "掲載プロジェクト",
+  " · 部分数据": " · 一部のデータ",
+  "应用方向": "カテゴリ",
+  "数据更新": "データ更新",
+  "热门项目": "Star の多いプロジェクト",
+  "按当前星数": "取得時の Star 数順",
+  "分类": "カテゴリ",
+  "全部项目": "すべて",
+  "让好项目被看见": "プロジェクトを共有",
+  "在做一个 Jev 项目？": "Jev で何かつくっていますか？",
+  "把你的下一步，分享给大家。": "Jev の使い方をコミュニティに共有しませんか。",
+  "提交到雷达": "プロジェクトを投稿",
+  "Awesome Jev · 项目目录": "Awesome Jev · プロジェクト一覧",
+  "搜索项目": "プロジェクトを検索",
+  "搜项目、作者或场景（如：Playwright、Claude、降本路由、Rust、上下文）...": "プロジェクト・作者・用途を検索（Playwright、Claude、モデルルーティング、Rust、Context…）",
+  "清空搜索": "検索をクリア",
+  "展开筛选": "絞り込みを表示・非表示",
+  "筛选": "絞り込み",
+  "技术标签": "タグ",
+  "全部标签": "すべてのタグ",
+  "星数范围": "Star 数の範囲",
+  "不限星数": "Star 数を指定しない",
+  "100 及以上": "100 以上",
+  "重置筛选": "絞り込みをリセット",
+  "发现项目": "プロジェクト一覧",
+  "排序方式": "並び順",
+  "最多 Stars": "Star 数の多い順",
+  "最近创建": "作成日の新しい順",
+  "最近更新": "更新日の新しい順",
+  "个匹配项目": "件の検索結果",
+  "正在读取项目": "プロジェクトを読み込み中",
+  "正在读取项目…": "プロジェクトを読み込み中…",
+  "收藏": "保存",
+  "取消收藏": "保存を解除",
+  "自动提炼": "自動要約",
+  "JEV 在这里做什么": "Jev の役割",
+  "最近同步的 GitHub Stars": "直近に取得した GitHub Star 数",
+  "分享": "共有",
+  "项目数据暂时无法读取。": "プロジェクトを読み込めませんでした。",
+  "重试": "再試行",
+  "把想试的项目，留在这里。": "試したいプロジェクトを保存しましょう。",
+  "还没有找到这样的项目": "該当するプロジェクトがありません",
+  "点击项目右上角的书签，即可收藏到本机。": "右上のブックマークで、このブラウザに保存できます。",
+  "试试更短的关键词，或放宽筛选条件。": "キーワードを短くするか、絞り込み条件を減らしてください。",
+  "浏览全部项目": "すべてのプロジェクトを見る",
+  "个项目": "件",
+  "性能数据来自项目说明，未经本站独立复测": "性能に関する記述は各プロジェクトの説明に基づき、当サイトでは独自に検証していません。",
+  "GitHub 数据定时同步": "GitHub のデータを定期更新",
+  "把你的项目带上雷达": "プロジェクトを投稿",
+  "让大家看懂你做了什么，以及 Jev 在哪一步帮上了忙。": "プロジェクトの用途と Jev が担う判断を教えてください。",
+  "请检查下面标出的信息，填写内容已保留。": "下の項目をご確認ください。入力内容は保持されています。",
+  "GitHub 仓库": "GitHub リポジトリ",
+  "owner/repo 或 GitHub 链接": "owner/repo または GitHub の URL",
+  "支持仓库简称、文件链接和分支链接，会自动提取仓库地址。": "リポジトリ名・ファイル・ブランチの URL から、リポジトリの URL を取り出します。",
+  "一句话，它能做什么？": "何ができるプロジェクトですか？",
+  "比如：帮 Claude Code 过滤不相关的日志": "例：Claude Code の不要なログを除外する",
+  "Jev 负责哪一个判断？": "Jev は何を判断しますか？",
+  "它拿到什么输入？需要选择、打分，还是判断下一步？": "どんな入力から、選択・評価・次の操作の決定を行いますか？",
+  "前往 GitHub 创建 Issue": "GitHub で Issue を作成",
+  "已准备好 Issue 草稿。若新标签页未打开，可以直接继续：": "Issue の下書きを用意しました。タブが開かない場合はこちら：",
+  "打开 GitHub Issue 草稿": "GitHub の Issue 下書きを開く",
+  "填写后点击继续，我们会检查并整理仓库地址。跳转后由你确认发布。": "クリックすると入力と URL を確認します。投稿は GitHub でご確認ください。",
+  "JEV 决策点": "Jev が担う判断",
+  "许可证": "ライセンス",
+  "API 未识别": "未確認",
+  "最近提交": "最新コミット",
+  "来源与说明": "出典と留意点",
+  "查看 README 证据": "README の出典を確認",
+  "查看来源证据": "出典を確認",
+  "项目链接": "プロジェクトの URL",
+  "手动复制项目链接": "プロジェクトの URL を手動コピー",
+  "选中后复制即可分享。": "選択してコピーすると共有できます。",
+  "打开仓库": "リポジトリを開く",
+  "复制链接": "リンクをコピー",
+  "已加入本机收藏": "このブラウザに保存しました",
+  "已取消收藏": "保存を解除しました",
+  "已收藏，本次浏览有效；浏览器未允许保存": "この閲覧中のみ保存しました。ブラウザの保存領域は利用できません。",
+  "项目链接已复制": "リンクをコピーしました",
+  "无法自动复制，请使用详情中的项目链接。": "コピーできませんでした。詳細の URL を手動でコピーしてください。",
+  "切换到英文": "英語に切り替え",
+  "切换到中文": "中国語に切り替え",
+  "推荐位：": "掲載枠：",
+  "想在此向全网 Jev 开发者展示你的工具？": "世界中の Jev 開発者にツールを紹介しませんか？",
+  "立即联系": "掲載の相談",
+  "推荐位": "掲載枠",
+  "收集有源码可查的 Jev 开源项目。": "ソースコードを確認できる Jev オープンソースの一覧。",
+  "按用途浏览，查看 Jev 的接入方式与项目说明。": "用途から探し、Jev の組み込み方とプロジェクトの説明を確認できます。",
+  "选择语言": "言語を選択",
+  "独立项目页": "プロジェクトの個別ページ",
+  "跳转到项目列表": "プロジェクト一覧へ移動",
+  "筛选结果": "適用中の条件",
+  "原文说明": "原文の説明",
+  "来源可查，不代表已独立运行或验证性能。": "出典は確認できますが、動作や性能の独自検証は行っていません。",
+  "相关源码与 README": "ソースコードと README",
+  "查看项目详情": "プロジェクトの詳細を見る",
+  "清除该筛选": "この条件を解除",
+  "已取消收藏，本次浏览有效；浏览器未允许保存": "この閲覧中の保存を解除しました。ブラウザの保存領域は利用できません。",
+  "输入 → 判断": "入力 → 判断",
+  "Fork 数": "Fork 数",
+  "Star on GitHub": "GitHub に Star"
+};
+export const korean: Record<string, string> = {
+  "查看代码示例": "코드 예제 보기",
+  "热门搜索": "추천 검색",
+  "快速接入": "빠른 시작",
+  "决策流程": "판단 흐름",
+
+  "了解与接入 Jev": "Jev 이해와 연동",
+  "决策机制": "판단 방식",
+
+  "快速浏览": "빠른 탐색",
+  "浏览完整项目目录": "전체 프로젝트 디렉터리 보기",
+  "热门之选": "인기 프로젝트",
+  "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。": "GitHub Stars가 1,000 이상인 프로젝트입니다. 인기도가 품질을 보장하지는 않습니다.",
+  "近期新秀": "최근 새 프로젝트",
+  "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。": "최근 90일 내 생성되었으며 현재 스냅샷에서 Stars가 10–999인 프로젝트입니다.",
+  "宽松许可": "허용적 라이선스",
+  "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。": "MIT, Apache, BSD 등 허용적 라이선스가 확인된 프로젝트입니다. 사용 전 원본 라이선스를 확인하세요.",
+  "按匹配度排序": "관련도순",
+
+  "个项目待复核，已在卡片中标明。": "개 프로젝트를 검토 중이며 카드에 표시되어 있습니다.",
+  "按标签筛选": "태그로 필터링",
+  "待复核": "검토 대기",
+  "接入证据待复核，暂不作为已验证项目推荐。": "연동 근거를 검토 중이며, 검증된 추천 프로젝트가 아닙니다.",
+
+  "Agent Skill 与接入指南": "Agent Skill 및 연동 가이드",
+  "为 AI 编码助手（Claude Code、Cursor、Windsurf、Copilot）提供开箱即用的专业能力包。": "AI 코딩 도구(Claude Code, Cursor, Windsurf, Copilot)에서 사용할 수 있는 Skill 패키지입니다.",
+  "一键安装 Skill（推荐）": "명령어로 Skill 설치하기(권장)",
+  "安装命令已复制": "설치 명령어를 복사했습니다",
+  "无法自动复制，请手动复制命令。": "자동 복사에 실패했습니다. 명령어를 직접 복사해 주세요.",
+  "复制命令": "명령어 복사",
+  "复制": "복사",
+  "Agent 可用核心能力": "Agent에서 사용할 수 있는 기능",
+  "项目检索与推荐：": "프로젝트 검색 및 추천:",
+  "按专业分类检索实战开源项目，涵盖 DOM 决策、模型路由降本、上下文 GC 等。": "DOM 판단, 모델 라우팅, Context GC 등 용도별로 오픈소스 구현 사례를 검색합니다.",
+  "架构模式与源码证据：": "설계 패턴 및 소스 코드:",
+  "获取 System-1 决策协同器架构，查阅每个项目的真实 Jev 决策点与 GitHub 源码证据。": "System-1 판단 분담 패턴과 각 프로젝트의 Jev 판단 지점, GitHub 소스 코드를 확인합니다.",
+  "标准化 Issue 提交规范：": "Issue 제출 형식:",
+  "指导 Agent 或开发者按照雷达格式规范提交新的 Jev 项目。": "Agent와 개발자가 디렉터리 형식에 맞춰 Jev 프로젝트를 제출할 수 있습니다.",
+  "机器可读接口": "기계가 읽을 수 있는 데이터",
+  "Agent Skill 标准定义 (Markdown)": "Agent Skill 정의(Markdown)",
+  "精简路线图与重点项目 (Markdown)": "개요 및 주요 프로젝트(Markdown)",
+  "完整项目结构化数据集 (JSON)": "전체 프로젝트 구조화 데이터(JSON)",
+  "Agent Skill": "Agent Skill",
+  "查看 Agent Skill 与接入指南": "Agent Skill 및 연동 가이드 보기",
+  "Agent Skill 接入": "Agent Skill 연동",
+
+  "许可未声明": "라이선스 미명시",
+  "收集 Jev 开源与公开源码项目。": "Jev 오픈소스 및 공개 소스 코드 프로젝트를 살펴보세요.",
+
+  "来源摘要": "출처 요약",
+  "加载更多项目": "프로젝트 더 보기",
+  "已显示": "표시 중",
+
+  "关闭弹窗": "대화 상자 닫기",
+  "主导航": "주 탐색",
+  "探索项目": "프로젝트 탐색",
+  "我的收藏": "저장한 프로젝트",
+  "提交项目": "프로젝트 제출",
+  "到 GitHub 支持这个项目": "GitHub에서 이 프로젝트 응원하기",
+  "Star on GitHub（新标签页打开）": "GitHub에 Star 남기기 (새 탭)",
+  "拿到 Jev，然后呢？": "Jev로 무엇을 만들까요?",
+  "收集社区里真跑起来了的开源项目。": "Jev를 활용하는 오픈소스 프로젝트.",
+  "看看别人怎么拿它做选择、省成本和跑高频。": "선택, 비용 절감, 연속적인 판단에 어떻게 활용하는지 살펴보세요.",
+  "认识 TypeSafe 的决策模型": "TypeSafe의 판단 모델 알아보기",
+  "Jev 决策机制示意": "Jev 판단 과정",
+  "任务与选项": "작업과 선택지",
+  "选一个": "선택",
+  "打个分": "평가",
+  "下一步": "다음 동작",
+  "把重活留给大模型，把选择题交给 Jev。": "복잡한 작업은 LLM에, 선택은 Jev에.",
+  "生态统计": "수록 프로젝트 통계",
+  "收录项目": "수록 프로젝트",
+  " · 部分数据": " · 일부 데이터",
+  "应用方向": "분류",
+  "数据更新": "데이터 갱신",
+  "热门项目": "Star가 많은 프로젝트",
+  "按当前星数": "수집 시점의 Star 수순",
+  "分类": "분류",
+  "全部项目": "전체 프로젝트",
+  "让好项目被看见": "프로젝트 공유하기",
+  "在做一个 Jev 项目？": "Jev 프로젝트를 만들고 있나요?",
+  "把你的下一步，分享给大家。": "Jev를 어떻게 쓰는지 공유해 주세요.",
+  "提交到雷达": "프로젝트 제출",
+  "Awesome Jev · 项目目录": "Awesome Jev · 프로젝트 디렉터리",
+  "搜索项目": "프로젝트 검색",
+  "搜项目、作者或场景（如：Playwright、Claude、降本路由、Rust、上下文）...": "프로젝트, 작성자, 용도 검색 (Playwright, Claude, 모델 라우팅, Rust, Context…)",
+  "清空搜索": "검색 지우기",
+  "展开筛选": "필터 열기/닫기",
+  "筛选": "필터",
+  "技术标签": "기술 태그",
+  "全部标签": "전체 태그",
+  "星数范围": "Star 수 범위",
+  "不限星数": "Star 수 제한 없음",
+  "100 及以上": "100 이상",
+  "重置筛选": "필터 초기화",
+  "发现项目": "프로젝트 둘러보기",
+  "排序方式": "정렬 기준",
+  "最多 Stars": "Star 많은 순",
+  "最近创建": "최근 생성순",
+  "最近更新": "최근 갱신순",
+  "个匹配项目": "개 검색 결과",
+  "正在读取项目": "프로젝트 불러오는 중",
+  "正在读取项目…": "프로젝트를 불러오는 중…",
+  "收藏": "저장",
+  "取消收藏": "저장 해제",
+  "自动提炼": "자동 요약",
+  "JEV 在这里做什么": "Jev의 역할",
+  "最近同步的 GitHub Stars": "최근 동기화한 GitHub Star 수",
+  "分享": "공유",
+  "项目数据暂时无法读取。": "프로젝트 데이터를 불러올 수 없습니다.",
+  "重试": "다시 시도",
+  "把想试的项目，留在这里。": "사용해 보고 싶은 프로젝트를 저장하세요.",
+  "还没有找到这样的项目": "조건에 맞는 프로젝트가 없습니다",
+  "点击项目右上角的书签，即可收藏到本机。": "프로젝트 오른쪽 위 북마크를 눌러 이 브라우저에 저장하세요.",
+  "试试更短的关键词，或放宽筛选条件。": "검색어를 줄이거나 필터 조건을 완화해 보세요.",
+  "浏览全部项目": "전체 프로젝트 보기",
+  "个项目": "개 프로젝트",
+  "性能数据来自项目说明，未经本站独立复测": "성능 관련 내용은 프로젝트 설명에 근거하며, 이 사이트에서 별도로 검증하지 않았습니다.",
+  "GitHub 数据定时同步": "GitHub 데이터 정기 동기화",
+  "把你的项目带上雷达": "프로젝트 제출하기",
+  "让大家看懂你做了什么，以及 Jev 在哪一步帮上了忙。": "프로젝트의 기능과 Jev가 담당하는 판단을 알려 주세요.",
+  "请检查下面标出的信息，填写内容已保留。": "아래 표시된 항목을 확인해 주세요. 입력 내용은 유지됩니다.",
+  "GitHub 仓库": "GitHub 저장소",
+  "owner/repo 或 GitHub 链接": "owner/repo 또는 GitHub 링크",
+  "支持仓库简称、文件链接和分支链接，会自动提取仓库地址。": "저장소 이름, 파일 링크, 브랜치 링크에서 저장소 주소를 추출합니다.",
+  "一句话，它能做什么？": "어떤 기능을 제공하나요?",
+  "比如：帮 Claude Code 过滤不相关的日志": "예: Claude Code에서 관련 없는 로그 걸러내기",
+  "Jev 负责哪一个判断？": "Jev는 어떤 판단을 하나요?",
+  "它拿到什么输入？需要选择、打分，还是判断下一步？": "어떤 입력을 받아 선택, 평가 또는 다음 동작을 결정하나요?",
+  "前往 GitHub 创建 Issue": "GitHub에서 Issue 만들기",
+  "已准备好 Issue 草稿。若新标签页未打开，可以直接继续：": "Issue 초안이 준비되었습니다. 새 탭이 열리지 않으면 아래 링크를 이용하세요.",
+  "打开 GitHub Issue 草稿": "GitHub Issue 초안 열기",
+  "填写后点击继续，我们会检查并整理仓库地址。跳转后由你确认发布。": "클릭하면 입력 내용과 URL을 확인합니다. GitHub에서 직접 게시를 확정하세요.",
+  "JEV 决策点": "Jev가 담당하는 판단",
+  "许可证": "라이선스",
+  "API 未识别": "확인되지 않음",
+  "最近提交": "최근 커밋",
+  "来源与说明": "출처 및 참고 사항",
+  "查看 README 证据": "README 근거 보기",
+  "查看来源证据": "출처 근거 보기",
+  "项目链接": "프로젝트 링크",
+  "手动复制项目链接": "프로젝트 링크 직접 복사",
+  "选中后复制即可分享。": "링크를 선택하고 복사해 공유하세요.",
+  "打开仓库": "저장소 열기",
+  "复制链接": "링크 복사",
+  "已加入本机收藏": "이 브라우저에 저장했습니다",
+  "已取消收藏": "저장을 해제했습니다",
+  "已收藏，本次浏览有效；浏览器未允许保存": "이번 방문 동안 저장했습니다. 브라우저 저장 공간을 사용할 수 없습니다.",
+  "项目链接已复制": "프로젝트 링크를 복사했습니다",
+  "无法自动复制，请使用详情中的项目链接。": "자동 복사에 실패했습니다. 상세 정보의 링크를 직접 복사해 주세요.",
+  "切换到英文": "영어로 전환",
+  "切换到中文": "중국어로 전환",
+  "推荐位：": "추천 영역:",
+  "想在此向全网 Jev 开发者展示你的工具？": "전 세계 Jev 개발자에게 도구를 소개하고 싶으신가요?",
+  "立即联系": "홍보 문의",
+  "推荐位": "추천 영역",
+  "收集有源码可查的 Jev 开源项目。": "소스 코드를 확인할 수 있는 Jev 오픈소스 프로젝트 모음.",
+  "按用途浏览，查看 Jev 的接入方式与项目说明。": "용도별로 탐색하고 Jev 연동 방식과 프로젝트 설명을 확인하세요.",
+  "选择语言": "언어 선택",
+  "独立项目页": "프로젝트 상세 페이지",
+  "跳转到项目列表": "프로젝트 목록으로 이동",
+  "筛选结果": "적용된 필터",
+  "原文说明": "원문 설명",
+  "来源可查，不代表已独立运行或验证性能。": "출처를 확인할 수 있지만 실행 결과나 성능을 별도로 검증한 것은 아닙니다.",
+  "相关源码与 README": "소스 코드 및 README",
+  "查看项目详情": "프로젝트 상세 보기",
+  "清除该筛选": "이 필터 해제",
+  "已取消收藏，本次浏览有效；浏览器未允许保存": "이번 방문에서 저장을 해제했습니다. 브라우저 저장 공간을 사용할 수 없습니다.",
+  "输入 → 判断": "입력 → 판단",
+  "Fork 数": "Fork 수",
+  "Star on GitHub": "GitHub에 Star"
+};
+
+const categoryTranslations: Record<string, Partial<Record<Locale, string>>> = {
+  "Browser & OS Action": {
+    "zh": "浏览器与桌面",
+    "ja": "ブラウザ・デスクトップ",
+    "ko": "브라우저 및 데스크톱"
+  },
+  "Routing & Cost Optimization": {
+    "zh": "模型路由与降本",
+    "ja": "モデルルーティング",
+    "ko": "모델 라우팅"
+  },
+  "Context GC & Filter": {
+    "zh": "上下文与记忆",
+    "ja": "Context GC・メモリ",
+    "ko": "Context GC 및 메모리"
+  },
+  "Codebase & Graph Pathfinding": {
+    "zh": "代码与图谱",
+    "ja": "コード・グラフ探索",
+    "ko": "코드 및 그래프 탐색"
+  },
+  "High-Frequency & Simulation": {
+    "zh": "游戏与实时决策",
+    "ja": "ゲーム・リアルタイム判断",
+    "ko": "게임 및 실시간 판단"
+  },
+  "Domain & Vertical Tools": {
+    "zh": "行业应用",
+    "ja": "分野別ツール",
+    "ko": "분야별 도구"
+  },
+  "MCP & Integrations": {
+    "zh": "MCP 与集成",
+    "ja": "MCP・連携",
+    "ko": "MCP 및 연동"
+  },
+  "CLI & Pipelines": {
+    "zh": "命令行与流水线",
+    "ja": "CLI・パイプライン",
+    "ko": "CLI 및 파이프라인"
+  },
+  "SDK & Integrations": {
+    "zh": "SDK 与兼容接入",
+    "ja": "SDK・互換連携",
+    "ko": "SDK 및 호환 연동"
+  },
+  "SDK & Decision Frameworks": {
+    "zh": "SDK 与决策框架",
+    "ja": "SDK・判断フレームワーク",
+    "ko": "SDK 및 판단 프레임워크"
+  },
+  "Data & Search": {
+    "zh": "数据与搜索",
+    "ja": "データ・検索",
+    "ko": "데이터 및 검색"
+  },
+  "Classification & Taxonomy": {
+    "zh": "分类与目录",
+    "ja": "分類・カタログ",
+    "ko": "분류 및 카탈로그"
+  },
+  "Creative Tools": {
+    "zh": "音乐与界面创作",
+    "ja": "音楽・UI 制作",
+    "ko": "음악 및 UI 제작"
+  },
+  "Evaluation & Observability": {
+    "zh": "评测与观测",
+    "ja": "評価・可観測性",
+    "ko": "평가 및 관측성"
+  },
+  "Benchmarks & Evaluation": {
+    "zh": "基准与评测",
+    "ja": "ベンチマーク・評価",
+    "ko": "벤치마크 및 평가"
+  },
+  "Decision Tools": {
+    "zh": "决策工具",
+    "ja": "判断ツール",
+    "ko": "판단 도구"
+  },
+  "Security & Guardrails": {
+    "zh": "安全与内容审核",
+    "ja": "安全対策・コンテンツ審査",
+    "ko": "보안 및 콘텐츠 검토"
+  },
+  "Voice & Conversation": {
+    "zh": "语音与对话",
+    "ja": "音声・会話",
+    "ko": "음성 및 대화"
   }
+};
+
+export const locales: Locale[] = ["zh", "en", "ja", "ko"];
+export const localeMeta: Record<Locale, { label: string; language: string; title: string; description: string }> = {
+  zh: { label: "简体中文", language: "zh-CN", title: "Awesome Jev — Jev 开源与公开源码项目目录", description: "按用途探索 Jev 开源与公开源码项目，查看许可、源码、README、接入方式与来源说明。支持中文、English、日本語和한국어。" },
+  en: { label: "English", language: "en", title: "Awesome Jev — Open-Source & Public Code Directory", description: "Explore Jev open-source projects and public code by use case, with licenses, READMEs, integration details and source notes. Available in four languages." },
+  ja: { label: "日本語", language: "ja", title: "Awesome Jev — Jev オープンソース・公開コード一覧", description: "Jev のオープンソースと公開コードを用途別に探索。ライセンス、README、組み込み方と出典を確認できます。日本語を含む4言語に対応。" },
+  ko: { label: "한국어", language: "ko", title: "Awesome Jev — Jev 오픈소스 및 공개 코드 디렉터리", description: "Jev 오픈소스와 공개 코드를 용도별로 탐색하고 라이선스, README, 연동 방식과 출처를 확인하세요. 한국어를 포함한 4개 언어를 지원합니다." },
+};
+export function translate(text: string, locale: Locale): string {
+  return ({ en: english, ja: japanese, ko: korean } as Partial<Record<Locale, Record<string, string>>>)[locale]?.[text] ?? text;
 }
+export function categoryLabel(category: string, locale: Locale): string {
+  return locale === "en" ? (categoryEnglish[category] ?? category) : (categoryTranslations[category]?.[locale] ?? category);
+}
+export function localeFromPath(path: string, base = "/awesome-jev-projects/"): Locale | null {
+  const relative = path.startsWith(base) ? path.slice(base.length) : path.replace(/^\//, "");
+  const match = relative.match(/^(en|ja|ko)(?:\/|$)/);
+  return match ? match[1] as Locale : null;
+}
+export function readLocale(): Locale {
+  if (typeof window === "undefined") return "zh";
+  const pathLocale = localeFromPath(window.location.pathname);
+  if (pathLocale) return pathLocale;
+  try {
+    const saved = window.localStorage.getItem("awesome-jev:locale");
+    return locales.includes(saved as Locale) ? saved as Locale : "zh";
+  } catch { return "zh"; }
+}
+export type ProjectTextKey = "plainSummary" | "jevDecisionPoint" | "highlightBenefit" | "claimStatus" | "reviewReason";
+export function localizedProjectText(project: object, key: ProjectTextKey, locale: Locale): { text: string; language: Locale } {
+  const source = project as Record<string, unknown>;
+  const suffixes: Record<Locale, string> = { zh: "", en: "En", ja: "Ja", ko: "Ko" };
+  const preference: Locale[] = locale === "zh" ? ["zh", "en"] : [locale, "en", "zh"];
+  for (const language of preference) {
+    const value = source[`${key}${suffixes[language]}`];
+    if (typeof value === "string" && value.trim()) return { text: value, language };
+  }
+  return { text: "", language: locale };
+}
+export function projectText(project: object, key: ProjectTextKey, locale: Locale): string {
+  return localizedProjectText(project, key, locale).text;
+}
+export function projectPath(id: string, locale: Locale, base = "/awesome-jev-projects/"): string {
+  const [owner, ...repo] = id.split(":");
+  const name = repo.join(":");
+  const segments = name ? `${encodeURIComponent(owner)}/${encodeURIComponent(name)}` : encodeURIComponent(owner);
+  return `${base}${locale === "zh" ? "" : `${locale}/`}projects/${segments}/`;
+}
+
+export const popularSearches: Record<Locale, { label: string; query: string }[]> = {
+  zh: [
+    { label: "浏览器自动化", query: "浏览器自动化" },
+    { label: "降本路由", query: "降本路由" },
+    { label: "上下文", query: "上下文" },
+    { label: "Rust", query: "Rust" },
+    { label: "Claude", query: "Claude" },
+  ],
+  en: [
+    { label: "Browser automation", query: "browser automation" },
+    { label: "Cost routing", query: "model routing" },
+    { label: "Context", query: "context" },
+    { label: "Rust", query: "Rust" },
+    { label: "Claude", query: "Claude" },
+  ],
+  ja: [
+    { label: "ブラウザー自動化", query: "browser automation" },
+    { label: "モデルルーティング", query: "model routing" },
+    { label: "Context", query: "context" },
+    { label: "Rust", query: "Rust" },
+    { label: "Claude", query: "Claude" },
+  ],
+  ko: [
+    { label: "브라우저 자동화", query: "browser automation" },
+    { label: "모델 라우팅", query: "model routing" },
+    { label: "Context", query: "context" },
+    { label: "Rust", query: "Rust" },
+    { label: "Claude", query: "Claude" },
+  ],
+};

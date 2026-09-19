@@ -1,0 +1,13 @@
+{
+  "partners": [],
+  "tiers": [
+    { "id": "headline", "priceUsd": 199, "slots": 2 },
+    { "id": "category", "priceUsd": 99, "slots": 1 }
+  ],
+  "contacts": {
+    "email": "logicrw.chen@gmail.com",
+    "telegram": "@logicrw",
+    "telegramUrl": "https://t.me/logicrw",
+    "xUrl": "https://x.com/0xLogicrw"
+  }
+}

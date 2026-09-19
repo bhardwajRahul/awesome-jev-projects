@@ -17,7 +17,7 @@ export const bodyHash = (body) =>
     .update(body ?? "")
     .digest("hex");
 export const successComment =
-  "🎉 感谢提交！项目已通过自动化代码审查，并在雷达站成功收录上线：https://logicrw.github.io/awesome-jev-projects/";
+  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并在雷达站成功收录上线：https://logicrw.github.io/awesome-jev-projects/";
 const OWNER_REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
 function requireOwner(repository) {
   if (!OWNER_REPO.test(repository ?? ""))
@@ -27,9 +27,10 @@ function requireOwner(repository) {
 function publicIdentity(project) {
   try {
     const u = new URL(project.url);
-    return u.protocol === "https:" && u.hostname === "github.com"
-      ? u.pathname.replace(/^\/|\/$/g, "").toLowerCase()
-      : null;
+    const identity = u.pathname.replace(/^\/|\/$/g, "");
+    return u.protocol === "https:" && u.hostname === "github.com" &&
+      !u.username && !u.password && !u.port && !u.search && !u.hash && OWNER_REPO.test(identity)
+      ? identity.toLowerCase() : null;
   } catch {
     return null;
   }
@@ -37,7 +38,7 @@ function publicIdentity(project) {
 function sameProject(a, b) {
   return (
     a.id === b.id ||
-    publicIdentity(a) === publicIdentity(b) ||
+    (publicIdentity(a) !== null && publicIdentity(a) === publicIdentity(b)) ||
     (Number.isSafeInteger(a.repoId) && a.repoId === b.repoId)
   );
 }
@@ -188,14 +189,21 @@ function decodeSnapshot(file) {
     throw new Error("Canonical projects must be an array");
   return rows;
 }
-/** Contents API SHA compare-and-swap preserves concurrent submissions and manual edits. */
+/** A non-force ref update atomically compares the entire reviewed branch, not just its data blob. */
 export async function publishSubmission({
   api,
   repository,
   project,
+  reviewedSourceSha,
   maxAttempts = 4,
 }) {
   requireOwner(repository);
+  const identity = publicIdentity(project);
+  if (!identity || !Number.isSafeInteger(project.repoId) || project.repoId < 1 ||
+      project.id !== identity.replace("/", ":"))
+    throw new Error("Invalid prepared project identity");
+  if (!/^[a-f\d]{40}$/.test(reviewedSourceSha ?? ""))
+    throw new Error("Exact reviewed source SHA is required for publication");
   const ingestion = project.ingestion;
   if (
     ingestion?.repository !== repository ||
@@ -221,53 +229,67 @@ export async function publishSubmission({
       status: "changed",
       reason: "target repository is no longer the verified public repository",
     };
-  const path = `/repos/${repository}/contents/src/data/projects.json`;
+  const contentsPath = `/repos/${repository}/contents/src/data/projects.json`;
+  const refPath = `/repos/${repository}/git/refs/heads/main`;
+  const headPath = `/repos/${repository}/git/ref/heads/main`;
+  let createdCommit;
+  const stale = () => ({
+    status: "changed",
+    retryable: true,
+    reason: "main advanced after review; retry against the current policy and schema",
+  });
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const file = await api(path + "?ref=main");
-    if (typeof file.sha !== "string" || (file.size ?? 0) > 10_000_000)
-      throw new Error(
-        "Canonical dataset is unavailable or exceeds the publication budget",
-      );
-    const current = decodeSnapshot(
-      file.encoding === "base64"
-        ? file
-        : await api(`/repos/${repository}/git/blobs/${file.sha}`),
-    );
-    const existing = current.find((row) => sameProject(row, project));
-    if (existing) {
-      const own =
-        existing.ingestion?.repository === repository &&
-        existing.ingestion.issueNumber === ingestion.issueNumber &&
-        existing.ingestion.issueBodySha256 === ingestion.issueBodySha256;
-      return { status: own ? "ingested" : "duplicate", changed: false };
-    }
-    const content = Buffer.from(
-      JSON.stringify([...current, project], null, 2) + "\n",
-    ).toString("base64");
-    try {
-      const response = await api(path, {
-        method: "PUT",
+    const head = (await api(headPath)).object?.sha;
+    if (createdCommit && head === createdCommit)
+      return { status: "ingested", changed: true, commit: createdCommit };
+    if (head !== reviewedSourceSha) return stale();
+    if (!createdCommit) {
+      // Both policy code and source dataset are read from the reviewed immutable revision.
+      const file = await api(contentsPath + `?ref=${reviewedSourceSha}`);
+      if (typeof file.sha !== "string" || (file.size ?? 0) > 10_000_000)
+        throw new Error("Canonical dataset is unavailable or exceeds the publication budget");
+      const current = decodeSnapshot(file.encoding === "base64"
+        ? file : await api(`/repos/${repository}/git/blobs/${file.sha}`));
+      const existing = current.find((row) => sameProject(row, project));
+      if (existing) {
+        const own = existing.ingestion?.repository === repository &&
+          existing.ingestion.issueNumber === ingestion.issueNumber &&
+          existing.ingestion.issueBodySha256 === ingestion.issueBodySha256;
+        return { status: own ? "ingested" : "duplicate", changed: false };
+      }
+      const base = await api(`/repos/${repository}/git/commits/${reviewedSourceSha}`);
+      if (!/^[a-f\d]{40}$/.test(base.tree?.sha ?? ""))
+        throw new Error("Reviewed commit has no valid tree");
+      const tree = await api(`/repos/${repository}/git/trees`, {
+        method: "POST",
         body: {
-          message: `data: ingest ${publicIdentity(project)} from #${ingestion.issueNumber}`,
-          content,
-          sha: file.sha,
-          branch: "main",
+          base_tree: base.tree.sha,
+          tree: [{ path: "src/data/projects.json", mode: "100644", type: "blob",
+            content: JSON.stringify([...current, project], null, 2) + "\n" }],
         },
       });
-      return {
-        status: "ingested",
-        changed: true,
-        commit: response.commit?.sha,
-      };
+      if (!/^[a-f\d]{40}$/.test(tree.sha ?? "")) throw new Error("Invalid prepared tree SHA");
+      const commit = await api(`/repos/${repository}/git/commits`, {
+        method: "POST",
+        body: {
+          message: `data: ingest ${identity} from #${ingestion.issueNumber}`,
+          tree: tree.sha,
+          parents: [reviewedSourceSha],
+        },
+      });
+      if (!/^[a-f\d]{40}$/.test(commit.sha ?? "")) throw new Error("Invalid prepared commit SHA");
+      createdCommit = commit.sha;
+    }
+    // Fail cheaply if main already changed. The non-force update below also
+    // closes the check→write race: our commit's only parent is reviewedSourceSha.
+    if ((await api(headPath)).object?.sha !== reviewedSourceSha) return stale();
+    try {
+      await api(refPath, { method: "PATCH", body: { sha: createdCommit, force: false } });
+      return { status: "ingested", changed: true, commit: createdCommit };
     } catch (error) {
-      // Re-read after both write conflicts and unknown transport outcomes; a completed
-      // prior write is detected above, without overwriting or duplicating another writer.
+      // Read back unknown outcomes; never force-update or rebase under new policy.
       if (attempt === maxAttempts - 1) throw error;
-      if (
-        error.status &&
-        ![409, 422, 500, 502, 503, 504].includes(error.status)
-      )
-        throw error;
+      if (error.status && ![409, 422, 500, 502, 503, 504].includes(error.status)) throw error;
     }
   }
   throw new Error("Publication retries exhausted");
@@ -386,7 +408,10 @@ async function main() {
     throw new Error(
       "GITHUB_TOKEN is required for workflow repository operations",
     );
-  const api = createGitHubClient({ token });
+  const api = createGitHubClient({
+    token,
+    ...(mode === "publish" || mode === "acknowledge" ? { writeRepository: repository } : {}),
+  });
   const resultPath =
     process.env.INGEST_RESULT_FILE ??
     resolve(
@@ -450,6 +475,10 @@ async function main() {
           result.project,
         ]);
     }
+    const reviewedSourceSha = process.env.INGEST_REVIEWED_SHA;
+    if (!/^[a-f\d]{40}$/.test(reviewedSourceSha ?? ""))
+      throw new Error("Exact review checkout SHA is required");
+    result = { ...result, reviewedSourceSha };
     await mkdir(dirname(resultPath), { recursive: true });
     await atomicJSON(resultPath, result);
     await output({
@@ -474,17 +503,24 @@ async function main() {
     const prepared = JSON.parse(await readFile(resultPath, "utf8"));
     if (!["ready", "resume"].includes(prepared.status))
       throw new Error("No validated prepared project");
+    if (prepared.reviewedSourceSha !== process.env.INGEST_REVIEWED_SHA)
+      throw new Error("Immutable receipt does not match the reviewed source SHA");
     const result = await publishSubmission({
       api,
       repository,
       project: prepared.project,
+      reviewedSourceSha: prepared.reviewedSourceSha,
     });
     await atomicJSON(resultPath, { ...prepared, publication: result });
     await output({
       ingested: result.status === "ingested",
       commit: result.commit ?? "",
+      retry: result.retryable === true,
+      issue_number: prepared.project.ingestion.issueNumber,
+      issue_body_sha: prepared.project.ingestion.issueBodySha256,
     });
     console.log(JSON.stringify(result));
+    if (result.status === "changed") process.exitCode = 1;
   } else if (mode === "acknowledge") {
     const projects = JSON.parse(
       await readFile(resolve(root, "src/data/projects.json"), "utf8"),

@@ -1,10 +1,12 @@
 import { readFile, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { publicFields } from "./prepare-public-data.mjs";
+import { SITE, BASE, LOCALES, projectRoute } from "./site-content.mjs";
 const base = resolve(new URL("../dist/", import.meta.url).pathname);
 const forbidden =
-  /\b(?:github_pat_[A-Za-z0-9_]{30,}|gh[pousr]_[A-Za-z0-9]{30,}|sk-(?:proj-|ant-)?[A-Za-z0-9_-]{24,}|AIza[A-Za-z0-9_-]{35})\b|-----BEGIN (?:RSA |OPENSSH )?PRIVATE KEY-----|\b(?:GITHUB_TOKEN|GH_TOKEN)\b|\/Users\/[^\/\s]+\/(?:Documents|Projects|\.codex)/;
+  /\b(?:github_pat_[A-Za-z0-9_]{30,}|gh[pousr]_[A-Za-z0-9]{30,}|sk-(?:proj-|ant-)?[A-Za-z0-9_-]{24,}|AIza[A-Za-z0-9_-]{35})\b|-----BEGIN (?:RSA |OPENSSH )?PRIVATE KEY-----|\b(?:GITHUB_TOKEN|GH_TOKEN|GH_MODELS_TOKEN|RADAR_GITHUB_TOKEN)\b|\/Users\/[^\/\s]+\/(?:Documents|Projects|\.codex)/;
 const textExtensions = /\.(?:html|json|js|css|svg|txt)$/;
 async function walk(dir) {
   const paths = [];
@@ -55,14 +57,33 @@ for (const value of [
   "Content-Security-Policy",
 ])
   assert.ok(html.includes(value), `Missing ${value}`);
-for (const ref of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
-  const url = ref[1];
-  if (url.startsWith("http")) continue;
-  assert.ok(
-    url.startsWith("/awesome-jev-projects/"),
-    `Wrong Pages base: ${url}`,
-  );
-  await readFile(join(base, url.slice("/awesome-jev-projects/".length)));
+const knownFiles = new Set(files);
+for (const file of files.filter((path) => path.endsWith(".html"))) {
+  const page = await readFile(file, "utf8");
+  const csp = page.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/)?.[1];
+  assert.ok(csp && !csp.includes("'unsafe-eval'"), `Missing restrictive CSP: ${file}`);
+  assert.ok(page.indexOf('Content-Security-Policy') < page.indexOf('<script'), `Late CSP: ${file}`);
+  assert.equal((page.match(/rel="canonical"/g) ?? []).length, 1, `Canonical must be unique: ${file}`);
+  assert.equal((page.match(/hreflang=/g) ?? []).length, 5, `Missing reciprocal language variants: ${file}`);
+  for (const script of page.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)) {
+    if (/\bsrc=/.test(script[1])) continue;
+    assert.ok(/type="application\/(?:ld\+)?json"/.test(script[1]), `Executable inline script: ${file}`);
+    assert.doesNotThrow(() => JSON.parse(script[2]), `Invalid structured JSON: ${file}`);
+    const hash = createHash("sha256").update(script[2]).digest("base64");
+    assert.ok(csp.includes(`'sha256-${hash}'`), `Inline JSON CSP hash mismatch: ${file}`);
+  }
+  for (const ref of page.matchAll(/(?:src|href)="([^"]+)"/g)) {
+    const raw = ref[1].replaceAll("&amp;", "&");
+    if (raw.startsWith("#")) continue;
+    const url = new URL(raw, SITE);
+    assert.equal(url.protocol, "https:", `Unsafe protocol: ${file}`);
+    assert.ok(!url.username && !url.password, `Credential-bearing URL: ${file}`);
+    if (url.origin !== new URL(SITE).origin) continue;
+    assert.ok(url.pathname.startsWith(BASE), `Wrong Pages base: ${raw}`);
+    let target = join(base, decodeURIComponent(url.pathname.slice(BASE.length)));
+    if (url.pathname.endsWith("/")) target = join(target, "index.html");
+    assert.ok(knownFiles.has(target), `Broken internal link ${raw} in ${file}`);
+  }
 }
 const image = await readFile(join(base, "og-card.png"));
 assert.equal(image.readUInt32BE(16), 1200);
@@ -78,6 +99,18 @@ assert.equal(
 for (const project of projects)
   for (const key of Object.keys(project))
     assert.ok(publicFields.includes(key), `Unexpected public field: ${key}`);
+for (const locale of LOCALES) {
+  for (const project of projects) {
+    const page = join(base, projectRoute(project.id, locale), "index.html");
+    assert.ok(knownFiles.has(page), `Missing localized project page: ${project.id}/${locale}`);
+  }
+}
+const manifest = JSON.parse(await readFile(join(base, "site-manifest.json"), "utf8"));
+assert.equal(manifest.projects, projects.length, "Stale site manifest");
+const sitemap = await readFile(join(base, "sitemap.xml"), "utf8");
+assert.equal((sitemap.match(/<loc>/g) ?? []).length, (manifest.indexablePages ?? manifest.pages) + (manifest.resources ?? 0), "Sitemap page count mismatch");
+assert.ok(!html.includes('<div id="root"></div>'), "Homepage must include crawlable rendered content");
+assert.ok(html.includes('id="initial-projects"'), "Missing same-build initial project snapshot");
 assert.ok(
   !files.some((file) => file.endsWith("/radar.json")),
   "Internal radar data cannot be published",

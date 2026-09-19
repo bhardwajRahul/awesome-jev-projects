@@ -1,0 +1,8 @@
+# Cloudflare dashboard provides this public identifier for embedding in HTML.
+# This exact match grants no API access; account credentials are never ignored.
+secret:
+  ignored_matches:
+  - match: b27bd824fe620f88fb1a3f9cb23dd29ae7fd6ec739cd1caaed917373e7f2cc14
+    name: Cloudflare Web Analytics public beacon site identifier; no account or API
+      access
+version: 2

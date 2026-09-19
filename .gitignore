@@ -11,3 +11,8 @@ test-results/
 
 # Generated public projection; src/data/projects.json is canonical.
 public/projects.json
+
+# Local agent planning, prompts and research scratch are not published.
+.agents/
+
+.cache_ggshield

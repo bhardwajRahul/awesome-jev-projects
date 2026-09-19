@@ -1,5 +1,4 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import Fuse from "fuse.js";
 import {
   ArrowDownWideNarrow,
   ArrowRight,
@@ -8,6 +7,7 @@ import {
   Braces,
   Check,
   CheckCheck,
+  ChevronDown,
   CircleHelp,
   Code2,
   Copy,
@@ -17,6 +17,7 @@ import {
   GitFork,
   Github,
   Globe,
+  Handshake,
   Layers,
   Network,
   Plus,
@@ -34,10 +35,20 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { validateSubmission, createIssueUrl } from "./lib/submission.mjs";
 import type { SubmissionErrors, SubmissionValues } from "./lib/submission.mjs";
-import { translate, categoryEnglish, readLocale } from "./lib/i18n";
+import { translate, categoryLabel, readLocale, locales, localeMeta, localizedProjectText, projectPath, popularSearches } from "./lib/i18n";
 import type { Locale } from "./lib/i18n";
+import { FeaturedPartners } from "./components/FeaturedPartners";
+import { SponsorDialog } from "./components/SponsorDialog";
+import { HelloJev } from "./components/HelloJev.tsx";
+import { CopyCloneButton } from "./components/CopyCloneButton.tsx";
+import { ThemeToggle } from "./components/ThemeToggle.tsx";
+import { sponsorCopy } from "./lib/sponsors.mjs";
+import { resolveTagId, tagLabel, tagDescription, tagOptions } from "./lib/tags.mjs";
+import { createProjectSearch, searchProjects, browseSort, matchesQuickFilter } from "./lib/search.mjs";
+export { createProjectSearch, searchProjects };
 
-type Project = {
+export type Project = {
+  language?: string | null;
   id: string;
   name: string;
   author: string;
@@ -51,6 +62,7 @@ type Project = {
   forks: number | null;
   openIssues: number | null;
   license: string | null;
+  licenseStatus?: "unconfirmed" | "declared";
   lastCommitAt: string | null;
   createdAt: string | null;
   summarySource: string;
@@ -59,39 +71,51 @@ type Project = {
   metadataFetchedAt?: string;
   evidence?: { url: string; note?: string }[];
   pinned?: boolean;
+  catalogStatus?: "review-pending" | "active";
+  sourceStatus?: string;
+  reviewReason?: string;
+  reviewReasonEn?: string;
+  reviewReasonJa?: string;
+  reviewReasonKo?: string;
   plainSummaryEn?: string;
   jevDecisionPointEn?: string;
   highlightBenefitEn?: string;
   claimStatusEn?: string;
+  plainSummaryJa?: string;
+  jevDecisionPointJa?: string;
+  highlightBenefitJa?: string;
+  claimStatusJa?: string;
+  plainSummaryKo?: string;
+  jevDecisionPointKo?: string;
+  highlightBenefitKo?: string;
+  claimStatusKo?: string;
 };
-const categoryInfo: Record<string, { label: string; icon: LucideIcon }> = {
-  "SDK & Integrations": { label: "SDK 与兼容接入", icon: Braces },
-  "Evaluation & Observability": {
-    label: "评测与观测",
-    icon: SlidersHorizontal,
+const categoryInfo: Record<string, { icon: LucideIcon }> = {
+  "SDK & Integrations": { icon: Braces },
+  "Evaluation & Observability": { icon: SlidersHorizontal,
   },
-  "Voice & Conversation": { label: "语音与对话", icon: Terminal },
-  "Data & Search": { label: "数据与搜索", icon: Search },
-  "Classification & Taxonomy": { label: "分类与目录", icon: Layers },
-  "SDK & Decision Frameworks": { label: "SDK 与决策框架", icon: Braces },
-  "Creative Tools": { label: "音乐与界面创作", icon: Sparkles },
-  "Benchmarks & Evaluation": { label: "基准与评测", icon: SlidersHorizontal },
-  "Decision Tools": { label: "决策工具", icon: Workflow },
-  "Browser & OS Action": { label: "浏览器与桌面", icon: Globe },
-  "MCP & Integrations": { label: "MCP 与集成", icon: Braces },
-  "CLI & Pipelines": { label: "命令行与流水线", icon: Terminal },
-  "Routing & Cost Optimization": { label: "模型路由与降本", icon: Workflow },
-  "Context GC & Filter": { label: "上下文与记忆", icon: Layers },
-  "Codebase & Graph Pathfinding": { label: "代码与图谱", icon: Network },
-  "High-Frequency & Simulation": { label: "游戏与实时决策", icon: Gamepad2 },
-  "Domain & Vertical Tools": { label: "行业应用", icon: ShieldCheck },
-  "Security & Guardrails": { label: "安全与内容审核", icon: ShieldCheck },
+  "Voice & Conversation": { icon: Terminal },
+  "Data & Search": { icon: Search },
+  "Classification & Taxonomy": { icon: Layers },
+  "SDK & Decision Frameworks": { icon: Braces },
+  "Creative Tools": { icon: Sparkles },
+  "Benchmarks & Evaluation": { icon: SlidersHorizontal },
+  "Decision Tools": { icon: Workflow },
+  "Browser & OS Action": { icon: Globe },
+  "MCP & Integrations": { icon: Braces },
+  "CLI & Pipelines": { icon: Terminal },
+  "Routing & Cost Optimization": { icon: Workflow },
+  "Context GC & Filter": { icon: Layers },
+  "Codebase & Graph Pathfinding": { icon: Network },
+  "High-Frequency & Simulation": { icon: Gamepad2 },
+  "Domain & Vertical Tools": { icon: ShieldCheck },
+  "Security & Guardrails": { icon: ShieldCheck },
 };
 const format = (n: number | null) =>
   n === null ? "—" : new Intl.NumberFormat("en-US").format(n);
 const date = (s: string | null | undefined, locale: Locale) =>
-  s
-    ? new Date(s).toLocaleString(locale === "zh" ? "zh-CN" : "en-US", {
+  s && Number.isFinite(Date.parse(s))
+    ? new Date(s).toLocaleString(localeMeta[locale].language, {
         month: "2-digit",
         day: "2-digit",
         hour: "2-digit",
@@ -103,7 +127,7 @@ const safeUrl = (u: string | null | undefined): string => {
   if (!u) return "#";
   try {
     const parsed = new URL(u, "https://github.com");
-    if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+    if (parsed.protocol === "https:" && !parsed.username && !parsed.password) {
       return parsed.href;
     }
   } catch {
@@ -146,6 +170,8 @@ const validProject = (x: unknown): x is Project => {
         "jevDecisionPointEn",
         "highlightBenefitEn",
         "claimStatusEn",
+        "plainSummaryJa", "jevDecisionPointJa", "highlightBenefitJa", "claimStatusJa",
+        "plainSummaryKo", "jevDecisionPointKo", "highlightBenefitKo", "claimStatusKo",
       ] as const
     ).every((k) => p[k] === undefined || typeof p[k] === "string") &&
     Array.isArray(p.tags) &&
@@ -164,22 +190,8 @@ const validProject = (x: unknown): x is Project => {
         )))
   );
 };
-const searchProjects = (fuse: Fuse<Project>, query: string): Project[] => {
-  const aliases: Record<string, string[]> = {
-    省成本: ["Cost Optimization", "Token Saver"],
-    省钱: ["Cost Optimization", "Token Saver"],
-    降本: ["Cost Optimization", "Token Saver"],
-    浏览器: ["browser"],
-    上下文: ["context", "compaction"],
-    "9hz": ["9hz", "9 hz"],
-  };
-  const terms = [query, ...(aliases[query.trim().toLowerCase()] ?? [])];
-  const hits = new Map<string, Project>();
-  for (const term of terms)
-    for (const hit of fuse.search(term)) hits.set(hit.item.id, hit.item);
-  return [...hits.values()];
-};
 const getSaved = () => {
+  if (typeof window === "undefined") return [];
   try {
     const x = JSON.parse(localStorage.getItem("awesome-jev:saved") ?? "[]");
     return Array.isArray(x) ? x.filter((y) => typeof y === "string") : [];
@@ -253,53 +265,110 @@ function Modal({
     </dialog>
   );
 }
-function App() {
-  const [locale, setLocale] = useState<Locale>(readLocale);
+export type ExplorerState = {
+  q: string;
+  category: string;
+  tag: string;
+  quickFilter: "all" | "popular" | "rising" | "commercial";
+  sort: "stars" | "created" | "updated";
+  onlySaved: boolean;
+};
+export function readExplorerState(search = "", projects?: readonly Pick<Project, "category" | "tags">[]): ExplorerState {
+  const params = new URLSearchParams(search);
+  const requestedCategory = params.get("category") ?? "all";
+  const rawTag = params.get("tag") ?? "all";
+  const requestedTag = rawTag.length <= 100 ? resolveTagId(rawTag) : null;
+  const quickFilter = params.get("view");
+  const sort = params.get("sort");
+  return {
+    q: (params.get("q") ?? "").slice(0, 200),
+    category: (projects ? projects.some((p) => p.category === requestedCategory) : Object.hasOwn(categoryInfo, requestedCategory)) ? requestedCategory : "all",
+    tag: requestedTag && (!projects || projects.some((p) => p.tags.some((value) => resolveTagId(value) === requestedTag))) ? requestedTag : "all",
+    quickFilter: quickFilter === "popular" || quickFilter === "rising" || quickFilter === "commercial" ? quickFilter : "all",
+    sort: sort === "created" || sort === "updated" ? sort : "stars",
+    onlySaved: params.get("saved") === "1",
+  };
+}
+export function localeNavigationUrl(currentUrl: string, next: Locale, state: ExplorerState, base = "/awesome-jev-projects/"): URL {
+  const url = new URL(currentUrl);
+  url.pathname = `${base}${next === "zh" ? "" : `${next}/`}`;
+  for (const [key, value] of Object.entries({
+    q: state.q,
+    category: state.category === "all" ? "" : state.category,
+    tag: state.tag === "all" ? "" : state.tag,
+    view: state.quickFilter === "all" ? "" : state.quickFilter,
+    stars: "",
+    sort: state.sort === "stars" ? "" : state.sort,
+    saved: state.onlySaved ? "1" : "",
+    lang: next === "zh" ? "zh" : "",
+  })) {
+    if (value) url.searchParams.set(key, value);
+    else url.searchParams.delete(key);
+  }
+  return url;
+}
+const projectHasTag = (project: Pick<Project, "tags">, id: string) =>
+  project.tags.some((value) => resolveTagId(value) === id);
+export function tagSelectionState(
+  state: ExplorerState, requested: string,
+  projects: readonly Project[], saved: readonly string[] = [],
+): ExplorerState {
+  const next = { ...state, tag: resolveTagId(requested) ?? "all", q: "" };
+  if (next.tag === "all" || projects.some((project) =>
+    projectHasTag(project, next.tag) &&
+    (next.category === "all" || project.category === next.category) &&
+    (!next.onlySaved || saved.includes(project.id)) && matchesQuickFilter(project, next.quickFilter)
+  )) return next;
+  return { ...next, category: "all", quickFilter: "all", onlySaved: false };
+}
+
+const quickFilterCopy: Record<ExplorerState["quickFilter"], { label: string; description: string; icon: LucideIcon }> = {
+  all: { label: "全部项目", description: "浏览完整项目目录", icon: Layers },
+  popular: { label: "热门之选", description: "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。", icon: Star },
+  rising: { label: "近期新秀", description: "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。", icon: Sparkles },
+  commercial: { label: "宽松许可", description: "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。", icon: ShieldCheck },
+};
+
+export type AppProps = { initialProjects?: Project[]; initialLocale?: Locale };
+function App({ initialProjects, initialLocale }: AppProps = {}) {
+  const [locale] = useState<Locale>(() => initialLocale ?? readLocale());
+  const [heroTab, setHeroTab] = useState<"quickstart" | "mechanism">("quickstart");
+  const heroId = useId();
+  const [initialExplorer] = useState(() => readExplorerState(
+    typeof window === "undefined" ? "" : window.location.search, initialProjects,
+  ));
   const t = (text: string) => translate(text, locale);
-  const label = (category: string) =>
-    locale === "en"
-      ? (categoryEnglish[category] ?? category)
-      : (categoryInfo[category]?.label ?? category);
+  const label = (category: string) => categoryLabel(category, locale);
   const projectText = (
     project: Project,
-    key:
-      "plainSummary" | "jevDecisionPoint" | "highlightBenefit" | "claimStatus",
+    key: "plainSummary" | "jevDecisionPoint" | "highlightBenefit" | "claimStatus" | "reviewReason",
   ) => {
-    const english =
-      project[
-        `${key}En` as
-          | "plainSummaryEn"
-          | "jevDecisionPointEn"
-          | "highlightBenefitEn"
-          | "claimStatusEn"
-      ];
-    return locale === "en" && english?.trim() ? english : project[key];
+    const localized = localizedProjectText(project, key, locale);
+    return <span lang={localeMeta[localized.language].language}>{localized.text}</span>;
+  };
+  const changeLocale = (next: Locale) => {
+    if (typeof window === "undefined" || !locales.includes(next) || next === locale) return;
+    try { localStorage.setItem("awesome-jev:locale", next); }
+    catch { /* The destination path still selects the requested language. */ }
+    const url = localeNavigationUrl(window.location.href, next, {
+      q: query, category, tag, quickFilter, sort, onlySaved,
+    }, import.meta.env.BASE_URL);
+    window.location.assign(url.href);
   };
   useEffect(() => {
-    try {
-      localStorage.setItem("awesome-jev:locale", locale);
-    } catch {
-      /* Current-visit language still works. */
-    }
-    document.documentElement.lang = locale === "zh" ? "zh-CN" : "en";
-    document.title =
-      locale === "zh"
-        ? "Awesome Jev — 拿到 Jev，然后呢？"
-        : "Awesome Jev — You have Jev. Now what?";
-    const description = document.querySelector('meta[name="description"]');
-    description?.setAttribute(
-      "content",
-      locale === "zh"
-        ? "收集社区真跑起来了的 Jev 开源项目。看别人怎么拿它选哪个、打几分、下一步干什么。"
-        : "Explore open-source projects built with Jev. See how developers use it to choose, score, and decide what happens next.",
-    );
+    try { localStorage.setItem("awesome-jev:locale", locale); }
+    catch { /* Current-visit language still works. */ }
+    document.documentElement.lang = localeMeta[locale].language;
+    document.title = localeMeta[locale].title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", localeMeta[locale].description);
   }, [locale]);
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[]>(() => initialProjects?.filter(validProject) ?? []);
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">(
-    "loading",
+    initialProjects ? "ready" : "loading",
   );
   const [loadAttempt, setLoadAttempt] = useState(0);
   useEffect(() => {
+    if (initialProjects && loadAttempt === 0) return;
     const controller = new AbortController();
     setLoadState("loading");
     fetch(`${import.meta.env.BASE_URL}projects.json`, {
@@ -324,7 +393,7 @@ function App() {
         if (!controller.signal.aborted) setLoadState("error");
       });
     return () => controller.abort();
-  }, [loadAttempt]);
+  }, [loadAttempt, initialProjects]);
   const updatedAt = useMemo(
     () =>
       projects.reduce(
@@ -336,18 +405,28 @@ function App() {
       ),
     [projects],
   );
-  const [query, setQuery] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [category, setCategory] = useState("all");
-  const [tag, setTag] = useState("all");
-  const [stars, setStars] = useState("all");
-  const [sort, setSort] = useState("stars");
+  const [query, setQuery] = useState(initialExplorer.q);
+  const [searchTerm, setSearchTerm] = useState(initialExplorer.q);
+  const [category, setCategory] = useState(initialExplorer.category);
+  const [tag, setTag] = useState(initialExplorer.tag);
+  const [quickFilter, setQuickFilter] = useState<ExplorerState["quickFilter"]>(initialExplorer.quickFilter);
+  const [sort, setSort] = useState<ExplorerState["sort"]>(initialExplorer.sort);
+  const [visibleLimit, setVisibleLimit] = useState(24);
   const [saved, setSaved] = useState<string[]>(getSaved);
-  const [onlySaved, setOnlySaved] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
-  const [modal, setModal] = useState<"submit" | "agentSkill" | null>(null);
+  const [onlySaved, setOnlySaved] = useState(initialExplorer.onlySaved);
+  const [showFilters, setShowFilters] = useState(initialExplorer.tag !== "all");
+  useEffect(() => {
+    if (loadState !== "ready") return;
+    if (category !== "all" && !projects.some((p) => p.category === category)) setCategory("all");
+    if (tag !== "all" && !projects.some((p) => projectHasTag(p, tag))) setTag("all");
+  }, [projects, loadState, category, tag]);
+  const [modal, setModal] = useState<"submit" | "agentSkill" | "sponsor" | null>(null);
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("sponsor") === "1") setModal("sponsor");
+  }, []);
   const [active, setActive] = useState<Project | null>(null);
   const [toast, setToast] = useState("");
+  const [agentCopyStatus, setAgentCopyStatus] = useState("");
   const [repo, setRepo] = useState("");
   const [purpose, setPurpose] = useState("");
   const [decision, setDecision] = useState("");
@@ -359,6 +438,39 @@ function App() {
   } | null>(null);
   const submissionFormRef = useRef<HTMLFormElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const tagFilterRef = useRef<HTMLSelectElement>(null);
+  const categoryListRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const container = categoryListRef.current;
+    if (!container) return;
+    let frame = 0;
+    const centerCategory = () => {
+      window.cancelAnimationFrame(frame);
+      if (!window.matchMedia("(max-width: 768px)").matches) return;
+      const activeCategory = container.querySelector<HTMLElement>('[aria-pressed="true"]');
+      if (!activeCategory) return;
+      const bounds = container.getBoundingClientRect();
+      const activeBounds = activeCategory.getBoundingClientRect();
+      const start = container.scrollLeft;
+      const target = Math.max(0, Math.min(container.scrollWidth - container.clientWidth,
+        start + activeBounds.left - bounds.left + activeBounds.width / 2 - container.clientWidth / 2));
+      if (Math.abs(target - start) < 1) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        container.scrollLeft = target;
+        return;
+      }
+      const began = performance.now();
+      const move = (time: number) => {
+        const progress = Math.min(1, (time - began) / 180);
+        container.scrollLeft = start + (target - start) * (1 - (1 - progress) ** 3);
+        if (progress < 1) frame = window.requestAnimationFrame(move);
+      };
+      frame = window.requestAnimationFrame(move);
+    };
+    centerCategory();
+    window.addEventListener("resize", centerCategory);
+    return () => { window.cancelAnimationFrame(frame); window.removeEventListener("resize", centerCategory); };
+  }, [category, projects, locale]);
   useEffect(() => {
     const t = setTimeout(() => setSearchTerm(query), 90);
     return () => clearTimeout(t);
@@ -372,7 +484,7 @@ function App() {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.isComposing) return;
-      const editable = (e.target as HTMLElement).matches(
+      const editable = e.target instanceof HTMLElement && e.target.matches(
         'input,textarea,select,[contenteditable="true"]',
       );
       if (
@@ -406,30 +518,20 @@ function App() {
     () => [...new Set(projects.map((p) => p.category))],
     [projects],
   );
-  const tags = useMemo(
-    () => [...new Set(projects.flatMap((p) => p.tags))].sort(),
-    [projects],
-  );
-  const fuse = useMemo(
-    () =>
-      new Fuse(projects, {
-        keys: [
-          { name: "name", weight: 3 },
-          { name: "plainSummary", weight: 2 },
-          "author",
-          "jevDecisionPoint",
-          "highlightBenefit",
-          "plainSummaryEn",
-          "jevDecisionPointEn",
-          "highlightBenefitEn",
-          "category",
-          "tags",
-        ],
-        threshold: 0.34,
-        ignoreLocation: true,
-      }),
-    [projects],
-  );
+  const tags = useMemo(() => tagOptions(projects, locale), [projects, locale]);
+  const selectedTag = tags.find((option) => option.id === tag);
+  const fuse = useMemo(() => createProjectSearch(projects), [projects]);
+  const selectTag = (next: string, focusFilter = false) => {
+    const nextState = tagSelectionState({ q: query, category, tag, quickFilter, sort, onlySaved }, next, projects, saved);
+    setTag(nextState.tag);
+    setCategory(nextState.category);
+    setQuickFilter(nextState.quickFilter);
+    setOnlySaved(nextState.onlySaved);
+    setQuery(nextState.q);
+    setSearchTerm(nextState.q);
+    setShowFilters(true);
+    if (focusFilter) window.requestAnimationFrame(() => tagFilterRef.current?.focus({ preventScroll: true }));
+  };
   useEffect(() => {
     const context = (
       document as Document & {
@@ -471,8 +573,8 @@ function App() {
             .map((p) => ({
               id: p.id,
               name: p.name,
-              summary: projectText(p, "plainSummary"),
-              decision: projectText(p, "jevDecisionPoint"),
+              summary: localizedProjectText(p, "plainSummary", locale).text,
+              decision: localizedProjectText(p, "jevDecisionPoint", locale).text,
               url: p.url,
             })),
           snapshotAt: updatedAt,
@@ -492,44 +594,33 @@ function App() {
     const list = searchTerm.trim()
       ? searchProjects(fuse, searchTerm)
       : projects;
-    return list
-      .filter(
-        (p) =>
-          (category === "all" || p.category === category) &&
-          (tag === "all" || p.tags.includes(tag)) &&
-          (!onlySaved || saved.includes(p.id)) &&
-          (stars === "all" ||
-            (p.stars !== null &&
-              (stars === "100+"
-                ? p.stars >= 100
-                : stars === "10-99"
-                  ? p.stars >= 10 && p.stars < 100
-                  : p.stars < 10))),
-      )
-      .sort((a, b) =>
-        sort === "created"
-          ? Date.parse(b.createdAt ?? "1970") -
-            Date.parse(a.createdAt ?? "1970")
-          : sort === "updated"
-            ? Date.parse(b.lastCommitAt ?? "1970") -
-              Date.parse(a.lastCommitAt ?? "1970")
-            : (b.stars ?? -1) - (a.stars ?? -1),
-      );
+    const filtered = list.filter((p) =>
+      (category === "all" || p.category === category) &&
+      (tag === "all" || projectHasTag(p, tag)) &&
+      (!onlySaved || saved.includes(p.id)) &&
+      matchesQuickFilter(p, quickFilter)
+    );
+    return searchTerm.trim() ? filtered : browseSort(filtered, sort);
   }, [
     fuse,
     searchTerm,
     category,
     tag,
-    stars,
+    quickFilter,
     onlySaved,
     saved,
     sort,
     projects,
   ]);
+  useEffect(() => {
+    setVisibleLimit(24);
+  }, [searchTerm, category, tag, quickFilter, onlySaved, sort]);
+  const displayed = visible.slice(0, visibleLimit);
+  const pendingCount = visible.filter((project) => project.catalogStatus === "review-pending").length;
   const trending = useMemo(
     () =>
       [...projects]
-        .filter((p) => p.stars !== null)
+        .filter((p) => p.stars !== null && p.catalogStatus !== "review-pending")
         .sort((a, b) => b.stars! - a.stars!)
         .slice(0, 4),
     [projects],
@@ -545,11 +636,11 @@ function App() {
       localStorage.setItem("awesome-jev:saved", JSON.stringify(next));
       setToast(next.includes(id) ? t("已加入本机收藏") : t("已取消收藏"));
     } catch {
-      setToast(t("已收藏，本次浏览有效；浏览器未允许保存"));
+      setToast(t(next.includes(id) ? "已收藏，本次浏览有效；浏览器未允许保存" : "已取消收藏，本次浏览有效；浏览器未允许保存"));
     }
   };
   const share = async (p: Project) => {
-    const url = `${location.origin}${import.meta.env.BASE_URL}#project=${encodeURIComponent(p.id)}`;
+    const url = `${location.origin}${projectPath(p.id, locale, import.meta.env.BASE_URL)}`;
     try {
       await navigator.clipboard.writeText(url);
       setShareFallback(null);
@@ -581,7 +672,7 @@ function App() {
     clearSearch();
     setCategory("all");
     setTag("all");
-    setStars("all");
+    setQuickFilter("all");
     setOnlySaved(false);
   };
   const updateSubmission = (field: keyof SubmissionValues, value: string) => {
@@ -590,6 +681,18 @@ function App() {
     );
     setFormErrors((previous) => ({ ...previous, [field]: undefined }));
     setIssueDraftUrl(null);
+  };
+  const openSponsor = () => {
+    closeProject();
+    setModal("sponsor");
+  };
+  const copySkillCommand = async (command: string) => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setAgentCopyStatus(t("安装命令已复制"));
+    } catch {
+      setAgentCopyStatus(t("无法自动复制，请手动复制命令。"));
+    }
   };
   const openSubmission = () => {
     closeProject();
@@ -628,6 +731,7 @@ function App() {
   };
   return (
     <>
+      <a className="skip-link" href="#project-results">{t("跳转到项目列表")}</a>
       <header className="header">
         <a
           className="brand"
@@ -647,6 +751,7 @@ function App() {
         <nav className="header-nav" aria-label={t("主导航")}>
           <button
             className={!onlySaved ? "nav-item active" : "nav-item"}
+            aria-pressed={!onlySaved}
             onClick={() => {
               setOnlySaved(false);
               setCategory("all");
@@ -658,6 +763,7 @@ function App() {
             className={onlySaved ? "nav-item active" : "nav-item"}
             onClick={() => setOnlySaved(true)}
             aria-label={`${t("我的收藏")} ${saved.length}`}
+            aria-pressed={onlySaved}
           >
             <Bookmark
               className="mobile-bookmark"
@@ -669,10 +775,15 @@ function App() {
           </button>
         </nav>
         <div className="header-actions">
+          <button className="sponsor-entry-button" type="button" onClick={openSponsor} aria-haspopup="dialog">
+            <Handshake size={15} aria-hidden="true" />
+            <span>{sponsorCopy[locale].entry}</span>
+          </button>
           <button
             className="agent-skill-btn"
             onClick={() => {
               closeProject();
+              setAgentCopyStatus("");
               setModal("agentSkill");
             }}
             aria-label={t("查看 Agent Skill 与接入指南")}
@@ -689,58 +800,37 @@ function App() {
             aria-label={t("Star on GitHub（新标签页打开）")}
             title={t("到 GitHub 支持这个项目")}
           >
-            <Github size={15} aria-hidden="true" />
-            <span>GitHub</span>
+            <Star size={17} strokeWidth={1.75} aria-hidden="true" />
+            <span className="star-label-full">{t("Star on GitHub")}</span>
+            <span className="star-label-short" aria-hidden="true">Star</span>
           </a>
-          <button className="button dark submit-top" onClick={openSubmission}>
+          <button className="button dark submit-top" onClick={openSubmission} aria-label={t("提交项目")} aria-haspopup="dialog">
             <Plus size={15} />
             <span>{t("提交项目")}</span>
           </button>
           <span className="header-divider" aria-hidden="true" />
-          <button
-            className="language-toggle"
-            onClick={() => setLocale((value) => (value === "zh" ? "en" : "zh"))}
-            aria-label={t(locale === "zh" ? "切换到英文" : "切换到中文")}
-            title={t(locale === "zh" ? "切换到英文" : "切换到中文")}
-          >
-            <Globe size={14} className="lang-globe-icon" aria-hidden="true" />
-            <span className={locale === "zh" ? "current" : ""} lang="zh-CN">
-              中
-            </span>
-            <span aria-hidden="true" className="lang-sep">
-              /
-            </span>
-            <span className={locale === "en" ? "current" : ""} lang="en">
-              EN
-            </span>
-          </button>
+          <ThemeToggle locale={locale} />
+          <label className="language-control">
+            <Globe size={15} aria-hidden="true" />
+            <select
+              className="language-toggle"
+              aria-label={t("选择语言")}
+              value={locale}
+              onChange={(e) => changeLocale(e.target.value as Locale)}
+            >
+              {locales.map((value) => <option key={value} value={value} lang={localeMeta[value].language}>{localeMeta[value].label}</option>)}
+            </select>
+          </label>
         </div>
       </header>
       <main className="page">
-        <aside className="featured-banner" aria-label={t("推荐位")}>
-          <div className="featured-copy">
-            <Sparkles size={16} aria-hidden="true" />
-            <p>
-              <strong>{t("推荐位：")}</strong>{" "}
-              {t("想在此向全网 Jev 开发者展示你的工具？")}
-            </p>
-          </div>
-          <a
-            href="https://x.com/0xLogicrw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("立即联系")}
-            <ArrowUpRight size={15} />
-          </a>
-        </aside>
         <section className="hero" aria-labelledby="hero-heading">
           <div className="hero-copy">
             <h1 id="hero-heading">{t("拿到 Jev，然后呢？")}</h1>
             <p>
-              {t("收集社区里真跑起来了的开源项目。")}
+              {t("收集 Jev 开源与公开源码项目。")}
               <br className="mobile-break" />{" "}
-              {t("看看别人怎么拿它做选择、省成本和跑高频。")}
+              {t("按用途浏览，查看 Jev 的接入方式与项目说明。")}
             </p>
             <a
               className="text-link"
@@ -752,10 +842,33 @@ function App() {
               <ArrowUpRight size={15} />
             </a>
           </div>
+          <div className="hero-workbench">
+            <div className="hero-tabs" role="tablist" aria-label={t("了解与接入 Jev")} onKeyDown={(event) => {
+              if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+              event.preventDefault();
+              const next = event.key === "Home" ? "quickstart" : event.key === "End" ? "mechanism" : heroTab === "quickstart" ? "mechanism" : "quickstart";
+              setHeroTab(next);
+              document.getElementById(`${heroId}-${next}-tab`)?.focus();
+            }}>
+              <button id={`${heroId}-quickstart-tab`} type="button" role="tab" aria-selected={heroTab === "quickstart"} aria-controls={`${heroId}-quickstart-panel`} tabIndex={heroTab === "quickstart" ? 0 : -1} onClick={() => setHeroTab("quickstart")}>
+                <Terminal size={14} /> {t("快速接入")}
+              </button>
+              <button id={`${heroId}-mechanism-tab`} type="button" role="tab" aria-selected={heroTab === "mechanism"} aria-controls={`${heroId}-mechanism-panel`} tabIndex={heroTab === "mechanism" ? 0 : -1} onClick={() => setHeroTab("mechanism")}>
+                <Workflow size={14} /> {t("决策流程")}
+              </button>
+            </div>
+            <div id={`${heroId}-quickstart-panel`} role="tabpanel" aria-labelledby={`${heroId}-quickstart-tab`} hidden={heroTab !== "quickstart"}>
+              <div className="hello-desktop"><HelloJev locale={locale} /></div>
+              <details className="hello-mobile">
+                <summary><Terminal size={15} /><span>Hello Jev · {t("查看代码示例")}</span><ChevronDown size={15} /></summary>
+                <HelloJev locale={locale} />
+              </details>
+            </div>
+            <div id={`${heroId}-mechanism-panel`} role="tabpanel" aria-labelledby={`${heroId}-mechanism-tab`} hidden={heroTab !== "mechanism"}>
           <div className="decision-canvas" aria-label={t("Jev 决策机制示意")}>
             <div className="canvas-heading">
-              <span>INPUT → DECISION</span>
-              <span className="mono">jev.choice()</span>
+              <span>{t("输入 → 判断")}</span>
+              <span className="mono">System 1</span>
             </div>
             <div className="decision-flow">
               <div className="flow-in">
@@ -786,6 +899,8 @@ function App() {
             <div className="canvas-footer">
               {t("把重活留给大模型，把选择题交给 Jev。")}
               <ArrowRight size={14} />
+            </div>
+          </div>
             </div>
           </div>
         </section>
@@ -842,10 +957,11 @@ function App() {
             <div className="side-title">
               {t("分类")} <span>{categories.length}</span>
             </div>
-            <div className="category-list">
+            <div className="category-list" ref={categoryListRef} aria-label={t("分类")}>
               <button
                 className={category === "all" ? "category active" : "category"}
                 onClick={() => setCategory("all")}
+                aria-pressed={category === "all"}
               >
                 <Layers size={16} />
                 <span>{t("全部项目")}</span>
@@ -858,6 +974,7 @@ function App() {
                     className={category === c ? "category active" : "category"}
                     key={c}
                     onClick={() => setCategory(c)}
+                    aria-pressed={category === c}
                   >
                     <Icon size={16} />
                     <span>{label(c)}</span>
@@ -886,10 +1003,11 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t("Awesome Jev · 开源项目雷达")} <ExternalLink size={12} />
+              {t("Awesome Jev · 项目目录")} <ExternalLink size={12} />
             </a>
           </aside>
-          <div className="results">
+          <div className="results" id="project-results" tabIndex={-1}>
+            <FeaturedPartners locale={locale} onSponsor={openSponsor} category={category} />
             <div className="search-row">
               <div className="search-box">
                 <Search size={19} />
@@ -897,9 +1015,10 @@ function App() {
                   ref={searchRef}
                   aria-label={t("搜索项目")}
                   value={query}
+                  maxLength={200}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder={t(
-                    "搜项目、作者，或场景（如：省成本、浏览器、9Hz、上下文）...",
+                    "搜项目、作者或场景（如：Playwright、Claude、降本路由、Rust、上下文）...",
                   )}
                 />
                 {query ? (
@@ -914,7 +1033,7 @@ function App() {
                     <X size={16} />
                   </button>
                 ) : (
-                  <kbd>⌘ K</kbd>
+                  <kbd>/</kbd>
                 )}
               </div>
               <button
@@ -926,41 +1045,64 @@ function App() {
               >
                 <Filter size={17} />
                 <span>{t("筛选")}</span>
-                {(tag !== "all" || stars !== "all") && <i />}
+                {tag !== "all" && <i />}
               </button>
             </div>
+            <div className="search-suggestions" role="group" aria-label={t("热门搜索")}>
+              <span>{t("热门搜索")}</span>
+              {popularSearches[locale].map((suggestion) => (
+                <button key={suggestion.query} type="button" aria-pressed={query.trim() === suggestion.query} onClick={() => {
+                  reset();
+                  setQuery(suggestion.query);
+                  setSearchTerm(suggestion.query);
+                }}>{suggestion.label}</button>
+              ))}
+            </div>
+            <div className="quick-filters" role="group" aria-label={t("快速浏览")}>
+              {(Object.keys(quickFilterCopy) as ExplorerState["quickFilter"][]).map((mode) => {
+                const QuickIcon = quickFilterCopy[mode].icon;
+                return <button key={mode} type="button" aria-pressed={quickFilter === mode} onClick={() => setQuickFilter(mode)} title={t(quickFilterCopy[mode].description)}>
+                  <QuickIcon size={14} /><span>{t(quickFilterCopy[mode].label)}</span>
+                </button>;
+              })}
+            </div>
+            {quickFilter !== "all" && <p className="quick-filter-description">{t(quickFilterCopy[quickFilter].description)}</p>}
             {showFilters && (
               <div id="filter-panel" className="filter-panel">
-                <label>
+                <label className="tag-filter-field">
                   {t("技术标签")}
                   <select
+                    ref={tagFilterRef}
                     aria-label={t("技术标签")}
+                    aria-describedby={selectedTag ? "tag-filter-description" : undefined}
+                    title={selectedTag?.optionLabel ?? t("全部标签")}
                     value={tag}
-                    onChange={(e) => setTag(e.target.value)}
+                    onChange={(event) => selectTag(event.target.value)}
                   >
                     <option value="all">{t("全部标签")}</option>
-                    {tags.map((t) => (
-                      <option key={t}>{t}</option>
+                    {tags.map((option) => (
+                      <option key={option.id} value={option.id}>{option.optionLabel}</option>
                     ))}
-                  </select>
-                </label>
-                <label>
-                  GitHub Stars
-                  <select
-                    aria-label={t("星数范围")}
-                    value={stars}
-                    onChange={(e) => setStars(e.target.value)}
-                  >
-                    <option value="all">{t("不限星数")}</option>
-                    <option value="100+">{t("100 及以上")}</option>
-                    <option value="10-99">10 – 99</option>
-                    <option value="0-9">0 – 9</option>
                   </select>
                 </label>
                 <button className="text-link" onClick={reset}>
                   {t("重置筛选")}
                   <X size={13} />
                 </button>
+                {selectedTag && (
+                  <p id="tag-filter-description" className="tag-filter-description" title={selectedTag.description}>
+                    {selectedTag.description}
+                  </p>
+                )}
+              </div>
+            )}
+            {(query || tag !== "all" || quickFilter !== "all" || onlySaved) && (
+              <div className="active-filters" aria-label={t("筛选结果")}>
+                {query && <button onClick={clearSearch} aria-label={`${t("清空搜索")}: ${query}`}>{query}<X size={13} /></button>}
+                {tag !== "all" && <button onClick={() => setTag("all")} aria-label={`${t("清除该筛选")}: ${tagLabel(tag, locale)}`}>{tagLabel(tag, locale)}<X size={13} /></button>}
+                {quickFilter !== "all" && <button onClick={() => setQuickFilter("all")} aria-label={`${t("清除该筛选")}: ${t(quickFilterCopy[quickFilter].label)}`}>{t(quickFilterCopy[quickFilter].label)}<X size={13} /></button>}
+                {onlySaved && <button onClick={() => setOnlySaved(false)}>{t("我的收藏")}<X size={13} /></button>}
+                <button className="reset-all" onClick={reset}>{t("重置筛选")}</button>
               </div>
             )}
             <div className="results-heading">
@@ -972,26 +1114,27 @@ function App() {
                     : label(category)}
                 <span>{visible.length}</span>
               </h2>
-              <label className="sort-label">
+              {searchTerm.trim() ? <span className="sort-label relevance-label">{t("按匹配度排序")}</span> : <label className="sort-label">
                 <ArrowDownWideNarrow size={15} />
                 <select
                   aria-label={t("排序方式")}
                   value={sort}
-                  onChange={(e) => setSort(e.target.value)}
+                  onChange={(e) => setSort(e.target.value as ExplorerState["sort"])}
                 >
                   <option value="stars">{t("最多 Stars")}</option>
                   <option value="created">{t("最近创建")}</option>
                   <option value="updated">{t("最近更新")}</option>
                 </select>
-              </label>
+              </label>}
             </div>
+            {pendingCount > 0 && <p className="catalog-review-count">{pendingCount} {t("个项目待复核，已在卡片中标明。")}</p>}
             <span className="sr-only" role="status" aria-live="polite">
               {loadState === "ready"
                 ? `${visible.length} ${t("个匹配项目")}`
                 : t("正在读取项目")}
             </span>
             <div className="project-grid" aria-busy={loadState === "loading"}>
-              {visible.map((p) => {
+              {displayed.map((p) => {
                 const Icon = categoryInfo[p.category]?.icon ?? Code2;
                 return (
                   <article
@@ -1019,13 +1162,18 @@ function App() {
                           </div>
                         )}
                         <div>
-                          <button
+                          <h3 className="project-heading"><a
                             className="project-title"
-                            onClick={() => openProject(p)}
+                            href={projectPath(p.id, locale, import.meta.env.BASE_URL)}
+                            onClick={(event) => {
+                              if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                                event.preventDefault(); openProject(p);
+                              }
+                            }}
                           >
                             {p.name}
                             <ArrowUpRight size={15} />
-                          </button>
+                          </a></h3>
                           <a
                             href={`https://github.com/${encodeURIComponent(p.author)}`}
                             target="_blank"
@@ -1051,10 +1199,14 @@ function App() {
                     <div className="card-category">
                       <Icon size={13} />
                       {label(p.category)}
+                      {(p.licenseStatus === "unconfirmed" || !p.license) && <span className="license-note">{t("许可未声明")}</span>}
                       {p.summarySource === "readme-extractive" && (
-                        <span className="auto-label">{t("自动提炼")}</span>
+                        <span className="auto-label">{t("来源摘要")}</span>
                       )}
                     </div>
+                    {p.catalogStatus === "review-pending" && (
+                      <p className="catalog-review-note"><CircleHelp size={14} /><span><strong>{t("待复核")}</strong> · {t("接入证据待复核，暂不作为已验证项目推荐。")}</span></p>
+                    )}
                     <p className="plain-summary">
                       {projectText(p, "plainSummary")}
                     </p>
@@ -1070,17 +1222,20 @@ function App() {
                       {projectText(p, "highlightBenefit")}
                     </p>
                     <div className="tags">
-                      {p.tags.slice(0, 3).map((t) => (
-                        <button
-                          key={t}
-                          onClick={() => {
-                            setTag(t);
-                            setShowFilters(true);
-                          }}
+                      {p.tags.slice(0, 3).map((value) => {
+                        const id = resolveTagId(value);
+                        if (!id) return null;
+                        return <button
+                          key={id}
+                          type="button"
+                          aria-label={`${t("按标签筛选")}: ${tagLabel(id, locale)}`}
+                          aria-pressed={tag === id}
+                          title={tagDescription(id, locale)}
+                          onClick={() => selectTag(tag === id ? "all" : id, true)}
                         >
-                          {t}
-                        </button>
-                      ))}
+                          {tagLabel(id, locale)}
+                        </button>;
+                      })}
                     </div>
                     <div className="card-bottom">
                       <div className="repo-metrics">
@@ -1088,12 +1243,13 @@ function App() {
                           <Star size={15} />
                           {format(p.stars)}
                         </span>
-                        <span title="Forks">
+                        <span title={t("Fork 数")}>
                           <GitFork size={14} />
                           {format(p.forks)}
                         </span>
                       </div>
-                      <div>
+                      <div className="repo-actions">
+                        <CopyCloneButton url={p.url} locale={locale} />
                         <button
                           className="icon-button"
                           aria-label={`${t("分享")} ${p.name}`}
@@ -1117,6 +1273,22 @@ function App() {
                 );
               })}
             </div>
+            {visible.length > displayed.length && (
+              <div className="load-more">
+                <button className="button" onClick={() => {
+                  const nextIndex = displayed.length + 1;
+                  setVisibleLimit((count) => count + 24);
+                  requestAnimationFrame(() => {
+                    const firstNewProject = document.querySelector<HTMLElement>(`.project-grid article:nth-child(${nextIndex}) .project-title`);
+                    firstNewProject?.focus({ preventScroll: true });
+                    firstNewProject?.scrollIntoView({ block: "start" });
+                  });
+                }}>
+                  {t("加载更多项目")} <Plus size={16} />
+                </button>
+                <span aria-live="polite">{t("已显示")} {displayed.length} / {visible.length}</span>
+              </div>
+            )}
             {loadState === "loading" && (
               <div className="empty-state" role="status">
                 {t("正在读取项目…")}
@@ -1155,7 +1327,7 @@ function App() {
                   )}
                   {(category !== "all" ||
                     tag !== "all" ||
-                    stars !== "all" ||
+                    quickFilter !== "all" ||
                     onlySaved) && (
                     <button className="button" onClick={reset}>
                       {onlySaved && !saved.length
@@ -1186,18 +1358,23 @@ function App() {
             rel="noopener noreferrer"
           >
             <Zap size={16} />
-            {t("Awesome Jev · 开源项目雷达")}
+            {t("Awesome Jev · 项目目录")}
           </a>
           <button
             type="button"
             className="footer-link-button"
             onClick={() => {
               closeProject();
+              setAgentCopyStatus("");
               setModal("agentSkill");
             }}
           >
             <Sparkles size={13} />
             {t("Agent Skill 接入")}
+          </button>
+          <button type="button" className="footer-link-button" onClick={openSponsor} aria-haspopup="dialog">
+            <Handshake size={14} aria-hidden="true" />
+            {sponsorCopy[locale].entry}
           </button>
           <span>{t("GitHub 数据定时同步")}</span>
           <a
@@ -1210,6 +1387,9 @@ function App() {
           </a>
         </footer>
       </main>
+      {modal === "sponsor" && (
+        <SponsorDialog locale={locale} projectCount={projects.length} onClose={() => setModal(null)} />
+      )}
       {modal === "submit" && (
         <Modal
           locale={locale}
@@ -1351,37 +1531,19 @@ function App() {
                 <button
                   type="button"
                   className="button"
-                  onClick={async () => {
-                    try {
-                      await navigator.clipboard.writeText(
-                        "npx skills add logicrw/awesome-jev-projects",
-                      );
-                      setToast(t("安装命令已复制"));
-                    } catch {
-                      setToast(t("无法自动复制，请手动复制命令。"));
-                    }
-                  }}
+                  onClick={() => void copySkillCommand("npx skills add logicrw/awesome-jev-projects")}
                   title={t("复制命令")}
                 >
                   <Copy size={14} />
                   <span>{t("复制")}</span>
                 </button>
               </div>
-              <div className="agent-command-box" style={{ marginTop: "6px" }}>
+              <div className="agent-command-box">
                 <code>npx skills add https://logicrw.github.io/awesome-jev-projects/</code>
                 <button
                   type="button"
                   className="button"
-                  onClick={async () => {
-                    try {
-                      await navigator.clipboard.writeText(
-                        "npx skills add https://logicrw.github.io/awesome-jev-projects/",
-                      );
-                      setToast(t("安装命令已复制"));
-                    } catch {
-                      setToast(t("无法自动复制，请手动复制命令。"));
-                    }
-                  }}
+                  onClick={() => void copySkillCommand("npx skills add https://logicrw.github.io/awesome-jev-projects/")}
                   title={t("复制命令")}
                 >
                   <Copy size={14} />
@@ -1391,6 +1553,7 @@ function App() {
             </div>
 
             <div className="agent-skill-section">
+              <p className="agent-copy-status" role="status" aria-live="polite">{agentCopyStatus}</p>
               <label className="agent-skill-label">{t("Agent 可用核心能力")}</label>
               <ul className="agent-feature-list">
                 <li>
@@ -1460,6 +1623,9 @@ function App() {
             <span>{active.author}</span>
             <span className="tag">{label(active.category)}</span>
           </div>
+          {active.catalogStatus === "review-pending" && (
+            <p className="catalog-review-note"><CircleHelp size={14} /><span><strong>{t("待复核")}</strong> · {t("接入证据待复核，暂不作为已验证项目推荐。")}</span></p>
+          )}
           <p className="detail-summary">
             {projectText(active, "plainSummary")}
           </p>
@@ -1486,7 +1652,7 @@ function App() {
             </div>
             <div>
               <dt>{t("许可证")}</dt>
-              <dd>{active.license ?? t("API 未识别")}</dd>
+              <dd>{active.licenseStatus === "unconfirmed" ? t("许可未声明") : (active.license ?? t("许可未声明"))}</dd>
             </div>
             <div>
               <dt>{t("最近提交")}</dt>
@@ -1495,12 +1661,11 @@ function App() {
           </dl>
           <div className="evidence">
             <h3>{t("来源与说明")}</h3>
+            {active.catalogStatus === "review-pending" && active.reviewReason && <p>{projectText(active, "reviewReason")}</p>}
             <p>{projectText(active, "claimStatus")}</p>
             {active.evidence?.map((e, i) => (
               <a key={i} href={safeUrl(e.url)} target="_blank" rel="noopener noreferrer">
-                {locale === "en"
-                  ? t("查看来源证据")
-                  : (e.note ?? t("查看 README 证据"))}
+                {t("查看来源证据")} {i + 1}
                 <ExternalLink size={13} />
               </a>
             ))}
@@ -1530,6 +1695,9 @@ function App() {
               <Github size={16} />
               {t("打开仓库")}
               <ArrowUpRight size={15} />
+            </a>
+            <a className="button" href={projectPath(active.id, locale, import.meta.env.BASE_URL)}>
+              <ExternalLink size={15} />{t("独立项目页")}
             </a>
             <button className="button" onClick={() => share(active)}>
               <Copy size={15} />

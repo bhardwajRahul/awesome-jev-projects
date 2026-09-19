@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://logicrw.github.io/awesome-jev-projects/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://logicrw.github.io/awesome-jev-projects/llms.txt</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://logicrw.github.io/awesome-jev-projects/skill.md</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://logicrw.github.io/awesome-jev-projects/projects.json</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://logicrw.github.io/awesome-jev-projects/llms-full.txt</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://logicrw.github.io/awesome-jev-projects/</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/en/</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/ja/</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/ko/</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/projects.json</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/llms.txt</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/llms-full.txt</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/skill.md</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/.well-known/skills/index.json</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/index.json</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/.well-known/skills/default/skill.md</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/.well-known/skills/awesome-jev/SKILL.md</loc></url>
+<url><loc>https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/awesome-jev/SKILL.md</loc></url></urlset>

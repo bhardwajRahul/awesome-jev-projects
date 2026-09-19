@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: Existing issue number to retry (not used for a Models probe)
+        description: Existing issue number to retry
         type: number
         default: 0
       dry_run:
@@ -13,56 +13,142 @@ on:
         type: boolean
         default: true
       models_probe:
-        description: Read-only probe of the requested Models endpoint and safe fallback
+        description: Check local fallback (remote credentials intentionally disabled)
         type: boolean
         default: false
-permissions:
-  contents: write
-  issues: write
+permissions: {}
 concurrency:
   group: ingest-issue-${{ github.event.issue.number || inputs.issue_number || github.run_id }}
   cancel-in-progress: false
 jobs:
   review:
-    if: github.repository == 'logicrw/awesome-jev-projects'
+    if: github.repository == 'logicrw/awesome-jev-projects' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      issues: read
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      ready: ${{ steps.review.outputs.ready }}
+      source_sha: ${{ steps.source.outputs.sha }}
+      artifact_id: ${{ steps.receipt.outputs.artifact-id }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: main
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
-          cache: npm
+      # Node built-ins only: no package installation, submitted code or account PAT.
       - name: Verify sources and fill only missing summaries
         id: review
         run: node scripts/issue-ingestion.mjs prepare
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          GH_MODELS_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
           INGEST_ISSUE_NUMBER: ${{ inputs.issue_number || 0 }}
           INGEST_MODELS_PROBE: ${{ inputs.models_probe || false }}
-      # Source validation uses Node built-ins only. Rejected/duplicate Issues
-      # stop here, before dependency installation, build, or publication.
-      - run: npm ci --no-fund --no-audit
-        if: steps.review.outputs.ready == 'true'
+          INGEST_REVIEWED_SHA: ${{ steps.source.outputs.sha }}
+      - name: Prepare immutable data-only receipt
+        if: always()
+        run: |
+          mkdir -p "$RUNNER_TEMP/ingestion-candidate"
+          if [ -f "$RUNNER_TEMP/ingestion-result.json" ]; then
+            cp "$RUNNER_TEMP/ingestion-result.json" "$RUNNER_TEMP/ingestion-candidate/ingestion-result.json"
+          fi
+          if [ "$READY" = 'true' ]; then
+            cp src/data/projects.json "$RUNNER_TEMP/ingestion-candidate/candidate-projects.json"
+          fi
+        env:
+          READY: ${{ steps.review.outputs.ready }}
+      - name: Retain ingestion receipt
+        id: receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: issue-ingestion-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/ingestion-candidate/
+          retention-days: 14
+  validate:
+    needs: review
+    if: needs.review.outputs.ready == 'true'
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ needs.review.outputs.source_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          artifact-ids: ${{ needs.review.outputs.artifact_id }}
+          path: ${{ runner.temp }}/candidate
+          merge-multiple: true
+      - run: node scripts/workflow-data.mjs ingestion "$RUNNER_TEMP/candidate"
+      - run: npm ci --ignore-scripts --no-fund --no-audit
       - name: Validate candidate data and website
-        if: steps.review.outputs.ready == 'true'
         run: npm test && npm run build
+  publish:
+    outputs:
+      retry: ${{ steps.publish.outputs.retry }}
+      issue_number: ${{ steps.publish.outputs.issue_number }}
+      issue_body_sha: ${{ steps.publish.outputs.issue_body_sha }}
+    needs: [review, validate]
+    if: github.event_name != 'workflow_dispatch' || !inputs.dry_run
+    permissions:
+      contents: write
+      issues: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ needs.review.outputs.source_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      # IDs come directly from review; validation cannot replace its immutable artifact.
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          artifact-ids: ${{ needs.review.outputs.artifact_id }}
+          path: ${{ runner.temp }}/candidate
+          merge-multiple: true
       - name: Append through an atomic main-branch commit
-        if: steps.review.outputs.ready == 'true' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run)
+        id: publish
         run: node scripts/issue-ingestion.mjs publish
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          INGEST_RESULT_FILE: ${{ runner.temp }}/candidate/ingestion-result.json
+          INGEST_REVIEWED_SHA: ${{ needs.review.outputs.source_sha }}
           INGEST_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
-      - name: Retain ingestion receipt
-        if: always()
-        uses: actions/upload-artifact@v4
+  record-retry:
+    needs: [review, publish]
+    if: always() && needs.publish.outputs.retry == 'true'
+    permissions:
+      contents: read
+      issues: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          name: issue-ingestion-${{ github.event.issue.number || inputs.issue_number || github.run_id }}
-          path: ${{ runner.temp }}/ingestion-result.json
-          retention-days: 30
-# Deploy GitHub Pages listens for this workflow's success. Its post-deploy
-# reconciliation comments/closes ONLY submissions confirmed in the live data.
+          ref: ${{ needs.review.outputs.source_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      # No dependency installation; only records a bounded, body-bound retry.
+      - run: node scripts/ingestion-retry.mjs mark
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INGEST_ISSUE_NUMBER: ${{ needs.publish.outputs.issue_number }}
+          INGEST_ISSUE_BODY_SHA: ${{ needs.publish.outputs.issue_body_sha }}
+# The Pages workflow reconciles accepted Issues only after live deployment.

@@ -5,7 +5,7 @@ export interface SubmissionValues {
 }
 
 export type SubmissionErrors = Partial<Record<keyof SubmissionValues, string>>;
-export type SubmissionLocale = "zh" | "en";
+export type SubmissionLocale = "zh" | "en" | "ja" | "ko";
 
 export function normalizeRepository(input: string): string | null;
 export function validateSubmission(

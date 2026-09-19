@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { categoryEnglish } from "../src/lib/i18n.ts";
+import { activeSponsors } from "../src/lib/sponsors.mjs";
+import { INSTALL_COMMANDS, MACHINE_RESOURCES, machineDocuments, paidPlacementMarkdown, pageHead } from "./site-content.mjs";
 
 test("public/skill.md and root SKILL.md exist, follow agentskills.io format with valid frontmatter", async () => {
   const content = await readFile(
@@ -32,7 +34,7 @@ test("public/skill.md and root SKILL.md exist, follow agentskills.io format with
     "Must reference canonical llms.txt",
   );
 
-  // All 18 categories must be documented
+  // Every current taxonomy key must be documented; counts are not hard-coded.
   for (const cat of Object.keys(categoryEnglish)) {
     assert.ok(
       content.includes(`\`${cat}\``),
@@ -197,4 +199,43 @@ test("index.html declares skill discovery links and schema structured data", asy
     html.includes("https://logicrw.github.io/awesome-jev-projects/skill.md"),
     "JSON-LD DataFeed must point to skill.md",
   );
+});
+
+test("all localized README documents preserve both real skill installation commands", async () => {
+  for (const file of ["README.md", "README.zh-CN.md", "README.ja.md", "README.ko.md"]) {
+    const content = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
+    for (const command of INSTALL_COMMANDS) assert.ok(content.includes(command), `${file}: ${command}`);
+    assert.ok(content.includes("SPONSORING.md"), `${file}: sponsorship route`);
+    if (file === "README.md" || file === "README.ko.md") assert.doesNotMatch(content, /\p{Script=Han}/u, `${file}: Zero-Han`);
+  }
+});
+
+test("machine documents derive counts, source details and all discovery routes from current data", () => {
+  const projects = [{id:"owner:tool",name:"<Tool>",url:"https://github.com/owner/tool",category:"Decision Tools",plainSummaryEn:"Routes choices with Jev.",jevDecisionPointEn:"Selects a tool.",highlightBenefitEn:"A runnable example.",claimStatusEn:"Source inspected; not run.",evidence:[{url:"https://github.com/owner/tool/blob/abc/main.py"}]}];
+  const {llms,full}=machineDocuments(projects,[]);
+  assert.ok(llms.includes("Catalog entries: 1"));
+  assert.ok(llms.includes("Decision Tools"));
+  assert.ok(full.includes("Selects a tool."));
+  assert.ok(full.includes("not run"));
+  for(const path of MACHINE_RESOURCES) assert.ok(llms.includes(`https://logicrw.github.io/awesome-jev-projects/${path}`));
+  for(const command of INSTALL_COMMANDS) assert.ok(llms.includes(command));
+  assert.ok(!full.includes("<Tool>"), "External names must not introduce raw HTML into Markdown");
+});
+
+test("paid placement documents label sponsorship and omit expired partners", () => {
+  const partner={id:"example",name:"Example",tier:"headline",url:"https://example.com",startsAt:"2026-01-01T00:00:00Z",endsAt:"2026-02-01T00:00:00Z",description:{en:"A tool for developers."}};
+  const active=activeSponsors([partner],Date.parse("2026-01-10T00:00:00Z"));
+  assert.match(paidPlacementMarkdown(active),/\*\*Sponsored\*\*: \[Example\]/);
+  assert.match(paidPlacementMarkdown(active),/does not change inclusion review/);
+  const expired=activeSponsors([partner],Date.parse("2026-02-01T00:00:00Z"));
+  assert.doesNotMatch(paidPlacementMarkdown(expired),/\[Example\]/);
+  assert.match(paidPlacementMarkdown(expired),/no paid sponsors/);
+});
+
+test("generated pages retain skill discovery and DataFeed without fixed project counts", () => {
+  const html=pageHead({locale:"en",title:"Jev",description:"Projects",route:"",alternates:()=>"",schema:{"@type":"CollectionPage",mainEntity:{"@type":"ItemList",numberOfItems:1}}});
+  assert.ok(html.includes('rel="agent-skill"'));
+  const schema=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(schema["@graph"][0].mainEntity.numberOfItems,1);
+  assert.ok(schema["@graph"].some((item)=>item["@type"]==="DataFeed"&&item.url.endsWith("/skill.md")));
 });
