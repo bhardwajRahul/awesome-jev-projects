@@ -48,7 +48,11 @@ function sameProject(a, b) {
 function isSubmission(issue) {
   return (
     /^\s*\[project\]/i.test(issue.title ?? "") ||
-    /^#{1,6}\s+(?:GitHub repository|Project repository|项目仓库|仓库地址)\s*$/im.test(
+    /^\s*(?:submit\s+project|project\s+submission|submit|project)[\s:：]/i.test(issue.title ?? "") ||
+    /^#{1,6}\s+(?:GitHub repository|Project repository|项目仓库|仓库地址|repository)\s*$/im.test(
+      issue.body ?? "",
+    ) ||
+    /^\s*(?:repository|github repository|project repository|项目仓库|仓库地址)[\s:：]+\s*https?:\/\/github\.com\//im.test(
       issue.body ?? "",
     )
   );
