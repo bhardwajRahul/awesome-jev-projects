@@ -29971,5 +29971,90 @@
         }
       ]
     }
+  },
+  {
+    "id": "harshwasan:pi-jev-sentinel",
+    "name": "pi-jev-sentinel",
+    "author": "harshwasan",
+    "url": "https://github.com/harshwasan/pi-jev-sentinel",
+    "repoId": 1377391257,
+    "category": "Security & Guardrails",
+    "plainSummary": "这是一个 Pi coding-agent 扩展，用 Jev 检查工具调用的意图和风险，并筛查工具输出和回复中的注入指示，同时隐去密钥后再发送。",
+    "jevDecisionPoint": "评估内容是否满足安全或证据要求，由本地策略放行或拦截。",
+    "jevDecisionPointEn": "Before each tool call, Jev receives the user's request (or pinned task), the proposed command, the agent's explanation, and recent conversation. It answers a Choice for intent (on task / off task / injected / needs more context) and a Score for risk (safe / needs approval / harmful). Local code turns these into run, ask the user, or warn. If Jev says more context would help, the extension adds it and asks again.",
+    "highlightBenefit": "给现有流程增加可检查的判断环节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Open-source Pi coding-agent extension that uses Jev to check tool calls before they run, scan files for prompt injection, flag risky replies, and keep secrets out of what it sends.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": true,
+        "status": "completed",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "muse-spark"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      },
+      "jevDecisionPointEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T16:40:22Z",
+    "lastCommitAt": "2026-09-19T16:40:21Z",
+    "headSha": "8a9ae145eaf165b9ff1c600ea0188a585aa12db5",
+    "metadataFetchedAt": "2026-09-19T16:57:07.144Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/37144188?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T16:57:07.144Z",
+    "evidence": [
+      {
+        "url": "https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/src/guard.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "8a9ae145eaf165b9ff1c600ea0188a585aa12db5",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/README.md",
+          "hash": "2c4fc4d8b39526218e0d95e3eaf3c077e56fe280f12f5a2d5b8c3b5f41ad6f58"
+        },
+        {
+          "path": "src/guard.ts",
+          "url": "https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/src/guard.ts",
+          "hash": "12a7e999eb55bdac4b7574868c6c40a30d30ffa98c7d965b138ed24ee081d03f"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 24,
+      "issueBodySha256": "d94addc7bc3ea8116328889bb591634e76deca6b146a4d7fd2acca497549ecd0",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/24"
+    }
   }
 ]
