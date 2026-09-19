@@ -20,21 +20,45 @@ export function eligibleProjects(projects) {
   return candidates.filter((project, index) => index === 0 || project.id !== candidates[index - 1].id);
 }
 
-/** UTC deliberately ignores the visitor's language, locale and timezone. */
+function assertInstant(date) {
+  const timestamp = date.getTime();
+  if (!Number.isFinite(timestamp)) throw new RangeError('Invalid date');
+  return timestamp;
+}
+
+/** UTC calendar day for a given instant. Visitor UI uses localDay. */
 export function utcDay(date = new Date()) {
-  return date.toISOString().slice(0, 10);
+  return new Date(assertInstant(date)).toISOString().slice(0, 10);
 }
 
 export function nextUtcMidnightDelay(date = new Date()) {
-  const timestamp = date.getTime();
-  if (!Number.isFinite(timestamp)) throw new RangeError('Invalid date');
+  const timestamp = assertInstant(date);
   return (Math.floor(timestamp / DAY_MS) + 1) * DAY_MS - timestamp;
 }
 
+/** Visitor civil calendar day in YYYY-MM-DD, using local timezone fields. */
+export function localDay(date = new Date()) {
+  assertInstant(date);
+  const year = String(date.getFullYear()).padStart(4, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+/** Milliseconds until the next local midnight, including DST-length days. */
+export function nextLocalMidnightDelay(date = new Date()) {
+  const timestamp = assertInstant(date);
+  const next = new Date(timestamp);
+  next.setHours(24, 0, 0, 0);
+  const delay = next.getTime() - timestamp;
+  if (!Number.isFinite(delay) || delay <= 0) throw new RangeError('Invalid date');
+  return delay;
+}
+
 function epochDay(day) {
-  if (typeof day !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new RangeError('Expected a UTC day in YYYY-MM-DD format');
+  if (typeof day !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new RangeError('Expected a calendar day in YYYY-MM-DD format');
   const timestamp = Date.parse(`${day}T00:00:00.000Z`);
-  if (!Number.isFinite(timestamp) || utcDay(new Date(timestamp)) !== day) throw new RangeError('Invalid UTC day');
+  if (!Number.isFinite(timestamp) || utcDay(new Date(timestamp)) !== day) throw new RangeError('Invalid calendar day');
   return timestamp / DAY_MS;
 }
 
@@ -48,7 +72,7 @@ function poolHash(projects) {
 
 /**
  * A stable catalog version gives every visitor the same daily project. Catalog
- * updates can change the pool. Consecutive UTC days rotate through every entry
+ * updates can change the pool. Consecutive calendar days rotate through every entry
  * without repetition, unlike independently hashing each date.
  * Prefer 20–50-star projects with declared open-source licenses (including GPL);
  * fall back to reviewed projects below 1k, then all reviewed projects. Missing
