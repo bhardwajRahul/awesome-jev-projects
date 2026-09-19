@@ -2,11 +2,11 @@
 
 [![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-ko.svg)](https://logicrw.github.io/awesome-jev-projects/ko/)
 
-# Awesome Jev — Jev 오픈소스 및 공개 코드 디렉터리
+# Awesome Jev — System-1 Agent 아키텍처 레이더
 
 [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
 
-**[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **259 개 프로젝트**
+**[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **260 개 프로젝트**
 
 커뮤니티가 운영하는 TypeSafe 비공식 Jev 디렉터리입니다. 공개 설명과 소스 코드를 근거로 수록합니다. 연동 코드를 확인했다는 것은 이 사이트가 실행, 성능 측정 또는 보안 감사를 했다는 뜻이 아닙니다.
 
@@ -42,7 +42,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Context GC 및 메모리 (14)](https://logicrw.github.io/awesome-jev-projects/ko/categories/context-gc-filter/)
 - [음악 및 UI 제작 (9)](https://logicrw.github.io/awesome-jev-projects/ko/categories/creative-tools/)
 - [데이터 및 검색 (10)](https://logicrw.github.io/awesome-jev-projects/ko/categories/data-search/)
-- [판단 도구 (6)](https://logicrw.github.io/awesome-jev-projects/ko/categories/decision-tools/)
+- [판단 도구 (7)](https://logicrw.github.io/awesome-jev-projects/ko/categories/decision-tools/)
 - [분야별 도구 (14)](https://logicrw.github.io/awesome-jev-projects/ko/categories/domain-vertical-tools/)
 - [평가 및 관측성 (29)](https://logicrw.github.io/awesome-jev-projects/ko/categories/evaluation-observability/)
 - [게임 및 실시간 판단 (17)](https://logicrw.github.io/awesome-jev-projects/ko/categories/high-frequency-simulation/)
@@ -510,6 +510,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: 답변 스타일을 Choice로 변환하고 질문 조각에서 대화 제목도 선택한다.
   - **프로젝트의 용도**: 채팅 화면에서 선택지와 확률을 보고 직접 만든 답변 집합을 시험할 수 있다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/kt3k/jevchat/) · 라이선스: 명시되지 않음
+
+- [**jev-commit**](https://github.com/valentynkit/jev-commit) — Pre-commit hook for the commit-msg stage: one Jev call judges the message against the staged diff, then warns and gets out of the way, except on a credential on an added line, which it blocks.
+  - **Jev가 판단하는 지점**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/valentynkit/jev-commit/) · 라이선스: MIT
 
 
 ## 분야별 도구

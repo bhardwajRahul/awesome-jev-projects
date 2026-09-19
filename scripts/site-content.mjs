@@ -5,7 +5,7 @@ export const LOCALES = ["zh", "en", "ja", "ko"];
 export const COPY = {
   zh: {
     lang: "zh-CN", og: "zh_CN", suffix: "", name: "中文",
-    title: "Awesome Jev — Jev 开源项目、SDK 与集成目录",
+    title: "Awesome Jev — System-1 Agent 架构雷达",
     description: "查找 TypeSafe Jev 的开源项目、SDK、Agent 工具和集成示例。按场景浏览用途、Jev 决策点与固定版本源码，支持中文、English、日本語和한국어。",
     catalog: "完整项目目录", explore: "搜索与筛选", categories: "分类", source: "GitHub 仓库",
     decision: "Jev 在哪一步做判断", benefit: "这个项目的用途", evidence: "源码与说明", limits: "核查范围",
@@ -18,7 +18,7 @@ export const COPY = {
   },
   en: {
     lang: "en", og: "en_US", suffix: "En", name: "English",
-    title: "Awesome Jev — Open-source Jev projects, SDKs and integrations",
+    title: "Awesome Jev — System-1 Agent Architecture Radar",
     description: "Find open-source TypeSafe Jev projects, SDKs, Agent tools and integration examples. Browse use cases, decision points and fixed-version source evidence in four languages.",
     catalog: "Complete project directory", explore: "Search and filter", categories: "Categories", source: "GitHub repository",
     decision: "Where Jev makes a decision", benefit: "What this project offers", evidence: "Sources and implementation", limits: "Review scope",
@@ -31,7 +31,7 @@ export const COPY = {
   },
   ja: {
     lang: "ja", og: "ja_JP", suffix: "Ja", name: "日本語",
-    title: "Awesome Jev — Jev のオープンソースプロジェクト・SDK・連携事例",
+    title: "Awesome Jev — System-1 Agent アーキテクチャ",
     description: "TypeSafe Jev のオープンソースプロジェクト、SDK、Agent ツール、連携事例を検索。用途、判断を行う箇所、固定バージョンのソースを4言語で確認できます。",
     catalog: "全プロジェクト一覧", explore: "検索・絞り込み", categories: "カテゴリ", source: "GitHub リポジトリ",
     decision: "Jev が判断する箇所", benefit: "このプロジェクトの用途", evidence: "ソースと実装", limits: "確認の範囲",
@@ -44,7 +44,7 @@ export const COPY = {
   },
   ko: {
     lang: "ko", og: "ko_KR", suffix: "Ko", name: "한국어",
-    title: "Awesome Jev — Jev 오픈 소스 프로젝트, SDK 및 연동 사례",
+    title: "Awesome Jev — System-1 Agent 아키텍처 레이더",
     description: "TypeSafe Jev 오픈 소스 프로젝트, SDK, Agent 도구와 연동 사례를 찾아보세요. 용도, 판단 지점, 고정 버전 소스 근거를 네 가지 언어로 제공합니다.",
     catalog: "전체 프로젝트 목록", explore: "검색 및 필터", categories: "분류", source: "GitHub 저장소",
     decision: "Jev가 판단하는 지점", benefit: "프로젝트의 용도", evidence: "소스 및 구현", limits: "검토 범위",
@@ -85,7 +85,8 @@ export function pageHead({ locale, title, description, route, alternates, schema
     url: SITE + "skill.md", encodingFormat: "text/markdown",
     description: "Instructions and structured data for finding Jev projects, with source evidence and review limits.",
   }] };
-  return `<meta name="description" content="${escapeHTML(description)}" />
+  return `<meta name="theme-color" content="#fafaf8" />
+<meta name="description" content="${escapeHTML(description)}" />
 <title>${escapeHTML(title)}</title>
 <link rel="canonical" href="${escapeHTML(canonical)}" />
 <link rel="alternate" type="text/markdown" title="Agent Skill" href="${SITE}skill.md" />
@@ -97,10 +98,10 @@ ${LOCALES.map((l) => `<link rel="alternate" hreflang="${COPY[l].lang}" href="${S
 <meta property="og:type" content="website" /><meta property="og:site_name" content="Awesome Jev" />
 <meta property="og:locale" content="${c.og}" /><meta property="og:title" content="${escapeHTML(title)}" />
 <meta property="og:description" content="${escapeHTML(description)}" /><meta property="og:url" content="${canonical}" />
-<meta property="og:image" content="${SITE}og-card.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
+<meta property="og:image" content="${SITE}og-card.png?v=visual-20260919" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:creator" content="@0xLogicrw" />
 <meta name="twitter:title" content="${escapeHTML(title)}" /><meta name="twitter:description" content="${escapeHTML(description)}" />
-<meta name="twitter:image" content="${SITE}og-card.png" />
+<meta name="twitter:image" content="${SITE}og-card.png?v=visual-20260919" />
 <script type="application/ld+json">${safeJSON(structuredData)}</script>`;
 }
 

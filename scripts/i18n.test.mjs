@@ -103,9 +103,9 @@ test('catalog server render is browser-independent and initially bounded to 24 c
       assert.ok(html.includes('class="hero-tabs"'));
       assert.ok(html.includes('role="tablist"'));
       assert.ok(html.includes('class="hello-jev"'));
-      assert.ok(html.includes('<details class="hello-mobile"><summary>'));
-      assert.ok(html.includes(localeModule.translate('查看代码示例',initialLocale)));
-      assert.ok(!html.includes('<details class="hello-mobile" open'));
+      assert.equal((html.match(/class="hello-jev"/g) || []).length, 1, 'One code preview shared by all breakpoints');
+      assert.ok(html.includes('class="card-dispenser"'));
+      assert.equal((html.match(/role="tab"/g) || []).length, 3);
       assert.equal((html.match(/developer-clone-button/g) || []).length, 24);
       assert.ok(!html.includes('jev.choice()'));
       assert.ok(html.includes(localeModule.translate('快速接入',initialLocale)));

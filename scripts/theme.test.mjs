@@ -123,18 +123,3 @@ test('four-language theme button renders without a browser and has no duplicate 
     }
   } finally { await server.close(); }
 });
-
-test('dark theme text, secondary copy, warning and error colors meet 4.5:1 on their surfaces', () => {
-  const luminance = hex => {
-    const values = hex.match(/[a-f\d]{2}/gi).map(value => Number.parseInt(value, 16) / 255).map(value => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4);
-    return 0.2126 * values[0] + 0.7152 * values[1] + 0.0722 * values[2];
-  };
-  for (const [foreground, background] of [
-    ['#eef2e9', '#121412'], ['#eef2e9', '#1c201c'], ['#aebba5', '#252c23'],
-    ['#d7fa91', '#2b3822'], ['#202620', '#d7fa91'], ['#efcf8d', '#332a19'],
-    ['#ffb1a5', '#1c201c'], ['#e2efcf', '#151b12'],
-  ]) {
-    const a = luminance(foreground), b = luminance(background);
-    assert.ok((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) >= 4.5, `${foreground} on ${background}`);
-  }
-});

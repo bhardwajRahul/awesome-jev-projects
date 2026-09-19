@@ -2,11 +2,11 @@
 
 [![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner.svg)](https://logicrw.github.io/awesome-jev-projects/en/)
 
-# Awesome Jev — Open-Source & Public Code Directory
+# Awesome Jev — System-1 Agent Architecture Radar
 
 [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
 
-**[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **259 projects**
+**[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **260 projects**
 
 A community-maintained Jev directory, independent of TypeSafe. Entries are grounded in public descriptions and source code. Detecting an integration does not mean this site has run, benchmarked or security-audited it.
 
@@ -42,7 +42,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Context GC (14)](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/)
 - [Creative Tools (9)](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/)
 - [Data & Search (10)](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/)
-- [Decision Tools (6)](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/)
+- [Decision Tools (7)](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/)
 - [Domain Tools (14)](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/)
 - [Evaluation & Observability (29)](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/)
 - [High-Frequency / Games (17)](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/)
@@ -510,6 +510,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Maps answer styles to Choice options and selects chat titles from fragments of the question.
   - **What this project offers**: Shows answer options and probabilities in a chat UI with customizable answer sets.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/kt3k/jevchat/) · License: Not declared
+
+- [**jev-commit**](https://github.com/valentynkit/jev-commit) — Pre-commit hook for the commit-msg stage: one Jev call judges the message against the staged diff, then warns and gets out of the way, except on a credential on an added line, which it blocks.
+  - **Where Jev makes a decision**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **What this project offers**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-commit/) · License: MIT
 
 
 ## Domain Tools

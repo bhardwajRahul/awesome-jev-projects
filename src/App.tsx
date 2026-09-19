@@ -43,6 +43,8 @@ import { HelloJev } from "./components/HelloJev.tsx";
 import { CopyCloneButton } from "./components/CopyCloneButton.tsx";
 import { ThemeToggle } from "./components/ThemeToggle.tsx";
 import { DailyProject } from "./components/DailyProject.tsx";
+import { CardDispenser } from "./components/CardDispenser.tsx";
+import { eligibleProjects } from "./lib/discovery.mjs";
 import { sponsorCopy } from "./lib/sponsors.mjs";
 import { resolveTagId, tagLabel, tagDescription, tagOptions } from "./lib/tags.mjs";
 import { createProjectSearch, searchProjects, browseSort, matchesQuickFilter } from "./lib/search.mjs";
@@ -191,6 +193,16 @@ const validProject = (x: unknown): x is Project => {
         )))
   );
 };
+function ProjectAvatar({ project }: { project: Project }) {
+  const [result, setResult] = useState<{ src: string; ok: boolean } | null>(null);
+  const src = project.avatarUrl;
+  const ready = Boolean(src && result?.src === src && result.ok);
+  const failed = Boolean(src && result?.src === src && !result.ok);
+  return <span className="avatar-frame" aria-hidden="true">
+    <span className="avatar-fallback" hidden={ready}>{project.author.slice(0, 2).toUpperCase()}</span>
+    {src && !failed && <img src={src} alt="" className="avatar" width="40" height="40" loading="lazy" decoding="async" data-ready={ready} onLoad={() => setResult({ src, ok: true })} onError={() => setResult({ src, ok: false })} />}
+  </span>;
+}
 const getSaved = () => {
   if (typeof window === "undefined") return [];
   try {
@@ -333,7 +345,7 @@ const quickFilterCopy: Record<ExplorerState["quickFilter"], { label: string; des
 export type AppProps = { initialProjects?: Project[]; initialLocale?: Locale; initialDay?: string };
 function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   const [locale] = useState<Locale>(() => initialLocale ?? readLocale());
-  const [heroTab, setHeroTab] = useState<"quickstart" | "mechanism">("quickstart");
+  const [heroTab, setHeroTab] = useState<"discover" | "quickstart" | "mechanism">("discover");
   const heroId = useId();
   const [initialExplorer] = useState(() => readExplorerState(
     typeof window === "undefined" ? "" : window.location.search, initialProjects,
@@ -643,8 +655,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
         .slice(0, 4),
     [projects],
   );
-  const totalStars = projects.reduce((s, p) => s + (p.stars ?? 0), 0);
-  const metadataCount = projects.filter((p) => p.stars !== null).length;
+  const explorableCount = useMemo(() => eligibleProjects(projects).length, [projects]);
   const toggleSaved = (id: string) => {
     const next = saved.includes(id)
       ? saved.filter((x) => x !== id)
@@ -801,6 +812,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           </button>
         </nav>
         <div className="header-actions">
+          <div className="header-ecosystem" role="group" aria-label={t("生态入口")}>
           <button className="sponsor-entry-button" type="button" onClick={openSponsor} aria-haspopup="dialog">
             <Handshake size={15} aria-hidden="true" />
             <span>{sponsorCopy[locale].entry}</span>
@@ -830,11 +842,12 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <span className="star-label-full">{t("Star on GitHub")}</span>
             <span className="star-label-short" aria-hidden="true">Star</span>
           </a>
+          </div>
           <button className="button dark submit-top" onClick={openSubmission} aria-label={t("提交项目")} aria-haspopup="dialog">
             <Plus size={15} />
             <span>{t("提交项目")}</span>
           </button>
-          <span className="header-divider" aria-hidden="true" />
+          <div className="header-utilities" role="group" aria-label={t("显示与语言")}>
           <ThemeToggle locale={locale} />
           <label className="language-control">
             <Globe size={15} aria-hidden="true" />
@@ -847,17 +860,14 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               {locales.map((value) => <option key={value} value={value} lang={localeMeta[value].language}>{localeMeta[value].label}</option>)}
             </select>
           </label>
+          </div>
         </div>
       </header>
       <main className="page">
         <section className="hero" aria-labelledby="hero-heading">
           <div className="hero-copy">
-            <h1 id="hero-heading">{t("拿到 Jev，然后呢？")}</h1>
-            <p>
-              {t("收集 Jev 开源与公开源码项目。")}
-              <br className="mobile-break" />{" "}
-              {t("按用途浏览，查看 Jev 的接入方式与项目说明。")}
-            </p>
+            <h1 id="hero-heading"><span>{t("把思考留给大模型，")}</span><strong>{t("把选择题交给 Jev。")}</strong></h1>
+            <p>{t("从社区源码里，查看 Jev 的接入方式与决策位置。")}</p>
             <a
               className="text-link"
               href="https://typesafe.ai/"
@@ -873,10 +883,15 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <div className="hero-tabs" role="tablist" aria-label={t("了解与接入 Jev")} onKeyDown={(event) => {
               if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
               event.preventDefault();
-              const next = event.key === "Home" ? "quickstart" : event.key === "End" ? "mechanism" : heroTab === "quickstart" ? "mechanism" : "quickstart";
+              const tabs = ["discover", "quickstart", "mechanism"] as const;
+              const direction = event.key === "ArrowLeft" ? -1 : 1;
+              const next = event.key === "Home" ? tabs[0] : event.key === "End" ? tabs[2] : tabs[(tabs.indexOf(heroTab) + direction + tabs.length) % tabs.length];
               setHeroTab(next);
               document.getElementById(`${heroId}-${next}-tab`)?.focus();
             }}>
+              <button id={`${heroId}-discover-tab`} type="button" role="tab" aria-selected={heroTab === "discover"} aria-controls={`${heroId}-discover-panel`} tabIndex={heroTab === "discover" ? 0 : -1} onClick={() => setHeroTab("discover")}>
+                <Layers size={14} /> {t("发现项目")}
+              </button>
               <button id={`${heroId}-quickstart-tab`} type="button" role="tab" aria-selected={heroTab === "quickstart"} aria-controls={`${heroId}-quickstart-panel`} tabIndex={heroTab === "quickstart" ? 0 : -1} onClick={() => setHeroTab("quickstart")}>
                 <Terminal size={14} /> {t("快速接入")}
               </button>
@@ -884,14 +899,13 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 <Workflow size={14} /> {t("决策流程")}
               </button>
             </div>
-            <button type="button" className="discovery-entry" onClick={openGacha} aria-haspopup="dialog" aria-keyshortcuts="Meta+G Control+G" title={`${discoveryEntry} · ⌘G / Ctrl+G`}><Sparkles size={14} aria-hidden="true" /><span>{discoveryEntry}</span></button>
+            <button type="button" className="discovery-entry" hidden={heroTab === "discover"} onClick={openGacha} aria-haspopup="dialog" aria-keyshortcuts="Meta+G Control+G" title={`${discoveryEntry} · ⌘G / Ctrl+G`}><Sparkles size={14} aria-hidden="true" /><span>{discoveryEntry}</span></button>
+            </div>
+            <div id={`${heroId}-discover-panel`} role="tabpanel" aria-labelledby={`${heroId}-discover-tab`} hidden={heroTab !== "discover"}>
+              <CardDispenser locale={locale} projectCount={explorableCount} onDraw={openGacha} />
             </div>
             <div id={`${heroId}-quickstart-panel`} role="tabpanel" aria-labelledby={`${heroId}-quickstart-tab`} hidden={heroTab !== "quickstart"}>
-              <div className="hello-desktop"><HelloJev locale={locale} /></div>
-              <details className="hello-mobile">
-                <summary><Terminal size={15} /><span>Hello Jev · {t("查看代码示例")}</span><ChevronDown size={15} /></summary>
-                <HelloJev locale={locale} />
-              </details>
+              <HelloJev locale={locale} />
             </div>
             <div id={`${heroId}-mechanism-panel`} role="tabpanel" aria-labelledby={`${heroId}-mechanism-tab`} hidden={heroTab !== "mechanism"}>
           <div className="decision-canvas" aria-label={t("Jev 决策机制示意")}>
@@ -926,7 +940,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
               </div>
             </div>
             <div className="canvas-footer">
-              {t("把重活留给大模型，把选择题交给 Jev。")}
+              {t("把思考留给大模型，把选择题交给 Jev。")}
               <ArrowRight size={14} />
             </div>
           </div>
@@ -942,19 +956,15 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           </div>
           <div>
             <span className="stat-value">
-              {metadataCount ? format(totalStars) : "—"}
-              <Star size={17} />
+              {explorableCount}
             </span>
-            <span>
-              GitHub Stars
-              {metadataCount < projects.length ? t(" · 部分数据") : ""}
-            </span>
+            <span>{t("已审校条目")}</span>
           </div>
           <div>
             <span className="stat-value">
-              {categories.length.toString().padStart(2, "0")}
+              {tags.length.toString().padStart(2, "0")}
             </span>
-            <span>{t("应用方向")}</span>
+            <span>{t("主题标签")}</span>
           </div>
           <div className="data-updated">
             <span>{t("数据更新")}</span>
@@ -1037,7 +1047,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             </a>
           </aside>
           <div className="results" id="project-results" tabIndex={-1}>
-            <FeaturedPartners locale={locale} onSponsor={openSponsor} category={category} />
             <div className="search-row">
               <div className="search-box">
                 <Search size={19} />
@@ -1135,6 +1144,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 <button className="reset-all" onClick={reset}>{t("重置筛选")}</button>
               </div>
             )}
+            <FeaturedPartners locale={locale} onSponsor={openSponsor} category={category} />
             <div className="results-heading">
               <h2>
                 {onlySaved
@@ -1174,23 +1184,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                   >
                     <div className="card-top">
                       <div className="project-identity">
-                        {p.avatarUrl ? (
-                          <img
-                            src={p.avatarUrl}
-                            alt=""
-                            className="avatar"
-                            width="40"
-                            height="40"
-                            loading="lazy"
-                            onError={(e) => {
-                              e.currentTarget.style.display = "none";
-                            }}
-                          />
-                        ) : (
-                          <div className="avatar avatar-fallback">
-                            {p.author.slice(0, 2)}
-                          </div>
-                        )}
+                        <ProjectAvatar project={p} />
                         <div>
                           <h3 className="project-heading"><a
                             className="project-title"

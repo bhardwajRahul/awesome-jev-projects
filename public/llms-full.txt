@@ -4,7 +4,7 @@ A community directory of Jev open-source and publicly available source projects.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 259
+Catalog entries: 260
 
 ## Install the Agent Skill
 
@@ -3833,3 +3833,17 @@ A Pi-based terminal coding Agent whose main model handles reasoning, edits and t
 - Source evidence: https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/gateway.ts
 - Source evidence: https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/decisions.ts
 - Source evidence: https://github.com/tonyzdev/PiJ/blob/9588d6078af3f3be2b52906e0968ccf8e1542d74/src/extension.ts
+
+## jev-commit
+
+Pre-commit hook for the commit-msg stage: one Jev call judges the message against the staged diff, then warns and gets out of the way, except on a credential on an added line, which it blocks.
+
+- Repository: https://github.com/valentynkit/jev-commit
+- Category: Decision Tools
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-commit/
+- Source evidence: https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/README.md
+- Source evidence: https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/jev_commit/jev.py

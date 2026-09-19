@@ -1,5 +1,14 @@
 export type Locale = "zh" | "en" | "ja" | "ko";
 export const english: Record<string, string> = {
+  "生态入口": "Ecosystem",
+  "显示与语言": "Appearance and language",
+  "把思考留给大模型，": "Let LLMs think.",
+  "把选择题交给 Jev。": "Let Jev choose.",
+  "从社区源码里，查看 Jev 的接入方式与决策位置。": "See how Jev fits into Agent architectures, directly in community source code.",
+  "把思考留给大模型，把选择题交给 Jev。": "Let LLMs think. Let Jev choose.",
+  "已审校条目": "Source-reviewed entries",
+  "主题标签": "Topics",
+
   "查看代码示例": "Show code example",
   "热门搜索": "Popular searches",
   "快速接入": "Quick start",
@@ -214,6 +223,15 @@ export const categoryEnglish: Record<string, string> = {
 };
 
 export const japanese: Record<string, string> = {
+  "生态入口": "エコシステム",
+  "显示与语言": "表示と言語",
+  "把思考留给大模型，": "思考は LLM に。",
+  "把选择题交给 Jev。": "選択は Jev に。",
+  "从社区源码里，查看 Jev 的接入方式与决策位置。": "コミュニティのソースから、Jev の組み込み方と判断する箇所を探す。",
+  "把思考留给大模型，把选择题交给 Jev。": "思考は LLM に。選択は Jev に。",
+  "已审校条目": "ソース確認済み",
+  "主题标签": "トピック",
+
   "查看代码示例": "コード例を表示",
   "热门搜索": "よく使う検索",
   "快速接入": "クイックスタート",
@@ -387,6 +405,15 @@ export const japanese: Record<string, string> = {
   "Star on GitHub": "GitHub に Star"
 };
 export const korean: Record<string, string> = {
+  "生态入口": "생태계",
+  "显示与语言": "표시 및 언어",
+  "把思考留给大模型，": "생각은 LLM에.",
+  "把选择题交给 Jev。": "선택은 Jev에.",
+  "从社区源码里，查看 Jev 的接入方式与决策位置。": "커뮤니티 소스에서 Jev 연동 방식과 판단 지점을 살펴보세요.",
+  "把思考留给大模型，把选择题交给 Jev。": "생각은 LLM에. 선택은 Jev에.",
+  "已审校条目": "소스 검토 완료",
+  "主题标签": "주제",
+
   "查看代码示例": "코드 예제 보기",
   "热门搜索": "추천 검색",
   "快速接入": "빠른 시작",
@@ -655,10 +682,10 @@ const categoryTranslations: Record<string, Partial<Record<Locale, string>>> = {
 
 export const locales: Locale[] = ["zh", "en", "ja", "ko"];
 export const localeMeta: Record<Locale, { label: string; language: string; title: string; description: string }> = {
-  zh: { label: "简体中文", language: "zh-CN", title: "Awesome Jev — Jev 开源与公开源码项目目录", description: "按用途探索 Jev 开源与公开源码项目，查看许可、源码、README、接入方式与来源说明。支持中文、English、日本語和한국어。" },
-  en: { label: "English", language: "en", title: "Awesome Jev — Open-Source & Public Code Directory", description: "Explore Jev open-source projects and public code by use case, with licenses, READMEs, integration details and source notes. Available in four languages." },
-  ja: { label: "日本語", language: "ja", title: "Awesome Jev — Jev オープンソース・公開コード一覧", description: "Jev のオープンソースと公開コードを用途別に探索。ライセンス、README、組み込み方と出典を確認できます。日本語を含む4言語に対応。" },
-  ko: { label: "한국어", language: "ko", title: "Awesome Jev — Jev 오픈소스 및 공개 코드 디렉터리", description: "Jev 오픈소스와 공개 코드를 용도별로 탐색하고 라이선스, README, 연동 방식과 출처를 확인하세요. 한국어를 포함한 4개 언어를 지원합니다." },
+  zh: { label: "简体中文", language: "zh-CN", title: "Awesome Jev — System-1 Agent 架构雷达", description: "社区维护的 System-1 Agent 架构雷达。按用途浏览 Jev 开源与公开源码项目，核对接入方式、许可证与固定版本源码。" },
+  en: { label: "English", language: "en", title: "Awesome Jev — System-1 Agent Architecture Radar", description: "A community-maintained radar for System-1 Agent architectures with Jev. Explore projects, SDKs and integrations with licenses and source evidence." },
+  ja: { label: "日本語", language: "ja", title: "Awesome Jev — System-1 Agent アーキテクチャ", description: "コミュニティ運営の System-1 Agent アーキテクチャ一覧。Jev の実装、ライセンスと固定バージョンのソースを用途別に確認できます。" },
+  ko: { label: "한국어", language: "ko", title: "Awesome Jev — System-1 Agent 아키텍처 레이더", description: "커뮤니티가 관리하는 System-1 Agent 아키텍처 레이더입니다. Jev 프로젝트, SDK, 연동 방식과 라이선스 및 소스 근거를 확인하세요." },
 };
 export function translate(text: string, locale: Locale): string {
   return ({ en: english, ja: japanese, ko: korean } as Partial<Record<Locale, Record<string, string>>>)[locale]?.[text] ?? text;

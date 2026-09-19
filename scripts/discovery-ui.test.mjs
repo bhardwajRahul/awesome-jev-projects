@@ -21,7 +21,9 @@ test('daily discovery is identical in four locales while existing Header, Sponso
       assert.ok(daily?.includes(expected.name), `${initialLocale}: same UTC selection`);
       assert.ok(daily.includes(`dateTime="${day}"`) || daily.includes(`datetime="${day}"`));
       if (['en', 'ko'].includes(initialLocale)) assert.ok(!/\p{Script=Han}/u.test(daily), `${initialLocale}: translated daily card`);
-      assert.equal((html.match(/class="discovery-entry"/g) ?? []).length, 1);
+      assert.equal((html.match(/class="card-dispenser"/g) ?? []).length, 1);
+      assert.ok(html.includes('class="header-ecosystem"') && html.includes('class="header-utilities"'));
+      assert.ok(html.includes('class="discovery-entry" hidden=""'), 'Secondary draw link stays hidden on the deck tab');
       assert.ok(!html.includes('class="gacha-dialog"'), 'No automatic draw or modal on first render');
       assert.equal((html.match(/data-project-id=/g) ?? []).length, 24, 'Initial grid stays bounded');
       assert.equal((html.match(/class="featured-partners"/g) ?? []).length, 1);

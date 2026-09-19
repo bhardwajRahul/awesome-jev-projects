@@ -4,7 +4,7 @@ A community directory of Jev open-source and publicly available source projects.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 259
+Catalog entries: 260
 
 ## Install the Agent Skill
 
@@ -38,7 +38,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 14
 - [Creative Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/): 9
 - [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 10
-- [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 6
+- [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 7
 - [Domain & Vertical Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/): 14
 - [Evaluation & Observability](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/): 29
 - [High-Frequency & Simulation](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/): 17

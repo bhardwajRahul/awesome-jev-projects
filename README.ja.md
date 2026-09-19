@@ -2,11 +2,11 @@
 
 [![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-ja.svg)](https://logicrw.github.io/awesome-jev-projects/ja/)
 
-# Awesome Jev — Jev オープンソース・公開コード一覧
+# Awesome Jev — System-1 Agent アーキテクチャ
 
 [中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
-**[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **259 件のプロジェクト**
+**[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **260 件のプロジェクト**
 
 コミュニティが運営する、TypeSafe 非公式の Jev ディレクトリです。公開説明とソースコードに基づいて掲載しています。連携コードの確認は、当サイトによる実行、性能測定、安全性監査を意味しません。
 
@@ -42,7 +42,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Context GC・メモリ (14)](https://logicrw.github.io/awesome-jev-projects/ja/categories/context-gc-filter/)
 - [音楽・UI 制作 (9)](https://logicrw.github.io/awesome-jev-projects/ja/categories/creative-tools/)
 - [データ・検索 (10)](https://logicrw.github.io/awesome-jev-projects/ja/categories/data-search/)
-- [判断ツール (6)](https://logicrw.github.io/awesome-jev-projects/ja/categories/decision-tools/)
+- [判断ツール (7)](https://logicrw.github.io/awesome-jev-projects/ja/categories/decision-tools/)
 - [分野別ツール (14)](https://logicrw.github.io/awesome-jev-projects/ja/categories/domain-vertical-tools/)
 - [評価・可観測性 (29)](https://logicrw.github.io/awesome-jev-projects/ja/categories/evaluation-observability/)
 - [ゲーム・リアルタイム判断 (17)](https://logicrw.github.io/awesome-jev-projects/ja/categories/high-frequency-simulation/)
@@ -510,6 +510,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev が判断する箇所**: 回答スタイルを Choice に変換し、質問の断片からチャットタイトルも選ぶ。
   - **このプロジェクトの用途**: チャット画面で選択肢と確率を確認し、独自の回答集合を試せる。
   - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/kt3k/jevchat/) · ライセンス: 記載なし
+
+- [**jev-commit**](https://github.com/valentynkit/jev-commit) — Pre-commit hook for the commit-msg stage: one Jev call judges the message against the staged diff, then warns and gets out of the way, except on a credential on an added line, which it blocks.
+  - **Jev が判断する箇所**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **このプロジェクトの用途**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [詳細と固定バージョンのソース](https://logicrw.github.io/awesome-jev-projects/ja/projects/valentynkit/jev-commit/) · ライセンス: MIT
 
 
 ## 分野別ツール

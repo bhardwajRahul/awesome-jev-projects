@@ -2,11 +2,11 @@
 
 [![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-zh.svg)](https://logicrw.github.io/awesome-jev-projects/)
 
-# Awesome Jev — Jev 开源与公开源码项目目录
+# Awesome Jev — System-1 Agent 架构雷达
 
 [中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
-**[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **259 个项目**
+**[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **260 个项目**
 
 这是社区维护的 Jev 项目目录，不是 TypeSafe 官方网站。收录依据为可查的项目说明与源码；代码中出现集成，不等于本站已运行、验证效果或审计安全。
 
@@ -42,7 +42,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [上下文与记忆 (14)](https://logicrw.github.io/awesome-jev-projects/categories/context-gc-filter/)
 - [音乐与界面创作 (9)](https://logicrw.github.io/awesome-jev-projects/categories/creative-tools/)
 - [数据与搜索 (10)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
-- [决策工具 (6)](https://logicrw.github.io/awesome-jev-projects/categories/decision-tools/)
+- [决策工具 (7)](https://logicrw.github.io/awesome-jev-projects/categories/decision-tools/)
 - [行业应用 (14)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
 - [游戏与实时决策 (17)](https://logicrw.github.io/awesome-jev-projects/categories/high-frequency-simulation/)
@@ -510,6 +510,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 把回答风格映射成 Choice 选项，也从问题片段中选择聊天标题。
   - **这个项目的用途**: 在聊天界面查看选项及其概率，并尝试自己的答案集合。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kt3k/jevchat/) · 许可证: 未声明
+
+- [**jev-commit**](https://github.com/valentynkit/jev-commit) — jev-commit：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+  - **Jev 在哪一步做判断**: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+  - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/valentynkit/jev-commit/) · 许可证: MIT
 
 
 ## 行业应用
