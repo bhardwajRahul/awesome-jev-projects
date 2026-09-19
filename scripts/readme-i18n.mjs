@@ -58,7 +58,19 @@ export const DECISIONS_JA = {
   "Selects optimal execution agents and tools while enforcing safety and permission policies.": "安全性と権限ポリシーを適用しながら、最適な実行エージェントとツールを選択。",
   "Serves structured Choice, Score, and Noul inference requests conforming to TypeSafe API specification.": "TypeSafeのAPI仕様に準拠したChoice、Score、Noulの構造化推論リクエストを処理。",
   "Tests discrete coordinate choice in board games and speaker-attribution decisions in audio transcripts.": "ボードゲームでの座標選択や音声書き起こしにおける話者判定の精度を検証。",
-  "Wraps HTTP System One endpoints into strongly-typed Java POJOs and asynchronous reactive flows.": "HTTP System Oneエンドポイントを強く型付けされたJava POJOと非同期リアクティブフローにラップ。"
+  "Wraps HTTP System One endpoints into strongly-typed Java POJOs and asynchronous reactive flows.": "HTTP System Oneエンドポイントを強く型付けされたJava POJOと非同期リアクティブフローにラップ。",
+  "Evaluates component tree suitability in parallel and outputs structured component selection and slot actions in a single pass.": "コンポーネントツリーの適合度を並行評価し、単一パスで構造化されたコンポーネント選択とスロット操作を直接出力。",
+  "Evaluates bounded UI state and screen region tables to decide specific click, focus, and hotkey actions.": "有界なUI状態と画面領域テーブルを評価し、具体的なクリック、フォーカス、ショートカット操作を決定。",
+  "Takes lightweight DOM trees and task context to return page interaction actions and target selectors.": "軽量DOMツリーとタスクコンテキストを受け取り、ページ操作アクションと対象セレクタを返却。",
+  "Consumes multi-source market indicators and signals to output buy, sell, or hold decisions with calibrated confidence.": "マルチソースの市場指標とシグナルを入力し、較正された信頼度付きで売買・保有の判断を出力。",
+  "Evaluates task tier, reasoning depth, and production risk in parallel to inject optimal model configs into Claude Code.": "タスクの難易度階層、推論深度、本番リスクを並行評価し、Claude Codeへ最適なモデル設定を動的注入。",
+  "Uses generic Rust structs to declare question-and-answer layouts once, decoding directly into strongly typed fields via Jev.": "Rustのジェネリック構造体で問いと答えのレイアウトを一度だけ宣言し、Jev経由で強型フィールドへ直接デコード。",
+  "Consumes spread, rolling returns, and taker flow over 100 blocks to predict mid-price direction over the next 30 blocks.": "スプレッド、過去100ブロックのリターン、テイカーフローを入力し、今後30ブロックの中間価格の方向を予測。",
+  "Compares screen element lists against the goal to pick the next atomic click or key action from candidates.": "目標に照らして画面要素リストを比較し、候補の中から次のアトミックなクリックまたはキーストロークを選択。",
+  "Evaluates Mario motion speed, jump trajectories, and upcoming enemies to decide NES controller inputs.": "マリオの移動速度、ジャンプ軌道、前方の敵を評価し、ファミコンのコントローラー入力を決定。",
+  "Consumes distance sectors and obstacle heights from classical CV to choose tactical maneuvers among climb, brake, or gap traversal.": "古典的CVによる距離セクターと障害物高さを読み取り、上昇、ブレーキ、間隙通過などの戦術機動を選択。",
+  "Reads structured battlefield state and economy data to make independent decisions on base building and army micro.": "構造化された戦況とリソースデータを読み取り、内政建築と戦闘ユニットの操作を独立して意思決定。",
+  "Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.": "ユーザーの対話履歴とツールの引数を総合評価し、実行意図がセキュリティポリシー規則に適合しているかを判定。",
 };
 
 export const DECISIONS_KO = {
@@ -121,7 +133,19 @@ export const DECISIONS_KO = {
   "Selects optimal execution agents and tools while enforcing safety and permission policies.": "보안 및 권한 정책을 적용하면서 최적의 실행 에이전트와 도구를 선택.",
   "Serves structured Choice, Score, and Noul inference requests conforming to TypeSafe API specification.": "TypeSafe API 규격에 맞는 Choice, Score, Noul 구조화 추론 요청을 처리.",
   "Tests discrete coordinate choice in board games and speaker-attribution decisions in audio transcripts.": "보드게임 좌표 선택 및 오디오 스크립트의 화자 식별 판단 정확도를 검증.",
-  "Wraps HTTP System One endpoints into strongly-typed Java POJOs and asynchronous reactive flows.": "HTTP System One 엔드포인트를 강력한 타입의 Java POJO 및 비동기 리액티브 플로우로 래핑."
+  "Wraps HTTP System One endpoints into strongly-typed Java POJOs and asynchronous reactive flows.": "HTTP System One 엔드포인트를 강력한 타입의 Java POJO 및 비동기 리액티브 플로우로 래핑.",
+  "Evaluates component tree suitability in parallel and outputs structured component selection and slot actions in a single pass.": "컴포넌트 트리의 적합성을 병렬로 평가하여 단일 패스로 구조화된 컴포넌트 선택 및 슬롯 동작을 직접 출력.",
+  "Evaluates bounded UI state and screen region tables to decide specific click, focus, and hotkey actions.": "경계가 지정된 UI 상태와 화면 영역 테이블을 평가하여 구체적인 클릭, 포커스, 단축키 동작을 결정.",
+  "Takes lightweight DOM trees and task context to return page interaction actions and target selectors.": "경량 DOM 트리와 작업 컨텍스트를 입력받아 페이지 상호작용 동작과 대상 선택자를 반환.",
+  "Consumes multi-source market indicators and signals to output buy, sell, or hold decisions with calibrated confidence.": "다중 소스 시장 지표와 신호를 종합하여 보정된 신뢰도를 갖춘 매수, 매도 또는 보유 결정을 출력.",
+  "Evaluates task tier, reasoning depth, and production risk in parallel to inject optimal model configs into Claude Code.": "작업 난이도 계층, 추론 깊이, 운영 환경 위험도를 병렬 평가하여 Claude Code에 최적의 모델 구성을 동적 주입.",
+  "Uses generic Rust structs to declare question-and-answer layouts once, decoding directly into strongly typed fields via Jev.": "Rust 제네릭 구조체로 질문과 답변 레이아웃을 한 번만 선언하고 Jev를 통해 강타입 필드로 직접 디코딩.",
+  "Consumes spread, rolling returns, and taker flow over 100 blocks to predict mid-price direction over the next 30 blocks.": "스프레드, 100블록 이동 수익률, 테이커 흐름을 분석하여 향후 30블록의 중간 가격 변동 방향을 예측.",
+  "Compares screen element lists against the goal to pick the next atomic click or key action from candidates.": "목표에 맞춰 화면 요소 목록을 비교하고 후보군 중에서 다음 원자적 클릭 또는 키 입력을 선택.",
+  "Evaluates Mario motion speed, jump trajectories, and upcoming enemies to decide NES controller inputs.": "마리오의 이동 속도, 점프 궤적, 전방의 적 상태를 평가하여 패미컴 컨트롤러 입력을 실시간 결정.",
+  "Consumes distance sectors and obstacle heights from classical CV to choose tactical maneuvers among climb, brake, or gap traversal.": "고전 컴퓨터 비전의 거리 섹터와 장애물 높이를 분석하여 상승, 제동, 간극 통과 등 전술 기동을 선택.",
+  "Reads structured battlefield state and economy data to make independent decisions on base building and army micro.": "구조화된 전장 상황과 자원 데이터를 읽고 기지 건설과 전투 유닛 미세 컨트롤을 독립적으로 의사결정.",
+  "Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.": "사용자 대화 이력과 도구 인수를 종합 평가하여 실행 의도가 보안 정책 규칙을 준수하는지 판정.",
 };
 
 export const BENEFITS_JA = {
@@ -189,7 +213,19 @@ export const BENEFITS_JA = {
   "Tested on 237 turns, slashing overall API bills by ~60%.": "237ターンの実測テストで、API利用料金を約60%削減。",
   "Two-pass client-side execution with automatic batching, concurrency pooling, and content-addressable response caching.": "自動バッチ処理、並行処理プール、コンテンツ連動キャッシュを備えた2パスクライアント実行。",
   "Unifies heterogeneous agent capabilities under a single typed routing layer.": "異種エージェント機能を単一の型安全なルーティング層に統合。",
-  "Zero X API dependency; combines fast local matching with Jev semantic gatekeeping for clean timelines.": "X API依存ゼロ。高速なローカル一致とJevセマンティック判定を組み合わせタイムラインを浄化。"
+  "Zero X API dependency; combines fast local matching with Jev semantic gatekeeping for clean timelines.": "X API依存ゼロ。高速なローカル一致とJevセマンティック判定を組み合わせタイムラインを浄化。",
+  "Eliminates slow token-by-token JSON streaming, delivering initial UI renders in milliseconds.": "トークン単位の低速なJSONストリーミングを排除し、ミリ秒単位でUIの初期描画を実現。",
+  "Bypasses slow multimodal planning loops by decomposing OS control into fast discrete actions.": "OS制御を高速な離散アクションに分解することで、低速なマルチモーダル計画ループをバイパス。",
+  "Constrains browser actions to type-safe deterministic enums, reducing agent disorientation.": "ブラウザ操作を型安全な決定的列挙型に制約し、エージェントの誤動作や迷走を低減。",
+  "Prevents LLM output format drift and parsing errors, yielding ultra-fast trading signals with strict policy gates.": "LLMの出力フォーマット崩れやパース失敗を防止し、厳格なしきい値ポリシーによる超高速トレードシグナルを提供。",
+  "Prevents overspending on trivial tasks while enforcing high confidence thresholds on high-risk code changes.": "軽微なタスクへの過剰支出を防ぎつつ、高リスクなコード変更に対して厳格な高信頼度しきい値を適用。",
+  "Zero-cost Rust abstractions with no manual JSON prompt construction or runtime schema validation required.": "手動のJSONプロンプト作成や実行時スキーマ検証が不要な、Rustネイティブのゼロコスト抽象化。",
+  "Inference latency around 80ms fits cleanly within sub-second blockchain block times.": "約80ミリ秒の推論レイテンシにより、サブセカンド級ブロックチェーンの生成間隔に完全に適合。",
+  "Avoids sending high-res screenshots to multimodal LLMs, eliminating huge token costs and image processing lag.": "マルチモーダルLLMへの高解像度スクリーンショット送信を回避し、莫大なトークン費用と画像処理の遅延を解消。",
+  "Reduces raw pixel perception to deterministic object telemetry, outputting valid actions within tight frame budgets.": "生のピクセル認識を決定的オブジェクトテレメトリに次元削減し、厳しいフレーム予算内で有効なアクションを出力。",
+  "Tiered control architecture: Jev handles macro tactical decisions while deterministic code guarantees flight safety.": "階層化制御アーキテクチャ：Jevがマクロ戦術判断を担当し、決定論的コードが飛行の安全性を保証。",
+  "Demonstrates the feasibility of decomposing complex real-time strategy state into discrete semantic decisions.": "複雑なリアルタイムストラテジーの状況を離散的なセマンティック決定へ分解可能であることを実証。",
+  "Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.": "静的な正規表現マッチングを超越：ツール選択に依存せずセマンティックな意図からポリシー違反を検知。",
 };
 
 export const BENEFITS_KO = {
@@ -257,5 +293,17 @@ export const BENEFITS_KO = {
   "Tested on 237 turns, slashing overall API bills by ~60%.": "237턴에 걸친 실측 테스트 결과, 전체 API 비용을 약 60% 절감했습니다.",
   "Two-pass client-side execution with automatic batching, concurrency pooling, and content-addressable response caching.": "자동 배치, 동시성 풀링, 콘텐츠 주소 지정 응답 캐싱을 지원하는 2패스 클라이언트 실행.",
   "Unifies heterogeneous agent capabilities under a single typed routing layer.": "이기종 에이전트 기능을 단일 타입화 라우팅 계층 아래로 통합합니다.",
-  "Zero X API dependency; combines fast local matching with Jev semantic gatekeeping for clean timelines.": "X API 의존성 없이 고속 로컬 매칭과 Jev 시맨틱 게이트를 결합하여 타임라인을 정화합니다."
+  "Zero X API dependency; combines fast local matching with Jev semantic gatekeeping for clean timelines.": "X API 의존성 없이 고속 로컬 매칭과 Jev 시맨틱 게이트를 결합하여 타임라인을 정화합니다.",
+  "Eliminates slow token-by-token JSON streaming, delivering initial UI renders in milliseconds.": "느린 토큰 단위 JSON 스트리밍을 제거하여 밀리초 단위로 초기 UI 렌더링을 제공.",
+  "Bypasses slow multimodal planning loops by decomposing OS control into fast discrete actions.": "OS 제어를 빠른 이산 동작으로 분해하여 느린 멀티모달 계획 루프를 우회.",
+  "Constrains browser actions to type-safe deterministic enums, reducing agent disorientation.": "브라우저 동작을 타입 안전하고 결정론적인 열거형으로 제한하여 에이전트의 경로 이탈을 감소.",
+  "Prevents LLM output format drift and parsing errors, yielding ultra-fast trading signals with strict policy gates.": "LLM 출력 형식 왜곡과 파싱 에러를 원천 차단하며 엄격한 정책 임계값을 적용한 초고속 거래 신호를 제공.",
+  "Prevents overspending on trivial tasks while enforcing high confidence thresholds on high-risk code changes.": "단순 작업에 대한 과도한 비용 지출을 방지하면서 고위험 코드 변경에 대해 엄격한 고신뢰도 임계값을 강제.",
+  "Zero-cost Rust abstractions with no manual JSON prompt construction or runtime schema validation required.": "수동 JSON 프롬프트 작성이나 런타임 스키마 검증이 전혀 필요 없는 Rust 네이티브 제로 비용 추상화.",
+  "Inference latency around 80ms fits cleanly within sub-second blockchain block times.": "약 80ms의 추론 지연 시간으로 1초 미만 블록체인 블록 생성 주기에 완벽하게 부합.",
+  "Avoids sending high-res screenshots to multimodal LLMs, eliminating huge token costs and image processing lag.": "멀티모달 LLM으로 고해상도 스크린샷 전송을 방지하여 막대한 토큰 비용과 이미지 처리 지연을 제거.",
+  "Reduces raw pixel perception to deterministic object telemetry, outputting valid actions within tight frame budgets.": "원시 픽셀 인식을 결정론적 객체 텔레메트리로 축소하여 촉박한 프레임 예산 내에서 유효한 동작을 출력.",
+  "Tiered control architecture: Jev handles macro tactical decisions while deterministic code guarantees flight safety.": "계층화된 제어 아키텍처: Jev가 거시적 전술 결정을 전담하고 결정론적 코드가 비행 안전을 보장.",
+  "Demonstrates the feasibility of decomposing complex real-time strategy state into discrete semantic decisions.": "복잡한 실시간 전략 시뮬레이션 상태를 이산적인 시맨틱 의사결정으로 분해할 수 있음을 입증.",
+  "Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.": "정적 정규식 매칭을 초월: 도구의 종류와 무관하게 시맨틱 의도를 통해 보안 정책 위반을 감지.",
 };

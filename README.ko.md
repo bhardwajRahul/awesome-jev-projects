@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-169%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 프로젝트 등록 신청</strong></a>
 </p>
 
-<p>TypeSafe AI의 Jev 모델을 탑재한 **169+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
+<p>TypeSafe AI의 Jev 모델을 탑재한 **181+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
 
 </div>
 
@@ -41,23 +41,23 @@
 <a id="contents"></a>
 ## 목차
 
-- [⚡ 고주파 시뮬레이션 및 실시간 게임 (13)](#high-frequency-simulation-ko)
-- [🛠️ SDK 및 의사결정 프레임워크 (11)](#sdk-decision-frameworks-ko)
+- [⚡ 고주파 시뮬레이션 및 실시간 게임 (17)](#high-frequency-simulation-ko)
+- [🛠️ SDK 및 의사결정 프레임워크 (12)](#sdk-decision-frameworks-ko)
 - [🔌 생태계 연동 및 어댑터 (8)](#sdk-integrations-ko)
 - [💻 CLI 및 자동화 파이프라인 (26)](#cli-pipelines-ko)
 - [💾 데이터베이스 확장 및 시맨틱 검색 (4)](#data-search-ko)
-- [🌐 브라우저 및 데스크톱 자동화 (14)](#browser-os-action-ko)
+- [🌐 브라우저 및 데스크톱 자동화 (16)](#browser-os-action-ko)
 - [🧹 컨텍스트 압축 및 가비지 컬렉션 (7)](#context-gc-filter-ko)
-- [🛡️ 보안 및 가드레일 (9)](#security-guardrails-ko)
-- [🧩 MCP 프로토콜 및 도구 확장 (28)](#mcp-integrations-ko)
+- [🛡️ 보안 및 가드레일 (10)](#security-guardrails-ko)
+- [🧩 MCP 프로토콜 및 도구 확장 (29)](#mcp-integrations-ko)
 - [🧭 코드베이스 분석 및 지식 그래프 탐색 (9)](#codebase-graph-pathfinding-ko)
-- [🔀 모델 라우팅 및 비용 최적화 (9)](#routing-cost-optimization-ko)
+- [🔀 모델 라우팅 및 비용 최적화 (10)](#routing-cost-optimization-ko)
 - [📊 도메인 특화 및 엔터프라이즈 도구 (15)](#domain-vertical-tools-ko)
-- [🎯 범용 의사결정 및 휴리스틱 평가 (10)](#decision-tools-ko)
+- [🎯 범용 의사결정 및 휴리스틱 평가 (11)](#decision-tools-ko)
 - [🏷️ 텍스트 분류 및 분류 체계 (2)](#classification-taxonomy-ko)
 - [📈 벤치마크 및 가관측성 (1)](#evaluation-observability-ko)
 - [🎙️ 음성 인터랙션 및 실시간 대화 (1)](#voice-conversation-ko)
-- [🎨 크리에이티브 미디어 및 작곡 (2)](#creative-tools-ko)
+- [🎨 크리에이티브 미디어 및 작곡 (3)](#creative-tools-ko)
 - [📖 로컬 개발 및 아키텍처](#dev-arch-ko)
 - [🤝 프로젝트 제출 방법](#submit-guide-ko)
 
@@ -68,9 +68,25 @@
 
 *게임, 로보틱스 및 인터랙티브 시뮬레이션 루프를 위한 실시간 밀리초 단위 의사결정.*
 
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 902` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
+  - 🎯 **Jev의 역할**: 스프레드, 100블록 이동 수익률, 테이커 흐름을 분석하여 향후 30블록의 중간 가격 변동 방향을 예측.
+  - 💡 **핵심 장점**: 약 80ms의 추론 지연 시간으로 1초 미만 블록체인 블록 생성 주기에 완벽하게 부합.
+
+- [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
+  - 🎯 **Jev의 역할**: 마리오의 이동 속도, 점프 궤적, 전방의 적 상태를 평가하여 패미컴 컨트롤러 입력을 실시간 결정.
+  - 💡 **핵심 장점**: 원시 픽셀 인식을 결정론적 객체 텔레메트리로 축소하여 촉박한 프레임 예산 내에서 유효한 동작을 출력.
+
+- [**jev-drone**](https://github.com/RomanSlack/jev-drone) `★ 63` - jev-drone: Autonomous quadrotor in MuJoCo obstacle course using onboard camera buffers with Jev tactical judgment at 2.5Hz backed by 50Hz/500Hz flight controllers.
+  - 🎯 **Jev의 역할**: 고전 컴퓨터 비전의 거리 섹터와 장애물 높이를 분석하여 상승, 제동, 간극 통과 등 전술 기동을 선택.
+  - 💡 **핵심 장점**: 계층화된 제어 아키텍처: Jev가 거시적 전술 결정을 전담하고 결정론적 코드가 비행 안전을 보장.
+
 - [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - jevpilot: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
+
+- [**tsai-sc**](https://github.com/phyous/tsai-sc) `★ 15` - tsai-sc: TypeSafe Jev harness completing the original 1998 StarCraft Strongarm combat mission across 421 verified decisions with full visual replay proof.
+  - 🎯 **Jev의 역할**: 구조화된 전장 상황과 자원 데이터를 읽고 기지 건설과 전투 유닛 미세 컨트롤을 독립적으로 의사결정.
+  - 💡 **핵심 장점**: 복잡한 실시간 전략 시뮬레이션 상태를 이산적인 시맨틱 의사결정으로 분해할 수 있음을 입증.
 
 - [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 1v1 Jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
@@ -127,6 +143,10 @@
 ## 🛠️ SDK 및 의사결정 프레임워크
 
 *Jev의 구조화된 호출과 타입 안전 상호작용을 위한 다국어 클라이언트 라이브러리 및 SDK.*
+
+- [**rig-typesafeai**](https://github.com/0xPlaygrounds/rig) `★ 8669` - rig-typesafeai: Official Rig crate bringing native type-safe Choice, Score, and Noul System One decision primitives to the Rust LLM ecosystem.
+  - 🎯 **Jev의 역할**: Rust 제네릭 구조체로 질문과 답변 레이아웃을 한 번만 선언하고 Jev를 통해 강타입 필드로 직접 디코딩.
+  - 💡 **핵심 장점**: 수동 JSON 프롬프트 작성이나 런타임 스키마 검증이 전혀 필요 없는 Rust 네이티브 제로 비용 추상화.
 
 - [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - req_llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
@@ -353,6 +373,10 @@
 
 *웹 접근성 트리 분석, 자율 브라우징 및 데스크톱 GUI 제어를 위한 에이전트.*
 
+- [**cua**](https://github.com/trycua/cua) `★ 23548` - cua: Open-source computer use infrastructure using jev-use driver for discrete desktop and browser actions, with open-source CUA-S1 model family.
+  - 🎯 **Jev의 역할**: 경계가 지정된 UI 상태와 화면 영역 테이블을 평가하여 구체적인 클릭, 포커스, 단축키 동작을 결정.
+  - 💡 **핵심 장점**: OS 제어를 빠른 이산 동작으로 분해하여 느린 멀티모달 계획 루프를 우회.
+
 - [**jev-ultrafast**](https://github.com/browser-use/jev-ultrafast) `★ 4673` - Ultra-fast browser agent using Jev for per-step DOM action decisions. Complete Google Flights search in ~7.1s.
   - 🎯 **Jev의 역할**: 단일 요청으로 다음 액션과 대상 DOM 요소를 결정하고, 텍스트 입력만 텍스트 모델에 위임.
   - 💡 **핵심 장점**: UI 탐색과 텍스트 생성을 분리하여 중복 페이지 평가를 대폭 줄입니다.
@@ -364,6 +388,10 @@
 - [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
+
+- [**typesafe-computer-use**](https://github.com/awlevin/typesafe-computer-use) `★ 237` - typesafe-computer-use: Ultra-low-cost macOS computer use combining deterministic OCR with Jev discrete action choices at ~$0.0002 per step.
+  - 🎯 **Jev의 역할**: 목표에 맞춰 화면 요소 목록을 비교하고 후보군 중에서 다음 원자적 클릭 또는 키 입력을 선택.
+  - 💡 **핵심 장점**: 멀티모달 LLM으로 고해상도 스크린샷 전송을 방지하여 막대한 토큰 비용과 이미지 처리 지연을 제거.
 
 - [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - mobile-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
@@ -483,6 +511,10 @@
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
+- [**oc-auto-perms**](https://github.com/OpeOginni/oc-plugins) `★ 2` - oc-auto-perms: Intent-aware permission plugin for OpenCode V2 using natural language policies evaluated by Jev across shell and network tool invocations.
+  - 🎯 **Jev의 역할**: 사용자 대화 이력과 도구 인수를 종합 평가하여 실행 의도가 보안 정책 규칙을 준수하는지 판정.
+  - 💡 **핵심 장점**: 정적 정규식 매칭을 초월: 도구의 종류와 무관하게 시맨틱 의도를 통해 보안 정책 위반을 감지.
+
 - [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - jev-tool-permissions: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
@@ -521,6 +553,10 @@
 - [**Jevbridge**](https://github.com/gamesonrblx/Jevbridge) `★ 13` - Jevbridge: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **Jev의 역할**: 외부 에이전트 환경을 위해 온디맨드 Choice·Score·Noul 의사결정 도구를 제공.
   - 💡 **핵심 장점**: 기존 에이전트 스택에 저지연 구조화 의사결정을 손쉽게 통합합니다.
+
+- [**cline-plugin-jev-browser**](https://github.com/abeatrix/cline-plugin-jev-browser) `★ 12` - cline-plugin-jev-browser: Cline desktop browser plugin routing through Vercel AI Gateway to execute DOM element selection and sub-second clicks via Jev.
+  - 🎯 **Jev의 역할**: 경량 DOM 트리와 작업 컨텍스트를 입력받아 페이지 상호작용 동작과 대상 선택자를 반환.
+  - 💡 **핵심 장점**: 브라우저 동작을 타입 안전하고 결정론적인 열거형으로 제한하여 에이전트의 경로 이탈을 감소.
 
 - [**jev**](https://github.com/dannote/jev) `★ 10` - jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **Jev의 역할**: 외부 에이전트 환경을 위해 온디맨드 Choice·Score·Noul 의사결정 도구를 제공.
@@ -660,6 +696,10 @@
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
+- [**jev-model-router**](https://github.com/davila7/claude-code-templates) `★ 30779` - jev-model-router: Claude Code mod using Jev to evaluate task difficulty, reasoning effort, and blast radius in one call to route subagents dynamically.
+  - 🎯 **Jev의 역할**: 작업 난이도 계층, 추론 깊이, 운영 환경 위험도를 병렬 평가하여 Claude Code에 최적의 모델 구성을 동적 주입.
+  - 💡 **핵심 장점**: 단순 작업에 대한 과도한 비용 지출을 방지하면서 고위험 코드 변경에 대해 엄격한 고신뢰도 임계값을 강제.
+
 - [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - openchamber: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
@@ -766,6 +806,10 @@
 
 *범용 선택 엔진, 휴리스틱 스코어러 및 비즈니스 의사결정 보조 유틸리티.*
 
+- [**ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund) `★ 63497` - ai-hedge-fund: Multi-agent AI hedge fund simulation with native JevLLM adapter calling System One endpoints for deterministic financial decisions.
+  - 🎯 **Jev의 역할**: 다중 소스 시장 지표와 신호를 종합하여 보정된 신뢰도를 갖춘 매수, 매도 또는 보유 결정을 출력.
+  - 💡 **핵심 장점**: LLM 출력 형식 왜곡과 파싱 에러를 원천 차단하며 엄격한 정책 임계값을 적용한 초고속 거래 신호를 제공.
+
 - [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - jev-benchmarks: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
@@ -849,6 +893,10 @@
 ## 🎨 크리에이티브 미디어 및 작곡
 
 *동적 UI 레이아웃 생성, 알고리즘 기반 작곡 및 MIDI 편곡 도구.*
+
+- [**json-render**](https://github.com/vercel-labs/json-render) `★ 16519` - json-render: Vercel Labs generative UI library replacing token streaming with Jev discrete evaluations, cutting render latency from 3.21s to 880ms.
+  - 🎯 **Jev의 역할**: 컴포넌트 트리의 적합성을 병렬로 평가하여 단일 패스로 구조화된 컴포넌트 선택 및 슬롯 동작을 직접 출력.
+  - 💡 **핵심 장점**: 느린 토큰 단위 JSON 스트리밍을 제거하여 밀리초 단위로 초기 UI 렌더링을 제공.
 
 - [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - jevthoven: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.

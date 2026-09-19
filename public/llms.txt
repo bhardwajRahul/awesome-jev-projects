@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 169 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 181 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (169 Projects)
+## Curated Projects Directory (181 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1076,12 +1076,275 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 
 ### jev-gomoku
 - Repository: https://github.com/XieChengYuan/jev-gomoku
-- Live Demo: https://xiechengyuan.github.io/jev-gomoku/
 - Category: High-Frequency & Simulation
 - Overview (EN): Dual-Jev 9x9 Gomoku workbench evaluating how input representations affect placement decisions, featuring replay and live play.
 - Overview (ZH): 弈瞬：双 Jev 玩家在九宫格五子棋中对战，比较不同输入信息对落子决策的影响，并逐手展示真实请求与返回。
 - Jev Decision Role: 每盘每手回答一个 Choice 问题：根据棋盘、规则、颜色和合法候选选择落子点，由本地代码校验执行。
 - Core Benefit: 逐手展示真实请求与返回概率，支持免 API Key 真实对局回放与 OpenRouter 自定义对战，支持 JSON 导出。
+
+### jev-voice-browser
+- Repository: https://github.com/moritzkremb/jev-voice-browser
+- Category: CLI & Pipelines
+- Overview (EN): Control a real browser with sub-300ms voice commands, using Jev to resolve intent and target elements before sentences finish.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### hono-jev-router
+- Repository: https://github.com/yusukebe/hono-jev-router
+- Category: CLI & Pipelines
+- Overview (EN): Semantic HTTP request router for Hono applications powered by TypeSafe Jev discrete classifications.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### openjev
+- Repository: https://github.com/razorback16/openjev
+- Category: CLI & Pipelines
+- Overview (EN): Open-source, self-hostable Jev-compatible System One decision server built on DiffusionGemma.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### typesafe-jev-workflow
+- Repository: https://github.com/GiesN/typesafe-jev-workflow
+- Category: CLI & Pipelines
+- Overview (EN): Async LangGraph workflow routing simulated emails to typed destination handlers via Jev Choice judgments.
+- Overview (ZH): typesafe-jev-workflow 在终端和自动化脚本中加入文本判断。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### JevRouter
+- Repository: https://github.com/BillionsBobby/JevRouter
+- Category: MCP & Integrations
+- Overview (EN): Local-first agent capability router coordinating models, tools, and subagents with Jev decision gates.
+- Overview (ZH): JevRouter 是一个本地优先的 Agent 能力路由器，将模型、Subagent、Skill、MCP 工具、CLI 和 DSH 插件统一为候选集，由 Jev 做出类型安全的选择，并由 JevRouter 执行权限、风险、可用性和确认策略。
+- Jev Decision Role: 通过工具接口提供选择、评分或概率判断。
+- Core Benefit: 让现有 Agent 通过通用接口使用 Jev。
+
+### jevwire
+- Repository: https://github.com/Brainwires/jevwire
+- Category: MCP & Integrations
+- Overview (EN): Agent decision layer providing an MCP server, embeddable library, and Claude Code escalation plugin.
+- Overview (ZH): 通过工具接口提供选择、评分或概率判断。
+- Jev Decision Role: 通过工具接口提供选择、评分或概率判断。
+- Core Benefit: 让现有 Agent 通过通用接口使用 Jev。
+
+### llama-index-jev
+- Repository: https://github.com/WiktorB2004/llama-index-jev
+- Category: Data & Search
+- Overview (EN): Reranker and semantic router for LlamaIndex leveraging Jev for typed document scoring and choice.
+- Overview (ZH): 给候选记录判断相关性或打分，再由本地程序筛选和排序。
+- Jev Decision Role: 给候选记录判断相关性或打分，再由本地程序筛选和排序。
+- Core Benefit: 把语义判断接进已有的数据查询流程。
+
+### jevcal
+- Repository: https://github.com/abhixhek/jevcal
+- Category: CLI & Pipelines
+- Overview (EN): Calibration and drift-detection toolkit for typed decision models against frontier LLM teachers.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### jev-benchmark
+- Repository: https://github.com/wondertwins/jev-benchmark
+- Category: Decision Tools
+- Overview (EN): Interactive benchmark suite and playground evaluating Jev across chess tactics and NPC dialogue routing.
+- Overview (ZH): 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Jev Decision Role: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Core Benefit: 把选择和打分接进现有程序；暂无可核验的性能对照。
+
+### jev-java
+- Repository: https://github.com/Olti1947/jev-java
+- Category: SDK & Decision Frameworks
+- Overview (EN): Idiomatic Java SDK and type-safe client library for TypeSafe AI Jev decision engine.
+- Overview (ZH): 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+- Jev Decision Role: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+- Core Benefit: 在现有程序中复用接入代码，减少重复处理接口细节。
+
+### jev-shield
+- Repository: https://github.com/vmendes90/jev-shield
+- Category: High-Frequency & Simulation
+- Overview (EN): Semantic content blocker distinguishing sponsored feed cards and native ads from organic content using real-time Jev judgments.
+- Overview (ZH): 读取当前状态，在可用动作中做选择。
+- Jev Decision Role: 读取当前状态，在可用动作中做选择。
+- Core Benefit: 在连续交互中观察决策效果；频率依实际运行而定。
+
+### jev-frontend-qa
+- Repository: https://github.com/Nainish-Rai/jev-frontend-qa
+- Category: Decision Tools
+- Overview (EN): Automated frontend QA and regression testing suite exercising browser interactions with Jev contract verification.
+- Overview (ZH): 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Jev Decision Role: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Core Benefit: 把选择和打分接进现有程序；暂无可核验的性能对照。
+
+### omp-jev-compaction
+- Repository: https://github.com/jerryfane/omp-jev-compaction
+- Category: Decision Tools
+- Overview (EN): Verbatim context reduction plugin for OpenMultiPlatform (omp) scoring token utility via Jev.
+- Overview (ZH): 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Jev Decision Role: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Core Benefit: 把选择和打分接进现有程序；暂无可核验的性能对照。
+
+### todo-jev
+- Repository: https://github.com/maker-KK/todo-jev
+- Category: CLI & Pipelines
+- Overview (EN): Intelligent task classifier and 3-tier routing engine organizing todo items via Jev decisions.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### jevsome-projects
+- Repository: https://github.com/ozers/jevsome-projects
+- Category: Domain & Vertical Tools
+- Overview (EN): Automated index tracking verified open-source repositories integrating TypeSafe Jev model.
+- Overview (ZH): 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Jev Decision Role: 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Core Benefit: 增加一组可记录、可对照的判断信号。
+
+### jev-cli
+- Repository: https://github.com/Nasrallah-AL/jev-cli
+- Category: CLI & Pipelines
+- Overview (EN): Command-line interface for testing, dry-running, and piping structured Jev decisions in shell pipelines.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### LightJev
+- Repository: https://github.com/rongxinzy/LightJev
+- Category: CLI & Pipelines
+- Overview (EN): Lightweight training and evaluation framework for typed decision backbones, exploring CE/Brier loss on offline decision tasks.
+- Overview (ZH): 用于训练和评测轻量级决策主干模型的实验框架，探索基于 CE/Brier 损失的离线端到端判断。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### hermes-jev-north-star
+- Repository: https://github.com/poponline63/hermes-jev-north-star
+- Category: Domain & Vertical Tools
+- Overview (EN): Hermes Agent skill utilizing Jev as a north-star gatekeeper to evaluate unproven task criteria.
+- Overview (ZH): 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Jev Decision Role: 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Core Benefit: 增加一组可记录、可对照的判断信号。
+
+### codex-jev-compaction
+- Repository: https://github.com/Wang-auspicious/codex-jev-compaction
+- Category: MCP & Integrations
+- Overview (EN): Jev-powered context curation skill for Codex generating compact, traceable task handoff packages.
+- Overview (ZH): 用 Jev 筛选旧上下文，为 Codex 生成保留原文、可追溯的任务交接包。
+- Jev Decision Role: 通过工具接口提供选择、评分或概率判断。
+- Core Benefit: 让现有 Agent 通过通用接口使用 Jev。
+
+### pi-jev-compaction
+- Repository: https://github.com/Wang-auspicious/pi-jev-compaction
+- Category: CLI & Pipelines
+- Overview (EN): Context compaction utility for Pi retaining critical instructions and tool records via Jev scoring.
+- Overview (ZH): 让 Jev 判断哪些旧工具记录仍有用，把保留的原文交还给 Pi。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### jev-review-action
+- Repository: https://github.com/fatwang2/jev-review-action
+- Category: Domain & Vertical Tools
+- Overview (EN): Configurable GitHub Action for PR triage and automated code review classification with Jev.
+- Overview (ZH): 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Jev Decision Role: 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Core Benefit: 增加一组可记录、可对照的判断信号。
+
+### jev-curate
+- Repository: https://github.com/AkashPriyadarshii/jev-curate
+- Category: High-Frequency & Simulation
+- Overview (EN): High-throughput pretraining dataset sifter streaming, filtering, and scoring Parquet and JSONL rows via Jev.
+- Overview (ZH): 读取当前状态，在可用动作中做选择。
+- Jev Decision Role: 读取当前状态，在可用动作中做选择。
+- Core Benefit: 在连续交互中观察决策效果；频率依实际运行而定。
+
+### jevify
+- Repository: https://github.com/altryne/jevify
+- Category: SDK & Decision Frameworks
+- Overview (EN): CLI installer and integration assistant configuring Jev decision endpoints for Claude Code, Codex, and Cursor.
+- Overview (ZH): 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+- Jev Decision Role: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+- Core Benefit: 在现有程序中复用接入代码，减少重复处理接口细节。
+
+### jev-synergy-screening
+- Repository: https://github.com/PistachioAIHQ/jev-synergy-screening
+- Category: CLI & Pipelines
+- Overview (EN): High-throughput biomedical literature abstract triage pipeline for systematic reviews using typed Jev decisions.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### jev-mcp
+- Repository: https://github.com/BYK/jev-mcp
+- Category: MCP & Integrations
+- Overview (EN): Evaluation-first Model Context Protocol (MCP) server providing typed Jev decision tools.
+- Overview (ZH): 通过工具接口提供选择、评分或概率判断。
+- Jev Decision Role: 通过工具接口提供选择、评分或概率判断。
+- Core Benefit: 让现有 Agent 通过通用接口使用 Jev。
+
+### jev-classifier
+- Repository: https://github.com/felpsdev/jev-classifier
+- Category: MCP & Integrations
+- Overview (EN): Local tool-routing classifier and gateway for coding agents with decision logging.
+- Overview (ZH): 通过工具接口提供选择、评分或概率判断。
+- Jev Decision Role: 通过工具接口提供选择、评分或概率判断。
+- Core Benefit: 让现有 Agent 通过通用接口使用 Jev。
+
+### jev-exploration
+- Repository: https://github.com/SamuelSacco/jev-exploration
+- Category: Domain & Vertical Tools
+- Overview (EN): Exploratory benchmark and runnable experiment collection examining Jev latency and accuracy.
+- Overview (ZH): 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Jev Decision Role: 评估业务状态，给出供本地规则参考的分类或风险分数。
+- Core Benefit: 增加一组可记录、可对照的判断信号。
+
+### jevscan
+- Repository: https://github.com/jevbook/jevscan
+- Category: MCP & Integrations
+- Overview (EN): On-chain token risk scanner providing typed EVM safety verdicts, rug risk, and liquidity health scores.
+- Overview (ZH): 通过工具接口提供选择、评分或概率判断。
+- Jev Decision Role: 通过工具接口提供选择、评分或概率判断。
+- Core Benefit: 让现有 Agent 通过通用接口使用 Jev。
+
+### jev-askable-arm
+- Repository: https://github.com/TarunTomar122/jev-askable-arm
+- Category: CLI & Pipelines
+- Overview (EN): Robot arm manipulation controller selecting discrete action primitives and target objects via high-speed Jev decisions.
+- Overview (ZH): 对输入文本做分类或打分，交给本地规则继续处理。
+- Jev Decision Role: 对输入文本做分类或打分，交给本地规则继续处理。
+- Core Benefit: 把语义判断接到已有的命令行工作流。
+
+### jev-flash-review
+- Repository: https://github.com/TheBous/jev-flash-review
+- Category: Codebase & Graph Pathfinding
+- Overview (EN): Local-first code review triage engine returning structured verdicts on candidate diff hunks.
+- Overview (ZH): jev-flash-review 在代码或图谱中缩小需要查看的范围。
+- Jev Decision Role: 评估候选代码或关系与目标的相关程度，选择下一条路径。
+- Core Benefit: 把下一步调查集中到更相关的证据上。
+
+### jevchat
+- Repository: https://github.com/kt3k/jevchat
+- Category: Decision Tools
+- Overview (EN): Lightweight terminal chat utility querying Jev for custom persona answers and binary choices.
+- Overview (ZH): jevchat 把 Jev 接入软件，让程序拿到可直接使用的判断。
+- Jev Decision Role: 把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。
+- Core Benefit: 把选择和打分接进现有程序；暂无可核验的性能对照。
+
+### jevarena
+- Repository: https://github.com/raihankhan-rk/jevarena
+- Category: High-Frequency & Simulation
+- Overview (EN): Interactive evaluation arena staging click-only browser game duels between competing Jev agents.
+- Overview (ZH): 读取当前状态，在可用动作中做选择。
+- Jev Decision Role: 读取当前状态，在可用动作中做选择。
+- Core Benefit: 在连续交互中观察决策效果；频率依实际运行而定。
+
+### supercov
+- Repository: https://github.com/supercorp-ai/supercov
+- Category: CLI & Pipelines
+- Overview (EN): Code quality and test coverage for coding agents: Jev scores each source file so the agent knows what to fix first. Coverage runs locally with no account.
+- Overview (ZH): 给编码 agent 的代码质量与测试覆盖率 CLI：Jev 给每个源文件打分，agent 就知道该先修哪里。覆盖率在本地跑，不需要账号。
+- Jev Decision Role: 每个源文件一次请求，问 Jev 12 个命名属性的 Noul 判断；分数、good/fair/weak 分档和文件排序都由 CLI 自己算。
+- Core Benefit: 分数可以拆回具体属性，对着文件核对；答案按内容缓存，第二次只为改动付费。
 
 ### jev-pref
 - Repository: https://github.com/doeixd/jev-pref
@@ -1093,10 +1356,104 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 
 ### jevql
 - Repository: https://github.com/kylemclaren/jevql
-- Live Demo: https://jevql.fly.dev/
 - Category: Data & Search
 - Overview (EN): Semantic SQL for vanilla Postgres without database extensions. Query rows with WHERE jev(), jev_prob, jev_choice, and jev_score via CLI and Go/TS/Python SDKs.
 - Overview (ZH): 针对原生 Postgres 的 Jev 语义 SQL 扩展。无需装插件，在终端和 Go/TS/Python SDK 中直接用 WHERE jev() 做语义过滤、排序与分组。
 - Jev Decision Role: 对 SQL 初筛后的每一行数据调用 Jev 进行 Noul、Choice 或 Score 判断，结果用于客户端的语义过滤、概率排序或分组。
 - Core Benefit: 纯客户端/双阶段执行，支持高并发批量请求与本地缓存（重复内容不重复打分），附带开箱即用的在线 Demo。
 
+### json-render
+- Repository: https://github.com/vercel-labs/json-render
+- Category: Creative Tools
+- Overview (EN): json-render: Vercel Labs generative UI library replacing token streaming with Jev discrete evaluations, cutting render latency from 3.21s to 880ms.
+- Overview (ZH): Vercel Labs 出品的 Generative UI 极速渲染库，用 Jev 离散评估替换流式 JSON 生成，将 UI 选型与拼装耗时从 3.21 秒压缩至 880 毫秒。
+- Jev Decision Role: 在一次请求中并行评估组件树匹配度，直接输出结构化组件选择与插槽动作。
+- Core Benefit: 摆脱传统逐 token 吐 JSON 的慢速解析，首屏界面毫秒级直出。
+
+### cua
+- Repository: https://github.com/trycua/cua
+- Category: Browser & OS Action
+- Overview (EN): cua: Open-source computer use infrastructure using jev-use driver for discrete desktop and browser actions, with open-source CUA-S1 model family.
+- Overview (ZH): 开源 Computer Use 智能体底层基座，通过 jev-use 驱动将桌面与浏览器原子操作交由 Jev 离散裁决，开源 CUA-S1 专用模型族。
+- Jev Decision Role: 接收有界 UI 状态与屏幕区域表，裁决具体的点击、聚焦与快捷键动作。
+- Core Benefit: 规避慢速多模态规划循环，将操作系统界面控制拆为极速离散动作。
+
+### cline-plugin-jev-browser
+- Repository: https://github.com/abeatrix/cline-plugin-jev-browser
+- Category: MCP & Integrations
+- Overview (EN): cline-plugin-jev-browser: Cline desktop browser plugin routing through Vercel AI Gateway to execute DOM element selection and sub-second clicks via Jev.
+- Overview (ZH): Cline 官方成员开发的桌面浏览器扩展插件，经由 Vercel AI Gateway 调度 Jev 执行 DOM 节点选择与毫秒级点击。
+- Jev Decision Role: 输入轻量 DOM 树与上下文任务，返回具体的页面交互行为与目标选择器。
+- Core Benefit: 把浏览器交互动作收敛为类型安全的确定性枚举，降低 Agent 迷航概率。
+
+### ai-hedge-fund
+- Repository: https://github.com/virattt/ai-hedge-fund
+- Category: Decision Tools
+- Overview (EN): ai-hedge-fund: Multi-agent AI hedge fund simulation with native JevLLM adapter calling System One endpoints for deterministic financial decisions.
+- Overview (ZH): 爆款多智能体 AI 对冲基金模拟系统，内置官方 JevLLM 适配器直接调用 System One 接口，为量化交易提供零幻觉确定性决策。
+- Jev Decision Role: 输入多维度行情指标与智能体信号，在单一请求中输出买入、卖出或持有决策及其置信度。
+- Core Benefit: 免除大语言模型输出格式漂移与解析失败，交易信号响应极快且可严格设防。
+
+### jev-model-router
+- Repository: https://github.com/davila7/claude-code-templates
+- Category: Routing & Cost Optimization
+- Overview (EN): jev-model-router: Claude Code mod using Jev to evaluate task difficulty, reasoning effort, and blast radius in one call to route subagents dynamically.
+- Overview (ZH): Claude Code 官方模组库中的动态模型路由器，单次请求评估任务复杂度、推理等级与风险面，毫秒级调配子 Agent 档位。
+- Jev Decision Role: 并行评估任务难易分级、推理深度与生产风险布尔值，向 Claude Code 注入最优执行配置。
+- Core Benefit: 避免简单任务滥用高规格模型，同时确保高危变更拥有充分置信度防线。
+
+### rig-typesafeai
+- Repository: https://github.com/0xPlaygrounds/rig
+- Category: SDK & Decision Frameworks
+- Overview (EN): rig-typesafeai: Official Rig crate bringing native type-safe Choice, Score, and Noul System One decision primitives to the Rust LLM ecosystem.
+- Overview (ZH): Rust 顶流开源大模型框架 Rig 官方适配库，为 Rust 生态带来原生的 Jev Choice、Score 与 Noul 类型安全决策原语。
+- Jev Decision Role: 基于 Rust 泛型 Struct 单次声明问题与答案布局，由 Jev 直接解码对应强类型字段。
+- Core Benefit: Rust 零抽象开销集成，无需在应用层拼装和校验 JSON 文本。
+
+### jev-trader
+- Repository: https://github.com/jarrodwatts/jev-trader
+- Category: High-Frequency & Simulation
+- Overview (EN): jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
+- Overview (ZH): 部署在 Monad 测试网上的链上做市高频交易机器人，在每个 ~300ms 区块中调用 Jev 分析 Kuru 订单簿并决策挂单方向。
+- Jev Decision Role: 输入当前盘口价差、近 100 区块收益率与吃单量流向，预测未来 30 个区块价格变动方向。
+- Core Benefit: 单次推理延迟低至 80ms 左右，完美嵌入高频区块链出块周期。
+
+### typesafe-computer-use
+- Repository: https://github.com/awlevin/typesafe-computer-use
+- Category: Browser & OS Action
+- Overview (EN): typesafe-computer-use: Ultra-low-cost macOS computer use combining deterministic OCR with Jev discrete action choices at ~$0.0002 per step.
+- Overview (ZH): 极低成本的 macOS 桌面控制工具，用确定性 OCR 提取文字坐标，由 Jev 裁决下一步动作，单步成本约两美分的两百分之一。
+- Jev Decision Role: 比对当前屏幕元素列表与目标意图，从候选中选取下一个原子点击或按键。
+- Core Benefit: 不向大模型传输高分辨率截图，避免截图多模态高昂 token 计费与等待。
+
+### typesafe-mario
+- Repository: https://github.com/fhshaik/typesafe-mario
+- Category: High-Frequency & Simulation
+- Overview (EN): typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
+- Overview (ZH): 无需截图输入的任天堂红白机超级马力欧实时游戏控制器，直接解析模拟器 RAM 结构化状态，由 Jev 决策手柄按键。
+- Jev Decision Role: 输入马力欧运动速度、起跳轨迹、前方障碍物与敌人物体列表，裁决手柄按键。
+- Core Benefit: 将游戏画面感知降维为确定性对象数据，在极短帧周期内输出合法离散操作。
+
+### jev-drone
+- Repository: https://github.com/RomanSlack/jev-drone
+- Category: High-Frequency & Simulation
+- Overview (EN): jev-drone: Autonomous quadrotor in MuJoCo obstacle course using onboard camera buffers with Jev tactical judgment at 2.5Hz backed by 50Hz/500Hz flight controllers.
+- Overview (ZH): MuJoCo 物理仿真中仅依赖机载摄像头的自主穿越无人机，以 2.5Hz Jev 战术判断做机动决策，底层 50Hz/500Hz 控制层确保安全。
+- Jev Decision Role: 输入由传统视觉处理后的空间距离扇区与障碍物高度，在绕行、爬升、制动中做出战术选择。
+- Core Benefit: 分层控制架构：让大模型仅负责宏观战术判断，把硬实时控制与安全急停留给代码。
+
+### tsai-sc
+- Repository: https://github.com/phyous/tsai-sc
+- Category: High-Frequency & Simulation
+- Overview (EN): tsai-sc: TypeSafe Jev harness completing the original 1998 StarCraft Strongarm combat mission across 421 verified decisions with full visual replay proof.
+- Overview (ZH): 星际争霸 1998 经典战役 AI 控制框架，经历 421 次真实 Jev 决策完成 Strongarm 关卡，提供完整的复现记录与胜局复核。
+- Jev Decision Role: 输入结构化战场态势与资源数据，独立选择经济建造与部队微操指令。
+- Core Benefit: 验证复杂实时策略游戏中将全局态势解构为离散语义决策的可行性。
+
+### oc-auto-perms
+- Repository: https://github.com/OpeOginni/oc-plugins
+- Category: Security & Guardrails
+- Overview (EN): oc-auto-perms: Intent-aware permission plugin for OpenCode V2 using natural language policies evaluated by Jev across shell and network tool invocations.
+- Overview (ZH): OpenCode V2 意图感知权限安全插件，用自然语言撰写安全策略，由 Jev 审查 Agent 的 Shell 与网络工具调用意图并拦截违规行为。
+- Jev Decision Role: 结合用户历史对话与工具具体入参，评估操作意图是否符合安全策略规则。
+- Core Benefit: 超越静态正则匹配：无论 Agent 用 curl 还是内置抓取，只要语义意图违规即刻被识别。

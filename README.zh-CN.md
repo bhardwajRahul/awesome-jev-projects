@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-169%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
-<p>严谨收录 **169+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
+<p>严谨收录 **181+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
 
 </div>
 
@@ -41,23 +41,23 @@
 <a id="contents"></a>
 ## 目录索引
 
-- [⚡ 高频模拟与实时博弈 (13)](#high-frequency-simulation-zh)
-- [🛠️ 开发工具包与决策框架 (11)](#sdk-decision-frameworks-zh)
+- [⚡ 高频模拟与实时博弈 (17)](#high-frequency-simulation-zh)
+- [🛠️ 开发工具包与决策框架 (12)](#sdk-decision-frameworks-zh)
 - [🔌 生态框架与接入适配器 (8)](#sdk-integrations-zh)
 - [💻 命令行工具与自动化工作流 (26)](#cli-pipelines-zh)
 - [💾 数据库扩展与语义检索 (4)](#data-search-zh)
-- [🌐 浏览器与桌面端自动化 (14)](#browser-os-action-zh)
+- [🌐 浏览器与桌面端自动化 (16)](#browser-os-action-zh)
 - [🧹 上下文垃圾回收与降噪 (7)](#context-gc-filter-zh)
-- [🛡️ 安全防御与输入护栏 (9)](#security-guardrails-zh)
-- [🧩 MCP 协议与工具扩展 (28)](#mcp-integrations-zh)
+- [🛡️ 安全防御与输入护栏 (10)](#security-guardrails-zh)
+- [🧩 MCP 协议与工具扩展 (29)](#mcp-integrations-zh)
 - [🧭 代码库分析与图谱寻路 (9)](#codebase-graph-pathfinding-zh)
-- [🔀 模型路由与成本优化 (9)](#routing-cost-optimization-zh)
+- [🔀 模型路由与成本优化 (10)](#routing-cost-optimization-zh)
 - [📊 垂直行业与专业业务系统 (15)](#domain-vertical-tools-zh)
-- [🎯 通用决策与启发式评估 (10)](#decision-tools-zh)
+- [🎯 通用决策与启发式评估 (11)](#decision-tools-zh)
 - [🏷️ 文本分类与分类学标注 (2)](#classification-taxonomy-zh)
 - [📈 评测基准与系统可观测性 (1)](#evaluation-observability-zh)
 - [🎙️ 实时语音与多轮对话 (1)](#voice-conversation-zh)
-- [🎨 创意生成与多媒体编排 (2)](#creative-tools-zh)
+- [🎨 创意生成与多媒体编排 (3)](#creative-tools-zh)
 - [📖 本地运行与架构原理](#dev-arch-zh)
 - [🤝 如何提交你的项目](#submit-guide-zh)
 
@@ -68,9 +68,25 @@
 
 *在游戏对战、机器人与高频仿真模拟闭环中做出毫秒级离散动作抉择。*
 
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 902` - 部署在 Monad 测试网上的链上做市高频交易机器人，在每个 ~300ms 区块中调用 Jev 分析 Kuru 订单簿并决策挂单方向。
+  - 🎯 **核心决策**: 输入当前盘口价差、近 100 区块收益率与吃单量流向，预测未来 30 个区块价格变动方向。
+  - 💡 **收益亮点**: 单次推理延迟低至 80ms 左右，完美嵌入高频区块链出块周期。
+
+- [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - 无需截图输入的任天堂红白机超级马力欧实时游戏控制器，直接解析模拟器 RAM 结构化状态，由 Jev 决策手柄按键。
+  - 🎯 **核心决策**: 输入马力欧运动速度、起跳轨迹、前方障碍物与敌人物体列表，裁决手柄按键。
+  - 💡 **收益亮点**: 将游戏画面感知降维为确定性对象数据，在极短帧周期内输出合法离散操作。
+
+- [**jev-drone**](https://github.com/RomanSlack/jev-drone) `★ 63` - MuJoCo 物理仿真中仅依赖机载摄像头的自主穿越无人机，以 2.5Hz Jev 战术判断做机动决策，底层 50Hz/500Hz 控制层确保安全。
+  - 🎯 **核心决策**: 输入由传统视觉处理后的空间距离扇区与障碍物高度，在绕行、爬升、制动中做出战术选择。
+  - 💡 **收益亮点**: 分层控制架构：让大模型仅负责宏观战术判断，把硬实时控制与安全急停留给代码。
+
 - [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - 在浏览器里开一辆小车，让 Jev 从提前算好的路线和速度里选下一步。
   - 🎯 **核心决策**: 读取路况、附近车辆和候选轨迹，选择转向与速度；碰撞预测和紧急刹车由代码处理。
   - 💡 **收益亮点**: 把驾驶判断和物理计算拆开，能直接查看每次选择及其概率。
+
+- [**tsai-sc**](https://github.com/phyous/tsai-sc) `★ 15` - 星际争霸 1998 经典战役 AI 控制框架，经历 421 次真实 Jev 决策完成 Strongarm 关卡，提供完整的复现记录与胜局复核。
+  - 🎯 **核心决策**: 输入结构化战场态势与资源数据，独立选择经济建造与部队微操指令。
+  - 💡 **收益亮点**: 验证复杂实时策略游戏中将全局态势解构为离散语义决策的可行性。
 
 - [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 在浏览器里和 Jev 打一局 1v1 射击。它看结构化战况，选走位、瞄准和开火。
   - 🎯 **核心决策**: 每个决策 tick 同时询问移动、视角、开镜、开火与跳跃；API 不可用时切到启发式逻辑。
@@ -127,6 +143,10 @@
 ## 🛠️ 开发工具包与决策框架
 
 *封装 Jev 结构化调用与类型安全交互的多语言客户端、绑定库与决策引擎。*
+
+- [**rig-typesafeai**](https://github.com/0xPlaygrounds/rig) `★ 8669` - Rust 顶流开源大模型框架 Rig 官方适配库，为 Rust 生态带来原生的 Jev Choice、Score 与 Noul 类型安全决策原语。
+  - 🎯 **核心决策**: 基于 Rust 泛型 Struct 单次声明问题与答案布局，由 Jev 直接解码对应强类型字段。
+  - 💡 **收益亮点**: Rust 零抽象开销集成，无需在应用层拼装和校验 JSON 文本。
 
 - [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - 在 Elixir 的 ReqLLM 里接入 Jev 判断题。使用 evaluate 接口提交状态与问题，返回答案和概率；聊天生成仍走其他模型。
   - 🎯 **核心决策**: TypeSafe provider 把 evaluate 请求发到 System One，并统一是非、单选和评分结果。
@@ -353,6 +373,10 @@
 
 *网页无障碍树解析、自主浏览器操作与桌面端智能体操作动作裁决。*
 
+- [**cua**](https://github.com/trycua/cua) `★ 23548` - 开源 Computer Use 智能体底层基座，通过 jev-use 驱动将桌面与浏览器原子操作交由 Jev 离散裁决，开源 CUA-S1 专用模型族。
+  - 🎯 **核心决策**: 接收有界 UI 状态与屏幕区域表，裁决具体的点击、聚焦与快捷键动作。
+  - 💡 **收益亮点**: 规避慢速多模态规划循环，将操作系统界面控制拆为极速离散动作。
+
 - [**jev-ultrafast**](https://github.com/browser-use/jev-ultrafast) `★ 4673` - 给浏览器一个目标，Jev 负责选按钮和动作，文字交给小模型写。作者的 Google Flights 示例约 7.1 秒完成。
   - 🎯 **核心决策**: 读当前 DOM，在一次请求里选择操作和目标元素；需要输入时才调用文本模型。
   - 💡 **收益亮点**: 把界面选择与文字生成分开，减少重复读页面。
@@ -364,6 +388,10 @@
 - [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev 的移动端测试脚本可用 Jev 看无障碍树：选下一控件，判断步骤是否完成或已经走不通。
   - 🎯 **核心决策**: 测试辅助 judge 将界面树与 Noul、Choice 问题发往 Jev，精确字符串断言仍由代码控制。
   - 💡 **收益亮点**: 让端到端测试在界面略有变化时多一个语义判断信号。
+
+- [**typesafe-computer-use**](https://github.com/awlevin/typesafe-computer-use) `★ 237` - 极低成本的 macOS 桌面控制工具，用确定性 OCR 提取文字坐标，由 Jev 裁决下一步动作，单步成本约两美分的两百分之一。
+  - 🎯 **核心决策**: 比对当前屏幕元素列表与目标意图，从候选中选取下一个原子点击或按键。
+  - 💡 **收益亮点**: 不向大模型传输高分辨率截图，避免截图多模态高昂 token 计费与等待。
 
 - [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - 给 Android 手机一个目标，Jev 选应用和控件，Mobilerun 负责打开、点击、输入；网页面板能看过程。
   - 🎯 **核心决策**: 一次请求选择操作及兼容目标，本地重新核对控件后通过 Mobilerun 执行。
@@ -483,6 +511,10 @@
   - 🎯 **核心决策**: 根据对话和命令结果，回答授权是否明确、操作风险多大、失败属于哪一类。
   - 💡 **收益亮点**: 把需要停下确认的节点写清楚；模型给出的概率不能替代用户授权。
 
+- [**oc-auto-perms**](https://github.com/OpeOginni/oc-plugins) `★ 2` - OpenCode V2 意图感知权限安全插件，用自然语言撰写安全策略，由 Jev 审查 Agent 的 Shell 与网络工具调用意图并拦截违规行为。
+  - 🎯 **核心决策**: 结合用户历史对话与工具具体入参，评估操作意图是否符合安全策略规则。
+  - 💡 **收益亮点**: 超越静态正则匹配：无论 Agent 用 curl 还是内置抓取，只要语义意图违规即刻被识别。
+
 - [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - 给 Vercel AI SDK 的工具调用加门禁，顺便收起本轮用不到的工具。
   - 🎯 **核心决策**: 确定性规则先检查，再让 Jev 判断自动放行、问人或拦截，以及工具是否相关。
   - 💡 **收益亮点**: 把权限检查和工具筛选接进现有 Agent；请求失败时转人工或保留工具。
@@ -521,6 +553,10 @@
 - [**Jevbridge**](https://github.com/gamesonrblx/Jevbridge) `★ 13` - 给现有 Agent 接一个结构化决策适配器：同样的问题可以交给 Jev，也可以交给普通模型或离线规则。
   - 🎯 **核心决策**: 对状态回答 Choice、Score、Noul，再按置信度把动作建议分成执行、确认、升级或放弃。
   - 💡 **收益亮点**: 统一决策接口，便于试验任务路由、工具门禁和界面动作选择。
+
+- [**cline-plugin-jev-browser**](https://github.com/abeatrix/cline-plugin-jev-browser) `★ 12` - Cline 官方成员开发的桌面浏览器扩展插件，经由 Vercel AI Gateway 调度 Jev 执行 DOM 节点选择与毫秒级点击。
+  - 🎯 **核心决策**: 输入轻量 DOM 树与上下文任务，返回具体的页面交互行为与目标选择器。
+  - 💡 **收益亮点**: 把浏览器交互动作收敛为类型安全的确定性枚举，降低 Agent 迷航概率。
 
 - [**jev**](https://github.com/dannote/jev) `★ 10` - 把 Jev 变成 Elixir 程序里的一个异步同伴。发去状态和问题，答案回来后直接用模式匹配决定下一步。
   - 🎯 **核心决策**: 把 Noul、Choice、Score 的回复转成 Elixir map，再由 GenServer 的 handle_answer 与 guard 路由。
@@ -660,6 +696,10 @@
   - 🎯 **核心决策**: Jev Choice 在配置的模型档位中选一个，HTTP 客户端返回概率与置信度供复杂度路由使用。
   - 💡 **收益亮点**: 把请求难度判断接进现有模型分层与路由配置。
 
+- [**jev-model-router**](https://github.com/davila7/claude-code-templates) `★ 30779` - Claude Code 官方模组库中的动态模型路由器，单次请求评估任务复杂度、推理等级与风险面，毫秒级调配子 Agent 档位。
+  - 🎯 **核心决策**: 并行评估任务难易分级、推理深度与生产风险布尔值，向 Claude Code 注入最优执行配置。
+  - 💡 **收益亮点**: 避免简单任务滥用高规格模型，同时确保高危变更拥有充分置信度防线。
+
 - [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - OpenChamber 可选开启自动模型路由：Jev 看消息属于哪类任务，再使用该类绑定的模型和思考档位。
   - 🎯 **核心决策**: Choice 判断任务类别；另可用 Noul 判断自动批准的权限是否应留给用户确认。
   - 💡 **收益亮点**: 把模型选择和权限提示接进现有会话界面，并记录失败回退原因。
@@ -766,6 +806,10 @@
 
 *开箱即用的通用判定组件、启发式打分工具与业务动作多选辅助器。*
 
+- [**ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund) `★ 63497` - 爆款多智能体 AI 对冲基金模拟系统，内置官方 JevLLM 适配器直接调用 System One 接口，为量化交易提供零幻觉确定性决策。
+  - 🎯 **核心决策**: 输入多维度行情指标与智能体信号，在单一请求中输出买入、卖出或持有决策及其置信度。
+  - 💡 **收益亮点**: 免除大语言模型输出格式漂移与解析失败，交易信号响应极快且可严格设防。
+
 - [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - 把 Jev 和 GLiNER 放到同一批分类题上，除了答对率，也检查概率靠不靠谱。
   - 🎯 **核心决策**: 对固定文本和标签集合做分类，记录每个标签的概率、耗时和失败。
   - 💡 **收益亮点**: 能看清模型在哪些任务上适合自动处理，在哪些任务上容易过度自信。
@@ -849,6 +893,10 @@
 ## 🎨 创意生成与多媒体编排
 
 *界面组件动态组合生成、算法音乐编排与智能 MIDI 旋律生成工具。*
+
+- [**json-render**](https://github.com/vercel-labs/json-render) `★ 16519` - Vercel Labs 出品的 Generative UI 极速渲染库，用 Jev 离散评估替换流式 JSON 生成，将 UI 选型与拼装耗时从 3.21 秒压缩至 880 毫秒。
+  - 🎯 **核心决策**: 在一次请求中并行评估组件树匹配度，直接输出结构化组件选择与插槽动作。
+  - 💡 **收益亮点**: 摆脱传统逐 token 吐 JSON 的慢速解析，首屏界面毫秒级直出。
 
 - [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - 用一句话描述想听的音乐，让 Jev 逐小节选音符，生成能编辑、播放和导出的多轨 MIDI。
   - 🎯 **核心决策**: 依次选择曲式、乐器、和弦、节奏和整小节模式，本地程序把选择变成音符。

@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-169%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-181%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 プロジェクトを申請</strong></a>
 </p>
 
-<p>TypeSafe AIのJevモデルを採用した **169+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
+<p>TypeSafe AIのJevモデルを採用した **181+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
 
 </div>
 
@@ -41,23 +41,23 @@
 <a id="contents"></a>
 ## 目次
 
-- [⚡ 高頻度シミュレーション・リアルタイムゲーム (13)](#high-frequency-simulation-ja)
-- [🛠️ SDK・意思決定フレームワーク (11)](#sdk-decision-frameworks-ja)
+- [⚡ 高頻度シミュレーション・リアルタイムゲーム (17)](#high-frequency-simulation-ja)
+- [🛠️ SDK・意思決定フレームワーク (12)](#sdk-decision-frameworks-ja)
 - [🔌 エコシステム統合・アダプター (8)](#sdk-integrations-ja)
 - [💻 CLI・自動化パイプライン (26)](#cli-pipelines-ja)
 - [💾 データベース拡張・セマンティック検索 (4)](#data-search-ja)
-- [🌐 ブラウザ・デスクトップ自動化 (14)](#browser-os-action-ja)
+- [🌐 ブラウザ・デスクトップ自動化 (16)](#browser-os-action-ja)
 - [🧹 コンテキスト圧縮・ノイズ除去 (7)](#context-gc-filter-ja)
-- [🛡️ セキュリティ・ガードレール (9)](#security-guardrails-ja)
-- [🧩 MCP プロトコル・ツール拡張 (28)](#mcp-integrations-ja)
+- [🛡️ セキュリティ・ガードレール (10)](#security-guardrails-ja)
+- [🧩 MCP プロトコル・ツール拡張 (29)](#mcp-integrations-ja)
 - [🧭 コードベース解析・グラフ探索 (9)](#codebase-graph-pathfinding-ja)
-- [🔀 モデルルーティング・コスト最適化 (9)](#routing-cost-optimization-ja)
+- [🔀 モデルルーティング・コスト最適化 (10)](#routing-cost-optimization-ja)
 - [📊 専門分野・バーティカルツール (15)](#domain-vertical-tools-ja)
-- [🎯 意思決定支援・ヒューリスティック評価 (10)](#decision-tools-ja)
+- [🎯 意思決定支援・ヒューリスティック評価 (11)](#decision-tools-ja)
 - [🏷️ テキスト分類・タキソノミー (2)](#classification-taxonomy-ja)
 - [📈 ベンチマーク・可観測性 (1)](#evaluation-observability-ja)
 - [🎙️ 音声対話・リアルタイム会話 (1)](#voice-conversation-ja)
-- [🎨 クリエイティブツール・メディア生成 (2)](#creative-tools-ja)
+- [🎨 クリエイティブツール・メディア生成 (3)](#creative-tools-ja)
 - [📖 ローカル開発とアーキテクチャ](#dev-arch-ja)
 - [🤝 プロジェクトの掲載申請](#submit-guide-ja)
 
@@ -68,9 +68,25 @@
 
 *ゲームやロボティクス、高頻度シミュレーションループにおけるミリ秒単位の意思決定。*
 
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 902` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
+  - 🎯 **Jevの判断箇所**: スプレッド、過去100ブロックのリターン、テイカーフローを入力し、今後30ブロックの中間価格の方向を予測。
+  - 💡 **主な特徴**: 約80ミリ秒の推論レイテンシにより、サブセカンド級ブロックチェーンの生成間隔に完全に適合。
+
+- [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
+  - 🎯 **Jevの判断箇所**: マリオの移動速度、ジャンプ軌道、前方の敵を評価し、ファミコンのコントローラー入力を決定。
+  - 💡 **主な特徴**: 生のピクセル認識を決定的オブジェクトテレメトリに次元削減し、厳しいフレーム予算内で有効なアクションを出力。
+
+- [**jev-drone**](https://github.com/RomanSlack/jev-drone) `★ 63` - jev-drone: Autonomous quadrotor in MuJoCo obstacle course using onboard camera buffers with Jev tactical judgment at 2.5Hz backed by 50Hz/500Hz flight controllers.
+  - 🎯 **Jevの判断箇所**: 古典的CVによる距離セクターと障害物高さを読み取り、上昇、ブレーキ、間隙通過などの戦術機動を選択。
+  - 💡 **主な特徴**: 階層化制御アーキテクチャ：Jevがマクロ戦術判断を担当し、決定論的コードが飛行の安全性を保証。
+
 - [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - jevpilot: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
+
+- [**tsai-sc**](https://github.com/phyous/tsai-sc) `★ 15` - tsai-sc: TypeSafe Jev harness completing the original 1998 StarCraft Strongarm combat mission across 421 verified decisions with full visual replay proof.
+  - 🎯 **Jevの判断箇所**: 構造化された戦況とリソースデータを読み取り、内政建築と戦闘ユニットの操作を独立して意思決定。
+  - 💡 **主な特徴**: 複雑なリアルタイムストラテジーの状況を離散的なセマンティック決定へ分解可能であることを実証。
 
 - [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 1v1 Jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
@@ -127,6 +143,10 @@
 ## 🛠️ SDK・意思決定フレームワーク
 
 *Jevの構造化呼び出しと型安全な対話をカプセル化するクライアントライブラリ群。*
+
+- [**rig-typesafeai**](https://github.com/0xPlaygrounds/rig) `★ 8669` - rig-typesafeai: Official Rig crate bringing native type-safe Choice, Score, and Noul System One decision primitives to the Rust LLM ecosystem.
+  - 🎯 **Jevの判断箇所**: Rustのジェネリック構造体で問いと答えのレイアウトを一度だけ宣言し、Jev経由で強型フィールドへ直接デコード。
+  - 💡 **主な特徴**: 手動のJSONプロンプト作成や実行時スキーマ検証が不要な、Rustネイティブのゼロコスト抽象化。
 
 - [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - req_llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
@@ -353,6 +373,10 @@
 
 *DOMアクセシビリティツリー解析、自律型ブラウザ操作、デスクトップGUI自動化。*
 
+- [**cua**](https://github.com/trycua/cua) `★ 23548` - cua: Open-source computer use infrastructure using jev-use driver for discrete desktop and browser actions, with open-source CUA-S1 model family.
+  - 🎯 **Jevの判断箇所**: 有界なUI状態と画面領域テーブルを評価し、具体的なクリック、フォーカス、ショートカット操作を決定。
+  - 💡 **主な特徴**: OS制御を高速な離散アクションに分解することで、低速なマルチモーダル計画ループをバイパス。
+
 - [**jev-ultrafast**](https://github.com/browser-use/jev-ultrafast) `★ 4673` - Ultra-fast browser agent using Jev for per-step DOM action decisions. Complete Google Flights search in ~7.1s.
   - 🎯 **Jevの判断箇所**: 1回のリクエストで次のアクションと対象DOM要素を決定し、テキスト入力のみをテキストモデルに委譲。
   - 💡 **主な特徴**: UI操作とテキスト生成を分離し、冗長なページ評価を大幅に削減。
@@ -364,6 +388,10 @@
 - [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
+
+- [**typesafe-computer-use**](https://github.com/awlevin/typesafe-computer-use) `★ 237` - typesafe-computer-use: Ultra-low-cost macOS computer use combining deterministic OCR with Jev discrete action choices at ~$0.0002 per step.
+  - 🎯 **Jevの判断箇所**: 目標に照らして画面要素リストを比較し、候補の中から次のアトミックなクリックまたはキーストロークを選択。
+  - 💡 **主な特徴**: マルチモーダルLLMへの高解像度スクリーンショット送信を回避し、莫大なトークン費用と画像処理の遅延を解消。
 
 - [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - mobile-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
@@ -483,6 +511,10 @@
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
+- [**oc-auto-perms**](https://github.com/OpeOginni/oc-plugins) `★ 2` - oc-auto-perms: Intent-aware permission plugin for OpenCode V2 using natural language policies evaluated by Jev across shell and network tool invocations.
+  - 🎯 **Jevの判断箇所**: ユーザーの対話履歴とツールの引数を総合評価し、実行意図がセキュリティポリシー規則に適合しているかを判定。
+  - 💡 **主な特徴**: 静的な正規表現マッチングを超越：ツール選択に依存せずセマンティックな意図からポリシー違反を検知。
+
 - [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - jev-tool-permissions: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
@@ -521,6 +553,10 @@
 - [**Jevbridge**](https://github.com/gamesonrblx/Jevbridge) `★ 13` - Jevbridge: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
   - 💡 **主な特徴**: 低遅延な構造化意思決定を既存のエージェントスタックに容易に統合。
+
+- [**cline-plugin-jev-browser**](https://github.com/abeatrix/cline-plugin-jev-browser) `★ 12` - cline-plugin-jev-browser: Cline desktop browser plugin routing through Vercel AI Gateway to execute DOM element selection and sub-second clicks via Jev.
+  - 🎯 **Jevの判断箇所**: 軽量DOMツリーとタスクコンテキストを受け取り、ページ操作アクションと対象セレクタを返却。
+  - 💡 **主な特徴**: ブラウザ操作を型安全な決定的列挙型に制約し、エージェントの誤動作や迷走を低減。
 
 - [**jev**](https://github.com/dannote/jev) `★ 10` - jev: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
@@ -660,6 +696,10 @@
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
+- [**jev-model-router**](https://github.com/davila7/claude-code-templates) `★ 30779` - jev-model-router: Claude Code mod using Jev to evaluate task difficulty, reasoning effort, and blast radius in one call to route subagents dynamically.
+  - 🎯 **Jevの判断箇所**: タスクの難易度階層、推論深度、本番リスクを並行評価し、Claude Codeへ最適なモデル設定を動的注入。
+  - 💡 **主な特徴**: 軽微なタスクへの過剰支出を防ぎつつ、高リスクなコード変更に対して厳格な高信頼度しきい値を適用。
+
 - [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - openchamber: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
@@ -766,6 +806,10 @@
 
 *汎用的な選択エンジン、ヒューリスティックスコアリング、業務判断支援ツール。*
 
+- [**ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund) `★ 63497` - ai-hedge-fund: Multi-agent AI hedge fund simulation with native JevLLM adapter calling System One endpoints for deterministic financial decisions.
+  - 🎯 **Jevの判断箇所**: マルチソースの市場指標とシグナルを入力し、較正された信頼度付きで売買・保有の判断を出力。
+  - 💡 **主な特徴**: LLMの出力フォーマット崩れやパース失敗を防止し、厳格なしきい値ポリシーによる超高速トレードシグナルを提供。
+
 - [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - jev-benchmarks: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
@@ -849,6 +893,10 @@
 ## 🎨 クリエイティブツール・メディア生成
 
 *UI動的レイアウト生成、アルゴリズム作曲、MIDIアレンジメントツール。*
+
+- [**json-render**](https://github.com/vercel-labs/json-render) `★ 16519` - json-render: Vercel Labs generative UI library replacing token streaming with Jev discrete evaluations, cutting render latency from 3.21s to 880ms.
+  - 🎯 **Jevの判断箇所**: コンポーネントツリーの適合度を並行評価し、単一パスで構造化されたコンポーネント選択とスロット操作を直接出力。
+  - 💡 **主な特徴**: トークン単位の低速なJSONストリーミングを排除し、ミリ秒単位でUIの初期描画を実現。
 
 - [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - jevthoven: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
