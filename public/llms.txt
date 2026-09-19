@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 134 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 169 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (134 Projects)
+## Curated Projects Directory (169 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1082,4 +1082,21 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): 弈瞬：双 Jev 玩家在九宫格五子棋中对战，比较不同输入信息对落子决策的影响，并逐手展示真实请求与返回。
 - Jev Decision Role: 每盘每手回答一个 Choice 问题：根据棋盘、规则、颜色和合法候选选择落子点，由本地代码校验执行。
 - Core Benefit: 逐手展示真实请求与返回概率，支持免 API Key 真实对局回放与 OpenRouter 自定义对战，支持 JSON 导出。
+
+### jev-pref
+- Repository: https://github.com/doeixd/jev-pref
+- Category: CLI & Pipelines
+- Overview (EN): Turn AGENTS.md preferences into a fast, Jev-powered AI linter: define project-specific review rules in jev-pref.json, check hunks, staged files or PRs with Jev, and feed findings back to your coding agent.
+- Overview (ZH): 把 AGENTS.md 中的项目偏好转为 jev-pref.json 规则，用 Jev 审查代码变更（hunk、暂存文件、PR），并把发现反馈给编码 Agent。
+- Jev Decision Role: 对每条偏好规则和每个代码变更片段，判断该变更是否违反这条规则。
+- Core Benefit: 以 CLI 形式运行（npx jev-pref setup），可接入 pre-commit、PR 与 Agent 工作流，区分阻断与建议级发现。
+
+### jevql
+- Repository: https://github.com/kylemclaren/jevql
+- Live Demo: https://jevql.fly.dev/
+- Category: Data & Search
+- Overview (EN): Semantic SQL for vanilla Postgres without database extensions. Query rows with WHERE jev(), jev_prob, jev_choice, and jev_score via CLI and Go/TS/Python SDKs.
+- Overview (ZH): 针对原生 Postgres 的 Jev 语义 SQL 扩展。无需装插件，在终端和 Go/TS/Python SDK 中直接用 WHERE jev() 做语义过滤、排序与分组。
+- Jev Decision Role: 对 SQL 初筛后的每一行数据调用 Jev 进行 Noul、Choice 或 Score 判断，结果用于客户端的语义过滤、概率排序或分组。
+- Core Benefit: 纯客户端/双阶段执行，支持高并发批量请求与本地缓存（重复内容不重复打分），附带开箱即用的在线 Demo。
 
