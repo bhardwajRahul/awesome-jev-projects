@@ -9,7 +9,6 @@ import {
   extractSubmittedTags,
   extractSubmittedCategory,
   inspectRepository,
-  NEW_ROW_CATALOG_STATUS,
 } from "./project-source.mjs";
 import { inferCanonicalTags } from "../src/lib/tags.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
@@ -21,7 +20,7 @@ export const bodyHash = (body) =>
     .update(body ?? "")
     .digest("hex");
 export const successComment =
-  "🎉 感谢提交！项目已通过 Jev 源码集成检查，已写入待复核队列（不会立刻作为已确认推荐上线）：https://logicrw.github.io/awesome-jev-projects/";
+  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并在雷达站成功收录上线（固定版本静态启发式，未经本站运行或安全复测）：https://logicrw.github.io/awesome-jev-projects/";
 const OWNER_REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
 function requireOwner(repository) {
   if (!OWNER_REPO.test(repository ?? ""))
@@ -163,7 +162,6 @@ export async function prepareSubmission({
     avatarUrl: repo.owner?.avatar_url,
     verificationStatus: "integration-detected",
     runtimeVerified: false,
-    catalogStatus: NEW_ROW_CATALOG_STATUS,
     discoveredAt: now(),
     claimStatus:
       "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",

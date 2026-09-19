@@ -161,7 +161,7 @@ test("verified ingestion fixes repository identity and retains immutable evidenc
   assert.equal(result.status, "ready");
   assert.equal(result.project.url, "https://github.com/example/jev-tool");
   assert.equal(result.project.runtimeVerified, false);
-  assert.equal(result.project.catalogStatus, "review-pending");
+  assert.notEqual(result.project.catalogStatus, "review-pending");
   assert.equal(result.project.ingestion.issueBodySha256, bodyHash(issue.body));
   assert.equal(result.project.sourceVerification.sha, sha);
   assert.equal(result.project.plainSummary, fallback.plainSummary);

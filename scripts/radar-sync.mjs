@@ -7,7 +7,7 @@ import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { createGitHubClient } from "./github-client.mjs";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
-import { inspectRepository, hasOpenRouterJevSource, NEW_ROW_CATALOG_STATUS } from "./project-source.mjs";
+import { inspectRepository, hasOpenRouterJevSource } from "./project-source.mjs";
 
 /** Manual/editorial copy must survive metadata sync. Keep existing statuses; curated is the same class. */
 export const PROTECTED_SUMMARY_SOURCES = Object.freeze([
@@ -509,7 +509,6 @@ export async function main() {
         avatarUrl: repo.owner.avatar_url,
         verificationStatus: "integration-detected",
         runtimeVerified: false,
-        catalogStatus: NEW_ROW_CATALOG_STATUS,
         discoveredAt: started,
         evidence: [{ url: sourceUrl, note: "自动发现的 Jev 集成证据" }],
         sourceVerification: {

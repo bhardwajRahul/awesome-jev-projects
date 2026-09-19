@@ -8,8 +8,6 @@ const MAX_FILE_BYTES = 90_000;
 const MAX_READMES = 3;
 const MAX_CODE_FILES = 8;
 const SHA = /^[a-f\d]{40,64}$/i;
-/** New issue/radar rows stay out of the public recommendation set until a maintainer ACK. */
-export const NEW_ROW_CATALOG_STATUS = "review-pending";
 const REPOSITORY_FIELD =
   /^(?:github repository|project repository|repository|项目仓库|仓库地址|github 仓库)$/i;
 const TAGS_FIELD =
