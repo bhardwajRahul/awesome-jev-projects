@@ -1,12 +1,37 @@
-[![Live Website](https://img.shields.io/badge/Website-Awesome%20Jev%20Radar-black?style=flat-square&logo=safari)](https://logicrw.github.io/awesome-jev-projects/en/)
+<div align="center">
 
-[![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner.svg)](https://logicrw.github.io/awesome-jev-projects/en/)
+<a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="public/banner.svg" alt="Awesome Jev" width="100%" /></a>
 
 # Awesome Jev — System-1 Agent Architecture Radar
 
-[Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
+<p>
+  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
+  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+</p>
 
-**[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **267 projects**
+<p>
+  [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
+</p>
+
+<p>
+  <a href="https://logicrw.github.io/awesome-jev-projects/en/"><strong>Search and filter ↗</strong></a> · <a href="#install-the-agent-skill"><strong>Install the Agent Skill</strong></a> · <a href="#categories"><strong>Categories</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>Submit a project</strong></a>
+</p>
+
+</div>
+
+💡 Why Jev & System-1 Decision Architecture?
+
+When building autonomous agents, routing every small branching decision to a heavy reasoning model (System 2) incurs seconds of latency, runaway token costs, and context drift.
+
+**TypeSafe Jev (System 1)** is purpose-built for fast, typed discrete decisions:
+- ⚡ **Sub-100ms Latency**: Delivers decisions in 50–100ms to keep agent loops snappy.
+- 🎯 **Native Typed Outputs**: Built-in primitives for `Choice`, `Score`, and `Noul` without fragile JSON regex parsing.
+- 🛡️ **Zero Vaporware**: 267+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
+
+> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **267 projects**
 
 A community-maintained Jev directory, independent of TypeSafe. Entries are grounded in public descriptions and source code. Detecting an integration does not mean this site has run, benchmarked or security-audited it.
 

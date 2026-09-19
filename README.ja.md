@@ -1,12 +1,37 @@
-[![Live Website](https://img.shields.io/badge/Website-Awesome%20Jev%20Radar-black?style=flat-square&logo=safari)](https://logicrw.github.io/awesome-jev-projects/ja/)
+<div align="center">
 
-[![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-ja.svg)](https://logicrw.github.io/awesome-jev-projects/ja/)
+<a href="https://logicrw.github.io/awesome-jev-projects/ja/"><img src="public/banner-ja.svg" alt="Awesome Jev" width="100%" /></a>
 
 # Awesome Jev — System-1 Agent アーキテクチャ
 
-[中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+<p>
+  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/ja/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
+  <a href="#カテゴリ"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+</p>
 
-**[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **267 件のプロジェクト**
+<p>
+  [中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+</p>
+
+<p>
+  <a href="https://logicrw.github.io/awesome-jev-projects/ja/"><strong>検索・絞り込み ↗</strong></a> · <a href="#agent-skill-の導入"><strong>Agent Skill の導入</strong></a> · <a href="#カテゴリ"><strong>カテゴリ</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>プロジェクトを投稿</strong></a>
+</p>
+
+</div>
+
+💡 なぜ Jev と System-1 意思決定アーキテクチャなのか？
+
+Agent を構築する際、すべての分岐判断を巨大な推論モデル（System 2）に委ねると、数秒の遅延と高いコスト、文脈ドリフトが発生します。
+
+**TypeSafe Jev（System 1）** は、離散選択、スコアリング、真偽値判定に特化した軽量モデルです：
+- ⚡ **100ms 未満の高速応答**：50–100ms で判断を完了し、Agent の高速ループを維持します。
+- 🎯 **ネイティブな型安全出力**：`Choice`、`Score`、`Noul` を直接返し、壊れやすい正規表現パースが不要です。
+- 🛡️ **誇大広告を排除**：17 の実用分野にわたる 267+ 件の検証済みオープンソースコードのみを厳選掲載しています。
+
+> **[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **267 件のプロジェクト**
 
 コミュニティが運営する、TypeSafe 非公式の Jev ディレクトリです。公開説明とソースコードに基づいて掲載しています。連携コードの確認は、当サイトによる実行、性能測定、安全性監査を意味しません。
 

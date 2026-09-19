@@ -73,10 +73,8 @@ p { margin: 0; }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
 .project-identity { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .avatar-frame { position: relative; display: inline-flex; width: 40px; height: 40px; flex: 0 0 40px; }
-.avatar-frame .avatar { position: absolute; inset: 0; opacity: 0; background: var(--surface-raised); }
-.avatar-frame .avatar[data-ready="true"] { opacity: 1; }
-.avatar { border-radius: 9px; border: 1px solid var(--border); flex-shrink: 0; object-fit: cover; }
-.avatar-fallback { width: 40px; height: 40px; display: grid; place-items: center; font-family: var(--mono); font-size: 14px; background: var(--surface-inset); color: var(--text-muted); }
+.avatar { width: 40px; height: 40px; border-radius: 9px; border: 1px solid var(--border); flex-shrink: 0; object-fit: cover; background: var(--surface-raised); }
+.avatar-fallback { width: 40px; height: 40px; border-radius: 9px; border: 1px solid var(--border); display: grid; place-items: center; font-family: var(--mono); font-size: 14px; background: var(--surface-inset); color: var(--text-muted); }
 .project-identity > div { min-width: 0; }
 .project-title { display: flex; align-items: center; gap: 6px; padding: 0; font-family: var(--mono); font-size: 15px; font-weight: 550; max-width: 100%; text-align: left; overflow-wrap: anywhere; line-height: 1.35; }
 .project-title svg { color: var(--text); width: 13px; }
@@ -210,7 +208,7 @@ p { margin: 0; }
 .tags button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .catalog-review-note { display: flex; align-items: flex-start; gap: 7px; margin: 2px 0 12px; padding: 8px 10px; border: 1px solid var(--brass); border-radius: 6px; color: var(--brass); background: var(--brass-soft); font-size: 12px; line-height: 1.6; }
 .catalog-review-note svg { flex: 0 0 14px; margin-top: 3px; }
-.catalog-review-count { margin: -4px 0 16px; font-size: 12px; line-height: 1.6; color: var(--brass); }
+.catalog-review-count { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; margin: 0 0 16px; border-radius: 6px; font-size: 11px; line-height: 1.4; color: var(--text-muted); background: var(--surface-inset); border: 1px solid var(--border); }
 .quick-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; min-width: 0; }
 .quick-filters button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; padding: 7px 12px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--text-muted); font-size: 12px; line-height: 1.5; }
 .quick-filters button[aria-pressed="true"] { color: var(--accent-text); background: var(--accent-soft); border-color: transparent; }

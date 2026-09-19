@@ -196,14 +196,27 @@ const validProject = (x: unknown): x is Project => {
   );
 };
 function ProjectAvatar({ project }: { project: Project }) {
-  const [result, setResult] = useState<{ src: string; ok: boolean } | null>(null);
+  const [failed, setFailed] = useState(false);
   const src = project.avatarUrl;
-  const ready = Boolean(src && result?.src === src && result.ok);
-  const failed = Boolean(src && result?.src === src && !result.ok);
-  return <span className="avatar-frame" aria-hidden="true">
-    <span className="avatar-fallback" hidden={ready}>{project.author.slice(0, 2).toUpperCase()}</span>
-    {src && !failed && <img src={src} alt="" className="avatar" width="40" height="40" loading="lazy" decoding="async" data-ready={ready} onLoad={() => setResult({ src, ok: true })} onError={() => setResult({ src, ok: false })} />}
-  </span>;
+  return (
+    <span className="avatar-frame" aria-hidden="true">
+      {src && !failed ? (
+        <img
+          src={src}
+          alt=""
+          className="avatar"
+          width="40"
+          height="40"
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <span className="avatar-fallback">{project.author.slice(0, 2).toUpperCase()}</span>
+      )}
+    </span>
+  );
 }
 const getSaved = () => {
   if (typeof window === "undefined") return [];

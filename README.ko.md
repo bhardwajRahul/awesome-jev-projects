@@ -1,12 +1,37 @@
-[![Live Website](https://img.shields.io/badge/Website-Awesome%20Jev%20Radar-black?style=flat-square&logo=safari)](https://logicrw.github.io/awesome-jev-projects/ko/)
+<div align="center">
 
-[![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-ko.svg)](https://logicrw.github.io/awesome-jev-projects/ko/)
+<a href="https://logicrw.github.io/awesome-jev-projects/ko/"><img src="public/banner-ko.svg" alt="Awesome Jev" width="100%" /></a>
 
 # Awesome Jev — System-1 Agent 아키텍처 레이더
 
-[Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
+<p>
+  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/ko/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
+  <a href="#분류"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+</p>
 
-**[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **267 개 프로젝트**
+<p>
+  [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
+</p>
+
+<p>
+  <a href="https://logicrw.github.io/awesome-jev-projects/ko/"><strong>검색 및 필터 ↗</strong></a> · <a href="#agent-skill-설치"><strong>Agent Skill 설치</strong></a> · <a href="#분류"><strong>분류</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>프로젝트 제출</strong></a>
+</p>
+
+</div>
+
+💡 왜 Jev와 System-1 결정 아키텍처인가?
+
+에이전트를 구축할 때 모든 일상적인 분기 결정을 거대 추론 모델(System 2)에 맡기면 수 초의 지연 시간과 높은 비용, 문맥 왜곡이 발생합니다.
+
+**TypeSafe Jev (System 1)**는 빠른 타입 안전 결정을 위해 제작된 경량 모델입니다:
+- ⚡ **100ms 미만 초고속 응답**: 50–100ms 내에 결정을 내려 에이전트 루프의 민첩성을 유지합니다.
+- 🎯 **네이티브 타입 출력**: `Choice`, `Score`, `Noul`을 지원하여 취약한 JSON 정규식 파싱이 필요 없습니다.
+- 🛡️ **과대 광고 배제**: 17개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 267+개 프로젝트만을 엄선했습니다.
+
+> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **267 개 프로젝트**
 
 커뮤니티가 운영하는 TypeSafe 비공식 Jev 디렉터리입니다. 공개 설명과 소스 코드를 근거로 수록합니다. 연동 코드를 확인했다는 것은 이 사이트가 실행, 성능 측정 또는 보안 감사를 했다는 뜻이 아닙니다.
 

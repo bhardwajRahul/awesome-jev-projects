@@ -1,12 +1,37 @@
-[![Live Website](https://img.shields.io/badge/Website-Awesome%20Jev%20Radar-black?style=flat-square&logo=safari)](https://logicrw.github.io/awesome-jev-projects/)
+<div align="center">
 
-[![Awesome Jev](https://raw.githubusercontent.com/logicrw/awesome-jev-projects/main/public/banner-zh.svg)](https://logicrw.github.io/awesome-jev-projects/)
+<a href="https://logicrw.github.io/awesome-jev-projects/"><img src="public/banner-zh.svg" alt="Awesome Jev" width="100%" /></a>
 
 # Awesome Jev — System-1 Agent 架构雷达
 
-[中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+<p>
+  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
+  <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-267%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
+  <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
+</p>
 
-**[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **267 个项目**
+<p>
+  [中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+</p>
+
+<p>
+  <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>搜索与筛选 ↗</strong></a> · <a href="#agent-skill-接入"><strong>Agent Skill 接入</strong></a> · <a href="#分类"><strong>分类</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>提交项目</strong></a>
+</p>
+
+</div>
+
+💡 为什么关注 Jev 与 System-1 决策架构？
+
+构建自主智能体（Agent）时，如果把每一个分支选项都交给秒级响应的大推理模型（System 2），不仅**延迟高、成本高**，而且极易发生上下文漂移。
+
+**TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：
+- ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。
+- 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
+- 🛡️ **严格拒绝概念炒作**：全网严选 **267+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
+
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **267 个项目**
 
 这是社区维护的 Jev 项目目录，不是 TypeSafe 官方网站。收录依据为可查的项目说明与源码；代码中出现集成，不等于本站已运行、验证效果或审计安全。
 
