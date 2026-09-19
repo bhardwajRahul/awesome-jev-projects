@@ -732,6 +732,8 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     ko: ["카드 뽑기", "카드를 준비하는 중…", "카드를 불러오지 못했습니다. 목록은 계속 사용할 수 있습니다.", "다시 시도"],
   }[locale];
   const discoveryEntry = discoveryUi[0];
+  const submitShort = { zh: "提交项目", en: "Submit", ja: "投稿", ko: "제출" }[locale];
+  const sponsorShort = { zh: "赞助合作", en: "Sponsor", ja: "協賛", ko: "후원" }[locale];
   const heroStatus = {
     zh: { ready: "System-1 雷达就绪", count: "个项目已索引", note: "把状态变成选项。", detail: "Choice · Score · Noul", status: "目录状态，非模型 API 的实时运行状态" },
     en: { ready: "System-1 Radar Ready", count: "repos indexed", note: "Turn state into choices.", detail: "Choice · Score · Noul", status: "Catalog status, not live model API health" },
@@ -833,9 +835,10 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
         </nav>
         <div className="header-actions">
           <div className="header-ecosystem" role="group" aria-label={t("生态入口")}>
-          <button className="sponsor-entry-button" type="button" onClick={openSponsor} aria-haspopup="dialog">
+          <button className="sponsor-entry-button" type="button" onClick={openSponsor} aria-haspopup="dialog" aria-label={sponsorCopy[locale].entry}>
             <Handshake size={15} aria-hidden="true" />
-            <span>{sponsorCopy[locale].entry}</span>
+            <span className="sponsor-label-full">{sponsorCopy[locale].entry}</span>
+            <span className="sponsor-label-short" aria-hidden="true">{sponsorShort}</span>
           </button>
           <button
             className="agent-skill-btn"
@@ -865,7 +868,8 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           </div>
           <button className="button dark submit-top" onClick={openSubmission} aria-label={t("提交项目")} aria-haspopup="dialog">
             <Plus size={15} />
-            <span>{t("提交项目")}</span>
+            <span className="submit-label-full">{t("提交项目")}</span>
+            <span className="submit-label-short" aria-hidden="true">{submitShort}</span>
           </button>
           <div className="header-utilities" role="group" aria-label={t("显示与语言")}>
           <ThemeToggle locale={locale} />

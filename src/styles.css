@@ -246,6 +246,7 @@ p { margin: 0; }
 .github-star-btn .star-label-short { display: none; }
 .header .submit-top { min-height: 40px; padding: 0 14px; border-radius: 10px; gap: 6px; font-size: 13px; box-shadow: var(--shadow-material); transition: box-shadow 180ms ease, transform 180ms ease; }
 .header .submit-top:hover { box-shadow: var(--shadow-material-hover); }
+.submit-label-short, .sponsor-label-short { display: none; }
 .header .submit-top:active { transform: translateY(1px); box-shadow: var(--shadow-recess); }
 .header-utilities { display: flex; align-items: center; flex-shrink: 0; padding: 2px; gap: 2px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); }
 .language-control { display: inline-flex; align-items: center; gap: 4px; min-height: 34px; padding-left: 7px; border-left: 1px solid var(--border); color: var(--text-muted); }
@@ -363,6 +364,10 @@ p { margin: 0; }
   .github-star-btn .star-label-full { display: none; }
   .github-star-btn .star-label-short { display: inline; }
   .header .submit-top { min-height: 36px; padding-inline: 9px; gap: 4px; font-size: 11px; }
+  .header .submit-top .submit-label-full { display: none; }
+  .header .submit-top .submit-label-short { display: inline; }
+  .header .sponsor-entry-button .sponsor-label-full { display: none; }
+  .header .sponsor-entry-button .sponsor-label-short { display: inline; }
   .header .submit-top svg { width: 13px; height: 13px; }
   .header-utilities { gap: 0; padding: 1px; }
   .header-utilities .theme-toggle { width: 30px; min-width: 30px; min-height: 32px; height: 32px; }
