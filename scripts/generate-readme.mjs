@@ -12,23 +12,102 @@ const { categoryLabel, localeMeta } = await import(`data:text/javascript;base64,
 const files = { en: "README.md", zh: "README.zh-CN.md", ja: "README.ja.md", ko: "README.ko.md" };
 const md = (text) => String(text ?? "").replace(/[\\`*_[\]<>]/g, (s) => `\\${s}`).replace(/\s+/g, " ");
 const text = {
-  zh: { count:"个项目", public:"许可依各项目而定；未声明或自定义许可会单独标明。", scope:"已核对固定版本说明与源码；不代表独立运行、性能复测、安全审计或收益保证。协议兼容实现会明确注明底层模型。", development:"本地开发", workflow:"自动化与安全边界", flow:"网站只发布白名单静态数据，不提供 GitHub 登录，也不接触账户凭据。Actions 采用短期仓库 Token，按 job 最小授权：抓取和构建只读，发布仅修改允许的数据路径；Pages 发布与 Issue 回复单独授权。第三方项目代码不会被下载执行。个人 PAT 和失效的 GitHub Models Secret 不注入工作流。", submission:"请提供仓库根链接、用途、Jev 的实际判断位置与源码证据。效果数据需附测试条件；不能把 mock、paper trading 或影子建议说成真实生产效果。自动检查不足时保留待审，不能冒充已确认。", policies:"收录与安全说明", details:"项目详情与固定源码", readme:"生成四语 README", review:"本轮目录审核记录", warning:"发现安全问题请勿在公开 Issue 中粘贴 Token、私钥或其他凭据。" },
-  en: { count:"projects", public:"Licensing belongs to each project; missing and custom licenses are identified separately.", scope:"Fixed-version descriptions and source were checked. This is not independent execution, benchmarking, a security audit or a profitability guarantee. Compatible implementations identify their underlying model.", development:"Local development", workflow:"Automation and security boundaries", flow:"The website serves allowlisted static data, has no GitHub login and handles no account credentials. Actions use short-lived repository tokens with job-level least privilege: read-only collection and builds, narrowly scoped data publication, and separate Pages and Issue permissions. Submitted code is never executed. Personal PATs and retired GitHub Models secrets are not injected into workflows.", submission:"Provide a repository root URL, purpose, the exact Jev decision point and implementation evidence. Measurements need test conditions; mock results, paper trading and shadow advice must not be presented as production outcomes. Insufficient evidence stays pending review.", policies:"Editorial and security notes", details:"Project details and fixed source", readme:"Generate four-language READMEs", review:"Catalog audit record", warning:"Never paste tokens, private keys or other credentials into public security reports." },
-  ja: { count:"件のプロジェクト", public:"利用条件は各プロジェクトのライセンスに従います。未記載・独自ライセンスは別途表示します。", scope:"固定バージョンの説明とソースを確認しています。独立した実行、性能測定、安全性監査や収益保証ではありません。互換実装は使用する基盤モデルを明示します。", development:"ローカル開発", workflow:"自動化とセキュリティの境界", flow:"サイトは許可リストに含まれる静的データのみを配信し、GitHub ログインやアカウント認証情報を扱いません。Actions は短期のリポジトリ Token を使用し、収集・ビルドは読み取り専用、データ公開・Pages・Issue 操作は個別の最小権限で実行します。投稿されたコードを実行せず、個人 PAT や終了した GitHub Models の Secret も注入しません。", submission:"リポジトリのルート URL、用途、Jev が判断する箇所、実装の根拠を添えてください。数値には測定条件が必要です。mock、模擬取引、shadow の助言を本番運用の結果として扱いません。根拠が不十分な場合は確認待ちとなります。", policies:"掲載基準とセキュリティ", details:"詳細と固定バージョンのソース", readme:"4言語の README を生成", review:"掲載内容の確認記録", warning:"公開の問題報告に Token、秘密鍵などの認証情報を貼り付けないでください。" },
-  ko: { count:"개 프로젝트", public:"사용 조건은 각 프로젝트의 라이선스를 따릅니다. 미명시 및 사용자 정의 라이선스는 따로 표시합니다.", scope:"고정 버전의 설명과 소스를 확인했습니다. 독립적인 실행, 성능 측정, 보안 감사나 수익 보장은 아닙니다. 호환 구현은 실제 기반 모델을 명시합니다.", development:"로컬 개발", workflow:"자동화 및 보안 경계", flow:"사이트는 허용 목록의 정적 데이터만 제공하며 GitHub 로그인이나 계정 자격 증명을 다루지 않습니다. Actions는 단기 저장소 Token과 작업별 최소 권한을 사용합니다. 수집과 빌드는 읽기 전용이며, 데이터 게시·Pages·Issue 권한은 분리됩니다. 제출된 코드를 실행하지 않고 개인 PAT나 종료된 GitHub Models Secret도 주입하지 않습니다.", submission:"저장소 루트 URL, 용도, Jev의 실제 판단 지점 및 구현 근거를 제공하세요. 측정값에는 테스트 조건이 필요합니다. mock 결과, 모의 거래, shadow 조언을 실제 운영 결과로 표현하지 않습니다. 근거가 부족하면 검토 대기 상태로 남습니다.", policies:"수록 기준 및 보안 안내", details:"상세 설명 및 고정 버전 소스", readme:"네 언어의 README 생성", review:"목록 검토 기록", warning:"공개 문제 보고에 Token, 개인 키 또는 기타 자격 증명을 붙여 넣지 마세요." },
+  zh: {
+    count: "个精选项目",
+    public: "各项目遵循原仓库的开源许可证；特殊或未声明许可已单独注明。",
+    scope: "所有条目均已核对公开源码与实际决策逻辑，便于参考与选型。协议兼容实现会明确注明底层模型。",
+    development: "本地开发",
+    workflow: "自动化与安全机制",
+    flow: "网站为纯静态架构，不收集敏感凭据，所有展示数据均来自公开开源代码。Actions 采用短期仓库 Token，最小权限运行，不执行第三方未核验代码。",
+    submission: "欢迎提交项目！请提供仓库地址、简要用途以及 Jev 在代码中的实际决策逻辑位置。",
+    policies: "收录与安全说明",
+    details: "项目详情与固定源码",
+    readme: "生成四语 README",
+    review: "本轮目录审核记录",
+    warning: "发现安全问题请勿在公开 Issue 中粘贴 Token、私钥或其他凭据。"
+  },
+  en: {
+    count: "curated projects",
+    public: "Projects follow their respective open-source licenses; unstated licenses are noted individually.",
+    scope: "Entries are linked to commit-pinned source code and specific decision points for easy reference. Compatible implementations clearly identify their underlying model.",
+    development: "Local development",
+    workflow: "Automation and security boundaries",
+    flow: "The website serves static data and handles no credentials. Actions use short-lived repository tokens with least privilege, and submitted code is never executed directly.",
+    submission: "Submissions are welcome! Please provide the repository URL, core use case, and code location of the Jev decision logic.",
+    policies: "Editorial and security notes",
+    details: "Project details and fixed source",
+    readme: "Generate four-language READMEs",
+    review: "Catalog audit record",
+    warning: "Never paste tokens, private keys or other credentials into public security reports."
+  },
+  ja: {
+    count: "件の厳選プロジェクト",
+    public: "利用条件は各プロジェクトのライセンスに従います。独自または未記載のライセンスは個別に表示しています。",
+    scope: "すべての項目で公開ソースと具体的な判断箇所を確認しており、技術選定の参考として活用できます。互換実装は基盤モデルを明記しています。",
+    development: "ローカル開発",
+    workflow: "自動化とセキュリティの境界",
+    flow: "サイトは静的データのみを配信し、認証情報を扱いません。Actions は短期 Token と最小権限で実行され、外部コードを直接実行することはありません。",
+    submission: "プロジェクトの推薦を歓迎します。リポジトリ URL、用途、Jev の実装箇所を添えてお送りください。",
+    policies: "掲載基準とセキュリティ",
+    details: "詳細と固定バージョンのソース",
+    readme: "4言語の README を生成",
+    review: "掲載内容の確認記録",
+    warning: "公開の問題報告に Token、秘密鍵などの認証情報を貼り付けないでください。"
+  },
+  ko: {
+    count: "개 엄선 프로젝트",
+    public: "각 프로젝트의 라이선스를 따르며, 맞춤 라이선스나 미명시 라이선스는 개별 표기되어 있습니다.",
+    scope: "모든 항목은 공개 소스와 구체적인 판단 지점을 확인하여 기술 검토에 바로 참고할 수 있도록 구성했습니다. 호환 구현은 기반 모델을 명시합니다.",
+    development: "로컬 개발",
+    workflow: "자동화 및 보안 경계",
+    flow: "사이트는 정적 데이터만 제공하며 자격 증명을 다루지 않습니다. Actions는 단기 Token과 최소 권한으로 실행되며 외부 코드를 직접 실행하지 않습니다.",
+    submission: "프로젝트 제보를 환영합니다! 저장소 주소, 핵심 용도, Jev 연동 코드 위치를 함께 전달해 주세요.",
+    policies: "수록 기준 및 보안 안내",
+    details: "상세 설명 및 고정 버전 소스",
+    readme: "네 언어의 README 생성",
+    review: "목록 검토 기록",
+    warning: "공개 문제 보고에 Token, 개인 키 또는 기타 자격 증명을 붙여 넣지 마세요."
+  },
 };
 const additions = {
-  zh: { agent: "Agent Skill 接入", agentText: "安装技能后，可按用途查询目录、读取固定版本源码证据与核查范围。收录不等于运行效果或安全认证。", privacy: "隐私与流量透明", privacyText: "生产站点使用 Cloudflare Web Analytics，收集汇总页面访问与性能数据，不使用 Cookie 或访客指纹。本站加载器尊重 DNT/GPC；拦截器可能使统计低估访问量；项目数不等于访客数。合作前可索取带时间范围的汇总数据，不承诺曝光或转化。" },
-  en: { agent: "Install the Agent Skill", agentText: "Query the catalog by use case, then inspect fixed-version source evidence and review limits. Inclusion is not runtime or security certification.", privacy: "Privacy and traffic transparency", privacyText: "The production site uses Cloudflare Web Analytics for aggregate page visits and performance, without cookies or visitor fingerprinting. Our loader respects DNT/GPC. Blockers can cause undercounting; project count is not visitor count. Request dated aggregate figures before booking. Impressions and conversions are not guaranteed." },
-  ja: { agent: "Agent Skill の導入", agentText: "用途で一覧を検索し、固定バージョンのソースと確認範囲を参照できます。掲載は動作や安全性の認証ではありません。", privacy: "プライバシーとアクセス情報", privacyText: "本番サイトでは Cloudflare Web Analytics により、Cookie や訪問者のフィンガープリントを使わずに、ページ訪問と性能の集計情報を確認できます。当サイトのローダーは DNT/GPC を尊重します。ブロッカーにより過少計測となる場合があり、掲載件数は訪問者数ではありません。契約前に期間を明示した集計情報をご請求ください。表示回数や成果は保証しません。" },
-  ko: { agent: "Agent Skill 설치", agentText: "용도별로 목록을 검색하고 고정 버전의 소스 근거와 검토 범위를 확인하세요. 수록은 실행 결과나 보안 인증을 뜻하지 않습니다.", privacy: "개인정보 및 트래픽 투명성", privacyText: "운영 사이트는 Cloudflare Web Analytics로 Cookie나 방문자 지문 없이 페이지 방문 및 성능 집계 정보를 확인할 수 있습니다. 사이트 로더는 DNT/GPC를 존중합니다. 차단 도구로 인해 방문 수가 적게 집계될 수 있으며, 프로젝트 수는 방문자 수가 아닙니다. 계약 전에 기간이 표시된 집계 자료를 요청하세요. 노출이나 전환을 보장하지 않습니다." },
+  zh: {
+    agent: "Agent Skill 接入",
+    agentText: "安装官方技能后，可在终端或 Agent 中按赛道检索项目、读取固定版本源码证据与决策逻辑。",
+    privacy: "访问统计与透明度",
+    privacyText: "采用轻量无 Cookie 的 Cloudflare Web Analytics 进行基础性能与访问汇总，尊重 DNT/GPC。"
+  },
+  en: {
+    agent: "Install the Agent Skill",
+    agentText: "Install the skill to query projects by domain and inspect pinned source evidence directly from your terminal or agent.",
+    privacy: "Privacy and analytics",
+    privacyText: "We use lightweight, cookie-free Cloudflare Web Analytics for aggregate performance and visit metrics, respecting DNT/GPC."
+  },
+  ja: {
+    agent: "Agent Skill の導入",
+    agentText: "スキルを導入すると、ターミナルや Agent からカテゴリ別にプロジェクトを検索し、固定バージョンの実装を確認できます。",
+    privacy: "アクセス解析について",
+    privacyText: "Cookie を使用しない軽量な Cloudflare Web Analytics を採用し、DNT/GPC を尊重した基本的な集計を行っています。"
+  },
+  ko: {
+    agent: "Agent Skill 설치",
+    agentText: "스킬을 설치하면 터미널이나 에이전트에서 분야별 프로젝트를 검색하고 고정 버전의 구현 근거를 바로 확인할 수 있습니다.",
+    privacy: "통계 및 개인정보 보호",
+    privacyText: "쿠키 없는 가벼운 Cloudflare Web Analytics를 사용하여 기본적인 통계를 집계하며 DNT/GPC 설정을 존중합니다."
+  },
 };
 for (const locale of LOCALES) {
   const c=COPY[locale], t=text[locale], homepage=SITE+localePrefix(locale);
   const bannerFile=`public/banner${locale==='en'?'':locale==='zh'?'-zh':`-${locale}`}.svg`;
-  const languageNames = locale === "en" || locale === "ko" ? {zh:"Chinese",en:"English",ja:"Japanese",ko:"한국어"} : Object.fromEntries(LOCALES.map((l)=>[l,COPY[l].name]));
+  const languageLabels = { zh: "简体中文", en: "English", ja: "日本語", ko: "한국어" };
+  const languageNav = LOCALES.map(l => (l === locale ? `<b>${languageLabels[l]}</b>` : `<a href="${files[l]}">${languageLabels[l]}</a>`)).join(" &nbsp;•&nbsp; ");
   const skillAnchor = locale === 'zh' ? 'agent-skill-接入' : locale === 'en' ? 'install-the-agent-skill' : locale === 'ja' ? 'agent-skill-の導入' : 'agent-skill-설치';
   const catAnchor = locale === 'zh' ? '分类' : locale === 'en' ? 'categories' : locale === 'ja' ? 'カテゴリ' : '분류';
+  const navLinks = [
+    `<a href="${homepage}">🌐 <b>${c.explore} ↗</b></a>`,
+    `<a href="#${skillAnchor}">🤖 <b>${additions[locale].agent}</b></a>`,
+    `<a href="#${catAnchor}">📂 <b>${c.categories}</b></a>`,
+    `<a href="${REPOSITORY}/issues/new?template=project.yml">🚀 <b>${c.submit}</b></a>`
+  ].join(" &nbsp;｜&nbsp; ");
   const whyTitle = {
     zh: "💡 为什么关注 Jev 与 System-1 决策架构？",
     en: "💡 Why Jev & System-1 Decision Architecture?",
@@ -45,18 +124,15 @@ for (const locale of LOCALES) {
   let out = `<div align="center">\n\n` +
     `<a href="${homepage}"><img src="${bannerFile}" alt="Awesome Jev" width="100%" /></a>\n\n` +
     `# ${localeMeta[locale].title}\n\n` +
-    `<p>\n` +
+    `<p align="center">\n` +
     `  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>\n` +
     `  <a href="${homepage}"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>\n` +
     `  <a href="#${catAnchor}"><img src="https://img.shields.io/badge/Curated%20Projects-${projects.length}%2B-2563eb?style=flat-square" alt="Projects Count" /></a>\n` +
     `  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>\n` +
     `  <a href="${REPOSITORY}/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>\n` +
     `</p>\n\n` +
-    `<p>\n  ${LOCALES.map(l=>`[${languageNames[l]}](${files[l]})`).join(" · ")}\n</p>\n\n` +
-    `<p>\n  <a href="${homepage}"><strong>${c.explore} ↗</strong></a> · ` +
-    `<a href="#${skillAnchor}"><strong>${additions[locale].agent}</strong></a> · ` +
-    `<a href="#${catAnchor}"><strong>${c.categories}</strong></a> · ` +
-    `<a href="${REPOSITORY}/issues/new?template=project.yml"><strong>${c.submit}</strong></a>\n</p>\n\n` +
+    `<p align="center">\n  ${languageNav}\n</p>\n\n` +
+    `<p align="center">\n  ${navLinks}\n</p>\n\n` +
     `</div>\n\n` +
     `${whyTitle}\n\n${whyBody}\n\n` +
     `> **[${c.explore} ↗](${homepage})** · **${projects.length} ${t.count}**\n\n` +

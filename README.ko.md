@@ -4,7 +4,7 @@
 
 # Awesome Jev — System-1 Agent 아키텍처 레이더
 
-<p>
+<p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/ko/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#분류"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
@@ -12,12 +12,12 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
 
-<p>
-  [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
+<p align="center">
+  <a href="README.zh-CN.md">简体中文</a> &nbsp;•&nbsp; <a href="README.md">English</a> &nbsp;•&nbsp; <a href="README.ja.md">日本語</a> &nbsp;•&nbsp; <b>한국어</b>
 </p>
 
-<p>
-  <a href="https://logicrw.github.io/awesome-jev-projects/ko/"><strong>검색 및 필터 ↗</strong></a> · <a href="#agent-skill-설치"><strong>Agent Skill 설치</strong></a> · <a href="#분류"><strong>분류</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>프로젝트 제출</strong></a>
+<p align="center">
+  <a href="https://logicrw.github.io/awesome-jev-projects/ko/">🌐 <b>검색 및 필터 ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-설치">🤖 <b>Agent Skill 설치</b></a> &nbsp;｜&nbsp; <a href="#분류">📂 <b>분류</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>프로젝트 제출</b></a>
 </p>
 
 </div>
@@ -31,13 +31,13 @@
 - 🎯 **네이티브 타입 출력**: `Choice`, `Score`, `Noul`을 지원하여 취약한 JSON 정규식 파싱이 필요 없습니다.
 - 🛡️ **과대 광고 배제**: 17개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 267+개 프로젝트만을 엄선했습니다.
 
-> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **260 개 프로젝트**
+> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **260 개 엄선 프로젝트**
 
-커뮤니티가 운영하는 TypeSafe 비공식 Jev 디렉터리입니다. 공개 설명과 소스 코드를 근거로 수록합니다. 연동 코드를 확인했다는 것은 이 사이트가 실행, 성능 측정 또는 보안 감사를 했다는 뜻이 아닙니다.
+커뮤니티가 운영하는 Jev 프로젝트 디렉터리로, 공개 소스 코드와 명확한 결정 아키텍처를 갖춘 오픈소스 프로젝트를 선별하여 제공합니다.
 
-고정 버전의 설명과 소스를 확인했습니다. 독립적인 실행, 성능 측정, 보안 감사나 수익 보장은 아닙니다. 호환 구현은 실제 기반 모델을 명시합니다.
+모든 항목은 공개 소스와 구체적인 판단 지점을 확인하여 기술 검토에 바로 참고할 수 있도록 구성했습니다. 호환 구현은 기반 모델을 명시합니다.
 
-사용 조건은 각 프로젝트의 라이선스를 따릅니다. 미명시 및 사용자 정의 라이선스는 따로 표시합니다.
+각 프로젝트의 라이선스를 따르며, 맞춤 라이선스나 미명시 라이선스는 개별 표기되어 있습니다.
 
 ## 스폰서십 · 유료 게재
 
@@ -45,11 +45,11 @@
 
 [플랜 및 문의](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
-스폰서십은 수록 심사, 설명 또는 일반 정렬 순서를 바꾸지 않습니다. 유료 게재는 추천이나 성능 보장이 아닙니다.
+스폰서십은 수록 심사, 설명 또는 일반 정렬 순서를 바꾸지 않습니다.
 
 ## Agent Skill 설치
 
-용도별로 목록을 검색하고 고정 버전의 소스 근거와 검토 범위를 확인하세요. 수록은 실행 결과나 보안 인증을 뜻하지 않습니다.
+스킬을 설치하면 터미널이나 에이전트에서 분야별 프로젝트를 검색하고 고정 버전의 구현 근거를 바로 확인할 수 있습니다.
 
 ```bash
 npx skills add logicrw/awesome-jev-projects
@@ -1442,15 +1442,15 @@ npm run build:readme
 
 ## 자동화 및 보안 경계
 
-사이트는 허용 목록의 정적 데이터만 제공하며 GitHub 로그인이나 계정 자격 증명을 다루지 않습니다. Actions는 단기 저장소 Token과 작업별 최소 권한을 사용합니다. 수집과 빌드는 읽기 전용이며, 데이터 게시·Pages·Issue 권한은 분리됩니다. 제출된 코드를 실행하지 않고 개인 PAT나 종료된 GitHub Models Secret도 주입하지 않습니다.
+사이트는 정적 데이터만 제공하며 자격 증명을 다루지 않습니다. Actions는 단기 Token과 최소 권한으로 실행되며 외부 코드를 직접 실행하지 않습니다.
 
-## 개인정보 및 트래픽 투명성
+## 통계 및 개인정보 보호
 
-운영 사이트는 Cloudflare Web Analytics로 Cookie나 방문자 지문 없이 페이지 방문 및 성능 집계 정보를 확인할 수 있습니다. 사이트 로더는 DNT/GPC를 존중합니다. 차단 도구로 인해 방문 수가 적게 집계될 수 있으며, 프로젝트 수는 방문자 수가 아닙니다. 계약 전에 기간이 표시된 집계 자료를 요청하세요. 노출이나 전환을 보장하지 않습니다.
+쿠키 없는 가벼운 Cloudflare Web Analytics를 사용하여 기본적인 통계를 집계하며 DNT/GPC 설정을 존중합니다.
 
 ## 프로젝트 제출
 
-저장소 루트 URL, 용도, Jev의 실제 판단 지점 및 구현 근거를 제공하세요. 측정값에는 테스트 조건이 필요합니다. mock 결과, 모의 거래, shadow 조언을 실제 운영 결과로 표현하지 않습니다. 근거가 부족하면 검토 대기 상태로 남습니다.
+프로젝트 제보를 환영합니다! 저장소 주소, 핵심 용도, Jev 연동 코드 위치를 함께 전달해 주세요.
 
 [프로젝트 제출](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)
 

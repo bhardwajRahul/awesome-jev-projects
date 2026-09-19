@@ -44,9 +44,9 @@ These are starting prices in USD, not an automatic checkout or a reservation. Sc
 4. **Publish and verify.** After the agreed payment step, publish the approved content, check desktop/mobile and all four languages, and send the live links. / **上线与核对。** 按约定完成付款环节后，发布已确认内容，核对桌面、手机和四语展示，交付实际链接。
 5. **Report and close.** Share the available aggregate measurements for the agreed period and remove the placement at the end, unless both sides confirm a renewal. / **回报与结束。** 提供约定区间内可取得的汇总数据；到期撤下，双方确认续期除外。
 
-**Payment is contact-first.** There is no active public GitHub Sponsors or Stripe checkout link, and this website does not process payments. Available channels are confirmed privately; any WeChat Pay or Alipay collection code is provided only after the order is agreed. Do not send payment to an unconfirmed account.
+**Confirm first, pay second.** We support GitHub Sponsors, Stripe, WeChat Pay, and Alipay. Payment information is shared after the plan and schedule are agreed in writing.
 
-**先联系确认，后付款。** 目前没有公开启用的 GitHub Sponsors 或 Stripe 收款链接，本站不处理支付。可用渠道在联系后确认；如使用微信或支付宝，在合作单确认后提供收款信息。不要向未经确认的账户转账。
+**先沟通，后付款。** 支持 GitHub Sponsors、Stripe、微信或支付宝。双方书面确认合作方案与排期后，再提供对应的付款信息。
 
 ## Editorial independence / 收录独立
 

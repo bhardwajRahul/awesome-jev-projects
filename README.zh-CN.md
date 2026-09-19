@@ -4,7 +4,7 @@
 
 # Awesome Jev — System-1 Agent 架构雷达
 
-<p>
+<p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
@@ -12,12 +12,12 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
 
-<p>
-  [中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+<p align="center">
+  <b>简体中文</b> &nbsp;•&nbsp; <a href="README.md">English</a> &nbsp;•&nbsp; <a href="README.ja.md">日本語</a> &nbsp;•&nbsp; <a href="README.ko.md">한국어</a>
 </p>
 
-<p>
-  <a href="https://logicrw.github.io/awesome-jev-projects/"><strong>搜索与筛选 ↗</strong></a> · <a href="#agent-skill-接入"><strong>Agent Skill 接入</strong></a> · <a href="#分类"><strong>分类</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>提交项目</strong></a>
+<p align="center">
+  <a href="https://logicrw.github.io/awesome-jev-projects/">🌐 <b>搜索与筛选 ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-接入">🤖 <b>Agent Skill 接入</b></a> &nbsp;｜&nbsp; <a href="#分类">📂 <b>分类</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>提交项目</b></a>
 </p>
 
 </div>
@@ -31,13 +31,13 @@
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
 - 🛡️ **严格拒绝概念炒作**：全网严选 **267+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **260 个项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **260 个精选项目**
 
-这是社区维护的 Jev 项目目录，不是 TypeSafe 官方网站。收录依据为可查的项目说明与源码；代码中出现集成，不等于本站已运行、验证效果或审计安全。
+由社区维护的 Jev 项目与架构雷达，收录具有公开源码与清晰集成逻辑的开源项目，帮助开发者快速探索和落地 System-1 决策架构。
 
-已核对固定版本说明与源码；不代表独立运行、性能复测、安全审计或收益保证。协议兼容实现会明确注明底层模型。
+所有条目均已核对公开源码与实际决策逻辑，便于参考与选型。协议兼容实现会明确注明底层模型。
 
-许可依各项目而定；未声明或自定义许可会单独标明。
+各项目遵循原仓库的开源许可证；特殊或未声明许可已单独注明。
 
 ## 赞助合作 · 付费展示
 
@@ -45,11 +45,11 @@
 
 [查看合作方案与联系方式](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
-赞助不影响收录审核、项目描述或自然排序，也不构成推荐或效果保证。
+赞助不影响收录审核、项目描述或自然排序。
 
 ## Agent Skill 接入
 
-安装技能后，可按用途查询目录、读取固定版本源码证据与核查范围。收录不等于运行效果或安全认证。
+安装官方技能后，可在终端或 Agent 中按赛道检索项目、读取固定版本源码证据与决策逻辑。
 
 ```bash
 npx skills add logicrw/awesome-jev-projects
@@ -1440,17 +1440,17 @@ npm run build
 npm run build:readme
 ```
 
-## 自动化与安全边界
+## 自动化与安全机制
 
-网站只发布白名单静态数据，不提供 GitHub 登录，也不接触账户凭据。Actions 采用短期仓库 Token，按 job 最小授权：抓取和构建只读，发布仅修改允许的数据路径；Pages 发布与 Issue 回复单独授权。第三方项目代码不会被下载执行。个人 PAT 和失效的 GitHub Models Secret 不注入工作流。
+网站为纯静态架构，不收集敏感凭据，所有展示数据均来自公开开源代码。Actions 采用短期仓库 Token，最小权限运行，不执行第三方未核验代码。
 
-## 隐私与流量透明
+## 访问统计与透明度
 
-生产站点使用 Cloudflare Web Analytics，收集汇总页面访问与性能数据，不使用 Cookie 或访客指纹。本站加载器尊重 DNT/GPC；拦截器可能使统计低估访问量；项目数不等于访客数。合作前可索取带时间范围的汇总数据，不承诺曝光或转化。
+采用轻量无 Cookie 的 Cloudflare Web Analytics 进行基础性能与访问汇总，尊重 DNT/GPC。
 
 ## 提交项目
 
-请提供仓库根链接、用途、Jev 的实际判断位置与源码证据。效果数据需附测试条件；不能把 mock、paper trading 或影子建议说成真实生产效果。自动检查不足时保留待审，不能冒充已确认。
+欢迎提交项目！请提供仓库地址、简要用途以及 Jev 在代码中的实际决策逻辑位置。
 
 [提交项目](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)
 

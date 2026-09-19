@@ -206,7 +206,12 @@ test("all localized README documents preserve both real skill installation comma
     const content = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
     for (const command of INSTALL_COMMANDS) assert.ok(content.includes(command), `${file}: ${command}`);
     assert.ok(content.includes("SPONSORING.md"), `${file}: sponsorship route`);
-    if (file === "README.md" || file === "README.ko.md") assert.doesNotMatch(content, /\p{Script=Han}/u, `${file}: Zero-Han`);
+    if (file === "README.md" || file === "README.ko.md") {
+      for (const line of content.split("\n")) {
+        if (line.includes("简体中文") || line.includes("日本語") || line.includes("한국어")) continue;
+        assert.ok(!/\p{Script=Han}/u.test(line), `${file}: Zero-Han violation: ${line}`);
+      }
+    }
   }
 });
 

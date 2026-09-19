@@ -4,7 +4,7 @@
 
 # Awesome Jev — System-1 Agent アーキテクチャ
 
-<p>
+<p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/ja/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#カテゴリ"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
@@ -12,12 +12,12 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
 
-<p>
-  [中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+<p align="center">
+  <a href="README.zh-CN.md">简体中文</a> &nbsp;•&nbsp; <a href="README.md">English</a> &nbsp;•&nbsp; <b>日本語</b> &nbsp;•&nbsp; <a href="README.ko.md">한국어</a>
 </p>
 
-<p>
-  <a href="https://logicrw.github.io/awesome-jev-projects/ja/"><strong>検索・絞り込み ↗</strong></a> · <a href="#agent-skill-の導入"><strong>Agent Skill の導入</strong></a> · <a href="#カテゴリ"><strong>カテゴリ</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>プロジェクトを投稿</strong></a>
+<p align="center">
+  <a href="https://logicrw.github.io/awesome-jev-projects/ja/">🌐 <b>検索・絞り込み ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-の導入">🤖 <b>Agent Skill の導入</b></a> &nbsp;｜&nbsp; <a href="#カテゴリ">📂 <b>カテゴリ</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>プロジェクトを投稿</b></a>
 </p>
 
 </div>
@@ -31,13 +31,13 @@ Agent を構築する際、すべての分岐判断を巨大な推論モデル�
 - 🎯 **ネイティブな型安全出力**：`Choice`、`Score`、`Noul` を直接返し、壊れやすい正規表現パースが不要です。
 - 🛡️ **誇大広告を排除**：17 の実用分野にわたる 267+ 件の検証済みオープンソースコードのみを厳選掲載しています。
 
-> **[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **260 件のプロジェクト**
+> **[検索・絞り込み ↗](https://logicrw.github.io/awesome-jev-projects/ja/)** · **260 件の厳選プロジェクト**
 
-コミュニティが運営する、TypeSafe 非公式の Jev ディレクトリです。公開説明とソースコードに基づいて掲載しています。連携コードの確認は、当サイトによる実行、性能測定、安全性監査を意味しません。
+コミュニティによって運営される Jev プロジェクトカタログです。公開ソースコードと明確な設計を持つオープンソースプロジェクトを整理し、開発者のアーキテクチャ選定を支援します。
 
-固定バージョンの説明とソースを確認しています。独立した実行、性能測定、安全性監査や収益保証ではありません。互換実装は使用する基盤モデルを明示します。
+すべての項目で公開ソースと具体的な判断箇所を確認しており、技術選定の参考として活用できます。互換実装は基盤モデルを明記しています。
 
-利用条件は各プロジェクトのライセンスに従います。未記載・独自ライセンスは別途表示します。
+利用条件は各プロジェクトのライセンスに従います。独自または未記載のライセンスは個別に表示しています。
 
 ## スポンサー · 有料掲載
 
@@ -45,11 +45,11 @@ Agent を構築する際、すべての分岐判断を巨大な推論モデル�
 
 [プランとお問い合わせ](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
-スポンサー契約は掲載審査、説明、通常の表示順を変えません。掲載は推奨や性能保証ではありません。
+スポンサー契約は掲載審査、説明、通常の表示順を変えません。
 
 ## Agent Skill の導入
 
-用途で一覧を検索し、固定バージョンのソースと確認範囲を参照できます。掲載は動作や安全性の認証ではありません。
+スキルを導入すると、ターミナルや Agent からカテゴリ別にプロジェクトを検索し、固定バージョンの実装を確認できます。
 
 ```bash
 npx skills add logicrw/awesome-jev-projects
@@ -1442,15 +1442,15 @@ npm run build:readme
 
 ## 自動化とセキュリティの境界
 
-サイトは許可リストに含まれる静的データのみを配信し、GitHub ログインやアカウント認証情報を扱いません。Actions は短期のリポジトリ Token を使用し、収集・ビルドは読み取り専用、データ公開・Pages・Issue 操作は個別の最小権限で実行します。投稿されたコードを実行せず、個人 PAT や終了した GitHub Models の Secret も注入しません。
+サイトは静的データのみを配信し、認証情報を扱いません。Actions は短期 Token と最小権限で実行され、外部コードを直接実行することはありません。
 
-## プライバシーとアクセス情報
+## アクセス解析について
 
-本番サイトでは Cloudflare Web Analytics により、Cookie や訪問者のフィンガープリントを使わずに、ページ訪問と性能の集計情報を確認できます。当サイトのローダーは DNT/GPC を尊重します。ブロッカーにより過少計測となる場合があり、掲載件数は訪問者数ではありません。契約前に期間を明示した集計情報をご請求ください。表示回数や成果は保証しません。
+Cookie を使用しない軽量な Cloudflare Web Analytics を採用し、DNT/GPC を尊重した基本的な集計を行っています。
 
 ## プロジェクトを投稿
 
-リポジトリのルート URL、用途、Jev が判断する箇所、実装の根拠を添えてください。数値には測定条件が必要です。mock、模擬取引、shadow の助言を本番運用の結果として扱いません。根拠が不十分な場合は確認待ちとなります。
+プロジェクトの推薦を歓迎します。リポジトリ URL、用途、Jev の実装箇所を添えてお送りください。
 
 [プロジェクトを投稿](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)
 

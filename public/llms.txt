@@ -55,4 +55,4 @@ Founding partner slots are open. There are no paid sponsors yet.
 
 [Plans and contact](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
-Sponsorship does not change inclusion review, project descriptions, or organic ranking. Placement is not an endorsement or performance guarantee.
+Sponsorship does not change inclusion review, project descriptions, or organic ranking.

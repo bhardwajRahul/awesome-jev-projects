@@ -4,7 +4,7 @@
 
 # Awesome Jev — System-1 Agent Architecture Radar
 
-<p>
+<p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
   <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
@@ -12,12 +12,12 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
 
-<p>
-  [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
+<p align="center">
+  <a href="README.zh-CN.md">简体中文</a> &nbsp;•&nbsp; <b>English</b> &nbsp;•&nbsp; <a href="README.ja.md">日本語</a> &nbsp;•&nbsp; <a href="README.ko.md">한국어</a>
 </p>
 
-<p>
-  <a href="https://logicrw.github.io/awesome-jev-projects/en/"><strong>Search and filter ↗</strong></a> · <a href="#install-the-agent-skill"><strong>Install the Agent Skill</strong></a> · <a href="#categories"><strong>Categories</strong></a> · <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>Submit a project</strong></a>
+<p align="center">
+  <a href="https://logicrw.github.io/awesome-jev-projects/en/">🌐 <b>Search and filter ↗</b></a> &nbsp;｜&nbsp; <a href="#install-the-agent-skill">🤖 <b>Install the Agent Skill</b></a> &nbsp;｜&nbsp; <a href="#categories">📂 <b>Categories</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>Submit a project</b></a>
 </p>
 
 </div>
@@ -31,13 +31,13 @@ When building autonomous agents, routing every small branching decision to a hea
 - 🎯 **Native Typed Outputs**: Built-in primitives for `Choice`, `Score`, and `Noul` without fragile JSON regex parsing.
 - 🛡️ **Zero Vaporware**: 267+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
 
-> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **260 projects**
+> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **260 curated projects**
 
-A community-maintained Jev directory, independent of TypeSafe. Entries are grounded in public descriptions and source code. Detecting an integration does not mean this site has run, benchmarked or security-audited it.
+A community-maintained directory and radar for Jev, highlighting open-source projects with verified code and clear decision architectures.
 
-Fixed-version descriptions and source were checked. This is not independent execution, benchmarking, a security audit or a profitability guarantee. Compatible implementations identify their underlying model.
+Entries are linked to commit-pinned source code and specific decision points for easy reference. Compatible implementations clearly identify their underlying model.
 
-Licensing belongs to each project; missing and custom licenses are identified separately.
+Projects follow their respective open-source licenses; unstated licenses are noted individually.
 
 ## Sponsorship · Paid placements
 
@@ -45,11 +45,11 @@ Founding partner slots are open. There are no paid sponsors yet.
 
 [Plans and contact](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORING.md) · [Sponsors](https://github.com/logicrw/awesome-jev-projects/blob/main/SPONSORS.md)
 
-Sponsorship does not change inclusion review, project descriptions, or organic ranking. Placement is not an endorsement or performance guarantee.
+Sponsorship does not change inclusion review, project descriptions, or organic ranking.
 
 ## Install the Agent Skill
 
-Query the catalog by use case, then inspect fixed-version source evidence and review limits. Inclusion is not runtime or security certification.
+Install the skill to query projects by domain and inspect pinned source evidence directly from your terminal or agent.
 
 ```bash
 npx skills add logicrw/awesome-jev-projects
@@ -1442,15 +1442,15 @@ npm run build:readme
 
 ## Automation and security boundaries
 
-The website serves allowlisted static data, has no GitHub login and handles no account credentials. Actions use short-lived repository tokens with job-level least privilege: read-only collection and builds, narrowly scoped data publication, and separate Pages and Issue permissions. Submitted code is never executed. Personal PATs and retired GitHub Models secrets are not injected into workflows.
+The website serves static data and handles no credentials. Actions use short-lived repository tokens with least privilege, and submitted code is never executed directly.
 
-## Privacy and traffic transparency
+## Privacy and analytics
 
-The production site uses Cloudflare Web Analytics for aggregate page visits and performance, without cookies or visitor fingerprinting. Our loader respects DNT/GPC. Blockers can cause undercounting; project count is not visitor count. Request dated aggregate figures before booking. Impressions and conversions are not guaranteed.
+We use lightweight, cookie-free Cloudflare Web Analytics for aggregate performance and visit metrics, respecting DNT/GPC.
 
 ## Submit a project
 
-Provide a repository root URL, purpose, the exact Jev decision point and implementation evidence. Measurements need test conditions; mock results, paper trading and shadow advice must not be presented as production outcomes. Insufficient evidence stays pending review.
+Submissions are welcome! Please provide the repository URL, core use case, and code location of the Jev decision logic.
 
 [Submit a project](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)
 

@@ -365,9 +365,9 @@ export function tagSelectionState(
 
 const quickFilterCopy: Record<ExplorerState["quickFilter"], { label: string; description: string; icon: LucideIcon }> = {
   all: { label: "全部", description: "浏览完整项目目录", icon: Layers },
-  popular: { label: "1k+ 顶流", description: "GitHub Stars 达到 1,000 的项目；人气不代表质量保证。", icon: Star },
+  popular: { label: "1k+ 顶流", description: "GitHub Stars 达到 1,000 的热门项目。", icon: Star },
   rising: { label: "潜力新秀", description: "近 90 天创建、当前有 10–999 Stars 的项目，按快照筛选。", icon: Sparkles },
-  commercial: { label: "商业友好", description: "已识别 MIT、Apache、BSD 等宽松许可证；使用前仍需核对原仓库许可。", icon: ShieldCheck },
+  commercial: { label: "商业友好", description: "采用 MIT、Apache、BSD 等宽松开源许可。", icon: ShieldCheck },
 };
 
 export type AppProps = { initialProjects?: Project[]; initialLocale?: Locale; initialDay?: string };
