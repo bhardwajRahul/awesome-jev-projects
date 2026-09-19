@@ -4,7 +4,7 @@ A community directory of Jev open-source and publicly available source projects.
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 260
+Catalog entries: 261
 
 ## Install the Agent Skill
 
@@ -3847,3 +3847,21 @@ Pre-commit hook for the commit-msg stage: one Jev call judges the message agains
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/valentynkit/jev-commit/
 - Source evidence: https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/README.md
 - Source evidence: https://github.com/valentynkit/jev-commit/blob/311e163b8abb9c333132155bc2e0bbfac4f36283/jev_commit/jev.py
+
+## typesafe-sdk-python
+
+Official TypeSafe Python SDK with synchronous and asynchronous clients for Jev System One, plus question and answer types.
+
+- Repository: https://github.com/typesafe-ai/typesafe-sdk-python
+- Category: SDK & Decision Frameworks
+- Jev decision: system\_one sends context and choice, score or yes/no questions to the API, then parses answers by question name.
+- Purpose: Reuses request handling, typed answers and connection management in Python, with support for with and async with.
+- Review scope: Reviewed the fixed-version README, client source and MIT license; the project was not run and performance or security was not independently verified.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/typesafe-ai/typesafe-sdk-python/
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/sync/client.py#L206-L221
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/client/aio/client.py#L216-L243
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/_core/question_types.py#L77-L113
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/src/typesafe_sdk/constants.py#L18-L19
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/README.md#L13-L29
+- Source evidence: https://github.com/typesafe-ai/typesafe-sdk-python/blob/2ce5c65f13646cab6e6f782328194c9d85f3300a/LICENSE#L1-L21

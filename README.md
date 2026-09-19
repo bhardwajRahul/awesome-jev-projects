@@ -6,7 +6,7 @@
 
 [Chinese](README.zh-CN.md) · [English](README.md) · [Japanese](README.ja.md) · [한국어](README.ko.md)
 
-**[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **260 projects**
+**[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **261 projects**
 
 A community-maintained Jev directory, independent of TypeSafe. Entries are grounded in public descriptions and source code. Detecting an integration does not mean this site has run, benchmarked or security-audited it.
 
@@ -48,7 +48,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [High-Frequency / Games (17)](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/)
 - [MCP & Integrations (18)](https://logicrw.github.io/awesome-jev-projects/en/categories/mcp-integrations/)
 - [Model Routing (19)](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/)
-- [SDK & Decision Frameworks (47)](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/)
+- [SDK & Decision Frameworks (48)](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/)
 - [SDK Integrations (6)](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-integrations/)
 - [Security & Guardrails (18)](https://logicrw.github.io/awesome-jev-projects/en/categories/security-guardrails/)
 - [Voice & Conversation (4)](https://logicrw.github.io/awesome-jev-projects/en/categories/voice-conversation/)
@@ -1083,6 +1083,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Jev answers probability, choice and score questions for application transitions or model selection.
   - **What this project offers**: Integrates decisions into Effect dependencies and errors; applications configure retries and deadlines.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/danieljvdm/effect-agent/) · License: MIT
+
+- [**typesafe-sdk-python**](https://github.com/typesafe-ai/typesafe-sdk-python) — Official TypeSafe Python SDK with synchronous and asynchronous clients for Jev System One, plus question and answer types.
+  - **Where Jev makes a decision**: system\_one sends context and choice, score or yes/no questions to the API, then parses answers by question name.
+  - **What this project offers**: Reuses request handling, typed answers and connection management in Python, with support for with and async with.
+  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/typesafe-ai/typesafe-sdk-python/) · License: MIT
 
 - [**jev-visual**](https://github.com/hr98w/jev-visual) — This is a local Qwen/MLX experiment inspired by Jev, not an integration of the TypeSafe Jev model. It is retained as related research and clearly separated from actual integrations.
   - **Where Jev makes a decision**: This entry is pending review, not a verified Jev integration recommendation.
