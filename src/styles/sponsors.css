@@ -40,8 +40,9 @@
 .sponsor-tier { display: flex; min-width: 0; flex-direction: column; padding: 23px; border: 1px solid var(--border); border-radius: 12px; }
 .sponsor-tier-headline { background: var(--accent-soft); border-color: var(--border-strong); }
 .sponsor-tier h3 { font-size: 15px; font-weight: 600; }
-.sponsor-price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin: 18px 0 12px; font-size: 12px; color: var(--text-muted); }
-.sponsor-price strong { font-size: 38px; line-height: 1.1; font-weight: 550; letter-spacing: -0.03em; color: var(--text); font-variant-numeric: tabular-nums; }
+.sponsor-price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin: 14px 0 12px; font-size: 12px; color: var(--text-muted); }
+.sponsor-price strong { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
+.sponsor-price span { font-size: 12px; font-weight: 500; color: var(--text-muted); }
 .sponsor-tier p { font-size: 12px; line-height: 1.7; color: var(--text-muted); }
 .sponsor-tier .sponsor-placement { margin-bottom: 8px; font-weight: 600; color: var(--text); }
 .sponsor-plan-action { display: inline-flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 44px; margin-top: 20px; padding: 10px 13px; border: 1px solid var(--border-strong); border-radius: 8px; font-size: 12px; font-weight: 600; color: var(--text); transition: box-shadow 180ms ease; }

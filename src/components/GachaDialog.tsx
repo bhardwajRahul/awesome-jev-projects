@@ -28,9 +28,9 @@ const copy = {
     drawn: '本次抽中',
     drawBadge: '第 {n} 抽',
     streak: '已连续探索 {n} 个项目',
-    nextMilestone: '距 10 抽大烟花还剩 {n} 抽',
-    milestoneReached: '🎉 达成 10 抽大满贯！大烟花绽放！',
-    milestoneBoom: '嘣！',
+    nextMilestone: '距灵感共振还剩 {n} 抽',
+    milestoneReached: '✨ 灵感共振达成 · 10 连里程碑',
+    milestoneTag: 'RESONANCE',
   },
   en: {
     title: 'Draw an inspiration card',
@@ -52,9 +52,9 @@ const copy = {
     drawn: 'You drew',
     drawBadge: 'Draw #{n}',
     streak: '{n} projects explored in a row',
-    nextMilestone: '{n} draws to fireworks',
-    milestoneReached: '🎉 10 Draws reached! Fireworks unlocked!',
-    milestoneBoom: 'BOOM!',
+    nextMilestone: '{n} draws to Resonance',
+    milestoneReached: 'Resonance reached · 10-draw milestone',
+    milestoneTag: 'RESONANCE',
   },
   ja: {
     title: 'ひらめきのカードを引く',
@@ -76,9 +76,9 @@ const copy = {
     drawn: '今回のカード',
     drawBadge: '{n}回目',
     streak: '連続 {n} プロジェクト探索中',
-    nextMilestone: '大花火まであと {n} 回',
-    milestoneReached: '🎉 10回達成！大花火打ち上げ！',
-    milestoneBoom: 'ドカン！',
+    nextMilestone: 'インスピレーション共鳴まであと {n} 回',
+    milestoneReached: '✨ 共鳴達成 · 10回連続マイルストーン',
+    milestoneTag: 'RESONANCE',
   },
   ko: {
     title: '영감 카드 뽑기',
@@ -100,9 +100,9 @@ const copy = {
     drawn: '이번 카드',
     drawBadge: '{n}회차',
     streak: '연속 {n}개 프로젝트 탐색 중',
-    nextMilestone: '대형 불꽃놀이까지 {n}회 남음',
-    milestoneReached: '🎉 10회 달성! 대형 불꽃 발사!',
-    milestoneBoom: '펑!',
+    nextMilestone: '영감 공명까지 {n}회 남음',
+    milestoneReached: '영감 공명 달성 · 10회 마일스톤',
+    milestoneTag: 'RESONANCE',
   },
 } satisfies Record<Locale, Record<string, string>>;
 
@@ -246,38 +246,52 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
       <header className="gacha-heading"><h2 id={titleId}><Sparkles size={21} aria-hidden="true" />{t.title}</h2><button ref={close} type="button" className="gacha-close" onClick={() => closeHandler.current()} aria-label={t.close}><X size={20} aria-hidden="true" /></button></header>
       <p id={introId} className="gacha-intro">{t.intro}</p>
       {p ? <>
-        <div className={`gacha-top-tracker ${isMilestone ? 'is-milestone' : ''}`}>
-          <div className="gacha-counter-header">
-            <div className="gacha-counter-pill" title={formatStreak(t.streak, currentTurn, locale)}>
-              <Sparkles size={16} className="gacha-counter-sparkle" aria-hidden="true" />
-              <span className="gacha-counter-text" key={currentTurn}>
-                <span className="gacha-counter-prefix">
-                  {locale === 'zh' || locale === 'ja' ? '第' : locale === 'ko' ? '제 ' : 'DRAW '}
+        <div className={`gacha-hud-tracker ${isMilestone ? 'is-milestone' : ''}`}>
+          <div className="gacha-hud-main">
+            <div className="gacha-hud-counter" title={formatStreak(t.streak, currentTurn, locale)}>
+              <span className="gacha-hud-badge">
+                <Sparkles size={13} className="gacha-sparkle-icon" aria-hidden="true" />
+                <span>{locale === 'en' ? 'STREAK' : 'DISCOVERY'}</span>
+              </span>
+              <span className="gacha-hud-digits" key={currentTurn}>
+                <span className="gacha-digit-prefix">
+                  {locale === 'zh' || locale === 'ja' ? '第 ' : locale === 'ko' ? '제 ' : '#'}
                 </span>
-                <strong className="gacha-counter-num">{locale === 'en' ? `#${currentTurn}` : currentTurn}</strong>
-                <span className="gacha-counter-suffix">
+                <strong className="gacha-digit-val">{currentTurn}</strong>
+                <span className="gacha-digit-suffix">
                   {locale === 'zh' ? ' 抽' : locale === 'ja' ? ' 回' : locale === 'ko' ? ' 회차' : ''}
                 </span>
               </span>
-              {isMilestone && (
-                <span className="gacha-boom-pill" aria-hidden="true">
-                  💥 {t.milestoneBoom}
-                </span>
-              )}
             </div>
-            <div className="gacha-progress-wrap">
-              <div className="gacha-progress-dots" role="progressbar" aria-valuenow={stepInTen + 1} aria-valuemin={1} aria-valuemax={10} aria-label={isMilestone ? t.milestoneReached : t.nextMilestone.replace('{n}', String(remainingToTen))}>
-                {Array.from({ length: 10 }).map((_, i) => (
-                  <span
-                    key={i}
-                    className={`gacha-pdot ${i <= stepInTen ? 'is-filled' : ''} ${i === 9 ? 'is-target' : ''}`}
-                    aria-hidden="true"
-                  />
-                ))}
-              </div>
-              <span className="gacha-progress-caption">
+            {isMilestone && (
+              <span className="gacha-milestone-pill" aria-hidden="true">
+                <Sparkles size={12} aria-hidden="true" />
+                <span>{t.milestoneTag}</span>
+              </span>
+            )}
+          </div>
+          <div className="gacha-hud-gauge-wrap">
+            <div
+              className="gacha-hud-gauge"
+              role="progressbar"
+              aria-valuenow={stepInTen + 1}
+              aria-valuemin={1}
+              aria-valuemax={10}
+              aria-label={isMilestone ? t.milestoneReached : t.nextMilestone.replace('{n}', String(remainingToTen))}
+            >
+              {Array.from({ length: 10 }).map((_, i) => (
+                <span
+                  key={i}
+                  className={`gacha-hud-bar ${i <= stepInTen ? 'is-active' : ''} ${i === 9 ? 'is-zenith' : ''}`}
+                  aria-hidden="true"
+                />
+              ))}
+            </div>
+            <div className="gacha-hud-meta">
+              <span className="gacha-hud-label">
                 {isMilestone ? t.milestoneReached : t.nextMilestone.replace('{n}', String(remainingToTen))}
               </span>
+              <span className="gacha-hud-ratio">{stepInTen + 1}/10</span>
             </div>
           </div>
         </div>

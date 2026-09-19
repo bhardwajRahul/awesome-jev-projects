@@ -18,23 +18,23 @@ The catalog currently holds **259 project records**, including **252 source-revi
 
 ## Plans / 合作方案
 
-| Plan / 方案 | Reference price / 参考价格 | Placement / 展示位置 |
-| --- | --- | --- |
-| Headline Sponsor | From **US$199 / month** · 每月 **199 美元起** | Top of the homepage explorer; up to 2 partners / 首页探索器顶部，最多 2 位伙伴 |
-| Category Sponsor | From **US$99 / month** · 每月 **99 美元起** | Top of one agreed, relevant category; 1 partner per category / 约定的相关分类顶部，每类 1 位伙伴 |
+| Plan / 方案 | Target & Focus / 核心定位 | Placement / 展示位置 | Early Program / 首期合作 |
+| --- | --- | --- | --- |
+| 全站首页置顶 (Headline) | 全域顶级曝光，快速建立行业品牌认知 | 首页探索器首屏顶部，独占最多 2 席 | 开放咨询 · 享首发早鸟方案 |
+| 垂直分类置顶 (Category) | 精准定向触达，高意向转化架构选型用户 | 对应技术分类首屏顶部，每类独占 1 席 | 开放咨询 · 享首发早鸟方案 |
 
 Both plans include, within the agreed term:
 
 - A clearly labeled Featured Partner card with a short, factual product description and direct link.
-- Logo and link acknowledgement in the README sponsor area.
+- Logo, summary and link acknowledgement in the official README sponsor area.
 - An explicitly paid sponsor entry in `llms.txt` and Agent Skill documents, separate from editorial project information.
 - Coordinated Chinese, English, Japanese and Korean display copy.
 
-两档均在约定档期内包含：明确标记的 Featured Partner 卡片、简明产品介绍与直达链接；README 赞助区 Logo 和链接鸣谢；`llms.txt` 与 Agent Skill 中独立标注的付费名单；中英日韩展示文案协作。
+两档均在约定档期内包含：明确标记的 Featured Partner 卡片、简明产品介绍与官网直达链接；官方 README 赞助区 Logo、简介与链接鸣谢；`llms.txt` 与 Agent Skill 中独立标注的付费合作名单；中英日韩四国语言展示文案协作。
 
-These are starting prices in USD, not an automatic checkout or a reservation. Scope, currency, any applicable fees, dates and availability are confirmed in writing before payment. A “month” means the exact start and end dates in that confirmation. No automatic renewal, exclusivity or additional deliverables are implied.
+Currently in founding partner open recruitment: early partners receive custom term packages and early-bird rates. Scope, currency, any applicable fees, dates and availability are confirmed in writing before payment. A “month” means the exact start and end dates in that confirmation. No automatic renewal, exclusivity or additional deliverables are implied.
 
-以上为美元月度起价，不是自动结账或已预留档期。双方先书面确认展示范围、币种、适用费用、起止日期和空位，再安排付款。“一个月”以确认单的具体起止日期为准，不默认续费、独家合作或额外交付。
+目前处于首发合作伙伴开放招募期，提供早鸟特惠与定制方案支持。双方先书面确认展示范围、币种、适用费用、起止日期和空位，再安排付款。“一个月”以确认单的具体起止日期为准，不默认续费、独家合作或额外交付。
 
 ## From inquiry to publication / 从咨询到上线
 
@@ -44,9 +44,9 @@ These are starting prices in USD, not an automatic checkout or a reservation. Sc
 4. **Publish and verify.** After the agreed payment step, publish the approved content, check desktop/mobile and all four languages, and send the live links. / **上线与核对。** 按约定完成付款环节后，发布已确认内容，核对桌面、手机和四语展示，交付实际链接。
 5. **Report and close.** Share the available aggregate measurements for the agreed period and remove the placement at the end, unless both sides confirm a renewal. / **回报与结束。** 提供约定区间内可取得的汇总数据；到期撤下，双方确认续期除外。
 
-**Confirm first, pay second.** We support GitHub Sponsors, Stripe, WeChat Pay, and Alipay. Payment information is shared after the plan and schedule are agreed in writing.
+**Confirm first, pay second.** Commercial placements support Stripe, WeChat Pay, Alipay, or corporate bank wire, with payment details shared after written agreement. If you simply wish to support our open-source catalog maintenance without a commercial placement, voluntary donations via GitHub Sponsors are warmly welcomed.
 
-**先沟通，后付款。** 支持 GitHub Sponsors、Stripe、微信或支付宝。双方书面确认合作方案与排期后，再提供对应的付款信息。
+**先沟通，后付款。** 商业合作支持 Stripe、微信支付、支付宝或对公转账，双方书面确认方案与排期后提供对应的结算信息。若仅希望无偿支持开源目录的持续维护（无需商业展示位），欢迎通过 GitHub Sponsors 进行自由赞助。
 
 ## Editorial independence / 收录独立
 

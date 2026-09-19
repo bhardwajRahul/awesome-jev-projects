@@ -21,8 +21,6 @@ export function SponsorDialog({ locale, projectCount, onClose }: SponsorDialogPr
   const pointerStartedOutside = useRef(false);
   const t = sponsorCopy[language];
   const contacts = sponsorConfig.contacts;
-  const headline = sponsorConfig.tiers.find((tier) => tier.id === 'headline')!;
-  const category = sponsorConfig.tiers.find((tier) => tier.id === 'category')!;
   const count = Number.isFinite(projectCount) && projectCount >= 0 ? Math.floor(projectCount) : 0;
   const emailUrl = `mailto:${contacts.email}?subject=${encodeURIComponent(t.emailSubject)}&body=${encodeURIComponent(t.emailBody)}`;
 
@@ -83,17 +81,17 @@ export function SponsorDialog({ locale, projectCount, onClose }: SponsorDialogPr
         <div className="sponsor-tiers">
           <section className="sponsor-tier sponsor-tier-headline" aria-labelledby={`${titleId}-headline`}>
             <h3 id={`${titleId}-headline`}>{t.headline}</h3>
-            <div className="sponsor-price">{language === 'en' && <span>{t.from}</span>}<strong>${headline.priceUsd}</strong><span>{t.perMonth}</span>{language !== 'en' && <span>{t.from}</span>}</div>
+            <div className="sponsor-price"><strong>{t.from}</strong><span>{t.perMonth}</span></div>
             <p className="sponsor-placement">{t.headlinePlacement}</p>
             <p>{t.headlineBenefit}</p>
-            <a href={`${emailUrl}${encodeURIComponent(`\n${t.headline}`)}`} className="sponsor-plan-action">{t.email}<ArrowUpRight size={16} aria-hidden="true" /></a>
+            <a href={`${emailUrl}${encodeURIComponent(`\n${t.headline}`)}`} className="sponsor-plan-action">{t.inquirePlan}<ArrowUpRight size={16} aria-hidden="true" /></a>
           </section>
           <section className="sponsor-tier" aria-labelledby={`${titleId}-category`}>
             <h3 id={`${titleId}-category`}>{t.category}</h3>
-            <div className="sponsor-price">{language === 'en' && <span>{t.from}</span>}<strong>${category.priceUsd}</strong><span>{t.perMonth}</span>{language !== 'en' && <span>{t.from}</span>}</div>
+            <div className="sponsor-price"><strong>{t.from}</strong><span>{t.perMonth}</span></div>
             <p className="sponsor-placement">{t.categoryPlacement}</p>
             <p>{t.categoryBenefit}</p>
-            <a href={`${emailUrl}${encodeURIComponent(`\n${t.category}`)}`} className="sponsor-plan-action">{t.email}<ArrowUpRight size={16} aria-hidden="true" /></a>
+            <a href={`${emailUrl}${encodeURIComponent(`\n${t.category}`)}`} className="sponsor-plan-action">{t.inquirePlan}<ArrowUpRight size={16} aria-hidden="true" /></a>
           </section>
         </div>
 

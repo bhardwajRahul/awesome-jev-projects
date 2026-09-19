@@ -18,10 +18,10 @@ export interface SponsorCopy {
   category: string; from: string; perMonth: string; headlinePlacement: string;
   categoryPlacement: string; headlineBenefit: string; categoryBenefit: string;
   includedTitle: string; benefits: string[]; terms: string; process: string;
-  payments: string; contactTitle: string; email: string; telegram: string;
-  x: string; copyEmail: string; copyTelegram: string; copied: string;
-  copyFailed: string; close: string; language: string; emailSubject: string;
-  emailBody: string; visit: string; disclosure: string;
+  payments: string; contactTitle: string; email: string; inquirePlan: string;
+  telegram: string; x: string; copyEmail: string; copyTelegram: string;
+  copied: string; copyFailed: string; close: string; language: string;
+  emailSubject: string; emailBody: string; visit: string; disclosure: string;
 }
 export function safeSponsorUrl(value: unknown): string | null;
 export function safeSponsorLogo(value: unknown): string | null;
