@@ -1,3 +1,25 @@
+/** Only textual properties are indexed; numeric source locations are ignored. */
+export interface SearchEvidence {
+  readonly url?: string;
+  readonly note?: string;
+  readonly text?: string;
+  readonly snippet?: string;
+}
+export type SearchEvidenceLine = string | number | Pick<SearchEvidence, 'text' | 'snippet'>;
+
+/** Optional metadata understood by the index. Kept separate from the legacy
+ * generic constraint: old records may use these names for unrelated values.
+ * New callers can opt into SearchableProject & SearchMetadata validation.
+ */
+export interface SearchMetadata {
+  readonly topics?: readonly string[];
+  readonly description?: string;
+  readonly repoDescription?: string;
+  readonly repositoryDescription?: string;
+  readonly evidenceLines?: string | readonly SearchEvidenceLine[];
+  readonly evidence?: readonly SearchEvidence[];
+}
+
 export interface SearchableProject {
   id: string;
   name?: string;
@@ -24,6 +46,7 @@ export interface SearchableProject {
   license?: string | null;
   licenseStatus?: string;
 }
+/** Opaque index: construct with createProjectSearch, retain across queries. */
 export interface ProjectSearch<T extends SearchableProject> {
   readonly projects: readonly T[];
 }

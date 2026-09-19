@@ -30,7 +30,7 @@ test('identity boost supports name, author, prefix, case, full-width and owner/r
   assert.deepEqual(queryIds(items, 'Jev-c').slice(0, 2), ['sac-y:jev-cu', 'z:similar']);
 });
 
-test('non-identity matches use Fuse scores and stable IDs, never Stars', () => {
+test('non-identity matches preserve relevance and stable IDs, never Stars', () => {
   const items = [
     project('z', { stars: 140000, plainSummaryEn: 'A framework mentioning command routing within a large ecosystem of developer tools and utilities.' }),
     project('b', { stars: 2, plainSummaryEn: 'Command routing.' }),
@@ -57,7 +57,7 @@ test('Chinese scenario synonyms find meaningful native English evidence', () => 
   assert.ok(!queryIds(items, '爬虫').includes('unrelated'));
 });
 
-test('multi-concept queries require every concept, including adjacent Chinese scenes', () => {
+test('two-concept queries preserve precision, including adjacent Chinese scenes', () => {
   const items = [
     project('rust-router', { plainSummaryEn: 'A Rust model router for cost optimization.' }),
     project('rust-game', { plainSummaryEn: 'A Rust game engine.' }),
@@ -180,6 +180,30 @@ test('literal technologies require native project evidence, never taxonomy examp
   assert.ok(queryIds(items, '浏览器自动化').includes('z-unrelated'));
 });
 
+test('approved GitHub topics are native technology evidence while taxonomy labels remain navigation only', () => {
+  const items = [
+    project('taxonomy-only', { tags: ['browser-automation', 'coding-agents'], plainSummaryEn: 'A generic utility.' }),
+    project('playwright-topic', { topics: ['playwright'] }),
+    project('claude-topic', { topics: ['claude-code'] }),
+  ];
+  assert.deepEqual(queryIds(items, 'Playwright'), ['playwright-topic']);
+  assert.deepEqual(queryIds(items, 'Claude'), ['claude-topic']);
+});
+
+test('approved search metadata survives the source to public projection without numeric line references', () => {
+  const [publicRow] = publicProjects([project('logicrw:metadata-source', {
+    topics: ['playwright', 'claude-code'],
+    description: 'A GitHub description for deterministic reconciliation.',
+    evidenceLines: ['The implementation records a bounded retry ledger.', 17, 'L19-L42'],
+  })]);
+  assert.deepEqual(publicRow.topics, ['playwright', 'claude-code']);
+  assert.equal(publicRow.description, 'A GitHub description for deterministic reconciliation.');
+  assert.deepEqual(publicRow.evidenceLines, ['The implementation records a bounded retry ledger.']);
+  assert.deepEqual(queryIds([publicRow], 'Playwright'), ['logicrw:metadata-source']);
+  assert.deepEqual(queryIds([publicRow], 'bounded retry ledger'), ['logicrw:metadata-source']);
+  assert.deepEqual(queryIds([publicRow], '17'), []);
+});
+
 test('technical terms keep native scope inside mixed scenario queries', () => {
   const items = [
     project('browser-other', { stars: 999999, tags: ['browser-automation', 'llm-routing-cost'] }),
@@ -195,6 +219,9 @@ test('current catalog technical hits have native evidence while Chinese scenes a
   const catalog = JSON.parse(readFileSync(new URL('../src/data/projects.json', import.meta.url), 'utf8'));
   const index = createProjectSearch(catalog);
   const ownEvidence = (item) => [item.name, item.id, item.author, item.url, item.language,
+    ...(Array.isArray(item.topics) ? item.topics : []),
+    item.description,
+    ...(Array.isArray(item.evidenceLines) ? item.evidenceLines.filter((line) => typeof line === 'string' && !/^\s*(?:lines?\s*)?#?L?\d+(?:\s*[-–,:]\s*#?L?\d+)*\s*$/iu.test(line)) : []),
     ...['plainSummary', 'jevDecisionPoint', 'highlightBenefit'].flatMap((field) => ['', 'En', 'Ja', 'Ko'].map((suffix) => item[field + suffix])),
   ].filter(Boolean).join(' ').normalize('NFKC').toLowerCase();
   for (const query of ['Playwright', 'Rust', 'Claude']) {
@@ -225,6 +252,9 @@ test('public UI data retains language evidence and rejects technology matches fr
   const rows = publicProjects(catalog);
   assert.equal(rows.length, catalog.length);
   const ownEvidence = (item) => [item.name, item.id, item.author, item.url, item.language,
+    ...(Array.isArray(item.topics) ? item.topics : []),
+    item.description,
+    ...(Array.isArray(item.evidenceLines) ? item.evidenceLines.filter((line) => typeof line === 'string' && !/^\s*(?:lines?\s*)?#?L?\d+(?:\s*[-–,:]\s*#?L?\d+)*\s*$/iu.test(line)) : []),
     ...['plainSummary', 'jevDecisionPoint', 'highlightBenefit'].flatMap((field) => ['', 'En', 'Ja', 'Ko'].map((suffix) => item[field + suffix])),
   ].filter(Boolean).join(' ').normalize('NFKC').toLowerCase();
   const index = createProjectSearch([...rows, ...publicProjects([
@@ -262,4 +292,188 @@ test('custom or restricted license status overrides a permissive-looking SPDX la
       assert.equal(matchesQuickFilter(project('p', { license, licenseStatus }), 'commercial'), false, `${license}: ${licenseStatus}`);
     }
   }
+});
+
+test('CJK fallback joins shared bigrams without requiring a contiguous phrase', () => {
+  const items = [
+    project('combined', { plainSummary: '量子工具与编程分析。' }),
+    project('one-pair', { plainSummary: '量子物理研究。' }),
+    project('one-character', { plainSummary: '量杯使用教程。' }),
+  ];
+  assert.deepEqual(queryIds(items, '量子编程'), ['combined']);
+});
+
+test('synonym phrases preserve input-word coverage without counting duplicate concepts', () => {
+  const items = [project('a', { plainSummaryEn: 'Browser automation.' }), project('b', { plainSummaryEn: 'Alpha toolkit.' })];
+  assert.deepEqual(queryIds(items, 'browser automation unmatched'), ['a']);
+  assert.deepEqual(queryIds(items, 'unmatched browser automation'), ['a']);
+  assert.deepEqual(queryIds(items, 'alpha alpha unmatched'), []);
+  assert.deepEqual(queryIds(items, '爬虫 抓取 unmatched'), []);
+});
+
+test('exact URL slugs precede name prefixes and URL identities accept trailing metadata', () => {
+  const items = [
+    project('a-prefix', { name: 'Needle-Plus' }),
+    project('z-url', { name: 'Display title', url: 'https://github.com/acme/needle' }),
+    project('other-host', { url: 'https://example.org/tools/catalog' }),
+  ];
+  assert.equal(queryIds(items, 'needle')[0], 'z-url');
+  for (const query of ['https://github.com/acme/needle/?tab=readme#top', 'github.com/acme/needle', 'https://github.com/acme/needle.git']) {
+    assert.equal(queryIds(items, query)[0], 'z-url');
+  }
+  assert.equal(queryIds(items, 'https://example.org/tools/catalog')[0], 'other-host');
+});
+
+test('non-GitHub URL identity preserves path case, query and fragment', () => {
+  const items = [
+    project('upper', { url: 'https://example.org/Tools/Widget?id=1#intro' }),
+    project('lower', { url: 'https://example.org/tools/widget?id=2#intro' }),
+    project('fragment', { url: 'https://example.org/Tools/Widget?id=1#usage' }),
+  ];
+  for (const item of items) assert.deepEqual(queryIds(items, item.url), [item.id]);
+  assert.deepEqual(queryIds(items, 'HTTPS://EXAMPLE.ORG/Tools/Widget?id=1#intro'), ['upper']);
+  assert.deepEqual(queryIds(items, 'https://example.org/tools/widget?unrelated=3'), []);
+});
+
+test('a whole-query identity suppresses partial fallbacks and query results are independent', () => {
+  const items = [project('identity', { name: 'Alpha beta gamma toolkit' }), project('partial', { plainSummaryEn: 'Alpha beta.' })];
+  const index = createProjectSearch(items);
+  assert.deepEqual(ids(searchProjects(index, 'alpha beta gamma')), ['identity']);
+  const first = searchProjects(index, 'alpha beta unmatched');
+  first.pop();
+  assert.equal(searchProjects(index, 'alpha beta unmatched').length, 2);
+  assert.deepEqual(searchProjects(index, '!!!'), []);
+});
+
+test('literal taxonomy tags cannot impersonate GitHub topics or source evidence', () => {
+  const items = [project('taxonomy', { tags: ['rust', 'claude', 'playwright'] }), project('repository', { topics: ['rust', 'claude', 'playwright'] })];
+  for (const query of ['Rust', 'Claude', 'Playwright']) assert.deepEqual(queryIds(items, query), ['repository']);
+});
+
+test('direct and public indexes ignore every supported source-line notation', () => {
+  const rows = [project('locations', { evidenceLines: ['lines 15-45', '#L15-#L45', 'L３５-L４５', 42] })];
+  for (const input of [rows, publicProjects(rows)]) for (const query of ['15', '45', '35', '42', 'lines', 'l15']) {
+    assert.deepEqual(queryIds(input, query), [], query);
+  }
+});
+
+test('punctuation-only repository names still retain their exact identity', () => {
+  const items = [project('owner:dash', { name: '-' }), project('other', { plainSummaryEn: 'An unrelated tool.' })];
+  assert.deepEqual(queryIds(items, '-'), ['owner:dash']);
+  assert.deepEqual(queryIds(items, '!!!'), []);
+});
+
+test('identity evidence wins over keyword stuffing across URL, id, name and author forms', () => {
+  const items = [
+    project('logicrw:needle-stack', {
+      name: 'Needle-Stack',
+      author: 'LogicRW',
+      url: 'https://github.com/LogicRW/needle-stack',
+      plainSummaryEn: 'A small project.',
+    }),
+    project('keyword-stuffed', {
+      name: 'Needle Stack integrations',
+      author: 'Other',
+      plainSummaryEn: 'needle-stack logicrw github.com/logicrw/needle-stack ' + 'needle stack '.repeat(20),
+    }),
+    project('prefix-only', { name: 'Needle-Stack-Plus', author: 'LogicRW Labs' }),
+  ];
+  for (const query of [
+    'needle-stack',
+    'logicrw:needle-stack',
+    'LogicRW/needle-stack',
+    'https://github.com/LogicRW/needle-stack/',
+    'LogicRW',
+  ]) {
+    assert.equal(queryIds(items, query)[0], 'logicrw:needle-stack', query);
+  }
+});
+
+test('pathname tokens, topics, GitHub descriptions and textual evidence lines are searchable', () => {
+  const items = [
+    project('acme:plain', { url: 'https://github.com/acme/plain-project' }),
+    project('acme:dash-path', { url: 'https://github.com/acme/edge-worker-kit' }),
+    project('acme:underscore-path', { url: 'https://github.com/acme/vector_store_tools' }),
+    project('acme:topic', { topics: ['release-orchestration'] }),
+    project('acme:description', { description: 'GitHub description: deterministic snapshot reconciliation.' }),
+    project('acme:evidence', { evidenceLines: ['The implementation exports a bounded retry ledger.', '127', 42] }),
+  ];
+  for (const [query, expected] of [
+    ['edge worker', 'acme:dash-path'],
+    ['vector store', 'acme:underscore-path'],
+    ['release orchestration', 'acme:topic'],
+    ['snapshot reconciliation', 'acme:description'],
+    ['bounded retry ledger', 'acme:evidence'],
+  ]) {
+    assert.ok(queryIds(items, query).includes(expected), query);
+  }
+  assert.deepEqual(queryIds(items, '127'), [], 'numeric source line references are provenance, not search copy');
+  assert.deepEqual(queryIds(items, '42'), [], 'numeric source line references are provenance, not search copy');
+});
+
+test('field weights, stable ties and frozen inputs preserve relevance without popularity leakage', () => {
+  const items = Object.freeze([
+    Object.freeze(project('z-url', { stars: 999999, url: 'https://github.com/acme/orchid' })),
+    Object.freeze(project('a-name', { stars: 0, name: 'Orchid' })),
+    Object.freeze(project('e-topics', { stars: 2, topics: Object.freeze(['orchid']) })),
+    Object.freeze(project('f-tags', { stars: 3, tags: Object.freeze(['orchid']) })),
+    Object.freeze(project('g-summary', { stars: 4, plainSummaryEn: 'orchid' })),
+    Object.freeze(project('h-benefit', { stars: 5, highlightBenefitEn: 'orchid' })),
+    Object.freeze(project('i-decision', { stars: 6, jevDecisionPointEn: 'orchid' })),
+    Object.freeze(project('j-language', { stars: 7, language: 'Orchid' })),
+    Object.freeze(project('k-category', { stars: 8, category: 'orchid' })),
+    Object.freeze(project('b-name-tie', { stars: 1, name: 'Orchid' })),
+  ]);
+  const before = JSON.stringify(items);
+  assert.deepEqual(queryIds(items, 'orchid'), [
+    'a-name', 'b-name-tie', 'z-url', 'e-topics', 'f-tags', 'g-summary', 'h-benefit', 'i-decision', 'j-language', 'k-category',
+  ]);
+  assert.equal(JSON.stringify(items), before, 'search must not mutate frozen projects or nested metadata');
+  assert.deepEqual(queryIds([...items].reverse(), 'orchid'), queryIds(items, 'orchid'), 'ties use stable identity, never insertion order or Stars');
+});
+
+test('unknown Chinese phrases use meaningful bigrams and do not admit unrelated shared characters', () => {
+  const items = [
+    project('target', { plainSummary: '量子编程工具，提供可复现的编译流程。' }),
+    project('shared-first', { plainSummary: '量子力学课程与实验笔记。' }),
+    project('shared-last', { plainSummary: '编程入门教材。' }),
+    project('unrelated', { plainSummary: '量杯与烹饪计时器。' }),
+  ];
+  assert.deepEqual(queryIds(items, '量子编程'), ['target']);
+});
+
+test('fallback grades partial multi-concept coverage only when no full result exists', () => {
+  const items = [
+    project('all-three', { plainSummaryEn: 'Alpha beta gamma workflow.' }),
+    project('two-three', { plainSummaryEn: 'Alpha beta workflow.' }),
+    project('one-three', { plainSummaryEn: 'Alpha workflow.' }),
+    project('identity', { name: 'Alpha beta gamma catalog entry' }),
+  ];
+  assert.deepEqual(queryIds(items, 'alpha beta gamma'), ['identity', 'all-three'], 'a full match suppresses partial fallback while retaining identity');
+
+  const fallbackThree = [
+    project('two-of-three', { plainSummaryEn: 'Alpha beta workflow.' }),
+    project('one-of-three', { plainSummaryEn: 'Alpha workflow.' }),
+  ];
+  assert.deepEqual(queryIds(fallbackThree, 'alpha beta gamma'), ['two-of-three']);
+
+  const fallbackItems = [
+    project('three-of-four', { plainSummaryEn: 'Alpha beta gamma workflow.' }),
+    project('two-of-four', { plainSummaryEn: 'Alpha beta workflow.' }),
+    project('one-of-two', { plainSummaryEn: 'Delta workflow.' }),
+  ];
+  assert.deepEqual(queryIds(fallbackItems, 'alpha beta gamma delta'), ['three-of-four', 'two-of-four']);
+  assert.deepEqual(queryIds(fallbackItems, 'delta epsilon'), [], 'one of two concepts is too weak to fall back');
+});
+
+test('fallback never lets taxonomy prose satisfy native Rust, Claude or Playwright evidence', () => {
+  const items = [
+    project('taxonomy-sdk', { tags: ['multilanguage-sdk'], plainSummaryEn: 'Alpha beta deployment tool.' }),
+    project('taxonomy-coding', { tags: ['coding-agents'], plainSummaryEn: 'Alpha beta deployment tool.' }),
+    project('taxonomy-browser', { tags: ['browser-automation'], plainSummaryEn: 'Alpha beta deployment tool.' }),
+    project('rust-native', { language: 'Rust', plainSummaryEn: 'Alpha beta deployment tool.' }),
+  ];
+  assert.deepEqual(queryIds(items, 'Rust alpha beta gamma'), ['rust-native']);
+  assert.deepEqual(queryIds(items, 'Claude alpha beta gamma'), []);
+  assert.deepEqual(queryIds(items, 'Playwright alpha beta gamma'), []);
 });

@@ -14,6 +14,9 @@ export const publicFields = [
   "highlightBenefit",
   "highlightBenefitEn",
   "tags",
+  "topics",
+  "description",
+  "evidenceLines",
   "stars",
   "forks",
   "openIssues",
@@ -44,11 +47,38 @@ export const publicFields = [
   "evidence",
   "pinned",
 ];
+const searchMetadataFields = new Set(["topics", "description", "evidenceLines"]);
+// Only deliberately public prose belongs here. Do not copy raw source, internal
+// evidence objects, evidenceNote, or coerce numeric line references into text.
+function publicProse(value, limit) {
+  if (typeof value !== "string") return undefined;
+  const text = value.trim();
+  if (!text || text.length > limit || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(text)) return undefined;
+  if (/(?:~\/|\/(?:Users|home|private|tmp|var|Volumes)\/|[A-Z]:\\)|\b(?:github_pat_[A-Za-z\d_]{16,}|gh[pousr]_[A-Za-z\d]{16,}|sk-[A-Za-z\d_-]{20,}|AKIA[A-Z\d]{16})\b|-----BEGIN [\w ]*PRIVATE KEY-----|\bBearer\s+\S+|\b[A-Z_]*(?:API_KEY|TOKEN|SECRET|PASSWORD)\s*[:=]|[?&](?:api[_-]?key|token|access_token)=/iu.test(text)) return undefined;
+  if (/```|~~~|<\/?[a-z][^>]*>|(?:^|\n)\s*(?:(?:import|export)\s|(?:const|let|var)\s+\w+\s*=|(?:def|function)\s+\w+\s*\(|from\s+\S+\s+import\s|(?:class|interface)\s+\w+[^\n]*[{:]|#include\s|#!)/iu.test(text)) return undefined;
+  return text.replace(/\s+/gu, " ");
+}
+function publicSearchMetadata(row) {
+  const metadata = {};
+  const topics = [...new Set((Array.isArray(row.topics) ? row.topics : [])
+    .map((topic) => publicProse(topic, 50)?.toLowerCase())
+    .filter((topic) => topic && /^[a-z0-9][a-z0-9-]{0,49}$/u.test(topic)))].slice(0, 20);
+  if (topics.length) metadata.topics = topics;
+  const description = publicProse(row.description, 1000);
+  if (description) metadata.description = description;
+  // The public shape is string[]. Legacy numeric arrays and strings such as
+  // "L15-L45" identify source locations, not searchable implementation prose.
+  const lines = Array.isArray(row.evidenceLines) ? row.evidenceLines : [row.evidenceLines];
+  const evidenceLines = [...new Set(lines.map((line) => publicProse(line, 400))
+    .filter((line) => line && !/^(?:lines?\s*)?#?L?\d+(?:\s*[-–,:]\s*#?L?\d+)*$/iu.test(line.normalize('NFKC'))))].slice(0, 12);
+  if (evidenceLines.length) metadata.evidenceLines = evidenceLines;
+  return metadata;
+}
 export function publicProjects(rows) {
   return rows.map((row) => {
     const project = Object.fromEntries(
       publicFields
-        .filter((key) => row[key] !== undefined)
+        .filter((key) => row[key] !== undefined && !searchMetadataFields.has(key))
         .map((key) => [key, row[key]]),
     );
     if (row.catalogStatus === "review-pending") {
@@ -69,6 +99,8 @@ export function publicProjects(rows) {
       project.license = null;
       project.licenseStatus = "unconfirmed";
       project.evidence = (row.reviewSources ?? []).map(({ url }) => ({ url }));
+    } else {
+      Object.assign(project, publicSearchMetadata(row));
     }
     return project;
   });
