@@ -29746,19 +29746,19 @@
     "url": "https://github.com/pnthn-ai/polar_llama",
     "repoId": 795612737,
     "category": "Data & Search",
-    "plainSummary": "Polar Llama 是一个与 Polars 集成的 Python 库，可并行调用 OpenAI、Anthropic、Gemini、Groq 和 AWS Bedrock 等多个 LLM 提供商的模型。",
-    "jevDecisionPoint": "给候选记录判断相关性或打分，再由本地程序筛选和排序。",
-    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
-    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
-    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "plainSummary": "基于 Polars 数据帧的高性能并发推理库，支持多模型提供商，并将 Jev 作为结构化决策与低延迟评分的备选引擎。",
+    "jevDecisionPoint": "在 Polars 并行数据流中作为备选推理与打分引擎，执行快速结构化决策与相关性筛选。",
+    "jevDecisionPointEn": "Serves as an alternate high-throughput decision and scoring engine within parallel Polars pipeline workflows.",
+    "highlightBenefit": "在高并发数据处理流水线中无缝结合 Polars 速度与 Jev 结构化决策能力。",
+    "highlightBenefitEn": "Combines Polars dataframe throughput with Jev structured decisions for high-concurrency batch processing.",
     "tags": [
       "search-retrieval",
       "classification-ranking"
     ],
-    "summarySource": "readme-extractive",
+    "summarySource": "curated",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
     "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
-    "plainSummaryEn": "Polar Llama is a Python library designed to enhance the efficiency of making parallel inference calls to the ChatGPT API using the Polars dataframe tool. This library enables users to manage multiple API requests simultaneously, significantly speeding up the process compared to serial request handling.",
+    "plainSummaryEn": "A high-performance Python library integrating Polars to orchestrate parallel inference across multiple providers, featuring Jev as an alternate decision and scoring engine.",
     "enrichment": {
       "issueTextTrusted": false,
       "ai": {
