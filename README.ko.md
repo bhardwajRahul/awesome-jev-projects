@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 프로젝트 등록 신청</strong></a>
 </p>
 
-<p>TypeSafe AI의 Jev 모델을 탑재한 **182+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
+<p>TypeSafe AI의 Jev 모델을 탑재한 **183+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
 
 </div>
 
@@ -46,7 +46,7 @@
 - [🔌 생태계 연동 및 어댑터 (8)](#sdk-integrations-ko)
 - [💻 CLI 및 자동화 파이프라인 (26)](#cli-pipelines-ko)
 - [💾 데이터베이스 확장 및 시맨틱 검색 (4)](#data-search-ko)
-- [🌐 브라우저 및 데스크톱 자동화 (16)](#browser-os-action-ko)
+- [🌐 브라우저 및 데스크톱 자동화 (17)](#browser-os-action-ko)
 - [🧹 컨텍스트 압축 및 가비지 컬렉션 (7)](#context-gc-filter-ko)
 - [🛡️ 보안 및 가드레일 (11)](#security-guardrails-ko)
 - [🧩 MCP 프로토콜 및 도구 확장 (29)](#mcp-integrations-ko)
@@ -408,6 +408,10 @@
 - [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
+
+- [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) `★ 14` - Jev-cu: Desktop Computer Use co-processor delegating "where to click next" to Jev System One from text candidates without raw screenshots.
+  - 🎯 **Jev의 역할**: UI 텍스트 후보군에서 다음 작업 대상, 작업 유형, 완료도 및 위험 등급을 직접 평가.
+  - 💡 **핵심 장점**: 텍스트 전용 후보 평가로 멀티모달 토큰 소비와 지연 시간을 대폭 절감하며 엄격한 로컬 정책 게이트를 적용.
 
 - [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.

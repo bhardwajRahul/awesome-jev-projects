@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
-<p>严谨收录 **182+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
+<p>严谨收录 **183+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
 
 </div>
 
@@ -46,7 +46,7 @@
 - [🔌 生态框架与接入适配器 (8)](#sdk-integrations-zh)
 - [💻 命令行工具与自动化工作流 (26)](#cli-pipelines-zh)
 - [💾 数据库扩展与语义检索 (4)](#data-search-zh)
-- [🌐 浏览器与桌面端自动化 (16)](#browser-os-action-zh)
+- [🌐 浏览器与桌面端自动化 (17)](#browser-os-action-zh)
 - [🧹 上下文垃圾回收与降噪 (7)](#context-gc-filter-zh)
 - [🛡️ 安全防御与输入护栏 (11)](#security-guardrails-zh)
 - [🧩 MCP 协议与工具扩展 (29)](#mcp-integrations-zh)
@@ -408,6 +408,10 @@
 - [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - 给网页做视觉减法的浏览器扩展。让 Jev 识别广告、促销和订阅弹窗，再把可复用的隐藏规则存在本地。
   - 🎯 **核心决策**: 对页面元素候选做分类，只让通过阈值的非必要元素进入隐藏规则，不确定的保留。
   - 💡 **收益亮点**: 常见页面可以复用规则，隐藏操作可撤销；它不阻止追踪请求，也不代替用户处理同意选项。
+
+- [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) `★ 14` - Jev-cu：面向 Codex 桌面端 Computer Use 的决策助手，将「下一步点哪里」交给 Jev System One 从候选文字中离散选择，只传文本不传截图。
+  - 🎯 **核心决策**: 从可访问性树与界面文字候选中，由 Jev 裁决下一个操作目标元素、动作类型、完成度与风险分级。
+  - 💡 **收益亮点**: 只传文字不传截图，大幅降低多模态 token 消耗与延迟，结合本地白名单策略拦截敏感系统操作。
 
 - [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - 给浏览器装一个任务副驾。输入目标后自动点按钮、填表；碰到付款、删除等高风险操作时停下来确认。
   - 🎯 **核心决策**: 从当前网页的交互元素里选择下一步动作，并评估点击的风险与不可逆程度。

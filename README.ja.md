@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 プロジェクトを申請</strong></a>
 </p>
 
-<p>TypeSafe AIのJevモデルを採用した **182+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
+<p>TypeSafe AIのJevモデルを採用した **183+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
 
 </div>
 
@@ -46,7 +46,7 @@
 - [🔌 エコシステム統合・アダプター (8)](#sdk-integrations-ja)
 - [💻 CLI・自動化パイプライン (26)](#cli-pipelines-ja)
 - [💾 データベース拡張・セマンティック検索 (4)](#data-search-ja)
-- [🌐 ブラウザ・デスクトップ自動化 (16)](#browser-os-action-ja)
+- [🌐 ブラウザ・デスクトップ自動化 (17)](#browser-os-action-ja)
 - [🧹 コンテキスト圧縮・ノイズ除去 (7)](#context-gc-filter-ja)
 - [🛡️ セキュリティ・ガードレール (11)](#security-guardrails-ja)
 - [🧩 MCP プロトコル・ツール拡張 (29)](#mcp-integrations-ja)
@@ -408,6 +408,10 @@
 - [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
+
+- [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) `★ 14` - Jev-cu: Desktop Computer Use co-processor delegating "where to click next" to Jev System One from text candidates without raw screenshots.
+  - 🎯 **Jevの判断箇所**: UIテキストの候補から次の操作対象、アクション種別、完了度、およびリスクレベルを直接評価。
+  - 💡 **主な特徴**: テキストのみの候補評価によりマルチモーダルトークンの消費と遅延を大幅削減し、厳格なローカルポリシーゲートを適用。
 
 - [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。

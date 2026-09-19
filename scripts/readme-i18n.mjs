@@ -72,6 +72,7 @@ export const DECISIONS_JA = {
   "Reads structured battlefield state and economy data to make independent decisions on base building and army micro.": "構造化された戦況とリソースデータを読み取り、内政建築と戦闘ユニットの操作を独立して意思決定。",
   "Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.": "ユーザーの対話履歴とツールの引数を総合評価し、実行意図がセキュリティポリシー規則に適合しているかを判定。",
   "Sends captured notification or SMS text to Jev to evaluate whether the message is advertising noise.": "キャプチャした通知やSMSのテキストをJevに送信し、メッセージが広告ノイズであるかを判定。",
+  "Evaluates next action targets, operation types, completion, and risk tiers directly from UI text candidates.": "UIテキストの候補から次の操作対象、アクション種別、完了度、およびリスクレベルを直接評価。",
 };
 
 export const DECISIONS_KO = {
@@ -148,6 +149,7 @@ export const DECISIONS_KO = {
   "Reads structured battlefield state and economy data to make independent decisions on base building and army micro.": "구조화된 전장 상황과 자원 데이터를 읽고 기지 건설과 전투 유닛 미세 컨트롤을 독립적으로 의사결정.",
   "Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.": "사용자 대화 이력과 도구 인수를 종합 평가하여 실행 의도가 보안 정책 규칙을 준수하는지 판정.",
   "Sends captured notification or SMS text to Jev to evaluate whether the message is advertising noise.": "캡처된 알림 또는 SMS 텍스트를 Jev로 전송하여 메시지가 광고 스팸인지 판정.",
+  "Evaluates next action targets, operation types, completion, and risk tiers directly from UI text candidates.": "UI 텍스트 후보군에서 다음 작업 대상, 작업 유형, 완료도 및 위험 등급을 직접 평가.",
 };
 
 export const BENEFITS_JA = {
@@ -229,6 +231,7 @@ export const BENEFITS_JA = {
   "Demonstrates the feasibility of decomposing complex real-time strategy state into discrete semantic decisions.": "複雑なリアルタイムストラテジーの状況を離散的なセマンティック決定へ分解可能であることを実証。",
   "Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.": "静的な正規表現マッチングを超越：ツール選択に依存せずセマンティックな意図からポリシー違反を検知。",
   "Replaces brittle keyword blacklists with robust semantic filtering while ensuring verification codes are never dropped.": "脆弱なキーワードブラックリストを堅牢なセマンティックフィルタリングに置き換え、認証コードの誤遮断をゼロに。",
+  "Text-only candidate evaluation slashes multimodal token overhead and latency while enforcing strict local policy gates.": "テキストのみの候補評価によりマルチモーダルトークンの消費と遅延を大幅削減し、厳格なローカルポリシーゲートを適用。",
 };
 
 export const BENEFITS_KO = {
@@ -310,4 +313,5 @@ export const BENEFITS_KO = {
   "Demonstrates the feasibility of decomposing complex real-time strategy state into discrete semantic decisions.": "복잡한 실시간 전략 시뮬레이션 상태를 이산적인 시맨틱 의사결정으로 분해할 수 있음을 입증.",
   "Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.": "정적 정규식 매칭을 초월: 도구의 종류와 무관하게 시맨틱 의도를 통해 보안 정책 위반을 감지.",
   "Replaces brittle keyword blacklists with robust semantic filtering while ensuring verification codes are never dropped.": "취약한 키워드 블랙리스트를 견고한 시맨틱 필터링으로 대체하여 인증 코드 유실을 원천 방지.",
+  "Text-only candidate evaluation slashes multimodal token overhead and latency while enforcing strict local policy gates.": "텍스트 전용 후보 평가로 멀티모달 토큰 소비와 지연 시간을 대폭 절감하며 엄격한 로컬 정책 게이트를 적용.",
 };

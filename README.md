@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-182%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-183%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 Submit a Project</strong></a>
 </p>
 
-<p>A source-verified, zero-hype directory of **182+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
+<p>A source-verified, zero-hype directory of **183+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
 
 </div>
 
@@ -46,7 +46,7 @@
 - [🔌 SDK & Ecosystem Integrations (8)](#sdk-integrations-en)
 - [💻 CLI & Pipelines (26)](#cli-pipelines-en)
 - [💾 Data & Search (4)](#data-search-en)
-- [🌐 Browser & Desktop Automation (16)](#browser-os-action-en)
+- [🌐 Browser & Desktop Automation (17)](#browser-os-action-en)
 - [🧹 Context GC & Noise Filtering (7)](#context-gc-filter-en)
 - [🛡️ Security & Guardrails (11)](#security-guardrails-en)
 - [🧩 MCP Protocols & Tool Endpoints (29)](#mcp-integrations-en)
@@ -408,6 +408,10 @@
 - [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
+
+- [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) `★ 14` - Jev-cu: Desktop Computer Use co-processor delegating "where to click next" to Jev System One from text candidates without raw screenshots.
+  - 🎯 **What Jev Decides**: Evaluates next action targets, operation types, completion, and risk tiers directly from UI text candidates.
+  - 💡 **Key Advantage**: Text-only candidate evaluation slashes multimodal token overhead and latency while enforcing strict local policy gates.
 
 - [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.

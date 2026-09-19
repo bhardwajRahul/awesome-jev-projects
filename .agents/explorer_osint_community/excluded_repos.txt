@@ -1,0 +1,5 @@
+berriai/litellm-docs
+igorganapolsky/thumbgate
+joshuasp/open-jev
+langchain-ai/docs
+vinnylarouge/jevlike

@@ -1,0 +1,1599 @@
+{
+  "Anil-matcha/awesome-jev-by-typesafe": {
+    "description": "Evidence-backed use cases, patterns, prompts, and starter code for TypeSafe Jev — a System One model for fast, typed, confidence-aware decisions in software.",
+    "url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev",
+      "\"typesafe-ai\""
+    ]
+  },
+  "cobanov/awesome-jev": {
+    "description": "A curated, source-backed list of projects built with Jev, TypeSafe AI's System One model for typed decisions.",
+    "url": "https://github.com/cobanov/awesome-jev",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev",
+      "\"typesafe-ai\""
+    ]
+  },
+  "Dicklesworthstone/skillranker": {
+    "description": "Rust CLI powered by Jev from TypeSafe.ai that ranks agent skills for the next step using live session context. Includes Claude Code hooks, structured JSON, abstention, and local feedback. Requires a TypeSafe API key.",
+    "url": "https://github.com/Dicklesworthstone/skillranker",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev",
+      "\"api.typesafe.ai\"",
+      "\"typesafe-ai\""
+    ]
+  },
+  "logicrw/awesome-jev-projects": {
+    "description": "Awesome Jev: source-backed open-source ecosystem radar, plain-language project discovery, and automatic GitHub sync",
+    "url": "https://github.com/logicrw/awesome-jev-projects",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev",
+      "\"typesafe-ai\""
+    ]
+  },
+  "hellogumbo/awesome-jev": {
+    "description": "A community directory of projects built on Jev, TypeSafe AI's System One model.",
+    "url": "https://github.com/hellogumbo/awesome-jev",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev",
+      "\"typesafe-ai\""
+    ]
+  },
+  "pinecone-io/cultivar": {
+    "description": "Use cultivar to test your Agent Skills and Docs by running them in sandboxes, and across different agents. ",
+    "url": "https://github.com/pinecone-io/cultivar",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev"
+    ]
+  },
+  "luantak/is-malicious": {
+    "description": "A codebase scanner that helps you not run malicous code",
+    "url": "https://github.com/luantak/is-malicious",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev",
+      "\"typesafe-ai\""
+    ]
+  },
+  "kraayenjon/awesome-jev": {
+    "description": "A curated list of Jev use cases, projects, SDKs, and resources. Jev is TypeSafe AI's System One model for fast, typed decisions in software — Choice, Score, and Noul with calibrated probabilities.",
+    "url": "https://github.com/kraayenjon/awesome-jev",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev"
+    ]
+  },
+  "Heman10x-NGU/Verdict-open-jev": {
+    "description": "Non-autoregressive decision engine on ModernBERT (151M) with calibrated uncertainty (RLCD), TypeSafe AI Jev benchmark audit, and in-browser WebGPU playground",
+    "url": "https://github.com/Heman10x-NGU/Verdict-open-jev",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "topic:jev"
+    ]
+  },
+  "romaluev/jev-ego": {
+    "description": "Fast browser agent for ego lite. One TypeSafe request per step; an agent or Jev picks the move.",
+    "url": "https://github.com/romaluev/jev-ego",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "AkashPriyadarshii/jev-seo": {
+    "description": "100% free ₹0 agent-first SEO & GEO CLI suite and MCP server in Rust replacing Semrush and OpenSEO via DuckDuckGo and TypeSafe Jev System One",
+    "url": "https://github.com/AkashPriyadarshii/jev-seo",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "jev-mcp"
+    ]
+  },
+  "SeeAPI/awesome-jev-use-cases": {
+    "description": "Explore real-world use cases and projects built with TypeSafe AI's Jev: content moderation, AI agents, model routing, and semantic search. Curated by SeeAPI.",
+    "url": "https://github.com/SeeAPI/awesome-jev-use-cases",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "anandi1989/awesome-jev-usecases": {
+    "description": "Evidence-backed index of real-world Jev (TypeSafe AI System One) use cases, cookbook, how-to, repos, patterns, and measured results",
+    "url": "https://github.com/anandi1989/awesome-jev-usecases",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "yzfly/awesome-jev-zh": {
+    "description": "Jev / TypeSafe System One 中文精选列表：官方资料、SDK、爆款应用、Agent 工具、开源复现与独立评测，附中文上手指南，每日自动收录 GitHub 热门项目。",
+    "url": "https://github.com/yzfly/awesome-jev-zh",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "InsaneArts/typesafe-sdk-swift": {
+    "description": "Swift SDK for TypeSafe AI",
+    "url": "https://github.com/InsaneArts/typesafe-sdk-swift",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "\"typesafe-ai\""
+    ]
+  },
+  "djangobeatty/textured": {
+    "description": "Textured — Sounds of words. A musical toy from Fluxus.",
+    "url": "https://github.com/djangobeatty/textured",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "simota/tenbin": {
+    "description": "MCP server and agent skill for the TypeSafe AI System One API (Jev): decompose a judgment into Choice / Score / Noul questions, lint them, measure on labelled data, and put calibrated thresholds in code",
+    "url": "https://github.com/simota/tenbin",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "Hawxy/TypeSafeAI.Net": {
+    "description": ".NET SDK for the TypeSafe AI platform",
+    "url": "https://github.com/Hawxy/TypeSafeAI.Net",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "\"typesafe-ai\""
+    ]
+  },
+  "AkashPriyadarshii/jev-git": {
+    "description": "Sub-second Git pre-commit & pre-push semantic reflex gate powered by TypeSafe AI Jev",
+    "url": "https://github.com/AkashPriyadarshii/jev-git",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "qddegtya/qualm": {
+    "description": "Typed decisions from a System One model, where uncertainty is something you have to handle.",
+    "url": "https://github.com/qddegtya/qualm",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "MithrilMan/your-signal": {
+    "description": "Open-source BYOK Chrome extension for personal, reversible X timeline filters.",
+    "url": "https://github.com/MithrilMan/your-signal",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "AppitStudio/awesome-jev": {
+    "description": "Curated Jev resources and runnable examples for typed AI decisions.",
+    "url": "https://github.com/AppitStudio/awesome-jev",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "dwisiswant0/typesafe-sdk-go": {
+    "description": "Go SDK for TypeSafe AI.",
+    "url": "https://github.com/dwisiswant0/typesafe-sdk-go",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "AkashPriyadarshii/jev-superpowers": {
+    "description": "Systematic software development framework for AI coding agents upgraded with TypeSafe Jev System One typed decisions",
+    "url": "https://github.com/AkashPriyadarshii/jev-superpowers",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "mzainzulifqar/jev-php-sdk": {
+    "description": "PHP SDK for TypeSafe's Jev: send text and typed questions, get typed answers with calibrated confidence. PHP 8.1+, works with any PSR-18 client, Laravel 8–13.",
+    "url": "https://github.com/mzainzulifqar/jev-php-sdk",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "anilsenay/jev": {
+    "description": "Unofficial Go client for TypeSafe's System One API  and its model, Jev.",
+    "url": "https://github.com/anilsenay/jev",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "xingwudao/OpenJev": {
+    "description": "OpenJev: an independent Jev-inspired System One decision API based on TypeSafe.ai concepts. Choice, score and noul primitives, local mock server, Python and TypeScript SDKs. Real inference planned; not affiliated with TypeSafe AI.",
+    "url": "https://github.com/xingwudao/OpenJev",
+    "matchedQueries": [
+      "topic:typesafe-ai",
+      "\"api.typesafe.ai\"",
+      "openjev"
+    ]
+  },
+  "Charlyhno-eng/jev-document-classification": {
+    "description": "JEV Document Classification enables the rapid and cost-effective classification of text-based documents using AI, leveraging TypeSafe's \"System One\" model.",
+    "url": "https://github.com/Charlyhno-eng/jev-document-classification",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "deepanwadhwa/OpenDecision": {
+    "description": "OpenDecision is an open-source semantic decision engine like typesafe's jev.",
+    "url": "https://github.com/deepanwadhwa/OpenDecision",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "rhc98/awesome-jev": {
+    "description": "Projects built on Jev (TypeSafe AI's System One model), curated by Jev itself.",
+    "url": "https://github.com/rhc98/awesome-jev",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "wotai-dev/typesafe-jev-tools": {
+    "description": "A Claude Code hook that asks whether the decision you are writing needs a model at all. Includes a measured 149-row comparison of TypeSafe Jev against Claude Haiku 4.5.",
+    "url": "https://github.com/wotai-dev/typesafe-jev-tools",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "akash-kamat/system-one-gemma": {
+    "description": "Open-source Jev-style System One decision model. Gemma 3 270M with a scoring head — fast, calibrated decisions in a single forward pass. No text generation. Inspired by TypeSafe.ai's Jev.",
+    "url": "https://github.com/akash-kamat/system-one-gemma",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "AkashPriyadarshii/jev-scout": {
+    "description": "Zero-hallucination open-source repo and crate scout powered by TypeSafe AI Jev System One scoring",
+    "url": "https://github.com/AkashPriyadarshii/jev-scout",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "phuthuycoding/jev-audit": {
+    "description": "AI-powered pre-commit auditor backed by TypeSafe System One (Jev) — blocks secrets, vulns & low-quality code in ~300ms. 79-case test corpus at 100% accuracy.",
+    "url": "https://github.com/phuthuycoding/jev-audit",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "Icohen007/jev-play-ping-pong": {
+    "description": "Jev plays browser table tennis in real time: structured telemetry, typed decisions, ordinary Chrome inputs, and auditable evidence.",
+    "url": "https://github.com/Icohen007/jev-play-ping-pong",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "furedea/reflex-state": {
+    "description": "Jev-powered execution state for Pi coding agents. Track changes, checks, and blockers outside the main LLM, with evidence-backed updates and replay. Inspired by SKILL.state.",
+    "url": "https://github.com/furedea/reflex-state",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "jeiel85/jevscope": {
+    "description": "Local-first visual decision debugger and regression testbench for TypeSafe AI Jev",
+    "url": "https://github.com/jeiel85/jevscope",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "AbdelStark/s1-rs": {
+    "description": "Typed System One layer for Rust (Choice/Score/Noul). ",
+    "url": "https://github.com/AbdelStark/s1-rs",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "nak1b/jev-experiments": {
+    "description": "Small experiments with Jev by TypeSafe",
+    "url": "https://github.com/nak1b/jev-experiments",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "CaseReed/latch": {
+    "description": "Merge-gate triage for a red CI run: cluster the failures, let TypeSafe Jev label the cause, and return Gate: PASS (infra noise) or Gate: BLOCK (a real failure). Playwright, Jest, pytest.",
+    "url": "https://github.com/CaseReed/latch",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "AbdelStark/typesafe-rs": {
+    "description": "Latency-first Rust SDK for TypeSafe System One. ",
+    "url": "https://github.com/AbdelStark/typesafe-rs",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "jonesmelton/verdict": {
+    "description": "ocaml sdk for typesafe.ai's jev model",
+    "url": "https://github.com/jonesmelton/verdict",
+    "matchedQueries": [
+      "topic:typesafe-ai"
+    ]
+  },
+  "killop/anything_about_game": {
+    "description": "A wonderful list of Game Development resources.",
+    "url": "https://github.com/killop/anything_about_game",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "AbdelStark/awesome-typesafe": {
+    "description": "A curated list of official resources and community projects for TypeSafe, System One models, and Jev.",
+    "url": "https://github.com/AbdelStark/awesome-typesafe",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "rokbenko/quackd": {
+    "description": "One CLI for all your robots. Connect them, command them, and let them work together, each with an LLM for a brain, Jev for cheaper steps. Microduck, Open Duck Mini, LeRobot, XLeRobot, AlohaMini, ToddlerBot or any ROS base. Claude, OpenAI, Gemini, Grok, or local via Ollama or vLLM. Simulator, .duck safety contracts, MCP, memory between runs, flocks.",
+    "url": "https://github.com/rokbenko/quackd",
+    "matchedQueries": [
+      "topic:jev",
+      "jev-mcp"
+    ]
+  },
+  "yibie/awesome-jev": {
+    "description": "A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+    "url": "https://github.com/yibie/awesome-jev",
+    "matchedQueries": [
+      "topic:jev",
+      "\"typesafe-ai\""
+    ]
+  },
+  "socai-io/socai": {
+    "description": "A Browser Use Agent that actually reads social media. Fast. Precise. Deep.",
+    "url": "https://github.com/socai-io/socai",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "ekzhang/openjev-sglang": {
+    "description": "Jev-compatible API endpoint based on open models (prefill-only)",
+    "url": "https://github.com/ekzhang/openjev-sglang",
+    "matchedQueries": [
+      "topic:jev",
+      "openjev"
+    ]
+  },
+  "fatwang2/awesome-jev": {
+    "description": "A source-backed Jev project directory with a reusable Jev-only GitHub review workflow.",
+    "url": "https://github.com/fatwang2/awesome-jev",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "fabricioctelles/skills": {
+    "description": "A collection of skills for AI agents (Kiro, Cursor, Windsurf, Claude Code, and others). Each skill is a reusable module that teaches the agent to perform complex tasks with context, structure, and best practices.",
+    "url": "https://github.com/fabricioctelles/skills",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "AnotiaWang/awesome-jev": {
+    "description": "A curated list of awesome Jev / TypeSafe System One applications, libraries, and resources.",
+    "url": "https://github.com/AnotiaWang/awesome-jev",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "ChetasLua/jevmeter": {
+    "description": "Put a live Jev (TypeSafe) meter on any video: every sentence scored, rendered as a 16:9 edit",
+    "url": "https://github.com/ChetasLua/jevmeter",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "nidhi-singh02/agent-router": {
+    "description": "CLI that picks Cursor, Claude Code, Codex, or OpenCode + model/effort for a task, then launches it. Powered by Jev and Herdr",
+    "url": "https://github.com/nidhi-singh02/agent-router",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "bnsd55/jevmlx": {
+    "description": "Jev-style parallel constrained decisions for any MLX model on Apple Silicon. Typed, schema-valid JSON in one forward pass.",
+    "url": "https://github.com/bnsd55/jevmlx",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "wundercorp/loki": {
+    "description": "The agent that evolves with you 𖤍",
+    "url": "https://github.com/wundercorp/loki",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "tacticocc/Jevbridge": {
+    "description": "ACP and MCP adapter that bridges TypeSafe Jev with any LLM — computer use and typed decisions alongside Codex, Claude, Grok, and OpenCode.",
+    "url": "https://github.com/tacticocc/Jevbridge",
+    "matchedQueries": [
+      "topic:jev",
+      "jev-mcp"
+    ]
+  },
+  "OmniJev/awesome-jev": {
+    "description": "Papers, open reproductions and independent evaluations behind System One models and Jev.",
+    "url": "https://github.com/OmniJev/awesome-jev",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "DanRWilloughby/snifftest": {
+    "description": "A prose linter that sniffs out AI writing tells. Zero dependencies, countable rules plus one judgment model.",
+    "url": "https://github.com/DanRWilloughby/snifftest",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "AlbionaHoti/refgarden": {
+    "description": "A spatial reference explorer for creators. Local Jev query choices, metadata highlights and source-linked collections.",
+    "url": "https://github.com/AlbionaHoti/refgarden",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "shiftynick/jev-axi": {
+    "description": "Agent-ergonomic CLI for TypeSafe's Jev: fast calibrated judgments (pick, rate, check, rank, triage, guard) from the shell",
+    "url": "https://github.com/shiftynick/jev-axi",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "compozy/yoshi": {
+    "description": "Context-pruning proxy for Claude Code and Codex: Jev judges which history is still needed, measured not claimed. POC here now, heading soon into https://github.com/compozy/compozy",
+    "url": "https://github.com/compozy/yoshi",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "Alurith/jeff": {
+    "description": "Catch code issues before they catch you.",
+    "url": "https://github.com/Alurith/jeff",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "logan-markewich/jeff": {
+    "description": "A self-hosted drop-in replacement for TypeSafe's jev, powered by GliFormer.",
+    "url": "https://github.com/logan-markewich/jeff",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "keltokhy/jgrep": {
+    "description": "grep, but the pattern is a description. Filters lines by meaning with TypeSafe's Jev decision model: ~200 ms and a thousandth of a cent per line.",
+    "url": "https://github.com/keltokhy/jgrep",
+    "matchedQueries": [
+      "topic:jev",
+      "\"jev decision\""
+    ]
+  },
+  "oso95/x-scanner": {
+    "description": "Chrome extension that labels every post you scroll past on X with typed Jev judgments and a live cost counter",
+    "url": "https://github.com/oso95/x-scanner",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "stephanj/parallelConstraintDecoding": {
+    "description": "Parallel Constraint Decoding using Java and Llama.cpp compared to Python 🔥",
+    "url": "https://github.com/stephanj/parallelConstraintDecoding",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "valentynkit/awesome-jev-typesafe": {
+    "description": "Typed decisions with TypeSafe's Jev, the first System One model",
+    "url": "https://github.com/valentynkit/awesome-jev-typesafe",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "manifoldor/xtags": {
+    "description": "在 X 的时间线上，给每条帖子标出它想让你干什么。判断来自 Jev，一个只返回概率、不生成文本的模型。",
+    "url": "https://github.com/manifoldor/xtags",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "unicodeveloper/jevocks": {
+    "description": "Everyday Stocks Status with Jev",
+    "url": "https://github.com/unicodeveloper/jevocks",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "DECRUX9812/typesafe-skill-router": {
+    "description": "TypeSafe (Jev) skill routing for Hermes Agent: names the one skill worth loading, before the model call. Opt-in, stdlib only, ~$0.001 per routed turn.",
+    "url": "https://github.com/DECRUX9812/typesafe-skill-router",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "komorra/Eugeniusz": {
+    "description": "Local, typed AI decisions for C, C++, C#, Python, Unity and Unreal Engine.",
+    "url": "https://github.com/komorra/Eugeniusz",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "Zaious/jev-capability-atlas": {
+    "description": "Independent, evidence-based map of when TypeSafe's Jev actually holds up vs. breaks down — real API-call receipts, not a leaderboard. 中文為主的雙語 repo。",
+    "url": "https://github.com/Zaious/jev-capability-atlas",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "GodsBoy/jev-agent-skill-router": {
+    "description": "Typed, confidence-aware agent skill routing with TypeSafe Jev.",
+    "url": "https://github.com/GodsBoy/jev-agent-skill-router",
+    "matchedQueries": [
+      "topic:jev"
+    ]
+  },
+  "Tangerg/typesafe-sdk-go": {
+    "description": "Go SDK for the TypeSafe AI API — typed questions in, probability distributions out.",
+    "url": "https://github.com/Tangerg/typesafe-sdk-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"typesafe-ai\""
+    ]
+  },
+  "saibimajdi/typesafeai-dotnet-sdk": {
+    "description": "Community .NET SDK for the TypeSafe AI System One API — typed noul, choice, and score questions with structured, confidence-scored answers. Not affiliated with TypeSafe AI.",
+    "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"typesafe-ai\""
+    ]
+  },
+  "soenneker/soenneker.bland.calls": {
+    "description": "A .NET typesafe implementation of Bland.ai's Calls API",
+    "url": "https://github.com/soenneker/soenneker.bland.calls",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"typesafe-ai\""
+    ]
+  },
+  "codeitlikemiley/typesafe-sdk-rust": {
+    "description": "Rust SDK for the TypeSafe AI API",
+    "url": "https://github.com/codeitlikemiley/typesafe-sdk-rust",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"typesafe-ai\""
+    ]
+  },
+  "gilljon/typesafe-ai-rs": {
+    "description": "Independent async and blocking Rust SDK for the TypeSafe AI System One API",
+    "url": "https://github.com/gilljon/typesafe-ai-rs",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"typesafe-ai\""
+    ]
+  },
+  "chez-shanpu/typesafeai-go": {
+    "description": "Go SDK for TypeSafe AI API https://docs.typesafe.ai/api",
+    "url": "https://github.com/chez-shanpu/typesafeai-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "peternguyen777/ai-icon-generator": {
+    "description": "WoofAI is an AI-powered micro-SaaS application allowing users to generate, share and download pet icon art. The project is built using the T3 stack (Typescript, TRPC, Tailwind), allowing end-to-end typesafe APIs and fast front-end prototyping. Under the hood, the project leverages OpenAI’s DALL-E2 and images hosted on Amazon S3.",
+    "url": "https://github.com/peternguyen777/ai-icon-generator",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "lu-zero/systemone": {
+    "description": "Rust client for the TypeSafe AI systemone API",
+    "url": "https://github.com/lu-zero/systemone",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "zhirschtritt/typesafe-go": {
+    "description": "Idiomatic Go SDK for the TypeSafe AI API",
+    "url": "https://github.com/zhirschtritt/typesafe-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "yunusey/typesafe-sdk-cpp": {
+    "description": "Unofficial C++23 client for the TypeSafe AI API.",
+    "url": "https://github.com/yunusey/typesafe-sdk-cpp",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "oceanByte/tsai-cli": {
+    "description": "Unofficial CLI for the TypeSafe AI System One API.",
+    "url": "https://github.com/oceanByte/tsai-cli",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "abeldzan/jev-rs": {
+    "description": "Async-first Rust SDK for the TypeSafe AI API",
+    "url": "https://github.com/abeldzan/jev-rs",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "mattneel/typesafe.zig": {
+    "description": "An idiomatic Zig client for the TypeSafe AI API",
+    "url": "https://github.com/mattneel/typesafe.zig",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "mattneel/typesafe": {
+    "description": "An idiomatic Elixir client for the TypeSafe AI API",
+    "url": "https://github.com/mattneel/typesafe",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "soenneker/soenneker.instantly.analytics": {
+    "description": "A .NET typesafe implementation of Instantly.ai's Analytics API",
+    "url": "https://github.com/soenneker/soenneker.instantly.analytics",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "soenneker/soenneker.instantly.accounts": {
+    "description": "A .NET typesafe implementation of Instantly.ai's Accounts API",
+    "url": "https://github.com/soenneker/soenneker.instantly.accounts",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "soenneker/soenneker.instantly.dfy": {
+    "description": "A .NET typesafe implementation of Instantly.ai's DFY API",
+    "url": "https://github.com/soenneker/soenneker.instantly.dfy",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "soenneker/soenneker.instantly.verification": {
+    "description": "A .NET typesafe implementation of Instantly.ai's Verification API",
+    "url": "https://github.com/soenneker/soenneker.instantly.verification",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "soenneker/soenneker.instantly.leads": {
+    "description": "A .NET typesafe implementation of Instantly.ai's Lead API",
+    "url": "https://github.com/soenneker/soenneker.instantly.leads",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "Shubham510/typesafe-go": {
+    "description": "Unofficial Go SDK for TypeSafe AI's System One API (Jev).",
+    "url": "https://github.com/Shubham510/typesafe-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "jujumilk3/jev-calibration-audit": {
+    "description": "Independent API-only calibration audit of TypeSafe AI's Jev decision model",
+    "url": "https://github.com/jujumilk3/jev-calibration-audit",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"jev decision\""
+    ]
+  },
+  "valksor/typesafe-sdk-go": {
+    "description": "Unofficial Go SDK for the TypeSafe AI System One API — 1:1 parity with the official JS and Python SDKs. Not affiliated with TypeSafe AI.",
+    "url": "https://github.com/valksor/typesafe-sdk-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "valksor/typesafe-sdk-php": {
+    "description": "Unofficial PHP SDK for the TypeSafe AI System One API — 1:1 parity with the official JS and Python SDKs. Not affiliated with TypeSafe AI.",
+    "url": "https://github.com/valksor/typesafe-sdk-php",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "MoRohn/meridian-copilot": {
+    "description": "Meridian — AI context-intake and contract-risk copilot built on TypeSafe's System One API, with a live TypeSafe vs OpenAI comparison",
+    "url": "https://github.com/MoRohn/meridian-copilot",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "twilwa/pi-typesafe": {
+    "description": "Pi coding-agent extension built on the TypeSafe AI System One API (Jev)",
+    "url": "https://github.com/twilwa/pi-typesafe",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "YIZY-API/yizy-web-app": {
+    "description": "Document and Build Typesafe JSON APIs with Instant Code Generation. Boost Development Productivity with AI. ",
+    "url": "https://github.com/YIZY-API/yizy-web-app",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "Olli0103/openclaw-typesafe-ai": {
+    "description": "Optional typed TypeSafe AI Jev decisions for OpenClaw, with SecretRef credentials and strict API validation.",
+    "url": "https://github.com/Olli0103/openclaw-typesafe-ai",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"jev decision\""
+    ]
+  },
+  "kazz187/jev-sdk-go": {
+    "description": "Go 1.27 client for TypeSafe AI's Jev (System One) API: typed questions, typed answers",
+    "url": "https://github.com/kazz187/jev-sdk-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "orcawhisperer/typesafe-sdk-go": {
+    "description": "Idiomatic, strongly-typed Go client SDK for the TypeSafe AI System One API (v0.6.0)",
+    "url": "https://github.com/orcawhisperer/typesafe-sdk-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "Mentioum/judgement": {
+    "description": "Agent-friendly Go library and JSON-first CLI for TypeSafe AI's Jev and System One API",
+    "url": "https://github.com/Mentioum/judgement",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "FFatTiger/new-api-plugin-typesafe": {
+    "description": "TypeSafe AI System One (Jev) task plugin for QuantumNous/new-api — native /v1/systemone, synchronous evaluation, token billing",
+    "url": "https://github.com/FFatTiger/new-api-plugin-typesafe",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "DomMonte/n8n-nodes-typesafe-ai": {
+    "description": "n8n community node for the TypeSafe AI System One API — typed yes/no, choice and score questions with calibrated probabilities",
+    "url": "https://github.com/DomMonte/n8n-nodes-typesafe-ai",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "ivorpad/skillranker": {
+    "description": "Rust CLI powered by Jev from TypeSafe.ai that ranks agent skills for the next step using live session context. Includes Claude Code hooks, structured JSON, abstention, and local feedback. Requires a TypeSafe API key.",
+    "url": "https://github.com/ivorpad/skillranker",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "bakubay/typesafe-demos": {
+    "description": "Demo projects showcasing the TypeSafe AI evaluation API — Google Sheets add-on, Next.js multi-agent chat, and pi coding session mood monitor",
+    "url": "https://github.com/bakubay/typesafe-demos",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "jkakar/typesafe-sdk-go": {
+    "description": "Go client for the TypeSafe AI API. Ask typed questions, get calibrated probabilities your code can act on — with a fake server to test against.",
+    "url": "https://github.com/jkakar/typesafe-sdk-go",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "shantanugoel/tetris-ai": {
+    "description": "Browser Tetris with a first-class AI API: play it with a built-in planning agent, TypeSafe's Jev decision model, or any OpenAI-compatible chat model",
+    "url": "https://github.com/shantanugoel/tetris-ai",
+    "matchedQueries": [
+      "\"api.typesafe.ai\"",
+      "\"jev decision\""
+    ]
+  },
+  "notque/jevs-sprint-planning": {
+    "description": "Four AI developers run a software sprint, each powered by TypeSafe's Jev model. Watch them claim tickets, code, review, deploy, and fight fires — with live probability bars, latency, and cost per decision. Bring your own API key or play demo mode free.",
+    "url": "https://github.com/notque/jevs-sprint-planning",
+    "matchedQueries": [
+      "\"api.typesafe.ai\""
+    ]
+  },
+  "typesafe-ai/system-one-adapter-python": {
+    "description": "Drop-in TypeSafeClient replacement backed by LLM APIs",
+    "url": "https://github.com/typesafe-ai/system-one-adapter-python",
+    "matchedQueries": [
+      "\"TypeSafeClient\""
+    ]
+  },
+  "i-e-b/SignalR-TypeSafeClient": {
+    "description": "[Old] A type safe client interface for SignalR in C#",
+    "url": "https://github.com/i-e-b/SignalR-TypeSafeClient",
+    "matchedQueries": [
+      "\"TypeSafeClient\""
+    ]
+  },
+  "Atheeth1/typesafeclientserver": {
+    "description": "type safe client server Api",
+    "url": "https://github.com/Atheeth1/typesafeclientserver",
+    "matchedQueries": [
+      "\"TypeSafeClient\""
+    ]
+  },
+  "Ying-Kai-Liao/jev-browser": {
+    "description": "Browser automation where an LLM plans and Jev (Typesafe System One) decides. Library, CLI and MCP server.",
+    "url": "https://github.com/Ying-Kai-Liao/jev-browser",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "arunav25/jev-mcp": {
+    "description": "Connect JEV to MCP clients and compare its judgments against general-purpose LLMs using shared datasets and measurable accuracy.",
+    "url": "https://github.com/arunav25/jev-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "burnigtm/jev-mcp": {
+    "description": "MCP server that puts TypeSafe Jev on the coding loop in Cursor, Codex, and any MCP client",
+    "url": "https://github.com/burnigtm/jev-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "chungsubeen0/jevmcp": {
+    "description": "Unofficial MCP for Jev",
+    "url": "https://github.com/chungsubeen0/jevmcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "AStheTECH/mewcp-jev": {
+    "description": "JEV MCP server by MewCP",
+    "url": "https://github.com/AStheTECH/mewcp-jev",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "hangarbay/jev.mcp": {
+    "description": "One MCP server for TypeSafe's Jev: typed, calibrated decisions instead of generated text",
+    "url": "https://github.com/hangarbay/jev.mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "minhgv/jev-mcp": {
+    "description": "TypeSafe Jev MCP decision layer for coding agents and CI",
+    "url": "https://github.com/minhgv/jev-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "codaaiteam/jev-mcp": {
+    "description": "MCP server for Jev (TypeSafe AI's System One model) — give any agent typed, calibrated decisions: classify, score, check, gate risky tool calls. Try free: jevtypesafeai.com",
+    "url": "https://github.com/codaaiteam/jev-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "pedroknigge/mcp_jev": {
+    "description": "Open MCP server to run TypeSafe Jev (System One) packs locally — Choice / Noul / Score for Cursor & agents",
+    "url": "https://github.com/pedroknigge/mcp_jev",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "fast-facts/jev-mcp": {
+    "description": "",
+    "url": "https://github.com/fast-facts/jev-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "Pinutss/jev-mcp-router": {
+    "description": "Select relevant MCP tools under a context-token budget, without executing them.",
+    "url": "https://github.com/Pinutss/jev-mcp-router",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "abhishekashokvkumar/jev-mcp-dispatcher": {
+    "description": "Natural-language MCP tool dispatcher powered entirely by TypeSafe's Jev — no general-purpose LLM. Discovers a simple MCP server's tool signatures at runtime and uses Jev's typed primitives (Choice/Noul) to pick the right tool and extract its arguments straight out of the sentence.",
+    "url": "https://github.com/abhishekashokvkumar/jev-mcp-dispatcher",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "marcAllari/jev-mcp-router": {
+    "description": "",
+    "url": "https://github.com/marcAllari/jev-mcp-router",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "nekowasabi/jev-routing-mcp": {
+    "description": "",
+    "url": "https://github.com/nekowasabi/jev-routing-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "krw82/jev-playwright-mcp": {
+    "description": "Jev-augmented Playwright MCP proxy — page-state triage, prompt-injection shielding, goal-based snapshot pruning, risky-action gating. Drop-in wrapper around @playwright/mcp for any coding agent.",
+    "url": "https://github.com/krw82/jev-playwright-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "bidurkhatri/jev-mcp-lab": {
+    "description": "",
+    "url": "https://github.com/bidurkhatri/jev-mcp-lab",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "cbruyndoncx/AskJev-MCP": {
+    "description": "MCP server for TypeSafe's System One API (Jev): typed choice/noul/score judgments with calibrated probabilities and confidence",
+    "url": "https://github.com/cbruyndoncx/AskJev-MCP",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "altregubov/jev-antigravity-mcp": {
+    "description": "",
+    "url": "https://github.com/altregubov/jev-antigravity-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "pZacca/askjev": {
+    "description": "Unofficial MCP server for Jev (Typesafe AI)",
+    "url": "https://github.com/pZacca/askjev",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "micic-mihajlo/jev-tool-runner": {
+    "description": "Jev selects developer tools; Codex handles code. MCP and Jev-first execution with measured benchmarks.",
+    "url": "https://github.com/micic-mihajlo/jev-tool-runner",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "HiepPP/hiep-paseo-plugin": {
+    "description": "Local Paseo plugin exposing Jev evaluations through MCP",
+    "url": "https://github.com/HiepPP/hiep-paseo-plugin",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "raj8525/universal-jev": {
+    "description": "Universal TypeSafe Jev Runtime Plugin & MCP Server for Coding Agents",
+    "url": "https://github.com/raj8525/universal-jev",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "ndolinschi/mcpmatch": {
+    "description": "Match user goals to MCP catalog (two-stage) via TypeSafe Jev",
+    "url": "https://github.com/ndolinschi/mcpmatch",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "VinaSundar-Nat/Krypton.Carevo.JMR.MCP": {
+    "description": "MCP server with tooling for JMR - LIX , JEV and Database tooling",
+    "url": "https://github.com/VinaSundar-Nat/Krypton.Carevo.JMR.MCP",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "Friedjof/jev-mobile": {
+    "description": "Fast structured Android control loops with TypeSafe Jev and Mobile MCP",
+    "url": "https://github.com/Friedjof/jev-mobile",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "MSalvalaggio/jev-reflex": {
+    "description": "Claude thinks, Jev reacts: an MCP server that hands browser tasks from Claude to TypeSafe's Jev (~100 ms per decision).",
+    "url": "https://github.com/MSalvalaggio/jev-reflex",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "prasanth263/maza": {
+    "description": "Local MCP gateway with Jev tool discovery, secure credentials, CLI and dashboard",
+    "url": "https://github.com/prasanth263/maza",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "douglance/jevon": {
+    "description": "The jev command-line interface and MCP server for the TypeSafe API.",
+    "url": "https://github.com/douglance/jevon",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "ndolinschi/toolgate": {
+    "description": "Agent tool/MCP call gate — allow / ask_human / deny via TypeSafe Jev",
+    "url": "https://github.com/ndolinschi/toolgate",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "Obrais-cloud/typesafe-mcp": {
+    "description": "MCP server exposing TypeSafe (Jev/System One) to the fleet: judge, rerank, systemone",
+    "url": "https://github.com/Obrais-cloud/typesafe-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "andyholst/hermes-typesafe-jev": {
+    "description": "TypeSafe Jev MCP server for Hermes Agent — Choice, Noul, Score as first-class tools",
+    "url": "https://github.com/andyholst/hermes-typesafe-jev",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "Verhex/xerify": {
+    "description": "Verify before you trust. Cross-provider verification with LLMs and Jev. CLI, library & MCP.",
+    "url": "https://github.com/Verhex/xerify",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "dakdevs/decide-mcp": {
+    "description": "Configurable decision MCP server with AI SDK, Jev, percentage scores, and bias profile routing",
+    "url": "https://github.com/dakdevs/decide-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "duketopceo/jev-compact": {
+    "description": "Moving-highlight context compaction for agent harnesses — Jev-scored span retention, tombstone restore via MCP",
+    "url": "https://github.com/duketopceo/jev-compact",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "MahmoudAdelbghany/jev-browser": {
+    "description": "Jev-powered browser MCP for LLM agents — ~300ms decisions, no LLM tokens in the loop. Benchmark vs Playwright MCP included.",
+    "url": "https://github.com/MahmoudAdelbghany/jev-browser",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "masa-med-ai/typesafe-screening-mcp": {
+    "description": "MCP server: screen PubMed titles/abstracts against a query or clinical question with TypeSafe Jev",
+    "url": "https://github.com/masa-med-ai/typesafe-screening-mcp",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "its-panzer/skilltree": {
+    "description": "A local-first skill library and visual skill tree, with Jev routing and MCP access.",
+    "url": "https://github.com/its-panzer/skilltree",
+    "matchedQueries": [
+      "jev-mcp"
+    ]
+  },
+  "zhihz/openjev": {
+    "description": "Local bilingual probability decisions from context, questions, and candidate answers. Independent research preview inspired by TypeSafe Jev.",
+    "url": "https://github.com/zhihz/openjev",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "DECRUX9812/openjev": {
+    "description": "Open, local, zero-cost reimplementation of the Jev decision layer for job postings",
+    "url": "https://github.com/DECRUX9812/openjev",
+    "matchedQueries": [
+      "openjev",
+      "\"jev decision\""
+    ]
+  },
+  "mikesmullin/openjev": {
+    "description": "Local reproduction of AlexWortega/openjev (Qwen3.5-4B NLI cross-encoder playing Doom), plus real-time headed play and a browser front-end",
+    "url": "https://github.com/mikesmullin/openjev",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "zefir1990/openjev-experiments": {
+    "description": "Openjev experiments",
+    "url": "https://github.com/zefir1990/openjev-experiments",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "piyush-infocusp/openjev": {
+    "description": "",
+    "url": "https://github.com/piyush-infocusp/openjev",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "allay-team/openjev": {
+    "description": "",
+    "url": "https://github.com/allay-team/openjev",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "franknoh/OpenJev": {
+    "description": "",
+    "url": "https://github.com/franknoh/OpenJev",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "Tepes99/openjev-lite": {
+    "description": "My take on the latest hype with comparisons to cheaper traditional options for this kind of task. Quick poc vibed with my local ai rig",
+    "url": "https://github.com/Tepes99/openjev-lite",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "DECRUX9812/openjev-lm": {
+    "description": "open-Jev LM arm: Qwen2.5-0.5B + LoRA reproducing a hosted decision model's judgment at 92.9% on hand-labelled gold - trained overnight on a 6-vCPU CPU-only host, $0/call. Paper, corpora, harnesses, receipts.",
+    "url": "https://github.com/DECRUX9812/openjev-lm",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "Perferic/openjev-mcp": {
+    "description": "Open-source Jev-compatible MCP server for typed decisions (Choice/Score/Noul): local GLiNER backend with a model router, drop-in swappable with the TypeSafe System One API.",
+    "url": "https://github.com/Perferic/openjev-mcp",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "kw2828/OpenJev": {
+    "description": "Browser decision playground and reproducible experiments on memory, uncertainty, and Doom control",
+    "url": "https://github.com/kw2828/OpenJev",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "Trecto34/openjev-fighting-ring": {
+    "description": "🥊 OpenJEV Fighting Ring: Empirical arena pitting open-source JEV alternatives (Diffusion, RLCD, Block-Causal, NLI) against each other in real-time Tetris & Chess to find the ultimate out-of-the-box model.",
+    "url": "https://github.com/Trecto34/openjev-fighting-ring",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "ColtsFan07/semif-local": {
+    "description": "One-command local setup for SemIf (formerly OpenJev) - typed decisions from open models, browser WebGPU demo + CUDA CLI",
+    "url": "https://github.com/ColtsFan07/semif-local",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "knowlet/Decision-Theoretic-Mixture-of-Agents": {
+    "description": "A fully audited, reproducible decision‑theoretic mixture‑of‑agents framework comparing multiple selector strategies, including OpenJev, with transparent calibration, limitations, and verification artifacts.",
+    "url": "https://github.com/knowlet/Decision-Theoretic-Mixture-of-Agents",
+    "matchedQueries": [
+      "openjev"
+    ]
+  },
+  "kyotofin/tax-doc-classifier": {
+    "description": "Tax document page classifier built on Jev decisions. 100% strict accuracy across 261 IRS forms, ~$0.001 per page.",
+    "url": "https://github.com/kyotofin/tax-doc-classifier",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "jon-devlapaz/jev-decisions": {
+    "description": "",
+    "url": "https://github.com/jon-devlapaz/jev-decisions",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "kuldeepsinh19/jev-decision-gateway": {
+    "description": "A provider-agnostic AI decision gateway using TypeSafe AI's Jev (System One) model to gate, route, and verify expensive LLM workflows",
+    "url": "https://github.com/kuldeepsinh19/jev-decision-gateway",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "JulioPeixoto/jev-decision-bench": {
+    "description": "",
+    "url": "https://github.com/JulioPeixoto/jev-decision-bench",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "Wany-i/jev-decision-layer": {
+    "description": "把决策模型（typesafe/jev-1.13，经 OpenRouter 的 decisions 端点调用）封装成业务决策工具：注册表驱动，带置信度门控与硬约束。非官方项目。",
+    "url": "https://github.com/Wany-i/jev-decision-layer",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "prajwal-svm/jev-decision-gate": {
+    "description": "",
+    "url": "https://github.com/prajwal-svm/jev-decision-gate",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "thanh-abaii/ud-jev-decision-workflow": {
+    "description": "",
+    "url": "https://github.com/thanh-abaii/ud-jev-decision-workflow",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "shishiv/pi-jeev": {
+    "description": "A bounded TypeSafe Jev decision tool for Pi",
+    "url": "https://github.com/shishiv/pi-jeev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "tjcages/ea": {
+    "description": "Executive assistant skill: deterministic tools and bounded JEV decisions",
+    "url": "https://github.com/tjcages/ea",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "stbenjam/jev-eight-ball": {
+    "description": "A liquid magic eight ball powered by TypeSafe Jev decisions through OpenRouter",
+    "url": "https://github.com/stbenjam/jev-eight-ball",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "amazedsaint/jevduck": {
+    "description": "A research simulator for Jev decisions over Microduck robots in shared MuJoCo physics.",
+    "url": "https://github.com/amazedsaint/jevduck",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "cartermccann/typesafe-computer-use-hyprland": {
+    "description": "Hyprland/NixOS fork of typesafe-computer-use — grim + hyprctl + ydotool, TypeSafe Jev decisions",
+    "url": "https://github.com/cartermccann/typesafe-computer-use-hyprland",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "octanevz/jev-playground-openrouter": {
+    "description": "Local browser playground for TypeSafe's Jev decision model via OpenRouter. Python stdlib only.",
+    "url": "https://github.com/octanevz/jev-playground-openrouter",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "LilDojd/jevons": {
+    "description": "A bounded Pi execution supervisor powered by TypeSafe Jev: decisions, recovery, review and verification.",
+    "url": "https://github.com/LilDojd/jevons",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "TokenTrim/jev-routing-experiment": {
+    "description": "Benchmarking TypeSafe's Jev decision model as a cost-efficient LLM router on RouterArena",
+    "url": "https://github.com/TokenTrim/jev-routing-experiment",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "ourines/hermes-jev": {
+    "description": "Jev decision sidekick for Hermes Agent — TypeSafe and Cloudflare, explicit tools and official skill",
+    "url": "https://github.com/ourines/hermes-jev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "avshalomd/longjev": {
+    "description": "Long inputs for TypeSafe AI's Jev decision model. An experiment, published with its evals.",
+    "url": "https://github.com/avshalomd/longjev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "robbyczgw-cla/hermes-plugin-jev": {
+    "description": "TypeSafe/Jev decision signals for Hermes: turn classification, conservative tool shaping, approvals, and coding verification.",
+    "url": "https://github.com/robbyczgw-cla/hermes-plugin-jev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "jolehuit/jev-downloads-sorter": {
+    "description": "A ~/Downloads folder that sorts itself: one Jev decision per file, launchd WatchPaths, no daemon",
+    "url": "https://github.com/jolehuit/jev-downloads-sorter",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "integrate-your-mind/jev-codex-plugin": {
+    "description": "Open-source Codex plugin for TypeSafe Jev decision consultation, failure diagnosis, and evidence-based completion review",
+    "url": "https://github.com/integrate-your-mind/jev-codex-plugin",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "shanginn/jev-php": {
+    "description": "Type-safe PHP 8.5 SDK for JEV decisions on OpenRouter: choices, scores, probabilities and typed DTOs.",
+    "url": "https://github.com/shanginn/jev-php",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "MrDiamondBallz/jev-agent-integration": {
+    "description": "Provider-neutral Jev decision primitives for AI agents, with a native Hermes plugin and portable Agent Skill.",
+    "url": "https://github.com/MrDiamondBallz/jev-agent-integration",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "luw2007/omp-jev-extensions": {
+    "description": "OMP / pi-coding-agent extensions that delegate acceptance gating and subagent routing to the Typesafe Jev decision API",
+    "url": "https://github.com/luw2007/omp-jev-extensions",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "gtaras7/typesafe-jev": {
+    "description": "Screen a folder of CVs with the TypeSafe Jev decision model: typed judgments, an editable policy, free re-scoring.",
+    "url": "https://github.com/gtaras7/typesafe-jev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "sebastianbugal/jev": {
+    "description": "TypeSafe's Jev decision model in Claude Code. Ask in plain language, get a typed answer with a calibrated probability.",
+    "url": "https://github.com/sebastianbugal/jev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "metrox-eth/moss-jev": {
+    "description": "MOSS × Jev: a recorded-run 3D demo of the litter-picking rover choosing targets with TypeSafe's Jev decision model.",
+    "url": "https://github.com/metrox-eth/moss-jev",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "affirmitv/bitrate-advisor": {
+    "description": "Live-stream encoder settings from telemetry and history: TypeSafe's Jev decision model inside a deterministic safety envelope. Deno, Node, edge runtimes.",
+    "url": "https://github.com/affirmitv/bitrate-advisor",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "chensterman/talos": {
+    "description": "A Minecraft agent with no LLM in the loop: code owns the plan, TypeSafe's Jev decision model supplies per-tick judgment",
+    "url": "https://github.com/chensterman/talos",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "hitakshiA/solari-reflex": {
+    "description": "A speed layer for computer use on Solari: one structured observation, one Jev decision, one verified action per step. Browsers and Linux desktops.",
+    "url": "https://github.com/hitakshiA/solari-reflex",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "duketopceo/dim-agent": {
+    "description": "Jev-powered voice computer-use agent for Omarchy (Hyprland/Asahi): push-to-talk → whisper.cpp → Jev decision → guarded hyprctl launch, with a breathing dim overlay",
+    "url": "https://github.com/duketopceo/dim-agent",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "zaycruz/fast-jev-compaction-pi": {
+    "description": "Verbatim Jev-guided context compaction for pi — replaces the built-in compaction summary with fast-jev decisions; stale tool calls/results dropped, everything kept stays verbatim.",
+    "url": "https://github.com/zaycruz/fast-jev-compaction-pi",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "HomenShum/jev-swap": {
+    "description": "Claude Code skill: swap System 2 LLM pipeline components for System 1 TypeSafe Jev decisions via investigation, live three-arm eval, fallback, and an independent judge",
+    "url": "https://github.com/HomenShum/jev-swap",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "Mandrilsquad1441/jev-model-router": {
+    "description": "Pick the best AI model and reasoning effort for any task in ~1s. Plugin for Claude Code, Claude Desktop and Codex, powered by TypeSafe's Jev decision model and live OpenRouter pricing. Balance intelligence, speed and cost, or choose your priority.",
+    "url": "https://github.com/Mandrilsquad1441/jev-model-router",
+    "matchedQueries": [
+      "\"jev decision\""
+    ]
+  },
+  "yournextstore/yournextstore": {
+    "description": "AI-Native Open-Source Next.js commerce. Powered by Stripe. Ultra fast with typesafe Commerce SDK. Built for AI development (Claude, Codex,   Cursor).",
+    "url": "https://github.com/yournextstore/yournextstore",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "iammrduncan/typesafe-ai-benchmark": {
+    "description": "This is a LLM Gateway that mimics typesafe ai structured output. Like an imposter Jev.",
+    "url": "https://github.com/iammrduncan/typesafe-ai-benchmark",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "Twister915/typesafe-ai": {
+    "description": "Typed TypeSafe AI clients for Rust, with async and blocking backends and observable retries.",
+    "url": "https://github.com/Twister915/typesafe-ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "joshmn/typesafe-sdk": {
+    "description": "Ruby client for typesafe.ai",
+    "url": "https://github.com/joshmn/typesafe-sdk",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "giuliosmall/pg_typesafe": {
+    "description": "Pre-alpha PostgreSQL extension for TypeSafe AI (Jev) categorical classification",
+    "url": "https://github.com/giuliosmall/pg_typesafe",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "nickthompson480/typesafe-ai-playground": {
+    "description": "Community TypeSafe AI playground: 110 use cases, games, dilemmas and model challenges, with editable prompts, A/B comparisons and a mobile-friendly UI.",
+    "url": "https://github.com/nickthompson480/typesafe-ai-playground",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "daftAI2026/awesome-jev": {
+    "description": "TypeSafe System One / Jev community directory — GitHub projects & posts around typed decisions (typesafe.ai)",
+    "url": "https://github.com/daftAI2026/awesome-jev",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "3clyp50/a0-typesafe-ai": {
+    "description": "TypeSafe AI Jev judgments for Agent Zero, with typed tools and probability cards.",
+    "url": "https://github.com/3clyp50/a0-typesafe-ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "atharvamhaske/typesafe-sdk-go": {
+    "description": "unofficial  go sdk for typesafe ai",
+    "url": "https://github.com/atharvamhaske/typesafe-sdk-go",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "realZachi/typesafe-adblock": {
+    "description": "🧹 Fun project: a Chrome extension that asks a tiny AI decision model (TypeSafe Jev) \"is this DOM element an ad?\" and pops it off the page. BYOK, no backend, not a real ad blocker.",
+    "url": "https://github.com/realZachi/typesafe-adblock",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "kavehmz/typesafe-playground": {
+    "description": "Interactive experiments with TypeSafe Jev, from support routing to 3D driving simulations with real AI decisions and visible sensor inputs.",
+    "url": "https://github.com/kavehmz/typesafe-playground",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "BLamy/nextjs-ai-starter": {
+    "description": "Fully typesafe nextjs-ai-starter using 2 agents/tools out of the box https://nextjs.ai",
+    "url": "https://github.com/BLamy/nextjs-ai-starter",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "matthewp/flue-jev-demo": {
+    "description": "Flue agent routing with TypeSafe Jev through Cloudflare AI Gateway",
+    "url": "https://github.com/matthewp/flue-jev-demo",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "TypeSafeAI/typesafe-playground": {
+    "description": "Community TypeSafe AI playground: 110 use cases, games, dilemmas and model challenges, with editable prompts, A/B comparisons and a mobile-friendly UI.",
+    "url": "https://github.com/TypeSafeAI/typesafe-playground",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "jamesward/zio-typesafe-ai": {
+    "description": "",
+    "url": "https://github.com/jamesward/zio-typesafe-ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "mejiasd3v/pi-jev-router": {
+    "description": "Automatic model routing for Pi using TypeSafe's Jev through Vercel AI Gateway",
+    "url": "https://github.com/mejiasd3v/pi-jev-router",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "typesend/typesafe_ai": {
+    "description": "Typed Elixir client for TypeSafe AI and its Jev System One model, with offline test stubs, concurrent fan-out, and atom-keyed answers.",
+    "url": "https://github.com/typesend/typesafe_ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "hfiguera/typesafe_ai": {
+    "description": "An Elixir client for TypeSafe AI with typed responses and bounded concurrency",
+    "url": "https://github.com/hfiguera/typesafe_ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "AnshChoudhary/typesafe-ai-firewall": {
+    "description": "Shadow-mode validation harness for a pre-execution firewall on AI agent tool calls (TypeSafe/Jev). Real run, findings in report.md.",
+    "url": "https://github.com/AnshChoudhary/typesafe-ai-firewall",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "si618/explore-typesafe-ai": {
+    "description": "TypeSafe System One (Jev) evaluated on synthetic FHIR clinical scenarios, with Claude as System Two",
+    "url": "https://github.com/si618/explore-typesafe-ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "codaaiteam/jev-typesafe-ai": {
+    "description": "Unofficial developer notes & examples for Jev, TypeSafe AI's System One model. Try it free: jevtypesafeai.com",
+    "url": "https://github.com/codaaiteam/jev-typesafe-ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "pierangeloc/zio-typesafe-ai": {
+    "description": "Simple ZIO based client library for typesafe-ai",
+    "url": "https://github.com/pierangeloc/zio-typesafe-ai",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "hnegishi/typesafe-ai-ruby": {
+    "description": "",
+    "url": "https://github.com/hnegishi/typesafe-ai-ruby",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "gzd2032/typesafe-ai-test": {
+    "description": "a test repo for typesafe.ai",
+    "url": "https://github.com/gzd2032/typesafe-ai-test",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "GenieRobot/typesafe-ai-rails": {
+    "description": "",
+    "url": "https://github.com/GenieRobot/typesafe-ai-rails",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  },
+  "sxoni/typesafe-ai-clone": {
+    "description": "",
+    "url": "https://github.com/sxoni/typesafe-ai-clone",
+    "matchedQueries": [
+      "\"typesafe-ai\""
+    ]
+  }
+}

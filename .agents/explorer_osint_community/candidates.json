@@ -1,0 +1,722 @@
+[
+  {
+    "repo": "Gaurav-Gosain/jev-go",
+    "repoUrl": "https://github.com/Gaurav-Gosain/jev-go",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Go client for TypeSafe's System One API and its model Jev: typed judgments and calibrated probabilities instead of generated text",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "ainame/swift-typesafe",
+    "repoUrl": "https://github.com/ainame/swift-typesafe",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Swift 6.4 SDK for TypeSafe AI, following the Python SDK's 0.6.0 API.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "typesafe-ai/typesafe-sdk-js",
+    "repoUrl": "https://github.com/typesafe-ai/typesafe-sdk-js",
+    "sourcePlatform": "Awesome Jev Community (fatwang2); Awesome Jev Community (cobanov)",
+    "candidateDescription": "Official JavaScript and TypeScript client for TypeSafe's typed decision API, with question builders and typed responses.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "typesafe-ai/typesafe-sdk-python",
+    "repoUrl": "https://github.com/typesafe-ai/typesafe-sdk-python",
+    "sourcePlatform": "Awesome Jev Community (fatwang2); Awesome Jev Community (cobanov)",
+    "candidateDescription": "Official Python client for TypeSafe's typed decision API, with synchronous and asynchronous clients.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "nshkrdotcom/typesafe_sdk",
+    "repoUrl": "https://github.com/nshkrdotcom/typesafe_sdk",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "typesafe_sdk is the Elixir SDK for TypeSafe AI and its first System One model, Jev.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "vinnie357/typesafe_sdk_ex",
+    "repoUrl": "https://github.com/vinnie357/typesafe_sdk_ex",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Typesafe AI SDK in Elixir using Req",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "Twister915/typesafe-ai",
+    "repoUrl": "https://github.com/Twister915/typesafe-ai",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "typesafe-ai brings TypeSafe's System One evaluation API into Rust as small, typed judgments that fit inside ordinary application code.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "gilljon/typesafe-ai-rs",
+    "repoUrl": "https://github.com/gilljon/typesafe-ai-rs",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "An independent Rust client for the TypeSafe AI System One API, maintained at gilljon/typesafe-ai-rs.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "AbdelStark/typesafe-rs",
+    "repoUrl": "https://github.com/AbdelStark/typesafe-rs",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Evaluate a state against named questions (noul, choice, score) and get one typed answer per question.",
+    "claimedPrimitive": "Choice, Score, Noul",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "joshmn/typesafe-sdk",
+    "repoUrl": "https://github.com/joshmn/typesafe-sdk",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "A Ruby client for the TypeSafe System One API.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "Tangerg/typesafe-sdk-go",
+    "repoUrl": "https://github.com/Tangerg/typesafe-sdk-go",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Go SDK for the TypeSafe AI API — typed questions in, probability distributions out.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "Butochnikov/typesafe-sdk-php",
+    "repoUrl": "https://github.com/Butochnikov/typesafe-sdk-php",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "PHP client for the TypeSafe AI System One API.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "saibimajdi/typesafeai-dotnet-sdk",
+    "repoUrl": "https://github.com/saibimajdi/typesafeai-dotnet-sdk",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Community .NET SDK for the TypeSafe AI System One API — typed noul, choice, and score questions with structured, confidence-scored answers. Not affiliated with TypeSafe AI.",
+    "claimedPrimitive": "Choice, Score, Noul, systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "jamesward/zio-typesafe-ai",
+    "repoUrl": "https://github.com/jamesward/zio-typesafe-ai",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "A Scala 3 / ZIO library for TypeSafe AI's Jev / System One API — a \"System One model\" that answers typed, atomic questions about a piece of state instead of generating text.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "keeltrace/hermes-jev",
+    "repoUrl": "https://github.com/keeltrace/hermes-jev",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "It is built for narrow, typed judgments that should not require the main generative model to improvise an answer: routing, ranking, verification, multi-question assessment, tool gating, and context-value decisions.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "Ying-Kai-Liao/jev-browser",
+    "repoUrl": "https://github.com/Ying-Kai-Liao/jev-browser",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Browser automation where an LLM plans and Jev (Typesafe System One) decides. Library, CLI and MCP server.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "romaluev/jev-ego",
+    "repoUrl": "https://github.com/romaluev/jev-ego",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "TypeScript browser agent for ego lite — Jev Ultrafast's indexed action space, without Chrome, Playwright, or Browser Harness.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "giuliosmall/pg_typesafe",
+    "repoUrl": "https://github.com/giuliosmall/pg_typesafe",
+    "sourcePlatform": "Awesome Jev Community (fatwang2); Awesome Jev Community (cobanov)",
+    "candidateDescription": "PostgreSQL extension that calls TypeSafe Jev from SQL for Choice, Noul, and Score, including batched detect and classify.",
+    "claimedPrimitive": "Choice, Score, Noul",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "kieranklaassen/ruby_llm-typesafe",
+    "repoUrl": "https://github.com/kieranklaassen/ruby_llm-typesafe",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "TypeSafe structured-output provider for RubyLLM 2",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "GenieRobot/typesafe-ai-rails",
+    "repoUrl": "https://github.com/GenieRobot/typesafe-ai-rails",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Community Rails integration for TypeSafe AI's System One API, built on the community typesafe-sdk Ruby gem.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "shiftynick/jev-axi",
+    "repoUrl": "https://github.com/shiftynick/jev-axi",
+    "sourcePlatform": "Awesome Jev Community (fatwang2); Awesome Jev Community (cobanov)",
+    "candidateDescription": "Command-line interface that sends typed questions to TypeSafe Jev so coding agents can gate shell commands before they run, classifying routine commands locally before any request is made.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-git",
+    "repoUrl": "https://github.com/AkashPriyadarshii/jev-git",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Sub-second Git pre-commit and pre-push reflex gate that screens staged diffs for secrets and destructive commands using TypeSafe Jev.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-scout",
+    "repoUrl": "https://github.com/AkashPriyadarshii/jev-scout",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Zero-hallucination open-source repo and crate scout powered by TypeSafe AI Jev System One scoring.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-seo",
+    "repoUrl": "https://github.com/AkashPriyadarshii/jev-seo",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Zero-cost, agent-first SEO &amp; Generative Engine Optimization (GEO) search radar CLI suite and MCP server powered by DuckDuckGo and TypeSafe Jev System One.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-superpowers",
+    "repoUrl": "https://github.com/AkashPriyadarshii/jev-superpowers",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Systematic software development framework for AI coding agents upgraded with TypeSafe Jev System One typed decisions, zero-hallucination package vetting, and completion gates.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "morcoan/JevSeek",
+    "repoUrl": "https://github.com/morcoan/JevSeek",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Desktop and CLI coding agent that uses Jev to select the next tool from user intent and recorded execution results.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "baronunread/leanest",
+    "repoUrl": "https://github.com/baronunread/leanest",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Local-first test selector that uses TypeSafe Jev semantic judgments to decide which tests are safe to skip for a given code change, dropping straight into CI via its bundled GitHub Action.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "hev/reranker",
+    "repoUrl": "https://github.com/hev/reranker",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "Python library using Jev Noul judgments to score candidate documents for query relevance, then sort or filter the results.",
+    "claimedPrimitive": "Score, Noul",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "BunsDev/typesafe-ai-playground",
+    "repoUrl": "https://github.com/BunsDev/typesafe-ai-playground",
+    "sourcePlatform": "Awesome Jev Community (fatwang2)",
+    "candidateDescription": "A community playground for TypeSafe AI's Jev: edit classification experiments, compare A/B inputs, route conversations, extract document fields, inspect code-policy decisions, and explore games and simulations built around typed model outputs.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "zhengxuyu/litjev",
+    "repoUrl": "https://github.com/zhengxuyu/litjev",
+    "sourcePlatform": "Awesome Jev Community (fatwang2); Awesome Jev Community (cobanov); V2EX / Tech Blogs",
+    "candidateDescription": "Open reproduction of Jev's decision layer on Qwen models that serves the Jev /v1/systemone request and response schema (choice, score, noul) from a local Hugging Face checkpoint by reading option logits instead of generating text, with an MMLU-Pro direct-answer benchmark.",
+    "claimedPrimitive": "Choice, Score, Noul, systemOne API",
+    "contextUrl": "https://www.v2ex.com/t/typesafe_jev"
+  },
+  {
+    "repo": "iammrduncan/typesafe-ai-benchmark",
+    "repoUrl": "https://github.com/iammrduncan/typesafe-ai-benchmark",
+    "sourcePlatform": "Awesome Jev Community (fatwang2); Awesome Jev Community (cobanov)",
+    "candidateDescription": "This benchmark runs Qwen 3.8 27B on Cerebras and TypeSafe Jev side by side across seven synthetic workloads, with a separate local Needle 3 evaluation on the same contracts.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/fatwang2/awesome-jev"
+  },
+  {
+    "repo": "typesafe-ai/system-one-adapter-python",
+    "repoUrl": "https://github.com/typesafe-ai/system-one-adapter-python",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Drop-in adapter for comparing the System One interface with LLM providers.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "typesafe-ai/skills",
+    "repoUrl": "https://github.com/typesafe-ai/skills",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Official agent skills for building and evaluating System One workflows.",
+    "claimedPrimitive": "systemOne API",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "inanna-malick/jev-dsl",
+    "repoUrl": "https://github.com/inanna-malick/jev-dsl",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Early-alpha Haskell DSL that encodes typed question packets and decodes answers; HTTP transport is left to the caller.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "mrnugget/jev-shell-history",
+    "repoUrl": "https://github.com/mrnugget/jev-shell-history",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Ranks existing zsh history entries for inline completion; accepting a suggestion does not execute it.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "simxnherrera/jevr",
+    "repoUrl": "https://github.com/simxnherrera/jevr",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Native R client for typed questions and provider-independent answers through TypeSafe or OpenRouter.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "obie/ruby_decision_model",
+    "repoUrl": "https://github.com/obie/ruby_decision_model",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Ruby client with standard-library transport for TypeSafe and OpenRouter decision endpoints.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "zhirschtritt/typesafe-go",
+    "repoUrl": "https://github.com/zhirschtritt/typesafe-go",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Idiomatic Go SDK for the TypeSafe API.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "Premo-Cloud/typesafe-sdk-java",
+    "repoUrl": "https://github.com/Premo-Cloud/typesafe-sdk-java",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Community Java 17 client for Choice, Score, and Noul, with an optional Spring Boot starter.",
+    "claimedPrimitive": "Choice, Score, Noul",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "nidhi-singh02/agent-router",
+    "repoUrl": "https://github.com/nidhi-singh02/agent-router",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Pre-release Herdr integration that filters eligible coding models by quota and policy before Jev ranks them.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "qkal/Canny",
+    "repoUrl": "https://github.com/qkal/Canny",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Evidence ledger that challenges unsupported \"done\" claims from coding agents.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "devanshbatham/commit-miner",
+    "repoUrl": "https://github.com/devanshbatham/commit-miner",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Classifies Git diffs and commit messages into change types and candidate security-fix/CWE labels for inspection.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "thruwire/foreman",
+    "repoUrl": "https://github.com/thruwire/foreman",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Software-factory supervisor that uses Jev to keep coding agents on task.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "luantak/is-malicious",
+    "repoUrl": "https://github.com/luantak/is-malicious",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Scans source, configuration, build, and CI files with Jev, then reports suspicious behavior and implicated lines before the code is run.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "gargpratyush/jev-router",
+    "repoUrl": "https://github.com/gargpratyush/jev-router",
+    "sourcePlatform": "Awesome Jev Community (cobanov); Hacker News",
+    "candidateDescription": "High-throughput semantic request router leveraging TypeSafe Jev discrete choice classification.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://news.ycombinator.com/item?id=49750649"
+  },
+  {
+    "repo": "aaronshaf/opencode-jev-orchestrator",
+    "repoUrl": "https://github.com/aaronshaf/opencode-jev-orchestrator",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Keeps an OpenCode parent model fixed and uses Jev difficulty judgments to delegate harder turns to temporary subagents.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "lakeday-org/perch",
+    "repoUrl": "https://github.com/lakeday-org/perch",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Semantic code linter that evaluates code units against configurable Jev questions.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "Dicklesworthstone/skillranker",
+    "repoUrl": "https://github.com/Dicklesworthstone/skillranker",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Rust CLI that ranks agent skills against live session context and can abstain.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "shitianfang/wakegate",
+    "repoUrl": "https://github.com/shitianfang/wakegate",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Experimental gate where Jev decides whether a timer or incoming event is worth resuming a sleeping agent's LLM; code skips only when Jev is confident and always wakes on user messages, errors, and a skip limit.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "leonaaardob/fast-dev-compaction",
+    "repoUrl": "https://github.com/leonaaardob/fast-dev-compaction",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Codex port that restores Jev-selected verbatim history around native session compaction.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "ilkerulusoy/pi-jev-compact",
+    "repoUrl": "https://github.com/ilkerulusoy/pi-jev-compact",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Selective, verbatim context compaction for Pi using Jev model.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "kevinpita/pi-jev-context",
+    "repoUrl": "https://github.com/kevinpita/pi-jev-context",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Opt-in Pi extension that filters older messages from model requests while preserving the original session history.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "compozy/yoshi",
+    "repoUrl": "https://github.com/compozy/yoshi",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Experimental Claude Code/Codex proxy that uses Jev to prune request context while preserving tool-call protocol structure.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "wy-coliney/jev-browser-use",
+    "repoUrl": "https://github.com/wy-coliney/jev-browser-use",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Codex browser skill that uses Jev for navigation and target selection while Codex handles text entry and outcome verification.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "colliber/duckdb-jev",
+    "repoUrl": "https://github.com/colliber/duckdb-jev",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "DuckDB extension that exposes Jev judgments as SQL values with return types derived from the declared criteria.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "choxos/jev-reviewer",
+    "repoUrl": "https://github.com/choxos/jev-reviewer",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Research-document extraction aid where Jev selects and verifies source lines for verbatim quotes; findings require human review and are not clinical decisions.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "EugeneBoondock/jevsql",
+    "repoUrl": "https://github.com/EugeneBoondock/jevsql",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "SQL-like filtering, ranking, classification, and scoring with natural-language predicates.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "n3ndor/n8n-nodes-typesafe-jev",
+    "repoUrl": "https://github.com/n3ndor/n8n-nodes-typesafe-jev",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Community n8n node for asking multiple typed questions over workflow state.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "kyotofin/tax-doc-classifier",
+    "repoUrl": "https://github.com/kyotofin/tax-doc-classifier",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Classifies text-bearing PDF pages into IRS form and page-kind candidates with a confidence gate; document triage, not tax advice, and scanned pages need OCR.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "iamvatsalpatel/tiershift",
+    "repoUrl": "https://github.com/iamvatsalpatel/tiershift",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Policy-bounded model routing for TypeScript and Python.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "AbdelStark/heist-one",
+    "repoUrl": "https://github.com/AbdelStark/heist-one",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Browser stealth game where Jev judges guards while deterministic code owns the world.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "dabit3/jev-experiments",
+    "repoUrl": "https://github.com/dabit3/jev-experiments",
+    "sourcePlatform": "Awesome Jev Community (cobanov); Hacker News & X/Twitter",
+    "candidateDescription": "Collection of inspectable Jev demos, including scripted support conversations with typed intent, escalation, and suggested-response decisions.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://news.ycombinator.com/item?id=49757995"
+  },
+  {
+    "repo": "Skyvern-AI/jevscape",
+    "repoUrl": "https://github.com/Skyvern-AI/jevscape",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "RuneBench-based RuneScape harness that maps Jev choices to a bounded game-action catalog and records tick-level results.",
+    "claimedPrimitive": "Choice",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "monteduro/killmyidea",
+    "repoUrl": "https://github.com/monteduro/killmyidea",
+    "sourcePlatform": "Awesome Jev Community (cobanov); Reddit (r/LocalLLaMA & r/artificial)",
+    "candidateDescription": "Proof-of-concept idea evaluation engine using Jev Score and Choice to rigorously stress-test and score project proposals without LLM text bloat.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://www.reddit.com/r/LocalLLaMA/comments/typesafe_jev_eval/"
+  },
+  {
+    "repo": "sorrycc/typesafe-snake",
+    "repoUrl": "https://github.com/sorrycc/typesafe-snake",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Snake autoplayer with one typed decision per tick and code-generated legal moves.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "ChetasLua/jevmeter",
+    "repoUrl": "https://github.com/ChetasLua/jevmeter",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Scores every sentence in a video and renders the result as an overlay.",
+    "claimedPrimitive": "Score",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "harshil1712/slidepilot",
+    "repoUrl": "https://github.com/harshil1712/slidepilot",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Experimental Slidev controller that judges speech transcripts for slide completion, with deterministic checks and manual navigation.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "trungdq88/youtube-sponsor-detection",
+    "repoUrl": "https://github.com/trungdq88/youtube-sponsor-detection",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Finds sponsor reads in YouTube transcripts or transcribed audio while code owns timestamps and playback skipping.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "RafalWilinski/vibecheck",
+    "repoUrl": "https://github.com/RafalWilinski/vibecheck",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Chrome extension that scores draft posts and reply context before posting; optional media descriptions come from a separate vision model.",
+    "claimedPrimitive": "Score",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "bnsd55/jevmlx",
+    "repoUrl": "https://github.com/bnsd55/jevmlx",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Jev-style parallel constrained decisions for MLX models on Apple Silicon.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "jaredpalmer/kev",
+    "repoUrl": "https://github.com/jaredpalmer/kev",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Qwen2.5-0.5B adapter and decision head with training code, released weights, and parallel typed-question inference.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "TianyuCodings/NanoJev",
+    "repoUrl": "https://github.com/TianyuCodings/NanoJev",
+    "sourcePlatform": "Awesome Jev Community (cobanov); V2EX / Tech Blogs",
+    "candidateDescription": "Small parallel-decision model with dynamic candidates, a training pipeline, and recorded game comparisons that include shared code planning.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://www.v2ex.com/t/typesafe_jev"
+  },
+  {
+    "repo": "zhihz/openjev",
+    "repoUrl": "https://github.com/zhihz/openjev",
+    "sourcePlatform": "Awesome Jev Community (cobanov); V2EX / GitHub",
+    "candidateDescription": "Local bilingual probability decisions from context, questions, and candidate answers following Jev System One format.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://www.v2ex.com/t/typesafe_jev"
+  },
+  {
+    "repo": "ekzhang/openjev-sglang",
+    "repoUrl": "https://github.com/ekzhang/openjev-sglang",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Jev-compatible API endpoint backed by open models and prefill-only inference.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "genai-craft/openvons",
+    "repoUrl": "https://github.com/genai-craft/openvons",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Open decision layer for finite options across text, images, and Japanese voice commands.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "stephanj/parallelConstraintDecoding",
+    "repoUrl": "https://github.com/stephanj/parallelConstraintDecoding",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Java and llama.cpp experiments in parallel constrained decoding.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "kshetrajna12/reflex",
+    "repoUrl": "https://github.com/kshetrajna12/reflex",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Open-model decision engine with shared-state inference, isolated question branches, and a WebGPU demo; browser and Python configurations differ.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "TheoLeeCJ/SemIf",
+    "repoUrl": "https://github.com/TheoLeeCJ/SemIf",
+    "sourcePlatform": "Awesome Jev Community (cobanov); Reddit / V2EX / Hacker News",
+    "candidateDescription": "Formerly OpenJev: Independent study and reproduction of typed option readout from frozen open models with shared-prefix experiments and WebGPU demo.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://news.ycombinator.com/item?id=49760156"
+  },
+  {
+    "repo": "featherless-ai/simple-jev",
+    "repoUrl": "https://github.com/featherless-ai/simple-jev",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Transforms compatible open-model logits into typed decisions without a separately trained classifier head; model compatibility is constrained.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "Heman10x-NGU/Verdict-open-jev",
+    "repoUrl": "https://github.com/Heman10x-NGU/Verdict-open-jev",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "ModernBERT decision engine with calibrated uncertainty and a WebGPU playground.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "FirasSX914/Janus",
+    "repoUrl": "https://github.com/FirasSX914/Janus",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Measures when to use Jev versus other models and routes accordingly.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "RINNECODER/jev-behavior-study",
+    "repoUrl": "https://github.com/RINNECODER/jev-behavior-study",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Independent synthetic-task study of Jev 1.13.0 framing sensitivity and failures, with raw responses and offline report checks.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "4esv/jev-eval",
+    "repoUrl": "https://github.com/4esv/jev-eval",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Independent Jev versus GPT-5.6 Terra comparison on three labeled classification tasks, reporting accuracy, calibration, latency, and cost.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "vinilana/jev-eval-agent",
+    "repoUrl": "https://github.com/vinilana/jev-eval-agent",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Compares LLM tool selection with Jev routing in a personal-assistant harness containing 100 mocked tools.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "mahlernim/jev-korean-benchmark",
+    "repoUrl": "https://github.com/mahlernim/jev-korean-benchmark",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Small Korean/English sample study with recorded responses, including medical-text questions; not a clinical validation.",
+    "claimedPrimitive": "TypeSafe SDK / Client",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "zhuyansen/jev-search-rerank-eval",
+    "repoUrl": "https://github.com/zhuyansen/jev-search-rerank-eval",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Chinese/English retrieval evaluation comparing Jev reranking with lexical, embedding, and fusion baselines, including judge-circularity analysis.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "dbreunig/building-with-jev-skill",
+    "repoUrl": "https://github.com/dbreunig/building-with-jev-skill",
+    "sourcePlatform": "Awesome Jev Community (cobanov)",
+    "candidateDescription": "Community agent skill covering question design, state preparation, confidence thresholds, and debugging decisions.",
+    "claimedPrimitive": "Decision Primitive",
+    "contextUrl": "https://github.com/cobanov/awesome-jev"
+  },
+  {
+    "repo": "r-ms/mini-jev",
+    "repoUrl": "https://github.com/r-ms/mini-jev",
+    "sourcePlatform": "Hacker News",
+    "candidateDescription": "TypeSafe Jev implemented locally on top of an LLM using constrained logit evaluation for Choice and Noul primitives.",
+    "claimedPrimitive": "Choice, Noul, systemOne API",
+    "contextUrl": "https://news.ycombinator.com/item?id=49748643"
+  },
+  {
+    "repo": "jcpsimmons/jev-model-router-demo",
+    "repoUrl": "https://github.com/jcpsimmons/jev-model-router-demo",
+    "sourcePlatform": "Hacker News",
+    "candidateDescription": "Fast dynamic LLM router using Jev Choice decisions to route user prompts to specialized small vs large models in under 80ms.",
+    "claimedPrimitive": "Choice",
+    "contextUrl": "https://news.ycombinator.com/item?id=49745212"
+  },
+  {
+    "repo": "TitovDigital/kbai-skill",
+    "repoUrl": "https://github.com/TitovDigital/kbai-skill",
+    "sourcePlatform": "Hacker News (Show HN)",
+    "candidateDescription": "Open-source skill framework exploring alternatives and integrations with TypeSafe.ai decision workflows.",
+    "claimedPrimitive": "Choice, Score",
+    "contextUrl": "https://news.ycombinator.com/item?id=49750649"
+  }
+]

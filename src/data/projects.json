@@ -9678,5 +9678,87 @@
       "issueBodySha256": "1556da14e1c61f3cb5a9a114f82ee282d67bb5b28034dacdee97ce86c91bc851",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/11"
     }
+  },
+  {
+    "id": "sac-y:jev-cu",
+    "pinned": false,
+    "name": "Jev-cu",
+    "author": "Sac-Y",
+    "url": "https://github.com/Sac-Y/Jev-cu",
+    "category": "Browser & OS Action",
+    "plainSummary": "Jev-cu：面向 Codex 桌面端 Computer Use 的决策助手，将「下一步点哪里」交给 Jev System One 从候选文字中离散选择，只传文本不传截图。",
+    "plainSummaryEn": "Jev-cu: Desktop Computer Use co-processor delegating \"where to click next\" to Jev System One from text candidates without raw screenshots.",
+    "jevDecisionPoint": "从可访问性树与界面文字候选中，由 Jev 裁决下一个操作目标元素、动作类型、完成度与风险分级。",
+    "jevDecisionPointEn": "Evaluates next action targets, operation types, completion, and risk tiers directly from UI text candidates.",
+    "highlightBenefit": "只传文字不传截图，大幅降低多模态 token 消耗与延迟，结合本地白名单策略拦截敏感系统操作。",
+    "highlightBenefitEn": "Text-only candidate evaluation slashes multimodal token overhead and latency while enforcing strict local policy gates.",
+    "claimStatus": "项目含 Codex skill 与完整单测。真实环境界面控制需配置本地 TYPESAFE_API_KEY 与 Codex App，未经本站全平台真机复测。",
+    "claimStatusEn": "Repository includes Codex skill and unit tests. Live UI control requires local API key and Codex desktop app; not multi-OS verified.",
+    "tags": [
+      "Computer Use",
+      "Codex",
+      "Automation",
+      "System One",
+      "JavaScript"
+    ],
+    "evidenceNote": "scripts/jev-decide.mjs 直连 api.typesafe.ai/v1/systemone，基于四个标准问题评估目标控件与操作动作。",
+    "metricLabel": "Action Choice",
+    "metricContext": "界面文字动作决策",
+    "repo": "Sac-Y/Jev-cu",
+    "repoId": 1376128472,
+    "stars": 14,
+    "forks": 1,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-18T16:56:08Z",
+    "updatedAt": "2026-09-19T05:15:41Z",
+    "pushedAt": "2026-09-18T17:01:44Z",
+    "lastCommitAt": "2026-09-18T17:01:44Z",
+    "lastSyncedAt": "2026-09-19T05:22:00Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/270291518?v=4",
+    "language": "JavaScript",
+    "topics": [
+      "codex",
+      "computer-use",
+      "jev",
+      "system-one",
+      "typesafe"
+    ],
+    "archived": false,
+    "headSha": "38fb31de7dfe6209bbe6e04057c00c6e885ba577",
+    "sourceUrl": "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/jev-decide.mjs",
+    "sourcePath": "scripts/jev-decide.mjs",
+    "evidenceLines": "L1-L75",
+    "verificationStatus": "verified",
+    "runtimeVerified": false,
+    "metadataStatus": "ok",
+    "summarySource": "human-reviewed",
+    "metadataFetchedAt": "2026-09-19T05:22:00Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/jev-decide.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "38fb31de7dfe6209bbe6e04057c00c6e885ba577",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/README.md",
+          "hash": "c044d4719bbdf7d6dfaee0d195a63c4ebc0a969b275bf4196191ec4d9a6c9058"
+        },
+        {
+          "path": "scripts/jev-decide.mjs",
+          "url": "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/jev-decide.mjs",
+          "hash": "08f307304faec4133481d4a0a75f56598c0d16be9cb6cf0c2d3a39e763ceb2f4"
+        }
+      ]
+    }
   }
 ]

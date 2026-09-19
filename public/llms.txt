@@ -1,5 +1,5 @@
 # Awesome Jev Projects Radar
-> Curated directory and ecosystem radar of 182 real-world open-source projects powered by TypeSafe AI's Jev model.
+> Curated directory and ecosystem radar of 183 real-world open-source projects powered by TypeSafe AI's Jev model.
 
 - Website: https://logicrw.github.io/awesome-jev-projects/
 - GitHub Repository: https://github.com/logicrw/awesome-jev-projects
@@ -8,7 +8,7 @@
 ## About Jev
 Jev (by TypeSafe AI) is a specialized low-latency decision model designed for structured choices, ratings, classification, and next-step actions (sub-100ms inference). Rather than generating long text, Jev acts as a fast decision co-processor alongside heavy frontier LLMs.
 
-## Curated Projects Directory (182 Projects)
+## Curated Projects Directory (183 Projects)
 
 ### jev-ultrafast
 - Repository: https://github.com/browser-use/jev-ultrafast
@@ -1465,3 +1465,11 @@ Jev (by TypeSafe AI) is a specialized low-latency decision model designed for st
 - Overview (ZH): JevNoiseGate：面向 Android 通知与短信的噪声过滤器，通过 Jev 离散判定消息是否为垃圾广告，对验证码等未知路径严格放行。
 - Jev Decision Role: 将捕获的通知文本或短信内容交给 Jev，裁决是否归类为广告干扰信息。
 - Core Benefit: 告别脆弱的关键词规则库，在保护验证码安全的前提下实现高精度广告拦截。
+
+### Jev-cu
+- Repository: https://github.com/Sac-Y/Jev-cu
+- Category: Browser & OS Action
+- Overview (EN): Jev-cu: Desktop Computer Use co-processor delegating "where to click next" to Jev System One from text candidates without raw screenshots.
+- Overview (ZH): Jev-cu：面向 Codex 桌面端 Computer Use 的决策助手，将「下一步点哪里」交给 Jev System One 从候选文字中离散选择，只传文本不传截图。
+- Jev Decision Role: 从可访问性树与界面文字候选中，由 Jev 裁决下一个操作目标元素、动作类型、完成度与风险分级。
+- Core Benefit: 只传文字不传截图，大幅降低多模态 token 消耗与延迟，结合本地白名单策略拦截敏感系统操作。

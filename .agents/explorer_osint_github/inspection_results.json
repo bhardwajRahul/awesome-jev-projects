@@ -1,0 +1,2307 @@
+[
+  {
+    "repo": "tamaratran/jev-pruner",
+    "status": "accepted",
+    "sha": "c5bf7df482b9f8df3dcb838034f06da0d8d0d07a",
+    "name": "jev-pruner",
+    "description": "Claude Code plugin: trim long Bash output with TypeSafe Jev before the model sees it",
+    "stars": 17,
+    "language": "TypeScript",
+    "url": "https://github.com/tamaratran/jev-pruner",
+    "implementationFiles": [
+      "src/jev.ts"
+    ],
+    "evidenceSnippet": [
+      "# jev-pruner",
+      "A Claude Code plugin that uses TypeSafe's Jev to trim noisy Bash output **after",
+      "Claude requests a Bash command → Command runs → Jev prunes stdout → Claude receives the result",
+      "   without reading history, writing an archive, or calling Jev. The gate uses",
+      "4. Jev receives `{ context, task, history, command, chunks }`, plus `category` and",
+      "   `[fast-jev-output trimmed N lines (M chars); full output: .claude/fast-jev-output/bash-<id>.txt (Read or grep it if needed)]`",
+      "   under the project's `.claude/fast-jev-output/` directory (self-gitignored).",
+      "   A final `[fast-jev-output full output: <path> (Read or grep it if needed)]`"
+    ]
+  },
+  {
+    "repo": "realZachi/typesafe-adblock",
+    "status": "accepted",
+    "sha": "7e067d243d87b7fe4d511653c0ddcd77b9beee18",
+    "name": "typesafe-adblock",
+    "description": "🧹 Fun project: a Chrome extension that asks a tiny AI decision model (TypeSafe Jev) \"is this DOM element an ad?\" and pops it off the page. BYOK, no backend, not a real ad blocker.",
+    "stars": 49,
+    "language": "JavaScript",
+    "url": "https://github.com/realZachi/typesafe-adblock",
+    "implementationFiles": [
+      "src/typesafe.js"
+    ],
+    "evidenceSnippet": [
+      "by [TypeSafe AI](https://docs.typesafe.ai)'s System One model **Jev**. Everything else",
+      "`https://api.typesafe.ai`. You pay for your own usage.",
+      "   Numbers are turned into words up front because Jev is weak on numbers.",
+      "   (`Is candidates[i] a paid advertisement …?`) to `POST /v1/systemone`, model `jev-latest`.",
+      "Per batch, one request to `api.typesafe.ai` containing: the page hostname and title,",
+      "TYPESAFE_API_KEY=... npm run relay",
+      "TYPESAFE_API_KEY=... npm run live-check",
+      "- Jev reads literally. Ads that hide without a label, ad-network link, or ad-like class"
+    ]
+  },
+  {
+    "repo": "Red5d/jev-cvss",
+    "status": "accepted",
+    "sha": "b0fdc446e4b9ef070abd570db347a277e496d70c",
+    "name": "jev-cvss",
+    "description": "Fast CVSS scoring from vulnerability descriptions using Typesafe Jev",
+    "stars": 2,
+    "language": "Python",
+    "url": "https://github.com/Red5d/jev-cvss",
+    "implementationFiles": [
+      "cvss3_jev.py"
+    ],
+    "evidenceSnippet": [
+      "# Jev CVSS Scoring Scripts",
+      "Score software vulnerability descriptions with CVSS using TypeSafe's Jev",
+      "(`jev-latest`) via the System One API. Jev reads the description and selects the",
+      "All scripts read the TypeSafe API key from the **`TYPESAFE_API_KEY`** environment",
+      "export TYPESAFE_API_KEY=...        # TypeSafe API key",
+      "python3 cvss31_jev.py -f advisory.txt --raw   # dump unedited Jev answers",
+      "- Every metric value Jev selected, with the top-2 probability spread for each",
+      "- **Jev does metric selection only.** One API request per description, with one"
+    ]
+  },
+  {
+    "repo": "raihankhan-rk/diffjury",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "c94faf22a49a891a4cf3ca35f9e6aa04348cc820",
+    "name": "diffjury",
+    "description": "DiffJury — TypeSafe Jev PR risk router + code review coach",
+    "stars": 3,
+    "language": "TypeScript",
+    "url": "https://github.com/raihankhan-rk/diffjury",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "**Jev decides if this PR is risky or not.**",
+      "Paste a public GitHub pull request URL and hit **Analyze**. One click fetches the PR dossier (title, body, diff, contributors) and runs a TypeSafe Jev `systemOne` judgment — risk bars, noul probabilities, and a verdict. ",
+      "Large PRs are trimmed locally to fit Jev's ~32k/64k token limits; small PRs keep their full, unchanged context.",
+      "- `@typesafe-ai/sdk` (`TypeSafeClient.systemOne`, model `jev-latest`) — **server-only** via `POST /api/review`",
+      "- Env: `TYPESAFE_API_KEY` (never exposed to the browser)",
+      "## Jev questions (single call)",
+      "# TYPESAFE_API_KEY=...",
+      "Unchanged. Accepts a PR payload and returns Jev answers."
+    ]
+  },
+  {
+    "repo": "HyunjunJeon/pi-quiet-ask",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "47b286e68c1dd9ff03a10b9c180cfab396435c75",
+    "name": "pi-quiet-ask",
+    "description": "TypeSafe Jev as the pi coding agent's quiet decision layer",
+    "stars": 5,
+    "language": "TypeScript",
+    "url": "https://github.com/HyunjunJeon/pi-quiet-ask",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "**TypeSafe Jev as the pi coding agent's quiet decision layer.**",
+      "The main LLM keeps writing the code. [Jev](https://typesafe.ai) — a \"System One\" model that returns",
+      "questions to ask Jev, and rules of the form `if <expression over the answers> then <action>`. Five",
+      "| name | pi hook | Jev question(s) | default action |",
+      "| `evidence` | (no Jev call) | — | JSON ledger of the work state |",
+      "export TYPESAFE_API_KEY=...        # or put it in ~/.pi/agent/pi-quiet-ask.json, or <project>/.env",
+      "[`HyunjunJeon/jev-judgment`](https://github.com/HyunjunJeon/jev-judgment)",
+      "(`npx skills add HyunjunJeon/jev-judgment`)."
+    ]
+  },
+  {
+    "repo": "kavehmz/typesafe-playground",
+    "status": "accepted",
+    "sha": "ec6102ef693de3c1775af5c844d48713b6d3f4a2",
+    "name": "typesafe-playground",
+    "description": "Interactive experiments with TypeSafe Jev, from support routing to 3D driving simulations with real AI decisions and visible sensor inputs.",
+    "stars": 9,
+    "language": "JavaScript",
+    "url": "https://github.com/kavehmz/typesafe-playground",
+    "implementationFiles": [
+      "demo01/server.mjs"
+    ],
+    "evidenceSnippet": [
+      "Small, interactive experiments with **TypeSafe Jev**: from understanding a support message to making decisions for a car in a 3D world.",
+      "## Self driving car by Jev",
+      "![Demo03 built with Fable, showing the 3D road, four camera feeds, sensor readings, speed-sign memory and Jev decision panel](docs/images/demo03-fable.png)",
+      "The Fable implementation: four camera feeds, radar and blind-spot readings, remembered speed signs, and Jev's decision panel. Captured before starting a run; the decision values have not yet been populated.",
+      "| [demo02 — Jev Driving Lab](demo02/README.md) | Jev chooses lane and target speed for a car on a two-way road. Random traffic, overtaking, oncoming cars, pedestrian crossings and remembered 30/50 km/h signs create chang",
+      "| [demo03 — Fable implementation](demo03/) | A separate implementation of the same driving concept, being built with **Fable** to test another AI's interpretation of the brief. **Currently under development and being tes",
+      "In demo01, routing is a preview: no real support ticket is sent and no refund is issued. In the driving demos, the camera views are rendered for the audience; Jev receives structured simulated sensor observations rather ",
+      "Edit `.env` and set `TYPESAFE_API_KEY` to your own key. The existing alternative name `TYPESAFE_API` is also supported; `TYPESAFE_API_KEY` takes precedence. `TYPESAFE_MODEL` defaults to `jev-latest`."
+    ]
+  },
+  {
+    "repo": "obie/ruby_decision_model",
+    "status": "accepted",
+    "sha": "f79a890ce4eaa8f83d8220727319ee7b11416e01",
+    "name": "ruby_decision_model",
+    "description": "Ruby client for decision models such as Typesafe Jev",
+    "stars": 36,
+    "language": "Ruby",
+    "url": "https://github.com/obie/ruby_decision_model",
+    "implementationFiles": [
+      "lib/ruby_decision_model/providers/typesafe.rb"
+    ],
+    "evidenceSnippet": [
+      "`Client.new` with no arguments reads the environment: `TYPESAFE_API_KEY` selects",
+      "Requests go to `https://openrouter.ai/api/alpha/decisions`. The default model is",
+      "`typesafe/jev-1.13`. Usage reports `input_tokens`, `output_tokens`, and `cost`.",
+      "# ENV[\"TYPESAFE_API_KEY\"]",
+      "Requests go to `https://api.typesafe.ai/v1/systemone`. The default model is",
+      "`jev-latest`. Usage reports `input_tokens` and `output_tokens`; `cost` is `nil`.",
+      "client.model      # => \"jev-latest\" (resolved after aliasing)",
+      "| `nil` | `typesafe/jev-1.13` | `jev-latest` |"
+    ]
+  },
+  {
+    "repo": "joshuaeroman/plasmallm",
+    "status": "accepted",
+    "sha": "b7d4975b31722624343d932a2b4a2d2b8a9952ff",
+    "name": "plasmallm",
+    "description": "A KDE Plasma plasmoid to add desktop chat with LLMs",
+    "stars": 28,
+    "language": "QML",
+    "url": "https://github.com/joshuaeroman/plasmallm",
+    "implementationFiles": [
+      "package/contents/ui/adapters/decisions.js"
+    ],
+    "evidenceSnippet": [
+      "4. Choose a provider (e.g. **OpenRouter**), confirm endpoint `https://openrouter.ai/api/v1`.",
+      "- **General**: Set your provider, model, and API keys. The **Decisions (TypeSafe / Jev)** adapter (TypeSafe direct or OpenRouter) is for decision models: instead of chatting, each message is evaluated once and answered w",
+      "- **Tools**: Enable/disable specific tools and configure the filesystem whitelist for sandboxed operations. Finished tool results collapse to a small pill by default (per-tool toggle); click to expand. The `run_command` ",
+      "// Decisions adapter for TypeSafe System One models (Jev). Decisions models",
+      "var displayName = \"Decisions (TypeSafe / Jev)\";",
+      "    { name: \"TypeSafe\",              url: \"https://api.typesafe.ai/v1\" },",
+      "    { name: \"OpenRouter (decisions)\", url: \"https://openrouter.ai/api/v1\" }",
+      "    reasoningHelp: \"Decisions models (Jev) return typed answers with calibrated probabilities instead of generated text. Each message is evaluated once; there is no conversation memory.\""
+    ]
+  },
+  {
+    "repo": "alp82/goodwatch-monorepo",
+    "status": "accepted",
+    "sha": "58aa7b3683f82ee4ea58f7da1007ee76400a7115",
+    "name": "goodwatch-monorepo",
+    "description": "GoodWatch is a unique take on discovering movies and shows.",
+    "stars": 38,
+    "language": "Python",
+    "url": "https://github.com/alp82/goodwatch-monorepo",
+    "implementationFiles": [
+      "goodwatch-flows/windmill/f/dna/prototype_comparison/jev_run.py"
+    ],
+    "evidenceSnippet": [
+      "\"\"\"Compare Jev scoring runs with the recorded Qwen baselines. Writes jev/results.json.\"\"\"",
+      "RUNS = BENCH / \"jev/private/runs\"",
+      "    \"\"\"Map Jev answers to the 0-10 integer scale.\"\"\"",
+      "    out = BENCH / \"jev/results.json\"",
+      "    (BENCH / \"jev/scores.json\").write_text(json.dumps({\"score_keys\": keys, \"baselines\": {\"F\": first[\"F\"], \"D\": first[\"D\"], \"panel\": first[\"panel\"]}, \"jev\": table}, indent=1))",
+      "\"\"\"Throwaway Jev (TypeSafe System One) scoring experiment over the frozen benchmark.",
+      "Scores only: Jev does not generate essence text or tags. Raw captures stay in the",
+      "PRIVATE = BENCH / \"jev/private\""
+    ]
+  },
+  {
+    "repo": "lavallee/mk-jev-fly-brain",
+    "status": "accepted",
+    "sha": "8217937e6e725b0ce3160c6e1ab0183db8b8aa30",
+    "name": "mk-jev-fly-brain",
+    "description": "A maleCNS fly-brain connectome fights a language model in mk.js — spiking simulation, dopamine learning, and the controls that say what each side contributes",
+    "stars": 0,
+    "language": "JavaScript",
+    "url": "https://github.com/lavallee/mk-jev-fly-brain",
+    "implementationFiles": [
+      "jev.py"
+    ],
+    "evidenceSnippet": [
+      "**Jev** is [TypeSafe](https://typesafe.ai/)'s System One model, which reads the fight as JSON and",
+      "**[lavallee.github.io/mk-jev-fly-brain](https://lavallee.github.io/mk-jev-fly-brain/)** — there is",
+      "no single fly and no single Jev, so each learning setup and each source of decisions is entered as",
+      "policy distilled from Jev. To use Jev itself, put a TypeSafe key in `.env`:",
+      "echo TYPESAFE_API_KEY=sk-... > .env",
+      "/mk/?jev=rules                      # the fly against five lines of hand-written rules",
+      "/mk/?jev=local                      # against a 168-weight policy distilled from Jev — no API calls",
+      "/mk/?jev=api                        # against Jev itself, with its live JSON and probabilities shown"
+    ]
+  },
+  {
+    "repo": "TannerMidd/SpecPi",
+    "status": "accepted",
+    "sha": "55c4c55e9d8d5c2a5ae803d7f4e5ebd5427a45c3",
+    "name": "SpecPi",
+    "description": "A minimal, explicit, provider-safe harness for the Pi coding agent",
+    "stars": 4,
+    "language": "JavaScript",
+    "url": "https://github.com/TannerMidd/SpecPi",
+    "implementationFiles": [
+      "extensions/jev-advisor/client.mjs"
+    ],
+    "evidenceSnippet": [
+      "This chart shows first-call context from a clean install: all seven pinned packages, the working agreement, and the skills Pi finds. It predates `specpi-jev-guard`, the eighth pin, and has not been re-measured since. \"En",
+      "| SpecPi + Jev | 35/37 | $0.0046 | 153,077 | 13,799 |",
+      "export const DEFAULT_MODEL = \"jev-1.13.0\";",
+      "export const OPENROUTER_MODEL = \"typesafe/jev-1.13\";",
+      " * Jev is reached through OpenRouter by default: that is where it is published, it is what",
+      " * specpi-jev-guard already uses, and an OpenRouter key (`sk-or-...`) is rejected by the direct",
+      " * The key variable follows the backend, matching specpi-jev-guard's own `keyEnvName`, so one key",
+      " * serves the whole layer. TYPESAFE_API_KEY is still accepted on the OpenRouter path so an existing"
+    ]
+  },
+  {
+    "repo": "soul99soul-glitch/AmberAgent",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "9824e31f549f445b89e229f487498dfdc532ed3a",
+    "name": "AmberAgent",
+    "description": "AmberAgent mobile AI workspace for Android and iOS, with a gradually shared core.",
+    "stars": 26,
+    "language": "Kotlin",
+    "url": "https://github.com/soul99soul-glitch/AmberAgent",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "import app.amber.core.jev.AndroidJevUsageStore",
+      "import app.amber.core.jev.JevClient",
+      "import app.amber.core.jev.JevDecisionCoordinator",
+      "import app.amber.core.jev.JevMemoryReranker",
+      "import app.amber.core.jev.JevRuntime",
+      "import app.amber.core.jev.JevCouncilPoolRanker",
+      "import app.amber.core.jev.JevToolOutputProjector",
+      "import app.amber.core.jev.JevToolSemanticSearch"
+    ]
+  },
+  {
+    "repo": "exYze/rift",
+    "status": "accepted",
+    "sha": "b446c3fb8ecf0b0e445b16436fd937262956d010",
+    "name": "rift",
+    "description": "A blazing-fast, Rust-powered TUI for terminal-native AI code intelligence and assisted development.",
+    "stars": 9,
+    "language": "Rust",
+    "url": "https://github.com/exYze/rift",
+    "implementationFiles": [
+      "crates/rift-typesafe/src/lib.rs"
+    ],
+    "evidenceSnippet": [
+      "rift swarm \"Fix the failing test\" --models gemma4:26b,qwen3.6:35b --judge jev",
+      "| `/swarm <task> [--models a,b] [--judge m] [--explore]` | WarpDrive race without leaving the chat — models may span providers; the optional judge scores the diffs and recommends a winner. `--judge jev` (or `typesafe/jev",
+      "      \"base_url\": \"https://openrouter.ai/api/v1\",",
+      "{ \"model\": \"openrouter/qwen/qwen3-30b-a3b\", \"providers\": { \"openrouter\": { \"base_url\": \"https://openrouter.ai/api/v1\", \"api_key_env\": \"OPENROUTER_API_KEY\" } } }",
+      "### Typed decisions (TypeSafe System One / Jev)",
+      "{ \"typesafe\": { \"api_key_env\": \"TYPESAFE_API_KEY\", \"model\": \"jev-latest\" } }",
+      "With no config at all rift reads `TYPESAFE_API_KEY` from the environment; with no key anywhere the feature stays inert rather than failing at call time. Two things use it:",
+      "- **The `jev` swarm judge.** `--judge jev` (or `typesafe/jev-1.13.0` to pin) referees a WarpDrive race. The chat judge has to be *asked* for a `WINNER:` line and then parsed, which can miss, hallucinate a name, or pick a"
+    ]
+  },
+  {
+    "repo": "brainstormity/Jev-Moderation-Bot",
+    "status": "accepted",
+    "sha": "1629ac80bea758883ee7541ffc654c83acfae4b6",
+    "name": "Jev-Moderation-Bot",
+    "description": null,
+    "stars": 25,
+    "language": "Python",
+    "url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+    "implementationFiles": [
+      "typesafe/__init__.py"
+    ],
+    "evidenceSnippet": [
+      "# Jev Moderation Bot",
+      "A Discord moderation bot built with Python and TypeSafe AI (Jev System One). It filters spam and scam links in real time, escalates offenses automatically, and lets moderators profile members based on their message histo",
+      "git clone https://github.com/your-org/jev-moderation-bot.git",
+      "cd jev-moderation-bot",
+      "TYPESAFE_API_KEY=your_typesafe_api_key",
+      "evaluation against TypeSafe AI System One decision models (such as Jev).",
+      "    from typesafe_sdk import AsyncTypeSafeClient as _SdkAsyncClient",
+      "    from typesafe_sdk import Choice as _SdkChoice"
+    ]
+  },
+  {
+    "repo": "sumitrevolt/leadgenrationaivoiceagent",
+    "status": "accepted",
+    "sha": "0ed2da0ea032eb077a196798d1ed5e6aa8602a2b",
+    "name": "leadgenrationaivoiceagent",
+    "description": "AI Voice Agent for B2B Lead Generation - Multi-tier automated platform with ML auto-learning, voice calling, and CRM integration",
+    "stars": 1,
+    "language": "Python",
+    "url": "https://github.com/sumitrevolt/leadgenrationaivoiceagent",
+    "implementationFiles": [
+      "app/platform/typesafe_integration.py"
+    ],
+    "evidenceSnippet": [
+      "- Base URL: https://api.typesafe.ai (NOT /v1)",
+      "- Default model: jev-latest (configurable via TYPESAFE_MODEL env var)",
+      "  1. env var TYPESAFE_API_KEY (production: /opt/leadgen/.env)",
+      "  2. env var TYPEsafe_API_KEY (legacy backward-compat)",
+      "TYPEsafe_BASE_URL = \"https://api.typesafe.ai\"",
+      "_DEFAULT_MODEL = \"jev-latest\"",
+      "    return (os.getenv(\"TYPESAFE_API_KEY\") or os.getenv(\"TYPEsafe_API_KEY\") or \"\").strip() or \"\"",
+      "    \"\"\"Response from TypeSafe System One API\"\"\""
+    ]
+  },
+  {
+    "repo": "AgentiLoop/Agent",
+    "status": "accepted",
+    "sha": "078f87ceca1d1190cc73706ac8ec16442e766a27",
+    "name": "Agent",
+    "description": "AgentiLoop Agent! An Autonomous Agentic Agent for Mac, and exclusive Apple only harnesss. Supports  automation, scripting, coding, build anything and more. Powered by 21 LLM providers across local and cloud platforms. Dark or Light Mode UI.",
+    "stars": 616,
+    "language": "Swift",
+    "url": "https://github.com/AgentiLoop/Agent",
+    "implementationFiles": [
+      "TypeSafeKit/Sources/TypeSafeKit/TypeSafeClient.swift"
+    ],
+    "evidenceSnippet": [
+      "## 🔒 Jev — a second opinion before shell commands",
+      "**Jev** (TypeSafe System One) is an optional decision layer that reviews shell commands *before* Agent! runs them. It supplements your selected LLM provider — it never replaces it.",
+      "- **What it does.** Every command that already passed the hard-coded `ShellSafetyService` rules is sent to Jev, which rates how likely it is to irreversibly destroy data. Above your threshold the command is refused with ",
+      "- **Fail-open by design.** No API key, the **Consult Jev before tools** toggle off, or a TypeSafe outage means \"no opinion\" — the command proceeds and the failure is logged, never silently treated as a safe verdict. Canc",
+      "## 🔒 Jev —— shell 命令执行前的第二意见",
+      "**Jev**（TypeSafe System One）是一个可选的决策层，在 Agent! 执行 shell 命令*之前*先行审查。它是对你所选 LLM 提供商的补充，绝不取代它。",
+      "- **它做什么。** 每条已经通过 `ShellSafetyService` 固定规则的命令都会发送给 Jev，由它评估该命令不可逆地破坏数据的可能性。超过你设定的阈值时，命令被拒绝并给出评分与命令原文；低于阈值则照常执行。",
+      "- **故意设计为失败放行。** 未配置 API 密钥、关闭 **Consult Jev before tools** 开关，或 TypeSafe 服务中断时，结果都视为「无意见」：命令继续执行，失败会被记录，绝不会被悄悄当成安全结论。在 Jev 检查期间取消任务，命令不会启动。"
+    ]
+  },
+  {
+    "repo": "BlackJaxDev/XRENGINE",
+    "status": "accepted",
+    "sha": "91f18012a7c74a516cce98280a886506f229f3ef",
+    "name": "XRENGINE",
+    "description": "This is my custom open-source C# game engine designed from the ground-up for maximum possible performance rendering in VR with multiple characters and mirrors.",
+    "stars": 16,
+    "language": "C#",
+    "url": "https://github.com/BlackJaxDev/XRENGINE",
+    "implementationFiles": [
+      "XREngine.AgentOrchestration/TypeSafe/TypeSafeClient.cs"
+    ],
+    "evidenceSnippet": [
+      "/// Client interface for evaluating System One decisions via TypeSafe's Jev model.",
+      "public interface ITypeSafeClient",
+      "    /// Gets the target System One model identifier (defaults to \"jev-latest\").",
+      "/// Production client for TypeSafe's System One (Jev) API.",
+      "public sealed class TypeSafeClient : ITypeSafeClient",
+      "    public const string DefaultEndpoint = \"https://api.typesafe.ai/v1/systemone\";",
+      "    public const string DefaultModel = \"jev-latest\";",
+      "    public const string DefaultApiKeyEnvironmentVariable = \"TYPESAFE_API_KEY\";"
+    ]
+  },
+  {
+    "repo": "experientiallabs/experiential",
+    "status": "rejected",
+    "reason": "no Jev decision context",
+    "sha": "a3af21b4decdd84f720f3dca90d39a860d92c059",
+    "name": "experiential",
+    "description": "Experiential is the open source, zero markup gateway for BYOK, self-hosted and 1000+ marketplace models. It learns from your traffic to cut costs, recommend better models, and train a specialized model you own.",
+    "stars": 5198,
+    "language": "Python",
+    "url": "https://github.com/experientiallabs/experiential",
+    "implementationFiles": [
+      "exp/runtime/models/providers/typesafe_test.py",
+      "exp/runtime/models/providers/typesafe.py"
+    ],
+    "evidenceSnippet": [
+      "from exp.runtime.models.providers.typesafe import TYPESAFE_BASE_URL, TypeSafeClient",
+      "    client = TypeSafeClient(",
+      "    client = TypeSafeClient(model=_model(), api_key=\"provider-secret-canary\")",
+      "        \"http://api.typesafe.ai/v1\",",
+      "        TypeSafeClient(model=_model(), api_key=\"provider-secret-canary\", base_url=url)",
+      "        TypeSafeClient(model=_model(), api_key=\"\")",
+      "TYPESAFE_BASE_URL = \"https://api.typesafe.ai/v1\"",
+      "class TypeSafeClient:"
+    ]
+  },
+  {
+    "repo": "BuilderIO/agent-native",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "6c32c81b9c88625ab7e1df37b6088f6d9791e9b3",
+    "name": "agent-native",
+    "description": "A framework for building agentic apps",
+    "stars": 4826,
+    "language": "TypeScript",
+    "url": "https://github.com/BuilderIO/agent-native",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "const typeSafeClient = vi.hoisted(() => vi.fn());",
+      "vi.mock(\"@typesafe-ai/sdk\", () => ({",
+      "  TypeSafeClient: typeSafeClient,",
+      "import { preloadJevTools, rankJevCandidates } from \"./jev-tool-prefetch.js\";",
+      "    typeSafeClient.mockReset();",
+      "    typeSafeClient.mockImplementation(",
+      "      class TypeSafeClient {",
+      "  it(\"does not import or call Jev without a saved key\", async () => {"
+    ]
+  },
+  {
+    "repo": "braintrustdata/braintrust-sdk-javascript",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "2c77318f7f39b038315a8fd05c0ce25fe5714de7",
+    "name": "braintrust-sdk-javascript",
+    "description": "JavaScript Tracing & Evals library for Braintrust",
+    "stars": 27,
+    "language": "TypeScript",
+    "url": "https://github.com/braintrustdata/braintrust-sdk-javascript",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "    name: \"@typesafe-ai/sdk\",",
+      "    className: \"TypeSafeClient\",",
+      "  \"@typesafe-ai/sdk\",",
+      "export type TypeSafeClient = {",
+      "      model: \"jev-1.13.0\",",
+      "      defaultModel: \"jev-latest\",",
+      "      metadata: { model: \"jev-1.13.0\", provider: \"typesafe\" },",
+      "      model: \"jev-1.13.0\","
+    ]
+  },
+  {
+    "repo": "lioensky/VCPToolBox",
+    "status": "accepted",
+    "sha": "13a14940453cbb0cb0ec79565d5999bb9114e087",
+    "name": "VCPToolBox",
+    "description": "VCP 部署在 AI 模型 API 与前端应用之间，是面向AGI OS开发和探索的工业级基建示范项目。通过统一指令协议、多层级持久化记忆、分布式插件引擎及多 Agent 协作框架，将原本“无状态、无记忆、无工具调用能力”的大语言模型，彻底改造成拥有永久自我意识、物理世界操作权及群体协作智能的完整智能体系统。",
+    "stars": 2307,
+    "language": "JavaScript",
+    "url": "https://github.com/lioensky/VCPToolBox",
+    "implementationFiles": [
+      "modules/jevClient.js"
+    ],
+    "evidenceSnippet": [
+      "- **推荐后端**：支持 SSE 流式输出、格式标准化的官方或聚合 API。例如[NewAPI](https://github.com/QuantumNous/new-api)，[Openrouter](https://openrouter.ai/)等。请再次注意，**不要使用反代或中转 API**。\r",
+      "        url: 'https://api.typesafe.ai/v1/systemone',",
+      "        model: 'jev-latest'",
+      "        url: 'https://openrouter.ai/api/alpha/decisions',",
+      "        model: '~typesafe/jev-latest'",
+      "            throw new JevClientError('Jev state 不能为空。', {",
+      "            throw new JevClientError('Jev state 必须是字符串、对象或数组。', {",
+      "            throw new JevClientError('Jev questions 必须是非空对象。', {"
+    ]
+  },
+  {
+    "repo": "ksenxx/kiss_ai",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "2939875f6c42c6e50bccd6f0107b74fa027731d8",
+    "name": "kiss_ai",
+    "description": "KISS Sorcar: Keep it Simple, Stupid AI General Purpose Agent Framework for Long Horizon Tasks and AI Discovery",
+    "stars": 552,
+    "language": "Python",
+    "url": "https://github.com/ksenxx/kiss_ai",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "- A pre-run **task classifier** that detects whether the task is a development task that requires creating or editing files — non-development tasks (questions, git-only operations) skip worktree isolation, and simple tas",
+      "- `openrouter/typesafe/jev-1.13`",
+      "- `openrouter/~typesafe/jev-latest`"
+    ]
+  },
+  {
+    "repo": "professorpalmer/Puppetmaster",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "6754f06fd7ea7af9b5441c44e71168a29ab742a6",
+    "name": "Puppetmaster",
+    "description": "Provider-neutral control plane for durable-state agent swarms: subprocess workers, leases, artifacts, memory, and deterministic stitching.",
+    "stars": 444,
+    "language": "Python",
+    "url": "https://github.com/professorpalmer/Puppetmaster",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "    \"\"\"User asked for Jev. Empty, auto, and off stay off. Key is not enough.\"\"\"",
+      "            \"X-OpenRouter-Title\": \"Puppetmaster Jev\",",
+      "    \"\"\"Receipt for a Jev graph-edge decision. ``passed`` is always True.",
+      "    ``action`` is what the graph did. ``would_action`` is Jev's",
+      "        created_by=\"jev-transition\",",
+      "        created_by=\"jev-transition\",",
+      "unless ``PUPPETMASTER_JEV_ACT``. Jev never invents FINDINGs.",
+      "            task_id=task_id or \"jev-transition\","
+    ]
+  },
+  {
+    "repo": "1jehuang/jcode",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "c62973a441387f95e41f91afa46d251ad7fc7dc0",
+    "name": "jcode",
+    "description": "The most RAM efficient harness",
+    "stars": 19885,
+    "language": "Rust",
+    "url": "https://github.com/1jehuang/jcode",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "//! Jev selects an existing browser action. It never generates executable arguments.",
+      "const ENDPOINT: &str = \"https://openrouter.ai/api/alpha/decisions\";",
+      "const MODEL: &str = \"typesafe/jev-1.13\";",
+      "            .context(\"Could not initialize the Jev decision client\")?;",
+      "        \"Jev requires between 2 and 255 decision options\"",
+      "        \"Browser decision exceeds the Jev context budget; hand control back to the normal agent\"",
+      "        .context(\"Jev returned no action answer\")?;",
+      "        \"Jev did not return a typed choice\""
+    ]
+  },
+  {
+    "repo": "pollinations/pollinations",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "6b3734650351af278fa87061f84e83d181ecb78a",
+    "name": "pollinations",
+    "description": "Your Friendly Open-Source Gen-AI Platform",
+    "stars": 5093,
+    "language": "TypeScript",
+    "url": "https://github.com/pollinations/pollinations",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "- [OpenRouter](https://openrouter.ai/): Unified API for LLMs"
+    ]
+  },
+  {
+    "repo": "get-convex/convex-backend",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "5f0438ce8c98b4261e2338c8bad96775d1cfbb09",
+    "name": "convex-backend",
+    "description": "The open-source reactive database for app developers",
+    "stars": 12575,
+    "language": "TypeScript",
+    "url": "https://github.com/get-convex/convex-backend",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "Arize-ai/openinference",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "a719562e20437d433a2e4cfb599256e22ec04531",
+    "name": "openinference",
+    "description": "OpenTelemetry Instrumentation for AI Observability",
+    "stars": 1224,
+    "language": "Python",
+    "url": "https://github.com/Arize-ai/openinference",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "| [TypeSafe AI](python/instrumentation/openinference-instrumentation-typesafe/examples/)                | TypeSafeClient and AsyncTypeSafeClient System One calls (Noul, Choice, Score)                | Beginner         |"
+    ]
+  },
+  {
+    "repo": "http4k/http4k",
+    "status": "accepted",
+    "sha": "42ad8ba5e40cc36402bb455f22a440722c2fd210",
+    "name": "http4k",
+    "description": "The Functional toolkit for Kotlin HTTP applications. http4k provides a simple and uniform way to serve, consume, and test HTTP services.",
+    "stars": 2788,
+    "language": "Kotlin",
+    "url": "https://github.com/http4k/http4k",
+    "implementationFiles": [
+      "connect/ai/typesafe/client/src/main/kotlin/org/http4k/connect/typesafe/HttpTypeSafe.kt"
+    ],
+    "evidenceSnippet": [
+      "    private val routedHttp = ClientFilters.SetHostFrom(Uri.of(\"https://api.typesafe.ai\"))",
+      "    val JevLatest = ModelName.of(\"jev-latest\")",
+      "    val JevPreview = ModelName.of(\"jev-preview\")",
+      "    val Jev_1_13_0 = ModelName.of(\"jev-1.13.0\")"
+    ]
+  },
+  {
+    "repo": "dxos/dxos",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "8048e42866185f488879726ea4a318119b51450b",
+    "name": "dxos",
+    "description": "TypeScript implementation of the DXOS protocols, SDK, toolchain and Composer.",
+    "stars": 521,
+    "language": "TypeScript",
+    "url": "https://github.com/dxos/dxos",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "CaptainCore/captaincore",
+    "status": "accepted",
+    "sha": "f54e0669350707b2f4f4c67a0130fdd6574bd0b5",
+    "name": "captaincore",
+    "description": "👨🏽‍💻 CaptainCore is a command line application for automating WordPress maintenance.",
+    "stars": 71,
+    "language": "Go",
+    "url": "https://github.com/CaptainCore/captaincore",
+    "implementationFiles": [
+      "typesafe/client.go"
+    ],
+    "evidenceSnippet": [
+      "- **Optional integrations** -- `fathom_api_key` (analytics) and `typesafe_api_key` (the TypeSafe decision API behind `captaincore typesafe` and `scan --triage`; `TYPESAFE_API_KEY` in the environment works too)",
+      "# TypeSafe (Jev) decision API: typed yes/no, choice and score answers, no prose",
+      "\tShort: \"Call the TypeSafe (Jev) decision API\",",
+      "The API key is read from system.typesafe_api_key in config.json, or from the",
+      "TYPESAFE_API_KEY environment variable. TYPESAFE_MODEL overrides the default",
+      "model alias (jev-latest); TYPESAFE_BASE_URL points the client at a test server.`,",
+      "\t\tclient, source, err := typesafeClient()",
+      "\t\tclient, _, err := typesafeClient()"
+    ]
+  },
+  {
+    "repo": "shiro-0x/hersona",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "75146c9126e1614750eeead3da165d61a3fc2188",
+    "name": "hersona",
+    "description": "346 reusable character attributes for AI agent personas — compose, measure, and port system-prompt personas. Build once. Keep personality everywhere.",
+    "stars": 52,
+    "language": "Python",
+    "url": "https://github.com/shiro-0x/hersona",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "- TypeSafe/Jev is optional; ordinary Hersona blending, export, and measurement",
+      "For TypeSafe evaluation, configure `TYPESAFE_API_KEY` in the calling",
+      "`executed: false`. Set `TYPESAFE_API_KEY` in your environment. Normal blend,",
+      "        if not os.environ.get(\"TYPESAFE_API_KEY\", \"\").strip():",
+      "                async with sdk.AsyncTypeSafeClient(",
+      "        \"provider_not_configured\": (2, \"Configure TYPESAFE_API_KEY to use decisions.\"),"
+    ]
+  },
+  {
+    "repo": "Knuckles92/OpenWhisper",
+    "status": "accepted",
+    "sha": "9e83653df183096104769e302a3c907cb277c551",
+    "name": "OpenWhisper",
+    "description": "Local speech-to-text, dictation, and meetings with Whisper and OpenAI API. Optional Windows x64 engines: Parakeet, Qwen3-ASR, Nemotron Streaming, and Moonshine.",
+    "stars": 185,
+    "language": "Python",
+    "url": "https://github.com/Knuckles92/OpenWhisper",
+    "implementationFiles": [
+      "services/typesafe.py"
+    ],
+    "evidenceSnippet": [
+      "ENDPOINT = \"https://api.typesafe.ai/v1/systemone\"",
+      "#: Pinned rather than ``jev-latest``: thresholds below were measured on it.",
+      "MODEL = \"jev-1.13.0\"",
+      "CREDENTIAL_ENV = \"TYPESAFE_API_KEY\""
+    ]
+  },
+  {
+    "repo": "jbookout/carr-system",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "0f6cb388424e83a75396a3e2d3bfc14839e81b35",
+    "name": "carr-system",
+    "description": null,
+    "stars": 0,
+    "language": "PLpgSQL",
+    "url": "https://github.com/jbookout/carr-system",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "\"\"\"jev_judge.py — ask Jev a narrow question about a body of text, and RECORD it.",
+      "     written, Jev's wrong calls arrived under 0.5 confidence and its right ones",
+      "  3. A QUESTION NOBODY THINKS TO ASK RETURNS NOTHING. Jev sharpened a review; it",
+      "SHADOW_LOG = os.path.join(REPO, \"out\", \"jev-judge.jsonl\")",
+      "    \"\"\"Append one shadow observation. Writes what Jev said BESIDE what we did.",
+      "SHADOW_LOG = os.path.join(REPO, \"out\", \"jev-rule-select.jsonl\")"
+    ]
+  },
+  {
+    "repo": "getkyo/kyo",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "0111c7851e5d1fe0fd22bcc2d7b6b58c0c879f6a",
+    "name": "kyo",
+    "description": "Toolkit for Scala Development",
+    "stars": 812,
+    "language": "Scala",
+    "url": "https://github.com/getkyo/kyo",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "BorisLeMeec/jev",
+    "status": "accepted",
+    "sha": "e81c1d006b8b23a616486610f311039088521d0c",
+    "name": "jev",
+    "description": "A claude code plugin for jev",
+    "stars": 6,
+    "language": "Go",
+    "url": "https://github.com/BorisLeMeec/jev",
+    "implementationFiles": [
+      "internal/typesafe/client.go"
+    ],
+    "evidenceSnippet": [
+      "# jev",
+      "A Claude Code plugin backed by [TypeSafe](https://typesafe.ai)'s Jev — a small",
+      "![jev intercepting a Claude Code session](docs/demo.gif)",
+      "$ jev find \"where is the register flow\"",
+      "claude plugin marketplace add BorisLeMeec/jev",
+      "claude plugin install jev@jev",
+      "To use `jev` from your own terminal too (the plugin only puts it on `PATH`",
+      "make install    # builds and copies to ~/.local/bin/jev"
+    ]
+  },
+  {
+    "repo": "Michaelliv/runline",
+    "status": "accepted",
+    "sha": "6bdddfa82cd95b6b9a07e57fd93a271ae83a0d1b",
+    "name": "runline",
+    "description": "⚡ Code mode for agents",
+    "stars": 162,
+    "language": "TypeScript",
+    "url": "https://github.com/Michaelliv/runline",
+    "implementationFiles": [
+      "packages/runline-plugins/typesafe/src/shared.ts"
+    ],
+    "evidenceSnippet": [
+      "| **typesafe** | 7 | evaluate, choice, score, noul, raw, model, guide | `TYPESAFE_API_KEY` |",
+      " * (concepts, confidence, patterns, cookbooks) and the jev-1.13 jaggedness",
+      "      \"Jev is a System One model: it evaluates typed questions against a state and returns typed answers with calibrated \" +",
+      "      \"Prefer a closed set the model chooses from over asking it to produce a value. For extraction, find candidates with regex or a generative model, then have Jev pick the right one — and check candidate coverage, beca",
+      "    applies: \"jev-1.13, reviewed 2026-09-16.\",",
+      "          \"own classification can move the answer. This limits how much a single Jev call can be trusted as a standalone guardrail.\",",
+      "          \"Bound the answer space and let Jev pick; use a generative model when you genuinely need new text.\",",
+      "      \"Screen with Jev, escalate only what survives. A cheap first pass in front of an expensive model recovers most of the \" +"
+    ]
+  },
+  {
+    "repo": "pinecone-io/using-typesafe-and-pinecone",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "a9b98960009213f69594ec377d0a6e0d5453f730",
+    "name": "using-typesafe-and-pinecone",
+    "description": null,
+    "stars": 0,
+    "language": "JavaScript",
+    "url": "https://github.com/pinecone-io/using-typesafe-and-pinecone",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "A collection of examples using TypeSafe's Jev model and Pinecone together. Each one is self-contained, with its own `package.json` and its own",
+      "Use TypeSafe's Jev with Pinecone to filter out and rerank results in natural language. Great for when you have reranking criteria that aren't quite good enough for normal rerankers, and need high quality specification fo",
+      "[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpinecone-io%2Fusing-typesafe-and-pinecone&root-directory=examples%2Fnli-reranking&env=PINECONE_API",
+      "| `TYPESAFE_API_KEY`  | yes      | Reranking judgments                                    |",
+      "import { TypeSafeClient, noul } from \"@typesafe-ai/sdk\";",
+      "let client: TypeSafeClient | undefined;",
+      "function typesafe(): TypeSafeClient {",
+      "  if (!client) client = new TypeSafeClient({ retry: { maxRetries: 3 } });"
+    ]
+  },
+  {
+    "repo": "ClassicMiniDIY/classicminidiy",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "f7a45e6e5c2cfa213207c0e257479e82bbe9b591",
+    "name": "classicminidiy",
+    "description": "Classic Mini DIY is the best place to find all the reference material, how-to videos, and much much more for your Classic Mini",
+    "stars": 9,
+    "language": "Vue",
+    "url": "https://github.com/ClassicMiniDIY/classicminidiy",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      " * TypeSafe (Jev) client for the Worker.",
+      " *   - The key is `TYPESAFE_API_KEY` in runtimeConfig, fed by the runtime secret",
+      " *     `NUXT_TYPESAFE_API_KEY`. Never public runtimeConfig, never read from",
+      " *   - The model is an EXACT id, never the `jev-latest` alias. The API echoes",
+      "import { TypeSafeClient, type Questions, type SystemOneResult } from '@typesafe-ai/sdk';",
+      "export { choice, noul, score } from '@typesafe-ai/sdk';",
+      "export type { ChoiceResponse, NoulResponse, Questions, ScoreResponse } from '@typesafe-ai/sdk';",
+      "export const TYPESAFE_MODEL = 'jev-1.13.0';"
+    ]
+  },
+  {
+    "repo": "DivinPrince/quickinbox",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "2219c1b3f6110448db04de5915a87ca455316952",
+    "name": "quickinbox",
+    "description": "Quickinbox — self-hosted web mail client on Cloudflare Workers.",
+    "stars": 397,
+    "language": "TypeScript",
+    "url": "https://github.com/DivinPrince/quickinbox",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "The Deploy to Cloudflare form includes an optional `TYPESAFE_API_KEY` for inbox",
+      "asks for `TYPESAFE_API_KEY`; `bun run setup` prompts for the same key (or take",
+      "bunx wrangler secret put TYPESAFE_API_KEY",
+      "import { TypeSafeClient, choice, noul, type TypeSafeClientConfig } from '@typesafe-ai/sdk';",
+      "/** Pack many messages into one System One request. Jev scores the questions in parallel. */",
+      "function typesafeClient(",
+      "): TypeSafeClient {",
+      "\treturn new TypeSafeClient({"
+    ]
+  },
+  {
+    "repo": "DonkeyCut/Donkey",
+    "status": "accepted",
+    "sha": "24539246257b271021acf10f7c9e587f67473a5c",
+    "name": "Donkey",
+    "description": "Open source CapCut alternative.",
+    "stars": 284,
+    "language": "TypeScript",
+    "url": "https://github.com/DonkeyCut/Donkey",
+    "implementationFiles": [
+      "site/src/lib/inference/adapters/typesafe.test.ts"
+    ],
+    "evidenceSnippet": [
+      "    const judge = createTypesafeJudge({ TYPESAFE_API_KEY: \"secret\" }, (async (",
+      "          model: \"jev-1.12\",",
+      "    expect(result.model).toBe(\"jev-1.12\");",
+      "    expect(s.url).toBe(\"https://api.typesafe.ai/v1/systemone\");",
+      "    expect(s.body.model).toBe(\"jev-latest\");",
+      "    const judge = createTypesafeJudge({ TYPESAFE_API_KEY: \"secret\" }, (async () =>"
+    ]
+  },
+  {
+    "repo": "MadaBurns/bv-mcp",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "f0ece57d24d459faa9adcc60b71a9be0355e0f25",
+    "name": "bv-mcp",
+    "description": "Open-source DNS & email security scanner. One MCP endpoint, 57 checks, zero install. Cloudflare Workers.",
+    "stars": 9,
+    "language": "TypeScript",
+    "url": "https://github.com/MadaBurns/bv-mcp",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      " * TypeSafe (System One / Jev) client wrapper.",
+      "import { TypeSafeClient } from '@typesafe-ai/sdk';",
+      "export const TYPESAFE_MODEL = 'jev-latest';",
+      "export function createTypesafeClient(apiKey: string | undefined): TypeSafeClient | null {",
+      "\t\treturn new TypeSafeClient({",
+      "\tclient: TypeSafeClient | null,"
+    ]
+  },
+  {
+    "repo": "GodsBoy/jev-agent-skill-router",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "e481a06ca37245cb579693d03e71d1c7282334db",
+    "name": "jev-agent-skill-router",
+    "description": "Typed, confidence-aware agent skill routing with TypeSafe Jev.",
+    "stars": 6,
+    "language": "Python",
+    "url": "https://github.com/GodsBoy/jev-agent-skill-router",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "# Jev Agent Skill Router",
+      "<img src=\"assets/jev-agent-skill-router-banner.png\" alt=\"A request enters a typed routing layer and branches to specialist skills, no skill or human review\" width=\"896\">",
+      "[![CI](https://github.com/GodsBoy/jev-agent-skill-router/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/GodsBoy/jev-agent-skill-router/actions/workflows/checks.yml)",
+      "[![TypeSafe Jev](https://img.shields.io/badge/TypeSafe-Jev-6366F1)](https://docs.typesafe.ai/)",
+      "**68 of 72 synthetic requests routed correctly (94.4%), versus 51 of 72 (70.8%) for a lexical baseline.** The final TypeSafe Jev run selected no wrong skills and made no needless loads, but returned three unnecessary rev",
+      "These are **exploratory, reused-data results**, measured on 16 September 2026 with pinned `jev-1.13.0`. The routing questions were revised after inspecting an earlier full run. The original policy scored 64/72 overall an",
+      "    Fits -- \"No\" --> Batch[\"Parallel Jev Choice calls\"]",
+      "Each call retains its own candidate probabilities. The final distribution is conditional on the shortlist, not the full catalogue. Code controls batching and thresholds; Jev supplies the typed judgements. No skill is exe"
+    ]
+  },
+  {
+    "repo": "Kevthetech143/super-jev",
+    "status": "accepted",
+    "sha": "065ade1508a3ee3629c5abde01e76bf9987bed37",
+    "name": "super-jev",
+    "description": "A small, extensible decision-to-action harness for TypeSafe Jev",
+    "stars": 5,
+    "language": "Python",
+    "url": "https://github.com/Kevthetech143/super-jev",
+    "implementationFiles": [
+      "src/jev.ts"
+    ],
+    "evidenceSnippet": [
+      "# super-jev",
+      "A small TypeScript harness that connects **evidence → Jev judgments → permitted actions → verified outcomes**.",
+      "**Status: experimental V0.2.0.** Offline demos and mocked API tests pass. The organizer passed a live Jev smoke test with four synthetic records; the two original demos passed historical live smoke tests. This is an inde",
+      "To use actual Jev decisions with those same local tools, set `TYPESAFE_API_KEY` in your environment, then:",
+      "Independent questions belong in one request. If a new question requires a tool result, ask it on the next iteration. A domain supplies action candidates in code; Jev does not generate arbitrary commands or tool arguments",
+      "import { run, Jev, JsonlJournal } from './src/index.ts';",
+      "  evaluator: new Jev(),",
+      "- The byte budget is a local size guard, **not a tokenizer or guarantee of fitting Jev's token budget**. Select smaller evidence sets for large datasets. Request construction errors or provider rejection end the run."
+    ]
+  },
+  {
+    "repo": "simota/tenbin",
+    "status": "accepted",
+    "sha": "80e797986b2334e988bb8c940329a31fe138fbdc",
+    "name": "tenbin",
+    "description": "MCP server and agent skill for the TypeSafe AI System One API (Jev): decompose a judgment into Choice / Score / Noul questions, lint them, measure on labelled data, and put calibrated thresholds in code",
+    "stars": 2,
+    "language": "TypeScript",
+    "url": "https://github.com/simota/tenbin",
+    "implementationFiles": [
+      "tenbin/src/client.ts"
+    ],
+    "evidenceSnippet": [
+      "A repository for **using [TypeSafe AI](https://docs.typesafe.ai)** (System One API, model Jev) **from a coding agent at design time**. It has three parts.",
+      "| \"Is this question a good one for Jev?\" | Lint findings with fixes (compound questions, counting, date math, degree-only levels, missing state paths, token budget), no API call | `tenbin_lint_questions` or `scripts/lint",
+      "> 521 input tokens, $0.00002, 650 ms, model jev-1.13.0",
+      "- **Jev** = TypeSafe's flagship model, the first **System One model**. It generates no text: it evaluates typed `questions` against a `state` (the thing being judged) in parallel and returns **typed values + calibrated p",
+      "- One endpoint: `POST https://api.typesafe.ai/v1/systemone`. Model `jev-1.13.0` (alias `jev-latest`), $0.042/Mtok billed on input, output free. About 100 ms.",
+      "make env-file          # create ~/.config/tenbin/env with chmod 600 → write TYPESAFE_API_KEY=...",
+      "TYPESAFE_API_KEY=...               # required for anything that calls the API",
+      "TYPESAFE_DEFAULT_MODEL=jev-latest  # optional"
+    ]
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-git",
+    "status": "accepted",
+    "sha": "eff70dd2dd44eebc3ea372ee6e03eb49c0450938",
+    "name": "jev-git",
+    "description": "Sub-second Git pre-commit & pre-push semantic reflex gate powered by TypeSafe AI Jev",
+    "stars": 1,
+    "language": "Rust",
+    "url": "https://github.com/AkashPriyadarshii/jev-git",
+    "implementationFiles": [
+      "src/main.rs"
+    ],
+    "evidenceSnippet": [
+      "  <h1 align=\"center\">jev-git</h1>",
+      "  <p align=\"center\"><strong>Sub-second Git pre-commit & pre-push semantic reflex gate powered by TypeSafe AI's Jev.</strong></p>",
+      "    <a href=\"https://github.com/AkashPriyadarshii/jev-git/releases\"><img src=\"https://img.shields.io/badge/version-0.0.1-black?style=flat-square\" alt=\"Version\"></a>",
+      "    <a href=\"https://typesafe.ai\"><img src=\"https://img.shields.io/badge/engine-TypeSafe%20Jev-black?style=flat-square\" alt=\"TypeSafe Jev\"></a>",
+      "## Why jev-git?",
+      "`jev-git` runs in **~80ms** directly inside your `git commit` or `git push` workflow. It uses [TypeSafe AI](https://typesafe.ai)'s Jev (System One decision model) to evaluate staged diffs with calibrated probabilities fo",
+      "- **Native Git Integration:** Invoked seamlessly as `git jev`.",
+      "git jev install"
+    ]
+  },
+  {
+    "repo": "qddegtya/qualm",
+    "status": "accepted",
+    "sha": "e1aacf6844f312ba95eb6a1bd26fad15575a7173",
+    "name": "qualm",
+    "description": "Typed decisions from a System One model, where uncertainty is something you have to handle.",
+    "stars": 1,
+    "language": "TypeScript",
+    "url": "https://github.com/qddegtya/qualm",
+    "implementationFiles": [
+      "src/provider.ts"
+    ],
+    "evidenceSnippet": [
+      "Typed decisions from a System One model ([TypeSafe's Jev](https://typesafe.ai/)), where uncertainty",
+      "Jev is the model. This is what `qualm` adds on top of calling its HTTP API yourself.",
+      "- **All three of Jev's primitives**, each keeping its full distribution and confidence: `is` for a",
+      "A System One model changes the arithmetic. Jev answers typed questions in roughly a tenth of a",
+      "    jev[\"<b>Jev · System 1</b><br/>fast · typed<br/>cannot hallucinate\"]",
+      "    state --> ask --> jev",
+      "    jev -->|\"probabilities<br/>+ confidence\"| decide",
+      "    class jev fast"
+    ]
+  },
+  {
+    "repo": "MithrilMan/your-signal",
+    "status": "accepted",
+    "sha": "2970c069231b96f094f6fcfe4c11bfcf2da0ecb2",
+    "name": "your-signal",
+    "description": "Open-source BYOK Chrome extension for personal, reversible X timeline filters.",
+    "stars": 1,
+    "language": "JavaScript",
+    "url": "https://github.com/MithrilMan/your-signal",
+    "implementationFiles": [
+      "eval/run.py"
+    ],
+    "evidenceSnippet": [
+      "**A feed tuned to you.** Your Signal is an open-source Chrome extension that applies personal, reversible filters to the X timeline. You choose the interests, weights, threshold, and visual treatment. Jev evaluates the t",
+      "X page → extension service worker → TypeSafe Jev API",
+      "You supply your own Jev API key. When filtering is enabled, the extension sends eligible post text and your interest topics directly to `https://api.typesafe.ai`. Your Signal does not operate an intermediary service, use",
+      "5. Open the extension settings, paste a Jev API key, review the data-flow disclosure, and save the connection.",
+      "shared/rubric.json Versioned Jev evaluation contract",
+      "\"\"\"Run the shared Jev rubric on JSONL. Dry-run by default; --execute authorizes paid requests.\"\"\"",
+      "        print('DRY RUN: dataset validated. No network calls. Add --execute to spend Jev credits.')",
+      "                    request = urllib.request.Request('https://api.typesafe.ai/v1/systemone', data=json.dumps(payload).encode(),"
+    ]
+  },
+  {
+    "repo": "Charlyhno-eng/jev-document-classification",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "07e4b099f2877e9b647159a445823fa7161a503b",
+    "name": "jev-document-classification",
+    "description": "JEV Document Classification enables the rapid and cost-effective classification of text-based documents using AI, leveraging TypeSafe's \"System One\" model.",
+    "stars": 1,
+    "language": "TypeScript",
+    "url": "https://github.com/Charlyhno-eng/jev-document-classification",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "![JEV Document Classification banner](assets/jev-doc-classification-banner.png)",
+      "# JEV Document Classification",
+      "JEV Document Classification sorts documents from a selected folder into category subfolders.  ",
+      "It uses `typesafe-ai/jev`, an evaluation model from the `typesafe-ai` team, through Vercel AI Gateway.  ",
+      "JEV returns fast, typed classification decisions at very low cost.  ",
+      "The application extracts readable text from supported files before asking JEV to classify them.  ",
+      "JEV is not multimodal and cannot interpret images or other visual content.  ",
+      "The audit also shows JEV's category confidence. Documents below 75% confidence move to `Need review`, while retaining JEV's suggested category for review."
+    ]
+  },
+  {
+    "repo": "deepanwadhwa/OpenDecision",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "4c70d8e6525af15eeaa5d9c4d7592f1523804a6a",
+    "name": "OpenDecision",
+    "description": "OpenDecision is an open-source semantic decision engine like typesafe's jev.",
+    "stars": 1,
+    "language": "Python",
+    "url": "https://github.com/deepanwadhwa/OpenDecision",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "A few days ago, I saw TypeSafe announce [Jev, their first \"System One Model\"](https://typesafe.ai/blog/introducing-system-one-models-and-jev). While it looked impressive, it also kind of tingled my spidey sense.",
+      "A couple of years ago, I had worked on something similar for a client, using zero-shot models in a narrow domain involving healthcare insurance fraud. I also have experience training and building things with zero-shot mo",
+      "Because OpenDecision was inspired by TypeSafe's Jev, I wanted to see how it performed on tasks resembling the examples TypeSafe itself publishes.",
+      "I created an evaluation set of **80 cases adapted from TypeSafe's public documentation and cookbooks**:",
+      "These are **not official TypeSafe benchmark results** and should not be interpreted as a direct Jev-vs-OpenDecision comparison. The cases were adapted and paraphrased from examples in TypeSafe's public documentation so t",
+      "from typesafe_sdk import Choice, Noul, Score, TypeSafeClient",
+      "client = TypeSafeClient("
+    ]
+  },
+  {
+    "repo": "wotai-dev/typesafe-jev-tools",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "3baadeb435fec8fd2ca5681b9b5d48a02b2acd6f",
+    "name": "typesafe-jev-tools",
+    "description": "A Claude Code hook that asks whether the decision you are writing needs a model at all. Includes a measured 149-row comparison of TypeSafe Jev against Claude Haiku 4.5.",
+    "stars": 1,
+    "language": "Shell",
+    "url": "https://github.com/wotai-dev/typesafe-jev-tools",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "# typesafe-jev-tools",
+      "   System One band, where [Jev](https://typesafe.ai) lives.",
+      "curl -sL https://raw.githubusercontent.com/wotai-dev/typesafe-jev-tools/main/hooks/typesafe-check.sh \\",
+      "| **Jev** | 66.0% | 0.121 | **34.7%** | **455ms** | **56** | n/a |",
+      "**Only four of the sixteen will say they are unsure.** Sonnet 5 at 41.3%, Fable 5.1 at 36.7%, Jev",
+      "**Jev is the only one of those four that answers in under a second.** The next fastest is Sonnet 5",
+      "Sonnet 5 is the best calibrated model here, at roughly half Jev's error. A gate that runs on 100%",
+      "| **Jev** | **455ms** | **0.121** | **34.7%** | **56** |"
+    ]
+  },
+  {
+    "repo": "akash-kamat/system-one-gemma",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "cc75aa8042dec965003210fdba033fee8759735e",
+    "name": "system-one-gemma",
+    "description": "Open-source Jev-style System One decision model. Gemma 3 270M with a scoring head — fast, calibrated decisions in a single forward pass. No text generation. Inspired by TypeSafe.ai's Jev.",
+    "stars": 1,
+    "language": "Python",
+    "url": "https://github.com/akash-kamat/system-one-gemma",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "# System One Gemma — Open-Source Jev-Style Decision Model",
+      "An open-source implementation of the **System One** scoring architecture, inspired by [TypeSafe.ai's Jev model](https://typesafe.ai) — the AI that famously [plays Doom in real-time](https://www.theregister.com/ai-and-ml/",
+      "Jev is a massive breakthrough in AI — a model designed for **machines**, not humans. It doesn't generate text. It makes **fast, calibrated decisions** from a fixed set of options in a single forward pass. The problem? **",
+      "## How Jev Plays Doom (And How This Could Too)",
+      "Jev plays Doom by reading the **game state as structured text** every frame:",
+      "- **[TypeSafe.ai's Jev](https://typesafe.ai)** — the original System One model. Closed-source, but a genuine breakthrough in AI architecture. This project exists because Jev showed that non-generative decision models are",
+      "- **[The Register: TypeSafe AI debuts model for machines that plays Doom](https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711)** — the article that explains what",
+      "- Benchmark against Jev when/if they publish numbers"
+    ]
+  },
+  {
+    "repo": "AkashPriyadarshii/jev-scout",
+    "status": "accepted",
+    "sha": "acae39260212267288353451c6977aeab7d6af1d",
+    "name": "jev-scout",
+    "description": "Zero-hallucination open-source repo and crate scout powered by TypeSafe AI Jev System One scoring",
+    "stars": 1,
+    "language": "Rust",
+    "url": "https://github.com/AkashPriyadarshii/jev-scout",
+    "implementationFiles": [
+      "src/jev.rs"
+    ],
+    "evidenceSnippet": [
+      "# jev-scout",
+      "**Zero-hallucination open-source repo and crate discovery powered by TypeSafe AI Jev.**",
+      "[![TypeSafe Jev](https://img.shields.io/badge/TypeSafe-Jev-0d9488.svg?style=flat-square)](https://typesafe.ai)",
+      "`jev-scout` solves this by decoupling discovery from decision:",
+      "- **System One scoring:** Uses TypeSafe AI's `jev-latest` in a single speculative fan-out call (~120ms) to score architectural fit, license suitability, and maintenance freshness.",
+      "cargo install jev-scout",
+      "git clone https://github.com/AkashPriyadarshii/jev-scout.git",
+      "cd jev-scout"
+    ]
+  },
+  {
+    "repo": "phuthuycoding/jev-audit",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "1d2f572ac9563ec1ec7bcb610533b616d5b25916",
+    "name": "jev-audit",
+    "description": "AI-powered pre-commit auditor backed by TypeSafe System One (Jev) — blocks secrets, vulns & low-quality code in ~300ms. 79-case test corpus at 100% accuracy.",
+    "stars": 0,
+    "language": "Python",
+    "url": "https://github.com/phuthuycoding/jev-audit",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "**AI-powered pre-commit auditor backed by TypeSafe System One (Jev).**",
+      "Sends your code changes to Jev as a `State` and evaluates 4 atomic questions in a",
+      "│ ⚡ Evaluated in 706ms (model: jev-1.13.0)                             │",
+      "## Test results (real API, `jev-1.13.0`)",
+      "  (see [REPORT.md](REPORT.md)). Jev understands diff context — a commit that",
+      "- Jev applies implicit entropy judgment: patterned fake secrets score lower than",
+      "export TYPESAFE_API_KEY=ts-...   # https://console.typesafe.ai/",
+      "The tool is **fail-closed**: missing `TYPESAFE_API_KEY`, network errors, or API"
+    ]
+  },
+  {
+    "repo": "Icohen007/jev-play-ping-pong",
+    "status": "accepted",
+    "sha": "af8eb3a1f2a14fcebca5accf23a7875b09b30d5e",
+    "name": "jev-play-ping-pong",
+    "description": "Jev plays browser table tennis in real time: structured telemetry, typed decisions, ordinary Chrome inputs, and auditable evidence.",
+    "stars": 0,
+    "language": "JavaScript",
+    "url": "https://github.com/Icohen007/jev-play-ping-pong",
+    "implementationFiles": [
+      "src/typesafe.mjs"
+    ],
+    "evidenceSnippet": [
+      "# Jev plays RALLY — in real time",
+      "A small, auditable example of [TypeSafe AI's Jev](https://typesafe.ai/) playing",
+      "a live browser game. Jev reads structured table-tennis telemetry, chooses every",
+      "[![Jev completes an 11-0 real-time match](docs/media/jev-real-time-win.png)](https://github.com/Icohen007/jev-play-ping-pong/releases/download/v1.0.0/jev-rally-real-time-demo.mp4)",
+      "▶️ [Watch the 21-second real-time demo](https://github.com/Icohen007/jev-play-ping-pong/releases/download/v1.0.0/jev-rally-real-time-demo.mp4)",
+      "deterministic code observes and executes; Jev makes narrow, typed decisions.",
+      "| Outcome | **Jev won 11–0** |",
+      "| Returned model | `jev-1.13.0` |"
+    ]
+  },
+  {
+    "repo": "furedea/reflex-state",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "fcb51f97b24c5055adc7bfd391e8acd5e030bc56",
+    "name": "reflex-state",
+    "description": "Jev-powered execution state for Pi coding agents. Track changes, checks, and blockers outside the main LLM, with evidence-backed updates and replay. Inspired by SKILL.state.",
+    "stars": 0,
+    "language": "TypeScript",
+    "url": "https://github.com/furedea/reflex-state",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "**[TypeSafe Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) makes typed",
+      "Jev and deterministic code.",
+      "  asking the main model to generate state summaries. Jev handles bounded semantic questions;",
+      "  recorded decisions. Replay recorded state transitions without calling Jev again.",
+      "checkout instructions below. With Pi installed and `TYPESAFE_API_KEY` set in your environment:",
+      "`TYPESAFE_API_KEY` in your environment to run with Jev.",
+      "The SDK reads `TYPESAFE_API_KEY` from the environment; keys are rejected in ReflexState config",
+      "files. Missing or rejected credentials disable Jev for that runtime and produce one notification;"
+    ]
+  },
+  {
+    "repo": "jeiel85/jevscope",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "d39ab43e88af20be7142b4335c84fbf69c740e0e",
+    "name": "jevscope",
+    "description": "Local-first visual decision debugger and regression testbench for TypeSafe AI Jev",
+    "stars": 0,
+    "language": "TypeScript",
+    "url": "https://github.com/jeiel85/jevscope",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "Local-first decision workbench and regression testbench for [TypeSafe AI Jev](https://typesafe.ai/). JevScope lets you edit structured state and `choice`, `score`, or `noul` questions; inspect answers and probability dis",
+      "# Edit .env and set TYPESAFE_API_KEY",
+      "- **Decision policy:** set `auto` and `review` confidence thresholds for choices and scores, and YES/NO thresholds for noul. These buckets are **JevScope-derived**, not Jev answers.",
+      "  const fixture = { model: \"jev-fixed\", usage: {input_tokens:12,output_tokens:3}, answers: {",
+      "  expect(result.model).toBe(\"jev-fixed\");",
+      "import { TypeSafeClient } from \"@typesafe-ai/sdk\";",
+      "  readonly #client: TypeSafeClient;",
+      "    this.#client = new TypeSafeClient(apiKey ? { apiKey } : undefined);"
+    ]
+  },
+  {
+    "repo": "AbdelStark/s1-rs",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "b9168979a9beaeb74878483ff2876958acb98b86",
+    "name": "s1-rs",
+    "description": "Typed System One layer for Rust (Choice/Score/Noul). ",
+    "stars": 0,
+    "language": "Rust",
+    "url": "https://github.com/AbdelStark/s1-rs",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "`Client::from_env()` reads `TYPESAFE_API_KEY` (required) and optional `TYPESAFE_BASE_URL` / `TYPESAFE_DEFAULT_MODEL`. Retries, timeouts, and identification headers live in `typesafe-rs`.",
+      "pub const DEFAULT_MODEL: &str = \"jev-latest\";"
+    ]
+  },
+  {
+    "repo": "AbdelStark/typesafe-rs",
+    "status": "accepted",
+    "sha": "8e8b7a2ae1af5bf7d3e5d831e634fdf328b2fbcc",
+    "name": "typesafe-rs",
+    "description": "Latency-first Rust SDK for TypeSafe System One. ",
+    "stars": 0,
+    "language": "Rust",
+    "url": "https://github.com/AbdelStark/typesafe-rs",
+    "implementationFiles": [
+      "crates/typesafe-rs/src/config.rs"
+    ],
+    "evidenceSnippet": [
+      "This is a community SDK. It is not an official TypeSafe product. Env vars, defaults, retries, identification headers, and error kinds match the official Python SDK and [`@typesafe-ai/sdk`](https://www.npmjs.com/package/@",
+      "export TYPESAFE_API_KEY=...",
+      "| API key | `TYPESAFE_API_KEY` | required |",
+      "| Base URL | `TYPESAFE_BASE_URL` | `https://api.typesafe.ai` |",
+      "| Model | `TYPESAFE_DEFAULT_MODEL` | `jev-latest` |",
+      "    .default_model(\"jev-latest\")",
+      "| `MissingApiKey` | No key in config or `TYPESAFE_API_KEY` |",
+      "    /// Model identifier, e.g. `jev-latest`."
+    ]
+  },
+  {
+    "repo": "jonesmelton/verdict",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "4bc724faf8fa0c18aac102399a0a8d3a2ff47445",
+    "name": "verdict",
+    "description": "ocaml sdk for typesafe.ai's jev model",
+    "stars": 0,
+    "language": "OCaml",
+    "url": "https://github.com/jonesmelton/verdict",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "# verdict — Eio client for TypeSafe AI's Jev model",
+      "[TypeSafe AI](https://api.typesafe.ai) system-one evaluation API. Questions and",
+      "`Config.create` picks up the API key from `TYPESAFE_API_KEY`:",
+      "`Config.create` reads `TYPESAFE_API_KEY`, `TYPESAFE_BASE_URL` and",
+      "TYPESAFE_API_KEY=... VERDICT_LIVE_API=true opam exec -- dune runtest   # adds live smoke tests"
+    ]
+  },
+  {
+    "repo": "socai-io/socai",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "2c69cc70cd4271c83a234bd67c53ee7eb746bfae",
+    "name": "socai",
+    "description": "A Browser Use Agent that actually reads social media. Fast. Precise. Deep.",
+    "stars": 191,
+    "language": "Rust",
+    "url": "https://github.com/socai-io/socai",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "ekzhang/openjev-sglang",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "604664a22b2cf44c6cc499e503092ae4e3c24c03",
+    "name": "openjev-sglang",
+    "description": "Jev-compatible API endpoint based on open models (prefill-only)",
+    "stars": 164,
+    "language": "Python",
+    "url": "https://github.com/ekzhang/openjev-sglang",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "A server implementing the [TypeSafe/Jev HTTP API](https://docs.typesafe.ai/api)",
+      "    \"model\": \"jev-latest\",",
+      "`jev-latest` is a compatibility alias for the configured Qwen model. The public",
+      "matching Jev's nullable description schema.",
+      "                \"model\": \"jev-latest\",",
+      "            \"Model name from GET /v1/models. jev-latest selects this deployment's configured model.\"",
+      "                \"model\": \"jev-latest\",",
+      "            \"TypeSafe-compatible model catalogue, including jev-latest and the checkpoint ID.\""
+    ]
+  },
+  {
+    "repo": "ChetasLua/jevmeter",
+    "status": "accepted",
+    "sha": "cbf8e117b5b8835e3294c3a8ee652c7dfa737a9a",
+    "name": "jevmeter",
+    "description": "Put a live Jev (TypeSafe) meter on any video: every sentence scored, rendered as a 16:9 edit",
+    "stars": 57,
+    "language": "Python",
+    "url": "https://github.com/ChetasLua/jevmeter",
+    "implementationFiles": [
+      "jevmeter/config.py"
+    ],
+    "evidenceSnippet": [
+      "  <a href=\"https://docs.typesafe.ai\"><img alt=\"Powered by Jev\" src=\"https://img.shields.io/badge/POWERED%20BY-Jev%20(TypeSafe)-b7ff6e?style=for-the-badge&labelColor=0b0f18\"></a>",
+      "I gave the Trump vs Harris debate a live BS meter using **Jev**, [TypeSafe's](https://docs.typesafe.ai) decision model",
+      "<td align=\"center\"><b>Flag!</b> <i>Evasive, Jev p = 0.86</i></td>",
+      "  <b>1,191</b> Jev calls · <b>5,955</b> yes/no answers · <b>1,182,843</b> input tokens · <b>$0.0497</b> total · <b>~0.4 s</b> median per call",
+      "> The meters show Jev's **probabilities**, not a fact-check. Both speakers get the same 5 questions, and the highlight",
+      "| preset | index | questions Jev asks about every sentence |",
+      "**Your API key, safely.** jevmeter looks for the key in this order: the `TYPESAFE_API_KEY` environment variable, a",
+      "That run scores 33 sentences for about **$0.002**. With the shipped presets, Jev rates the evasive mayor at **60.6** and"
+    ]
+  },
+  {
+    "repo": "nidhi-singh02/agent-router",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "e1cc3c1bf11b52f845422ef38f9fa190f9fc16fb",
+    "name": "agent-router",
+    "description": "CLI that picks Cursor, Claude Code, Codex, or OpenCode + model/effort for a task, then launches it. Powered by Jev and Herdr",
+    "stars": 33,
+    "language": "TypeScript",
+    "url": "https://github.com/nidhi-singh02/agent-router",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "\"Always Allow\". `TYPESAFE_API_KEY` in the environment still works as a fallback.",
+      "  TypeSafeClient,",
+      "} from \"@typesafe-ai/sdk\";",
+      "export function createRecordingClient(inner: Pick<TypeSafeClient, \"systemOne\">): TypeSafePort {",
+      "export function createLiveTypeSafeClient(apiKey: string): TypeSafePort {",
+      "  return createRecordingClient(new TypeSafeClient({ apiKey }));",
+      "import type { ChoiceResponse, SystemOneRequest } from \"@typesafe-ai/sdk\";"
+    ]
+  },
+  {
+    "repo": "bnsd55/jevmlx",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "ecbc77bd94b3eae60b8fea5c8aaf580ed2dd5e7d",
+    "name": "jevmlx",
+    "description": "Jev-style parallel constrained decisions for any MLX model on Apple Silicon. Typed, schema-valid JSON in one forward pass.",
+    "stars": 27,
+    "language": "Python",
+    "url": "https://github.com/bnsd55/jevmlx",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "Agreement with the TypeSafe public eval consensus. Official rows are cited from TypeSafe's page; local rows are measured by contributors on the 20 public examples.",
+      "| Jev | official (cited) | — | — | 67.8% | 76.0% | 71.6% | 61.7% | 61.8% | 0.4s | $0.0004 | — |",
+      "jevmlx started from [rorshopping/jev-on-a-laptop](https://github.com/rorshopping/jev-on-a-laptop) (parallel constrained decoding on a laptop) and descends from [harshatheg/Qwen-2.5-1B-RLCD](https://huggingface.co/harshat",
+      "\"\"\"Published-model agreement from TypeSafe data: what evals.typesafe.ai shows."
+    ]
+  },
+  {
+    "repo": "wundercorp/loki",
+    "status": "accepted",
+    "sha": "5f1aea7c786f5ea8c5f9b9f2db2b791ec326c535",
+    "name": "loki",
+    "description": "The agent that evolves with you 𖤍",
+    "stars": 24,
+    "language": "Python",
+    "url": "https://github.com/wundercorp/loki",
+    "implementationFiles": [
+      "agent/typesafe_client.py"
+    ],
+    "evidenceSnippet": [
+      "After installation, the installer reloads your shell configuration and starts `loki` automatically. The first-run quick setup uses OpenRouter by default; press `o` at the API-key prompt to open [openrouter.ai/keys](https",
+      "Want Jev alongside your chat model? Choose **Quick Setup + TypeSafe Jev** in the CLI, or select **TypeSafe Jev (companion)** during Loki Desktop onboarding, then paste your `TYPESAFE_API_KEY` from [TypeSafe](https://cons",
+      "- **[TypeSafe Jev](https://docs.typesafe.ai/introduction)** — optional System One decision engine for typed Choice, Score, and Noul judgments; `loki setup jev` exposes the credential-gated `typesafe_ask` tool and can opt",
+      "支持任意模型——[WunderCorp Portal](https://portal.wundercorp.com)、[OpenRouter](https://openrouter.ai)（200+ 模型）、[NVIDIA NIM](https://build.nvidia.com)（Nemotron）、[小米 MiMo](https://platform.xiaomimimo.com)、[z.ai/GLM](https://z.ai)",
+      "\"\"\"Jev Auto: one-shot, same-gateway model routing for new Loki sessions.",
+      "is assembled, asks TypeSafe Jev to choose from a bounded catalog exposed by the",
+      "That preserves Loki's provider prompt-cache prefix and ensures Jev can never move a",
+      "        logger.debug(\"Jev Auto could not load routing config\", exc_info=True)"
+    ]
+  },
+  {
+    "repo": "DanRWilloughby/snifftest",
+    "status": "accepted",
+    "sha": "240653e2b082c114c38fed50a42e7eb311e21219",
+    "name": "snifftest",
+    "description": "A prose linter that sniffs out AI writing tells. Zero dependencies, countable rules plus one judgment model.",
+    "stars": 14,
+    "language": "TypeScript",
+    "url": "https://github.com/DanRWilloughby/snifftest",
+    "implementationFiles": [
+      "src/jev.ts"
+    ],
+    "evidenceSnippet": [
+      "judgment rules too, put a TypeSafe key in `TYPESAFE_API_KEY` and drop",
+      "`TYPESAFE_API_KEY`. Without one it prints the countable verdict, says the",
+      "  Where it goes: https://api.typesafe.ai/v1/systemone (TypeSafe), over HTTPS, with your TYPESAFE_API_KEY.",
+      "rule. The wire format and the guards around it are in `src/jev.ts`, which is",
+      "unless `SNIFFTEST_SEND=1` and `TYPESAFE_API_KEY` are both in your environment.",
+      "| Sniff Test, judgment model (Jev, measured) | 63 | 1 | $0.0129 | 182 ms |",
+      "was sent. Jev ran in the same rotation as the models, where it read 59 of 80,",
+      "| `TYPESAFE_API_KEY` | The key the judgment rules are sent with. Read from the environment and nowhere else. |"
+    ]
+  },
+  {
+    "repo": "AlbionaHoti/refgarden",
+    "status": "accepted",
+    "sha": "6affd25a31dd0ed39fc9f71508732fb7ee0b8acc",
+    "name": "refgarden",
+    "description": "A spatial reference explorer for creators. Local Jev query choices, metadata highlights and source-linked collections.",
+    "stars": 14,
+    "language": "TypeScript",
+    "url": "https://github.com/AlbionaHoti/refgarden",
+    "implementationFiles": [
+      "src/jev-client.ts"
+    ],
+    "evidenceSnippet": [
+      "[Run locally](#run-locally) · [How Jev works](docs/HOW_IT_WORKS.md) · [FAQ](#faq) · [Roadmap](ROADMAP.md) · [Contribute](CONTRIBUTING.md)",
+      "**Local Explore uses Jev.** It chooses search phrases and highlights references from their titles and descriptions. It does not see image pixels. The [public source-search demo](https://jev-curator.vercel.app) shows the ",
+      "Open **http://127.0.0.1:4318**. Expand **Connections**, paste your [TypeSafe API key](https://console.typesafe.ai/) and choose **Connect Jev**. Then enter a prompt and press **Explore**.",
+      "The project installs its own pinned Bun runtime. A global Bun installation is optional. Connecting the key makes a small verification request and saves it in the local, ignored `.env` file. Jev runs through TypeSafe's AP",
+      "Jev chooses a search phrase for each collection",
+      "Jev reads the returned metadata → up to one highlight per source",
+      "Search phrases come from a bounded set extracted from the brief and style presets. Exact sample prompts can use prepared queries for their first batch. Jev can choose that no reference fits.",
+      "Images appear before the final model selection. The displayed image count is the number retrieved, not the number visually reviewed by AI. The timer includes retrieval, model requests and waiting; it is not an isolated J"
+    ]
+  },
+  {
+    "repo": "shiftynick/jev-axi",
+    "status": "accepted",
+    "sha": "db4b6fe56f962463d3924019bd038462a2190b2d",
+    "name": "jev-axi",
+    "description": "Agent-ergonomic CLI for TypeSafe's Jev: fast calibrated judgments (pick, rate, check, rank, triage, guard) from the shell",
+    "stars": 13,
+    "language": "TypeScript",
+    "url": "https://github.com/shiftynick/jev-axi",
+    "implementationFiles": [
+      "src/client.ts"
+    ],
+    "evidenceSnippet": [
+      "# jev-axi",
+      "[![ci](https://github.com/shiftynick/jev-axi/actions/workflows/ci.yml/badge.svg)](https://github.com/shiftynick/jev-axi/actions/workflows/ci.yml)",
+      "[![npm](https://img.shields.io/npm/v/jev-axi?style=flat-square)](https://www.npmjs.com/package/jev-axi)",
+      "**A second opinion for coding agents, in half a second.** jev-axi is a CLI for",
+      "[TypeSafe's Jev](https://docs.typesafe.ai/introduction), a model that never writes",
+      "![jev-axi blocking a download-and-run command, allowing a routine one locally, and catching instructions hidden in a fetched page](https://raw.githubusercontent.com/shiftynick/jev-axi/main/scripts/demo/safety.gif)",
+      "    | jev-axi hook pre-tool-use --explain",
+      "source: jev"
+    ]
+  },
+  {
+    "repo": "unicodeveloper/jevocks",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "d3136cec3e55003e88e5bc5a42b5c81780ffee47",
+    "name": "jevocks",
+    "description": "Everyday Stocks Status with Jev",
+    "stars": 7,
+    "language": "TypeScript",
+    "url": "https://github.com/unicodeveloper/jevocks",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "Jevinik uses **Jev**, TypeSafe AI's System One evaluation model, to make typed, probabilistic decisions without calling a general-purpose generative LLM.",
+      "- Fast, structured Jev evaluation",
+      "5. Jev evaluates the compact evidence state using typed boolean, score, and choice questions.",
+      "Vercel AI Gateway routes requests to both `typesafe-ai/jev` and the configured LLM.",
+      "3. Ensure the account can access `typesafe-ai/jev` and `openai/gpt-5`.",
+      "- [Jev on Vercel AI Gateway](https://vercel.com/ai-gateway/models/jev)",
+      "### Jev",
+      "Jev is not used as a text-generating LLM. TypeSafe AI describes it as a System One evaluation model: a distinct model class built for fast, structured decisions in software. This app calls it through AI SDK `experimental"
+    ]
+  },
+  {
+    "repo": "DECRUX9812/typesafe-skill-router",
+    "status": "accepted",
+    "sha": "e6cdac26f9ed588b4a94b8a2f7f9f026e1b9faf3",
+    "name": "typesafe-skill-router",
+    "description": "TypeSafe (Jev) skill routing for Hermes Agent: names the one skill worth loading, before the model call. Opt-in, stdlib only, ~$0.001 per routed turn.",
+    "stars": 7,
+    "language": "Python",
+    "url": "https://github.com/DECRUX9812/typesafe-skill-router",
+    "implementationFiles": [
+      "typesafe_router/client.py"
+    ],
+    "evidenceSnippet": [
+      "to [TypeSafe](https://typesafe.ai) (model `jev-latest`) first and, when a skill genuinely fits,",
+      "- A TypeSafe API key (`TYPESAFE_API_KEY`) — create one at <https://console.typesafe.ai/settings/keys>",
+      "echo 'TYPESAFE_API_KEY=ts_...' >> ~/.hermes/.env     # chmod 600",
+      "| `model` / `base_url` | `jev-latest` / TypeSafe API | Endpoint overrides. |",
+      "DEFAULT_BASE_URL = \"https://api.typesafe.ai\"",
+      "DEFAULT_MODEL = \"jev-latest\"",
+      "        self.api_key = api_key or os.environ.get(\"TYPESAFE_API_KEY\", \"\").strip()",
+      "                \"(and with TYPESAFE_API_KEY set) to record it.\","
+    ]
+  },
+  {
+    "repo": "Zaious/jev-capability-atlas",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "e35a7c339aac0c2f09b2045959f87a7dff87ab1f",
+    "name": "jev-capability-atlas",
+    "description": "Independent, evidence-based map of when TypeSafe's Jev actually holds up vs. breaks down — real API-call receipts, not a leaderboard. 中文為主的雙語 repo。",
+    "stars": 7,
+    "language": "Python",
+    "url": "https://github.com/Zaious/jev-capability-atlas",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "# Jev Capability Atlas",
+      "**獨立、非官方、非 TypeSafe 贊助的社群專案。** 用真實 API 呼叫的收據，畫出 [Jev](https://typesafe.ai)（TypeSafe 的 System One 模型）「校準決策」這個宣稱在哪裡站得住、在哪裡站不住的邊界地圖——給人看怎麼用，給 agent 帶進專案看哪裡能試著換上去，也給任何做過真實驗的人一個把結果貢獻進來的地方。",
+      "不是排行榜（市面上已經有 [jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks)、[thaiexam-jev-charts](https://github.com/vehas/thaiexam-jev-charts) 在做這件事，做得很紮實，我們引用它們、不重做）。這裡要回答的是更根本的問題：**什麼情況下它強，什麼情況下它弱，為什麼**。",
+      "Jev 很快、很便宜，只能做「選一個選項/打個分/回答是非」這種窄判斷，不會寫文字解釋自己在想什麼。因為答案空間是你自己先定義好的，它**結構上不可能吐出選項清單以外的東西**——這跟自由生成文字的模型偶爾格式跑掉、甚至生出一個你沒列的分類，是不同等級的保證，不是機率低，是型別上不可能（但這只保證答案落在清單裡，不保證選到的那個是對的，細節見下面「不是瞎猜」那節）。",
+      "這個比喻不是空穴來風：「語意層的窄判斷」這個架構位置，過去一年通常是規則狀態機+反應快的小模型在填，代價是死板、能力上限低。Jev 想填的正是同一個位置，但底層換成真正的語言理解——這也是為什麼「狀態機」這個詞會自然冒出來，但直接套用又不準確。",
+      "**為什麼不是狀態機**：狀態機的核心是有限離散狀態+事先寫死的轉移規則。Jev 底層是真的訓練過的語言模型，做的是分布式語言理解，不是規則比對——證據見 [`suites/citation-support-check/`](suites/citation-support-check/) 的兩組對照案例：`paraphrase_support`（宣稱跟引文字面幾乎不重疊，但語意上真的支持，它判對了）、`reversed_meaning_",
+      "**為什麼不是瞎猜**：`confidence` 不是另一個獨立的「自信心」機制，是從它已經給出的機率分布**算出來的統計量**。📖 這個數字值得信任是因為訓練目標本身就衝著它去：TypeSafe 把後訓練分三條路——RLHF（對話模型，目標是「人喜歡聽」）、RLVR（推理模型，目標是「推導對」）、**RLCD**（Jev 用這條，目標明講是「機率越高，答案正確的機會應該越大」）。📖 我們自己的測試裡多次看到這個數字隨案例難度真實起",
+      "但誠實的但書要講：calibration（校準）是**群體統計**性質，不是對單一答案的保證，TypeSafe 自己這樣寫。📖 我們找到的第三方跑分證實這會壞：DAIR Emotion 那組任務，Jev 平均信心 0.819，實際只對了 48%，還有 16% 的題目給「正確答案」的機率剛好是零。📚 **這才是「瞎猜」疑慮真正該落地的地方**——不是它到處在瞎猜，是它的信心機制在某些任務（類別本身重疊、糊在一起的那種）上會失準，而且失"
+    ]
+  },
+  {
+    "repo": "jujumilk3/jev-calibration-audit",
+    "status": "accepted",
+    "sha": "daab9e2c2d5d5683bf07f3482deb653c26856219",
+    "name": "jev-calibration-audit",
+    "description": "Independent API-only calibration audit of TypeSafe AI's Jev decision model",
+    "stars": 0,
+    "language": "Python",
+    "url": "https://github.com/jujumilk3/jev-calibration-audit",
+    "implementationFiles": [
+      "src/jev_audit/client.py"
+    ],
+    "evidenceSnippet": [
+      "# jev-calibration-audit",
+      "An independent, API-only audit of the calibration of TypeSafe AI's **Jev**, a",
+      "Jev is sold on calibration: the probability it returns is supposed to mean what",
+      "  client.py      direct api.typesafe.ai client, retries, Noul/Choice/Score helpers",
+      "0 9 * * *  cd /path/to/jev-calibration-audit && /path/to/uv run python -m jev_audit.drift",
+      "API_URL = \"https://api.typesafe.ai/v1/systemone\"",
+      "DEFAULT_MODEL = \"jev-latest\"",
+      "    \"\"\"Direct api.typesafe.ai client."
+    ]
+  },
+  {
+    "repo": "MoRohn/meridian-copilot",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "5a2d54073f1955c2e117e3f79cca16c433a8d8d6",
+    "name": "meridian-copilot",
+    "description": "Meridian — AI context-intake and contract-risk copilot built on TypeSafe's System One API, with a live TypeSafe vs OpenAI comparison",
+    "stars": 0,
+    "language": "TypeScript",
+    "url": "https://github.com/MoRohn/meridian-copilot",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "It's built on **[TypeSafe](https://docs.typesafe.ai)**, whose Jev model",
+      "**No API key is required to use the app.** Without `TYPESAFE_API_KEY` set, every call",
+      "export TYPESAFE_API_KEY=sk-...   # from https://console.typesafe.ai/settings/keys",
+      "- **TypeSafe** currently ships one Jev model (`jev-latest`).",
+      "│  3. ONE Jev call, every question in parallel             │",
+      "- **Output tokens are free on Jev** (`$0.042`/Mtok input, `$0` output — see",
+      "  free on Jev.",
+      "  Dockerfile; the only environment-specific pieces are `TYPESAFE_API_KEY`/`OPENAI_API_KEY`"
+    ]
+  },
+  {
+    "repo": "twilwa/pi-typesafe",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "dc9c48c7b488798d3fd399095f4a870b40ffe5b7",
+    "name": "pi-typesafe",
+    "description": "Pi coding-agent extension built on the TypeSafe AI System One API (Jev)",
+    "stars": 0,
+    "language": "TypeScript",
+    "url": "https://github.com/twilwa/pi-typesafe",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "A Jev coding sidecar for Pi: four pre-flight hazard checks before `bash`, `write`,",
+      "Questions share one TypeSafe System One request per phase. Jev returns typed",
+      "`TYPESAFE_API_KEY` in Pi's environment, or copy `.env.example` to `.env`, enter the",
+      "mkdir jev-playground",
+      "cd jev-playground",
+      "tool results, and assessments are recorded in the session's `jev-assessment`",
+      "| `model`                       | `TYPESAFE_DEFAULT_MODEL`, then `\"jev-latest\"` | Model requested from TypeSafe                                                   |",
+      "the default `https://api.typesafe.ai`; the API key is sent to that endpoint."
+    ]
+  },
+  {
+    "repo": "Olli0103/openclaw-typesafe-ai",
+    "status": "accepted",
+    "sha": "985718448bf38a3a58d18389d376621b9bc54615",
+    "name": "openclaw-typesafe-ai",
+    "description": "Optional typed TypeSafe AI Jev decisions for OpenClaw, with SecretRef credentials and strict API validation.",
+    "stars": 0,
+    "language": "TypeScript",
+    "url": "https://github.com/Olli0103/openclaw-typesafe-ai",
+    "implementationFiles": [
+      "src/client.ts"
+    ],
+    "evidenceSnippet": [
+      "`openclaw-typesafe-ai` exposes one optional agent tool, `typesafe_decide`, labelled **TypeSafe Decide**. The plugin ID is `typesafe-ai`. It sends explicit text or JSON state and typed questions to `POST https://api.types",
+      "Jev returns decisions over predefined answer spaces. It does not generate conversation, prose or code. This package therefore registers a tool and no model provider, model picker entry, hook or background service.",
+      "| Credential path | OpenClaw capability-owned SecretInput reference | Plugin config string or `TYPESAFE_API_KEY` process environment |",
+      "Make `TYPESAFE_API_KEY` available to the Gateway process through your protected environment or existing secret manager. Never paste the key into chat, command arguments, source files or configuration examples. A terminal",
+      "  --ref-provider default --ref-source env --ref-id TYPESAFE_API_KEY",
+      "{\"source\":\"env\",\"provider\":\"default\",\"id\":\"TYPESAFE_API_KEY\"}",
+      "The implicit `default` env provider works when `secrets.defaults.env` is unset. If your installation uses a different env-provider alias, use that alias and ensure its allowlist includes `TYPESAFE_API_KEY`. The shared Op",
+      "- `model`: optional non-empty string. Defaults to `jev-latest`."
+    ]
+  },
+  {
+    "repo": "mattneel/typesafe",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "496215a0d99d9f999dd5cdcf778e9acf792f154b",
+    "name": "typesafe",
+    "description": "An idiomatic Elixir client for the TypeSafe AI API",
+    "stars": 0,
+    "language": "Elixir",
+    "url": "https://github.com/mattneel/typesafe",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "and its Jev model. Ask typed Choice, Noul and Score questions about your application's state in",
+      "client = TypeSafe.new(api_key: System.fetch_env!(\"TYPESAFE_API_KEY\"))",
+      "and export it as `TYPESAFE_API_KEY`.",
+      "  model: \"jev-1.13.0\",",
+      "- `model` is the concrete version that answered, such as `\"jev-1.13.0\"`, even when you asked",
+      "  for the `\"jev-latest\"` alias.",
+      "| `:api_key` | `TYPESAFE_API_KEY` | required | Sent as `Authorization: Bearer <key>`. A missing key raises `ArgumentError` in `new/1`. |",
+      "| `:base_url` | `TYPESAFE_BASE_URL` | `\"https://api.typesafe.ai\"` | API base URL. |"
+    ]
+  },
+  {
+    "repo": "mattneel/typesafe.zig",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "4e79972e4870c51adeba400e30d620c669830216",
+    "name": "typesafe.zig",
+    "description": "An idiomatic Zig client for the TypeSafe AI API",
+    "stars": 0,
+    "language": "Zig",
+    "url": "https://github.com/mattneel/typesafe.zig",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "Jev model. Ask typed Noul, Choice and Score questions about your application's state in one",
+      "and export it as `TYPESAFE_API_KEY`.",
+      "| `model` | `[]const u8` | the concrete model that answered, such as `jev-1.13.0`, even when you asked for `jev-latest` |",
+      "    .model = \"jev-preview\",",
+      "| `api_key` | `TYPESAFE_API_KEY` | required | Sent as `Authorization: Bearer <key>`. Missing: `error.MissingApiKey` at init, never at request time. |",
+      "| `base_url` | `TYPESAFE_BASE_URL` | `https://api.typesafe.ai` | An `http` or `https` URL, optionally with a path prefix. No credentials, query or fragment. The host cannot be an IPv6 literal such as `[::1]`, which `std.",
+      "| `model` | `TYPESAFE_DEFAULT_MODEL` | `jev-latest` | `jev-preview` is also available; `client.listModels` lists them. |",
+      "var result = try client.ask(state, questions, .{ .model = \"jev-preview\", .retry = .disabled });"
+    ]
+  },
+  {
+    "repo": "hnegishi/typesafe-ai-ruby",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "4ab8c243fbd9e9d5526b59186595d0534785d963",
+    "name": "typesafe-ai-ruby",
+    "description": null,
+    "stars": 0,
+    "language": "Ruby",
+    "url": "https://github.com/hnegishi/typesafe-ai-ruby",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "The TypeSafe AI Ruby library provides convenient access to the [TypeSafe](https://typesafe.ai) System One API from applications written in Ruby. Send state and typed questions to Jev, and get back structured answers with",
+      "Get an API key from the [TypeSafe console](https://console.typesafe.ai/keys) and export it as `TYPESAFE_API_KEY`:",
+      "export TYPESAFE_API_KEY=...",
+      "response.model                            # => \"jev-1.13.0\"",
+      "  c.api_key = ENV.fetch(\"TYPESAFE_API_KEY\")   # TYPESAFE_API_KEY",
+      "  c.model = \"jev-1.13.0\"                       # TYPESAFE_DEFAULT_MODEL, default jev-latest",
+      "  c.base_url = \"https://api.typesafe.ai\"       # TYPESAFE_BASE_URL",
+      "client.system_one(state: \"...\", questions: questions, model: \"jev-preview\","
+    ]
+  },
+  {
+    "repo": "typesend/typesafe_ai",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "1a46b61545f129d9c3528639a13bc4e5ee006744",
+    "name": "typesafe_ai",
+    "description": "Typed Elixir client for TypeSafe AI and its Jev System One model, with offline test stubs, concurrent fan-out, and atom-keyed answers.",
+    "stars": 0,
+    "language": "Elixir",
+    "url": "https://github.com/typesend/typesafe_ai",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "Typed Elixir client for TypeSafe AI and its Jev System One model, with offline test",
+      "Jev is the first (`jev-latest` is the default model here), are small, fast models built",
+      "client = TypeSafeAPI.new(api_key: System.fetch_env!(\"TYPESAFE_API_KEY\"))",
+      "result.model            #=> \"jev-1.13.0\" (whatever the API resolved \"jev-latest\" to)",
+      "`TypeSafeAPI.new/0` with no options reads `TYPESAFE_API_KEY`, `TYPESAFE_BASE_URL`, and",
+      "`TYPESAFE_DEFAULT_MODEL`, or the same keys under `config :typesafe_api`. `jev-latest` is a",
+      "pinned alias, not a model id; the API resolves it to a versioned id like `\"jev-1.13.0\"`,",
+      "can pin to instead of `jev-latest`."
+    ]
+  },
+  {
+    "repo": "Premo-Cloud/typesafe-sdk-java",
+    "status": "accepted",
+    "sha": "833893bc46aa3de2e07352a729ff618ea07b6350",
+    "name": "typesafe-sdk-java",
+    "description": "Community Java client for the TypeSafe System One API (unofficial)",
+    "stars": 3,
+    "language": "Java",
+    "url": "https://github.com/Premo-Cloud/typesafe-sdk-java",
+    "implementationFiles": [
+      "typesafe-sdk-spring-boot-starter/src/main/java/io/github/premocloud/typesafe/spring/TypeSafeAutoConfiguration.java"
+    ],
+    "evidenceSnippet": [
+      "Spring Boot users can add `io.github.premo-cloud:typesafe-sdk-spring-boot-starter` instead and get a `TypeSafeClient` bean from",
+      "TypeSafeClient client = TypeSafeClient.fromEnvironment();   // reads TYPESAFE_API_KEY",
+      "TypeSafeClient.builder().apiKey(key).retryPolicy(RetryPolicy.of(r -> r.maxRetries(5).backoffMax(Duration.ofSeconds(20)))).build();",
+      "TypeSafeClient.builder().apiKey(key).retryPolicy(RetryPolicy.none()).build();",
+      "TypeSafeClient client = TypeSafeClient.builder()",
+      "        .apiKey(key)                           // or TYPESAFE_API_KEY",
+      "        .baseUrl(\"https://api.typesafe.ai\")    // or TYPESAFE_BASE_URL",
+      "        .defaultModel(\"jev-latest\")            // or TYPESAFE_DEFAULT_MODEL; TypeSafeRequest.model(...) overrides per request"
+    ]
+  },
+  {
+    "repo": "2389-research/typesafe-go",
+    "status": "accepted",
+    "sha": "1f9ac50bab4921862327dadc45871bc24b381b3e",
+    "name": "typesafe-go",
+    "description": "A Go client for the TypeSafe System One API — typed judgments and probabilities, zero dependencies outside the standard library.",
+    "stars": 2,
+    "language": "Go",
+    "url": "https://github.com/2389-research/typesafe-go",
+    "implementationFiles": [
+      "typesafe.go"
+    ],
+    "evidenceSnippet": [
+      "\tclient, err := typesafe.New() // reads TYPESAFE_API_KEY",
+      "\ttypesafe.WithModel(\"jev-1.13.0\"),",
+      "| `TYPESAFE_API_KEY` | none — required | `WithAPIKey` |",
+      "| `TYPESAFE_BASE_URL` | `https://api.typesafe.ai` | `WithBaseURL` |",
+      "| `TYPESAFE_DEFAULT_MODEL` | `jev-latest` | `WithModel` |",
+      "TYPESAFE_API_KEY=sk-... ./scripts/check      # adds live API tests",
+      "TYPESAFE_API_KEY=sk-... go test -tags=e2e ./... -run TestLiveChoiceOptionOrder -v",
+      "\tt.Setenv(EnvModel, \"jev-1.13.0\")"
+    ]
+  },
+  {
+    "repo": "cole-gillespie/typesafe-go",
+    "status": "accepted",
+    "sha": "188247d639e8aacecd7a0d1aceaf8a4c66f8fa57",
+    "name": "typesafe-go",
+    "description": "unofficial go SDK for typesafe AI, with typed answers, retries, and context support",
+    "stars": 2,
+    "language": "Go",
+    "url": "https://github.com/cole-gillespie/typesafe-go",
+    "implementationFiles": [
+      "client.go"
+    ],
+    "evidenceSnippet": [
+      "create an api key in the [typesafe console](https://console.typesafe.ai/), then set `TYPESAFE_API_KEY`.",
+      "read -rs 'TYPESAFE_API_KEY?typesafe api key: '",
+      "export TYPESAFE_API_KEY",
+      "`Config.APIKey`, `BaseURL`, and `DefaultModel` resolve from nonempty config values, then `TYPESAFE_API_KEY`, `TYPESAFE_BASE_URL`, and `TYPESAFE_DEFAULT_MODEL`. defaults are `https://api.typesafe.ai` and `jev-latest`. a b",
+      "const noulResponse = `{\"model\":\"jev-test\",\"answers\":{\"urgent\":{\"type\":\"noul\",\"noul\":0}},\"usage\":{\"input_tokens\":10,\"output_tokens\":2}}`",
+      "\t\tfmt.Fprint(w, `{\"models\":[{\"name\":\"jev-test\",\"description\":\"test model\",\"release_date\":\"2026-09-01\"}]}`)",
+      "\tt.Setenv(\"TYPESAFE_API_KEY\", \" env-key \")",
+      "\tt.Setenv(\"TYPESAFE_API_KEY\", \"  \")"
+    ]
+  },
+  {
+    "repo": "DevMortimer/pi-typesafe",
+    "status": "accepted",
+    "sha": "dfb9b0d3cfcf3c49daffbd01ca1eb4b77fb97f82",
+    "name": "pi-typesafe",
+    "description": "TypeSafe decisions for Pi: batched evaluation tool, terminal playground, and typed API for extension authors",
+    "stars": 13,
+    "language": "TypeScript",
+    "url": "https://github.com/DevMortimer/pi-typesafe",
+    "implementationFiles": [
+      "src/client.ts"
+    ],
+    "evidenceSnippet": [
+      "[Jev](https://typesafe.ai) inside [Pi](https://pi.dev). Jev is TypeSafe's judgment model: send it some state and typed questions and it returns probabilities instead of prose, in well under a second, for a fraction of a ",
+      "- **A tool for the agent.** `typesafe_evaluate` hands small structured judgments (classify, triage, compare, score) to Jev and returns calibrated numbers in one batched call.",
+      "- **A typed API for other extensions.** One client, one key store, one login prompt, so extensions such as [pi-warden](https://github.com/DevMortimer/pi-warden) do not each ask for a key — and so a long run can tell you ",
+      "Requires Pi 0.85 or newer and Node.js 22.19 or newer. Usage is billed to your TypeSafe account. For CI or scripts set `TYPESAFE_API_KEY` in the environment instead; it takes precedence over the stored key. Do not paste t",
+      "Jev answers three kinds of question about the state you send. Every question in a request runs in parallel and in isolation, so adding questions barely changes the latency.",
+      "The question text is the whole program. Jev answers exactly what is asked, so ambiguity shows up as a middling probability rather than an error.",
+      "- **Is Jev reachable?** `authState()` reports the key source, whether it has been accepted, and the last failure that degraded it; `describeAuth()` turns that into a level and one safe line. The extension calls both at s",
+      "Install works without one; nothing is sent until you log in and enable the tool. Jev is new and access may be limited at the moment. Keys come from [console.typesafe.ai](https://console.typesafe.ai)."
+    ]
+  },
+  {
+    "repo": "marandaneto/typesafe-sdk-swift",
+    "status": "accepted",
+    "sha": "5a8565791b56d6ba874de9f7ea206b8a1a53c794",
+    "name": "typesafe-sdk-swift",
+    "description": "typesafe-sdk-js and typesafe-sdk-python port for swift",
+    "stars": 0,
+    "language": "Swift",
+    "url": "https://github.com/marandaneto/typesafe-sdk-swift",
+    "implementationFiles": [
+      "Sources/TypeSafe/TypeSafeClient.swift"
+    ],
+    "evidenceSnippet": [
+      "let client = try TypeSafeClient(apiKey: apiKey)",
+      "let client = try TypeSafeClient(",
+      "    defaultModel: \"jev-latest\",",
+      "The base URL defaults to `https://api.typesafe.ai`; a custom `URL` may include a path prefix. HTTPS is required except for loopback test servers. Authentication and protocol-critical headers cannot be overridden. Per-cal",
+      "let client = try TypeSafeClient(",
+      "public struct TypeSafeClient: Sendable, CustomStringConvertible, CustomDebugStringConvertible {",
+      "    public var description: String { \"TypeSafeClient(apiKey: <redacted>)\" }",
+      "        baseURL: URL = URL(string: \"https://api.typesafe.ai\")!,"
+    ]
+  },
+  {
+    "repo": "saibimajdi/typesafeai-dotnet-sdk",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "6be669e0d0b116b76e85136c4f6eaa44fadcecab",
+    "name": "typesafeai-dotnet-sdk",
+    "description": "Community .NET SDK for the TypeSafe AI System One API — typed noul, choice, and score questions with structured, confidence-scored answers. Not affiliated with TypeSafe AI.",
+    "stars": 5,
+    "language": "C#",
+    "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "`TYPESAFE_API_KEY` environment variable:",
+      "export TYPESAFE_API_KEY=\"ts_...\"",
+      "$env:TYPESAFE_API_KEY = \"ts_...\"",
+      "var client = new TypeSafeClient();               // reads TYPESAFE_API_KEY",
+      "| `TypeSafeClient` | The default client. Thread-safe, reuses one pooled `HttpClient`, implements `IDisposable`. |",
+      "| `ITypeSafeClient` | The interface to depend on. `TypeSafeClient` is the shipped implementation. |",
+      "| `TypeSafeClientOptions` | API key, base URL, default model, per-attempt timeout, retry policy, headers, `ILoggerFactory`. |",
+      "builder.Services.AddTypeSafeClient(builder.Configuration);"
+    ]
+  },
+  {
+    "repo": "Hawxy/TypeSafeAI.Net",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "7f014c92ec4d0cf89896989eb7cd20a0e033e621",
+    "name": "TypeSafeAI.Net",
+    "description": ".NET SDK for the TypeSafe AI platform",
+    "stars": 2,
+    "language": "C#",
+    "url": "https://github.com/Hawxy/TypeSafeAI.Net",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "| `TypeSafeAI` | Core client: `TypeSafeClient`, typed `QuestionSet`, retries, `HttpClientFactory` and DI support. Trim and AOT Safe. |",
+      "using var client = new TypeSafeClient(\"your-api-key\");",
+      "builder.Services.AddTypeSafeClient(builder.Configuration.GetSection(\"TypeSafe\"));",
+      "builder.Services.AddTypeSafeClient(o => o.ApiKey = \"...\");",
+      "`AddTypeSafeClient` registers `ITypeSafeClient` and `TypeSafeClient` as typed HTTP clients and returns the `IHttpClientBuilder`. Configuration is applied first, then your delegate.",
+      "var client = new TypeSafeClient(new TypeSafeClientOptions",
+      "    BaseUrl = new Uri(\"https://api.typesafe.ai\"),",
+      "    DefaultModel = \"jev-latest\","
+    ]
+  },
+  {
+    "repo": "codeitlikemiley/typesafe-sdk-rust",
+    "status": "accepted",
+    "sha": "e7050df6baa611bc9088f1a361b4b90e8571929d",
+    "name": "typesafe-sdk-rust",
+    "description": "Rust SDK for the TypeSafe AI API",
+    "stars": 2,
+    "language": "Rust",
+    "url": "https://github.com/codeitlikemiley/typesafe-sdk-rust",
+    "implementationFiles": [
+      "src/constants.rs"
+    ],
+    "evidenceSnippet": [
+      "Set `TYPESAFE_API_KEY` in your environment. Ask named questions about a piece of state. `TypeSafeClient` is an alias for `Client` if you are coming from the Python package.",
+      "| API key | `TYPESAFE_API_KEY` | required |",
+      "| Base URL | `TYPESAFE_BASE_URL` | `https://api.typesafe.ai` |",
+      "| Model | `TYPESAFE_DEFAULT_MODEL` | `jev-latest` |",
+      "    .model(\"jev-latest\")",
+      "The builder is typestated. `build()` exists only after `api_key(...)`, so a missing key is a compile error. `Client::from_env()` still fails at runtime when `TYPESAFE_API_KEY` is unset or blank.",
+      "TYPESAFE_LIVE=1 cargo run --example fan_out   # needs TYPESAFE_API_KEY",
+      "    /// Sets the default model, overriding `TYPESAFE_DEFAULT_MODEL` and `jev-latest`."
+    ]
+  },
+  {
+    "repo": "Butochnikov/typesafe-sdk-php",
+    "status": "accepted",
+    "sha": "d44db82dbf4ff601b123731b517fba1ca9092278",
+    "name": "typesafe-sdk-php",
+    "description": null,
+    "stars": 1,
+    "language": "PHP",
+    "url": "https://github.com/Butochnikov/typesafe-sdk-php",
+    "implementationFiles": [
+      "src/Constants.php"
+    ],
+    "evidenceSnippet": [
+      "export TYPESAFE_API_KEY='your-api-key'",
+      "use TypeSafe\\{Choice, Noul, Score, TypeSafeClient};",
+      "$client = new TypeSafeClient();",
+      "`AsyncTypeSafeClient` returns a `GuzzleHttp\\Promise\\PromiseInterface` that resolves to a typed response.",
+      "use TypeSafe\\{AsyncTypeSafeClient, Noul};",
+      "$client = new AsyncTypeSafeClient();",
+      "`$client->models->list()` returns `ListModelsResponse`; model cards expose `name`, `description`, and `releaseDate`. Defaults are `https://api.typesafe.ai`, `jev-latest`, and 10 seconds. Explicit constructor/per-call val",
+      "`TYPESAFE_API_KEY`, `TYPESAFE_BASE_URL`, `TYPESAFE_DEFAULT_MODEL`, and `TYPESAFE_LOG_LEVEL` (`debug`, `info`, `warn`/`warning`, `error`, `off`). Empty environment values are ignored. Never put an API key in source contro"
+    ]
+  },
+  {
+    "repo": "aoprisan/typesafe-ai-scala-sdk",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "2927cd1ed92a36533e8ffa1d40ac996f47d15670",
+    "name": "typesafe-ai-scala-sdk",
+    "description": null,
+    "stars": 0,
+    "language": "Scala",
+    "url": "https://github.com/aoprisan/typesafe-ai-scala-sdk",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "val client = TypeSafeClient() // TYPESAFE_API_KEY",
+      "  model     = Some(\"jev-latest\"),",
+      "TypeSafeClient(ClientConfig(",
+      "  apiKey     = Some(\"…\"),                // else TYPESAFE_API_KEY (required)",
+      "  baseUrl    = Some(\"https://…\"),        // else TYPESAFE_BASE_URL, else https://api.typesafe.ai",
+      "  model      = Some(\"jev-latest\"),       // else TYPESAFE_DEFAULT_MODEL, else jev-latest",
+      "just live     # smoke test against the real API (needs TYPESAFE_API_KEY)"
+    ]
+  },
+  {
+    "repo": "typesafe-ai/typesafe-sdk-js",
+    "status": "accepted",
+    "sha": "66880ccded6cb642dc1809620c2b108c33730214",
+    "name": "typesafe-sdk-js",
+    "description": "The official TypeScript/JavaScript library for the TypeSafe API",
+    "stars": 136,
+    "language": "TypeScript",
+    "url": "https://github.com/typesafe-ai/typesafe-sdk-js",
+    "implementationFiles": [
+      "src/client.ts"
+    ],
+    "evidenceSnippet": [
+      "npm install @typesafe-ai/sdk",
+      "Set `TYPESAFE_API_KEY` in your environment, then create and use the client:",
+      "import { choice, TypeSafeClient } from \"@typesafe-ai/sdk\";",
+      "const client = new TypeSafeClient();",
+      "  TypeSafeClientConfig,",
+      "export const DEFAULT_BASE_URL = \"https://api.typesafe.ai\";",
+      "export const DEFAULT_MODEL = \"jev-latest\";",
+      "    `No API key was provided. Pass \\`apiKey\\` to the TypeSafeClient constructor or set the ${ENV.apiKey} environment variable.`,"
+    ]
+  },
+  {
+    "repo": "typesafe-ai/typesafe-sdk-python",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "2ce5c65f13646cab6e6f782328194c9d85f3300a",
+    "name": "typesafe-sdk-python",
+    "description": "The official Python library for the TypeSafe API",
+    "stars": 94,
+    "language": "Python",
+    "url": "https://github.com/typesafe-ai/typesafe-sdk-python",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "Set `TYPESAFE_API_KEY` in your environment, then instantiate and use the client:",
+      "from typesafe_sdk import Choice, TypeSafeClient",
+      "with TypeSafeClient() as client:",
+      "from typesafe_sdk._core.client.aio.models import AsyncModels",
+      "from typesafe_sdk._core.config import Config",
+      "from typesafe_sdk._core.endpoints import prepare_system_one",
+      "from typesafe_sdk._core.json_types import JSONContent, JSONValue",
+      "from typesafe_sdk._core.question_types import Question"
+    ]
+  },
+  {
+    "repo": "elie222/inbox-zero",
+    "status": "rejected",
+    "reason": "no Jev decision context",
+    "sha": "42da4916ea89572cf7ab7125c59de287cd532cd1",
+    "name": "inbox-zero",
+    "description": "The world's best AI personal assistant for email. Open source app to help you reach inbox zero fast.",
+    "stars": 12257,
+    "language": "TypeScript",
+    "url": "https://github.com/elie222/inbox-zero",
+    "implementationFiles": [
+      "apps/web/utils/classifier/typesafe.ts"
+    ],
+    "evidenceSnippet": [
+      "const TYPESAFE_API_URL = \"https://api.typesafe.ai/v1/systemone\";"
+    ]
+  },
+  {
+    "repo": "samchon/typia",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "63c143d75fe6587da12af887c9d77ae0901c63c9",
+    "name": "typia",
+    "description": "Super-fast/easy runtime validators and serializers via transformation",
+    "stars": 5912,
+    "language": "Go",
+    "url": "https://github.com/samchon/typia",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "Effect-TS/effect",
+    "status": "accepted",
+    "sha": "d62dd0d65252e5d3635538f0e41adc7c08aa9beb",
+    "name": "effect",
+    "description": "Build production-ready applications in TypeScript",
+    "stars": 16118,
+    "language": "TypeScript",
+    "url": "https://github.com/Effect-TS/effect",
+    "implementationFiles": [
+      "packages/ai/typesafe/src/TypeSafeClient.ts"
+    ],
+    "evidenceSnippet": [
+      "export class TypeSafeClient extends Context.Service<TypeSafeClient, Service>()(\"@effect/ai-typesafe/TypeSafeClient\") {}",
+      "        HttpClientRequest.prependUrl(options.apiUrl ?? \"https://api.typesafe.ai/v1\"),",
+      "    return TypeSafeClient.of({",
+      "              module: \"TypeSafeClient\",",
+      "export const layer = (options: Options): Layer.Layer<TypeSafeClient, never, HttpClient.HttpClient> =>",
+      "  Layer.effect(TypeSafeClient, make(options))",
+      " * Provides a client from configuration, defaulting to TYPESAFE_API_KEY.",
+      "}): Layer.Layer<TypeSafeClient, Config.ConfigError, HttpClient.HttpClient> =>"
+    ]
+  },
+  {
+    "repo": "fabricioctelles/skills",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "bc4f8f7abee0e18989853a82080eb56683877be3",
+    "name": "skills",
+    "description": "A collection of skills for AI agents (Kiro, Cursor, Windsurf, Claude Code, and others). Each skill is a reusable module that teaches the agent to perform complex tasks with context, structure, and best practices.",
+    "stars": 87,
+    "language": "Python",
+    "url": "https://github.com/fabricioctelles/skills",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "![TypeSafe Jev](https://img.shields.io/badge/TypeSafe%20Jev-10B981?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2",
+      "## 🧠 Skills with TypeSafe Jev Integration",
+      "Four skills now support optional integration with [TypeSafe Jev](https://github.com/AugmentHCI/typesafe-jev) — a judgment engine that provides calibrated probability assessments (Score) and categorical classifications (N",
+      "| Skill | Jev Use Case | Questions |",
+      "- `references/jev-integration.md` — integration patterns and code examples"
+    ]
+  },
+  {
+    "repo": "mirainc/python-typesafe",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "a20365194328330bad8d21be31ba4664d7f7c71b",
+    "name": "python-typesafe",
+    "description": "Runtime type-checking for Python 2.7",
+    "stars": 1,
+    "language": "Python",
+    "url": "https://github.com/mirainc/python-typesafe",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "from typesafe import Any, Class, Optional",
+      "from typesafe.errors import NotATypeError, InvalidTypeError, UnlabeledArgError",
+      "from typesafe import types, Any"
+    ]
+  },
+  {
+    "repo": "fla-sil/PyTorrent",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "26d35bee0370b6c0a6647ffb3d65e353c30ef2cb",
+    "name": "PyTorrent",
+    "description": null,
+    "stars": 43,
+    "language": null,
+    "url": "https://github.com/fla-sil/PyTorrent",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "Ruteri/funkpy",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "57b2c822bfae65d15429bfd783223dbda3731195",
+    "name": "funkpy",
+    "description": "POC python stuff",
+    "stars": 0,
+    "language": "Python",
+    "url": "https://github.com/Ruteri/funkpy",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "from typesafe import (Typesafe, Typesafe_mf)",
+      "        @Typesafe",
+      "        @Typesafe",
+      "        @Typesafe",
+      "        @Typesafe",
+      "        @Typesafe",
+      "        @Typesafe",
+      "        @Typesafe"
+    ]
+  },
+  {
+    "repo": "boundring/hngh",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "0bf325daa95e8df311162fadb6abc97b459c2d23",
+    "name": "hngh",
+    "description": "A policy-gated development harness: bounded work cycles where every decision leaves an evidence trail, models advise, and only policy verdicts admit action. Pure side-effect-free Common Lisp kernel; the outside world plugs in through explicit ports.",
+    "stars": 0,
+    "language": "Python",
+    "url": "https://github.com/boundring/hngh",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "# typesafe.py -- thin Jev/Typesafe inference wrapper (hngh fast lane).",
+      "# agent-grade inference. Fail-closed: without TYPESAFE_API_KEY every",
+      "    key = os.environ.get(\"TYPESAFE_API_KEY\")",
+      "        from typesafe_sdk import TypeSafeClient",
+      "        return TypeSafeClient()",
+      "        from typesafe_sdk import Noul",
+      "        from typesafe_sdk import Choice",
+      "        from typesafe_sdk import Score"
+    ]
+  },
+  {
+    "repo": "famdigest/famdigest",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "81f709250ce82ab746a50aa1cddf9c5b15a58038",
+    "name": "famdigest",
+    "description": null,
+    "stars": 2,
+    "language": "TypeScript",
+    "url": "https://github.com/famdigest/famdigest",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "Cukurikik/Omni",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "a7a448b8797baa2e5c036e2af5052b0bbe61ffc5",
+    "name": "Omni",
+    "description": "Omni Framework",
+    "stars": 5,
+    "language": "C",
+    "url": "https://github.com/Cukurikik/Omni",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "mastra-ai/mastra",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "5014bf6a52f04304c30b4e572df4052085e3ac02",
+    "name": "mastra",
+    "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
+    "stars": 28175,
+    "language": "TypeScript",
+    "url": "https://github.com/mastra-ai/mastra",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "op7418/CodePilot",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "67507a0075af5ae9d27549b655ae32acaec913f1",
+    "name": "CodePilot",
+    "description": "A multi-model AI agent desktop client — connect any AI provider, extend with MCP & skills, control from your phone. Built with Electron + Next.js.",
+    "stars": 6467,
+    "language": "TypeScript",
+    "url": "https://github.com/op7418/CodePilot",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "anomalyco/models.dev",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "043d5793090f6a78503f36abf97214782f10281a",
+    "name": "models.dev",
+    "description": "An open-source database of AI models.",
+    "stars": 6900,
+    "language": "TypeScript",
+    "url": "https://github.com/anomalyco/models.dev",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "wy-coliney/jev-browser-use",
+    "status": "accepted",
+    "sha": "f14b60e0ae1ee90cd73eb6650e30a666a84c021a",
+    "name": "jev-browser-use",
+    "description": "5–10x faster browser operations: Jev clicks, Codex thinks and verifies. Built at EZCollegeApp.",
+    "stars": 124,
+    "language": "JavaScript",
+    "url": "https://github.com/wy-coliney/jev-browser-use",
+    "implementationFiles": [
+      "skills/jev-browser-use/bridge.mjs"
+    ],
+    "evidenceSnippet": [
+      "# Jev Browser Use",
+      "**Jev clicks. Codex thinks and verifies.**",
+      "A browser Skill powered by [TypeSafe’s Jev](https://docs.typesafe.ai/introduction). Hand off navigation, clicks, toggles, and scrolling; keep Codex in charge of text input, visual judgment, and the final check.",
+      "![Jev Browser Use](assets/hero.png)",
+      "npx skills add wy-coliney/jev-browser-use -g -a codex -y",
+      "Then [configure your Jev API](skills/jev-browser-use/references/provider-configuration.md) and start a new Codex task.",
+      "You need **Node.js 22+**, **Codex with Computer Use connected to Chrome or its in-app browser**, and **Jev access through TypeSafe or OpenRouter Decisions**. Installing this Skill does not install the browser connection.",
+      "codex plugin marketplace add wy-coliney/jev-browser-use && codex plugin add jev-browser-use@jev-browser-use"
+    ]
+  },
+  {
+    "repo": "aimlapi/api-docs",
+    "status": "rejected",
+    "reason": "mention-only directory",
+    "sha": "4431950b1c8549aaacafae1a48d1e15cec29bbef",
+    "name": "api-docs",
+    "description": null,
+    "stars": 28,
+    "language": "Jupyter Notebook",
+    "url": "https://github.com/aimlapi/api-docs",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "wenerme/ai",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "b94b7cd64b8a67efbb3a40dba70cc8ed2bd685e8",
+    "name": "ai",
+    "description": "AI related stuff",
+    "stars": 8,
+    "language": "MDX",
+    "url": "https://github.com/wenerme/ai",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "WenyuChiou/awesome-agentic-ai-zh",
+    "status": "rejected",
+    "reason": "mention-only directory",
+    "sha": "dff5f4b3c22d8972542e311eac36439d87f6e754",
+    "name": "awesome-agentic-ai-zh",
+    "description": "A trilingual (繁中 / English / 简中) learning roadmap for agentic AI: from LLM basics to multi-agent systems, with 240+ curated resources and hands-on examples. 中文 AI agent 學習地圖。",
+    "stars": 7085,
+    "language": "Python",
+    "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "bensyverson/goodall",
+    "status": "accepted",
+    "sha": "a612f04a712cf6c68926b780bd98e5087c687224",
+    "name": "goodall",
+    "description": "A simple and extensible agent loop for Golang projects",
+    "stars": 0,
+    "language": "Go",
+    "url": "https://github.com/bensyverson/goodall",
+    "implementationFiles": [
+      "typesafe/client_test.go"
+    ],
+    "evidenceSnippet": [
+      "The triage example is the delegation one. It reads a mailbox, Apple Mail's store, a Maildir, an mbox, or a synthetic inbox bundled in the binary, which is the default so it runs with no mail on the machine, and asks Type",
+      "| `goodall/typesafe` | A blocking client for TypeSafe's Jev, a judgment model: one state plus typed questions in, one typed answer per question out. Not a provider; it sits beside them, as a tool an agent calls (`Tool`, ",
+      "- [project/2026-09-17-typesafe-jev-findings.md](project/2026-09-17-typesafe-jev-findings.md): what TypeSafe's Jev is, where a judgment model fits beside the providers, and the options for subagents.",
+      "// The TypeSafe recordings. Jev is a judgment model, so an exchange here is one",
+      "// A TypeSafe client is neither a goodall.Provider nor a goodall.Completer — Jev",
+      "\t`\"model\":\"jev-1.13.0\",\"questions\":{\"vibe\":{\"type\":\"vibe\",\"instructions\":\"What is the vibe?\"}}}`",
+      "const okAnswers = `{\"model\":\"jev-1.13.0\",\"answers\":{\"is_urgent\":{\"type\":\"noul\",\"noul\":0.5}},` +",
+      "\t`\"model\":\"jev-latest\",` +"
+    ]
+  },
+  {
+    "repo": "Arize-ai/phoenix",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "767847c3386492f9783b623cf78e3eee47d0cea3",
+    "name": "phoenix",
+    "description": "AI Observability & Evaluation",
+    "stars": 11538,
+    "language": "Python",
+    "url": "https://github.com/Arize-ai/phoenix",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  },
+  {
+    "repo": "MalinrRuwan/experiments",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "ebfc182f93f88f0d0282b267eee2b2883ba5efb5",
+    "name": "experiments",
+    "description": "Polyglot experiments sandbox",
+    "stars": 0,
+    "language": "TypeScript",
+    "url": "https://github.com/MalinrRuwan/experiments",
+    "implementationFiles": [],
+    "evidenceSnippet": [
+      "      Flag.withDefault(\"jev-latest\")",
+      "import { noul, score, TypeSafeClient } from \"@typesafe-ai/sdk\";",
+      "  const apiKey = yield* Config.Redacted(\"TYPESAFE_API_KEY\").pipe(",
+      "            \"TYPESAFE_API_KEY is not set. Put it in .env or export it before running moddy.\",",
+      "  return new TypeSafeClient({",
+      "          message: `Unexpected response from TypeSafe: ${error.message}`,"
+    ]
+  },
+  {
+    "repo": "ImChong/Robotics_Notebooks",
+    "status": "rejected",
+    "reason": "no implementation source evidence",
+    "sha": "fe4668460b32a1d2ff21db101f0faaf0b889796a",
+    "name": "Robotics_Notebooks",
+    "description": "机器人技术栈资料汇总",
+    "stars": 343,
+    "language": "Python",
+    "url": "https://github.com/ImChong/Robotics_Notebooks",
+    "implementationFiles": [],
+    "evidenceSnippet": []
+  }
+]
