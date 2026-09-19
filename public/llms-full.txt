@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 305
+Catalog entries: 306
 
 ## Install the Agent Skill
 
@@ -4526,3 +4526,17 @@ An unofficial .NET client that POSTs state and typed questions to TypeSafe /v1/s
 - Source evidence: https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/TypeSafeSDK/README.md
 - Source evidence: https://github.com/DotNetVibeCoderz/Vibe_SDK/blob/09c77029c00df6aa707b059e560512f17896b059/LICENSE
 - Source evidence: https://x.com/Mifmasterz/status/2101296433408417841
+
+## pi-jev-sentinel
+
+Open-source Pi coding-agent extension that uses Jev to check tool calls before they run, scan files for prompt injection, flag risky replies, and keep secrets out of what it sends.
+
+- Repository: https://github.com/harshwasan/pi-jev-sentinel
+- Category: Security & Guardrails
+- Jev decision: Before each tool call, Jev receives the user's request (or pinned task), the proposed command, the agent's explanation, and recent conversation. It answers a Choice for intent (on task / off task / injected / needs more context) and a Score for risk (safe / needs approval / harmful). Local code turns these into run, ask the user, or warn. If Jev says more context would help, the extension adds it and asks again.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/harshwasan/pi-jev-sentinel/
+- Source evidence: https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/README.md
+- Source evidence: https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/src/guard.ts
