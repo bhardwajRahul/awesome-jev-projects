@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-259%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 提交开源项目</strong></a>
 </p>
 
-<p>严谨收录 **260+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
+<p>严谨收录 **259+** 个由 TypeSafe AI Jev 模型驱动的真实开源应用、工程工具与评测基准。拒绝无源码概念炒作，每项均绑定可查验的提交版本。</p>
 
 </div>
 
@@ -43,21 +43,21 @@
 
 - [⚡ 高频模拟与实时博弈 (20)](#high-frequency-simulation-zh)
 - [🛠️ 开发工具包与决策框架 (32)](#sdk-decision-frameworks-zh)
-- [🔌 生态框架与接入适配器 (9)](#sdk-integrations-zh)
+- [🔌 生态框架与接入适配器 (7)](#sdk-integrations-zh)
 - [💻 命令行工具与自动化工作流 (32)](#cli-pipelines-zh)
 - [💾 数据库扩展与语义检索 (7)](#data-search-zh)
-- [🌐 浏览器与桌面端自动化 (23)](#browser-os-action-zh)
+- [🌐 浏览器与桌面端自动化 (22)](#browser-os-action-zh)
 - [🧹 上下文垃圾回收与降噪 (11)](#context-gc-filter-zh)
-- [🛡️ 安全防御与输入护栏 (16)](#security-guardrails-zh)
-- [🧩 MCP 协议与工具扩展 (32)](#mcp-integrations-zh)
+- [🛡️ 安全防御与输入护栏 (17)](#security-guardrails-zh)
+- [🧩 MCP 协议与工具扩展 (33)](#mcp-integrations-zh)
 - [🧭 代码库分析与图谱寻路 (13)](#codebase-graph-pathfinding-zh)
-- [🔀 模型路由与成本优化 (15)](#routing-cost-optimization-zh)
-- [📊 垂直行业与专业业务系统 (19)](#domain-vertical-tools-zh)
+- [🔀 模型路由与成本优化 (16)](#routing-cost-optimization-zh)
+- [📊 垂直行业与专业业务系统 (17)](#domain-vertical-tools-zh)
 - [🎯 通用决策与启发式评估 (14)](#decision-tools-zh)
-- [🏷️ 文本分类与分类学标注 (2)](#classification-taxonomy-zh)
+- [🏷️ 文本分类与分类学标注 (1)](#classification-taxonomy-zh)
 - [📈 评测基准与系统可观测性 (7)](#evaluation-observability-zh)
-- [🎙️ 实时语音与多轮对话 (3)](#voice-conversation-zh)
-- [🎨 创意生成与多媒体编排 (5)](#creative-tools-zh)
+- [🎙️ 实时语音与多轮对话 (4)](#voice-conversation-zh)
+- [🎨 创意生成与多媒体编排 (6)](#creative-tools-zh)
 - [📖 本地运行与架构原理](#dev-arch-zh)
 - [🤝 如何提交你的项目](#submit-guide-zh)
 
@@ -295,14 +295,6 @@
   - 🎯 **核心决策**: TypeSafeClassifier 将 JSON 状态及类型化问题发送到 /v1/systemone，支持同步与异步 Runnable 调用。
   - 💡 **收益亮点**: 把结构化判断接进已有 LangChain 流程与追踪接口。
 
-- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - Oh My Pi 可选用 Jev 处理小判断：该用多深思考、是否意外停下，以及 Git 暂存相关分类。
-  - 🎯 **核心决策**: 统一 judgment 接口在提供 TypeSafe 凭据后调用 Jev；结构化问题返回概率供本地策略使用。
-  - 💡 **收益亮点**: 把小型分类任务集中到专门接口，保留替换后端的能力。
-
-- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - 给 Composio 工具箱接一个可选 Jev 决策层：从工具列表挑工具，填能枚举的参数，其余交给调用方补。
-  - 🎯 **核心决策**: 把工具与封闭参数编译成类型化问题，返回完整调用、部分调用或弃权；随后显式 execute。
-  - 💡 **收益亮点**: 复用已有 Composio 工具，同时把缺少的参数和置信度明确暴露出来。
-
 - [**ai**](https://github.com/vercel/ai) `★ 26825` - AI SDK 的可选 TypeSafe provider：用统一 evaluate 接口一次问 Jev 多个选择、评分和是非问题。
   - 🎯 **核心决策**: 把共享状态与问题发到 System One API，将原生概率、分数和用量映射回 SDK 结果。
   - 💡 **收益亮点**: 已有 AI SDK 项目可以沿用接口接入结构化评估。
@@ -333,6 +325,10 @@
 ## 💻 命令行工具与自动化工作流
 
 *在终端脚本、Unix 管道与 CI/CD 自动化流程中引入语义判断的工程工具。*
+
+- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - OrchestKit 可选用 Jev 给编程会话分类：这是排错、开发还是其他工作。达到设定阈值时，用分类结果决定会话标识颜色。
+  - 🎯 **核心决策**: 对会话开头的信息在固定类别中做单选；不确定或失败时继续使用原有 Haiku 分类。
+  - 💡 **收益亮点**: 能并排记录两种分类结果，也能先用影子模式观察；默认不会调用 Jev。
 
 - [**jev-experiments**](https://github.com/dabit3/jev-experiments) `★ 255` - Nader Dabit 打造的 Jev 实验库与 Commit Sentry：包含代码提交守护、意图判定等前沿探索范例。
   - 🎯 **核心决策**: 在 commit-sentry 示例中对提交差异进行风险分级，拦截潜在问题提交并推荐改进建议。
@@ -417,10 +413,6 @@
 - [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - 在 Windows Codex 会话里输入 :jev，让它按已记录的执行证据做一次检查。
   - 🎯 **核心决策**: 向 Jev 批量询问测试、执行与证据是否支持结论，也可单独问一个是非题。
   - 💡 **收益亮点**: 把“Agent 说做了”与日志里实际留下的证据分开检查。
-
-- [**is-odd-jev**](https://github.com/alxcrt/is-odd-jev) `★ 1` - 一个刻意小题大做的实验：把数字交给 Jev，问它是不是奇数，再看返回的概率。
-  - 🎯 **核心决策**: 用 Noul 回答 Is n odd，本地按概率转成布尔值。
-  - 💡 **收益亮点**: 用极小接口示例观察模型判断与确定性计算的差别。
 
 - [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) `★ 1` - 对输入文本做分类或打分，交给本地规则继续处理。
   - 🎯 **核心决策**: 对输入文本做分类或打分，交给本地规则继续处理。
@@ -545,10 +537,6 @@
   - 🎯 **核心决策**: 每步用 Choice 选 DOM 动作，用两个 Noul 判断是否完成或卡住；输入文字交给另一小模型。
   - 💡 **收益亮点**: 通过 MCP、CLI 或库复用同一浏览器循环，并查看动作、恢复过程和错误记录。
 
-- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - 给网页做视觉减法的浏览器扩展。让 Jev 识别广告、促销和订阅弹窗，再把可复用的隐藏规则存在本地。
-  - 🎯 **核心决策**: 对页面元素候选做分类，只让通过阈值的非必要元素进入隐藏规则，不确定的保留。
-  - 💡 **收益亮点**: 常见页面可以复用规则，隐藏操作可撤销；它不阻止追踪请求，也不代替用户处理同意选项。
-
 - [**plasmallm**](https://github.com/joshuaeroman/plasmallm) `★ 28` - KDE Plasma 桌面小部件适配器：引入 Jev 决策适配层，用于本地桌面交互动作与指令分流。
   - 🎯 **核心决策**: 评估用户桌面操作意图并分流为本地快捷动作、对话生成或系统工具调用。
   - 💡 **收益亮点**: 毫秒级判定用户意图，无需唤醒昂贵的云端多模态模型即可完成高频桌面指令决策。
@@ -667,6 +655,10 @@
   - 🎯 **核心决策**: 先判断破坏性、外传、越界和影响，再给输出做秘密检测与错误分类；也提供可直接调用的 jev_ask。
   - 💡 **收益亮点**: 把操作风险和故障类型及时提示给 Agent 与用户。
 
+- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - 给网页做视觉减法的浏览器扩展。让 Jev 识别广告、促销和订阅弹窗，再把可复用的隐藏规则存在本地。
+  - 🎯 **核心决策**: 对页面元素候选做分类，只让通过阈值的非必要元素进入隐藏规则，不确定的保留。
+  - 💡 **收益亮点**: 常见页面可以复用规则，隐藏操作可撤销；它不阻止追踪请求，也不代替用户处理同意选项。
+
 - [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - 给 Pi 编程 Agent 加一位规则监督员。写文件时检查是否违反项目约定，执行命令前评估危险操作，把问题直接反馈给 Agent。
   - 🎯 **核心决策**: 通过 Jev 判断改动是否违背规则、是否偏离任务或不可逆，再与本地模式规则合并处理。
   - 💡 **收益亮点**: 让规则提醒进入实际工具流程；多数问题是提示，少数破坏性操作才会被拦下。
@@ -725,6 +717,10 @@
 ## 🧩 MCP 协议与工具扩展
 
 *基于模型上下文协议（MCP）的标准服务器，向智能体开放结构化判定能力。*
+
+- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - 给 Composio 工具箱接一个可选 Jev 决策层：从工具列表挑工具，填能枚举的参数，其余交给调用方补。
+  - 🎯 **核心决策**: 把工具与封闭参数编译成类型化问题，返回完整调用、部分调用或弃权；随后显式 execute。
+  - 💡 **收益亮点**: 复用已有 Composio 工具，同时把缺少的参数和置信度明确暴露出来。
 
 - [**vellum-assistant**](https://github.com/vellum-ai/vellum-assistant) `★ 1285` - Vellum Assistant 增加了一个 Jev provider。选用它后，可以把对话状态或明确的问题包交给 Jev，获得结构化判断。
   - 🎯 **核心决策**: 调用原生 System One 接口回答命名问题，并通过适配层把结果送回现有助手接口。
@@ -924,6 +920,10 @@
   - 🎯 **核心决策**: Jev Choice 在配置的模型档位中选一个，HTTP 客户端返回概率与置信度供复杂度路由使用。
   - 💡 **收益亮点**: 把请求难度判断接进现有模型分层与路由配置。
 
+- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - Oh My Pi 可选用 Jev 处理小判断：该用多深思考、是否意外停下，以及 Git 暂存相关分类。
+  - 🎯 **核心决策**: 统一 judgment 接口在提供 TypeSafe 凭据后调用 Jev；结构化问题返回概率供本地策略使用。
+  - 💡 **收益亮点**: 把小型分类任务集中到专门接口，保留替换后端的能力。
+
 - [**jev-model-router**](https://github.com/davila7/claude-code-templates) `★ 30779` - Claude Code 官方模组库中的动态模型路由器，单次请求评估任务复杂度、推理等级与风险面，毫秒级调配子 Agent 档位。
   - 🎯 **核心决策**: 并行评估任务难易分级、推理深度与生产风险布尔值，向 Claude Code 注入最优执行配置。
   - 💡 **收益亮点**: 避免简单任务滥用高规格模型，同时确保高危变更拥有充分置信度防线。
@@ -1051,14 +1051,6 @@
   - 🎯 **核心决策**: 对提取出的简历文本与职位要求逐项判断和打分，再由 Worker 汇总成页面里的评审结果。
   - 💡 **收益亮点**: 能保存输入、问题与输出，方便回看每次评审；没有 API key 时运行的是模拟结果。
 
-- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - 给 Home Assistant 语音入口做分流：简单灯光命令直接走设备服务，其余交给 Grok 对话助手。
-  - 🎯 **核心决策**: Jev 把语句分成 fast_service、grok 或 reject，并结合本地目标匹配与置信度门槛处理。
-  - 💡 **收益亮点**: 让支持的开灯、关灯、调亮度命令走明确的设备操作路径。
-
-- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - 让 Jev 做和声习题，也让它选和弦弹一段电钢琴。重点是观察它懂哪些乐理、在哪些关系上出错。
-  - 🎯 **核心决策**: 从有限的声部、音高、时值或根音、和弦类型中选择，代码负责发声和规则评分。
-  - 💡 **收益亮点**: 把音乐判断拆成可测的小选择题，并留下失败边界。
-
 - [**jev-trade**](https://github.com/Waxmell114514/jev-trade) - 把 BTC、ETH 的行情变成文字状态，让 Jev 给交易判断，再放进含延迟和费用的模拟撮合里观察。
   - 🎯 **核心决策**: 代码先计算市场特征；Jev 回答有限的方向与风险问题，本地策略决定模拟仓位。
   - 💡 **收益亮点**: 把判断、延迟和执行成本放到同一实验记录里比较。
@@ -1133,10 +1125,6 @@
 
 *多标签层级分类、文档结构化标引与分类学数据集构建工具。*
 
-- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - OrchestKit 可选用 Jev 给编程会话分类：这是排错、开发还是其他工作。达到设定阈值时，用分类结果决定会话标识颜色。
-  - 🎯 **核心决策**: 对会话开头的信息在固定类别中做单选；不确定或失败时继续使用原有 Haiku 分类。
-  - 💡 **收益亮点**: 能并排记录两种分类结果，也能先用影子模式观察；默认不会调用 Jev。
-
 - [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - 选项太多，一次问不下？先把目录分成树，让 Jev 逐层选分支，最后落到具体商品、事件类型或工作流。
   - 🎯 **核心决策**: 每次只在当前层的候选分支里做单选，再沿选中的分支继续查找。
   - 💡 **收益亮点**: 不用直接截掉大目录尾部的候选，还能返回完整选择路径；失败时明确报告不可用。
@@ -1195,6 +1183,10 @@
   - 🎯 **核心决策**: 在语音识别转录完成后，300ms 内裁决客户核心意向（如拒绝、询问价格、预约演示）。
   - 💡 **收益亮点**: 超低延迟的意图判定缩短对话停顿时间，显著提升外呼交互的自然度与成单率。
 
+- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - 给 Home Assistant 语音入口做分流：简单灯光命令直接走设备服务，其余交给 Grok 对话助手。
+  - 🎯 **核心决策**: Jev 把语句分成 fast_service、grok 或 reject，并结合本地目标匹配与置信度门槛处理。
+  - 💡 **收益亮点**: 让支持的开灯、关灯、调亮度命令走明确的设备操作路径。
+
 ---
 
 <a id="creative-tools-zh"></a>
@@ -1221,6 +1213,10 @@
 - [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - 描述想要的界面，让 Jev 从现成组件里选类型、字段和样式，再由程序拼出来。
   - 🎯 **核心决策**: 从有限候选中选择组件家族、具体组件、字段类型与外观；分不清时追加比较。
   - 💡 **收益亮点**: 输出已有组件组成的界面和可复制 JSX，不依赖模型随手编写代码。
+
+- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - 让 Jev 做和声习题，也让它选和弦弹一段电钢琴。重点是观察它懂哪些乐理、在哪些关系上出错。
+  - 🎯 **核心决策**: 从有限的声部、音高、时值或根音、和弦类型中选择，代码负责发声和规则评分。
+  - 💡 **收益亮点**: 把音乐判断拆成可测的小选择题，并留下失败边界。
 
 ---
 

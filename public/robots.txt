@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# GEO: Explicitly allow modern AI Search Bots
+# GEO: Explicitly allow modern AI Search Bots & Research Crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -15,6 +15,15 @@ User-agent: GrokBot
 Allow: /
 
 User-agent: Applebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://logicrw.github.io/awesome-jev-projects/sitemap.xml

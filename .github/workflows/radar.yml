@@ -11,8 +11,6 @@ on:
         default: full
 permissions:
   contents: write
-  pages: write
-  id-token: write
 concurrency:
   group: ecosystem-radar
   cancel-in-progress: false

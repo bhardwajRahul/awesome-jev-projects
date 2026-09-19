@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-259%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 Submit a Project</strong></a>
 </p>
 
-<p>A source-verified, zero-hype directory of **260+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
+<p>A source-verified, zero-hype directory of **259+** open-source applications, tools, and benchmarks built with TypeSafe AI's Jev model.</p>
 
 </div>
 
@@ -43,21 +43,21 @@
 
 - [⚡ High-Frequency & Simulation (20)](#high-frequency-simulation-en)
 - [🛠️ SDK & Decision Frameworks (32)](#sdk-decision-frameworks-en)
-- [🔌 SDK & Ecosystem Integrations (9)](#sdk-integrations-en)
+- [🔌 SDK & Ecosystem Integrations (7)](#sdk-integrations-en)
 - [💻 CLI & Pipelines (32)](#cli-pipelines-en)
 - [💾 Data & Search (7)](#data-search-en)
-- [🌐 Browser & Desktop Automation (23)](#browser-os-action-en)
+- [🌐 Browser & Desktop Automation (22)](#browser-os-action-en)
 - [🧹 Context GC & Noise Filtering (11)](#context-gc-filter-en)
-- [🛡️ Security & Guardrails (16)](#security-guardrails-en)
-- [🧩 MCP Protocols & Tool Endpoints (32)](#mcp-integrations-en)
+- [🛡️ Security & Guardrails (17)](#security-guardrails-en)
+- [🧩 MCP Protocols & Tool Endpoints (33)](#mcp-integrations-en)
 - [🧭 Codebase Analysis & Knowledge Graphs (13)](#codebase-graph-pathfinding-en)
-- [🔀 Model Routing & Cost Reduction (15)](#routing-cost-optimization-en)
-- [📊 Domain-Specific & Enterprise Tools (19)](#domain-vertical-tools-en)
+- [🔀 Model Routing & Cost Reduction (16)](#routing-cost-optimization-en)
+- [📊 Domain-Specific & Enterprise Tools (17)](#domain-vertical-tools-en)
 - [🎯 General Decision & Evaluation Tools (14)](#decision-tools-en)
-- [🏷️ Text Classification & Taxonomy (2)](#classification-taxonomy-en)
+- [🏷️ Text Classification & Taxonomy (1)](#classification-taxonomy-en)
 - [📈 Benchmarks & Observability (7)](#evaluation-observability-en)
-- [🎙️ Voice & Real-Time Conversation (3)](#voice-conversation-en)
-- [🎨 Creative Media & Composition (5)](#creative-tools-en)
+- [🎙️ Voice & Real-Time Conversation (4)](#voice-conversation-en)
+- [🎨 Creative Media & Composition (6)](#creative-tools-en)
 - [📖 Local Development & Architecture](#dev-arch-en)
 - [🤝 How to Submit a Project](#submit-guide-en)
 
@@ -68,9 +68,9 @@
 
 *Real-time decision loops for games, robotics, and interactive tick-based simulations.*
 
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.
-  - 🎯 **What Jev Decides**: Jev uses spread, depth and imbalance, rolling returns, recent trades, and taker flow to estimate whether price will be higher or lower roughly 100 blocks later and returns buy/sell probabilities.
-  - 💡 **Key Advantage**: It connects structured Jev decisions to a per-block quoting loop and exposes decisions, quotes, fills, positions, and P&L in one event stream, so behavior can be observed in dry run before enabling real transactions.
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
+  - 🎯 **What Jev Decides**: Consumes spread, rolling returns, and taker flow over 100 blocks to predict mid-price direction over the next 30 blocks.
+  - 💡 **Key Advantage**: Inference latency around 80ms fits cleanly within sub-second blockchain block times.
 
 - [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
   - 🎯 **What Jev Decides**: Evaluates Mario motion speed, jump trajectories, and upcoming enemies to decide NES controller inputs.
@@ -80,7 +80,7 @@
   - 🎯 **What Jev Decides**: Consumes distance sectors and obstacle heights from classical CV to choose tactical maneuvers among climb, brake, or gap traversal.
   - 💡 **Key Advantage**: Tiered control architecture: Jev handles macro tactical decisions while deterministic code guarantees flight safety.
 
-- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - jevpilot: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - Autonomous vehicle simulator where Jev selects optimal steering paths and speed profiles from pre-calculated candidate trajectories.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
@@ -92,11 +92,11 @@
   - 🎯 **What Jev Decides**: Reads game tick state and selects optimal character actions and targets from bounded catalogs.
   - 💡 **Key Advantage**: Provides a rigorous, reproducible benchmark evaluating Jev decision reflexes in tick-based game worlds.
 
-- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 1v1 Jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - Real-time 1v1 browser FPS duel where Jev evaluates tick-based battlefield telemetry to decide movement, aim, and firing actions.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
-- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - live-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - Top-down vehicle simulator where Jev chooses lane changes and throttle rates, running side-by-side against conversational model baselines.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
@@ -104,11 +104,11 @@
   - 🎯 **What Jev Decides**: Inspects feed card DOM structures to classify promotional and sponsored content sharing organic styling.
   - 💡 **Key Advantage**: Filters first-party native ads where traditional CSS selectors and URL blocklists fail.
 
-- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - JevBird: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - Flappy Bird game agent calculating candidate flight trajectories in code and querying Jev to select the safest flap path in real time.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
-- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - doom-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - Doom game controller consuming structured combat state to select movement headings, target locks, and firing timings.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
@@ -116,7 +116,7 @@
   - 🎯 **What Jev Decides**: Performs batch Score and Noul judgments on dataset rows at 1,500+ rows/sec.
   - 💡 **Key Advantage**: Separates low-quality or toxic synthetic data prior to compute-intensive model training.
 
-- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - jev-doom-agent: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - Browser-based dual Doom game agent evaluating game state tables to select tactical navigation and combat actions.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
@@ -125,7 +125,7 @@
   - 💡 **Key Advantage**: Exposes per-turn request payloads, model probabilities, and latency; supports free replay of recorded matches and OpenRouter live play.
   - 🌐 [Live Interactive Demo](https://xiechengyuan.github.io/jev-gomoku/)
 
-- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - jev-little-airways: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - Island airport traffic simulator querying Jev to arbitrate landing priorities, holding patterns, diversions, and runway clearance.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
@@ -133,11 +133,11 @@
   - 🎯 **What Jev Decides**: Selects discrete UI coordinates and click actions from live browser canvas frames.
   - 💡 **Key Advantage**: Provides a competitive, visual benchmark for testing high-frequency decision reflexes.
 
-- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - jev-demos: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - Maze navigation benchmark testing single-step and multi-step Jev spatial decisions against path dead-ends and loops.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
-- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - jev-experiments: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - Real-time game experiments where Jev plays Chrome Dino and 2D shooter arenas via structured telemetry and discrete action inputs.
   - 🎯 **What Jev Decides**: Executes continuous multi-Hz decision loops to drive movement, steering, and actions.
   - 💡 **Key Advantage**: Achieves real-time interaction rates that frontier LLMs cannot physically deliver.
 
@@ -160,19 +160,19 @@
   - 🎯 **What Jev Decides**: Uses generic Rust structs to declare question-and-answer layouts once, decoding directly into strongly typed fields via Jev.
   - 💡 **Key Advantage**: Zero-cost Rust abstractions with no manual JSON prompt construction or runtime schema validation required.
 
-- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - req_llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - TypeSafe integration for Elixir ReqLLM evaluating state questions via evaluate endpoints while routing conversational text to other models.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - instructor-php: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - Unified decision adapter for Instructor PHP submitting business state queries to Jev and returning typed choices, scores, and probabilities.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - openai-scala-client: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - Scala multi-model client module providing TypeSafe Jev integrations to query structured answers from state and typed questions.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - pi-fabric: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - Programmable decision loop extension for Pi tool runtime executing observe-judge-act cycles within fixed budgets.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -180,7 +180,7 @@
   - 🎯 **What Jev Decides**: Full-featured client for System One Choice, Score, and Noul endpoints with type inference and retries.
   - 💡 **Key Advantage**: Officially maintained reference implementation anchoring the JavaScript and TypeScript Jev ecosystem.
 
-- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - effect-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - TypeSafe Jev integration for Effect Agent allowing TypeScript applications to evaluate typed question packets and select models.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -188,7 +188,7 @@
   - 🎯 **What Jev Decides**: Reuses multimodal visual context to score candidate answers directly from logits without autoregressive generation.
   - 💡 **Key Advantage**: Brings Jev-style single-pass multi-question scoring to local edge vision on Apple Silicon.
 
-- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - advocaat: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - Concise TypeScript wrapper for Jev querying multiple judgments against shared state in a single call with probabilities and scores.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -252,11 +252,11 @@
   - 🎯 **What Jev Decides**: Constructs System One payloads in Rust and manages endpoint routing and authorization headers.
   - 💡 **Key Advantage**: Leverages Rust ownership and type checking to prevent malformed request payloads at compile time.
 
-- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - jev-starter: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - Application scaffold routing Jev decisions to automated handlers, fallback models, or human review while tracking rule performance.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - jevclient: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - Asynchronous Python client for Jev querying multiple typed questions in a single request and returning structured probability objects.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -291,35 +291,27 @@
 
 *Adapters and bridge connectors integrating existing runtime stacks with Jev.*
 
-- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - langchain: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - Optional Jev classification node for Python LangChain pipelines returning categories, calibrated probabilities, and tier scores.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - oh-my-pi: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ai**](https://github.com/vercel/ai) `★ 26825` - Optional TypeSafe provider for Vercel AI SDK querying Jev for multiple choices, scores, and booleans via a unified evaluate interface.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - composio: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - Optional Jev model provider for Pydantic AI converting schema boolean and enum fields into typed questions.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**ai**](https://github.com/vercel/ai) `★ 26825` - ai: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - Optional TypeSafe HTTP adapter in Eliza framework allowing agents to dispatch structured decision queries on demand.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - pydantic-ai: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - Optional Jev classifier for LangChain.js returning programmatic categories and scores from typed state questions.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - eliza: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
-  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
-
-- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - langchainjs: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
-  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
-
-- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - ax: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - Optional TypeSafe client for Ax framework querying Jev via boolean or categorical signatures with raw probabilities.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -333,6 +325,10 @@
 ## 💻 CLI & Pipelines
 
 *Terminal utilities, shell pipes, and CI/CD automation incorporating semantic gates.*
+
+- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - Session classifier for OrchestKit categorizing coding sessions into debugging, development, or maintenance to drive UI badges.
+  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
+  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
 - [**jev-experiments**](https://github.com/dabit3/jev-experiments) `★ 255` - Developer experimentation suite by Nader Dabit featuring commit sentry and intent triage with Jev.
   - 🎯 **What Jev Decides**: Evaluates staged commit diffs in commit-sentry to classify change risks and advise on improvements.
@@ -358,7 +354,7 @@
   - 🎯 **What Jev Decides**: Routes incoming HTTP requests based on semantic meaning rather than static URL paths.
   - 💡 **Key Advantage**: Embeds intent-based routing into lightweight edge and serverless web APIs.
 
-- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - jev-playground: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - MoonBit playground testing Jev on Gomoku board decisions, simplified MOBA unit control, and command risk triage.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -378,7 +374,7 @@
   - 🎯 **What Jev Decides**: Executes real-time classification, scoring, and threshold guards directly on Unix text streams.
   - 💡 **Key Advantage**: Embeds directly into Bash scripts and CI/CD pipelines without Python runtime overhead.
 
-- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - jev-lm: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - Experimental language decoder framing next-token generation as discrete choice queries to assemble sentences and select draft completions.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -386,11 +382,11 @@
   - 🎯 **What Jev Decides**: Classifies incoming email payloads into discrete category choices (e.g. invoice vs. general).
   - 💡 **Key Advantage**: Provides deterministic state-machine branching without verbose LLM prompt overhead.
 
-- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - jev-chat: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - Research chat decoder repeatedly querying Jev to select words or phrases from candidates, chaining choices into conversational responses.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
-- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - Terminal utility sending text or JSON to Jev to receive discrete booleans, choices, and scores directly into Unix script pipelines.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -398,7 +394,7 @@
   - 🎯 **What Jev Decides**: For each preference rule and each code-change hunk, decide whether the change violates the rule.
   - 💡 **Key Advantage**: CLI (npx jev-pref setup) for pre-commit, PR and agent workflows, with blocking vs. advisory findings.
 
-- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - jev-system-one: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - Terminal Q&A tool where generative models draft answers while Jev selects response personas, checks drafts, and triggers rewrites.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -406,7 +402,7 @@
   - 🎯 **What Jev Decides**: Calculates calibration curves, optimal confidence thresholds, and distributional drift over time.
   - 💡 **Key Advantage**: Prevents decision degradation by systematically validating confidence reliability.
 
-- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - pi-fast-jev-compaction: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - Fast context compaction utility for Pi coding agent pruning obsolete tool logs while preserving verbatim conversation text.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -414,11 +410,7 @@
   - 🎯 **What Jev Decides**: Classifies raw task notes into priority tiers, execution contexts, and scheduling buckets.
   - 💡 **Key Advantage**: Automates backlog grooming and task prioritization with sub-100ms response times.
 
-- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - ask-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
-  - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
-  - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
-
-- [**is-odd-jev**](https://github.com/alxcrt/is-odd-jev) `★ 1` - is-odd-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - Windows Codex terminal command :jev verifying task progress and execution evidence against goal criteria.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -426,7 +418,7 @@
   - 🎯 **What Jev Decides**: Selects discrete robotic primitive skills and target coordinates based on privileged simulation state.
   - 💡 **Key Advantage**: Decouples high-level discrete skill choice from low-level PD motor control.
 
-- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - Command-line tool querying Jev with categorical, boolean, or scoring questions, returning structured JSON for shell scripting.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -434,7 +426,7 @@
   - 🎯 **What Jev Decides**: Executes typed Jev queries from shell stdin, returning JSON or structured exit codes for Unix pipes.
   - 💡 **Key Advantage**: Seamlessly embeds System One decision gates into standard bash and CI scripts.
 
-- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - jev-code: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - Experimental coding terminal using Jev for constrained grammatical choices to assemble AST syntax nodes and invoke local tools.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -458,7 +450,7 @@
   - 🎯 **What Jev Decides**: Runs sub-millisecond semantic pattern matching and attribute decisions on short text.
   - 💡 **Key Advantage**: Ideal sandbox for developers testing Jev decision primitives locally.
 
-- [**jevscript**](https://github.com/amberwhitehead/jevscript) - jevscript: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jevscript**](https://github.com/amberwhitehead/jevscript) - Experimental language prototype embedding semantic judgment primitives directly into code scripts to evaluate bundled questions.
   - 🎯 **What Jev Decides**: Applies real-time semantic classification and filtering on standard input streams.
   - 💡 **Key Advantage**: Embeds zero-dependency semantic guardrails into shell workflows and CI/CD.
 
@@ -513,7 +505,7 @@
   - 🎯 **What Jev Decides**: Decides next action and target DOM element in a single request; delegates typing to text models.
   - 💡 **Key Advantage**: Separates UI navigation from text generation, slashing redundant page evaluations.
 
-- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - jev-desktop: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - Desktop GUI automation co-processor navigating native accessibility trees to pick next buttons, menus, and controls step-by-step.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
@@ -521,7 +513,7 @@
   - 🎯 **What Jev Decides**: Evaluates application state and user goals to select next native macOS automation actions and arguments.
   - 💡 **Key Advantage**: Native Swift architecture combined with structured Jev decisions minimizes OS action planning latency.
 
-- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - Mobile test runner for omg.dev inspecting accessibility trees via Jev to pick controls and detect step completion or stalls.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
@@ -533,19 +525,15 @@
   - 🎯 **What Jev Decides**: Decides specific click targets, form interactions, and scroll offsets from lightweight DOM candidates.
   - 💡 **Key Advantage**: Decouples local actions from global planning, accelerating operations 5–10x and cutting multimodal API costs.
 
-- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - mobile-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - Android automation agent where Jev selects target apps and UI elements while Mobilerun performs clicks and inputs.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
-- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - jev-use: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - Computer-use co-processor where Codex defines high-level goals while Jev selects consecutive UI controls for execution.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
-- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.
-  - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
-  - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
-
-- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - End-to-end browser agent navigating URLs, clicking controls, filling forms, and logging per-step action audit trails.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
@@ -565,19 +553,19 @@
   - 🎯 **What Jev Decides**: Evaluates interactive page elements to choose between clicking, text entry, scrolling, or form submit.
   - 💡 **Key Advantage**: Eliminates multi-turn reasoning loops per step, drastically speeding up form filling and navigation.
 
-- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - Browser copilot executing button clicks and form fills while enforcing policy pauses on high-risk actions like payments or deletions.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
-- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - computer-use-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - macOS application control in Go using Jev to pick UI controls and next actions directly from accessibility trees.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
-- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - aside-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - Decision co-processor for Aside browser agent selecting the next atomic action from candidate lists before DOM execution.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
-- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - Playwright automation library driven by Jev decisions for clicking controls, filling forms, and scraping data via CLI, MCP, and SDK.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
@@ -585,11 +573,11 @@
   - 🎯 **What Jev Decides**: Evaluates candidate action space from page snapshots to pick target controls and action types in a single request.
   - 💡 **Key Advantage**: Substitutes heavy vision models with lightweight semantic snapshots for sub-second browser loops.
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - grokskill-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - Grok Build integration connecting Jev Ultrafast to existing Chrome browser tabs with PowerShell startup scripts.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
-- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - jev-macos-loop: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - macOS local interaction loop reading on-screen OCR and accessibility elements, querying Jev to pick and click the next target.
   - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
   - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
 
@@ -655,19 +643,23 @@
 
 *Prompt injection defense, content moderation, risk scoring, and policy validation.*
 
-- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - agentgateway: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - Security guardrail example for Agentgateway auditing model requests and responses for jailbreaks, harm, and secret leakage.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - interlinked-cli: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - Rule audit evaluator for coding agents combining deterministic checks with Jev semantic scoring for supplementary judgment.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - pi-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - Risk guard for Pi coding agent verifying command boundaries pre-execution and auditing logs post-execution for secret leakage.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - pi-warden: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - Distraction-free browser extension using Jev to detect ads, promo banners, and paywall popups, caching clean CSS rules locally.
+  - 🎯 **What Jev Decides**: Evaluates DOM or accessibility tree state to pick target controls and next actions in real time.
+  - 💡 **Key Advantage**: Decouples decision making from execution for inspectable, lightning-fast UI navigation.
+
+- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - Rule inspector for Pi coding agent verifying file modifications against repository conventions and checking command risks before execution.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -687,7 +679,7 @@
   - 🎯 **What Jev Decides**: Evaluates prose paragraphs for cliché transitions, synthetic cheerfulness, and robotic stylistic symmetry.
   - 💡 **Key Advantage**: Zero-dependency linter pairing syntactic statistics with semantic judgment for precise sentence-level feedback.
 
-- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - pi-jev-auto-mode: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - Execution gatekeeper for Pi coding agent passing safe commands immediately while routing ambiguous actions to Jev with default-deny policies.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -703,11 +695,11 @@
   - 🎯 **What Jev Decides**: Extracts discrete metric choices for attack vectors, complexity, privileges, and impact from descriptions.
   - 💡 **Key Advantage**: Delivers deterministic vulnerability vector scores in milliseconds without JSON formatting failures.
 
-- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - Tool invocation guardrail for coding agents checking command safety, user intent alignment, and prompt injection in tool outputs.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - jev-judgment: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - Pre-action judgment gate for coding agents deciding whether to prompt the user, reject risky commands, or retry on failures.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -715,7 +707,7 @@
   - 🎯 **What Jev Decides**: Evaluates user dialog history and tool arguments together to assess whether action intent adheres to security policy rules.
   - 💡 **Key Advantage**: Surpasses static regex matching: identifies policy violations by semantic intent regardless of tool choice.
 
-- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - jev-tool-permissions: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - Tool permission gate for Vercel AI SDK vetting tool requests before execution and filtering out unused tool schemas.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -725,6 +717,10 @@
 ## 🧩 MCP Protocols & Tool Endpoints
 
 *Model Context Protocol (MCP) servers providing standardized Jev decision endpoints.*
+
+- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - Decision layer for Composio toolsets selecting optimal tools from catalogs and populating enumerated parameter fields.
+  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
+  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
 - [**vellum-assistant**](https://github.com/vellum-ai/vellum-assistant) `★ 1285` - vellum-assistant: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **What Jev Decides**: Provides Choice, Score, and Noul tools on demand for external agent environments.
@@ -861,7 +857,7 @@
 
 *Code navigation, AST symbol triage, review assistance, and knowledge graph querying.*
 
-- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - celesto: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - PR review assistant for Celesto verifying whether suspected issues are introduced by the diff, supported by evidence, and worth fixing.
   - 🎯 **What Jev Decides**: Assigns relevance probabilities to candidate files or graph edges to direct exploration.
   - 💡 **Key Advantage**: Locates target code and relationships in seconds without expensive vector indexing.
 
@@ -885,7 +881,7 @@
   - 🎯 **What Jev Decides**: Evaluates candidate files and directories per level to allocate walker budgets toward relevant paths.
   - 💡 **Key Advantage**: Pinpoints relevant files across huge repos in seconds without pre-indexing.
 
-- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - jev-code: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - Assistant for coding agents locating relevant files, verifying task adherence, and triaging test failure logs and review comments.
   - 🎯 **What Jev Decides**: Assigns relevance probabilities to candidate files or graph edges to direct exploration.
   - 💡 **Key Advantage**: Locates target code and relationships in seconds without expensive vector indexing.
 
@@ -893,7 +889,7 @@
   - 🎯 **What Jev Decides**: Analyzes git diff logic and function signatures to select the subset of tests affected by changes.
   - 💡 **Key Advantage**: Avoids running full test suites for minor changes, shortening feedback loops from minutes to seconds.
 
-- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - claude-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - Triage reviewer for Claude Code scoring bug hypotheses, troubleshooting ideas, and design options to prioritize engineer attention.
   - 🎯 **What Jev Decides**: Assigns relevance probabilities to candidate files or graph edges to direct exploration.
   - 💡 **Key Advantage**: Locates target code and relationships in seconds without expensive vector indexing.
 
@@ -909,7 +905,7 @@
   - 🎯 **What Jev Decides**: Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.
   - 💡 **Key Advantage**: Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.
 
-- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - foreman-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - Supervision gatekeeper for Codex workers evaluating milestone progress and enforcing acceptance command runs prior to completion.
   - 🎯 **What Jev Decides**: Assigns relevance probabilities to candidate files or graph edges to direct exploration.
   - 💡 **Key Advantage**: Locates target code and relationships in seconds without expensive vector indexing.
 
@@ -920,7 +916,11 @@
 
 *Task triage, dynamic tiered model routing, and token spend reduction.*
 
-- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - litellm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - Complexity-based request router for LiteLLM evaluating task difficulty via Jev before dispatching to appropriate model tiers.
+  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
+  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
+
+- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - Decision companion for Oh My Pi agent evaluating reasoning effort depth, unexpected stalls, and git staging classifications.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -928,23 +928,23 @@
   - 🎯 **What Jev Decides**: Evaluates task tier, reasoning depth, and production risk in parallel to inject optimal model configs into Claude Code.
   - 💡 **Key Advantage**: Prevents overspending on trivial tasks while enforcing high confidence thresholds on high-risk code changes.
 
-- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - openchamber: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - Automated model router for OpenChamber classifying prompt intent to select mapped models and reasoning effort tiers.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - firstmate: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - Task assignment assistant for Firstmate evaluating job briefs to match dispatch rules and select specialized agent configs.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - atomic: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - Optional decision backend for Atomic coding agent delegating discrete routing choices to Jev while reserving code generation for LLMs.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - vexjoy-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - Task dispatch router for VexJoy agent classifying requirements to select expert agents, skills, and execution workflows.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - WrongStack: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - Dispatch assistant for WrongStack coding agent selecting the most suitable specialist sub-agent when multiple experts match.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -972,11 +972,11 @@
   - 🎯 **What Jev Decides**: Evaluates code modification scope and dependency depth to recommend model tiers and context budgets.
   - 💡 **Key Advantage**: Minimalist architecture without heavy abstractions, reducing session tokens via calibrated routing.
 
-- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - jev-demo: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - Customer support triage demo evaluating full question sets in a single Jev request to route tickets and escalate to humans.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - jev-router-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - Interactive model router playground using Jev to pick optimal LLMs from a candidate pool and comparing output quality.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1003,7 +1003,7 @@
   - 🎯 **What Jev Decides**: Evaluates order book imbalance, depth, and spread per tick to decide side, leverage, and quotes.
   - 💡 **Key Advantage**: Sub-second decentralized derivatives execution with multi-sleeve isolation.
 
-- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - HA-Jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - Home Assistant integration translating household state telemetry into semantic sensors via Jev (e.g. laundry reminders).
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1015,11 +1015,11 @@
   - 🎯 **What Jev Decides**: Evaluates order book imbalance, depth, and spread per tick to decide side, leverage, and quotes.
   - 💡 **Key Advantage**: Sub-second decentralized derivatives execution with multi-sleeve isolation.
 
-- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - jev-for-engineers: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - Engineering toolkit featuring eight Jev experiments: design dispatch, simulation log triage, and mechanical part matching via Python rules.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - got-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - Game of Thrones text adventure where generative LLMs write narrative while Jev classifies scene locations, mood, and danger levels.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1027,7 +1027,7 @@
   - 🎯 **What Jev Decides**: Ranks unproven validation criteria and determines when execution meets acceptance milestones.
   - 💡 **Key Advantage**: Prevents premature agent termination by enforcing verified completion gates.
 
-- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - jev-broadcast-lab: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - Multipurpose evaluation lab testing Jev on chess moves, customer ticket routing, document matching, and content moderation.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1047,15 +1047,7 @@
   - 🎯 **What Jev Decides**: Scans GitHub commits and pull requests to verify source-level implementation signatures.
   - 💡 **Key Advantage**: Provides transparent, line-of-code traceability across the emerging Jev ecosystem.
 
-- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - jevsume: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
-  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
-
-- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - ha-conversation-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
-  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
-
-- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - jev-music-theory-1: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - Structured resume audit tool checking phrasing, ATS readability, and scoring candidate profile fit against job descriptions.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1082,7 +1074,7 @@
   - 🎯 **What Jev Decides**: Evaluates startup concepts against market pain points, feasibility, and moats to output kill/fix/ship.
   - 💡 **Key Advantage**: Delivers candid, unhedged decision feedback, avoiding sycophantic text to spotlight critical flaws.
 
-- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - jev-benchmarks: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - Comparative benchmark contrasting Jev and GLiNER on classification tasks, measuring accuracy alongside probability calibration curves.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1098,23 +1090,23 @@
   - 🎯 **What Jev Decides**: Scores conversational history and tool responses to prune obsolete context while preserving exact text.
   - 💡 **Key Advantage**: Slashes prompt token overhead without introducing summary hallucinations.
 
-- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - jev-agent-failure-benchmark: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - Failure analysis benchmark for multi-agent workflows using Jev to isolate which agent, step, and error category caused task breakdowns.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - jev-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - Web playground allowing developers to paste state text, configure Choice/Score questions, and inspect Jev probability distributions.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - jev-predict-skill: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - Agent skill reading peer rule specifications and collected evidence to predict downstream skill decision conclusions.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - jev-rerank-bench: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - Reranking benchmark evaluating whether Jev can rank search candidate passages with accuracy comparable to dedicated rerankers.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - jev-research: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - Research guide and prototype demonstrating task decomposition and multi-agent delegation using Jev alongside Herdr.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1133,11 +1125,7 @@
 
 *Multi-label categorization, hierarchical taxonomies, and dataset annotation.*
 
-- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - orchestkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
-  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
-
-- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - jev-tree: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - Hierarchical decision tree router querying Jev layer-by-layer to navigate large option spaces down to specific items or workflows.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1148,7 +1136,7 @@
 
 *Decision profiling, latency monitoring, telemetry, and benchmark evaluation suites.*
 
-- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - latitude-llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - Sidecar evaluator for Latitude conversation auditing logging which checks Jev considers necessary to benchmark against baseline pipelines.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1183,7 +1171,7 @@
 
 *Turn-taking arbitration, conversational interrupt detection, and real-time audio AI.*
 
-- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - aiavatarkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - Conversational turn-taking arbitrator for AIAvatarKit evaluating whether a speaker has completed their turn or merely paused to think.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
@@ -1194,6 +1182,10 @@
 - [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) `★ 1` - B2B voice sales agent integrating Jev for real-time customer intent classification and turn routing.
   - 🎯 **What Jev Decides**: Classifies caller intent (objection, pricing inquiry, demo request) within 300ms of transcription.
   - 💡 **Key Advantage**: Sub-300ms intent classification eliminates awkward conversation lags, boosting natural voice flow.
+
+- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - Voice routing gate for Home Assistant directing simple lighting commands to device services and complex dialogue to Grok.
+  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
+  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
 ---
 
@@ -1214,11 +1206,15 @@
   - 🎯 **What Jev Decides**: Classifies design assets and inspirations into aesthetic styles and moodboard buckets from descriptions.
   - 💡 **Key Advantage**: Allows creators to focus on ideation while background Jev routines organize and link inspiration assets.
 
-- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - jevthoven: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - Text-to-music composition tool where Jev selects notes bar-by-bar to generate editable, playable, and exportable multi-track MIDI files.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 
-- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - ui-generator-instinct-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - UI layout generator using Jev to select component types, form fields, and styles from a design system, assembling valid interfaces.
+  - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
+  - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
+
+- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - Music theory and harmony experiment querying Jev to solve harmonic exercises and voice-lead electric piano chords.
   - 🎯 **What Jev Decides**: Ingests real-time domain telemetry to trigger automated execution or risk advisories.
   - 💡 **Key Advantage**: Brings structured semantic perception to second-level mission-critical workflows.
 

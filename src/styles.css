@@ -662,14 +662,17 @@ a {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   transition:
-    transform 0.2s,
-    border-color 0.2s;
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   animation: arrive 0.25s ease-out;
 }
 .project-card:hover {
   transform: translateY(-3px);
   border-color: #adbca0;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.06), 0 4px 8px -4px rgba(0, 0, 0, 0.03);
 }
 .card-top {
   display: flex;

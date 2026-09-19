@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-259%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 プロジェクトを申請</strong></a>
 </p>
 
-<p>TypeSafe AIのJevモデルを採用した **260+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
+<p>TypeSafe AIのJevモデルを採用した **259+** 件のオープンソースツール、実用アプリ、検証プロジェクトを網羅。ソースコード検証済み。</p>
 
 </div>
 
@@ -43,21 +43,21 @@
 
 - [⚡ 高頻度シミュレーション・リアルタイムゲーム (20)](#high-frequency-simulation-ja)
 - [🛠️ SDK・意思決定フレームワーク (32)](#sdk-decision-frameworks-ja)
-- [🔌 エコシステム統合・アダプター (9)](#sdk-integrations-ja)
+- [🔌 エコシステム統合・アダプター (7)](#sdk-integrations-ja)
 - [💻 CLI・自動化パイプライン (32)](#cli-pipelines-ja)
 - [💾 データベース拡張・セマンティック検索 (7)](#data-search-ja)
-- [🌐 ブラウザ・デスクトップ自動化 (23)](#browser-os-action-ja)
+- [🌐 ブラウザ・デスクトップ自動化 (22)](#browser-os-action-ja)
 - [🧹 コンテキスト圧縮・ノイズ除去 (11)](#context-gc-filter-ja)
-- [🛡️ セキュリティ・ガードレール (16)](#security-guardrails-ja)
-- [🧩 MCP プロトコル・ツール拡張 (32)](#mcp-integrations-ja)
+- [🛡️ セキュリティ・ガードレール (17)](#security-guardrails-ja)
+- [🧩 MCP プロトコル・ツール拡張 (33)](#mcp-integrations-ja)
 - [🧭 コードベース解析・グラフ探索 (13)](#codebase-graph-pathfinding-ja)
-- [🔀 モデルルーティング・コスト最適化 (15)](#routing-cost-optimization-ja)
-- [📊 専門分野・バーティカルツール (19)](#domain-vertical-tools-ja)
+- [🔀 モデルルーティング・コスト最適化 (16)](#routing-cost-optimization-ja)
+- [📊 専門分野・バーティカルツール (17)](#domain-vertical-tools-ja)
 - [🎯 意思決定支援・ヒューリスティック評価 (14)](#decision-tools-ja)
-- [🏷️ テキスト分類・タキソノミー (2)](#classification-taxonomy-ja)
+- [🏷️ テキスト分類・タキソノミー (1)](#classification-taxonomy-ja)
 - [📈 ベンチマーク・可観測性 (7)](#evaluation-observability-ja)
-- [🎙️ 音声対話・リアルタイム会話 (3)](#voice-conversation-ja)
-- [🎨 クリエイティブツール・メディア生成 (5)](#creative-tools-ja)
+- [🎙️ 音声対話・リアルタイム会話 (4)](#voice-conversation-ja)
+- [🎨 クリエイティブツール・メディア生成 (6)](#creative-tools-ja)
 - [📖 ローカル開発とアーキテクチャ](#dev-arch-ja)
 - [🤝 プロジェクトの掲載申請](#submit-guide-ja)
 
@@ -68,9 +68,9 @@
 
 *ゲームやロボティクス、高頻度シミュレーションループにおけるミリ秒単位の意思決定。*
 
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.
-  - 🎯 **Jevの判断箇所**: Jev uses spread, depth and imbalance, rolling returns, recent trades, and taker flow to estimate whether price will be higher or lower roughly 100 blocks later and returns buy/sell probabilities.
-  - 💡 **主な特徴**: It connects structured Jev decisions to a per-block quoting loop and exposes decisions, quotes, fills, positions, and P&L in one event stream, so behavior can be observed in dry run before enabling real transactions.
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
+  - 🎯 **Jevの判断箇所**: スプレッド、過去100ブロックのリターン、テイカーフローを入力し、今後30ブロックの中間価格の方向を予測。
+  - 💡 **主な特徴**: 約80ミリ秒の推論レイテンシにより、サブセカンド級ブロックチェーンの生成間隔に完全に適合。
 
 - [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
   - 🎯 **Jevの判断箇所**: マリオの移動速度、ジャンプ軌道、前方の敵を評価し、ファミコンのコントローラー入力を決定。
@@ -80,7 +80,7 @@
   - 🎯 **Jevの判断箇所**: 古典的CVによる距離セクターと障害物高さを読み取り、上昇、ブレーキ、間隙通過などの戦術機動を選択。
   - 💡 **主な特徴**: 階層化制御アーキテクチャ：Jevがマクロ戦術判断を担当し、決定論的コードが飛行の安全性を保証。
 
-- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - jevpilot: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - Autonomous vehicle simulator where Jev selects optimal steering paths and speed profiles from pre-calculated candidate trajectories.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
@@ -92,11 +92,11 @@
   - 🎯 **Jevの判断箇所**: ゲームのTick状態を読み取り、有界カタログから最適なキャラクター行動と対象を選択。
   - 💡 **主な特徴**: Tick制ゲーム世界においてJevの意思決定反射神経を厳格に評価できる再現可能なベンチマーク。
 
-- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 1v1 Jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - Real-time 1v1 browser FPS duel where Jev evaluates tick-based battlefield telemetry to decide movement, aim, and firing actions.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
-- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - live-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - Top-down vehicle simulator where Jev chooses lane changes and throttle rates, running side-by-side against conversational model baselines.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
@@ -104,11 +104,11 @@
   - 🎯 **Jevの判断箇所**: フィードカードのDOM構造を検査し、通常の投稿と同一スタイルを持つスポンサー広告を分類。
   - 💡 **主な特徴**: 従来のCSSセレクターやURLブロックリストでは対処できないファーストパーティネイティブ広告を除去。
 
-- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - JevBird: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - Flappy Bird game agent calculating candidate flight trajectories in code and querying Jev to select the safest flap path in real time.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
-- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - doom-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - Doom game controller consuming structured combat state to select movement headings, target locks, and firing timings.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
@@ -116,7 +116,7 @@
   - 🎯 **Jevの判断箇所**: 毎秒1,500行以上の速度でデータセットの各行に対してScoreおよびNoulのバッチ判定を実行。
   - 💡 **主な特徴**: 高負荷なモデル学習の前に、低品質または有害な合成データを事前分離。
 
-- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - jev-doom-agent: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - Browser-based dual Doom game agent evaluating game state tables to select tactical navigation and combat actions.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
@@ -125,7 +125,7 @@
   - 💡 **主な特徴**: ターンごとのリクエスト、モデル確率、レイテンシを可視化。棋譜の無料再生とOpenRouter対戦に対応。
   - 🌐 [オンラインデモ](https://xiechengyuan.github.io/jev-gomoku/)
 
-- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - jev-little-airways: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - Island airport traffic simulator querying Jev to arbitrate landing priorities, holding patterns, diversions, and runway clearance.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
@@ -133,11 +133,11 @@
   - 🎯 **Jevの判断箇所**: ライブブラウザキャンバスのフレームから離散的なUI座標とクリック操作を選択。
   - 💡 **主な特徴**: 高頻度な意思決定の反射神経をテストするための視覚的対戦ベンチマークを提供。
 
-- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - jev-demos: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - Maze navigation benchmark testing single-step and multi-step Jev spatial decisions against path dead-ends and loops.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
-- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - jev-experiments: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - Real-time game experiments where Jev plays Chrome Dino and 2D shooter arenas via structured telemetry and discrete action inputs.
   - 🎯 **Jevの判断箇所**: ゲームやロボットの移動・操舵・アクションを制御する連続マルチHz意思決定ループを実行。
   - 💡 **主な特徴**: 最先端LLMでは物理的に不可能なリアルタイム応答レートを実現。
 
@@ -160,19 +160,19 @@
   - 🎯 **Jevの判断箇所**: Rustのジェネリック構造体で問いと答えのレイアウトを一度だけ宣言し、Jev経由で強型フィールドへ直接デコード。
   - 💡 **主な特徴**: 手動のJSONプロンプト作成や実行時スキーマ検証が不要な、Rustネイティブのゼロコスト抽象化。
 
-- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - req_llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - TypeSafe integration for Elixir ReqLLM evaluating state questions via evaluate endpoints while routing conversational text to other models.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - instructor-php: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - Unified decision adapter for Instructor PHP submitting business state queries to Jev and returning typed choices, scores, and probabilities.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - openai-scala-client: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - Scala multi-model client module providing TypeSafe Jev integrations to query structured answers from state and typed questions.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - pi-fabric: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - Programmable decision loop extension for Pi tool runtime executing observe-judge-act cycles within fixed budgets.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -180,7 +180,7 @@
   - 🎯 **Jevの判断箇所**: System OneのChoice、Score、Noulエンドポイントを型推論と再試行付きで完全にサポート。
   - 💡 **主な特徴**: 公式に保守されるリファレンス実装であり、JS/TSエコシステム全体の強固な基盤として機能。
 
-- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - effect-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - TypeSafe Jev integration for Effect Agent allowing TypeScript applications to evaluate typed question packets and select models.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -188,7 +188,7 @@
   - 🎯 **Jevの判断箇所**: 自己回帰生成を行わず、マルチモーダル視覚コンテキストを再利用してロジットから候補回答を直接スコアリング。
   - 💡 **主な特徴**: Apple SiliconのエッジビジョンにJevスタイルの1パス複数判定スコアリングを導入。
 
-- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - advocaat: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - Concise TypeScript wrapper for Jev querying multiple judgments against shared state in a single call with probabilities and scores.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -252,11 +252,11 @@
   - 🎯 **Jevの判断箇所**: Rust内でSystem Oneペイロードを構築し、エンドポイントルーティングと認証ヘッダーを管理。
   - 💡 **主な特徴**: Rustの所有権と型チェックを活用し、不正なリクエスト形式をコンパイル時に未然防止。
 
-- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - jev-starter: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - Application scaffold routing Jev decisions to automated handlers, fallback models, or human review while tracking rule performance.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - jevclient: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - Asynchronous Python client for Jev querying multiple typed questions in a single request and returning structured probability objects.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -291,35 +291,27 @@
 
 *既存のエージェントフレームワークやランタイムをJevと接続するアダプター群。*
 
-- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - langchain: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - Optional Jev classification node for Python LangChain pipelines returning categories, calibrated probabilities, and tier scores.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - oh-my-pi: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ai**](https://github.com/vercel/ai) `★ 26825` - Optional TypeSafe provider for Vercel AI SDK querying Jev for multiple choices, scores, and booleans via a unified evaluate interface.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - composio: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - Optional Jev model provider for Pydantic AI converting schema boolean and enum fields into typed questions.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**ai**](https://github.com/vercel/ai) `★ 26825` - ai: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - Optional TypeSafe HTTP adapter in Eliza framework allowing agents to dispatch structured decision queries on demand.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - pydantic-ai: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - Optional Jev classifier for LangChain.js returning programmatic categories and scores from typed state questions.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - eliza: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - langchainjs: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - ax: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - Optional TypeSafe client for Ax framework querying Jev via boolean or categorical signatures with raw probabilities.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -333,6 +325,10 @@
 ## 💻 CLI・自動化パイプライン
 
 *ターミナルコマンド、Unixパイプ、CI/CDにセマンティック判定を組み込むツール群。*
+
+- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - Session classifier for OrchestKit categorizing coding sessions into debugging, development, or maintenance to drive UI badges.
+  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
+  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
 - [**jev-experiments**](https://github.com/dabit3/jev-experiments) `★ 255` - Developer experimentation suite by Nader Dabit featuring commit sentry and intent triage with Jev.
   - 🎯 **Jevの判断箇所**: コミット差分を評価してリスクを分類し、問題のあるコミットを遮断して改善案を提示。
@@ -358,7 +354,7 @@
   - 🎯 **Jevの判断箇所**: 静的なURLパスではなく、セマンティックな意味に基づいて受信HTTPリクエストをルーティング。
   - 💡 **主な特徴**: 軽量なエッジやサーバーレスWeb APIに意図ベースのルーティングを組み込み。
 
-- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - jev-playground: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - MoonBit playground testing Jev on Gomoku board decisions, simplified MOBA unit control, and command risk triage.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -378,7 +374,7 @@
   - 🎯 **Jevの判断箇所**: Unixテキストストリーム上でリアルタイムの分類、スコアリング、しきい値ガードを直接実行。
   - 💡 **主な特徴**: Python実行オーバーヘッドなしでBashスクリプトやCI/CDパイプラインに直接組み込み可能。
 
-- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - jev-lm: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - Experimental language decoder framing next-token generation as discrete choice queries to assemble sentences and select draft completions.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -386,11 +382,11 @@
   - 🎯 **Jevの判断箇所**: 受信メールペイロードを離散的なカテゴリ選択（請求書 vs 一般問い合わせ等）に分類。
   - 💡 **主な特徴**: 冗長なプロンプトオーバーヘッドなしで、決定論的なステートマシン分岐を提供。
 
-- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - jev-chat: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - Research chat decoder repeatedly querying Jev to select words or phrases from candidates, chaining choices into conversational responses.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
-- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - Terminal utility sending text or JSON to Jev to receive discrete booleans, choices, and scores directly into Unix script pipelines.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -398,7 +394,7 @@
   - 🎯 **Jevの判断箇所**: 各設定ルールおよびコード変更ハンクごとに、変更がルールに違反しているかを判定。
   - 💡 **主な特徴**: pre-commitやPR、エージェント向けのCLI。警告とブロッキングを明確に分離。
 
-- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - jev-system-one: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - Terminal Q&A tool where generative models draft answers while Jev selects response personas, checks drafts, and triggers rewrites.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -406,7 +402,7 @@
   - 🎯 **Jevの判断箇所**: 較正曲線、最適な信頼度しきい値、および経時的な分布ドリフトを計算。
   - 💡 **主な特徴**: 信頼度の妥当性を体系的に検証し、意思決定の品質劣化を防止。
 
-- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - pi-fast-jev-compaction: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - Fast context compaction utility for Pi coding agent pruning obsolete tool logs while preserving verbatim conversation text.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -414,11 +410,7 @@
   - 🎯 **Jevの判断箇所**: タスクメモを優先度階層、実行コンテキスト、スケジュール枠に自動分類。
   - 💡 **主な特徴**: 100ms未満の応答速度でバックログ整理とタスク優先度判定を自動化。
 
-- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - ask-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
-  - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
-  - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
-
-- [**is-odd-jev**](https://github.com/alxcrt/is-odd-jev) `★ 1` - is-odd-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - Windows Codex terminal command :jev verifying task progress and execution evidence against goal criteria.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -426,7 +418,7 @@
   - 🎯 **Jevの判断箇所**: シミュレーション状態に基づき、離散的なロボット基本スキルと目標座標を選択。
   - 💡 **主な特徴**: 高レベルな離散スキル選択と低レベルなPDモーター制御を分離。
 
-- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - Command-line tool querying Jev with categorical, boolean, or scoring questions, returning structured JSON for shell scripting.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -434,7 +426,7 @@
   - 🎯 **Jevの判断箇所**: 標準入力から型付きJevクエリを実行し、パイプ処理用のJSONまたは構造化終了コードを出力。
   - 💡 **主な特徴**: 標準的なBashおよびCIスクリプトにSystem One判定ゲートをシームレスに組み込み。
 
-- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - jev-code: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - Experimental coding terminal using Jev for constrained grammatical choices to assemble AST syntax nodes and invoke local tools.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -458,7 +450,7 @@
   - 🎯 **Jevの判断箇所**: 短いテキストに対してサブミリ秒のセマンティックパターンマッチングと属性判定を実行。
   - 💡 **主な特徴**: ローカル環境でJevの判定プリミティブをテストする開発者に最適なサンドボックス。
 
-- [**jevscript**](https://github.com/amberwhitehead/jevscript) - jevscript: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jevscript**](https://github.com/amberwhitehead/jevscript) - Experimental language prototype embedding semantic judgment primitives directly into code scripts to evaluate bundled questions.
   - 🎯 **Jevの判断箇所**: 標準入力ストリームに対してリアルタイムのセマンティック分類とフィルタリングを適用。
   - 💡 **主な特徴**: シェルワークフローやCI/CDに依存関係ゼロのセマンティックガードレールを組み込み。
 
@@ -513,7 +505,7 @@
   - 🎯 **Jevの判断箇所**: 1回のリクエストで次のアクションと対象DOM要素を決定し、テキスト入力のみをテキストモデルに委譲。
   - 💡 **主な特徴**: UI操作とテキスト生成を分離し、冗長なページ評価を大幅に削減。
 
-- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - jev-desktop: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - Desktop GUI automation co-processor navigating native accessibility trees to pick next buttons, menus, and controls step-by-step.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
@@ -521,7 +513,7 @@
   - 🎯 **Jevの判断箇所**: アプリ状態とユーザー目標を評価し、次のmacOSネイティブ自動化アクションと引数を選択。
   - 💡 **主な特徴**: Swiftネイティブ実装とJevの構造化判断を統合し、OS操作の計画遅延を最小化。
 
-- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - Mobile test runner for omg.dev inspecting accessibility trees via Jev to pick controls and detect step completion or stalls.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
@@ -533,19 +525,15 @@
   - 🎯 **Jevの判断箇所**: 軽量DOM候補から具体的なクリック対象、フォーム入力、スクロール操作を決定。
   - 💡 **主な特徴**: 局所的操作と大局的計画を分離し、処理速度を5〜10倍向上させつつマルチモーダルコストを削減。
 
-- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - mobile-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - Android automation agent where Jev selects target apps and UI elements while Mobilerun performs clicks and inputs.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
-- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - jev-use: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - Computer-use co-processor where Codex defines high-level goals while Jev selects consecutive UI controls for execution.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
-- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.
-  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
-  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
-
-- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - End-to-end browser agent navigating URLs, clicking controls, filling forms, and logging per-step action audit trails.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
@@ -565,19 +553,19 @@
   - 🎯 **Jevの判断箇所**: 操作可能な要素を評価し、クリック、テキスト入力、スクロール、フォーム送信を選択。
   - 💡 **主な特徴**: ステップごとの多段推論ループを排除し、フォーム入力やナビゲーションを大幅に高速化。
 
-- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - Browser copilot executing button clicks and form fills while enforcing policy pauses on high-risk actions like payments or deletions.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
-- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - computer-use-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - macOS application control in Go using Jev to pick UI controls and next actions directly from accessibility trees.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
-- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - aside-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - Decision co-processor for Aside browser agent selecting the next atomic action from candidate lists before DOM execution.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
-- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - Playwright automation library driven by Jev decisions for clicking controls, filling forms, and scraping data via CLI, MCP, and SDK.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
@@ -585,11 +573,11 @@
   - 🎯 **Jevの判断箇所**: ページスナップショットから候補アクション空間を評価し、単一リクエストで対象コントロールと操作種別を選択。
   - 💡 **主な特徴**: 1秒未満のブラウザループのために、重いビジョンモデルを軽量セマンティックスナップショットに置き換え。
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - grokskill-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - Grok Build integration connecting Jev Ultrafast to existing Chrome browser tabs with PowerShell startup scripts.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
-- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - jev-macos-loop: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - macOS local interaction loop reading on-screen OCR and accessibility elements, querying Jev to pick and click the next target.
   - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
   - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
 
@@ -655,19 +643,23 @@
 
 *プロンプトインジェクション防御、コンテンツモデレーション、ポリシー適合性検査。*
 
-- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - agentgateway: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - Security guardrail example for Agentgateway auditing model requests and responses for jailbreaks, harm, and secret leakage.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - interlinked-cli: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - Rule audit evaluator for coding agents combining deterministic checks with Jev semantic scoring for supplementary judgment.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - pi-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - Risk guard for Pi coding agent verifying command boundaries pre-execution and auditing logs post-execution for secret leakage.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - pi-warden: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - Distraction-free browser extension using Jev to detect ads, promo banners, and paywall popups, caching clean CSS rules locally.
+  - 🎯 **Jevの判断箇所**: DOMやアクセシビリティツリーの状態をリアルタイムに評価し、対象UI要素と次の操作を選択。
+  - 💡 **主な特徴**: 意思決定を実行から分離し、検査可能で超高速なUIナビゲーションを実現。
+
+- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - Rule inspector for Pi coding agent verifying file modifications against repository conventions and checking command risks before execution.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -687,7 +679,7 @@
   - 🎯 **Jevの判断箇所**: 文章段落を評価し、定型的な接続詞、不自然な過剰表現、機械的な対称構文を検知。
   - 💡 **主な特徴**: 構文統計とセマンティック判定を組み合わせ、文単位の精緻なフィードバックを依存ゼロで提供。
 
-- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - pi-jev-auto-mode: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - Execution gatekeeper for Pi coding agent passing safe commands immediately while routing ambiguous actions to Jev with default-deny policies.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -703,11 +695,11 @@
   - 🎯 **Jevの判断箇所**: 非構造化な説明文から攻撃ベクトル、複雑性、特権要件、影響度の離散値を抽出。
   - 💡 **主な特徴**: JSONフォーマット崩れなしにミリ秒単位で確定的な脆弱性ベクトルスコアを出力。
 
-- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - Tool invocation guardrail for coding agents checking command safety, user intent alignment, and prompt injection in tool outputs.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - jev-judgment: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - Pre-action judgment gate for coding agents deciding whether to prompt the user, reject risky commands, or retry on failures.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -715,7 +707,7 @@
   - 🎯 **Jevの判断箇所**: ユーザーの対話履歴とツールの引数を総合評価し、実行意図がセキュリティポリシー規則に適合しているかを判定。
   - 💡 **主な特徴**: 静的な正規表現マッチングを超越：ツール選択に依存せずセマンティックな意図からポリシー違反を検知。
 
-- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - jev-tool-permissions: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - Tool permission gate for Vercel AI SDK vetting tool requests before execution and filtering out unused tool schemas.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -725,6 +717,10 @@
 ## 🧩 MCP プロトコル・ツール拡張
 
 *Model Context Protocol（MCP）に準拠した標準意思決定サーバーとツール群。*
+
+- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - Decision layer for Composio toolsets selecting optimal tools from catalogs and populating enumerated parameter fields.
+  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
+  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
 - [**vellum-assistant**](https://github.com/vellum-ai/vellum-assistant) `★ 1285` - vellum-assistant: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **Jevの判断箇所**: 外部エージェント環境向けに、Choice・Score・Noulの判断ツールをオンデマンドで提供。
@@ -861,7 +857,7 @@
 
 *コード依存関係ナビゲーション、ASTシンボル検査、コードレビュー支援、知識グラフ探索。*
 
-- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - celesto: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - PR review assistant for Celesto verifying whether suspected issues are introduced by the diff, supported by evidence, and worth fixing.
   - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
   - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
 
@@ -885,7 +881,7 @@
   - 🎯 **Jevの判断箇所**: 階層ごとに候補ファイルとディレクトリを評価し、関連性の高いパスへ探索バジェットを配分。
   - 💡 **主な特徴**: 事前インデックスなしで大規模リポジトリ内の関連ファイルを即座に特定。
 
-- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - jev-code: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - Assistant for coding agents locating relevant files, verifying task adherence, and triaging test failure logs and review comments.
   - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
   - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
 
@@ -893,7 +889,7 @@
   - 🎯 **Jevの判断箇所**: 差分ロジックと関数シグネチャを分析し、変更の影響を受けるテストサブセットを抽出。
   - 💡 **主な特徴**: 軽微な変更で全テストを実行する無駄を省き、開発フィードバックループを数秒に短縮。
 
-- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - claude-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - Triage reviewer for Claude Code scoring bug hypotheses, troubleshooting ideas, and design options to prioritize engineer attention.
   - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
   - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
 
@@ -909,7 +905,7 @@
   - 🎯 **Jevの判断箇所**: Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.
   - 💡 **主な特徴**: Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.
 
-- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - foreman-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - Supervision gatekeeper for Codex workers evaluating milestone progress and enforcing acceptance command runs prior to completion.
   - 🎯 **Jevの判断箇所**: 候補ファイルや知識グラフのエッジに関連度確率を割り当て、探索パスを指示。
   - 💡 **主な特徴**: 高コストなベクトルインデックスなしで目的のコードや関係性を瞬時に特定。
 
@@ -920,7 +916,11 @@
 
 *タスク難易度の自動判定、多層モデルルーティング、API利用コストの大幅削減。*
 
-- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - litellm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - Complexity-based request router for LiteLLM evaluating task difficulty via Jev before dispatching to appropriate model tiers.
+  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
+  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
+
+- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - Decision companion for Oh My Pi agent evaluating reasoning effort depth, unexpected stalls, and git staging classifications.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -928,23 +928,23 @@
   - 🎯 **Jevの判断箇所**: タスクの難易度階層、推論深度、本番リスクを並行評価し、Claude Codeへ最適なモデル設定を動的注入。
   - 💡 **主な特徴**: 軽微なタスクへの過剰支出を防ぎつつ、高リスクなコード変更に対して厳格な高信頼度しきい値を適用。
 
-- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - openchamber: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - Automated model router for OpenChamber classifying prompt intent to select mapped models and reasoning effort tiers.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - firstmate: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - Task assignment assistant for Firstmate evaluating job briefs to match dispatch rules and select specialized agent configs.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - atomic: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - Optional decision backend for Atomic coding agent delegating discrete routing choices to Jev while reserving code generation for LLMs.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - vexjoy-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - Task dispatch router for VexJoy agent classifying requirements to select expert agents, skills, and execution workflows.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - WrongStack: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - Dispatch assistant for WrongStack coding agent selecting the most suitable specialist sub-agent when multiple experts match.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -972,11 +972,11 @@
   - 🎯 **Jevの判断箇所**: コード変更規模と依存深度を評価し、適切なモデルティアとコンテキスト配分を推奨。
   - 💡 **主な特徴**: 過剰な抽象化を排除した軽量設計により、的確なルーティングでトークン消費を抑制。
 
-- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - jev-demo: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - Customer support triage demo evaluating full question sets in a single Jev request to route tickets and escalate to humans.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - jev-router-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - Interactive model router playground using Jev to pick optimal LLMs from a candidate pool and comparing output quality.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1003,7 +1003,7 @@
   - 🎯 **Jevの判断箇所**: 板の不均衡、深度、スプレッドをティック単位で評価し、売買方向、レバレッジ、指値を決定。
   - 💡 **主な特徴**: マルチスリーブ分離による1秒未満の分散型デリバティブ取引執行。
 
-- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - HA-Jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - Home Assistant integration translating household state telemetry into semantic sensors via Jev (e.g. laundry reminders).
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1015,11 +1015,11 @@
   - 🎯 **Jevの判断箇所**: 板の不均衡、深度、スプレッドをティック単位で評価し、売買方向、レバレッジ、指値を決定。
   - 💡 **主な特徴**: マルチスリーブ分離による1秒未満の分散型デリバティブ取引執行。
 
-- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - jev-for-engineers: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - Engineering toolkit featuring eight Jev experiments: design dispatch, simulation log triage, and mechanical part matching via Python rules.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - got-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - Game of Thrones text adventure where generative LLMs write narrative while Jev classifies scene locations, mood, and danger levels.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1027,7 +1027,7 @@
   - 🎯 **Jevの判断箇所**: 未検証の基準をランク付けし、実行結果が受け入れマイルストーンを満たしたかを判定。
   - 💡 **主な特徴**: 検証済みの完了ゲートを適用することで、エージェントの早期終了を防止。
 
-- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - jev-broadcast-lab: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - Multipurpose evaluation lab testing Jev on chess moves, customer ticket routing, document matching, and content moderation.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1047,15 +1047,7 @@
   - 🎯 **Jevの判断箇所**: GitHubのコミットとプルリクエストを走査し、ソースコードレベルの実装シグネチャを検証。
   - 💡 **主な特徴**: 成長するJevエコシステム全体にわたり、行単位の透明なコード追跡可能性を提供。
 
-- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - jevsume: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - ha-conversation-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - jev-music-theory-1: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - Structured resume audit tool checking phrasing, ATS readability, and scoring candidate profile fit against job descriptions.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1082,7 +1074,7 @@
   - 🎯 **Jevの判断箇所**: スタートアップの構想を市場の課題、実現性、優位性に照らして評価し、kill/fix/shipを出力。
   - 💡 **主な特徴**: 過剰な賛美を排した客観的なフィードバックにより、致命的な欠陥を数秒で浮き彫りに。
 
-- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - jev-benchmarks: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - Comparative benchmark contrasting Jev and GLiNER on classification tasks, measuring accuracy alongside probability calibration curves.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1098,23 +1090,23 @@
   - 🎯 **Jevの判断箇所**: 会話履歴とツール応答をスコアリングし、正確なテキストを保持しながら不要なコンテキストを整理。
   - 💡 **主な特徴**: 要約による幻覚を生じさせることなく、プロンプトトークンの消費を劇的に削減。
 
-- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - jev-agent-failure-benchmark: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - Failure analysis benchmark for multi-agent workflows using Jev to isolate which agent, step, and error category caused task breakdowns.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - jev-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - Web playground allowing developers to paste state text, configure Choice/Score questions, and inspect Jev probability distributions.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - jev-predict-skill: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - Agent skill reading peer rule specifications and collected evidence to predict downstream skill decision conclusions.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - jev-rerank-bench: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - Reranking benchmark evaluating whether Jev can rank search candidate passages with accuracy comparable to dedicated rerankers.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - jev-research: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - Research guide and prototype demonstrating task decomposition and multi-agent delegation using Jev alongside Herdr.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1133,11 +1125,7 @@
 
 *マルチラベル分類、階層型タキソノミー構築、データセットの自動ラベリング。*
 
-- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - orchestkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
-  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
-
-- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - jev-tree: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - Hierarchical decision tree router querying Jev layer-by-layer to navigate large option spaces down to specific items or workflows.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1148,7 +1136,7 @@
 
 *意思決定プロファイリング、レイテンシ監視、エラーテレメトリ、性能ベンチマーク。*
 
-- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - latitude-llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - Sidecar evaluator for Latitude conversation auditing logging which checks Jev considers necessary to benchmark against baseline pipelines.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1183,7 +1171,7 @@
 
 *発話権調停、会話の割り込み検出、低遅延リアルタイム音声エージェント。*
 
-- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - aiavatarkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - Conversational turn-taking arbitrator for AIAvatarKit evaluating whether a speaker has completed their turn or merely paused to think.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
@@ -1194,6 +1182,10 @@
 - [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) `★ 1` - B2B voice sales agent integrating Jev for real-time customer intent classification and turn routing.
   - 🎯 **Jevの判断箇所**: 音声認識の書き起こし後、300ms以内に対話相手の意図（反論、価格照会、デモ希望等）を分類。
   - 💡 **主な特徴**: 300ms未満の意図分類により不自然な会話の空白を排除し、スムーズな音声対話を実現。
+
+- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - Voice routing gate for Home Assistant directing simple lighting commands to device services and complex dialogue to Grok.
+  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
+  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
 ---
 
@@ -1214,11 +1206,15 @@
   - 🎯 **Jevの判断箇所**: 説明文に基づき、デザインアセットやインスピレーションを美術スタイルやムードボードに分類。
   - 💡 **主な特徴**: クリエイターが発想に集中できるよう、バックグラウンドで素材の整理と関連付けを自動化。
 
-- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - jevthoven: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - Text-to-music composition tool where Jev selects notes bar-by-bar to generate editable, playable, and exportable multi-track MIDI files.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 
-- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - ui-generator-instinct-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - UI layout generator using Jev to select component types, form fields, and styles from a design system, assembling valid interfaces.
+  - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
+  - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
+
+- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - Music theory and harmony experiment querying Jev to solve harmonic exercises and voice-lead electric piano chords.
   - 🎯 **Jevの判断箇所**: リアルタイムのドメインテレメトリを取り込み、自動実行やリスク警告をトリガー。
   - 💡 **主な特徴**: 秒単位のミッションクリティカルな業務に構造化されたセマンティック認知を導入。
 

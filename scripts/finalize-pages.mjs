@@ -2,7 +2,7 @@ import { copyFile, readFile, writeFile } from "node:fs/promises";
 const index = new URL("../dist/index.html", import.meta.url);
 let html = await readFile(index, "utf8");
 const policy =
-  "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://avatars.githubusercontent.com data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action https://github.com; object-src 'none'";
+  "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://avatars.githubusercontent.com data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action https://github.com; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests";
 html = html.replace(
   /(<meta\s+charset=[^>]+>)/,
   `$1\n<meta http-equiv="Content-Security-Policy" content="${policy}" />`,

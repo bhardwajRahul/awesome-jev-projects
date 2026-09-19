@@ -99,6 +99,18 @@ const date = (s: string | null | undefined, locale: Locale) =>
         hour12: false,
       })
     : "—";
+const safeUrl = (u: string | null | undefined): string => {
+  if (!u) return "#";
+  try {
+    const parsed = new URL(u, "https://github.com");
+    if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+      return parsed.href;
+    }
+  } catch {
+    // fallback
+  }
+  return "#";
+};
 const validProject = (x: unknown): x is Project => {
   if (!x || typeof x !== "object") return false;
   const p = x as Project;
@@ -1001,7 +1013,7 @@ function App() {
                             <ArrowUpRight size={15} />
                           </button>
                           <a
-                            href={`https://github.com/${p.author}`}
+                            href={`https://github.com/${encodeURIComponent(p.author)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="author"
@@ -1077,7 +1089,7 @@ function App() {
                         </button>
                         <a
                           className="github-link"
-                          href={p.url}
+                          href={safeUrl(p.url)}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -1280,7 +1292,7 @@ function App() {
                   {t("已准备好 Issue 草稿。若新标签页未打开，可以直接继续：")}
                 </p>
                 <a
-                  href={issueDraftUrl}
+                  href={safeUrl(issueDraftUrl)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1340,7 +1352,7 @@ function App() {
             <h3>{t("来源与说明")}</h3>
             <p>{projectText(active, "claimStatus")}</p>
             {active.evidence?.map((e, i) => (
-              <a key={i} href={e.url} target="_blank" rel="noopener noreferrer">
+              <a key={i} href={safeUrl(e.url)} target="_blank" rel="noopener noreferrer">
                 {locale === "en"
                   ? t("查看来源证据")
                   : (e.note ?? t("查看 README 证据"))}
@@ -1366,7 +1378,7 @@ function App() {
           <div className="detail-actions">
             <a
               className="button dark"
-              href={active.url}
+              href={safeUrl(active.url)}
               target="_blank"
               rel="noopener noreferrer"
             >

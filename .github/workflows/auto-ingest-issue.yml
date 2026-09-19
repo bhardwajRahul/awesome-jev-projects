@@ -19,8 +19,6 @@ on:
 permissions:
   contents: write
   issues: write
-  pages: write
-  id-token: write
 concurrency:
   group: ingest-issue-${{ github.event.issue.number || inputs.issue_number || github.run_id }}
   cancel-in-progress: false

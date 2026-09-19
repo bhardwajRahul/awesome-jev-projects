@@ -9,7 +9,7 @@
 <p>
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-059669?style=flat-square&logo=safari" alt="Live Radar" /></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-260%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/Curated%20Projects-259%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/PRs-Welcome-16a34a.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><strong>📝 프로젝트 등록 신청</strong></a>
 </p>
 
-<p>TypeSafe AI의 Jev 모델을 탑재한 **260+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
+<p>TypeSafe AI의 Jev 모델을 탑재한 **259+** 개의 검증된 오픈소스 도구, 프로덕션 앱 및 벤치마크 모음. 모든 프로젝트는 실제 소스 코드가 검증되었습니다.</p>
 
 </div>
 
@@ -43,21 +43,21 @@
 
 - [⚡ 고주파 시뮬레이션 및 실시간 게임 (20)](#high-frequency-simulation-ko)
 - [🛠️ SDK 및 의사결정 프레임워크 (32)](#sdk-decision-frameworks-ko)
-- [🔌 생태계 연동 및 어댑터 (9)](#sdk-integrations-ko)
+- [🔌 생태계 연동 및 어댑터 (7)](#sdk-integrations-ko)
 - [💻 CLI 및 자동화 파이프라인 (32)](#cli-pipelines-ko)
 - [💾 데이터베이스 확장 및 시맨틱 검색 (7)](#data-search-ko)
-- [🌐 브라우저 및 데스크톱 자동화 (23)](#browser-os-action-ko)
+- [🌐 브라우저 및 데스크톱 자동화 (22)](#browser-os-action-ko)
 - [🧹 컨텍스트 압축 및 가비지 컬렉션 (11)](#context-gc-filter-ko)
-- [🛡️ 보안 및 가드레일 (16)](#security-guardrails-ko)
-- [🧩 MCP 프로토콜 및 도구 확장 (32)](#mcp-integrations-ko)
+- [🛡️ 보안 및 가드레일 (17)](#security-guardrails-ko)
+- [🧩 MCP 프로토콜 및 도구 확장 (33)](#mcp-integrations-ko)
 - [🧭 코드베이스 분석 및 지식 그래프 탐색 (13)](#codebase-graph-pathfinding-ko)
-- [🔀 모델 라우팅 및 비용 최적화 (15)](#routing-cost-optimization-ko)
-- [📊 도메인 특화 및 엔터프라이즈 도구 (19)](#domain-vertical-tools-ko)
+- [🔀 모델 라우팅 및 비용 최적화 (16)](#routing-cost-optimization-ko)
+- [📊 도메인 특화 및 엔터프라이즈 도구 (17)](#domain-vertical-tools-ko)
 - [🎯 범용 의사결정 및 휴리스틱 평가 (14)](#decision-tools-ko)
-- [🏷️ 텍스트 분류 및 분류 체계 (2)](#classification-taxonomy-ko)
+- [🏷️ 텍스트 분류 및 분류 체계 (1)](#classification-taxonomy-ko)
 - [📈 벤치마크 및 가관측성 (7)](#evaluation-observability-ko)
-- [🎙️ 음성 인터랙션 및 실시간 대화 (3)](#voice-conversation-ko)
-- [🎨 크리에이티브 미디어 및 작곡 (5)](#creative-tools-ko)
+- [🎙️ 음성 인터랙션 및 실시간 대화 (4)](#voice-conversation-ko)
+- [🎨 크리에이티브 미디어 및 작곡 (6)](#creative-tools-ko)
 - [📖 로컬 개발 및 아키텍처](#dev-arch-ko)
 - [🤝 프로젝트 제출 방법](#submit-guide-ko)
 
@@ -68,9 +68,9 @@
 
 *게임, 로보틱스 및 인터랙티브 시뮬레이션 루프를 위한 실시간 밀리초 단위 의사결정.*
 
-- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - On Kuru's MON-USDC order book on Monad, Jev chooses a buy or sell side each block; the bot can simulate quotes and fills against live market data or, when explicitly configured with a wallet, send real post-only limit orders.
-  - 🎯 **Jev의 역할**: Jev uses spread, depth and imbalance, rolling returns, recent trades, and taker flow to estimate whether price will be higher or lower roughly 100 blocks later and returns buy/sell probabilities.
-  - 💡 **핵심 장점**: It connects structured Jev decisions to a per-block quoting loop and exposes decisions, quotes, fills, positions, and P&L in one event stream, so behavior can be observed in dry run before enabling real transactions.
+- [**jev-trader**](https://github.com/jarrodwatts/jev-trader) `★ 934` - jev-trader: High-frequency market-making bot on Monad testnet querying Jev every ~300ms block to decide buy/sell orders on Kuru orderbook.
+  - 🎯 **Jev의 역할**: 스프레드, 100블록 이동 수익률, 테이커 흐름을 분석하여 향후 30블록의 중간 가격 변동 방향을 예측.
+  - 💡 **핵심 장점**: 약 80ms의 추론 지연 시간으로 1초 미만 블록체인 블록 생성 주기에 완벽하게 부합.
 
 - [**typesafe-mario**](https://github.com/fhshaik/typesafe-mario) `★ 263` - typesafe-mario: Screenshot-free NES Super Mario Bros agent parsing emulator RAM into structured state for Jev to choose controller inputs in real-time.
   - 🎯 **Jev의 역할**: 마리오의 이동 속도, 점프 궤적, 전방의 적 상태를 평가하여 패미컴 컨트롤러 입력을 실시간 결정.
@@ -80,7 +80,7 @@
   - 🎯 **Jev의 역할**: 고전 컴퓨터 비전의 거리 섹터와 장애물 높이를 분석하여 상승, 제동, 간극 통과 등 전술 기동을 선택.
   - 💡 **핵심 장점**: 계층화된 제어 아키텍처: Jev가 거시적 전술 결정을 전담하고 결정론적 코드가 비행 안전을 보장.
 
-- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - jevpilot: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jevpilot**](https://github.com/standardagents/jevpilot) `★ 58` - Autonomous vehicle simulator where Jev selects optimal steering paths and speed profiles from pre-calculated candidate trajectories.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
@@ -92,11 +92,11 @@
   - 🎯 **Jev의 역할**: 게임 틱 상태를 분석하여 제한된 액션 카탈로그에서 최적의 캐릭터 행동과 목표를 선택.
   - 💡 **핵심 장점**: 틱 기반 게임 환경에서 Jev의 의사결정 반사신경을 엄밀히 측정할 수 있는 재현 가능한 벤치마크를 제공.
 
-- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - 1v1 Jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**1v1 Jev**](https://github.com/emrickgarrett/OneVOneJev) `★ 5` - Real-time 1v1 browser FPS duel where Jev evaluates tick-based battlefield telemetry to decide movement, aim, and firing actions.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
-- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - live-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**live-jev**](https://github.com/vinilana/live-jev) `★ 3` - Top-down vehicle simulator where Jev chooses lane changes and throttle rates, running side-by-side against conversational model baselines.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
@@ -104,11 +104,11 @@
   - 🎯 **Jev의 역할**: 피드 카드 DOM 구조를 검사하여 일반 콘텐츠와 동일한 스타일의 광고성 포스트를 분류.
   - 💡 **핵심 장점**: 기존 CSS 선택자나 URL 차단 목록으로 막을 수 없는 퍼스트 파티 네이티브 광고를 차단합니다.
 
-- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - JevBird: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**JevBird**](https://github.com/leftspace89/JevBird) `★ 2` - Flappy Bird game agent calculating candidate flight trajectories in code and querying Jev to select the safest flap path in real time.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
-- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - doom-jev: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**doom-jev**](https://github.com/AmoghCreator/doom-jev) `★ 1` - Doom game controller consuming structured combat state to select movement headings, target locks, and firing timings.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
@@ -116,7 +116,7 @@
   - 🎯 **Jev의 역할**: 초당 1,500행 이상의 속도로 데이터셋 행에 대해 Score 및 Noul 배치 판단을 수행.
   - 💡 **핵심 장점**: 연산 집약적인 모델 학습 전에 저품질 또는 유해한 합성 데이터를 사전 분리합니다.
 
-- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - jev-doom-agent: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) `★ 1` - Browser-based dual Doom game agent evaluating game state tables to select tactical navigation and combat actions.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
@@ -125,7 +125,7 @@
   - 💡 **핵심 장점**: 턴별 요청 페이로드, 모델 확률, 지연 시간을 투명하게 공개하며 기보 무료 다시보기 및 실시간 대국을 지원합니다.
   - 🌐 [라이브 데모](https://xiechengyuan.github.io/jev-gomoku/)
 
-- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - jev-little-airways: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) `★ 1` - Island airport traffic simulator querying Jev to arbitrate landing priorities, holding patterns, diversions, and runway clearance.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
@@ -133,11 +133,11 @@
   - 🎯 **Jev의 역할**: 실시간 브라우저 캔버스 프레임에서 이산 UI 좌표와 클릭 동작을 선택.
   - 💡 **핵심 장점**: 고주파 의사결정 반사신경을 테스트하기 위한 시각적 대전 벤치마크를 제공합니다.
 
-- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - jev-demos: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-demos**](https://github.com/Bud-ro/jev-demos) - Maze navigation benchmark testing single-step and multi-step Jev spatial decisions against path dead-ends and loops.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
-- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - jev-experiments: Real-time decision engine operating at sub-100ms latency for games, bots, and simulations.
+- [**jev-experiments**](https://github.com/mittal-parth/jev-experiments) - Real-time game experiments where Jev plays Chrome Dino and 2D shooter arenas via structured telemetry and discrete action inputs.
   - 🎯 **Jev의 역할**: 게임 및 로봇의 이동, 조향 및 행동을 구동하는 연속 멀티 Hz 의사결정 루프를 실행.
   - 💡 **핵심 장점**: 프론티어 LLM이 물리적으로 제공할 수 없는 실시간 반응 속도를 달성합니다.
 
@@ -160,19 +160,19 @@
   - 🎯 **Jev의 역할**: Rust 제네릭 구조체로 질문과 답변 레이아웃을 한 번만 선언하고 Jev를 통해 강타입 필드로 직접 디코딩.
   - 💡 **핵심 장점**: 수동 JSON 프롬프트 작성이나 런타임 스키마 검증이 전혀 필요 없는 Rust 네이티브 제로 비용 추상화.
 
-- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - req_llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**req_llm**](https://github.com/agentjido/req_llm) `★ 577` - TypeSafe integration for Elixir ReqLLM evaluating state questions via evaluate endpoints while routing conversational text to other models.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - instructor-php: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**instructor-php**](https://github.com/cognesy/instructor-php) `★ 327` - Unified decision adapter for Instructor PHP submitting business state queries to Jev and returning typed choices, scores, and probabilities.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - openai-scala-client: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**openai-scala-client**](https://github.com/cequence-io/openai-scala-client) `★ 248` - Scala multi-model client module providing TypeSafe Jev integrations to query structured answers from state and typed questions.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - pi-fabric: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-fabric**](https://github.com/monotykamary/pi-fabric) `★ 233` - Programmable decision loop extension for Pi tool runtime executing observe-judge-act cycles within fixed budgets.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -180,7 +180,7 @@
   - 🎯 **Jev의 역할**: 타입 추론과 재시도를 지원하여 System One의 Choice, Score, Noul 엔드포인트를 완벽 지원.
   - 💡 **핵심 장점**: 공식 유지보수되는 표준 구현체로 JavaScript 및 TypeScript 생태계 전반의 핵심 기반을 제공.
 
-- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - effect-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**effect-agent**](https://github.com/danieljvdm/effect-agent) `★ 116` - TypeSafe Jev integration for Effect Agent allowing TypeScript applications to evaluate typed question packets and select models.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -188,7 +188,7 @@
   - 🎯 **Jev의 역할**: 자기회귀 생성 없이 멀티모달 시각 컨텍스트를 재사용하여 로짓에서 직접 후보 응답을 채점.
   - 💡 **핵심 장점**: Apple Silicon의 로컬 엣지 비전에 Jev 스타일의 1패스 다중 판정 스코어링을 도입합니다.
 
-- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - advocaat: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**advocaat**](https://github.com/pithings/advocaat) `★ 66` - Concise TypeScript wrapper for Jev querying multiple judgments against shared state in a single call with probabilities and scores.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -252,11 +252,11 @@
   - 🎯 **Jev의 역할**: Rust에서 System One 페이로드를 생성하고 엔드포인트 라우팅 및 인증 헤더를 관리.
   - 💡 **핵심 장점**: Rust의 소유권과 타입 시스템을 활용하여 잘못된 형식의 요청을 컴파일 시점에 방지.
 
-- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - jev-starter: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-starter**](https://github.com/hamakyo/jev-starter) `★ 1` - Application scaffold routing Jev decisions to automated handlers, fallback models, or human review while tracking rule performance.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - jevclient: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevclient**](https://github.com/AboveColin/jevclient) `★ 1` - Asynchronous Python client for Jev querying multiple typed questions in a single request and returning structured probability objects.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -291,35 +291,27 @@
 
 *기존 에이전트 런타임 및 애플리케이션 스택을 Jev와 원활하게 연결하는 어댑터.*
 
-- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - langchain: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**langchain**](https://github.com/langchain-ai/langchain) `★ 146595` - Optional Jev classification node for Python LangChain pipelines returning categories, calibrated probabilities, and tier scores.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - oh-my-pi: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ai**](https://github.com/vercel/ai) `★ 26825` - Optional TypeSafe provider for Vercel AI SDK querying Jev for multiple choices, scores, and booleans via a unified evaluate interface.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - composio: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - Optional Jev model provider for Pydantic AI converting schema boolean and enum fields into typed questions.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**ai**](https://github.com/vercel/ai) `★ 26825` - ai: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - Optional TypeSafe HTTP adapter in Eliza framework allowing agents to dispatch structured decision queries on demand.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**pydantic-ai**](https://github.com/pydantic/pydantic-ai) `★ 20027` - pydantic-ai: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - Optional Jev classifier for LangChain.js returning programmatic categories and scores from typed state questions.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**eliza**](https://github.com/elizaOS/eliza) `★ 19359` - eliza: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
-  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
-
-- [**langchainjs**](https://github.com/langchain-ai/langchainjs) `★ 18207` - langchainjs: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
-  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
-
-- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - ax: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ax**](https://github.com/ax-llm/ax) `★ 2926` - Optional TypeSafe client for Ax framework querying Jev via boolean or categorical signatures with raw probabilities.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -333,6 +325,10 @@
 ## 💻 CLI 및 자동화 파이프라인
 
 *터미널 유틸리티, 셸 파이프 및 CI/CD 워크플로에 시맨틱 판단을 결합한 도구.*
+
+- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - Session classifier for OrchestKit categorizing coding sessions into debugging, development, or maintenance to drive UI badges.
+  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
+  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
 - [**jev-experiments**](https://github.com/dabit3/jev-experiments) `★ 255` - Developer experimentation suite by Nader Dabit featuring commit sentry and intent triage with Jev.
   - 🎯 **Jev의 역할**: 커밋 차이점을 평가하여 변경 위험도를 분류하고 문제 가능성이 있는 커밋을 차단 및 조언.
@@ -358,7 +354,7 @@
   - 🎯 **Jev의 역할**: 정적 URL 경로가 아닌 시맨틱 의미를 기반으로 수신 HTTP 요청을 라우팅.
   - 💡 **핵심 장점**: 경량 엣지 및 서버리스 웹 API에 의도 기반 라우팅을 내장합니다.
 
-- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - jev-playground: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-playground**](https://github.com/mizchi/jev-playground) `★ 14` - MoonBit playground testing Jev on Gomoku board decisions, simplified MOBA unit control, and command risk triage.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -378,7 +374,7 @@
   - 🎯 **Jev의 역할**: Unix 텍스트 스트림에서 실시간 분류, 채점 및 임계값 가드를 직접 실행.
   - 💡 **핵심 장점**: Python 런타임 오버헤드 없이 Bash 스크립트 및 CI/CD에 직접 내장됩니다.
 
-- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - jev-lm: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-lm**](https://github.com/y0usaf/jev-lm) `★ 4` - Experimental language decoder framing next-token generation as discrete choice queries to assemble sentences and select draft completions.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -386,11 +382,11 @@
   - 🎯 **Jev의 역할**: 수신 이메일 데이터를 이산 범주(예: 청구서 vs 일반 문의)로 분류.
   - 💡 **핵심 장점**: 장황한 프롬프트 오버헤드 없이 결정론적 상태 머신 분기를 제공합니다.
 
-- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - jev-chat: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-chat**](https://github.com/adhyaay-karnwal/jev-chat) `★ 3` - Research chat decoder repeatedly querying Jev to select words or phrases from candidates, chaining choices into conversational responses.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
-- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-cli**](https://github.com/tumf/jev-cli) `★ 2` - Terminal utility sending text or JSON to Jev to receive discrete booleans, choices, and scores directly into Unix script pipelines.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -398,7 +394,7 @@
   - 🎯 **Jev의 역할**: 각 환경설정 규칙과 코드 변경 헝크에 대해 해당 변경이 규칙을 위반하는지 판정.
   - 💡 **핵심 장점**: pre-commit, PR 및 에이전트 워크플로를 위한 CLI 도구(차단 vs 권고 결과 분리).
 
-- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - jev-system-one: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-system-one**](https://github.com/haseeb-heaven/jev-system-one) `★ 2` - Terminal Q&A tool where generative models draft answers while Jev selects response personas, checks drafts, and triggers rewrites.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -406,7 +402,7 @@
   - 🎯 **Jev의 역할**: 보정 곡선, 최적 신뢰도 임계값 및 시간에 따른 분포 드리프트를 계산.
   - 💡 **핵심 장점**: 신뢰도 유효성을 체계적으로 검증하여 의사결정 품질 저하를 방지합니다.
 
-- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - pi-fast-jev-compaction: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) `★ 2` - Fast context compaction utility for Pi coding agent pruning obsolete tool logs while preserving verbatim conversation text.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -414,11 +410,7 @@
   - 🎯 **Jev의 역할**: 작업 메모를 우선순위 등급, 실행 컨텍스트 및 일정 버킷으로 자동 분류.
   - 💡 **핵심 장점**: 100ms 미만의 응답 속도로 백로그 정리 및 작업 우선순위 지정을 자동화합니다.
 
-- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - ask-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
-  - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
-  - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
-
-- [**is-odd-jev**](https://github.com/alxcrt/is-odd-jev) `★ 1` - is-odd-jev: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**ask-jev**](https://github.com/omni-/ask-jev) `★ 1` - Windows Codex terminal command :jev verifying task progress and execution evidence against goal criteria.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -426,7 +418,7 @@
   - 🎯 **Jev의 역할**: 시뮬레이션 상태를 기반으로 이산 로봇 기본 스킬과 목표 좌표를 선택.
   - 💡 **핵심 장점**: 고수준 이산 스킬 선택과 저수준 PD 모터 제어를 분리합니다.
 
-- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - jev-cli: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-cli**](https://github.com/jtsang4/jev-cli) `★ 1` - Command-line tool querying Jev with categorical, boolean, or scoring questions, returning structured JSON for shell scripting.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -434,7 +426,7 @@
   - 🎯 **Jev의 역할**: 표준 입력에서 타입화된 Jev 쿼리를 실행하고 파이프용 JSON 또는 구조화 종료 코드를 반환.
   - 💡 **핵심 장점**: 표준 Bash 및 CI 스크립트에 System One 의사결정 게이트를 매끄럽게 결합합니다.
 
-- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - jev-code: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jev-code**](https://github.com/rhighs/jev-code) `★ 1` - Experimental coding terminal using Jev for constrained grammatical choices to assemble AST syntax nodes and invoke local tools.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -458,7 +450,7 @@
   - 🎯 **Jev의 역할**: 단문 텍스트에 대해 서브 밀리초 단위의 시맨틱 패턴 매칭과 속성 판정을 실행.
   - 💡 **핵심 장점**: 로컬 환경에서 Jev 의사결정 프리미티브를 테스트하려는 개발자에게 이상적인 샌드박스입니다.
 
-- [**jevscript**](https://github.com/amberwhitehead/jevscript) - jevscript: Command-line utility embedding Jev decision logic directly into Unix pipes and CI scripts.
+- [**jevscript**](https://github.com/amberwhitehead/jevscript) - Experimental language prototype embedding semantic judgment primitives directly into code scripts to evaluate bundled questions.
   - 🎯 **Jev의 역할**: 표준 입력 스트림에 실시간 시맨틱 분류 및 필터링을 적용.
   - 💡 **핵심 장점**: 셸 워크플로 및 CI/CD에 무의존성 시맨틱 가드레일을 내장합니다.
 
@@ -513,7 +505,7 @@
   - 🎯 **Jev의 역할**: 단일 요청으로 다음 액션과 대상 DOM 요소를 결정하고, 텍스트 입력만 텍스트 모델에 위임.
   - 💡 **핵심 장점**: UI 탐색과 텍스트 생성을 분리하여 중복 페이지 평가를 대폭 줄입니다.
 
-- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - jev-desktop: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-desktop**](https://github.com/lahfir/agent-desktop) `★ 1266` - Desktop GUI automation co-processor navigating native accessibility trees to pick next buttons, menus, and controls step-by-step.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
@@ -521,7 +513,7 @@
   - 🎯 **Jev의 역할**: 애플리케이션 상태와 사용자 목표를 평가하여 다음 macOS 네이티브 자동화 액션 및 인수를 선택.
   - 💡 **핵심 장점**: Swift 네이티브 아키텍처와 Jev의 구조화된 결정을 결합하여 운영체제 제어 계획 지연 시간을 최소화.
 
-- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - omg.dev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**omg.dev**](https://github.com/BennyKok/omg.dev) `★ 531` - Mobile test runner for omg.dev inspecting accessibility trees via Jev to pick controls and detect step completion or stalls.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
@@ -533,19 +525,15 @@
   - 🎯 **Jev의 역할**: 경량 DOM 후보군에서 구체적인 클릭 대상, 폼 상호작용 및 스크롤 동작을 결정.
   - 💡 **핵심 장점**: 국소적 조작과 전역 계획을 분리하여 작업 속도를 5~10배 가속하고 멀티모달 API 비용을 절감.
 
-- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - mobile-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**mobile-jev**](https://github.com/droidrun/mobile-jev) `★ 93` - Android automation agent where Jev selects target apps and UI elements while Mobilerun performs clicks and inputs.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
-- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - jev-use: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-use**](https://github.com/vlad-terin/jev-use) `★ 76` - Computer-use co-processor where Codex defines high-level goals while Jev selects consecutive UI controls for execution.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
-- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.
-  - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
-  - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
-
-- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - unclutter: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-browser**](https://github.com/jkudish/jev-browser) `★ 70` - End-to-end browser agent navigating URLs, clicking controls, filling forms, and logging per-step action audit trails.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
@@ -565,19 +553,19 @@
   - 🎯 **Jev의 역할**: 페이지의 상호작용 요소를 평가하여 클릭, 텍스트 입력, 스크롤 또는 양식 제출 동작을 선택.
   - 💡 **핵심 장점**: 스텝당 다중 추론 루프를 제거하여 양식 작성 및 다단계 웹 탐색 소요 시간을 대폭 단축.
 
-- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - AskJev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**AskJev**](https://github.com/ranjan2829/AskJev) `★ 2` - Browser copilot executing button clicks and form fills while enforcing policy pauses on high-risk actions like payments or deletions.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
-- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - computer-use-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**computer-use-jev**](https://github.com/paulsmith/computer-use-jev) `★ 2` - macOS application control in Go using Jev to pick UI controls and next actions directly from accessibility trees.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
-- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - aside-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**aside-jev**](https://github.com/himomohi/aside-jev) `★ 1` - Decision co-processor for Aside browser agent selecting the next atomic action from candidate lists before DOM execution.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
-- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - jev-browser: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-browser**](https://github.com/tontoko/jev-browser) `★ 1` - Playwright automation library driven by Jev decisions for clicking controls, filling forms, and scraping data via CLI, MCP, and SDK.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
@@ -585,11 +573,11 @@
   - 🎯 **Jev의 역할**: 페이지 스냅샷에서 후보 액션 공간을 평가하여 단일 요청으로 대상 컨트롤과 액션 유형을 선택.
   - 💡 **핵심 장점**: 초 단위 미만의 브라우저 루프를 위해 무거운 비전 모델을 경량 시맨틱 스냅샷으로 대체합니다.
 
-- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - grokskill-jev: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**grokskill-jev**](https://github.com/AE-AlphaEdge/grokskill-jev) - Grok Build integration connecting Jev Ultrafast to existing Chrome browser tabs with PowerShell startup scripts.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
-- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - jev-macos-loop: Automates browser or desktop interactions by turning UI state into discrete choices.
+- [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) - macOS local interaction loop reading on-screen OCR and accessibility elements, querying Jev to pick and click the next target.
   - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
   - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
 
@@ -655,19 +643,23 @@
 
 *프롬프트 주입 방어, 콘텐츠 검열, 위험도 평가 및 정책 검증 가드레일.*
 
-- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - agentgateway: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**agentgateway**](https://github.com/agentgateway/agentgateway) `★ 4916` - Security guardrail example for Agentgateway auditing model requests and responses for jailbreaks, harm, and secret leakage.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - interlinked-cli: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**interlinked-cli**](https://github.com/QuentinCody/interlinked-cli) `★ 177` - Rule audit evaluator for coding agents combining deterministic checks with Jev semantic scoring for supplementary judgment.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - pi-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-jev**](https://github.com/y0usaf/pi-jev) `★ 126` - Risk guard for Pi coding agent verifying command boundaries pre-execution and auditing logs post-execution for secret leakage.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - pi-warden: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**unclutter**](https://github.com/kitze/unclutter) `★ 66` - Distraction-free browser extension using Jev to detect ads, promo banners, and paywall popups, caching clean CSS rules locally.
+  - 🎯 **Jev의 역할**: DOM 및 접근성 트리 상태를 실시간으로 평가하여 대상 컨트롤과 다음 동작을 선택.
+  - 💡 **핵심 장점**: 의사결정과 실행을 분리하여 검증 가능하고 번개처럼 빠른 UI 탐색을 구현합니다.
+
+- [**pi-warden**](https://github.com/DevMortimer/pi-warden) `★ 61` - Rule inspector for Pi coding agent verifying file modifications against repository conventions and checking command risks before execution.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -687,7 +679,7 @@
   - 🎯 **Jev의 역할**: 문단 텍스트를 평가하여 상투적인 전환구, 부자연스러운 어조 및 기계적인 대칭 구조를 감지.
   - 💡 **핵심 장점**: 구문 통계와 시맨틱 판단을 결합하여 외부 의존성 없이 정밀한 문장 단위 피드백을 제공.
 
-- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - pi-jev-auto-mode: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) `★ 9` - Execution gatekeeper for Pi coding agent passing safe commands immediately while routing ambiguous actions to Jev with default-deny policies.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -703,11 +695,11 @@
   - 🎯 **Jev의 역할**: 비정형 설명문에서 공격 벡터, 복잡성, 권한 요구사항 및 영향도에 대한 이산 지표를 추출.
   - 💡 **핵심 장점**: JSON 포맷 오류 없이 밀리초 단위로 결정론적인 취약점 벡터 스코어를 산출.
 
-- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - jev-guard: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-guard**](https://github.com/leepokai/jev-guard) `★ 2` - Tool invocation guardrail for coding agents checking command safety, user intent alignment, and prompt injection in tool outputs.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - jev-judgment: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-judgment**](https://github.com/HyunjunJeon/jev-judgment) `★ 2` - Pre-action judgment gate for coding agents deciding whether to prompt the user, reject risky commands, or retry on failures.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -715,7 +707,7 @@
   - 🎯 **Jev의 역할**: 사용자 대화 이력과 도구 인수를 종합 평가하여 실행 의도가 보안 정책 규칙을 준수하는지 판정.
   - 💡 **핵심 장점**: 정적 정규식 매칭을 초월: 도구의 종류와 무관하게 시맨틱 의도를 통해 보안 정책 위반을 감지.
 
-- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - jev-tool-permissions: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-tool-permissions**](https://github.com/NicolasMontone/jev-tool-permissions) `★ 1` - Tool permission gate for Vercel AI SDK vetting tool requests before execution and filtering out unused tool schemas.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -725,6 +717,10 @@
 ## 🧩 MCP 프로토콜 및 도구 확장
 
 *Model Context Protocol(MCP)을 준수하는 표준 의사결정 서버 및 도구 엔드포인트.*
+
+- [**composio**](https://github.com/ComposioHQ/composio) `★ 30228` - Decision layer for Composio toolsets selecting optimal tools from catalogs and populating enumerated parameter fields.
+  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
+  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
 - [**vellum-assistant**](https://github.com/vellum-ai/vellum-assistant) `★ 1285` - vellum-assistant: Exposes Jev low-latency decision primitives via the Model Context Protocol (MCP).
   - 🎯 **Jev의 역할**: 외부 에이전트 환경을 위해 온디맨드 Choice·Score·Noul 의사결정 도구를 제공.
@@ -861,7 +857,7 @@
 
 *코드 의존성 탐색, AST 심볼 분석, 코드 리뷰 트리아지 및 지식 그래프 쿼리.*
 
-- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - celesto: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**celesto**](https://github.com/CelestoAI/celesto) `★ 943` - PR review assistant for Celesto verifying whether suspected issues are introduced by the diff, supported by evidence, and worth fixing.
   - 🎯 **Jev의 역할**: 후보 파일 또는 지식 그래프 엣지에 연관성 확률을 부여하여 탐색 경로를 유도.
   - 💡 **핵심 장점**: 비싼 벡터 인덱싱 없이도 대상 코드와 관계를 단 몇 초 만에 특정합니다.
 
@@ -885,7 +881,7 @@
   - 🎯 **Jev의 역할**: 계층별로 후보 파일 및 디렉터리를 평가하여 관련 경로로 탐색 예산을 배분.
   - 💡 **핵심 장점**: 사전 인덱싱 없이도 대규모 저장소에서 관련 파일을 즉시 찾아냅니다.
 
-- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - jev-code: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**jev-code**](https://github.com/devagrawal09/jev-code) `★ 6` - Assistant for coding agents locating relevant files, verifying task adherence, and triaging test failure logs and review comments.
   - 🎯 **Jev의 역할**: 후보 파일 또는 지식 그래프 엣지에 연관성 확률을 부여하여 탐색 경로를 유도.
   - 💡 **핵심 장점**: 비싼 벡터 인덱싱 없이도 대상 코드와 관계를 단 몇 초 만에 특정합니다.
 
@@ -893,7 +889,7 @@
   - 🎯 **Jev의 역할**: Git 차이점 로직과 함수 시그니처를 분석하여 코드 변경의 영향을 받는 테스트 부분집합을 선별.
   - 💡 **핵심 장점**: 단순 수정마다 전체 테스트를 실행하는 비효율을 방지하여 피드백 루프를 수 분에서 수 초로 단축.
 
-- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - claude-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**claude-jev**](https://github.com/buchmark/claude-jev) `★ 1` - Triage reviewer for Claude Code scoring bug hypotheses, troubleshooting ideas, and design options to prioritize engineer attention.
   - 🎯 **Jev의 역할**: 후보 파일 또는 지식 그래프 엣지에 연관성 확률을 부여하여 탐색 경로를 유도.
   - 💡 **핵심 장점**: 비싼 벡터 인덱싱 없이도 대상 코드와 관계를 단 몇 초 만에 특정합니다.
 
@@ -909,7 +905,7 @@
   - 🎯 **Jev의 역할**: Skill advice first uses a noul gate, a choice shortlist, and per-skill noul verification. pij_search and the optional source briefing use noul to rank real source candidates. Failure triage uses choice to classify code, environment, dependency, network, permission, or unknown failures, then attaches a fixed checklist. All results remain advisory.
   - 💡 **핵심 장점**: Jev handles the small decisions around skill filtering, source-candidate ranking, and failure triage while PiJ preserves the original evidence and local verification path. If the service is unavailable, ordinary coding-agent behavior and lexical search remain available.
 
-- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - foreman-jev: Semantic exploration engine for codebases and knowledge graphs using beam search.
+- [**foreman-jev**](https://github.com/Shifty-Eye-Games/foreman-jev) - Supervision gatekeeper for Codex workers evaluating milestone progress and enforcing acceptance command runs prior to completion.
   - 🎯 **Jev의 역할**: 후보 파일 또는 지식 그래프 엣지에 연관성 확률을 부여하여 탐색 경로를 유도.
   - 💡 **핵심 장점**: 비싼 벡터 인덱싱 없이도 대상 코드와 관계를 단 몇 초 만에 특정합니다.
 
@@ -920,7 +916,11 @@
 
 *작업 난이도 자동 분류, 계층형 모델 라우팅 및 API 비용 절감.*
 
-- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - litellm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**litellm**](https://github.com/BerriAI/litellm) `★ 59076` - Complexity-based request router for LiteLLM evaluating task difficulty via Jev before dispatching to appropriate model tiers.
+  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
+  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
+
+- [**oh-my-pi**](https://github.com/can1357/oh-my-pi) `★ 31786` - Decision companion for Oh My Pi agent evaluating reasoning effort depth, unexpected stalls, and git staging classifications.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -928,23 +928,23 @@
   - 🎯 **Jev의 역할**: 작업 난이도 계층, 추론 깊이, 운영 환경 위험도를 병렬 평가하여 Claude Code에 최적의 모델 구성을 동적 주입.
   - 💡 **핵심 장점**: 단순 작업에 대한 과도한 비용 지출을 방지하면서 고위험 코드 변경에 대해 엄격한 고신뢰도 임계값을 강제.
 
-- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - openchamber: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**openchamber**](https://github.com/openchamber/openchamber) `★ 10038` - Automated model router for OpenChamber classifying prompt intent to select mapped models and reasoning effort tiers.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - firstmate: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**firstmate**](https://github.com/kunchenguid/firstmate) `★ 6502` - Task assignment assistant for Firstmate evaluating job briefs to match dispatch rules and select specialized agent configs.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - atomic: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**atomic**](https://github.com/bastani-inc/atomic) `★ 805` - Optional decision backend for Atomic coding agent delegating discrete routing choices to Jev while reserving code generation for LLMs.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - vexjoy-agent: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**vexjoy-agent**](https://github.com/notque/vexjoy-agent) `★ 420` - Task dispatch router for VexJoy agent classifying requirements to select expert agents, skills, and execution workflows.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - WrongStack: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**WrongStack**](https://github.com/WrongStack/WrongStack) `★ 327` - Dispatch assistant for WrongStack coding agent selecting the most suitable specialist sub-agent when multiple experts match.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -972,11 +972,11 @@
   - 🎯 **Jev의 역할**: 코드 수정 범위와 의존성 깊이를 평가하여 적절한 모델 계층과 컨텍스트 예산을 추천.
   - 💡 **핵심 장점**: 불필요한 추상화 없는 경량 아키텍처로 정밀한 라우팅을 통해 세션 토큰 소비를 절감.
 
-- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - jev-demo: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-demo**](https://github.com/minghanminghan/jev-demo) - Customer support triage demo evaluating full question sets in a single Jev request to route tickets and escalate to humans.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - jev-router-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-router-playground**](https://github.com/hugo-alves/jev-router-playground) - Interactive model router playground using Jev to pick optimal LLMs from a candidate pool and comparing output quality.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1003,7 +1003,7 @@
   - 🎯 **Jev의 역할**: 호가창 불균형, 깊이, 스프레드를 틱 단위로 평가하여 매수/매도, 레버리지 및 호가를 결정.
   - 💡 **핵심 장점**: 멀티 슬리브 격리를 통한 1초 미만의 탈중앙화 파생상품 거래 실행을 지원합니다.
 
-- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - HA-Jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**HA-Jev**](https://github.com/AboveColin/HA-Jev) `★ 6` - Home Assistant integration translating household state telemetry into semantic sensors via Jev (e.g. laundry reminders).
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1015,11 +1015,11 @@
   - 🎯 **Jev의 역할**: 호가창 불균형, 깊이, 스프레드를 틱 단위로 평가하여 매수/매도, 레버리지 및 호가를 결정.
   - 💡 **핵심 장점**: 멀티 슬리브 격리를 통한 1초 미만의 탈중앙화 파생상품 거래 실행을 지원합니다.
 
-- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - jev-for-engineers: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-for-engineers**](https://github.com/Foadsf/jev-for-engineers) `★ 2` - Engineering toolkit featuring eight Jev experiments: design dispatch, simulation log triage, and mechanical part matching via Python rules.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - got-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**got-jev**](https://github.com/phureewat29/got-jev) `★ 1` - Game of Thrones text adventure where generative LLMs write narrative while Jev classifies scene locations, mood, and danger levels.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1027,7 +1027,7 @@
   - 🎯 **Jev의 역할**: 미검증 기준의 우선순위를 지정하고 실행 결과가 승인 마일스톤에 도달했는지 판정.
   - 💡 **핵심 장점**: 검증된 완료 게이트를 적용하여 에이전트가 조기에 종료되는 것을 방지합니다.
 
-- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - jev-broadcast-lab: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) `★ 1` - Multipurpose evaluation lab testing Jev on chess moves, customer ticket routing, document matching, and content moderation.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1047,15 +1047,7 @@
   - 🎯 **Jev의 역할**: GitHub 커밋 및 풀 리퀘스트를 검사하여 소스 코드 수준의 구현 시그니처를 검증.
   - 💡 **핵심 장점**: 성장하는 Jev 생태계 전반에 걸쳐 라인 단위의 투명한 코드 추적성을 제공합니다.
 
-- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - jevsume: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
-  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
-
-- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - ha-conversation-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
-  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
-
-- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - jev-music-theory-1: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevsume**](https://github.com/unownone/jevsume) `★ 1` - Structured resume audit tool checking phrasing, ATS readability, and scoring candidate profile fit against job descriptions.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1082,7 +1074,7 @@
   - 🎯 **Jev의 역할**: 스타트업 아이디어를 시장 고통점, 실현 가능성 및 해자에 비추어 평가하여 kill/fix/ship을 판정.
   - 💡 **핵심 장점**: 아첨성 답변을 배제한 솔직한 피드백으로 수 초 만에 치명적인 결함을 객관적으로 직시하도록 지원.
 
-- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - jev-benchmarks: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) `★ 7` - Comparative benchmark contrasting Jev and GLiNER on classification tasks, measuring accuracy alongside probability calibration curves.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1098,23 +1090,23 @@
   - 🎯 **Jev의 역할**: 대화 기록과 도구 응답을 채점하여 원문 텍스트를 유지하면서 불필요한 컨텍스트를 정리.
   - 💡 **핵심 장점**: 요약 환각 없이 프롬프트 토큰 오버헤드를 대폭 줄입니다.
 
-- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - jev-agent-failure-benchmark: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-agent-failure-benchmark**](https://github.com/TokenTrim/jev-agent-failure-benchmark) `★ 1` - Failure analysis benchmark for multi-agent workflows using Jev to isolate which agent, step, and error category caused task breakdowns.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - jev-playground: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-playground**](https://github.com/Little-Planet-Labs/jev-playground) `★ 1` - Web playground allowing developers to paste state text, configure Choice/Score questions, and inspect Jev probability distributions.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - jev-predict-skill: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-predict-skill**](https://github.com/DanielKillenberger/jev-predict-skill) `★ 1` - Agent skill reading peer rule specifications and collected evidence to predict downstream skill decision conclusions.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - jev-rerank-bench: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-rerank-bench**](https://github.com/anessbelbati/jev-rerank-bench) `★ 1` - Reranking benchmark evaluating whether Jev can rank search candidate passages with accuracy comparable to dedicated rerankers.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - jev-research: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-research**](https://github.com/sherajdev/jev-research) `★ 1` - Research guide and prototype demonstrating task decomposition and multi-agent delegation using Jev alongside Herdr.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1133,11 +1125,7 @@
 
 *다중 레이블 분류, 계층적 분류 체계 구축 및 데이터셋 레이블링.*
 
-- [**orchestkit**](https://github.com/yonatangross/orchestkit) `★ 278` - orchestkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
-  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
-  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
-
-- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - jev-tree: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jev-tree**](https://github.com/reachjalil/jev-tree) `★ 2` - Hierarchical decision tree router querying Jev layer-by-layer to navigate large option spaces down to specific items or workflows.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1148,7 +1136,7 @@
 
 *의사결정 프로파일링, 지연 시간 모니터링, 텔레메트리 및 벤치마크 평가 제품군.*
 
-- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - latitude-llm: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**latitude-llm**](https://github.com/latitude-dev/latitude-llm) `★ 4654` - Sidecar evaluator for Latitude conversation auditing logging which checks Jev considers necessary to benchmark against baseline pipelines.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1183,7 +1171,7 @@
 
 *발화 순서 중재, 인터럽트 감지 및 실시간 저지연 음성 AI 시스템.*
 
-- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - aiavatarkit: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**aiavatarkit**](https://github.com/uezo/aiavatarkit) `★ 674` - Conversational turn-taking arbitrator for AIAvatarKit evaluating whether a speaker has completed their turn or merely paused to think.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
@@ -1194,6 +1182,10 @@
 - [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) `★ 1` - B2B voice sales agent integrating Jev for real-time customer intent classification and turn routing.
   - 🎯 **Jev의 역할**: 음성 인식 전사 후 300ms 이내에 발화자의 핵심 의도(거절, 가격 문의, 데모 요청)를 분류.
   - 💡 **핵심 장점**: 300ms 미만의 의도 분류로 대화 지연을 해소하여 자연스러운 음성 상호작용 흐름을 지원.
+
+- [**ha-conversation-jev**](https://github.com/luxus/ha-conversation-jev) - Voice routing gate for Home Assistant directing simple lighting commands to device services and complex dialogue to Grok.
+  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
+  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
 ---
 
@@ -1214,11 +1206,15 @@
   - 🎯 **Jev의 역할**: 설명 텍스트를 기반으로 디자인 에셋과 영감을 미적 스타일 및 무드보드 버킷으로 분류.
   - 💡 **핵심 장점**: 창작자가 아이디어에 집중할 수 있도록 백그라운드에서 에셋 정리와 영감 연결을 자동화.
 
-- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - jevthoven: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**jevthoven**](https://github.com/cocktailpeanut/jevthoven) `★ 3` - Text-to-music composition tool where Jev selects notes bar-by-bar to generate editable, playable, and exportable multi-track MIDI files.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
-- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - ui-generator-instinct-jev: Domain-tailored decision automation for quantitative trading, auditing, and specialized operations.
+- [**ui-generator-instinct-jev**](https://github.com/joevidev/ui-generator-instinct-jev) `★ 1` - UI layout generator using Jev to select component types, form fields, and styles from a design system, assembling valid interfaces.
+  - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
+  - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
+
+- [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) - Music theory and harmony experiment querying Jev to solve harmonic exercises and voice-lead electric piano chords.
   - 🎯 **Jev의 역할**: 실시간 도메인 원격 측정 데이터를 수집하여 자동 실행 또는 리스크 경고를 트리거.
   - 💡 **핵심 장점**: 초 단위의 미션 크리티컬 워크플로에 구조화된 시맨틱 인지를 결합합니다.
 
