@@ -29738,5 +29738,87 @@
       "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
     },
     "pinned": false
+  },
+  {
+    "id": "pnthn-ai:polar_llama",
+    "name": "polar_llama",
+    "author": "pnthn-ai",
+    "url": "https://github.com/pnthn-ai/polar_llama",
+    "repoId": 795612737,
+    "category": "Data & Search",
+    "plainSummary": "Polar Llama 是一个与 Polars 集成的 Python 库，可并行调用 OpenAI、Anthropic、Gemini、Groq 和 AWS Bedrock 等多个 LLM 提供商的模型。",
+    "jevDecisionPoint": "给候选记录判断相关性或打分，再由本地程序筛选和排序。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Polar Llama is a Python library designed to enhance the efficiency of making parallel inference calls to the ChatGPT API using the Polars dataframe tool. This library enables users to manage multiple API requests simultaneously, significantly speeding up the process compared to serial request handling.",
+    "enrichment": {
+      "issueTextTrusted": false,
+      "ai": {
+        "attempted": true,
+        "status": "completed",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "muse-spark"
+      },
+      "plainSummaryEn": {
+        "source": "readme"
+      }
+    },
+    "stars": 30,
+    "forks": 2,
+    "openIssues": 11,
+    "license": "MIT",
+    "createdAt": "2024-05-03T16:47:23Z",
+    "lastCommitAt": "2026-09-19T12:58:21Z",
+    "headSha": "d10d48db20af9d5a33e696c39f660187677257f7",
+    "metadataFetchedAt": "2026-09-19T14:57:04.973Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/295237610?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-19T14:57:04.973Z",
+    "evidence": [
+      {
+        "url": "https://github.com/pnthn-ai/polar_llama/blob/d10d48db20af9d5a33e696c39f660187677257f7/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pnthn-ai/polar_llama/blob/d10d48db20af9d5a33e696c39f660187677257f7/src/model_client/typesafe.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "d10d48db20af9d5a33e696c39f660187677257f7",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/pnthn-ai/polar_llama/blob/d10d48db20af9d5a33e696c39f660187677257f7/README.md",
+          "hash": "54df48783bfb80f26772c8c2ccf6bda124c90754c966ffba50ec4f5c45a21276"
+        },
+        {
+          "path": "src/model_client/typesafe.rs",
+          "url": "https://github.com/pnthn-ai/polar_llama/blob/d10d48db20af9d5a33e696c39f660187677257f7/src/model_client/typesafe.rs",
+          "hash": "2595d1d959921e594fe00ed0a6c3cb718790265ccc8c45c335393a10ed1b57d9"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 23,
+      "issueBodySha256": "adf0163891fe2d30fe863e353f4a10862203ef55e0c1fbf4da9ed3750024e430",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/23"
+    }
   }
 ]
