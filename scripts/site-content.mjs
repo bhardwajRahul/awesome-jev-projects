@@ -98,10 +98,10 @@ ${LOCALES.map((l) => `<link rel="alternate" hreflang="${COPY[l].lang}" href="${S
 <meta property="og:type" content="website" /><meta property="og:site_name" content="Awesome Jev" />
 <meta property="og:locale" content="${c.og}" /><meta property="og:title" content="${escapeHTML(title)}" />
 <meta property="og:description" content="${escapeHTML(description)}" /><meta property="og:url" content="${canonical}" />
-<meta property="og:image" content="${SITE}og-card.png?v=visual-20260919" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
+<meta property="og:image" content="${SITE}og-card.png?v=radar-20260920" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:creator" content="@0xLogicrw" />
 <meta name="twitter:title" content="${escapeHTML(title)}" /><meta name="twitter:description" content="${escapeHTML(description)}" />
-<meta name="twitter:image" content="${SITE}og-card.png?v=visual-20260919" />
+<meta name="twitter:image" content="${SITE}og-card.png?v=radar-20260920" />
 <script type="application/ld+json">${safeJSON(structuredData)}</script>`;
 }
 
