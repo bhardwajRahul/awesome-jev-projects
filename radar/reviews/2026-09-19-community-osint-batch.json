@@ -1,0 +1,238 @@
+{
+  "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+  "baselineCommit": "decdf0c19b0d2d31e9c8bc8259dbb9aa1ef7dfab",
+  "baselineCount": 262,
+  "catalogCount": 287,
+  "preservedBaselineRecords": 262,
+  "executedSubmittedCode": false,
+  "newProjectsCount": 25,
+  "scope": [
+    "saibimajdi:typesafeai-dotnet-sdk",
+    "jamesward:zio-typesafe-ai",
+    "genierobot:typesafe-ai-rails",
+    "akashpriyadarshii:jev-superpowers",
+    "morcoan:jevseek",
+    "hev:reranker",
+    "bunsdev:typesafe-ai-playground",
+    "zhengxuyu:litjev",
+    "mrnugget:jev-shell-history",
+    "luantak:is-malicious",
+    "gargpratyush:jev-router",
+    "aaronshaf:opencode-jev-orchestrator",
+    "leonaaardob:fast-dev-compaction",
+    "compozy:yoshi",
+    "iamvatsalpatel:tiershift",
+    "abdelstark:heist-one",
+    "sorrycc:typesafe-snake",
+    "harshil1712:slidepilot",
+    "trungdq88:youtube-sponsor-detection",
+    "jaredpalmer:kev",
+    "tianyucodings:nanojev",
+    "featherless-ai:simple-jev",
+    "firassx914:janus",
+    "vinilana:jev-eval-agent",
+    "zhuyansen:jev-search-rerank-eval"
+  ],
+  "reviews": [
+    {
+      "id": "saibimajdi:typesafeai-dotnet-sdk",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "6be669e0d0b116b76e85136c4f6eaa44fadcecab",
+      "category": "SDK & Decision Frameworks",
+      "sourcePath": "src/TypeSafe.Sdk/TypeSafeClient.cs"
+    },
+    {
+      "id": "jamesward:zio-typesafe-ai",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "38082e8712b49ce239ae628557619347909165dc",
+      "category": "SDK & Decision Frameworks",
+      "sourcePath": "src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala"
+    },
+    {
+      "id": "genierobot:typesafe-ai-rails",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "fbac64470904fef7c4e68da172813daf0840f31f",
+      "category": "SDK & Decision Frameworks",
+      "sourcePath": "lib/typesafe/rails/client.rb"
+    },
+    {
+      "id": "akashpriyadarshii:jev-superpowers",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19",
+      "category": "CLI & Pipelines",
+      "sourcePath": "skills/systematic-debugging/condition-based-waiting-example.ts"
+    },
+    {
+      "id": "morcoan:jevseek",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "030d59114a03720783e839481a7814e7aecaad85",
+      "category": "Domain & Vertical Tools",
+      "sourcePath": "desktop.py"
+    },
+    {
+      "id": "hev:reranker",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "1eb47266270b32b2a3667f9fb89646378ca9c9d6",
+      "category": "Data & Search",
+      "sourcePath": "hev_rerank/rerank.py"
+    },
+    {
+      "id": "bunsdev:typesafe-ai-playground",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "f67c3571fca1c468b4585f17282a58a1f57b1a17",
+      "category": "Domain & Vertical Tools",
+      "sourcePath": "app/api/run/route.ts"
+    },
+    {
+      "id": "zhengxuyu:litjev",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "f21216c9fe5afe7fa52ff7064a402ee57fdbddd3",
+      "category": "High-Frequency & Simulation",
+      "sourcePath": "src/litjev/api.py"
+    },
+    {
+      "id": "mrnugget:jev-shell-history",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "4b2b75d26c0ccf5726263904514a22a8e11659ea",
+      "category": "CLI & Pipelines",
+      "sourcePath": "src/suggest.ts"
+    },
+    {
+      "id": "luantak:is-malicious",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "b6052465eb47cf85f347596385954aa06532718a",
+      "category": "Security & Guardrails",
+      "sourcePath": "src/jev.ts"
+    },
+    {
+      "id": "gargpratyush:jev-router",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "38da6b84ea01241bfc41fbddc0928d0f40a703f0",
+      "category": "Routing & Cost Optimization",
+      "sourcePath": "src/policy.mjs"
+    },
+    {
+      "id": "aaronshaf:opencode-jev-orchestrator",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "ffe76fed66b3d544f218cacff1947fc191688c3a",
+      "category": "Routing & Cost Optimization",
+      "sourcePath": "src/jev.ts"
+    },
+    {
+      "id": "leonaaardob:fast-dev-compaction",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "7147a4bab4ff9caf64ae44a2db1ab1f907a20291",
+      "category": "Context GC & Filter",
+      "sourcePath": "dist/compact.js"
+    },
+    {
+      "id": "compozy:yoshi",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "55c719718e5039f2276fbad804211682ae012f1e",
+      "category": "Context GC & Filter",
+      "sourcePath": "benchmarks/jev-calibrate.ts"
+    },
+    {
+      "id": "iamvatsalpatel:tiershift",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "16a0826b9f62eba6699240c4b53a7237a8c41617",
+      "category": "Routing & Cost Optimization",
+      "sourcePath": "bench/experiments/gate-experiment.ts"
+    },
+    {
+      "id": "abdelstark:heist-one",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c",
+      "category": "High-Frequency & Simulation",
+      "sourcePath": "packages/game/src/decision.ts"
+    },
+    {
+      "id": "sorrycc:typesafe-snake",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "8bf3f7c261ad35ece3345a02d21ba638ddfaf87f",
+      "category": "High-Frequency & Simulation",
+      "sourcePath": "src/jev/client.ts"
+    },
+    {
+      "id": "harshil1712:slidepilot",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "8ba4e89b56e4f9a08be2f1f69346240cab95a7b6",
+      "category": "Creative Tools",
+      "sourcePath": "apps/worker/src/decision.ts"
+    },
+    {
+      "id": "trungdq88:youtube-sponsor-detection",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "de01f0568d043035889a296a61ce21e0accc8b16",
+      "category": "Creative Tools",
+      "sourcePath": "extension/lib/jev.js"
+    },
+    {
+      "id": "jaredpalmer:kev",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "cc954f2f66d86943688fdbfa07b6db18f82ed065",
+      "category": "High-Frequency & Simulation",
+      "sourcePath": "kev/jev.py"
+    },
+    {
+      "id": "tianyucodings:nanojev",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "71a513bb0163b5634467842b523ee0c0ed6fb1c7",
+      "category": "High-Frequency & Simulation",
+      "sourcePath": "scripts/evaluate_live_jev_navigation.py"
+    },
+    {
+      "id": "featherless-ai:simple-jev",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "0dd5396ffce671ab7c4bfc031506d8e558cf8d23",
+      "category": "SDK & Decision Frameworks",
+      "sourcePath": "demos/jevpilot/src/simple-jev-api.js"
+    },
+    {
+      "id": "firassx914:janus",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "9cb66c488cf884e5997356a0de45f75aa3148774",
+      "category": "Routing & Cost Optimization",
+      "sourcePath": "src/janus/providers/typesafe.py"
+    },
+    {
+      "id": "vinilana:jev-eval-agent",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "037de1120c84b4b63cdf748e2acf258ff66d7731",
+      "category": "Domain & Vertical Tools",
+      "sourcePath": "agent/lib/jev-router.ts"
+    },
+    {
+      "id": "zhuyansen:jev-search-rerank-eval",
+      "verdict": "include-source-verified",
+      "reason": "从 OSINT 扫描候选集中审核确认其实际 Jev / TypeSafe 代码路径，固定主入口与调用点 SHA，补齐中英日韩四语说明。",
+      "checkedSha": "c896f14e944182e17a002dd7546f06ba3788d586",
+      "category": "Data & Search",
+      "sourcePath": "src/jse/rankers/jev.py"
+    }
+  ]
+}

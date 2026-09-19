@@ -27040,5 +27040,2703 @@
       "reviewedAt": "2026-09-19T12:22:02.798187+00:00"
     },
     "pinned": false
+  },
+  {
+    "id": "saibimajdi:typesafeai-dotnet-sdk",
+    "name": "typesafeai-dotnet-sdk",
+    "author": "saibimajdi",
+    "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk",
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "适用于 .NET 8+ 的 TypeSafe AI / Jev 客户端 SDK，支持 Choice、Score 与 Noul 决策原语与强类型响应解析。",
+    "jevDecisionPoint": "在 TypeSafeClient 中封装 System One API 请求，以并行 HTTP 管道评估 typed questions 并映射为不可变 C# 记录。",
+    "highlightBenefit": "为 C# / .NET 生态提供原生的 Jev 异步客户端支持，具备依赖注入扩展、指数退避重试与强类型错误处理。",
+    "claimStatus": "源码已核验。包含完整的客户端实现与类型定义；未与远程生产服务联调，不包含官方商业保证。",
+    "plainSummaryEn": "Community .NET SDK for TypeSafe AI and Jev, providing asynchronous typed evaluation for Choice, Score, and Noul primitives.",
+    "jevDecisionPointEn": "Wraps System One API endpoints in TypeSafeClient to issue parallel question evaluations and parse responses into immutable C# records.",
+    "highlightBenefitEn": "Brings native Jev decision primitives to the .NET ecosystem with dependency injection integration and configurable retry policies.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete client implementation and models; no live production service benchmark.",
+    "plainSummaryJa": "TypeSafe AI および Jev 向けの .NET 向けコミュニティ SDK であり、Choice、Score、Noul などの型付き判断を非同期で評価します。",
+    "jevDecisionPointJa": "TypeSafeClient 内で System One API エンドポイントをラップし、並列質問評価と型付きレスポンスのパースを行います。",
+    "highlightBenefitJa": "依存性注入や指数バックオフ再試行を備えた、.NET 向けネイティブな Jev 統合クライアントを提供します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。クライアント実装とモデル定義を含むが、本番環境での実稼働ベンチマークは未実施。",
+    "plainSummaryKo": "TypeSafe AI 및 Jev를 위한 .NET 커뮤니티 SDK로 Choice, Score, Noul 판단 기본 요소를 비동기적으로 평가합니다.",
+    "jevDecisionPointKo": "TypeSafeClient에서 System One API 호출을 캡슐화하여 병렬 질문 평가 및 불변 C# 레코드 매핑을 수행합니다.",
+    "highlightBenefitKo": "의존성 주입 지원과 지수 백오프 재시도를 갖춘 .NET 네이티브 Jev 클라이언트를 제공합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 클라이언트 구현 및 모델을 포함하나 상용 서비스 연동 평가는 수행하지 않았습니다.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 5,
+    "forks": 0,
+    "openIssues": 1,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-16T19:18:00Z",
+    "updatedAt": "2026-09-18T19:18:12Z",
+    "pushedAt": "2026-09-18T20:26:27Z",
+    "lastCommitAt": "2026-09-18T19:18:07Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/8198978?v=4",
+    "language": "C#",
+    "topics": [
+      "ai",
+      "classification",
+      "csharp",
+      "dotnet",
+      "llm",
+      "sdk",
+      "systemone",
+      "typesafe"
+    ],
+    "archived": false,
+    "headSha": "6be669e0d0b116b76e85136c4f6eaa44fadcecab",
+    "sourceUrl": "https://github.com/saibimajdi/typesafeai-dotnet-sdk/blob/6be669e0d0b116b76e85136c4f6eaa44fadcecab/src/TypeSafe.Sdk/TypeSafeClient.cs#L1-L283",
+    "sourcePath": "src/TypeSafe.Sdk/TypeSafeClient.cs",
+    "evidenceLines": [
+      1,
+      283
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk/blob/6be669e0d0b116b76e85136c4f6eaa44fadcecab/src/TypeSafe.Sdk/TypeSafeClient.cs#L1-L283",
+        "note": "src/TypeSafe.Sdk/TypeSafeClient.cs (L1-L283)"
+      },
+      {
+        "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk/blob/6be669e0d0b116b76e85136c4f6eaa44fadcecab/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "6be669e0d0b116b76e85136c4f6eaa44fadcecab",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/TypeSafe.Sdk/TypeSafeClient.cs",
+          "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk/blob/6be669e0d0b116b76e85136c4f6eaa44fadcecab/src/TypeSafe.Sdk/TypeSafeClient.cs#L1-L283",
+          "hash": "b8a44e6e7cf290a6fedc8248a2e8178ea2bdf1eb6ba8830b5b650a35dd94cd43",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            283
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/saibimajdi/typesafeai-dotnet-sdk/blob/6be669e0d0b116b76e85136c4f6eaa44fadcecab/README.md",
+          "hash": "a07189b5b7f91a3c9c61c5a71f5f8c86b6e45d4fab2f7a7fbe4b2f442bf5924a",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "jamesward:zio-typesafe-ai",
+    "name": "zio-typesafe-ai",
+    "author": "jamesward",
+    "url": "https://github.com/jamesward/zio-typesafe-ai",
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "基于 Scala 3 与 ZIO 的 TypeSafe AI / Jev 异步客户端库，通过纯函数式效应系统调用原子决策接口。",
+    "jevDecisionPoint": "将 Jev / System One API 建模为 ZIO Effect，将状态与 Choice / Score 提问转化为函数式强类型请求并获取校验后的结果。",
+    "highlightBenefit": "让函数式 Scala 开发者能够在 ZIO 生态中无缝结合 Jev 进行类型安全的离散决策与并发调用。",
+    "claimStatus": "源码已核验。包含完整的 ZIO 封装与测试规格；未执行生产级负载基准测试。",
+    "plainSummaryEn": "A Scala 3 and ZIO library for TypeSafe AI and Jev, integrating discrete decision endpoints into a purely functional effect system.",
+    "jevDecisionPointEn": "Models Jev System One queries as ZIO effects, submitting state and typed questions concurrently with robust schema decoding.",
+    "highlightBenefitEn": "Enables functional Scala applications to leverage Jev fast decision-making with fiber-based concurrency and structured error management.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete effect wrapper and test specifications; no live load benchmark.",
+    "plainSummaryJa": "Scala 3 と ZIO を用いた TypeSafe AI / Jev 向けクライアントライブラリであり、純粋関数型の効果システムから決定エンドポイントを呼び出します。",
+    "jevDecisionPointJa": "Jev System One クエリを ZIO エフェクトとしてモデル化し、状態と型付き質問を並行送信して結果をデコードします。",
+    "highlightBenefitJa": "関数型プログラミング環境において、ファイバーベースの並行処理と厳密なエラー処理を活かした Jev 統合を実現します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。ZIO ラッパーとテスト仕様を含むが、高負荷ベンチマークは未実施。",
+    "plainSummaryKo": "Scala 3와 ZIO 기반의 TypeSafe AI 및 Jev 클라이언트 라이브러리로 순수 함수형 이펙트 시스템에서 판단 API를 호출합니다.",
+    "jevDecisionPointKo": "Jev System One 쿼리를 ZIO 이펙트로 모델링하여 상태와 질문을 동시 전송하고 스키마를 디코딩합니다.",
+    "highlightBenefitKo": "함수형 프로그래밍 환경에서 파이버 동시성과 구조화된 오류 처리를 통해 타입 안전한 판단 루프를 구현합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. ZIO 래퍼 및 테스트 규격을 포함하나 고부하 벤치마크는 미실시되었습니다.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T05:23:30Z",
+    "updatedAt": "2026-09-19T07:50:02Z",
+    "pushedAt": "2026-09-18T14:32:10Z",
+    "lastCommitAt": "2026-09-18T14:32:10Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/65043?v=4",
+    "language": "Scala",
+    "topics": [],
+    "archived": false,
+    "headSha": "38082e8712b49ce239ae628557619347909165dc",
+    "sourceUrl": "https://github.com/jamesward/zio-typesafe-ai/blob/38082e8712b49ce239ae628557619347909165dc/src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala#L1-L571",
+    "sourcePath": "src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala",
+    "evidenceLines": [
+      1,
+      571
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/jamesward/zio-typesafe-ai/blob/38082e8712b49ce239ae628557619347909165dc/src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala#L1-L571",
+        "note": "src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala (L1-L571)"
+      },
+      {
+        "url": "https://github.com/jamesward/zio-typesafe-ai/blob/38082e8712b49ce239ae628557619347909165dc/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "38082e8712b49ce239ae628557619347909165dc",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala",
+          "url": "https://github.com/jamesward/zio-typesafe-ai/blob/38082e8712b49ce239ae628557619347909165dc/src/main/scala/com/jamesward/zio_typesafe_ai/TypeSafeAI.scala#L1-L571",
+          "hash": "408aee5b3f355bbe3c242203cfede33a882e249605e58e5a6d5ed4a259e79053",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            571
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/jamesward/zio-typesafe-ai/blob/38082e8712b49ce239ae628557619347909165dc/README.md",
+          "hash": "7d3cdc7d890c858984dace0c93f37274e947290ea1e3739b81854839714aa355",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "genierobot:typesafe-ai-rails",
+    "name": "typesafe-ai-rails",
+    "author": "GenieRobot",
+    "url": "https://github.com/GenieRobot/typesafe-ai-rails",
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "Ruby on Rails 官方风格集成插件，为 ActiveModel/ActiveRecord 模型引入 Jev 分类、评分与决策策略支持。",
+    "jevDecisionPoint": "在 Rails 模型生命周期或服务层中调用 Jev System One API，执行业务状态判断并自动记录决策日志。",
+    "highlightBenefit": "极简化 Rails 应用接入 Jev 的流程，提供 Railtie 自动加载、配置生成器与结构化决策策略模式。",
+    "claimStatus": "源码已核验。包含 Rails 集成脚手架、客户端封装与策略定义；未在外部生产数据库进行集成基准测试。",
+    "plainSummaryEn": "Ruby on Rails integration gem for TypeSafe AI and Jev, providing model-level classification and decision policy patterns.",
+    "jevDecisionPointEn": "Dispatches state and criteria from ActiveRecord models or services to Jev System One endpoints, logging structured outcomes.",
+    "highlightBenefitEn": "Simplifies adding Jev discrete judgments to Rails web apps with standard Railtie configuration and policy wrappers.",
+    "claimStatusEn": "Source code verified against pinned commit. Includes Railtie setup and policy classes; production database performance unverified.",
+    "plainSummaryJa": "Ruby on Rails 向けの TypeSafe AI / Jev 統合 gem であり、モデル層やサービス層に型付き分類と決定ポリシーパターンを導入します。",
+    "jevDecisionPointJa": "ActiveRecord モデルから状態と判定基準を Jev System One エンドポイントへ送り、構造化された判断ログを記録します。",
+    "highlightBenefitJa": "標準的な Railtie 設定とポリシーラッパーにより、Rails アプリケーションへの Jev 導入を簡素化します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。Railtie 設定とポリシークラスを含むが、本番データベースでの検証は未実施。",
+    "plainSummaryKo": "TypeSafe AI 및 Jev를 위한 Ruby on Rails 연동 젬으로 모델 계층에 분류 및 판단 정책 패턴을 제공합니다.",
+    "jevDecisionPointKo": "ActiveRecord 모델에서 상태와 기준을 Jev System One 엔드포인트로 전달하고 구조화된 판단 결과를 기록합니다.",
+    "highlightBenefitKo": "표준 Railtie 설정과 정책 래퍼를 통해 Rails 웹 애플리케이션에서 간편하게 Jev 판단을 활용할 수 있습니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. Railtie 설정 및 정책 클래스를 포함하나 실제 프로덕션 DB 부하 테스트는 미실시되었습니다.",
+    "tags": [
+      "multilanguage-sdk",
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-16T20:31:02Z",
+    "updatedAt": "2026-09-16T22:14:32Z",
+    "pushedAt": "2026-09-16T20:55:50Z",
+    "lastCommitAt": "2026-09-16T20:55:50Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/19553316?v=4",
+    "language": "Ruby",
+    "topics": [],
+    "archived": false,
+    "headSha": "fbac64470904fef7c4e68da172813daf0840f31f",
+    "sourceUrl": "https://github.com/GenieRobot/typesafe-ai-rails/blob/fbac64470904fef7c4e68da172813daf0840f31f/lib/typesafe/rails/client.rb#L1-L148",
+    "sourcePath": "lib/typesafe/rails/client.rb",
+    "evidenceLines": [
+      1,
+      148
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/GenieRobot/typesafe-ai-rails/blob/fbac64470904fef7c4e68da172813daf0840f31f/lib/typesafe/rails/client.rb#L1-L148",
+        "note": "lib/typesafe/rails/client.rb (L1-L148)"
+      },
+      {
+        "url": "https://github.com/GenieRobot/typesafe-ai-rails/blob/fbac64470904fef7c4e68da172813daf0840f31f/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "fbac64470904fef7c4e68da172813daf0840f31f",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "lib/typesafe/rails/client.rb",
+          "url": "https://github.com/GenieRobot/typesafe-ai-rails/blob/fbac64470904fef7c4e68da172813daf0840f31f/lib/typesafe/rails/client.rb#L1-L148",
+          "hash": "339a723fde000b4f1e8ca7f85daadef56cff058b39e36f0eb3beb68468da4974",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            148
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/GenieRobot/typesafe-ai-rails/blob/fbac64470904fef7c4e68da172813daf0840f31f/README.md",
+          "hash": "02ce1ff5e760dae8fa4b15ba7b6476ae9259d64bd44a78c236fa99d1d8505ae9",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "akashpriyadarshii:jev-superpowers",
+    "name": "jev-superpowers",
+    "author": "AkashPriyadarshii",
+    "url": "https://github.com/AkashPriyadarshii/jev-superpowers",
+    "category": "CLI & Pipelines",
+    "plainSummary": "面向编码智能体的系统化开发流程框架，融合 Jev 进行无幻觉依赖审查、完成度门禁与错误重试决策。",
+    "jevDecisionPoint": "在智能体执行循环的关键检查点，利用 Jev 评估代码变更质量、测试覆盖与第三方包合法性，决定是否推进或回滚。",
+    "highlightBenefit": "将确定性代码流水线与 Jev 快速二元判断结合，防止编码 Agent 在长程任务中产生方向偏离或引入未知包。",
+    "claimStatus": "源码已核验。包含技能脚手架与决策逻辑用例；实际门禁效果取决于接入的模型与具体上下文。",
+    "plainSummaryEn": "Software development framework for coding agents enhanced with Jev for dependency vetting, completion gates, and debugging decisions.",
+    "jevDecisionPointEn": "Invokes Jev at workflow checkpoints to evaluate change validity, test sufficiency, and package safety before advancing agent state.",
+    "highlightBenefitEn": "Constrains coding agent trajectories using fast discrete judgments, preventing hallucinated dependencies and premature task completion.",
+    "claimStatusEn": "Source code verified against pinned commit. Framework definitions and examples inspected; accuracy depends on upstream model calibration.",
+    "plainSummaryJa": "コーディングエージェント向けの体系的開発フレームワークであり、依存関係検証、完了判定ゲート、デバッグ分岐に Jev を活用します。",
+    "jevDecisionPointJa": "ワークフローのチェックポイントで Jev を呼び出し、変更の妥当性やテスト充足度を判定してエージェントの進行を制御します。",
+    "highlightBenefitJa": "高速な離散判断によりエージェントの逸脱を防ぎ、未知の依存関係の混入やタスクの誤認完了を抑止します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。フレームワーク定義と使用例を確認。実際の精度は連携モデルの品質に依存します。",
+    "plainSummaryKo": "의존성 검증, 완료 게이트, 디버깅 분기 제어에 Jev를 결합한 코딩 에이전트용 체계적 개발 프레임워크입니다.",
+    "jevDecisionPointKo": "워크플로 검사 지점에서 Jev를 호출하여 변경 사항의 타당성과 테스트 충족도를 검증한 뒤 에이전트 진행을 제어합니다.",
+    "highlightBenefitKo": "신속한 이산 판단을 통해 에이전트의 경로 이탈을 막고 잘못된 패키지 설치 및 조기 완료 오류를 차단합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 프레임워크 정의 및 예제를 검토함. 실제 성능은 연동 모델의 상태에 좌우됩니다.",
+    "tags": [
+      "coding-agents",
+      "cli-git-gates"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T12:59:06Z",
+    "updatedAt": "2026-09-19T03:38:21Z",
+    "pushedAt": "2026-09-18T13:17:49Z",
+    "lastCommitAt": "2026-09-18T13:17:40Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/272530059?v=4",
+    "language": "JavaScript",
+    "topics": [
+      "agentic-skills",
+      "ai-agents",
+      "antigravity",
+      "claude-code",
+      "codex",
+      "coding-agents",
+      "cursor",
+      "developer-tools",
+      "gemini-cli",
+      "git-jev",
+      "jev",
+      "jev-scout",
+      "software-engineering",
+      "superpowers",
+      "system-one",
+      "tdd",
+      "typesafe-ai",
+      "zero-hallucination"
+    ],
+    "archived": false,
+    "headSha": "6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19",
+    "sourceUrl": "https://github.com/AkashPriyadarshii/jev-superpowers/blob/6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19/skills/systematic-debugging/condition-based-waiting-example.ts#L1-L159",
+    "sourcePath": "skills/systematic-debugging/condition-based-waiting-example.ts",
+    "evidenceLines": [
+      1,
+      159
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/AkashPriyadarshii/jev-superpowers/blob/6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19/skills/systematic-debugging/condition-based-waiting-example.ts#L1-L159",
+        "note": "skills/systematic-debugging/condition-based-waiting-example.ts (L1-L159)"
+      },
+      {
+        "url": "https://github.com/AkashPriyadarshii/jev-superpowers/blob/6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "url": "https://github.com/AkashPriyadarshii/jev-superpowers/blob/6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19/skills/systematic-debugging/condition-based-waiting-example.ts#L1-L159",
+          "hash": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            159
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/AkashPriyadarshii/jev-superpowers/blob/6ddc702c231fd33fdf04b1ab1c0cce96fd8d2a19/README.md",
+          "hash": "64346d031bd8d917458da0bdb43ea1a096ce60e620e9cb429f862933d4fb895d",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "morcoan:jevseek",
+    "name": "JevSeek",
+    "author": "morcoan",
+    "url": "https://github.com/morcoan/JevSeek",
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "本地编码桌面与 CLI 智能体，将 Jev 的动作路由与 DeepSeek 的代码参数生成分层解耦协同。",
+    "jevDecisionPoint": "由 Jev 根据当前工作区状态与用户意图快速判定下一步工具类型，再交由大语言模型补全具体参数。",
+    "highlightBenefit": "结合了 Jev 的毫秒级离散路由能力与生成模型的强代码生成能力，降低端到端思考延迟并节省 Token 消耗。",
+    "claimStatus": "源码已核验。包含桌面 UI 桥接与双模型路由逻辑；端到端延迟与实际生成质量依赖本地与远程环境配置。",
+    "plainSummaryEn": "Local coding workspace and agent decoupling tool routing via Jev from detailed argument generation via DeepSeek.",
+    "jevDecisionPointEn": "Employs Jev to classify and select the next tool action based on execution state, delegating parameter generation to DeepSeek.",
+    "highlightBenefitEn": "Combines low-latency discrete routing with capable generative modeling, reducing overall prompt overhead and turn latency.",
+    "claimStatusEn": "Source code verified against pinned commit. Covers desktop bridge and routing logic; end-to-end latency depends on provider configuration.",
+    "plainSummaryJa": "ローカルコーディングデスクトップ環境およびエージェントであり、Jev によるツールルーティングと DeepSeek によるコード引数生成を分離協調させます。",
+    "jevDecisionPointJa": "実行状態と意図に基づき Jev が次のツールアクションを瞬時に選定し、詳細な引数生成のみを DeepSeek に委ねます。",
+    "highlightBenefitJa": "低遅延な離散ルーティングと高性能な生成モデルを組み合わせ、プロンプト消費とターン遅延を削減します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。デスクトップブリッジと連携ロジックを含むが、総合性能は各環境の設定に依存します。",
+    "plainSummaryKo": "로컬 코딩 데스크톱 에이전트로 Jev의 도구 라우팅과 DeepSeek의 인자 생성을 계층화하여 결합합니다.",
+    "jevDecisionPointKo": "실행 상태와 사용자 의도에 따라 Jev가 다음 도구를 신속하게 선택하고 세부 파라미터 생성만 대규모 언어 모델에 위임합니다.",
+    "highlightBenefitKo": "지연 시간이 짧은 이산 라우팅과 강력한 생성 능력을 결합하여 턴당 지연 시간과 토큰 소모를 줄입니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 데스크톱 연동 및 라우팅 로직을 확인했으나 종합 지연 시간은 환경 설정에 따라 달라집니다.",
+    "tags": [
+      "coding-agents",
+      "desktop-os"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T09:06:19Z",
+    "updatedAt": "2026-09-18T22:41:30Z",
+    "pushedAt": "2026-09-18T16:42:15Z",
+    "lastCommitAt": "2026-09-18T16:39:41Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/254227521?v=4",
+    "language": "Python",
+    "topics": [
+      "coding-agent",
+      "deepseek",
+      "llm-agents",
+      "mcp",
+      "python",
+      "pywebview",
+      "react"
+    ],
+    "archived": false,
+    "headSha": "030d59114a03720783e839481a7814e7aecaad85",
+    "sourceUrl": "https://github.com/morcoan/JevSeek/blob/030d59114a03720783e839481a7814e7aecaad85/desktop.py#L1-L141",
+    "sourcePath": "desktop.py",
+    "evidenceLines": [
+      1,
+      141
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/morcoan/JevSeek/blob/030d59114a03720783e839481a7814e7aecaad85/desktop.py#L1-L141",
+        "note": "desktop.py (L1-L141)"
+      },
+      {
+        "url": "https://github.com/morcoan/JevSeek/blob/030d59114a03720783e839481a7814e7aecaad85/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "030d59114a03720783e839481a7814e7aecaad85",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "desktop.py",
+          "url": "https://github.com/morcoan/JevSeek/blob/030d59114a03720783e839481a7814e7aecaad85/desktop.py#L1-L141",
+          "hash": "e2ba0589649e839d77a867ce1085c4032f5159cd8148fbf8c55aac88431de1fe",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            141
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/morcoan/JevSeek/blob/030d59114a03720783e839481a7814e7aecaad85/README.md",
+          "hash": "964d064017db3bb8a5dbd637f1e8633f5b7ba492f68fdddf67a291ee8ea92f49",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "hev:reranker",
+    "name": "reranker",
+    "author": "hev",
+    "url": "https://github.com/hev/reranker",
+    "category": "Data & Search",
+    "plainSummary": "将 Jev（TypeSafe System One）作为已校准重排器的 Python 库，单次请求评估多达 30 篇候选文档的相关性。",
+    "jevDecisionPoint": "将查询与候选文档切片组装为 Jev 请求，为每篇文档并行发起 Noul 提问，输出 0 到 1 之间校准的相关度概率。",
+    "highlightBenefit": "单次并发调用即完成批量文档打分，可用作绝对相关度阈值过滤或重排序，极大降低搜索流水线重排延迟。",
+    "claimStatus": "源码已核验。支持 BM25 粗排后重排流水线与线程池并发；实际 BEIR 评测集收益需根据具体文档领域评测。",
+    "plainSummaryEn": "Python library utilizing Jev System One as a calibrated reranker, scoring up to 30 candidate documents per single API call.",
+    "jevDecisionPointEn": "Packs a search query and documents into state, issuing parallel Noul questions to obtain calibrated relevance probabilities.",
+    "highlightBenefitEn": "Evaluates entire batches concurrently without generative overhead, providing scores suitable for absolute thresholding and ranking.",
+    "claimStatusEn": "Source code verified against pinned commit. Includes pipeline examples and concurrency handling; retrieval gains vary across datasets.",
+    "plainSummaryJa": "Jev System One を較正済みリランカーとして使用する Python ライブラリであり、1 回のリクエストで最大 30 件の候補文書を採点します。",
+    "jevDecisionPointJa": "検索クエリと文書群を状態にまとめ、各文書に対して並列に Noul 判定を行い、較正された関連度確率を取得します。",
+    "highlightBenefitJa": "生成オーバーヘッドなしでバッチ全体の並列評価を完了し、絶対しきい値フィルタリングやリランクに活用できます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。BM25 連携や並行処理を含むが、実際の検索精度向上幅はデータセットに依存します。",
+    "plainSummaryKo": "Jev System One을 보정된 리랭커로 활용하는 Python 라이브러리로 1회 호출로 최대 30개 후보 문서를 평가합니다.",
+    "jevDecisionPointKo": "검색 쿼리와 문서를 상태로 묶어 각 문서에 병렬 Noul 질문을 던진 뒤 보정된 관련도 확률을 산출합니다.",
+    "highlightBenefitKo": "텍스트 생성 비용 없이 일괄 평가를 수행하여 절대 임계값 필터링 및 순위 재정렬에 즉시 사용할 수 있습니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. BM25 연동 및 스레드 병렬 처리를 포함하나 검색 품질 개선 폭은 데이터셋에 따라 다릅니다.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T12:39:43Z",
+    "updatedAt": "2026-09-19T02:35:15Z",
+    "pushedAt": "2026-09-17T20:47:21Z",
+    "lastCommitAt": "2026-09-17T20:47:19Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/20188639?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "1eb47266270b32b2a3667f9fb89646378ca9c9d6",
+    "sourceUrl": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/hev_rerank/rerank.py#L1-L105",
+    "sourcePath": "hev_rerank/rerank.py",
+    "evidenceLines": [
+      1,
+      105
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/hev_rerank/rerank.py#L1-L105",
+        "note": "hev_rerank/rerank.py (L1-L105)"
+      },
+      {
+        "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/examples/bm25_then_jev.py",
+        "note": "examples/bm25_then_jev.py (L1-L16)"
+      },
+      {
+        "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/hev_rerank/__init__.py",
+        "note": "hev_rerank/__init__.py (L1-L5)"
+      },
+      {
+        "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "1eb47266270b32b2a3667f9fb89646378ca9c9d6",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "hev_rerank/rerank.py",
+          "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/hev_rerank/rerank.py#L1-L105",
+          "hash": "2bf4c363968b851150df6117db48b8975c61781e8bccbe1418e60bb854ebc4e7",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            105
+          ]
+        },
+        {
+          "path": "examples/bm25_then_jev.py",
+          "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/examples/bm25_then_jev.py",
+          "hash": "e9c2d205590f5ede224a7fc8c950dcce9fa430bb7d87566c61b84726c7266020",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            16
+          ]
+        },
+        {
+          "path": "hev_rerank/__init__.py",
+          "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/hev_rerank/__init__.py",
+          "hash": "4cd1562abec2f8a83c584e4fd54e826c1b056bb875ed935816374f644a6a3a7b",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            5
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/hev/reranker/blob/1eb47266270b32b2a3667f9fb89646378ca9c9d6/README.md",
+          "hash": "acceab7991f04020ae3eb38b6699d0b02d07b39ae1cd9ad6dfd827cf58ff6f3a",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "bunsdev:typesafe-ai-playground",
+    "name": "typesafe-ai-playground",
+    "author": "BunsDev",
+    "url": "https://github.com/TypeSafeAI/typesafe-playground",
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "TypeSafe AI Jev 社区试验场，内置 110 个分类、对话路由、提取与决策实验用例，支持移动端交互与 A/B 对比。",
+    "jevDecisionPoint": "在 Next.js 服务端路由中向 Jev 发起状态与提问负载，实时展示离散判定分布、推理耗时与置信度。",
+    "highlightBenefit": "提供开箱即用的 Web 可视化界面，方便开发者直观调试 Jev 提示词、观察决策原语边界并对比不同模型表现。",
+    "claimStatus": "源码已核验。包含完整的 UI 组件与上百个内置用例；在线演示的响应速度取决于部署端与远程接口连通性。",
+    "plainSummaryEn": "Community playground for TypeSafe AI and Jev featuring 110 real-world scenarios, dilemmas, and interactive experiments.",
+    "jevDecisionPointEn": "Submits custom states and questions to Jev via Next.js API routes, displaying discrete probabilities, latency, and confidence scores.",
+    "highlightBenefitEn": "Offers an intuitive web interface for exploring prompt criteria, testing edge cases, and evaluating discrete decision outputs.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete Next.js application codebase; live demo latency depends on deployment hosting.",
+    "plainSummaryJa": "TypeSafe AI および Jev 向けのコミュニティプレイグラウンドであり、110 種類の実践的な分類や実験シナリオを Web 上で試すことができます。",
+    "jevDecisionPointJa": "Next.js API ルート経由で Jev に状態と質問を送信し、離散確率分布や応答速度、確信度をリアルタイム表示します。",
+    "highlightBenefitJa": "直感的な Web インターフェースを通じて、プロンプト条件のチューニングや判断精度の事前検証が容易になります。",
+    "claimStatusJa": "固定コミットのソースを確認済み。豊富な UI とサンプル集を含むが、実際のレスポンス時間はホスティング環境に依存します。",
+    "plainSummaryKo": "TypeSafe AI 및 Jev를 위한 커뮤니티 플레이그라운드로 110개 실전 시나리오와 인터랙티브 실험을 제공합니다.",
+    "jevDecisionPointKo": "Next.js API 라우트를 통해 Jev에 상태와 질문을 전송하고 이산 확률 분포와 응답 지연 시간, 신뢰도를 표시합니다.",
+    "highlightBenefitKo": "직관적인 웹 인터페이스를 통해 프롬프트 기준을 조율하고 경계 조건을 시각적으로 확인하며 실험할 수 있습니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 전체 애플리케이션 코드를 확인했으나 실시간 지연 시간은 배포 환경에 따라 달라집니다.",
+    "tags": [
+      "evaluation-benchmarks",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 9,
+    "forks": 2,
+    "openIssues": 1,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-16T16:20:23Z",
+    "updatedAt": "2026-09-19T04:30:26Z",
+    "pushedAt": "2026-09-19T03:14:25Z",
+    "lastCommitAt": "2026-09-19T03:14:22Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/331025984?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "f67c3571fca1c468b4585f17282a58a1f57b1a17",
+    "sourceUrl": "https://github.com/BunsDev/typesafe-ai-playground/blob/f67c3571fca1c468b4585f17282a58a1f57b1a17/app/api/run/route.ts#L1-L65",
+    "sourcePath": "app/api/run/route.ts",
+    "evidenceLines": [
+      1,
+      65
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/BunsDev/typesafe-ai-playground/blob/f67c3571fca1c468b4585f17282a58a1f57b1a17/app/api/run/route.ts#L1-L65",
+        "note": "app/api/run/route.ts (L1-L65)"
+      },
+      {
+        "url": "https://github.com/TypeSafeAI/typesafe-playground/blob/f67c3571fca1c468b4585f17282a58a1f57b1a17/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "f67c3571fca1c468b4585f17282a58a1f57b1a17",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "app/api/run/route.ts",
+          "url": "https://github.com/BunsDev/typesafe-ai-playground/blob/f67c3571fca1c468b4585f17282a58a1f57b1a17/app/api/run/route.ts#L1-L65",
+          "hash": "63833a76ed07bad4a411b509701125462f599e13062926337d283f8c8cf50106",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            65
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/TypeSafeAI/typesafe-playground/blob/f67c3571fca1c468b4585f17282a58a1f57b1a17/README.md",
+          "hash": "6b9ac0423589afbb4ca011db88701df354cc4c80cbfc356bc9f776dd1a1bd92b",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "zhengxuyu:litjev",
+    "name": "litjev",
+    "author": "zhengxuyu",
+    "url": "https://github.com/zhengxuyu/litjev",
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "将开源大模型转化为 Jev 决策层的开放复现实现，基于 Qwen 等模型直接读取选项 logits 提供 System One 兼容接口。",
+    "jevDecisionPoint": "复刻 Jev 的 /v1/systemone 协议（Choice、Score、Noul），通过本地模型 forward 计算选项 token 的相对概率而非生成文本。",
+    "highlightBenefit": "让开发者可在本地私有部署 Jev 兼容的离散决策服务，摆脱闭源商用 API 依赖并支持 MMLU-Pro 等评测。",
+    "claimStatus": "源码已核验。实现了一致的 API 接口与 logits 计算；在特定任务上的校准概率与原始 Jev 模型存在分布差异。",
+    "plainSummaryEn": "Open reproduction of Jev decision layer on open-weights models, serving the System One schema by inspecting option logits directly.",
+    "jevDecisionPointEn": "Implements the /v1/systemone endpoint (Choice, Score, Noul) by calculating candidate token log-probabilities without text generation.",
+    "highlightBenefitEn": "Enables private and local hosting of Jev-compatible decision services on GPUs without relying on proprietary cloud APIs.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete local API server; calibrated probability distribution may differ from hosted Jev.",
+    "plainSummaryJa": "オープンソースモデルを Jev 互換の決定層に変換するオープン再現実装であり、選択肢の logits から System One API を提供します。",
+    "jevDecisionPointJa": "Choice、Score、Noul のスキーマを実装し、テキスト生成を行わずに候補トークンの log 確率から直接判定を計算します。",
+    "highlightBenefitJa": "独自の GPU 環境で Jev 互換の離散判定サービスをセルフホストでき、閉域環境での運用を可能にします。",
+    "claimStatusJa": "固定コミットのソースを確認済み。ローカル推論サーバーを含むが、較正された確率分布は本家 Jev と異なる場合があります。",
+    "plainSummaryKo": "오픈소스 모델을 Jev 호환 판단 레이어로 변환하는 오픈 구현체로 토큰 로짓을 읽어 System One 규격을 제공합니다.",
+    "jevDecisionPointKo": "Choice, Score, Noul 규격을 구현하여 텍스트 생성 없이 후보 토큰의 확률을 계산하여 즉시 반환합니다.",
+    "highlightBenefitKo": "독자적인 GPU 환경에서 Jev 호환 이산 판단 서비스를 구축하여 폐쇄망 및 로컬 환경에서 활용할 수 있습니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 로컬 추론 API를 포함하나 보정된 확률 분포는 공식 Jev와 차이가 있을 수 있습니다.",
+    "tags": [
+      "evaluation-benchmarks",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 13,
+    "forks": 1,
+    "openIssues": 3,
+    "license": "Apache-2.0",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T17:19:25Z",
+    "updatedAt": "2026-09-19T08:23:48Z",
+    "pushedAt": "2026-09-18T13:58:08Z",
+    "lastCommitAt": "2026-09-18T08:56:04Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/20417640?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "f21216c9fe5afe7fa52ff7064a402ee57fdbddd3",
+    "sourceUrl": "https://github.com/zhengxuyu/litjev/blob/f21216c9fe5afe7fa52ff7064a402ee57fdbddd3/src/litjev/api.py#L1-L83",
+    "sourcePath": "src/litjev/api.py",
+    "evidenceLines": [
+      1,
+      83
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/zhengxuyu/litjev/blob/f21216c9fe5afe7fa52ff7064a402ee57fdbddd3/src/litjev/api.py#L1-L83",
+        "note": "src/litjev/api.py (L1-L83)"
+      },
+      {
+        "url": "https://github.com/zhengxuyu/litjev/blob/f21216c9fe5afe7fa52ff7064a402ee57fdbddd3/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "f21216c9fe5afe7fa52ff7064a402ee57fdbddd3",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/litjev/api.py",
+          "url": "https://github.com/zhengxuyu/litjev/blob/f21216c9fe5afe7fa52ff7064a402ee57fdbddd3/src/litjev/api.py#L1-L83",
+          "hash": "560d6149a9c678757e037ca7a0e12de3cd6e83c385bc30616b6d228362fe7c3f",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            83
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/zhengxuyu/litjev/blob/f21216c9fe5afe7fa52ff7064a402ee57fdbddd3/README.md",
+          "hash": "23f4f07e1265d0c2574cb53cfae853ecf2aaf62f95943978d3c562d9920a2b89",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "mrnugget:jev-shell-history",
+    "name": "jev-shell-history",
+    "author": "mrnugget",
+    "url": "https://github.com/mrnugget/jev-shell-history",
+    "category": "CLI & Pipelines",
+    "plainSummary": "类似于 Fish 终端样式的 Zsh 历史命令建议工具，利用 Jev 对已有历史记录根据当前上下文进行智能打分排序。",
+    "jevDecisionPoint": "将当前敲入的命令前缀与本地 Zsh 历史候选组装为 Jev 请求，由 Jev 评估最佳补全项，仅做行内建议而不自动执行。",
+    "highlightBenefit": "结合了确定性本地历史的安全性与 Jev 上下文语义理解能力，避免盲目基于字符串前缀匹配造成的低质建议。",
+    "claimStatus": "源码已核验。支持建议打分与终端管道交互；网络延迟可能影响单字符按键响应，建议搭配本地缓存使用。",
+    "plainSummaryEn": "Fish-style Zsh history suggestion tool ranked by Jev, ordering candidate commands from local history based on context.",
+    "jevDecisionPointEn": "Packages current command input and historical candidates into a Jev request, ranking the most plausible command for inline suggestion.",
+    "highlightBenefitEn": "Combines the safety of local shell history with Jev semantic relevance, filtering out stale or risky command candidates.",
+    "claimStatusEn": "Source code verified against pinned commit. Terminal hook and suggestion logic inspected; interactive typing requires fast network connectivity.",
+    "plainSummaryJa": "Jev を利用して Zsh の履歴候補を文脈に合わせてランク付けし、Fish スタイルのインライン補完を表示する CLI ツールです。",
+    "jevDecisionPointJa": "現在の入力とローカル履歴を Jev に送信し、最も適切なコマンド候補を評価してインライン表示します（自動実行はしません）。",
+    "highlightBenefitJa": "文字列前方一致にとどまらず、文脈に即した適切なコマンドを優先提示してシェル操作を高速化します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。シェル連携スクリプトを確認。快適な入力には低遅延なネットワーク環境が推奨されます。",
+    "plainSummaryKo": "Jev를 사용하여 Zsh 로컬 기록 명령어를 문맥에 맞게 순위 매겨 인라인 제안을 제공하는 터미널 도구입니다.",
+    "jevDecisionPointKo": "현재 입력 중인 명령어와 로컬 히스토리를 Jev로 평가하여 가장 타당한 완성 후보를 선정합니다 (자동 실행 안 됨).",
+    "highlightBenefitKo": "단순 접두사 매칭을 넘어 문맥에 부합하는 명령어를 우선 노출하여 터미널 작업 생산성을 높입니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 셸 연동 및 제안 로직을 확인했으나 타자 반응성은 네트워크 지연에 영향을 받습니다.",
+    "tags": [
+      "cli-git-gates",
+      "classification-ranking"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 57,
+    "forks": 3,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-18T08:11:07Z",
+    "updatedAt": "2026-09-19T12:40:05Z",
+    "pushedAt": "2026-09-18T08:11:11Z",
+    "lastCommitAt": "2026-09-18T08:10:57Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1185253?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "4b2b75d26c0ccf5726263904514a22a8e11659ea",
+    "sourceUrl": "https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/src/suggest.ts#L1-L196",
+    "sourcePath": "src/suggest.ts",
+    "evidenceLines": [
+      1,
+      196
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/src/suggest.ts#L1-L196",
+        "note": "src/suggest.ts (L1-L196)"
+      },
+      {
+        "url": "https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "4b2b75d26c0ccf5726263904514a22a8e11659ea",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/suggest.ts",
+          "url": "https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/src/suggest.ts#L1-L196",
+          "hash": "ff9b9e06a804183905e98af006dfb66436425a9a28f6cbb53af12eacc5cebc27",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            196
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/README.md",
+          "hash": "7e6ea24738df5128513652360bec0ef2329aa8f4c30a47c21f71521324424282",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "luantak:is-malicious",
+    "name": "is-malicious",
+    "author": "luantak",
+    "url": "https://github.com/luantak/is-malicious",
+    "category": "Security & Guardrails",
+    "plainSummary": "命令行代码库恶意行为扫描器，在运行未知代码前利用 Jev 分析源码、CI 配置与构建脚本的可疑行为。",
+    "jevDecisionPoint": "将待检文件内容切片与安全规则输入 Jev，由 Jev 判断代码是否包含数据外发、混淆加载或凭据嗅探等风险。",
+    "highlightBenefit": "在不直接执行脚本的安全沙箱前置阶段提供多维度危险信号预警，帮助开发者排查供应链中毒隐患。",
+    "claimStatus": "源码已核验。包含检测规则与行号关联输出；无法替代确定性 AST 静态分析与动态沙箱，需作为辅助防御层。",
+    "plainSummaryEn": "CLI security scanner using Jev to inspect source files, build scripts, and CI configs for suspicious patterns before execution.",
+    "jevDecisionPointEn": "Feeds file contents and security criteria into Jev to assess risks such as data exfiltration, obfuscated loaders, and credential leakage.",
+    "highlightBenefitEn": "Provides rapid pre-execution safety screening across multiple file formats without needing a heavy static analysis toolchain.",
+    "claimStatusEn": "Source code verified against pinned commit. Pattern rules and CLI outputs verified; serves as an advisory layer alongside deterministic linters.",
+    "plainSummaryJa": "未知のコードを実行する前に、Jev を使用してソースファイルや CI スクリプトの不審な挙動を検知する CLI セキュリティスキャナーです。",
+    "jevDecisionPointJa": "ファイル内容とセキュリティ判定基準を Jev に渡し、情報漏洩や難読化コード、認証情報の不正取得リスクを評価します。",
+    "highlightBenefitJa": "重い静的解析ツールをセットアップすることなく、実行前の迅速なセキュリティリスク評価を提供します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。ルール定義と CLI 出力を確認。確定的な静的解析と併用する補助層として機能します。",
+    "plainSummaryKo": "실행 전 소스 코드, 빌드 스크립트, CI 설정에서 의심스러운 동작을 Jev로 탐지하는 CLI 보안 스캐너입니다.",
+    "jevDecisionPointKo": "파일 내용과 보안 기준을 Jev에 입력하여 데이터 유출, 난독화 로더, 자격 증명 탈취 등의 위험성을 판별합니다.",
+    "highlightBenefitKo": "무거운 정적 분석 도구 없이도 실행 전 단계에서 신속하게 다각도 위험 징후를 감지할 수 있습니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 탐지 규칙 및 CLI 출력을 확인했으나 결정론적 정적 분석과 병행해야 합니다.",
+    "tags": [
+      "security-guardrails",
+      "cli-git-gates"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 9,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T11:40:17Z",
+    "updatedAt": "2026-09-19T11:04:26Z",
+    "pushedAt": "2026-09-18T18:54:21Z",
+    "lastCommitAt": "2026-09-18T18:54:21Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/46541492?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "jev",
+      "security-scanner",
+      "typesafe-ai"
+    ],
+    "archived": false,
+    "headSha": "b6052465eb47cf85f347596385954aa06532718a",
+    "sourceUrl": "https://github.com/luantak/is-malicious/blob/b6052465eb47cf85f347596385954aa06532718a/src/jev.ts#L1-L181",
+    "sourcePath": "src/jev.ts",
+    "evidenceLines": [
+      1,
+      181
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/luantak/is-malicious/blob/b6052465eb47cf85f347596385954aa06532718a/src/jev.ts#L1-L181",
+        "note": "src/jev.ts (L1-L181)"
+      },
+      {
+        "url": "https://github.com/luantak/is-malicious/blob/b6052465eb47cf85f347596385954aa06532718a/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "b6052465eb47cf85f347596385954aa06532718a",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/jev.ts",
+          "url": "https://github.com/luantak/is-malicious/blob/b6052465eb47cf85f347596385954aa06532718a/src/jev.ts#L1-L181",
+          "hash": "93ba448e6a80f27beb2f8c72675382cb14f271cb58809813b3064dec7b7e94e5",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            181
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/luantak/is-malicious/blob/b6052465eb47cf85f347596385954aa06532718a/README.md",
+          "hash": "b149237ce148c1a2f4f595002c76b1d8bd6796cea7b4c7bc8ea526fe90e96dd4",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "gargpratyush:jev-router",
+    "name": "jev-router",
+    "author": "gargpratyush",
+    "url": "https://github.com/gargpratyush/jev-router",
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "面向 Claude Code 与命令行任务的轻量级路由代理，利用 Jev 快速判定任务难度并将请求转发给最划算的模型。",
+    "jevDecisionPoint": "拦截用户任务或提示词，通过 Jev 离散多选决策评估任务复杂度，低复杂度使用廉价小模型，复杂任务升级为全功能大模型。",
+    "highlightBenefit": "在保持交互一致性的同时，大幅削减简单查询或低难度单轮编辑的 API 调用费用。",
+    "claimStatus": "源码已核验。包含 Claude Code 包装脚本、策略配置与状态栏展示；实际节约比例取决于用户日常提示词复杂度分布。",
+    "plainSummaryEn": "High-throughput semantic router for Claude Code and CLI tools, directing requests to the most cost-effective model via Jev.",
+    "jevDecisionPointEn": "Classifies task complexity with Jev discrete choice queries, dispatching trivial edits to lightweight models and reserving large models for complex logic.",
+    "highlightBenefitEn": "Reduces aggregate API costs for developer tools while preserving quality on challenging architectural questions.",
+    "claimStatusEn": "Source code verified against pinned commit. Includes wrapper binaries and policy configs; cost savings vary with workload distribution.",
+    "plainSummaryJa": "Claude Code などの CLI ツール向けセマンティックルーターであり、Jev を用いてタスク難易度を判定し最適なモデルへルーティングします。",
+    "jevDecisionPointJa": "Jev の離散選択判定によりタスクの複雑度を分類し、簡単な編集は低コストモデルへ、複雑な推論は大型モデルへ振り分けます。",
+    "highlightBenefitJa": "開発体験を損なうことなく、定型的な操作や小規模な修正にかかる API コストを大幅に削減します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。ラッパースクリプトとルーティング設定を確認。削減効果は日常のタスク傾向に依存します。",
+    "plainSummaryKo": "Claude Code 및 CLI 작업을 위한 시맨틱 라우터로 Jev를 통해 작업 난이도를 판별하여 가장 비용 효율적인 모델로 전달합니다.",
+    "jevDecisionPointKo": "Jev 이산 선택 쿼리로 작업 복잡도를 평가하여 단순 작업은 경량 모델로, 복잡한 로직은 고성능 모델로 라우팅합니다.",
+    "highlightBenefitKo": "개발 작업의 품질을 유지하면서 일상적인 단순 편집 및 질의에 드는 API 비용을 절감합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 래퍼 스크립트와 정책 설정을 확인했으나 실제 비용 절감률은 작업 분포에 따라 다릅니다.",
+    "tags": [
+      "llm-routing-cost",
+      "coding-agents"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 174,
+    "forks": 11,
+    "openIssues": 8,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-16T20:39:22Z",
+    "updatedAt": "2026-09-19T12:41:27Z",
+    "pushedAt": "2026-09-19T10:28:26Z",
+    "lastCommitAt": "2026-09-19T08:37:38Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/75370041?v=4",
+    "language": "JavaScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "38da6b84ea01241bfc41fbddc0928d0f40a703f0",
+    "sourceUrl": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/src/policy.mjs#L1-L63",
+    "sourcePath": "src/policy.mjs",
+    "evidenceLines": [
+      1,
+      63
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/src/policy.mjs#L1-L63",
+        "note": "src/policy.mjs (L1-L63)"
+      },
+      {
+        "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-claude.mjs",
+        "note": "bin/jev-claude.mjs (L1-L157)"
+      },
+      {
+        "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-codex.mjs",
+        "note": "bin/jev-codex.mjs (L1-L5)"
+      },
+      {
+        "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-explain.mjs",
+        "note": "bin/jev-explain.mjs (L1-L6)"
+      },
+      {
+        "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-statusline.mjs",
+        "note": "bin/jev-statusline.mjs (L1-L44)"
+      },
+      {
+        "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "38da6b84ea01241bfc41fbddc0928d0f40a703f0",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/policy.mjs",
+          "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/src/policy.mjs#L1-L63",
+          "hash": "98324591775a291812846f64eb9d40efefeafe3559f7be08063be471dec406fc",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            63
+          ]
+        },
+        {
+          "path": "bin/jev-claude.mjs",
+          "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-claude.mjs",
+          "hash": "b43a6ca1b07a70f3804e0c4452cb4945d3412185923368319703a3b8c4f56afa",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            157
+          ]
+        },
+        {
+          "path": "bin/jev-codex.mjs",
+          "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-codex.mjs",
+          "hash": "cbd0a97f16ef9369b5e3e5e9a567ccd78d8eec59ea7a8df3b2ac7f09cfe8e024",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            5
+          ]
+        },
+        {
+          "path": "bin/jev-explain.mjs",
+          "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-explain.mjs",
+          "hash": "883b3521b33aaaacf33352ed8c7caf902bc392827da0f14ef9349c62015b57ef",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            6
+          ]
+        },
+        {
+          "path": "bin/jev-statusline.mjs",
+          "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/bin/jev-statusline.mjs",
+          "hash": "aa8fdf3b80c0e8f0753a2ef6b58589fafba93b298cded020b779c3d6e9a2aaef",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            44
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/gargpratyush/jev-router/blob/38da6b84ea01241bfc41fbddc0928d0f40a703f0/README.md",
+          "hash": "524ceebedd33b12af674aa6b6b83032befa5b37d277fea73c88a2a64c2874248",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "aaronshaf:opencode-jev-orchestrator",
+    "name": "opencode-jev-orchestrator",
+    "author": "aaronshaf",
+    "url": "https://github.com/aaronshaf/opencode-jev-orchestrator",
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "保持主模型常驻廉价模型的 OpenCode 编排器，通过 Jev 识别高难度会话轮次并将其分发给专属子智能体。",
+    "jevDecisionPoint": "在每轮交互前由 Jev 对任务状态进行难度裁决，命中升级策略时启动配备更强模型和工具的临时子智能体。",
+    "highlightBenefit": "充分利用廉价常驻模型的上下文缓存以降低延迟和费用，仅在攻坚时刻动态调用昂贵算力。",
+    "claimStatus": "源码已核验。包含决策提取与子智能体派发逻辑；子任务上下文隔离与合并质量取决于任务切分边界。",
+    "plainSummaryEn": "OpenCode orchestrator that keeps a sticky affordable parent model and delegates difficult turns to subagents using Jev difficulty decisions.",
+    "jevDecisionPointEn": "Evaluates turn complexity before execution, triggering specialized subagents powered by premium models only when escalation criteria are met.",
+    "highlightBenefitEn": "Maximizes context cache hits on low-cost models while preserving high-tier reasoning capabilities for challenging code changes.",
+    "claimStatusEn": "Source code verified against pinned commit. Core routing and subagent dispatching verified; synthesis quality depends on task boundaries.",
+    "plainSummaryJa": "低コストモデルを常駐させつつ、Jev で難易度の高いターンを検知してサブエージェントに委譲する OpenCode 向けオーケストレーターです。",
+    "jevDecisionPointJa": "各ターンの実行前に Jev でタスクの難易度を評価し、エスカレーション基準を満たした場合のみ強力なサブエージェントを起動します。",
+    "highlightBenefitJa": "低コストモデルのコンテキストキャッシュを最大活用し、難易度の高い部分だけピンポイントで高性能モデルに委任できます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。ルーティングおよびサブエージェント制御を確認。統合精度はタスク分割の粒度に依存します。",
+    "plainSummaryKo": "기본 모델을 저비용 모델로 유지하고 Jev로 고난도 턴을 식별하여 서브 에이전트에 위임하는 OpenCode 오케스트레이터입니다.",
+    "jevDecisionPointKo": "실행 전 Jev를 호출하여 난이도를 판정하고 승격 기준을 충족할 때만 고성능 모델을 사용하는 임시 서브 에이전트를 가동합니다.",
+    "highlightBenefitKo": "저비용 모델의 프롬프트 캐시 활용도를 극대화하여 비용을 낮추고 필요한 순간에만 고급 추론 자원을 투입합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 라우팅 및 서브 에이전트 위임 로직을 확인했으나 분할 경계 설정에 영향을 받습니다.",
+    "tags": [
+      "llm-routing-cost",
+      "coding-agents"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T13:56:30Z",
+    "updatedAt": "2026-09-18T21:12:58Z",
+    "pushedAt": "2026-09-18T21:12:56Z",
+    "lastCommitAt": "2026-09-18T21:12:53Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/122654?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "ffe76fed66b3d544f218cacff1947fc191688c3a",
+    "sourceUrl": "https://github.com/aaronshaf/opencode-jev-orchestrator/blob/ffe76fed66b3d544f218cacff1947fc191688c3a/src/jev.ts#L1-L193",
+    "sourcePath": "src/jev.ts",
+    "evidenceLines": [
+      1,
+      193
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/aaronshaf/opencode-jev-orchestrator/blob/ffe76fed66b3d544f218cacff1947fc191688c3a/src/jev.ts#L1-L193",
+        "note": "src/jev.ts (L1-L193)"
+      },
+      {
+        "url": "https://github.com/aaronshaf/opencode-jev-orchestrator/blob/ffe76fed66b3d544f218cacff1947fc191688c3a/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "ffe76fed66b3d544f218cacff1947fc191688c3a",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/jev.ts",
+          "url": "https://github.com/aaronshaf/opencode-jev-orchestrator/blob/ffe76fed66b3d544f218cacff1947fc191688c3a/src/jev.ts#L1-L193",
+          "hash": "35da3e01794950a7eacdd03ffff123a0dbe17bddd9dcde33d9206cb01e95c0a6",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            193
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/aaronshaf/opencode-jev-orchestrator/blob/ffe76fed66b3d544f218cacff1947fc191688c3a/README.md",
+          "hash": "01ba712bddd16457b1210d832bd60730f45544d0d8baa247f6b407a76919a060",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "leonaaardob:fast-dev-compaction",
+    "name": "fast-dev-compaction",
+    "author": "leonaaardob",
+    "url": "https://github.com/leonaaardob/fast-dev-compaction",
+    "category": "Context GC & Filter",
+    "plainSummary": "Codex 插件与上下文压缩工具，在会话生命周期钩子中利用 Jev 判定历史记录的保留价值并进行无损还原。",
+    "jevDecisionPoint": "在会话上下文触达上限时，由 Jev 逐条评估历史消息和工具调用的保留必要性，仅剪除冗余噪音。",
+    "highlightBenefit": "相比简单的截断或整段摘要，通过离散判断保留了关键的代码定位与协议结构，防止长程编码对话失忆。",
+    "claimStatus": "源码已核验。基于 tamaratran/fast-jev-compaction 移植到 Codex 钩子；实际压缩比与还原完整性因提示词内容而异。",
+    "plainSummaryEn": "Codex plugin for context compaction, using Jev within session lifecycle hooks to preserve essential history while pruning noise.",
+    "jevDecisionPointEn": "Assesses past conversation turns with Jev when context limits approach, selecting critical tool outputs and user requirements for retention.",
+    "highlightBenefitEn": "Avoids blanket truncation or lossy re-summarization by selectively preserving exact code locations and decision traces.",
+    "claimStatusEn": "Source code verified against pinned commit. Adapted for Codex lifecycle hooks; compaction ratios depend on conversation style.",
+    "plainSummaryJa": "セッションフック内で Jev を活用し、必要な履歴情報を保持しながら不要なログを間引く Codex 向けコンテキスト圧縮プラグインです。",
+    "jevDecisionPointJa": "コンテキスト長の上限に近づいた際、Jev が各履歴やツール出力の重要度を判定し、重要な情報のみを残して圧縮します。",
+    "highlightBenefitJa": "単純な切り捨てや過度な要約による情報の欠落を防ぎ、長時間のコーディングセッションでも文脈を維持できます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。Codex フックへの移植実装を確認。実際の圧縮効率は会話履歴の内容に依存します。",
+    "plainSummaryKo": "세션 수명주기 훅에서 Jev를 호출하여 핵심 기록을 보존하고 불필요한 로그를 정리하는 Codex용 컨텍스트 압축 플러그인입니다.",
+    "jevDecisionPointKo": "컨텍스트 한도 도달 시 Jev가 각 턴과 도구 호출 결과의 보존 가치를 판단하여 중요한 단서만 선별적으로 유지합니다.",
+    "highlightBenefitKo": "단순 절삭이나 손실성 요약 대신 정확한 코드 위치와 결정 경로를 보존하여 긴 코딩 세션에서도 문맥을 유지합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. Codex 라이프사이클 훅 연동을 확인했으나 실제 압축률은 대화 형식에 따라 달라집니다.",
+    "tags": [
+      "context-compaction",
+      "coding-agents"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T00:35:35Z",
+    "updatedAt": "2026-09-19T01:03:58Z",
+    "pushedAt": "2026-09-19T01:03:55Z",
+    "lastCommitAt": "2026-09-19T01:03:52Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/207195840?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "codex",
+      "codex-plugin",
+      "compaction",
+      "jev",
+      "typesafe"
+    ],
+    "archived": false,
+    "headSha": "7147a4bab4ff9caf64ae44a2db1ab1f907a20291",
+    "sourceUrl": "https://github.com/leonaaardob/fast-dev-compaction/blob/7147a4bab4ff9caf64ae44a2db1ab1f907a20291/dist/compact.js#L1-L234",
+    "sourcePath": "dist/compact.js",
+    "evidenceLines": [
+      1,
+      234
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/leonaaardob/fast-dev-compaction/blob/7147a4bab4ff9caf64ae44a2db1ab1f907a20291/dist/compact.js#L1-L234",
+        "note": "dist/compact.js (L1-L234)"
+      },
+      {
+        "url": "https://github.com/leonaaardob/fast-dev-compaction/blob/7147a4bab4ff9caf64ae44a2db1ab1f907a20291/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "7147a4bab4ff9caf64ae44a2db1ab1f907a20291",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "dist/compact.js",
+          "url": "https://github.com/leonaaardob/fast-dev-compaction/blob/7147a4bab4ff9caf64ae44a2db1ab1f907a20291/dist/compact.js#L1-L234",
+          "hash": "f3f82f7c35fa8165109e9f34320a86c6eb612cb134972b874ecd5f376785e9d5",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            234
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/leonaaardob/fast-dev-compaction/blob/7147a4bab4ff9caf64ae44a2db1ab1f907a20291/README.md",
+          "hash": "37f8050010d5e6465b9349c37ec50c719122a054521a9f0de691861ed66f87b1",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "compozy:yoshi",
+    "name": "yoshi",
+    "author": "compozy",
+    "url": "https://github.com/compozy/yoshi",
+    "category": "Context GC & Filter",
+    "plainSummary": "面向 Claude Code 与 Codex 的上下文剪枝代理，通过 Jev 评估历史条目必要性并保持工具调用协议结构完整。",
+    "jevDecisionPoint": "在代理转发层使用 Jev 对消息历史打分，过滤已失效的中间试错输出，仅向大模型提交精简后的有效上下文。",
+    "highlightBenefit": "降低每次交互的输入 Token 数量，加快响应首字时间，且不破坏现有客户端与服务端的协议兼容性。",
+    "claimStatus": "源码已核验。当前为概念验证阶段（POC），包含校准基准脚本；更广泛的生产集成需关注上游项目进展。",
+    "plainSummaryEn": "Context-pruning proxy for Claude Code and Codex, employing Jev to prune redundant history while keeping tool protocols intact.",
+    "jevDecisionPointEn": "Intercepts request payloads and uses Jev to score historical messages, discarding outdated tool noise before forwarding to upstream LLMs.",
+    "highlightBenefitEn": "Decreases input token counts and time-to-first-token while preserving protocol compliance with client tool calling standards.",
+    "claimStatusEn": "Source code verified against pinned commit. Proof-of-concept with calibration benchmarks; upstream library integration ongoing.",
+    "plainSummaryJa": "Claude Code や Codex 向けのコンテキスト削減プロキシであり、Jev を使って履歴の必要性を評価しツールプロトコルを維持したまま剪定します。",
+    "jevDecisionPointJa": "プロキシ層でリクエストをインターセプトし、Jev が不要と判断した試行錯誤ログを除去してから上位モデルへ転送します。",
+    "highlightBenefitJa": "入力トークン数と初期応答時間を削減しつつ、既存クライアントのツール呼び出しプロトコルとの完全な互換性を保ちます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。較正ベンチマークを含む検証用実装であり、本番運用にはさらなる統合が必要です。",
+    "plainSummaryKo": "도구 호출 프로토콜을 보존하면서 Jev로 불필요한 기록을 정리하는 Claude Code 및 Codex용 컨텍스트 정리 프록시입니다.",
+    "jevDecisionPointKo": "프록시 계층에서 요청을 가로채 Jev로 메시지 중요도를 평가한 뒤 유효하지 않은 중간 출력을 제거하고 전달합니다.",
+    "highlightBenefitKo": "입력 토큰 수와 첫 토큰 응답 시간을 줄이면서도 도구 호출 프로토콜의 표준 규격을 유지합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 보정 벤치마크를 포함한 개념 검증 구현이며 상용 배포 시 추가 통합이 필요합니다.",
+    "tags": [
+      "context-compaction",
+      "coding-agents"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 16,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T00:02:20Z",
+    "updatedAt": "2026-09-19T12:34:40Z",
+    "pushedAt": "2026-09-18T02:46:36Z",
+    "lastCommitAt": "2026-09-18T02:46:28Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/205107042?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "bun",
+      "claude-code",
+      "codex",
+      "context-window",
+      "jev",
+      "llm-proxy",
+      "typesafe"
+    ],
+    "archived": false,
+    "headSha": "55c719718e5039f2276fbad804211682ae012f1e",
+    "sourceUrl": "https://github.com/compozy/yoshi/blob/55c719718e5039f2276fbad804211682ae012f1e/benchmarks/jev-calibrate.ts#L1-L188",
+    "sourcePath": "benchmarks/jev-calibrate.ts",
+    "evidenceLines": [
+      1,
+      188
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/compozy/yoshi/blob/55c719718e5039f2276fbad804211682ae012f1e/benchmarks/jev-calibrate.ts#L1-L188",
+        "note": "benchmarks/jev-calibrate.ts (L1-L188)"
+      },
+      {
+        "url": "https://github.com/compozy/yoshi/blob/55c719718e5039f2276fbad804211682ae012f1e/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "55c719718e5039f2276fbad804211682ae012f1e",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "benchmarks/jev-calibrate.ts",
+          "url": "https://github.com/compozy/yoshi/blob/55c719718e5039f2276fbad804211682ae012f1e/benchmarks/jev-calibrate.ts#L1-L188",
+          "hash": "2595bc02d44dbc5e6d29d246469e888585120b2ad9aa64474643eb8096975fa6",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            188
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/compozy/yoshi/blob/55c719718e5039f2276fbad804211682ae012f1e/README.md",
+          "hash": "0f6bb18aeb43f7fd833a4ad1cbec9e6d592d504488d20d73db53b203766f3c04",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "iamvatsalpatel:tiershift",
+    "name": "tiershift",
+    "author": "iamvatsalpatel",
+    "url": "https://github.com/iamvatsalpatel/tiershift",
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "基于 YAML 声明策略的模型分级路由工具，在约 180 毫秒内通过 Jev 将请求路由到满足要求的最低成本模型。",
+    "jevDecisionPoint": "无需微调训练数据，利用纯文本 YAML 规则由 Jev 对请求进行离散分类判断，命中阈值即向下分流。",
+    "highlightBenefit": "支持 TypeScript 与 Python 双语言生态，极低决策延迟，帮助团队透明化控制大模型调用成本。",
+    "claimStatus": "源码已核验。包含门禁实验脚本与双语言实现；实际端到端耗时与网络延迟及各服务商接口波动相关。",
+    "plainSummaryEn": "Policy-driven model routing framework routing every LLM call to the cheapest capable tier in ~180 ms via TypeSafe Jev.",
+    "jevDecisionPointEn": "Uses declarative YAML policies evaluated by Jev discrete classification without requiring pre-collected training data.",
+    "highlightBenefitEn": "Provides unified TypeScript and Python interfaces to minimize inference spend with minimal routing overhead.",
+    "claimStatusEn": "Source code verified against pinned commit. Includes gate benchmarks and dual-language tests; latency depends on regional network proximity.",
+    "plainSummaryJa": "YAML ポリシーに基づいて Jev が約 180ms でリクエストを判定し、要件を満たす最も安価なモデル層へ振り分けるルーティング基盤です。",
+    "jevDecisionPointJa": "事前学習データ不要で、プレーンな YAML 基準を Jev に評価させてリクエストの複雑度に応じた振り分けを実行します。",
+    "highlightBenefitJa": "TypeScript と Python の双方に対応し、最小限の判定遅延で推論コストの最適化を実現します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。実験ベンチマークと両言語のコードを確認。実環境での遅延は接続状況に依存します。",
+    "plainSummaryKo": "YAML 정책을 바탕으로 Jev가 약 180ms 내에 요청을 판별하여 가장 저렴한 적합 모델 계층으로 전달하는 라우팅 프레임워크입니다.",
+    "jevDecisionPointKo": "별도의 훈련 데이터 없이 YAML 규칙에 따라 Jev가 이산 분류를 수행하여 요청 복잡도에 맞게 분기합니다.",
+    "highlightBenefitKo": "TypeScript와 Python 생태계를 모두 지원하며 짧은 라우팅 지연 시간으로 모델 사용 비용을 체계적으로 절감합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 벤치마크 및 양 언어 테스트를 확인했으나 실제 통신 지연 시간은 네트워크 환경에 따라 달라집니다.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T20:26:56Z",
+    "updatedAt": "2026-09-18T05:36:39Z",
+    "pushedAt": "2026-09-18T05:36:35Z",
+    "lastCommitAt": "2026-09-18T05:36:33Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/61371035?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "agents",
+      "cost-optimization",
+      "jev",
+      "llm",
+      "model-routing",
+      "openai-compatible",
+      "proxy",
+      "python",
+      "typesafe",
+      "typescript"
+    ],
+    "archived": false,
+    "headSha": "16a0826b9f62eba6699240c4b53a7237a8c41617",
+    "sourceUrl": "https://github.com/iamvatsalpatel/tiershift/blob/16a0826b9f62eba6699240c4b53a7237a8c41617/bench/experiments/gate-experiment.ts#L1-L83",
+    "sourcePath": "bench/experiments/gate-experiment.ts",
+    "evidenceLines": [
+      1,
+      83
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/iamvatsalpatel/tiershift/blob/16a0826b9f62eba6699240c4b53a7237a8c41617/bench/experiments/gate-experiment.ts#L1-L83",
+        "note": "bench/experiments/gate-experiment.ts (L1-L83)"
+      },
+      {
+        "url": "https://github.com/iamvatsalpatel/tiershift/blob/16a0826b9f62eba6699240c4b53a7237a8c41617/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "16a0826b9f62eba6699240c4b53a7237a8c41617",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "bench/experiments/gate-experiment.ts",
+          "url": "https://github.com/iamvatsalpatel/tiershift/blob/16a0826b9f62eba6699240c4b53a7237a8c41617/bench/experiments/gate-experiment.ts#L1-L83",
+          "hash": "15a3b0e785066aa60e080614ae561d372c84919a444e664be14d0bbf37c02c52",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            83
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/iamvatsalpatel/tiershift/blob/16a0826b9f62eba6699240c4b53a7237a8c41617/README.md",
+          "hash": "47c0bf5ea81624a5b4a8d01e411f045d55f0dc68a9bb3e320146913c0161df11",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "abdelstark:heist-one",
+    "name": "heist-one",
+    "author": "AbdelStark",
+    "url": "https://github.com/AbdelStark/heist-one",
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "可观察的浏览器潜行游戏，由 Jev 驱动守卫的强类型状态判断，而确定性代码引擎控制物理世界与移动规律。",
+    "jevDecisionPoint": "在游戏主循环或事件触发时，由 Jev 判定守卫的警觉状态（怀疑、警报、搜寻），并将决策输出实时同步给渲染引擎。",
+    "highlightBenefit": "探索了利用 Jev 作为游戏 NPC 离散决策大脑的可行性，使 AI 行为既具备语义理解力又受确定性游戏规则约束。",
+    "claimStatus": "源码已核验。包含完整的游戏引擎与决策代码；频繁的远程接口调用在弱网环境下可能影响即时帧率。",
+    "plainSummaryEn": "Observable browser stealth game where Jev makes typed guard judgments while deterministic code owns the physics world.",
+    "jevDecisionPointEn": "Queries Jev during gameplay ticks or events to determine guard alert states, feeding discrete decisions back into the game loop.",
+    "highlightBenefitEn": "Demonstrates using Jev for game AI behavior trees, achieving dynamic situational awareness within deterministic constraints.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete monorepo game implementation; high-frequency remote calls require low network latency.",
+    "plainSummaryJa": "ブラウザー上で動作する潜入ゲームであり、確定的な物理エンジンと Jev によるガードの型付き状況判断を組み合わせています。",
+    "jevDecisionPointJa": "ゲームループ内のトリガーに応じて Jev がガードの警戒レベルや行動方針を決定し、結果をレンダリング側に反映します。",
+    "highlightBenefitJa": "Jev をゲーム NPC の意思決定コアとして活用し、確定的なルールの中で自然かつ変化に富んだ敵の挙動を表現します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。モノレポ構成のゲームコードを確認。高頻度呼び出し時のフレームレートは通信環境に依存します。",
+    "plainSummaryKo": "브라우저 잠입 게임으로 물리 법칙은 결정론적 코드가 제어하고 경비원의 상황 판단은 Jev의 타입화된 결정을 통해 수행됩니다.",
+    "jevDecisionPointKo": "게임 틱 또는 이벤트 발생 시 Jev를 호출하여 경비원의 경계 상태를 판정하고 결과를 게임 루프에 즉시 반영합니다.",
+    "highlightBenefitKo": "게임 NPC의 행동 트리에 Jev를 적용하여 규칙 기반 물리 시스템 안에서 유연하고 지능적인 상황 판단을 구현합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 모노레포 게임 전체 구현을 확인했으나 잦은 원격 호출 시 네트워크 상태가 프레임에 영향을 줄 수 있습니다.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 5,
+    "forks": 0,
+    "openIssues": 2,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T07:29:14Z",
+    "updatedAt": "2026-09-19T04:34:40Z",
+    "pushedAt": "2026-09-17T14:42:22Z",
+    "lastCommitAt": "2026-09-17T14:39:00Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/45264458?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "ai-game",
+      "jev",
+      "phaser",
+      "probabilistic-ai",
+      "remotion",
+      "stealth-game",
+      "system-one-models",
+      "typesafe",
+      "typescript"
+    ],
+    "archived": false,
+    "headSha": "632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c",
+    "sourceUrl": "https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/packages/game/src/decision.ts#L1-L451",
+    "sourcePath": "packages/game/src/decision.ts",
+    "evidenceLines": [
+      1,
+      451
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/packages/game/src/decision.ts#L1-L451",
+        "note": "packages/game/src/decision.ts (L1-L451)"
+      },
+      {
+        "url": "https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "packages/game/src/decision.ts",
+          "url": "https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/packages/game/src/decision.ts#L1-L451",
+          "hash": "dbc9f930fbd7d631cfe4ddd3d7c892bfa443e3d9ec30dfc01441b2f563cf6d86",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            451
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/README.md",
+          "hash": "3a164220cb911e864edf83918941296d3acedea9111c8c445cd5273c4530f2d1",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "sorrycc:typesafe-snake",
+    "name": "typesafe-snake",
+    "author": "sorrycc",
+    "url": "https://github.com/sorrycc/typesafe-snake",
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "由 TypeSafe Jev 模型自动操作的贪吃蛇游戏，每 tick 执行一次原子决策，合法移动与物理事实均由本地代码生成。",
+    "jevDecisionPoint": "将当前蛇身坐标、食物位置与合法转向候选组装为状态，由 Jev 选择下一步最佳转向（UP/DOWN/LEFT/RIGHT）。",
+    "highlightBenefit": "验证了 Jev 在离散空间快速做二元/多元选择的单步决策能力，且底层严格杜绝撞墙等非法动作。",
+    "claimStatus": "源码已核验。包含游戏引擎、Jev 客户端与提示词定义；单步网络往返延迟决定了贪吃蛇的最大平滑移动速度。",
+    "plainSummaryEn": "Snake autoplayer driven by TypeSafe Jev, executing one discrete System One decision per tick with code-enforced legal moves.",
+    "jevDecisionPointEn": "Supplies board state, fruit location, and legal direction choices to Jev, selecting the optimal move direction each tick.",
+    "highlightBenefitEn": "Demonstrates fast discrete choice in constrained environments while deterministic logic prevents illegal collisions.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete React/TypeScript implementation; tick frequency is bounded by network latency.",
+    "plainSummaryJa": "TypeSafe Jev が自動操作するスネークゲームであり、ティックごとに 1 回の離散判断を行い、移動可能判定はコード側で担保します。",
+    "jevDecisionPointJa": "蛇の座標や餌の位置、進行可能な方向を状態として渡し、Jev が最適な次の方向（上下左右）を選択します。",
+    "highlightBenefitJa": "制約された環境における Jev の高速選択能力を実証し、不正な移動は確定ロジックで排除してゲームの成立を保証します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。React/TypeScript の実装を確認。ティック速度は API との通信往復遅延に依存します。",
+    "plainSummaryKo": "TypeSafe Jev가 매 틱마다 이산 결정을 내려 스스로 플레이하는 스네이크 게임으로 유효한 이동 규칙은 코드가 보장합니다.",
+    "jevDecisionPointKo": "뱀의 위치와 먹이 좌표, 이동 가능한 방향을 상태로 구성하여 Jev가 최적의 이동 방향을 선택하도록 합니다.",
+    "highlightBenefitKo": "제약된 환경에서 Jev의 단일 틱 이산 판단 능력을 검증하며 불법적인 충돌은 결정론적 코드가 방지합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. React 및 TypeScript 구현을 확인했으나 틱 진행 속도는 네트워크 왕복 시간에 좌우됩니다.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 17,
+    "forks": 2,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-17T09:42:36Z",
+    "updatedAt": "2026-09-18T10:19:53Z",
+    "pushedAt": "2026-09-17T09:43:08Z",
+    "lastCommitAt": "2026-09-17T09:42:33Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/35128?v=4",
+    "language": "TypeScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "8bf3f7c261ad35ece3345a02d21ba638ddfaf87f",
+    "sourceUrl": "https://github.com/sorrycc/typesafe-snake/blob/8bf3f7c261ad35ece3345a02d21ba638ddfaf87f/src/jev/client.ts#L1-L29",
+    "sourcePath": "src/jev/client.ts",
+    "evidenceLines": [
+      1,
+      29
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/sorrycc/typesafe-snake/blob/8bf3f7c261ad35ece3345a02d21ba638ddfaf87f/src/jev/client.ts#L1-L29",
+        "note": "src/jev/client.ts (L1-L29)"
+      },
+      {
+        "url": "https://github.com/sorrycc/typesafe-snake/blob/8bf3f7c261ad35ece3345a02d21ba638ddfaf87f/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "8bf3f7c261ad35ece3345a02d21ba638ddfaf87f",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/jev/client.ts",
+          "url": "https://github.com/sorrycc/typesafe-snake/blob/8bf3f7c261ad35ece3345a02d21ba638ddfaf87f/src/jev/client.ts#L1-L29",
+          "hash": "e6de67116b2c48f3d34bb7fe165787534fbaa4d706735f6785867551b4d707cd",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            29
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/sorrycc/typesafe-snake/blob/8bf3f7c261ad35ece3345a02d21ba638ddfaf87f/README.md",
+          "hash": "d103baeb912d263f69c6d37e6ece509e90f62b36b871cdbc13a14e8b6620de64",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "harshil1712:slidepilot",
+    "name": "slidepilot",
+    "author": "harshil1712",
+    "url": "https://github.com/harshil1712/slidepilot",
+    "category": "Creative Tools",
+    "plainSummary": "基于语音语义理解的 Slidev 自动翻页控制器，运行于 Cloudflare Agents 与 Jev 之上。",
+    "jevDecisionPoint": "监听演讲者实时转录文本，由 Jev 评估当前页面核心要点是否已讲述完毕，并触发页面跳转或停顿。",
+    "highlightBenefit": "摆脱物理翻页笔束缚，结合确定性规则与语义完成度判定，实现自然流畅的演示文稿演讲同步。",
+    "claimStatus": "源码已核验。包含 Cloudflare Worker 决策逻辑与测试；语音识别准确度与现场网络延迟会影响翻页时机。",
+    "plainSummaryEn": "Voice-driven semantic auto-advance controller for Slidev presentations powered by Cloudflare Agents and TypeSafe Jev.",
+    "jevDecisionPointEn": "Analyzes live speech transcripts with Jev to judge whether the current slide's topics are covered, triggering slide transitions.",
+    "highlightBenefitEn": "Enables hands-free slide navigation by combining semantic completion checks with manual safety overrides.",
+    "claimStatusEn": "Source code verified against pinned commit. Includes Worker endpoints and test cases; transition timing depends on speech transcription fidelity.",
+    "plainSummaryJa": "Cloudflare Agents と Jev を組み合わせた Slidev 向け音声認識自動スライド送りコントローラーです。",
+    "jevDecisionPointJa": "リアルタイムの音声書き起こしテキストを Jev で解析し、スライドの要点が十分に説明されたかを判定してページを進めます。",
+    "highlightBenefitJa": "クリッカーを持たずにプレゼンを進行でき、意味論的な説明完了判定と手動オーバーライドを両立します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。Cloudflare Worker 上のロジックを確認。スライド送りの精度は音声認識の品質に影響されます。",
+    "plainSummaryKo": "Cloudflare Agents와 Jev를 기반으로 음성 전사 텍스트를 분석하여 자동으로 슬라이드를 넘겨주는 Slidev 프레젠테이션 컨트롤러입니다.",
+    "jevDecisionPointKo": "실시간 음성 전사 내용을 Jev로 평가하여 현재 슬라이드의 핵심 내용이 모두 다뤄졌는지 판단하고 전환을 트리거합니다.",
+    "highlightBenefitKo": "물리적인 리모컨 없이도 발표자의 음성 흐름에 맞춰 자연스럽게 슬라이드가 동기화되도록 지원합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. Worker 엔드포인트 및 테스트를 확인했으나 음성 전사 품질과 지연 시간에 영향을 받습니다.",
+    "tags": [
+      "creative-multimedia",
+      "voice-conversation"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 1,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T09:35:35Z",
+    "updatedAt": "2026-09-19T10:23:32Z",
+    "pushedAt": "2026-09-18T09:44:15Z",
+    "lastCommitAt": "2026-09-18T09:44:08Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18901032?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "cloudflare-workers",
+      "jev",
+      "slidev",
+      "slidev-addon",
+      "typescript",
+      "voice",
+      "workers-ai"
+    ],
+    "archived": false,
+    "headSha": "8ba4e89b56e4f9a08be2f1f69346240cab95a7b6",
+    "sourceUrl": "https://github.com/harshil1712/slidepilot/blob/8ba4e89b56e4f9a08be2f1f69346240cab95a7b6/apps/worker/src/decision.ts#L1-L219",
+    "sourcePath": "apps/worker/src/decision.ts",
+    "evidenceLines": [
+      1,
+      219
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/harshil1712/slidepilot/blob/8ba4e89b56e4f9a08be2f1f69346240cab95a7b6/apps/worker/src/decision.ts#L1-L219",
+        "note": "apps/worker/src/decision.ts (L1-L219)"
+      },
+      {
+        "url": "https://github.com/harshil1712/slidepilot/blob/8ba4e89b56e4f9a08be2f1f69346240cab95a7b6/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "8ba4e89b56e4f9a08be2f1f69346240cab95a7b6",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "apps/worker/src/decision.ts",
+          "url": "https://github.com/harshil1712/slidepilot/blob/8ba4e89b56e4f9a08be2f1f69346240cab95a7b6/apps/worker/src/decision.ts#L1-L219",
+          "hash": "4f4f263848b1832ddfa73cb6117c45851f3b819b295b3e9ad336682380b9b84e",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            219
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/harshil1712/slidepilot/blob/8ba4e89b56e4f9a08be2f1f69346240cab95a7b6/README.md",
+          "hash": "65468e5b6031ad969d760fd9cc5203072199b014504868a7531474f1df84b825",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "trungdq88:youtube-sponsor-detection",
+    "name": "youtube-sponsor-detection",
+    "author": "trungdq88",
+    "url": "https://github.com/trungdq88/youtube-sponsor-detection",
+    "category": "Creative Tools",
+    "plainSummary": "结合实时音频与字幕由 Jev 驱动的 YouTube 视频赞助广告片段检测与自动跳过扩展。",
+    "jevDecisionPoint": "提取视频字幕或音频转录切片，由 Jev 判定当前片段是否属于赞助商宣传读条，代码引擎控制时间戳与播放器快进。",
+    "highlightBenefit": "无需等待社区用户手动打点，借助 Jev 的语义判定能力实时识别个性化口播赞助，提升视频观看体验。",
+    "claimStatus": "源码已核验。包含完整的 Chrome 扩展架构与 Jev 调用封装；无字幕视频依赖实时语音转录，耗费额外算力。",
+    "plainSummaryEn": "YouTube extension detecting sponsored segments from live audio and transcripts using Jev, skipping promotional blocks automatically.",
+    "jevDecisionPointEn": "Inspects transcript segments with Jev to identify sponsor reads while browser code handles playback timeline skipping.",
+    "highlightBenefitEn": "Identifies promotional reads on newly released videos immediately without waiting for crowdsourced segment submissions.",
+    "claimStatusEn": "Source code verified against pinned commit. Full extension source inspected; videos lacking transcripts require real-time client audio transcription.",
+    "plainSummaryJa": "YouTube 動画の字幕や音声を Jev で解析し、スポンサー広告セグメントを検出して自動スキップするブラウザー拡張機能です。",
+    "jevDecisionPointJa": "動画の字幕や音声テキストを Jev に送信して宣伝パートかどうかを判定し、プレイヤー側で再生タイムラインをスキップします。",
+    "highlightBenefitJa": "コミュニティによる手動登録を待たずに、新規動画でもリアルタイムに口頭広告を識別して快適に視聴できます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。拡張機能コードを確認。字幕が存在しない動画では音声書き起こしが必要となります。",
+    "plainSummaryKo": "YouTube 영상의 자막과 오디오를 Jev로 분석하여 스폰서 광고 구간을 자동으로 감지하고 건너뛰는 브라우저 확장 프로그램입니다.",
+    "jevDecisionPointKo": "자막 텍스트를 Jev에 전달하여 스폰서 광고 멘트 여부를 판정한 뒤 브라우저 코드가 타임라인을 자동으로 이동시킵니다.",
+    "highlightBenefitKo": "크라우드소싱 등록을 기다리지 않고도 새 영상의 구두 광고 구간을 즉시 감지하여 쾌적한 시청 환경을 제공합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 전체 확장 프로그램 소스를 확인했으나 자막이 없는 영상은 별도 음성 전사가 요구됩니다.",
+    "tags": [
+      "creative-multimedia",
+      "domain-workflows"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 61,
+    "forks": 8,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-17T23:46:01Z",
+    "updatedAt": "2026-09-19T09:05:18Z",
+    "pushedAt": "2026-09-18T03:38:10Z",
+    "lastCommitAt": "2026-09-18T03:38:05Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/4214509?v=4",
+    "language": "JavaScript",
+    "topics": [],
+    "archived": false,
+    "headSha": "de01f0568d043035889a296a61ce21e0accc8b16",
+    "sourceUrl": "https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/extension/lib/jev.js#L1-L541",
+    "sourcePath": "extension/lib/jev.js",
+    "evidenceLines": [
+      1,
+      541
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/extension/lib/jev.js#L1-L541",
+        "note": "extension/lib/jev.js (L1-L541)"
+      },
+      {
+        "url": "https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "de01f0568d043035889a296a61ce21e0accc8b16",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "extension/lib/jev.js",
+          "url": "https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/extension/lib/jev.js#L1-L541",
+          "hash": "966518248785cd3347e07668c9e321e8ae635534d90b8724ae10215db2c6d1dc",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            541
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md",
+          "hash": "095eed873cf27de241b683ea9dc83ffbff064545917c18e18fa5367231a70080",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "jaredpalmer:kev",
+    "name": "kev",
+    "author": "jaredpalmer",
+    "url": "https://github.com/jaredpalmer/kev",
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "基于 Qwen2.5-0.5B 构建的轻量级类 Jev 决策头与适配器，支持在 MacBook 本地训练、微调与端到端运行。",
+    "jevDecisionPoint": "在小型基础模型上附加并联判断头，接收状态并直接输出强类型离散问题的概率分布，无需生成冗长文本。",
+    "highlightBenefit": "极度轻量化（仅 0.5B 参数），支持本地纯离线部署与低功耗边缘端决策，为探索专用判断模型提供了开源基座。",
+    "claimStatus": "源码已核验。包含模型权重训练代码与对比评估用例；模型容量较小，复杂语义多跳逻辑推理能力不及云端大模型。",
+    "plainSummaryEn": "Tiny Jev-like decision head built atop Qwen2.5-0.5B that can be trained and run locally on Apple Silicon MacBooks.",
+    "jevDecisionPointEn": "Attaches a parallel decision head to an open 0.5B model to answer discrete questions directly from token activations.",
+    "highlightBenefitEn": "Runs entirely offline on edge hardware with minimal memory footprint, offering an accessible base for custom judgment modeling.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete training and evaluation pipeline; limited parameter capacity restricts multi-hop reasoning.",
+    "plainSummaryJa": "Qwen2.5-0.5B をベースに構築された軽量な Jev 風の判断ヘッドモデルであり、MacBook 上でローカル学習および推論が可能です。",
+    "jevDecisionPointJa": "0.5B モデルの上に並列決定ヘッドを配置し、トークン活性から型付き離散質問の確率を直接算出します。",
+    "highlightBenefitJa": "完全なオフライン環境と省電力ハードウェアで動作し、独自データでの微調整やエッジ推論の基盤として役立ちます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。学習パイプラインと評価コードを確認。パラメータ規模の制約上、複雑な推論には限界があります。",
+    "plainSummaryKo": "Qwen2.5-0.5B 기반으로 구축된 초경량 Jev 스타일 판단 헤드 모델로 MacBook 환경에서 로컬 훈련과 추론이 가능합니다.",
+    "jevDecisionPointKo": "0.5B 오픈 모델 위에 병렬 결정 헤드를 추가하여 텍스트 생성 없이 토큰 활성화로부터 이산 질문의 확률을 산출합니다.",
+    "highlightBenefitKo": "에지 기기에서 완전 오프라인으로 구동되며 최소한의 메모리 점유율로 전용 판단 모델을 실험할 수 있는 기반을 제공합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 전체 훈련 및 평가 파이프라인을 확인했으나 매개변수 규모로 인해 복합 추론에는 한계가 있습니다.",
+    "tags": [
+      "evaluation-benchmarks",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 310,
+    "forks": 21,
+    "openIssues": 3,
+    "license": "Apache-2.0",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T20:49:39Z",
+    "updatedAt": "2026-09-19T12:39:03Z",
+    "pushedAt": "2026-09-19T07:32:43Z",
+    "lastCommitAt": "2026-09-18T23:45:35Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/4060187?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "cc954f2f66d86943688fdbfa07b6db18f82ed065",
+    "sourceUrl": "https://github.com/jaredpalmer/kev/blob/cc954f2f66d86943688fdbfa07b6db18f82ed065/kev/jev.py#L1-L122",
+    "sourcePath": "kev/jev.py",
+    "evidenceLines": [
+      1,
+      122
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/jaredpalmer/kev/blob/cc954f2f66d86943688fdbfa07b6db18f82ed065/kev/jev.py#L1-L122",
+        "note": "kev/jev.py (L1-L122)"
+      },
+      {
+        "url": "https://github.com/jaredpalmer/kev/blob/cc954f2f66d86943688fdbfa07b6db18f82ed065/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "cc954f2f66d86943688fdbfa07b6db18f82ed065",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "kev/jev.py",
+          "url": "https://github.com/jaredpalmer/kev/blob/cc954f2f66d86943688fdbfa07b6db18f82ed065/kev/jev.py#L1-L122",
+          "hash": "e0213782359ba2f95adbf045ddaf0a008b08b4162bf6a9b66d4ce55fc91a51cb",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            122
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/jaredpalmer/kev/blob/cc954f2f66d86943688fdbfa07b6db18f82ed065/README.md",
+          "hash": "e36eb2d17a324a6aed31e9900234202d27943a2ad16ea16fb40cb502d4b80444",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "tianyucodings:nanojev",
+    "name": "NanoJev",
+    "author": "TianyuCodings",
+    "url": "https://github.com/TianyuCodings/NanoJev",
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "Jev 决策模型的纳米级复刻版本，支持并行决策输出、动态候选集与完整的端到端训练评估流水线。",
+    "jevDecisionPoint": "通过前向网络对多个并行问题与动态候选集进行一次性评分，输出归一化置信度并记录游戏环境中的动作路径。",
+    "highlightBenefit": "开源了从数据准备、模型训练到游戏评测的全套流程，为学术界与开源社区研究非生成式离散决策模型提供参考。",
+    "claimStatus": "源码已核验。包含训练脚本与模拟导航评估代码；复刻模型的训练收敛度与各下游任务上的泛化度需独立验证。",
+    "plainSummaryEn": "Nano replica of Jev featuring parallel decisions, dynamic candidate sets, and an end-to-end training and evaluation pipeline.",
+    "jevDecisionPointEn": "Evaluates multiple questions and dynamic candidate spaces concurrently in a single forward pass, logging navigation choices.",
+    "highlightBenefitEn": "Provides open-source training infrastructure and game environment benchmarks for investigating non-generative discrete decisions.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete training and benchmark suite; generalization depends on dataset diversity.",
+    "plainSummaryJa": "並列決定出力、動的候補セット、エンドツーエンドの学習・評価パイプラインを備えた Jev のナノスケール再現プロジェクトです。",
+    "jevDecisionPointJa": "1 回のフォワードパスで複数の並列質問と動的選択肢を同時に評価し、環境内でのナビゲーション判断を記録します。",
+    "highlightBenefitJa": "非生成型の離散判断モデルに関するデータセット作成から学習、ゲーム環境での評価までの全工程をオープンに提供します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。学習スクリプトと評価環境を確認。下流タスクでの汎化性能は学習データに依存します。",
+    "plainSummaryKo": "병렬 결정 출력, 동적 후보군 처리 및 종단간 훈련과 평가 파이프라인을 갖춘 Jev 나노 재현 프로젝트입니다.",
+    "jevDecisionPointKo": "단일 순전파 연산으로 다중 병렬 질문과 동적 선택지를 동시에 평가하여 내비게이션 결정을 도출합니다.",
+    "highlightBenefitKo": "텍스트를 생성하지 않는 이산 판단 모델에 대한 데이터셋 구축, 훈련, 게임 환경 평가 전 과정을 공개된 코드로 제공합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 훈련 및 평가 코드를 확인했으나 하위 과제에서의 일반화 성능은 데이터 다양성에 좌우됩니다.",
+    "tags": [
+      "games-simulation",
+      "evaluation-benchmarks",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 657,
+    "forks": 75,
+    "openIssues": 3,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T16:08:30Z",
+    "updatedAt": "2026-09-19T12:36:35Z",
+    "pushedAt": "2026-09-17T23:24:13Z",
+    "lastCommitAt": "2026-09-17T23:24:11Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/48460209?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "71a513bb0163b5634467842b523ee0c0ed6fb1c7",
+    "sourceUrl": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/scripts/evaluate_live_jev_navigation.py#L1-L70",
+    "sourcePath": "scripts/evaluate_live_jev_navigation.py",
+    "evidenceLines": [
+      1,
+      70
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/scripts/evaluate_live_jev_navigation.py#L1-L70",
+        "note": "scripts/evaluate_live_jev_navigation.py (L1-L70)"
+      },
+      {
+        "url": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/README.zh-CN.md",
+        "note": "README.zh-CN.md (L1-L186)"
+      },
+      {
+        "url": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "71a513bb0163b5634467842b523ee0c0ed6fb1c7",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "scripts/evaluate_live_jev_navigation.py",
+          "url": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/scripts/evaluate_live_jev_navigation.py#L1-L70",
+          "hash": "47b84127dff5e1f5406ab6d0bdef3dcb59d7b55a62d214628af1ecc5d80f42a2",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            70
+          ]
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/README.zh-CN.md",
+          "hash": "cb65e44c74b074e0426758e0cba75532ebff8ec2a043363260e491f298e0e07c",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            186
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/TianyuCodings/NanoJev/blob/71a513bb0163b5634467842b523ee0c0ed6fb1c7/README.md",
+          "hash": "adfdc5e7d54e987bf48faf4402bc383723f079338cdd959dd82ee6b7137f0a5e",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "featherless-ai:simple-jev",
+    "name": "simple-jev",
+    "author": "featherless-ai",
+    "url": "https://github.com/featherless-ai/simple-jev",
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "将任意开源大语言模型转化为分类器与 Jev 兼容端点的适配服务，无需额外训练专用分类头。",
+    "jevDecisionPoint": "通过分析输入文本在模型词表中的 logits 分布，将候选项映射为标准 Jev 离散概率输出。",
+    "highlightBenefit": "允许开发者使用现有的 Hugging Face 或 vLLM 兼容服务快速搭建私有 Jev 决策代理，降低尝试门槛。",
+    "claimStatus": "源码已核验。包含 API 适配层与 jevpilot 演示代码；对分词器敏感度较高，且模型内在偏置会影响概率校准度。",
+    "plainSummaryEn": "Adapter turning open LLM endpoints into Jev-compatible classification services without training a separate classifier head.",
+    "jevDecisionPointEn": "Extracts log-probabilities of candidate tokens from model vocabulary logits, formatting them into standard Jev responses.",
+    "highlightBenefitEn": "Enables rapid prototyping of Jev-like decision workflows against standard inference servers such as vLLM or Hugging Face.",
+    "claimStatusEn": "Source code verified against pinned commit. API adapter and demo scripts inspected; output probability calibration depends on base model.",
+    "plainSummaryJa": "独自の分類ヘッドを学習させることなく、オープン LLM を Jev 互換の分類エンドポイントに変換するアダプターです。",
+    "jevDecisionPointJa": "モデルのボキャブラリ logits から候補トークンの対数確率を抽出し、標準的な Jev 決定レスポンスとして成形します。",
+    "highlightBenefitJa": "既存の vLLM や Hugging Face 推論基盤を活用して、迅速にプライベートな Jev 決定プロトタイプを構築できます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。アダプター実装とデモコードを確認。確率の較正精度は基盤モデルのバイアスに依存します。",
+    "plainSummaryKo": "별도의 분류 헤드 학습 없이 오픈 언어 모델을 Jev 호환 분류 엔드포인트로 변환해 주는 어댑터 서비스입니다.",
+    "jevDecisionPointKo": "모델의 어휘 로짓에서 후보 토큰의 로그 확률을 추출하여 표준 Jev 판단 응답 규격으로 변환합니다.",
+    "highlightBenefitKo": "기존 vLLM이나 Hugging Face 추론 인프라를 활용하여 사설 Jev 스타일 판단 서비스를 손쉽게 구축할 수 있습니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 어댑터 및 데모 코드를 확인했으나 확률 보정 품질은 기본 모델의 특성에 영향을 받습니다.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 168,
+    "forks": 15,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-18T09:52:15Z",
+    "updatedAt": "2026-09-19T12:36:47Z",
+    "pushedAt": "2026-09-18T19:47:32Z",
+    "lastCommitAt": "2026-09-18T19:47:30Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/172633431?v=4",
+    "language": "Python",
+    "topics": [],
+    "archived": false,
+    "headSha": "0dd5396ffce671ab7c4bfc031506d8e558cf8d23",
+    "sourceUrl": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/demos/jevpilot/src/simple-jev-api.js#L1-L85",
+    "sourcePath": "demos/jevpilot/src/simple-jev-api.js",
+    "evidenceLines": [
+      1,
+      85
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/demos/jevpilot/src/simple-jev-api.js#L1-L85",
+        "note": "demos/jevpilot/src/simple-jev-api.js (L1-L85)"
+      },
+      {
+        "url": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/demos/jevpilot/src/jev-request.js",
+        "note": "demos/jevpilot/src/jev-request.js (L1-L398)"
+      },
+      {
+        "url": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "0dd5396ffce671ab7c4bfc031506d8e558cf8d23",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "demos/jevpilot/src/simple-jev-api.js",
+          "url": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/demos/jevpilot/src/simple-jev-api.js#L1-L85",
+          "hash": "263757099121a147f0319e3d76bc00df2e6c27356408827bb4f6c26566e835a7",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            85
+          ]
+        },
+        {
+          "path": "demos/jevpilot/src/jev-request.js",
+          "url": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/demos/jevpilot/src/jev-request.js",
+          "hash": "a98efbffa1a7c9564ccc3b2326d73393d0792ade39335008cedc949730a3f29c",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            398
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/featherless-ai/simple-jev/blob/0dd5396ffce671ab7c4bfc031506d8e558cf8d23/README.md",
+          "hash": "dccb695c2dc542cc157a67df7fcc1585b659af035272f7422f727ee432b7b24d",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "firassx914:janus",
+    "name": "Janus",
+    "author": "FirasSX914",
+    "url": "https://github.com/FirasSX914/Janus",
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "模型适用性测量与路由框架，评估业务数据在 Jev 与传统大模型之间的收益边界并执行最优动态分发。",
+    "jevDecisionPoint": "通过内置的 TypeSafe 提供者向 Jev 发起基准测试请求，统计离散判断准确度与延迟，生成自动化路由策略。",
+    "highlightBenefit": "用实测数据消除模型选型主观臆断，在保证任务成功率的同时实现系统整体调用的成本最小化。",
+    "claimStatus": "源码已核验。包含 TypeSafe 提供者实现与路由策略引擎；实际成本节省幅度取决于业务查询的数据特征。",
+    "plainSummaryEn": "Framework for measuring when to employ Jev versus generative LLMs on proprietary datasets, routing queries based on measured benchmarks.",
+    "jevDecisionPointEn": "Benchmarks Jev response accuracy and latency via a TypeSafe provider integration, deriving empirical routing policies.",
+    "highlightBenefitEn": "Replaces intuition with empirical data when adopting discrete decision models, optimizing overall cost while preserving task success.",
+    "claimStatusEn": "Source code verified against pinned commit. Provider code and evaluation policies verified; actual savings depend on dataset profiles.",
+    "plainSummaryJa": "自社データ上で Jev と通常の大規模言語モデルの適性を計測し、最適な振り分けルールを導出して実行するルーティングフレームワークです。",
+    "jevDecisionPointJa": "TypeSafe プロバイダー経由で Jev の精度とレイテンシをベンチマーク測定し、経験的な自動ルーティングルールを生成します。",
+    "highlightBenefitJa": "経験則ではなく実測データに基づいて Jev の導入箇所を特定し、タスク成功率を維持しながらシステム全体のコストを最小化します。",
+    "claimStatusJa": "固定コミットのソースを確認済み。プロバイダー実装とルーティング基盤を確認。コスト削減幅はデータの特性に依存します。",
+    "plainSummaryKo": "자체 데이터셋에서 Jev와 일반 생성형 모델의 효율을 측정하고 실측치에 기반하여 최적 경로로 분기하는 라우팅 프레임워크입니다.",
+    "jevDecisionPointKo": "TypeSafe 공급자 연동을 통해 Jev의 응답 정확도와 지연 시간을 벤치마킹하여 경험적 분기 정책을 도출합니다.",
+    "highlightBenefitKo": "추측 대신 실측 데이터에 기반하여 판단 모델을 적용할 영역을 규명하고 비용 대비 성능을 최적화합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 공급자 연동 및 정책 엔진을 확인했으나 실제 비용 절감 폭은 데이터 특성에 따라 달라집니다.",
+    "tags": [
+      "llm-routing-cost",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-17T12:44:54Z",
+    "updatedAt": "2026-09-18T13:54:42Z",
+    "pushedAt": "2026-09-18T13:57:37Z",
+    "lastCommitAt": "2026-09-18T13:54:36Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/66559814?v=4",
+    "language": "Python",
+    "topics": [
+      "benchmark",
+      "calibration",
+      "confidence",
+      "deepseek",
+      "jev",
+      "llm",
+      "routing",
+      "typesafe"
+    ],
+    "archived": false,
+    "headSha": "9cb66c488cf884e5997356a0de45f75aa3148774",
+    "sourceUrl": "https://github.com/FirasSX914/Janus/blob/9cb66c488cf884e5997356a0de45f75aa3148774/src/janus/providers/typesafe.py#L1-L60",
+    "sourcePath": "src/janus/providers/typesafe.py",
+    "evidenceLines": [
+      1,
+      60
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/FirasSX914/Janus/blob/9cb66c488cf884e5997356a0de45f75aa3148774/src/janus/providers/typesafe.py#L1-L60",
+        "note": "src/janus/providers/typesafe.py (L1-L60)"
+      },
+      {
+        "url": "https://github.com/FirasSX914/Janus/blob/9cb66c488cf884e5997356a0de45f75aa3148774/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "9cb66c488cf884e5997356a0de45f75aa3148774",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/janus/providers/typesafe.py",
+          "url": "https://github.com/FirasSX914/Janus/blob/9cb66c488cf884e5997356a0de45f75aa3148774/src/janus/providers/typesafe.py#L1-L60",
+          "hash": "7fb0c2dd55be57e11f68545a43834481e519a30e21dcb74d0d4c3467aad14b79",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            60
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/FirasSX914/Janus/blob/9cb66c488cf884e5997356a0de45f75aa3148774/README.md",
+          "hash": "109edfe1519271b4fd7b7afe80d6ac3f03f76009af6417d26e02f7a476798de5",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "vinilana:jev-eval-agent",
+    "name": "jev-eval-agent",
+    "author": "vinilana",
+    "url": "https://github.com/vinilana/jev-eval-agent",
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "智能体工具选择基准测试平台，在包含 100 个模拟工具的个人助理环境下对比大模型直接选工具与 Jev 路由的效率。",
+    "jevDecisionPoint": "利用 Jev 对上百个工具元数据进行两级离散筛选和相关性判定，把候选工具集从百级快速裁剪至少量候选。",
+    "highlightBenefit": "解决了多工具智能体因长提示词导致的上下文膨胀与选择幻觉问题，显著降低了大模型的规划耗时。",
+    "claimStatus": "源码已核验。包含完整的 Agent 路由实现与模拟测试环境；测试工具目前主要为 mock 状态，非生产级全真工具链。",
+    "plainSummaryEn": "Agent tool evaluation harness comparing standard LLM tool selection against Jev routing across 100 mocked tools.",
+    "jevDecisionPointEn": "Employs Jev for two-stage discrete pruning over tool catalogs, narrowing extensive tool lists down to relevant candidates in milliseconds.",
+    "highlightBenefitEn": "Mitigates context bloat and hallucinated tool calls in complex agents by isolating candidate selection into fast discrete steps.",
+    "claimStatusEn": "Source code verified against pinned commit. Agent routing and simulated suite inspected; tools are primarily mocked environments.",
+    "plainSummaryJa": "100 種類のモックツールを備えたエージェント環境において、通常の LLM によるツール選択と Jev ルーティングの性能を比較評価する検証基盤です。",
+    "jevDecisionPointJa": "Jev を用いて大量のツール候補から 2 段階の離散選択と関連性判定を行い、候補ツールを高速に絞り込みます。",
+    "highlightBenefitJa": "ツール数の増加に伴うプロンプト肥大化やツールの誤認呼び出しを抑制し、エージェントの推論効率を向上させます。",
+    "claimStatusJa": "固定コミットのソースを確認済み。エージェントルーターとシミュレーション環境を確認。ツールは主にモック実装です。",
+    "plainSummaryKo": "100개 모의 도구를 갖춘 에이전트 환경에서 기존 대규모 모델의 도구 선택과 Jev 라우팅의 효율을 비교 평가하는 벤치마크 도구입니다.",
+    "jevDecisionPointKo": "Jev를 활용하여 방대한 도구 목록에서 2단계 이산 필터링을 거쳐 유효 후보 도구를 밀리초 단위로 압축합니다.",
+    "highlightBenefitKo": "도구 증가에 따른 프롬프트 비대화와 잘못된 도구 호출 오류를 방지하고 에이전트의 계획 수립 속도를 높입니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 에이전트 라우팅 및 시뮬레이션 환경을 확인했으나 실제 도구는 모의 환경 위주입니다.",
+    "tags": [
+      "evaluation-benchmarks",
+      "coding-agents"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 87,
+    "forks": 9,
+    "openIssues": 0,
+    "license": null,
+    "licenseStatus": "unconfirmed",
+    "createdAt": "2026-09-17T05:13:21Z",
+    "updatedAt": "2026-09-19T12:26:20Z",
+    "pushedAt": "2026-09-17T11:07:31Z",
+    "lastCommitAt": "2026-09-17T11:07:29Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/17963870?v=4",
+    "language": "HTML",
+    "topics": [],
+    "archived": false,
+    "headSha": "037de1120c84b4b63cdf748e2acf258ff66d7731",
+    "sourceUrl": "https://github.com/vinilana/jev-eval-agent/blob/037de1120c84b4b63cdf748e2acf258ff66d7731/agent/lib/jev-router.ts#L1-L154",
+    "sourcePath": "agent/lib/jev-router.ts",
+    "evidenceLines": [
+      1,
+      154
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/vinilana/jev-eval-agent/blob/037de1120c84b4b63cdf748e2acf258ff66d7731/agent/lib/jev-router.ts#L1-L154",
+        "note": "agent/lib/jev-router.ts (L1-L154)"
+      },
+      {
+        "url": "https://github.com/vinilana/jev-eval-agent/blob/037de1120c84b4b63cdf748e2acf258ff66d7731/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "037de1120c84b4b63cdf748e2acf258ff66d7731",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "agent/lib/jev-router.ts",
+          "url": "https://github.com/vinilana/jev-eval-agent/blob/037de1120c84b4b63cdf748e2acf258ff66d7731/agent/lib/jev-router.ts#L1-L154",
+          "hash": "ab421a32b220c554792840027d62ef1c4faee7777498c8dc57832a5416d73b0d",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            154
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/vinilana/jev-eval-agent/blob/037de1120c84b4b63cdf748e2acf258ff66d7731/README.md",
+          "hash": "19f8af22775a37f4d6e468c5be23f62ddff74a853e36151c8f8cd3cbc2cb8c70",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
+  },
+  {
+    "id": "zhuyansen:jev-search-rerank-eval",
+    "name": "jev-search-rerank-eval",
+    "author": "zhuyansen",
+    "url": "https://github.com/zhuyansen/jev-search-rerank-eval",
+    "category": "Data & Search",
+    "plainSummary": "中英文检索重排效果评估系统，对比 Jev 重排与词法搜索、向量检索及混合融合基线，并分析评审者自循环偏差。",
+    "jevDecisionPoint": "在评估流水线中调用 Jev 判断器对 9,831 对样本和 164 个中英查询进行多级相关度评分，比较重排前后排序指标。",
+    "highlightBenefit": "为搜索算法工程师提供了严谨的定性与定量对比依据，以实测实验揭示了 Jev 在跨语种技能目录搜索中的真实收益与边界。",
+    "claimStatus": "源码已核验。包含完整的评估套件、基准数据提取与统计脚本；评测数据集来自 Agent Skills Hub，不同领域需重新校准。",
+    "plainSummaryEn": "Retrieval evaluation system measuring Jev reranking against lexical, embedding, and fusion baselines across 9,831 query-document pairs.",
+    "jevDecisionPointEn": "Invokes Jev judges to grade multi-level relevance on bilingual queries, evaluating ranking metrics and judge-circularity effects.",
+    "highlightBenefitEn": "Provides rigorous empirical evidence comparing discrete judgment rerankers against vector search in multilingual discovery contexts.",
+    "claimStatusEn": "Source code verified against pinned commit. Complete evaluation suite and CLI inspected; benchmarked on Agent Skills Hub data.",
+    "plainSummaryJa": "9,831 件のペアと 164 件の日英クエリを用いて、Jev リランクと単語検索、ベクトル検索、ハイブリッド検索を比較検証する評価システムです。",
+    "jevDecisionPointJa": "評価パイプライン内で Jev 判定器を呼び出し、複数段階の関連度スコアを算出して順位指標や判定者の循環バイアスを測定します。",
+    "highlightBenefitJa": "多言語カタログ検索において、離散判断リランカーがベクトル検索に対してどの程度優位性を持つかを実証的に明らかにします。",
+    "claimStatusJa": "固定コミットのソースを確認済み。評価スイートと CLI スクリプトを確認。データセットは Agent Skills Hub に準拠しています。",
+    "plainSummaryKo": "9,831개 쌍과 164개 한/영 쿼리를 바탕으로 Jev 리랭킹과 어휘 검색, 벡터 검색, 하이브리드 검색을 다각도로 비교 분석하는 평가 시스템입니다.",
+    "jevDecisionPointKo": "평가 파이프라인에서 Jev 판정기를 호출하여 다단계 관련도 점수를 부여하고 순위 지표와 심사 순환 편향을 측정합니다.",
+    "highlightBenefitKo": "다국어 카탈로그 검색에서 이산 판단 리랭커가 임베딩 검색 대비 갖는 실제 개선 효과와 한계를 실증 데이터로 검증합니다.",
+    "claimStatusKo": "고정 커밋 기준 소스 확인 완료. 전체 평가 도구와 CLI를 확인했으나 데이터셋은 Agent Skills Hub 기준에 맞춰져 있습니다.",
+    "tags": [
+      "search-retrieval",
+      "evaluation-benchmarks",
+      "classification-ranking"
+    ],
+    "summarySource": "human-reviewed",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "licenseStatus": "declared",
+    "createdAt": "2026-09-18T09:00:07Z",
+    "updatedAt": "2026-09-19T04:41:14Z",
+    "pushedAt": "2026-09-18T09:00:15Z",
+    "lastCommitAt": "2026-09-18T08:59:59Z",
+    "lastSyncedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataFetchedAt": "2026-09-19T13:00:00.000000+00:00",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/24306647?v=4",
+    "language": "Python",
+    "topics": [
+      "bge-m3",
+      "evaluation",
+      "information-retrieval",
+      "ndcg",
+      "reranking",
+      "typesafe-jev"
+    ],
+    "archived": false,
+    "headSha": "c896f14e944182e17a002dd7546f06ba3788d586",
+    "sourceUrl": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/rankers/jev.py#L1-L46",
+    "sourcePath": "src/jse/rankers/jev.py",
+    "evidenceLines": [
+      1,
+      46
+    ],
+    "verificationStatus": "source-verified",
+    "runtimeVerified": false,
+    "sourceReviewedAt": "2026-09-19T13:00:00.000000+00:00",
+    "evidence": [
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/rankers/jev.py#L1-L46",
+        "note": "src/jse/rankers/jev.py (L1-L46)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/label/jev_judge.py",
+        "note": "src/jse/label/jev_judge.py (L1-L19)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/__init__.py",
+        "note": "src/jse/__init__.py (L1-L30)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/__main__.py",
+        "note": "src/jse/__main__.py (L1-L4)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/catalog.py",
+        "note": "src/jse/catalog.py (L1-L64)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/cli.py",
+        "note": "src/jse/cli.py (L1-L173)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/evaluate.py",
+        "note": "src/jse/evaluate.py (L1-L146)"
+      },
+      {
+        "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/README.md",
+        "note": "README.md"
+      }
+    ],
+    "sourceVerification": {
+      "method": "source-review",
+      "sha": "c896f14e944182e17a002dd7546f06ba3788d586",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00",
+      "files": [
+        {
+          "path": "src/jse/rankers/jev.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/rankers/jev.py#L1-L46",
+          "hash": "ae1fad6eaa2317b44384d01dc2d80e95c1a45a0ec2edb71be0984681bd949063",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            46
+          ]
+        },
+        {
+          "path": "src/jse/label/jev_judge.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/label/jev_judge.py",
+          "hash": "c803608781be2a3d7ef87e6ac9156501c0b04516d698dfee89638470fcc75b19",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            19
+          ]
+        },
+        {
+          "path": "src/jse/__init__.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/__init__.py",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        },
+        {
+          "path": "src/jse/__main__.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/__main__.py",
+          "hash": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            4
+          ]
+        },
+        {
+          "path": "src/jse/catalog.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/catalog.py",
+          "hash": "81d261f60072957a31e4ebc0c06beba1abc493223f245823f5de9e209175946b",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            64
+          ]
+        },
+        {
+          "path": "src/jse/cli.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/cli.py",
+          "hash": "b381d7557708b09ca016885f567a659bb2117217c922599723b82da197bdd690",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            173
+          ]
+        },
+        {
+          "path": "src/jse/evaluate.py",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/src/jse/evaluate.py",
+          "hash": "2b69f0e360f0c91434997128975f212e6a1f7f282b070acf356535932836365a",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            146
+          ]
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/zhuyansen/jev-search-rerank-eval/blob/c896f14e944182e17a002dd7546f06ba3788d586/README.md",
+          "hash": "3bf1ff6967c357e9b849dd65d78b849c6cfe25bb29ea7966047e4b44b0540a05",
+          "hashType": "sha256",
+          "lines": [
+            1,
+            30
+          ]
+        }
+      ]
+    },
+    "enrichment": {
+      "mode": "source-reviewed",
+      "reviewedAt": "2026-09-19T13:00:00.000000+00:00"
+    },
+    "pinned": false
   }
 ]
