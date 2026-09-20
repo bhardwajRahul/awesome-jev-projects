@@ -11,7 +11,10 @@ import {
   inspectRepository,
 } from "./project-source.mjs";
 import { inferCanonicalTags } from "../src/lib/tags.mjs";
-import { createSummaryEnricher } from "./source-enrichment.mjs";
+import {
+  createSummaryEnricher,
+  createSubmissionReviewer,
+} from "./source-enrichment.mjs";
 import { summarize, verifyIntegration, atomicJSON } from "./radar-sync.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const SITE_URL = "https://logicrw.github.io/awesome-jev-projects/";
@@ -67,6 +70,7 @@ export async function prepareSubmission({
   exclusions = [],
   api,
   enrich,
+  reviewer,
   inspect = inspectRepository,
   now = () => new Date().toISOString(),
 }) {
@@ -85,11 +89,15 @@ export async function prepareSubmission({
     return {
       status: "rejected",
       reason: "missing or ambiguous repository URL",
+      needsEvidence: false,
+      issueNumber: issue.number,
     };
   if (submitted.toLowerCase() === repository.toLowerCase())
     return {
       status: "rejected",
       reason: "cannot ingest this directory itself",
+      needsEvidence: false,
+      issueNumber: issue.number,
     };
   const result = await inspect({
     api,
@@ -110,27 +118,106 @@ export async function prepareSubmission({
     );
     if (prior) return { status: "resume", project: prior };
   }
-  if (result.status !== "accepted")
-    return { status: result.status, reason: result.reason };
+
+  const structuralRejections = new Set([
+    "invalid repository",
+    "repository not found or inaccessible",
+    "invalid repository metadata",
+    "repository is not public",
+    "forks are not ingested",
+    "repository already listed",
+    "repository is excluded by editorial review",
+    "repository has no accessible commit",
+    "repository has no immutable commit",
+    "mention-only directory",
+  ]);
+  if (result.status === "rejected" && structuralRejections.has(result.reason)) {
+    return {
+      status: "rejected",
+      reason: result.reason,
+      needsEvidence: false,
+      issueNumber: issue.number,
+      submittedRepository: submitted,
+    };
+  }
+
   const { repo, sha, commits, readme, evidence } = result;
-  // Issue association belongs to this directory; only its maintainers or the
-  // target repository owner can supply copy treated as author-approved text.
+  const readmeFiles = result.readmeFiles ?? [];
+  const codeSources = (evidence?.files ?? []).filter(
+    (file) => !readmeFiles.some((rf) => rf.path === file.path),
+  );
+
   const issueTrusted = Boolean(
     issue.user?.login &&
-      (issue.user.login.toLowerCase() === repo.owner?.login?.toLowerCase() ||
+      (issue.user.login.toLowerCase() === repo?.owner?.login?.toLowerCase() ||
         ["OWNER", "MEMBER", "COLLABORATOR"].includes(issue.author_association)),
   );
+
+  let reviewVerdict = null;
+  if (typeof reviewer === "function" && repo) {
+    reviewVerdict = await reviewer({
+      repo,
+      readme,
+      codeSources,
+      issueBody: issue.body ?? "",
+      issueTrusted,
+      taxonomy,
+    });
+  }
+
+  if (reviewVerdict) {
+    if (reviewVerdict.verified === false) {
+      return {
+        status: "rejected",
+        reason: reviewVerdict.reason || "源码审查未发现有效的 Jev 原语调用代码证据。",
+        needsEvidence: true,
+        issueNumber: issue.number,
+        submittedRepository: submitted,
+        reviewDetails: reviewVerdict,
+      };
+    }
+    if (reviewVerdict.verified === true && evidence) {
+      evidence.verified = true;
+    }
+  }
+
+  if (result.status !== "accepted" && (!reviewVerdict || reviewVerdict.verified !== true)) {
+    return {
+      status: result.status,
+      reason: result.reason,
+      needsEvidence: result.reason === "no implementation source evidence",
+      issueNumber: issue.number,
+      submittedRepository: submitted,
+    };
+  }
+
   const submittedCategory = extractSubmittedCategory(issue.body ?? "", taxonomy);
   const submittedTags = extractSubmittedTags(issue.body ?? "");
   const baseSummary = summarize(repo, readme, taxonomy);
   if (submittedCategory) {
     baseSummary.category = submittedCategory;
+  } else if (reviewVerdict?.category && taxonomy.some((t) => t.category === reviewVerdict.category)) {
+    baseSummary.category = reviewVerdict.category;
   }
   if (submittedTags.length) {
     baseSummary.tags = inferCanonicalTags({
       category: baseSummary.category,
       tags: submittedTags,
     });
+  } else if (reviewVerdict?.tags?.length) {
+    baseSummary.tags = inferCanonicalTags({
+      category: baseSummary.category,
+      tags: reviewVerdict.tags,
+    });
+  }
+  if (reviewVerdict?.jevDecisionPoint) {
+    baseSummary.jevDecisionPoint = reviewVerdict.jevDecisionPoint;
+  }
+  if (reviewVerdict?.plainSummary) {
+    baseSummary.plainSummary = reviewVerdict.plainSummary;
+  }
+  if (reviewVerdict?.plainSummaryEn) {
+    baseSummary.plainSummaryEn = reviewVerdict.plainSummaryEn;
   }
   const editorial = await enrich({
     repo,
@@ -431,7 +518,7 @@ async function main() {
     );
   const api = createGitHubClient({
     token,
-    ...(mode === "publish" || mode === "acknowledge" ? { writeRepository: repository } : {}),
+    ...(mode === "publish" || mode === "acknowledge" || mode === "feedback" ? { writeRepository: repository } : {}),
   });
   const resultPath =
     process.env.INGEST_RESULT_FILE ??
@@ -465,6 +552,7 @@ async function main() {
       delete process.env.GH_MODELS_TOKEN;
     }
     const enrich = createSummaryEnricher(modelsProbe ? { token: "" } : {});
+    const reviewer = createSubmissionReviewer(modelsProbe ? { token: "" } : {});
     let result;
     if (modelsProbe) {
       const repo = {
@@ -494,6 +582,7 @@ async function main() {
         exclusions,
         api,
         enrich,
+        reviewer,
       });
       if (result.status === "ready")
         await atomicJSON(resolve(root, "src/data/projects.json"), [
@@ -504,7 +593,14 @@ async function main() {
     const reviewedSourceSha = process.env.INGEST_REVIEWED_SHA;
     if (!/^[a-f\d]{40}$/.test(reviewedSourceSha ?? ""))
       throw new Error("Exact review checkout SHA is required");
-    result = { ...result, reviewedSourceSha };
+    const issueNumber = Number(
+      event?.issue?.number ?? process.env.INGEST_ISSUE_NUMBER ?? 0,
+    );
+    result = {
+      ...result,
+      reviewedSourceSha,
+      ...(issueNumber > 0 ? { issueNumber } : {}),
+    };
     if (result.project && Object.prototype.hasOwnProperty.call(result.project, "enrichment")) {
       const { enrichment: _omit, ...project } = result.project;
       result = { ...result, project };
@@ -514,6 +610,8 @@ async function main() {
     await output({
       ready: ["ready", "resume"].includes(result.status),
       status: result.status,
+      needs_evidence: result.needsEvidence === true,
+      issue_number: issueNumber,
     });
     console.log(
       JSON.stringify({
@@ -606,6 +704,71 @@ async function main() {
       publishedProjects,
     });
     console.log(JSON.stringify({ acknowledgements: results }));
+  } else if (mode === "feedback") {
+    const prepared = JSON.parse(await readFile(resultPath, "utf8"));
+    const issueNumber = Number(
+      prepared.issueNumber ?? process.env.INGEST_ISSUE_NUMBER,
+    );
+    if (!Number.isSafeInteger(issueNumber) || issueNumber < 1) {
+      console.log("No valid issue number for feedback; skipping.");
+      return;
+    }
+    if (["ready", "resume"].includes(prepared.status)) {
+      console.log(`Issue #${issueNumber} is ready; feedback not needed.`);
+      return;
+    }
+    const issue = await api(`/repos/${repository}/issues/${issueNumber}`);
+    if (issue.state !== "open") {
+      console.log(`Issue #${issueNumber} is not open; skipping feedback.`);
+      return;
+    }
+    const reason =
+      prepared.reason ||
+      "仓库源码中暂未检测到有效的 Jev/TypeSafe 原语调用代码证据。";
+    const needsEvidence = prepared.needsEvidence === true;
+    const marker = `<!-- awesome-jev-review-feedback:${issueNumber} -->`;
+    let alreadyCommented = false;
+    for (let page = 1; page <= 5; page++) {
+      const comments = await api(
+        `/repos/${repository}/issues/${issueNumber}/comments?per_page=100&page=${page}`,
+      );
+      alreadyCommented ||= comments.some((c) => c.body?.includes(marker));
+      if (alreadyCommented || comments.length < 100) break;
+    }
+    if (!alreadyCommented) {
+      const feedbackBody = [
+        "🤖 **Muse API 智能审核反馈**",
+        "",
+        "感谢提交项目收录申请！自动审核流水线（基于 Muse Spark 1.3 LLM 智能裁决）在分析您的仓库源码后给出如下反馈：",
+        "",
+        `- **审核结论**：${needsEvidence ? "需要补充代码证据 (Needs Evidence)" : "暂未通过收录"}`,
+        `- **审查分析**：${reason}`,
+        "",
+        needsEvidence
+          ? "> 💡 **如何复核**：如果您的项目中已集成了 Jev 原语（例如 `@typesafe/jev`、`typesafe-ai`、OpenRouter decisions 或直接调用 `/v1/systemone`），请直接在本 Issue 中回复补充包含 Jev 原语调用的**具体代码文件路径与关键行链接**。流水线将自动重新运行审查。"
+          : "> 如有疑问或误判，欢迎在 Issue 中留言说明具体的集成方式。",
+        "",
+        marker,
+      ].join("\n");
+      await api(`/repos/${repository}/issues/${issueNumber}/comments`, {
+        method: "POST",
+        body: { body: feedbackBody },
+      });
+      console.log(`Posted feedback comment to Issue #${issueNumber}`);
+    } else {
+      console.log(`Feedback comment already exists on Issue #${issueNumber}`);
+    }
+    if (needsEvidence) {
+      try {
+        await api(`/repos/${repository}/issues/${issueNumber}/labels`, {
+          method: "POST",
+          body: { labels: ["needs-evidence"] },
+        });
+        console.log(`Added label 'needs-evidence' to Issue #${issueNumber}`);
+      } catch (err) {
+        console.warn(`Could not add label: ${err.message}`);
+      }
+    }
   } else throw new Error("Unknown ingestion command");
 }
 if (

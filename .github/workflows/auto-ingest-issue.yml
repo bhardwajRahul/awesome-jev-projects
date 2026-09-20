@@ -1,7 +1,7 @@
 name: Issue ingestion
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
   workflow_dispatch:
     inputs:
       issue_number:
@@ -30,6 +30,9 @@ jobs:
     timeout-minutes: 15
     outputs:
       ready: ${{ steps.review.outputs.ready }}
+      status: ${{ steps.review.outputs.status }}
+      needs_evidence: ${{ steps.review.outputs.needs_evidence }}
+      issue_number: ${{ steps.review.outputs.issue_number }}
       source_sha: ${{ steps.source.outputs.sha }}
       artifact_id: ${{ steps.receipt.outputs.artifact-id }}
     steps:
@@ -152,4 +155,31 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           INGEST_ISSUE_NUMBER: ${{ needs.publish.outputs.issue_number }}
           INGEST_ISSUE_BODY_SHA: ${{ needs.publish.outputs.issue_body_sha }}
+  respond-feedback:
+    needs: review
+    if: github.repository == 'logicrw/awesome-jev-projects' && needs.review.outputs.ready != 'true' && needs.review.outputs.issue_number != '0' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run)
+    permissions:
+      contents: read
+      issues: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ needs.review.outputs.source_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          artifact-ids: ${{ needs.review.outputs.artifact_id }}
+          path: ${{ runner.temp }}/candidate
+          merge-multiple: true
+      - name: Post feedback comment and label issue
+        run: node scripts/issue-ingestion.mjs feedback
+        env:
+          GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
+          INGEST_RESULT_FILE: ${{ runner.temp }}/candidate/ingestion-result.json
 # The Pages workflow reconciles accepted Issues only after live deployment.
+

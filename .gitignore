@@ -14,5 +14,6 @@ public/projects.json
 
 # Local agent planning, prompts and research scratch are not published.
 .agents/
+.grok-tasks/
 
 .cache_ggshield

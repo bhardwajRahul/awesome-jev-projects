@@ -285,6 +285,30 @@ test("JSON mutations use request bodies and support an empty 204 response", asyn
   );
 });
 
+test("issue comments and labels POST mutations are permitted under write scope", async () => {
+  let calledUrl = "";
+  let calledMethod = "";
+  let calledBody = null;
+  const api = createGitHubClient({
+    writeRepository: "logicrw/test",
+    fetchImpl: async (url, options) => {
+      calledUrl = url;
+      calledMethod = options.method;
+      calledBody = JSON.parse(options.body);
+      return new Response(JSON.stringify([{ name: "needs-evidence" }]), { status: 200 });
+    },
+  });
+  const res = await api("/repos/logicrw/test/issues/42/labels", {
+    method: "POST",
+    body: { labels: ["needs-evidence"] },
+  });
+  assert.equal(calledUrl, "https://api.github.com/repos/logicrw/test/issues/42/labels");
+  assert.equal(calledMethod, "POST");
+  assert.deepEqual(calledBody, { labels: ["needs-evidence"] });
+  assert.deepEqual(res, [{ name: "needs-evidence" }]);
+});
+
+
 
 test("read clients reject every mutation before sending a token", async () => {
   const f = fixture([]);

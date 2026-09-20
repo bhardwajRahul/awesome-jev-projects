@@ -1,6 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createSummaryEnricher } from "./source-enrichment.mjs";
+import {
+  createSummaryEnricher,
+  createSubmissionReviewer,
+} from "./source-enrichment.mjs";
 
 const chinese = "用 Jev 为日志打分，只把与当前任务相关的内容留在上下文里。";
 const english =
@@ -510,4 +513,120 @@ test("MUSE Spark OpenRouter key routes to OpenRouter endpoint with referrer head
   assert.equal(calledReferer, "https://logicrw.github.io/awesome-jev-projects");
   assert.equal(result.enrichment.plainSummary.source, "muse-spark");
 });
+
+test("Muse Reviewer parses verified verdict and extracts structured metadata", async () => {
+  const verifiedVerdict = {
+    verified: true,
+    confidence: 0.95,
+    reason: "在 src/judge.ts 中调用了 typesafe /v1/systemone 接口并发 15 个 Noul 原语进行打标。",
+    category: "CLI & Pipelines",
+    tags: ["cli-git-gates", "typed-decisions"],
+    jevDecisionPoint: "对输入段落并发请求 15 个 Noul 原语判断是否存在 AI 写作特征。",
+    plainSummary: "运行在 Claude Code Stop hook 上的 AI 水文检测器。",
+    plainSummaryEn: "An AI-tell prose linter running as a Claude Code Stop hook.",
+  };
+  let calledUrl = "";
+  let calledAuth = "";
+  let requestBody = null;
+  const reviewer = createSubmissionReviewer({
+    token: "muse-key-12345",
+    fetchImpl: async (url, options) => {
+      calledUrl = url;
+      calledAuth = options.headers.Authorization;
+      requestBody = JSON.parse(options.body);
+      return reply(verifiedVerdict);
+    },
+  });
+  const result = await reviewer({
+    repo: { full_name: "harshpuri84/slopcheck-jev", description: "AI prose detector" },
+    readme: "# slopcheck\nJev integration",
+    codeSources: [
+      { path: "src/judge.ts", text: "fetch('https://api.typesafe.ai/v1/systemone')" },
+    ],
+    issueBody: "Submission for slopcheck-jev",
+    taxonomy: [{ category: "CLI & Pipelines" }],
+  });
+  assert.equal(calledUrl, "https://api.meta.ai/v1/chat/completions");
+  assert.equal(calledAuth, "Bearer muse-key-12345");
+  assert.equal(requestBody.model, "muse-spark-1.3-contributor");
+  assert.equal(requestBody.reasoning_effort, "low");
+  assert.equal(result.verified, true);
+  assert.equal(result.confidence, 0.95);
+  assert.equal(result.category, "CLI & Pipelines");
+  assert.deepEqual(result.tags, ["cli-git-gates", "typed-decisions"]);
+  assert.equal(result.jevDecisionPoint, verifiedVerdict.jevDecisionPoint);
+  assert.equal(result.plainSummary, verifiedVerdict.plainSummary);
+  assert.equal(result.plainSummaryEn, verifiedVerdict.plainSummaryEn);
+});
+
+test("Muse Reviewer parses rejection verdict with detailed Chinese reason", async () => {
+  const rejectedVerdict = {
+    verified: false,
+    confidence: 0.88,
+    reason: "仓库代码中虽然包含了项目脚手架，但没有任何导入或调用 Jev/TypeSafe 原语的代码。请补充具体的调用文件与代码行链接。",
+    category: "CLI & Pipelines",
+    tags: [],
+    jevDecisionPoint: "",
+    plainSummary: "",
+    plainSummaryEn: "",
+  };
+  const reviewer = createSubmissionReviewer({
+    token: "muse-key-12345",
+    fetchImpl: async () => reply(rejectedVerdict),
+  });
+  const result = await reviewer({
+    repo: { full_name: "example/empty-jev", description: "Empty project" },
+    readme: "# Empty project",
+    codeSources: [{ path: "index.js", text: "console.log('hello');" }],
+    taxonomy: [],
+  });
+  assert.equal(result.verified, false);
+  assert.equal(result.confidence, 0.88);
+  assert.match(result.reason, /没有任何导入或调用 Jev/);
+});
+
+test("Muse Reviewer redacts credentials from code and repository prompt", async () => {
+  const secretKey = "sk-abcdef1234567890abcdef1234567890";
+  let promptBody = "";
+  const reviewer = createSubmissionReviewer({
+    token: secretKey,
+    fetchImpl: async (_, options) => {
+      promptBody = options.body;
+      return reply({ verified: true, reason: "ok" });
+    },
+  });
+  await reviewer({
+    repo: { full_name: "example/secret-leak", description: `key=${secretKey}` },
+    readme: `Authorization: Bearer ${secretKey}`,
+    codeSources: [{ path: "test.py", text: `TYPESAFE_API_KEY=${secretKey}` }],
+  });
+  assert.equal(promptBody.includes(secretKey), false);
+  assert.match(promptBody, /\[REDACTED\]/);
+});
+
+test("Muse Reviewer gracefully handles missing token, HTTP errors, and circuits", async () => {
+  const missingTokenReviewer = createSubmissionReviewer({ token: "" });
+  const resMissing = await missingTokenReviewer({ repo: { name: "test" } });
+  assert.equal(resMissing.verified, null);
+  assert.equal(resMissing.status, "missing-token");
+
+  let attempts = 0;
+  const errorReviewer = createSubmissionReviewer({
+    token: "test-token",
+    fetchImpl: async () => {
+      attempts++;
+      return new Response("server error", { status: 500 });
+    },
+  });
+  const resError = await errorReviewer({ repo: { name: "test" } });
+  assert.equal(resError.verified, null);
+  assert.equal(resError.status, "http-error");
+
+  // Subsequent call hits open circuit
+  const resCircuit = await errorReviewer({ repo: { name: "test" } });
+  assert.equal(resCircuit.verified, null);
+  assert.equal(resCircuit.status, "circuit-open");
+  assert.equal(attempts, 1);
+});
+
 

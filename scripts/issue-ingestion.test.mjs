@@ -451,3 +451,83 @@ test("publication without a reviewed SHA fails before any API request", async ()
     assert.equal(calls, 0);
   }
 });
+
+test("prepareSubmission uses Muse Reviewer verdict to accept candidate and populate fields", async () => {
+  const result = await prepareSubmission({
+    issue,
+    repository,
+    projects: [],
+    taxonomy: [{ category: "CLI & Pipelines", patterns: ["cli"], tags: ["CLI"] }],
+    api: async () => {},
+    inspect: async () => ({
+      ...inspected,
+      status: "rejected",
+      reason: "no implementation source evidence",
+    }),
+    reviewer: async ({ repo, codeSources }) => {
+      assert.equal(repo.name, "jev-tool");
+      assert.equal(codeSources.length, 1);
+      return {
+        verified: true,
+        confidence: 0.98,
+        reason: "在 src/jev.ts 中调用了 typesafe choice 原语。",
+        category: "CLI & Pipelines",
+        tags: ["cli-git-gates"],
+        jevDecisionPoint: "在 git hook 中对代码规范进行打分决策。",
+        plainSummary: "给 Agent 的终端日志做过滤。",
+        plainSummaryEn: "Filters logs for agents using Jev.",
+      };
+    },
+    enrich: async ({ fallback }) => fallback,
+    now: () => "2026-09-18T00:00:00Z",
+  });
+  assert.equal(result.status, "ready");
+  assert.equal(result.project.category, "CLI & Pipelines");
+  assert.deepEqual(result.project.tags, ["cli-git-gates", "typed-decisions"]);
+  assert.equal(result.project.jevDecisionPoint, "在 git hook 中对代码规范进行打分决策。");
+  assert.equal(result.project.plainSummary, "给 Agent 的终端日志做过滤。");
+  assert.equal(result.project.plainSummaryEn, "Filters logs for agents using Jev.");
+});
+
+test("prepareSubmission uses Muse Reviewer verdict to reject candidate with needsEvidence and reason", async () => {
+  const result = await prepareSubmission({
+    issue,
+    repository,
+    projects: [],
+    taxonomy: [],
+    api: async () => {},
+    inspect: async () => inspected,
+    reviewer: async () => ({
+      verified: false,
+      confidence: 0.9,
+      reason: "代码中仅有 Jev 的注释提及，未检测到任何实际的 API 或原语调用。",
+    }),
+    enrich: async ({ fallback }) => fallback,
+  });
+  assert.equal(result.status, "rejected");
+  assert.equal(result.needsEvidence, true);
+  assert.equal(result.issueNumber, 12);
+  assert.match(result.reason, /代码中仅有 Jev 的注释提及/);
+});
+
+test("prepareSubmission fast-rejects structural issues with needsEvidence false and no reviewer call", async () => {
+  let reviewerCalls = 0;
+  const result = await prepareSubmission({
+    issue,
+    repository,
+    projects: [],
+    taxonomy: [],
+    api: async () => {},
+    inspect: async () => ({ status: "rejected", reason: "repository is not public" }),
+    reviewer: async () => {
+      reviewerCalls++;
+      return { verified: true };
+    },
+    enrich: async ({ fallback }) => fallback,
+  });
+  assert.equal(result.status, "rejected");
+  assert.equal(result.reason, "repository is not public");
+  assert.equal(result.needsEvidence, false);
+  assert.equal(reviewerCalls, 0);
+});
+

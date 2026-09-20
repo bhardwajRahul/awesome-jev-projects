@@ -55,7 +55,7 @@ export function createGitHubClient({
       (method === "POST" && relative === "git/commits" && sha(body?.tree) &&
         body?.parents?.length === 1 && sha(body.parents[0])) ||
       (method === "PATCH" && relative === "git/refs/heads/main" && body?.force === false && sha(body.sha)) ||
-      (method === "POST" && /^issues\/[1-9]\d*\/comments$/.test(relative)) ||
+      (method === "POST" && /^issues\/[1-9]\d*\/(?:comments|labels)$/.test(relative)) ||
       (method === "PATCH" && /^issues\/[1-9]\d*$/.test(relative))
     );
     if (method !== "GET" && !allowedWrite)
