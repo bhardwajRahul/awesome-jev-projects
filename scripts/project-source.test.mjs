@@ -400,12 +400,15 @@ test("strict ingestion requires source usage beyond SDK installs, metadata, comm
   const cases = [
     ["src/main.py", 'from typesafe import Config\nconfig = Config()'],
     ["src/Main.java", 'import com.typesafe.config.Config;\nConfig c = ConfigFactory.load();'],
+    ["src/Main.java", 'import com.typesafe.config.Config;\nclass App { void test() { Config c = ConfigFactory.load(); helper.choice(); } }'],
     ["src/main.py", '# endpoint = "https://api.typesafe.ai"\nprint("hello")'],
     ["src/main.js", 'const x = 1; // Jev endpoint api.typesafe.ai\nconsole.log(x)'],
     ["src/main.py", '"""Jev endpoint https://api.typesafe.ai"""\nprint("hello")'],
     ["src/main.js", '/* Jev https://api.typesafe.ai */\nconsole.log("hello")'],
     ["scripts/install.sh", 'npm install @typesafe/jev'],
     ["src/main.ts", 'import { TypeSafeClient } from "@typesafe/sdk";\nconsole.log("not implemented");'],
+    ["src/random_choice.py", 'import random\nfrom typesafe import Config\n\nconfig = Config()\nx = random.choice([1, 2, 3])'],
+    ["src/Play.java", 'import com.typesafe.play.filters.CorsFilter;\nclass App { void test() { CorsFilter f = null; helper.choice(); } }'],
   ];
   for (const [path, text] of cases) {
     const f = fixture({
@@ -444,6 +447,12 @@ test("strict ingestion accepts TypeSafe SDK decision calls", async () => {
     ["src/backends/typesafe.ts", 'export const TYPESAFE_BASE_URL = "https://api.typesafe.ai";\nexport const TYPESAFE_DEFAULT_MODEL = "jev-latest";\nawait postJson("typesafe", `${TYPESAFE_BASE_URL}/v1/systemone`, { Authorization: `Bearer ${apiKey}` }, body);'],
     ["slopcheck/judge.py", 'import urllib.request\nkey = os.environ["TYPESAFE_API_KEY"]\nreq = urllib.request.Request("https://api.typesafe.ai/v1/systemone", headers={"Authorization": f"Bearer {key}"})\nquestions = {"tell": {"type": "noul"}}'],
     ["lib/main.dart", "import 'package:jev_dart/jev_dart.dart';\nfinal client = JevClient(apiKey);\nfinal res = await client.choice(prompt);"],
+    ["main.go", 'package main\nimport "github.com/typesafe-ai/jev-go"\nfunc main() {\n client := jev.NewClient("key")\n res, _ := client.Choice(ctx, opt)\n}'],
+    ["cmd/tool/main.go", 'package main\nimport (\n  "context"\n  "github.com/typesafe-ai/jev-go"\n)\nfunc main() {\n client := jev.NewClient("k")\n client.SystemOne(ctx, req)\n}'],
+    ["src/main.rs", 'use typesafe::JevClient;\n#[tokio::main]\nasync fn main() {\n let client = JevClient::new("key");\n let res = client.choice(&opt).await;\n}'],
+    ["src/decision.rs", 'use jev::{Client, Choice};\npub async fn decide() {\n let client = Client::new();\n let res = client.system_one(input).await;\n}'],
+    ["src/multiline.rs", 'use jev::{\n    Client,\n    Choice,\n};\npub async fn run() {\n    let client = Client::new();\n    let res = client.system_one("input").await;\n}'],
+    ["src/main/java/com/example/Main.java", 'package com.example;\nimport com.typesafe.jev.TypeSafeClient;\npublic class Main {\n void run() {\n TypeSafeClient client = new TypeSafeClient();\n client.choice(opt);\n }\n}'],
   ];
   for (const [path, text] of cases) {
     const f = fixture({

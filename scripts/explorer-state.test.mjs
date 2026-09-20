@@ -101,7 +101,10 @@ test("catalog snapshot parse, fingerprint and added-count detect new project ids
 });
 
 test("client source uses SWR revalidation and explorer URL sync instead of blocking on the HTML snapshot", async () => {
-  const source = await readFile(new URL("../src/App.tsx", import.meta.url), "utf8");
+  const appSource = await readFile(new URL("../src/App.tsx", import.meta.url), "utf8");
+  const catalogSource = await readFile(new URL("../src/hooks/useCatalogSWR.ts", import.meta.url), "utf8");
+  const explorerSource = await readFile(new URL("../src/hooks/useExplorerState.ts", import.meta.url), "utf8");
+  const source = `${appSource}\n${catalogSource}\n${explorerSource}`;
   assert.equal(source.includes("if (initialProjects && loadAttempt === 0) return;"), false);
   assert.match(source, /cache:\s*"no-cache"/);
   assert.match(source, /If-None-Match/);
@@ -111,4 +114,11 @@ test("client source uses SWR revalidation and explorer URL sync instead of block
   assert.match(source, /history\.replaceState/);
   assert.match(source, /EXPLORER_URL_DEBOUNCE_MS/);
   assert.doesNotMatch(source, /q:\s*""/);
+  assert.match(catalogSource, /cache:\s*"no-cache"/);
+  assert.match(catalogSource, /If-None-Match/);
+  assert.match(catalogSource, /visibilitychange/);
+  assert.match(catalogSource, /pageshow/);
+  assert.match(explorerSource, /popstate/);
+  assert.match(explorerSource, /history\.replaceState/);
+  assert.match(explorerSource, /EXPLORER_URL_DEBOUNCE_MS/);
 });

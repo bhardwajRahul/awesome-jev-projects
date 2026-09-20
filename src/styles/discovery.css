@@ -15,8 +15,9 @@
 .gacha-intro { margin: 10px 0 22px; color: var(--night-text-muted); font-size: 13px; line-height: 1.6; }
 .gacha-stage { position: relative; perspective: 1000px; }
 .gacha-card { position: relative; display: flex; flex-direction: column; min-height: 380px; padding: 24px; background: var(--night-surface); border: 1px solid var(--night-border-strong); border-radius: 16px; box-shadow: var(--night-shadow-dialog); transform: rotateX(var(--gacha-x, 0deg)) rotateY(var(--gacha-y, 0deg)); transition: transform 180ms ease-out, border-color 180ms ease-out; animation: gacha-reveal 180ms cubic-bezier(.16,1,.3,1); }
-.gacha-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse at var(--gacha-light, 50% 0%), color-mix(in srgb, var(--accent) 5%, transparent), transparent 65%); pointer-events: none; }
-.gacha-card[data-rarity='ssr'] { border-color: var(--night-brass); }
+.gacha-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse at var(--gacha-light, 50% 0%), color-mix(in srgb, var(--accent) 14%, transparent), transparent 68%); pointer-events: none; }
+.gacha-card[data-rarity='ssr'] { border-color: var(--night-brass); box-shadow: 0 0 28px -4px color-mix(in srgb, var(--night-brass) 30%, transparent), var(--night-shadow-dialog); }
+.gacha-card[data-rarity='ssr']::before { background: radial-gradient(ellipse at var(--gacha-light, 50% 0%), color-mix(in srgb, var(--night-brass) 24%, transparent) 0%, color-mix(in srgb, var(--accent) 12%, transparent) 38%, transparent 72%); }
 .gacha-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 22px; font-size: 11px; }
 .gacha-card-badges { display: inline-flex; align-items: center; gap: 7px; flex-wrap: wrap; }
 .gacha-counter-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: var(--night-surface-raised); border: 1px solid var(--night-border-strong); color: var(--accent); font-family: var(--mono); font-weight: 600; font-size: 11px; letter-spacing: -.01em; }

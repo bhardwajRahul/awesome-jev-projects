@@ -56,7 +56,47 @@ import { eligibleProjects } from "./lib/discovery.mjs";
 import { sponsorCopy } from "./lib/sponsors.mjs";
 import { resolveTagId, tagLabel, tagDescription, tagOptions } from "./lib/tags.mjs";
 import { createProjectSearch, searchProjects, browseSort, matchesQuickFilter } from "./lib/search.mjs";
-export { createProjectSearch, searchProjects };
+import {
+  useCatalogSWR,
+  CATALOG_REVALIDATE_MS,
+  parseProjectSnapshot,
+  catalogAddedCount,
+  catalogFingerprint,
+  shouldRevalidateCatalog,
+  validProject,
+} from "./hooks/useCatalogSWR";
+import {
+  useExplorerState,
+  EXPLORER_URL_DEBOUNCE_MS,
+  readExplorerState,
+  writeExplorerSearchParams,
+  localeNavigationUrl,
+  tagSelectionState,
+  projectHasTag,
+  KNOWN_CATEGORIES,
+  type ExplorerState,
+  type QuickFilterMode,
+  type SortMode,
+} from "./hooks/useExplorerState";
+
+export {
+  createProjectSearch,
+  searchProjects,
+  CATALOG_REVALIDATE_MS,
+  parseProjectSnapshot,
+  catalogAddedCount,
+  catalogFingerprint,
+  shouldRevalidateCatalog,
+  validProject,
+  EXPLORER_URL_DEBOUNCE_MS,
+  readExplorerState,
+  writeExplorerSearchParams,
+  localeNavigationUrl,
+  tagSelectionState,
+  projectHasTag,
+  KNOWN_CATEGORIES,
+  type ExplorerState,
+};
 
 export type Project = {
   language?: string | null;
@@ -135,87 +175,6 @@ const date = (s: string | null | undefined, locale: Locale) =>
       })
     : "—";
 const safeUrl = (u: string | null | undefined): string => safePublicUrl(u);
-const validProject = (x: unknown): x is Project => {
-  if (!x || typeof x !== "object") return false;
-  const p = x as Project;
-  return (
-    [
-      "id",
-      "name",
-      "author",
-      "category",
-      "plainSummary",
-      "jevDecisionPoint",
-      "highlightBenefit",
-      "url",
-      "claimStatus",
-      "summarySource",
-    ].every((k) => typeof p[k as keyof Project] === "string") &&
-    /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/?$/.test(p.url) &&
-    ["stars", "forks", "openIssues"].every(
-      (k) =>
-        p[k as keyof Project] === null ||
-        (typeof p[k as keyof Project] === "number" &&
-          Number.isFinite(p[k as keyof Project]) &&
-          Number(p[k as keyof Project]) >= 0),
-    ) &&
-    ["license", "lastCommitAt", "createdAt"].every(
-      (k) =>
-        p[k as keyof Project] === null ||
-        typeof p[k as keyof Project] === "string",
-    ) &&
-    (
-      [
-        "plainSummaryEn",
-        "jevDecisionPointEn",
-        "highlightBenefitEn",
-        "claimStatusEn",
-        "plainSummaryJa", "jevDecisionPointJa", "highlightBenefitJa", "claimStatusJa",
-        "plainSummaryKo", "jevDecisionPointKo", "highlightBenefitKo", "claimStatusKo",
-      ] as const
-    ).every((k) => p[k] === undefined || typeof p[k] === "string") &&
-    Array.isArray(p.tags) &&
-    p.tags.every((t) => typeof t === "string") &&
-    (!p.avatarUrl ||
-      (typeof p.avatarUrl === "string" &&
-        p.avatarUrl.startsWith("https://avatars.githubusercontent.com/"))) &&
-    (!p.evidence ||
-      (Array.isArray(p.evidence) &&
-        p.evidence.every(
-          (e) =>
-            !!e && typeof e === "object" &&
-            typeof e.url === "string" &&
-            e.url.startsWith("https://") &&
-            (!e.note || typeof e.note === "string"),
-        )))
-  );
-};
-export const CATALOG_REVALIDATE_MS = 60_000;
-export const EXPLORER_URL_DEBOUNCE_MS = 250;
-export function parseProjectSnapshot(rows: unknown): Project[] | null {
-  if (!Array.isArray(rows) || rows.length === 0) return null;
-  const validRows = rows.filter(validProject);
-  return validRows.length === 0 ? null : validRows;
-}
-export function catalogAddedCount(
-  previous: readonly Pick<Project, "id">[],
-  next: readonly Pick<Project, "id">[],
-): number {
-  const previousIds = new Set(previous.map((project) => project.id));
-  return next.reduce((count, project) => count + (previousIds.has(project.id) ? 0 : 1), 0);
-}
-export function catalogFingerprint(
-  rows: readonly Pick<Project, "id" | "stars" | "metadataFetchedAt">[],
-): string {
-  return rows.map((project) => `${project.id}:${project.stars ?? ""}:${project.metadataFetchedAt ?? ""}`).join("\n");
-}
-export function shouldRevalidateCatalog(
-  lastAt: number,
-  now: number,
-  minInterval = CATALOG_REVALIDATE_MS,
-): boolean {
-  return now - lastAt >= minInterval;
-}
 function ProjectAvatar({ project }: { project: Project }) {
   const [result, setResult] = useState<{ src: string; ok: boolean } | null>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -325,67 +284,6 @@ function Modal({
     </dialog>
   );
 }
-export type ExplorerState = {
-  q: string;
-  category: string;
-  tag: string;
-  quickFilter: "all" | "popular" | "rising" | "commercial";
-  sort: "stars" | "created" | "updated";
-  onlySaved: boolean;
-};
-export function readExplorerState(search = "", projects?: readonly Pick<Project, "category" | "tags">[]): ExplorerState {
-  const params = new URLSearchParams(search);
-  const requestedCategory = params.get("category") ?? "all";
-  const rawTag = params.get("tag") ?? "all";
-  const requestedTag = rawTag.length <= 100 ? resolveTagId(rawTag) : null;
-  const quickFilter = params.get("view");
-  const sort = params.get("sort");
-  return {
-    q: (params.get("q") ?? "").slice(0, 200),
-    category: (projects ? projects.some((p) => p.category === requestedCategory) : Object.hasOwn(categoryInfo, requestedCategory)) ? requestedCategory : "all",
-    tag: requestedTag && (!projects || projects.some((p) => p.tags.some((value) => resolveTagId(value) === requestedTag))) ? requestedTag : "all",
-    quickFilter: quickFilter === "popular" || quickFilter === "rising" || quickFilter === "commercial" ? quickFilter : "all",
-    sort: sort === "created" || sort === "updated" ? sort : "stars",
-    onlySaved: params.get("saved") === "1",
-  };
-}
-export function writeExplorerSearchParams(params: URLSearchParams, state: ExplorerState): URLSearchParams {
-  for (const [key, value] of Object.entries({
-    q: state.q,
-    category: state.category === "all" ? "" : state.category,
-    tag: state.tag === "all" ? "" : state.tag,
-    view: state.quickFilter === "all" ? "" : state.quickFilter,
-    stars: "",
-    sort: state.sort === "stars" ? "" : state.sort,
-    saved: state.onlySaved ? "1" : "",
-  })) {
-    if (value) params.set(key, value);
-    else params.delete(key);
-  }
-  return params;
-}
-export function localeNavigationUrl(currentUrl: string, next: Locale, state: ExplorerState, base = "/awesome-jev-projects/"): URL {
-  const url = new URL(currentUrl);
-  url.pathname = `${base}${next === "zh" ? "" : `${next}/`}`;
-  writeExplorerSearchParams(url.searchParams, state);
-  if (next === "zh") url.searchParams.set("lang", "zh");
-  else url.searchParams.delete("lang");
-  return url;
-}
-const projectHasTag = (project: Pick<Project, "tags">, id: string) =>
-  project.tags.some((value) => resolveTagId(value) === id);
-export function tagSelectionState(
-  state: ExplorerState, requested: string,
-  projects: readonly Project[], saved: readonly string[] = [],
-): ExplorerState {
-  const next = { ...state, tag: resolveTagId(requested) ?? "all" };
-  if (next.tag === "all" || projects.some((project) =>
-    projectHasTag(project, next.tag) &&
-    (next.category === "all" || project.category === next.category) &&
-    (!next.onlySaved || saved.includes(project.id)) && matchesQuickFilter(project, next.quickFilter)
-  )) return next;
-  return { ...next, category: "all", quickFilter: "all", onlySaved: false };
-}
 
 const quickFilterCopy: Record<ExplorerState["quickFilter"], { label: string; description: string; icon: LucideIcon }> = {
   all: { label: "全部", description: "浏览完整项目目录", icon: Layers },
@@ -399,9 +297,53 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   const [locale] = useState<Locale>(() => initialLocale ?? readLocale());
   const [heroTab, setHeroTab] = useState<"discover" | "quickstart" | "mechanism">("discover");
   const heroId = useId();
-  const [initialExplorer] = useState(() => readExplorerState(
-    typeof window === "undefined" ? "" : window.location.search, initialProjects,
-  ));
+
+  const {
+    projects,
+    loadState,
+    catalogAdded,
+    updatedAt,
+    retry,
+  } = useCatalogSWR({ initialProjects });
+
+  const [saved, setSaved] = useState<string[]>(getSaved);
+
+  const {
+    query,
+    searchTerm,
+    category,
+    tag,
+    quickFilter,
+    sort,
+    onlySaved,
+    visibleLimit,
+    showFilters,
+    activeFilterCount,
+    explorerState,
+    setQuery,
+    setSearchTerm,
+    setCategory,
+    setTag,
+    setQuickFilter,
+    setSort,
+    setOnlySaved,
+    setVisibleLimit,
+    setShowFilters,
+    selectTag,
+    clearSearch,
+    reset,
+    fuse,
+    visible,
+    displayed,
+    searchRowRef,
+    tagFilterRef,
+  } = useExplorerState({
+    projects,
+    saved,
+    loadState,
+    initialProjects,
+  });
+
   const t = (text: string) => translate(text, locale);
   const label = (category: string) => categoryLabel(category, locale);
   const projectText = (
@@ -415,9 +357,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     if (typeof window === "undefined" || !locales.includes(next) || next === locale) return;
     try { localStorage.setItem("awesome-jev:locale", next); }
     catch { /* The destination path still selects the requested language. */ }
-    const url = localeNavigationUrl(window.location.href, next, {
-      q: query, category, tag, quickFilter, sort, onlySaved,
-    }, import.meta.env.BASE_URL);
+    const url = localeNavigationUrl(window.location.href, next, explorerState, import.meta.env.BASE_URL);
     window.location.assign(url.href);
   };
   useEffect(() => {
@@ -427,128 +367,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     document.title = localeMeta[locale].title;
     document.querySelector('meta[name="description"]')?.setAttribute("content", localeMeta[locale].description);
   }, [locale]);
-  const [projects, setProjects] = useState<Project[]>(() => initialProjects?.filter(validProject) ?? []);
-  const projectsRef = useRef(projects);
-  projectsRef.current = projects;
-  const catalogEtagRef = useRef<string | null>(null);
-  const lastCatalogRevalidateAt = useRef(0);
-  const [catalogAdded, setCatalogAdded] = useState(0);
-  const [loadState, setLoadState] = useState<"loading" | "ready" | "error">(
-    initialProjects ? "ready" : "loading",
-  );
-  const [loadAttempt, setLoadAttempt] = useState(0);
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const controller = new AbortController();
-    let cancelled = false;
-    const revalidate = (force = false) => {
-      const now = Date.now();
-      if (!force && !shouldRevalidateCatalog(lastCatalogRevalidateAt.current, now)) return;
-      lastCatalogRevalidateAt.current = now;
-      if (projectsRef.current.length === 0) setLoadState("loading");
-      const headers = new Headers();
-      if (catalogEtagRef.current) headers.set("If-None-Match", catalogEtagRef.current);
-      fetch(`${import.meta.env.BASE_URL}projects.json`, {
-        cache: "no-cache",
-        headers,
-        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15000)]),
-      })
-        .then(async (response) => {
-          const etag = response.headers.get("ETag");
-          if (etag) catalogEtagRef.current = etag;
-          if (response.status === 304) return null;
-          if (!response.ok) throw new Error("Project snapshot unavailable");
-          return response.json();
-        })
-        .then((rows) => {
-          if (cancelled || rows == null) return;
-          const validRows = parseProjectSnapshot(rows);
-          if (!validRows) throw new Error("Empty project snapshot");
-          const previous = projectsRef.current;
-          if (catalogFingerprint(previous) === catalogFingerprint(validRows)) {
-            setLoadState("ready");
-            return;
-          }
-          const added = catalogAddedCount(previous, validRows);
-          setProjects(validRows);
-          setLoadState("ready");
-          if (added > 0 && previous.length > 0) setCatalogAdded(added);
-        })
-        .catch(() => {
-          if (cancelled || controller.signal.aborted) return;
-          if (projectsRef.current.length === 0) setLoadState("error");
-        });
-    };
-    revalidate(true);
-    const onVisibility = () => {
-      if (document.visibilityState === "visible") revalidate(false);
-    };
-    const onPageShow = (event: PageTransitionEvent) => {
-      if (event.persisted) revalidate(false);
-    };
-    document.addEventListener("visibilitychange", onVisibility);
-    window.addEventListener("pageshow", onPageShow);
-    return () => {
-      cancelled = true;
-      controller.abort();
-      document.removeEventListener("visibilitychange", onVisibility);
-      window.removeEventListener("pageshow", onPageShow);
-    };
-  }, [loadAttempt, initialProjects]);
-  const updatedAt = useMemo(
-    () =>
-      projects.reduce(
-        (latest, project) =>
-          project.metadataFetchedAt && project.metadataFetchedAt > latest
-            ? project.metadataFetchedAt
-            : latest,
-        "",
-      ),
-    [projects],
-  );
-  const [query, setQuery] = useState(initialExplorer.q);
-  const [searchTerm, setSearchTerm] = useState(initialExplorer.q);
-  const [category, setCategory] = useState(initialExplorer.category);
-  const [tag, setTag] = useState(initialExplorer.tag);
-  const [quickFilter, setQuickFilter] = useState<ExplorerState["quickFilter"]>(initialExplorer.quickFilter);
-  const [sort, setSort] = useState<ExplorerState["sort"]>(initialExplorer.sort);
-  const [visibleLimit, setVisibleLimit] = useState(24);
-  const [saved, setSaved] = useState<string[]>(getSaved);
-  const [onlySaved, setOnlySaved] = useState(initialExplorer.onlySaved);
-  const [showFilters, setShowFilters] = useState(initialExplorer.tag !== "all");
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const onPopState = () => {
-      const next = readExplorerState(window.location.search, projectsRef.current);
-      setQuery(next.q);
-      setSearchTerm(next.q);
-      setCategory(next.category);
-      setTag(next.tag);
-      setQuickFilter(next.quickFilter);
-      setSort(next.sort);
-      setOnlySaved(next.onlySaved);
-    };
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const timer = window.setTimeout(() => {
-      const url = new URL(window.location.href);
-      writeExplorerSearchParams(url.searchParams, {
-        q: query, category, tag, quickFilter, sort, onlySaved,
-      });
-      const next = `${url.pathname}${url.search}${url.hash}`;
-      const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
-      if (next !== current) history.replaceState(history.state, "", next);
-    }, EXPLORER_URL_DEBOUNCE_MS);
-    return () => window.clearTimeout(timer);
-  }, [query, category, tag, quickFilter, sort, onlySaved]);
-  useEffect(() => {
-    if (loadState !== "ready") return;
-    if (category !== "all" && !projects.some((p) => p.category === category)) setCategory("all");
-    if (tag !== "all" && !projects.some((p) => projectHasTag(p, tag))) setTag("all");
-  }, [projects, loadState, category, tag]);
   const [modal, setModal] = useState<"submit" | "agentSkill" | "sponsor" | "gacha" | null>(null);
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("sponsor") === "1") setModal("sponsor");
@@ -567,8 +385,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   } | null>(null);
   const submissionFormRef = useRef<HTMLFormElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
-  const searchRowRef = useRef<HTMLDivElement>(null);
-  const tagFilterRef = useRef<HTMLSelectElement>(null);
   const categoryListRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const container = categoryListRef.current;
@@ -602,20 +418,11 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     return () => { window.cancelAnimationFrame(frame); window.removeEventListener("resize", centerCategory); };
   }, [category, projects, locale]);
   useEffect(() => {
-    const t = setTimeout(() => setSearchTerm(query), 90);
-    return () => clearTimeout(t);
-  }, [query]);
-  useEffect(() => {
     if (toast) {
       const t = setTimeout(() => setToast(""), 2400);
       return () => clearTimeout(t);
     }
   }, [toast]);
-  useEffect(() => {
-    if (!catalogAdded) return;
-    const timer = setTimeout(() => setCatalogAdded(0), 5600);
-    return () => clearTimeout(timer);
-  }, [catalogAdded]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.isComposing) return;
@@ -653,47 +460,13 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
       window.removeEventListener("keydown", handler);
       window.removeEventListener("hashchange", fromHash);
     };
-  }, [projects, showFilters]);
+  }, [projects, showFilters, setShowFilters]);
   const categories = useMemo(
     () => [...new Set(projects.map((p) => p.category))],
     [projects],
   );
   const tags = useMemo(() => tagOptions(projects, locale), [projects, locale]);
   const selectedTag = tags.find((option) => option.id === tag);
-  const fuse = useMemo(() => createProjectSearch(projects), [projects]);
-  const activeFilterCount = (tag !== "all" ? 1 : 0) + (quickFilter !== "all" ? 1 : 0) + (onlySaved ? 1 : 0);
-  const selectTag = (next: string, focusFilter = false) => {
-    const nextState = tagSelectionState({ q: query, category, tag, quickFilter, sort, onlySaved }, next, projects, saved);
-    setTag(nextState.tag);
-    setCategory(nextState.category);
-    setQuickFilter(nextState.quickFilter);
-    setOnlySaved(nextState.onlySaved);
-    setQuery(nextState.q);
-    setSearchTerm(nextState.q);
-    if (!focusFilter) setShowFilters(true);
-    if (focusFilter) window.requestAnimationFrame(() => tagFilterRef.current?.focus({ preventScroll: true }));
-  };
-  useEffect(() => {
-    if (!showFilters) return;
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (searchRowRef.current && !searchRowRef.current.contains(event.target as Node)) {
-        setShowFilters(false);
-      }
-    };
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setShowFilters(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [showFilters]);
   useEffect(() => {
     const context = (
       document as Document & {
@@ -752,32 +525,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     }
     return () => lifecycle.abort();
   }, [projects, fuse, updatedAt, locale]);
-  const visible = useMemo(() => {
-    const list = searchTerm.trim()
-      ? searchProjects(fuse, searchTerm)
-      : projects;
-    const filtered = list.filter((p) =>
-      (category === "all" || p.category === category) &&
-      (tag === "all" || projectHasTag(p, tag)) &&
-      (!onlySaved || saved.includes(p.id)) &&
-      matchesQuickFilter(p, quickFilter)
-    );
-    return searchTerm.trim() ? filtered : browseSort(filtered, sort);
-  }, [
-    fuse,
-    searchTerm,
-    category,
-    tag,
-    quickFilter,
-    onlySaved,
-    saved,
-    sort,
-    projects,
-  ]);
-  useEffect(() => {
-    setVisibleLimit(24);
-  }, [searchTerm, category, tag, quickFilter, onlySaved, sort]);
-  const displayed = visible.slice(0, visibleLimit);
   const trending = useMemo(
     () =>
       [...projects]
@@ -901,17 +648,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     history.replaceState(null, "", url.pathname + url.search);
     setActive(null);
     setShareFallback(null);
-  };
-  const clearSearch = () => {
-    setQuery("");
-    setSearchTerm("");
-  };
-  const reset = () => {
-    clearSearch();
-    setCategory("all");
-    setTag("all");
-    setQuickFilter("all");
-    setOnlySaved(false);
   };
   const updateSubmission = (field: keyof SubmissionValues, value: string) => {
     ({ repo: setRepo, purpose: setPurpose, decision: setDecision })[field](
@@ -1712,7 +1448,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                 <p>{t("项目数据暂时无法读取。")}</p>
                 <button
                   className="button"
-                  onClick={() => setLoadAttempt((n) => n + 1)}
+                  onClick={retry}
                 >
                   {t("重试")}
                 </button>

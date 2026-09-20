@@ -6,6 +6,7 @@
   --jevy-steel-light: color-mix(in srgb, var(--night-border-strong) 68%, var(--night-text));
   --jevy-steel-mid: var(--night-border);
   --jevy-steel-dark: var(--night-surface);
+  position: relative;
   display: block;
   flex: 0 0 auto;
   width: 176px;
@@ -15,9 +16,19 @@
   border-radius: var(--radius-lg);
   background: transparent;
   color: var(--text);
-  cursor: default;
+  cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+}
+.jevy:focus-visible {
+  outline: 2px solid var(--focus, var(--accent));
+  outline-offset: 4px;
+}
+.jevy:focus-visible .jevy-assembly {
+  transform: translateY(-3px) rotate(-2deg);
+}
+.jevy:focus-visible .jevy-head {
+  transform: rotate(4deg);
 }
 .jevy svg { display: block; width: 100%; height: auto; overflow: visible; }
 .jevy-outline { stroke: var(--jevy-edge); stroke-width: 1.5; }
@@ -41,18 +52,86 @@
 .jevy-shadow { fill: var(--text); opacity: .1; transform-origin: 94px 154px; }
 .jevy-assembly { transform-origin: 92px 145px; transition: transform 480ms cubic-bezier(.2, 1.6, .4, 1); }
 .jevy-head { transform-origin: 92px 96px; transition: transform 480ms cubic-bezier(.2, 1.6, .4, 1); }
-.jevy-gaze { transition: transform 220ms var(--motion-ease); }
+.jevy-gaze {
+  transform-origin: 92px 65px;
+  transition: transform 220ms var(--motion-ease);
+  animation: jevy-idle-gaze 14s ease-in-out infinite;
+}
 .jevy:hover .jevy-assembly { transform: translateY(-3px) rotate(-2deg); }
 .jevy:hover .jevy-head { transform: rotate(4deg); }
-.jevy:hover .jevy-gaze { transform: translate(1px, -1px); }
+.jevy:hover .jevy-gaze, .jevy:focus-visible .jevy-gaze {
+  animation: none;
+  transform: translate(1px, -1px);
+}
+.jevy-tooltip {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-raised);
+  color: var(--text);
+  font: 10px/1.3 var(--mono, ui-monospace, monospace);
+  letter-spacing: .025em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--night-canvas, #000) 22%, transparent);
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 10;
+}
+.jevy:hover .jevy-tooltip,
+.jevy:focus-visible .jevy-tooltip {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+@media (max-width: 768px) {
+  .jevy-tooltip {
+    left: auto;
+    right: 0;
+    transform: translateY(4px);
+  }
+  .jevy:hover .jevy-tooltip,
+  .jevy:focus-visible .jevy-tooltip {
+    transform: translateY(0);
+  }
+}
 .jevy-antenna-light { animation: jevy-signal 3s ease-in-out infinite; }
 .jevy-cog { animation: jevy-turn 24s linear infinite; }
 .jevy-key { animation: jevy-turn 36s linear infinite reverse; }
 .jevy[data-winding="true"] .jevy-assembly { animation: jevy-spring 900ms both; }
 .jevy[data-winding="true"] .jevy-key { animation: jevy-turn 900ms cubic-bezier(.16, 1, .3, 1); }
-.jevy[data-awake="false"] :is(.jevy-antenna-light, .jevy-cog, .jevy-key, .jevy-assembly) { animation-play-state: paused; }
+.jevy[data-winding="true"] .jevy-cog { animation: jevy-cog-spin 900ms cubic-bezier(.2, 1.2, .4, 1); }
+.jevy[data-winding="true"] .jevy-head { animation: jevy-head-tilt 900ms cubic-bezier(.34, 1.56, .64, 1); }
+.jevy[data-winding="true"] .jevy-antenna-light { animation: jevy-antenna-flare 900ms ease-in-out; }
+.jevy[data-awake="false"] :is(.jevy-antenna-light, .jevy-cog, .jevy-key, .jevy-assembly, .jevy-head, .jevy-gaze) { animation-play-state: paused; }
 @keyframes jevy-signal { 0%, 78%, 100% { opacity: .6; } 85%, 91% { opacity: 1; } }
 @keyframes jevy-turn { to { transform: rotate(360deg); } }
+@keyframes jevy-cog-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1080deg); }
+}
+@keyframes jevy-head-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg) translateY(-2px); }
+  55% { transform: rotate(6deg) translateY(-3px); }
+  80% { transform: rotate(-2deg); }
+}
+@keyframes jevy-antenna-flare {
+  0%, 100% { opacity: .6; }
+  20%, 40%, 60%, 80% { opacity: 1; filter: drop-shadow(0 0 6px var(--accent)); }
+}
+@keyframes jevy-idle-gaze {
+  0%, 26%, 100% { transform: translate(0, 0); }
+  30%, 42% { transform: translate(1.5px, 0.5px); }
+  46%, 68% { transform: translate(0, 0); }
+  72%, 84% { transform: translate(-1px, -1px); }
+  88% { transform: translate(0, 0); }
+}
 @keyframes jevy-spring {
   0%, 100% { transform: translateY(0) rotate(0); }
   17% { transform: translateY(2px) rotate(-4deg); }
@@ -61,7 +140,15 @@
   80% { transform: translateY(-2px) rotate(1deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .jevy .jevy-assembly, .jevy .jevy-head, .jevy .jevy-gaze { transition: none; transform: none; }
-  .jevy .jevy-antenna-light, .jevy .jevy-cog, .jevy .jevy-key, .jevy[data-winding="true"] .jevy-assembly, .jevy[data-winding="true"] .jevy-key { animation: none; }
+  .jevy .jevy-assembly, .jevy .jevy-head, .jevy .jevy-gaze, .jevy-tooltip { transition: none; transform: none; }
+  .jevy .jevy-antenna-light, .jevy .jevy-cog, .jevy .jevy-key, .jevy-gaze,
+  .jevy[data-winding="true"] .jevy-assembly,
+  .jevy[data-winding="true"] .jevy-key,
+  .jevy[data-winding="true"] .jevy-cog,
+  .jevy[data-winding="true"] .jevy-head,
+  .jevy[data-winding="true"] .jevy-antenna-light { animation: none; }
   .jevy[data-winding="true"] .jevy-eye-light { fill: var(--night-text); }
+  .jevy:focus-visible .jevy-assembly,
+  .jevy:focus-visible .jevy-head { transform: none; }
+  .jevy:hover .jevy-tooltip, .jevy:focus-visible .jevy-tooltip { transform: translateX(-50%); }
 }

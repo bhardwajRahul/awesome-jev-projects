@@ -4,9 +4,23 @@ import "../styles/jevy.css";
 
 const cog = "M-4-17h8l1 5 4 2 5-2 4 7-4 3v4l4 3-4 7-5-2-4 2-1 5h-8l-1-5-4-2-5 2-4-7 4-3v-4l-4-3 4-7 5 2 4-2Z";
 
-export function Jevy(_props: { locale: Locale }) {
+const labels: Record<Locale, string> = {
+  zh: "给机械助手 Jevy 上发条",
+  en: "Wind up Jevy, the mechanical assistant",
+  ja: "機械アシスタント Jevy のぜんまいを巻く",
+  ko: "기계 도우미 Jevy의 태엽 감기",
+};
+
+const statusWound: Record<Locale, string> = {
+  zh: "发条已上紧！动力满格 ⚡",
+  en: "Fully wound! Ready to roll ⚡",
+  ja: "ぜんまい満タン！準備完了 ⚡",
+  ko: "태엽 완충! 준비 완료 ⚡",
+};
+
+export function Jevy({ locale }: { locale: Locale }) {
   const id = useId();
-  const root = useRef<HTMLDivElement>(null);
+  const button = useRef<HTMLButtonElement>(null);
   const [winding, setWinding] = useState(false);
   const [awake, setAwake] = useState(true);
 
@@ -17,7 +31,7 @@ export function Jevy(_props: { locale: Locale }) {
       visible = entry.isIntersecting;
       update();
     });
-    if (root.current) observer?.observe(root.current);
+    if (button.current) observer?.observe(button.current);
     document.addEventListener("visibilitychange", update);
     update();
     return () => { observer?.disconnect(); document.removeEventListener("visibilitychange", update); };
@@ -30,8 +44,20 @@ export function Jevy(_props: { locale: Locale }) {
   }, [winding]);
 
   return (
-    <div ref={root} className="jevy" data-awake={awake} data-winding={winding} aria-hidden="true" onClick={() => setWinding(true)}>
-      <svg viewBox="0 0 184 166" width="176" height="159" fill="none" focusable="false">
+    <button
+      ref={button}
+      type="button"
+      className="jevy"
+      data-awake={awake}
+      data-winding={winding}
+      aria-label={winding ? statusWound[locale] : labels[locale]}
+      title={labels[locale]}
+      onClick={() => setWinding(true)}
+    >
+      <span className="jevy-tooltip" role="tooltip" aria-hidden="true">
+        {winding ? statusWound[locale] : labels[locale]}
+      </span>
+      <svg viewBox="0 0 184 166" width="176" height="159" fill="none" focusable="false" aria-hidden="true">
         <defs>
           <linearGradient id={`${id}-brass`} x1="0" y1="0" x2=".85" y2="1">
             <stop className="jevy-brass-light" /><stop offset=".4" className="jevy-brass-mid" /><stop offset="1" className="jevy-brass-dark" />
@@ -114,6 +140,6 @@ export function Jevy(_props: { locale: Locale }) {
           </g>
         </g>
       </svg>
-    </div>
+    </button>
   );
 }

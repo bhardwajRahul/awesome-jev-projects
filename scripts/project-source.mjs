@@ -354,8 +354,8 @@ function codeCandidate(entry) {
 }
 
 function stripSourceComments(text, path) {
-  // Preserve quoted endpoints while removing comments and Python/Dart documentation strings.
-  let code = /\.(?:py|dart)$/i.test(path)
+  // Preserve quoted endpoints while removing comments and Python/Dart/JVM documentation strings.
+  let code = /\.(?:py|dart|java|kt)$/i.test(path)
     ? text.replace(/("""|\x27\x27\x27)[\s\S]*?\1/g, " ")
     : text;
   const commentsAndStrings = /\.(?:py|rb|sh)$/i.test(path)
@@ -385,8 +385,16 @@ function hasImplementationEvidence(text, path) {
   const code = stripSourceComments(text, path);
   if (hasOpenRouterJevIntegration(code)) return true;
 
-  const providerImport = /\bfrom\s+typesafe(?:_ai|_sdk)?(?:\.[\w.]+)?\s+import\b|\bimport\s+(?:[\w.]+\.)?typesafe(?:_ai|_sdk)?(?:\.[\w.]+)*\b|\b(?:from|require\s*\(|import\s*\(?)\s*["'](?:package:(?:jev|typesafe)[\w./-]*|@typesafe\/(?:jev|sdk)|typesafe(?:-ai|-sdk)?)["']/i.test(code);
-  const sdkCall = /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient))\s*\(|\.\s*(?:choice|score|noul|decision|query|ask|systemOne|system_one)\s*\(/i.test(code);
+  const providerImport =
+    /\bfrom\s+(?:typesafe(?:_ai|_sdk)?|jev)(?:\.[\w.]+)?\s+import\b/i.test(code) ||
+    /\bimport\s+(?:static\s+)?(?:(?!com\.typesafe\.(?:config|play|scalalogging|sslconfig|sbt|akka))(?:[\w.]+\.)?(?:typesafe(?:_ai|_sdk)?|jev)(?:\.[\w.]+)*)\b/i.test(code) ||
+    /\b(?:from|require\s*\(|import\s*\(?)\s*["'](?:package:(?:jev|typesafe)[\w./-]*|@typesafe\/(?:jev|sdk)|typesafe(?:-ai|-sdk)?|jev|github\.com\/(?:typesafe-ai|typesafe|[\w.-]+\/jev[\w.-]*)|(?:go\.)?typesafe\.ai\/[\w.-]*)["']/i.test(code) ||
+    /\b(?:use\s+(?:typesafe(?:_ai|_sdk|_jev)?|jev)(?:::[\w{}*,\s:]+)?|extern\s+crate\s+(?:typesafe(?:_ai|_sdk|_jev)?|jev))\s*;/i.test(code) ||
+    /\bimport\s*\([\s\S]*?["'](?:github\.com\/(?:typesafe-ai|typesafe|[\w.-]+\/jev[\w.-]*)|(?:go\.)?typesafe\.ai\/[\w.-]*)["']/i.test(code);
+
+  const sdkCall =
+    /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient|NewClient|New)|jev\.(?:Client|NewClient|New))\s*(?:\(|::new\s*\()|(?<!\b(?:random|math)\s*)\.\s*choice\s*\(|\.\s*(?:score|noul|decision|query|ask|systemOne|system_one)\s*\(|\b(?:Choice|Score|Noul)\s*(?:::new|\.builder|\.of)\s*\(/i.test(code);
+
   if (providerImport && sdkCall) return true;
 
   const aiSdkImport = /\b(?:from|require\s*\(|import\s*\(?)\s*["'](?:ai|@ai-sdk\/[\w.-]+)["']/i.test(code);
@@ -397,7 +405,7 @@ function hasImplementationEvidence(text, path) {
   const hasSystemOnePath = /\/v1\/systemone\b/i.test(code);
   const hasJevIdentity = /["'`]~?(?:typesafe-ai|typesafe)\/jev-(?:latest|\d)|(?:TypeSafeClient|JevClient)\s*\(|\.\s*(?:systemOne|system_one)\s*\(/i.test(code);
 
-  const inlineHttp = /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai\//i.test(code);
+  const inlineHttp = /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request)|http\.Post|reqwest|ureq)\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai\//i.test(code);
   if (inlineHttp && (hasJevIdentity || hasSystemOnePath)) return true;
 
   const pyHttp = /\burllib\.request\.(?:Request|urlopen)\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai/i.test(code);
@@ -410,7 +418,7 @@ function hasImplementationEvidence(text, path) {
 
   const typesafeKey = /\bTYPESAFE_API_KEY\b/i.test(code);
   const jevPrimitive = /["']type["']\s*:\s*["'](?:noul|choice|score)["']|\b(?:noul|choice|score)\b.{0,50}\banswer/i.test(code);
-  const anyHttpRequest = /\b(?:urllib\.request|requests|httpx|aiohttp|fetch|axios|postJson)\b/i.test(code);
+  const anyHttpRequest = /\b(?:urllib\.request|requests|httpx|aiohttp|fetch|axios|postJson|http\.(?:Post|Get|Client|NewRequest)|reqwest|ureq)\b/i.test(code);
   if (typesafeKey && jevPrimitive && anyHttpRequest) return true;
 
   return false;
@@ -532,8 +540,8 @@ export async function inspectRepository({
             Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(a.path)) ||
           Number(/jev|typesafe/i.test(b.path)) -
             Number(/jev|typesafe/i.test(a.path)) ||
-          Number(/(?:^|\/)(?:src|lib|app|main|client|agent)/i.test(b.path)) -
-            Number(/(?:^|\/)(?:src|lib|app|main|client|agent)/i.test(a.path)) ||
+          Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(b.path)) -
+            Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(a.path)) ||
           a.path.localeCompare(b.path),
       );
     for (const entry of candidates.slice(0, MAX_CODE_FILES)) {

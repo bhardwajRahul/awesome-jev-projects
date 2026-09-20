@@ -23,7 +23,7 @@ export const bodyHash = (body) =>
     .update(body ?? "")
     .digest("hex");
 export const successComment =
-  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并在雷达站成功收录上线（固定版本静态启发式，未经本站运行或安全复测）：https://logicrw.github.io/awesome-jev-projects/";
+  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并已成功收录至 Awesome Jev 探索雷达：https://logicrw.github.io/awesome-jev-projects/ 欢迎持续关注与共建！";
 const OWNER_REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
 function requireOwner(repository) {
   if (!OWNER_REPO.test(repository ?? ""))
@@ -737,16 +737,16 @@ async function main() {
     }
     if (!alreadyCommented) {
       const feedbackBody = [
-        "🤖 **Muse API 智能审核反馈**",
+        "👋 **Awesome Jev 项目收录反馈**",
         "",
-        "感谢提交项目收录申请！自动审核流水线（基于 Muse Spark 1.3 LLM 智能裁决）在分析您的仓库源码后给出如下反馈：",
+        "非常感谢您向 Awesome Jev 社区提交项目！我们的自动化审核助手（结合 Muse Spark 1.3 代码理解）在阅读您的仓库源码后整理了如下参考反馈：",
         "",
-        `- **审核结论**：${needsEvidence ? "需要补充代码证据 (Needs Evidence)" : "暂未通过收录"}`,
+        `- **当前状态**：${needsEvidence ? "期待补充代码证据 (Needs Evidence)" : "暂未检测到有效集成"}`,
         `- **审查分析**：${reason}`,
         "",
         needsEvidence
-          ? "> 💡 **如何复核**：如果您的项目中已集成了 Jev 原语（例如 `@typesafe/jev`、`typesafe-ai`、OpenRouter decisions 或直接调用 `/v1/systemone`），请直接在本 Issue 中回复补充包含 Jev 原语调用的**具体代码文件路径与关键行链接**。流水线将自动重新运行审查。"
-          : "> 如有疑问或误判，欢迎在 Issue 中留言说明具体的集成方式。",
+          ? "> 💡 **如何快速复核**：如果项目中已接入 Jev / TypeSafe 决策机制（例如 Dart、Go、Rust、Java、Python、TS/JS 等多语言 SDK，或 OpenRouter decisions、`/v1/systemone` 调用），欢迎直接在本 Issue 中回复补充包含决策调用的**具体代码文件路径与关键行代码链接**。流水线将自动重新复查并推进收录！"
+          : "> 💡 **如有误判**：开源生态百花齐放，如果自动化审查存在理解偏差或尚未覆盖到您的接入方式，非常欢迎在本 Issue 中留言指出具体的代码位置与调用逻辑，我们会第一时间跟进！",
         "",
         marker,
       ].join("\n");
