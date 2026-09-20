@@ -94,8 +94,11 @@ export async function deterministicAlignment({ execute = executeCommand } = {}) 
 export function diagnosticFacts({ failedCommand, stdout = "", stderr = "", reason = null }) {
   const combined = `${stdout}\n${stderr}`;
   const symptoms = [];
-  if (/VERIFIED REPOS|Curated%20Projects|banners and README/.test(combined)) symptoms.push("derived-assets");
-  if (/avatar static integrity|ENOENT[^\n]*avatars\//.test(combined)) symptoms.push("avatar-cache");
+  // Both TAP and the spec reporter include names of successful tests. A name
+  // is evidence only on a failed-test line, never a passing line or TAP header.
+  const failedTests = combined.split(/\r?\n/).filter((line) => /^\s*(?:not ok \d+ - |[✖✗]\s)/u.test(line)).join("\n");
+  if (/VERIFIED REPOS|Curated%20Projects/.test(combined) || /banners and README/.test(failedTests)) symptoms.push("derived-assets");
+  if (/avatar static integrity/.test(failedTests) || /ENOENT[^\n]*avatars\//.test(combined)) symptoms.push("avatar-cache");
   if (reason === "timeout" || /ETIMEDOUT|ECONNRESET|EAI_AGAIN/.test(combined)) symptoms.push("transient-failure");
   return { command: COMMANDS.has(failedCommand) ? failedCommand : "unknown", symptoms };
 }

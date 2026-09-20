@@ -42,7 +42,24 @@ test("bounded child execution handles spawn errors, timeouts, and output caps", 
 test("diagnostic facts remain enum-only and heuristic actions are fixed", () => {
   const facts = diagnosticFacts({ failedCommand: "curl evil", stderr: "ENOENT public/avatars/x.png\nETIMEDOUT" });
   assert.deepEqual(facts, { command: "unknown", symptoms: ["avatar-cache", "transient-failure"] });
-  assert.deepEqual(heuristicDiagnosis({ failedCommand: "npm test", stderr: "VERIFIED REPOS avatar static integrity" }).actions, ["realign-derived-assets", "resync-avatars"]);
+  assert.deepEqual(heuristicDiagnosis({ failedCommand: "npm test", stderr: "VERIFIED REPOS\nnot ok 2 - avatar static integrity" }).actions, ["realign-derived-assets", "resync-avatars"]);
+});
+
+test("passing tests and TAP headers never trigger a repair for an unrelated failure", async () => {
+  const failure = { failedCommand: "npm test", stdout: [
+    "# Subtest: avatar static integrity: only missing files are tolerated",
+    "ok 1 - avatar static integrity: only missing files are tolerated",
+    "✔ banners and README documents strictly match canonical project count",
+    "# Subtest: banners and README documents strictly match canonical project count",
+    "not ok 3 - unrelated application error",
+  ].join("\n"), stderr: "TypeError: unrelated error" };
+  assert.deepEqual(heuristicDiagnosis(failure).actions, []);
+  const plan = await consultMosForRepair({ ...failure, token: "muse-test", fetchImpl: () => assert.fail("Unrecognized failures must not call MOS") });
+  assert.deepEqual(plan.actions, []);
+  for (const prefix of ["not ok 7 - ", "✖ "]) {
+    assert.deepEqual(heuristicDiagnosis({ stdout: `${prefix}banners and README documents strictly match canonical project count` }).actions, ["realign-derived-assets"]);
+    assert.deepEqual(heuristicDiagnosis({ stdout: `${prefix}avatar static integrity: public/avatars contains cached image files` }).actions, ["resync-avatars"]);
+  }
 });
 
 test("alignment synchronizes avatars first, fails closed for documents, and merely warns on avatar failure", async () => {
