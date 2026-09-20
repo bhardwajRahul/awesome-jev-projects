@@ -31813,5 +31813,80 @@
       "issueBodySha256": "d1e6020b6c8e09ea8147ba3c17811d0b17d70660c3d28dfab414d9d44e39c9ba",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/27"
     }
+  },
+  {
+    "id": "solido:jev_dart",
+    "name": "jev_dart",
+    "author": "Solido",
+    "url": "https://github.com/Solido/jev_dart",
+    "repoId": 1377574973,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "这是 Jev 的纯 Dart 客户端，用于发送状态和类型化问题并返回可供代码分支的结构化答案，可用于 CLI、服务端和 Flutter 应用。",
+    "jevDecisionPoint": "Jev 根据输入文本在 billing/technical/other 之间做 Choice 分类，并用 Noul 判断是否紧急。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Jev Dart SDK to build cli, server and Flutter apps.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T20:10:31Z",
+    "lastCommitAt": "2026-09-19T20:49:41Z",
+    "headSha": "03e4d03fbfe2046c1b730364aac88d7df54e8a0f",
+    "metadataFetchedAt": "2026-09-20T03:04:07.638Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1295961?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T03:04:07.638Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/lib/jev_dart.dart",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/bin/jev_dart.dart",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "03e4d03fbfe2046c1b730364aac88d7df54e8a0f",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/README.md",
+          "hash": "4792c769492c6f1aba35f8a86703bd3c0eae29572d845bddd9dae4cb325a7f91"
+        },
+        {
+          "path": "lib/jev_dart.dart",
+          "url": "https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/lib/jev_dart.dart",
+          "hash": "8951ccc1968f38513e238e70591b780227a313a09a93ec61ad43d611faf857da"
+        },
+        {
+          "path": "bin/jev_dart.dart",
+          "url": "https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/bin/jev_dart.dart",
+          "hash": "815c04e38fb3ee27e38a8e9610012bf56f246a35acc6b3cf28d3c813f669deac"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 28,
+      "issueBodySha256": "cec465e520e254c851a03cf770283c8824cef4a73a244cf3417bdeb8490489d5",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/28"
+    }
   }
 ]
