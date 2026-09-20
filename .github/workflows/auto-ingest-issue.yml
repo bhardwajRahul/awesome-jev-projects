@@ -2,6 +2,8 @@ name: Issue ingestion
 on:
   issues:
     types: [opened, edited]
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       issue_number:
@@ -22,7 +24,15 @@ concurrency:
   cancel-in-progress: false
 jobs:
   review:
-    if: github.repository == 'logicrw/awesome-jev-projects' && github.ref == 'refs/heads/main'
+    if: >-
+      github.repository == 'logicrw/awesome-jev-projects' &&
+      github.ref == 'refs/heads/main' &&
+      (!github.event.issue.pull_request) &&
+      (github.event_name != 'issue_comment' || (
+        !endsWith(github.event.comment.user.login, '[bot]') &&
+        github.event.comment.user.login != 'github-actions' &&
+        github.event.issue.state == 'open'
+      ))
     permissions:
       contents: read
       issues: read
@@ -159,7 +169,7 @@ jobs:
           INGEST_ISSUE_BODY_SHA: ${{ needs.publish.outputs.issue_body_sha }}
   respond-feedback:
     needs: review
-    if: github.repository == 'logicrw/awesome-jev-projects' && needs.review.outputs.ready != 'true' && needs.review.outputs.issue_number != '0' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run)
+    if: github.repository == 'logicrw/awesome-jev-projects' && needs.review.outputs.status == 'rejected' && needs.review.outputs.issue_number != '0' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run)
     permissions:
       contents: read
       issues: write

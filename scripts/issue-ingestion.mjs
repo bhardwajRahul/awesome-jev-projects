@@ -713,8 +713,8 @@ async function main() {
       console.log("No valid issue number for feedback; skipping.");
       return;
     }
-    if (["ready", "resume"].includes(prepared.status)) {
-      console.log(`Issue #${issueNumber} is ready; feedback not needed.`);
+    if (["ready", "resume", "ignored"].includes(prepared.status)) {
+      console.log(`Issue #${issueNumber} status is ${prepared.status}; feedback not needed.`);
       return;
     }
     const issue = await api(`/repos/${repository}/issues/${issueNumber}`);
