@@ -115,5 +115,5 @@ jobs:
       - name: Confirm live inclusion, then thank and close
         run: node scripts/issue-ingestion.mjs acknowledge
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           DEPLOYED_SHA: ${{ needs.build.outputs.source_sha }}

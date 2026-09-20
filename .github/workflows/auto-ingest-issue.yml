@@ -50,8 +50,10 @@ jobs:
         id: review
         run: node scripts/issue-ingestion.mjs prepare
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
+          MUSE_ENDPOINT: ${{ secrets.MUSE_ENDPOINT || vars.MUSE_ENDPOINT || '' }}
+          MUSE_MODEL: ${{ secrets.MUSE_MODEL || vars.MUSE_MODEL || '' }}
           INGEST_ISSUE_NUMBER: ${{ inputs.issue_number || 0 }}
           INGEST_MODELS_PROBE: ${{ inputs.models_probe || false }}
           INGEST_REVIEWED_SHA: ${{ steps.source.outputs.sha }}
@@ -129,7 +131,7 @@ jobs:
         id: publish
         run: node scripts/issue-ingestion.mjs publish
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           INGEST_RESULT_FILE: ${{ runner.temp }}/candidate/ingestion-result.json
           INGEST_REVIEWED_SHA: ${{ needs.review.outputs.source_sha }}
           INGEST_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
@@ -152,7 +154,7 @@ jobs:
       # No dependency installation; only records a bounded, body-bound retry.
       - run: node scripts/ingestion-retry.mjs mark
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           INGEST_ISSUE_NUMBER: ${{ needs.publish.outputs.issue_number }}
           INGEST_ISSUE_BODY_SHA: ${{ needs.publish.outputs.issue_body_sha }}
   respond-feedback:
