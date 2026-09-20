@@ -32083,5 +32083,81 @@
       "issueBodySha256": "e1782734d4194ba57680e854606099b84130ece8968af75b6f2178137c62b5b3",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/30"
     }
+  },
+  {
+    "id": "dimweaker:jev-libero",
+    "name": "jev-libero",
+    "author": "Dimweaker",
+    "url": "https://github.com/Dimweaker/jev-libero",
+    "repoId": 1377507017,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "在 LIBERO 仿真环境中，使用 Jev 分层选择机器人原子动作，结合可逆物理前视完成操作任务。支持 JSON 任务配置，并提供关闭微波炉、关闭抽屉的演示与完整运行记录。",
+    "jevDecisionPoint": "Jev 通过串行 Choice 调用选择意图 → 接触/运动方式 → 一个原子输入。引擎先用物理前视评价候选，随后执行 Jev 选中的输入，并根据新状态继续决策。动作集包括平移、旋转、开爪、合爪和保持，共 27 个输入。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "在连续交互中观察决策效果；频率依实际运行而定。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions",
+      "domain-workflows"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Two LIBERO tasks, one control engine. Each demo loads its own JSON task definition. Videos follow simulation time, with decision and physics-preview waiting omitted.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T18:45:40Z",
+    "lastCommitAt": "2026-09-20T03:47:39Z",
+    "headSha": "667b3bbeb0e40594e6a9993356ce84e70afc936d",
+    "metadataFetchedAt": "2026-09-20T04:50:13.277Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/42308062?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T04:50:13.277Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/src/jev_libero/client.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "667b3bbeb0e40594e6a9993356ce84e70afc936d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/README.md",
+          "hash": "0d246ef3d2d40658d96a1c91232b2dcd00dcdc819243c55a8a4a786a4feb5c6c"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/README.zh-CN.md",
+          "hash": "61df893bf1430d882dae009cdcfff74576889b427d6bd5dfa862030470405c28"
+        },
+        {
+          "path": "src/jev_libero/client.py",
+          "url": "https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/src/jev_libero/client.py",
+          "hash": "7af5dc91d70b0c01c1914c0bdc4265fb0fdb9cfa8ea4c481a7576b7ec142d940"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 31,
+      "issueBodySha256": "e971f396511a596150f9e70ff02c231ecae17bc520c18c49dd88d4f50cb11883",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/31"
+    }
   }
 ]
