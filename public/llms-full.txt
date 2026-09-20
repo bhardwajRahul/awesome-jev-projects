@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 330
+Catalog entries: 331
 
 ## Install the Agent Skill
 
@@ -4913,3 +4913,24 @@ Rule-based CLI and agent skill that evaluates text and markdown files against cu
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/lukstei/slop-grader/
 - Source evidence: https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/README.md
 - Source evidence: https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/src/providers/jev.test.ts
+
+## paper-radar-jev
+
+An automated research paper radar that fetches the latest papers from arXiv, evaluates their relevance to a configurable research profile using TypeSafe AI, and ranks them by relevance score. Designed for personalized, daily literature discovery across different research domains.
+
+- Repository: https://github.com/LYchoon/paper-radar-jev
+- Category: CLI & Pipelines
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/lychoon/paper-radar-jev/
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/README.md
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/README.zh-TW.md
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/models.py
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/main.py
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/__init__.py
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/__main__.py
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/cli.py
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/config.py
+- Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/evaluator.py

@@ -33438,5 +33438,135 @@
       "issueBodySha256": "efbfcb28cf07e738c5b10888826db1ae51b487164816c71e92c08cf365e89e7a",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/37"
     }
+  },
+  {
+    "id": "lychoon:paper-radar-jev",
+    "name": "paper-radar-jev",
+    "author": "LYchoon",
+    "url": "https://github.com/LYchoon/paper-radar-jev",
+    "repoId": 1377847282,
+    "category": "CLI & Pipelines",
+    "plainSummary": "以上指令會保留已存在的本機設定。編輯專案根目錄的 `.env`，將空白值換成自己的 key：",
+    "jevDecisionPoint": "决策说明： 在 src/paper_radar/evaluator.py 的 evaluate_paper() 中，通过 client.system_one(...) 将论文信息和 research profile 发送给 TypeSafe System One，并从返回的 response.nouls[...] 中取得概率结果作为 relevance_score。这个位置就是项目实际进行论文相关性决策的地方。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "classification-ranking",
+      "search-retrieval"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "An automated research paper radar that fetches the latest papers from arXiv, evaluates their relevance to a configurable research profile using TypeSafe AI, and ranks them by relevance score. Designed for personalized, daily literature discovery across different research domains.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T03:11:13Z",
+    "lastCommitAt": "2026-09-20T04:08:37Z",
+    "headSha": "fbadf01c69806730eb157bdc97f662a38b522593",
+    "metadataFetchedAt": "2026-09-20T14:09:42.289Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/158578641?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T14:09:42.289Z",
+    "evidence": [
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/README.zh-TW.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/models.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/main.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/__main__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/cli.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/config.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/evaluator.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "fbadf01c69806730eb157bdc97f662a38b522593",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/README.md",
+          "hash": "5a14b79a1f372f4c2964f3ee7870f1ab5a81d43ed9d9a06f72b7a79757a5a7fa"
+        },
+        {
+          "path": "README.zh-TW.md",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/README.zh-TW.md",
+          "hash": "e519f84cda63f893e5763566854550d60080d73a45ef73a79a6cb0f56e125618"
+        },
+        {
+          "path": "src/paper_radar/models.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/models.py",
+          "hash": "3acda963a6bc0d8fc367b53c5e31477528ccd9b91f94b59ff4663633208f2fa8"
+        },
+        {
+          "path": "main.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/main.py",
+          "hash": "3680723d73bc331d4fcdc99aff5d63eeecb47c61c4dc9bfe1b18193cc520b744"
+        },
+        {
+          "path": "src/paper_radar/__init__.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/__init__.py",
+          "hash": "d932091b2a9385c513aafa1f9ea53ca8fd060d47868111627bf5610151f8ac89"
+        },
+        {
+          "path": "src/paper_radar/__main__.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/__main__.py",
+          "hash": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+        },
+        {
+          "path": "src/paper_radar/cli.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/cli.py",
+          "hash": "2f7ebf911cc4f2bdc37e3676bc1cec3a228d73fe2668ed844385c5ddd7ce14e2"
+        },
+        {
+          "path": "src/paper_radar/config.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/config.py",
+          "hash": "2c6f792f5ffdef7e37285e0a95a269d145e331171e882dc2f0128ef3643b76af"
+        },
+        {
+          "path": "src/paper_radar/evaluator.py",
+          "url": "https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/evaluator.py",
+          "hash": "ec37f5f91c8f8e1434069579b2887ec0a8eff914855a5cb4907732049933354f"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 34,
+      "issueBodySha256": "2d206b56fba37e72c0cdf0af205eb3c6fd5583953e5dfd5e5f053518607aec56",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/34"
+    }
   }
 ]
