@@ -31888,5 +31888,71 @@
       "issueBodySha256": "cec465e520e254c851a03cf770283c8824cef4a73a244cf3417bdeb8490489d5",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/28"
     }
+  },
+  {
+    "id": "joslynsmall:fast-jev-compaction-pi",
+    "name": "fast-jev-compaction-pi",
+    "author": "joslynSmall",
+    "url": "https://github.com/joslynSmall/fast-jev-compaction-pi",
+    "repoId": 1377772169,
+    "category": "Context GC & Filter",
+    "plainSummary": "为 Pi 的上下文压缩筛选并原样保留关键工具证据，删除或截短过时的工具输出。",
+    "jevDecisionPoint": "Jev 接收待压缩会话的任务目标、用户和助手文本、已完成工具调用的名称与参数、结果长度和错误标记，不接收工具输出正文。\n它对每个工具调用分别给出两个概率判断：是否保留“该调用及参数”，以及是否保留“完整原始结果”。本地代码再按阈值执行完整保留、截短结果或删除调用和结果；Jev 请求或解析失败时回退 Pi 原生摘要。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "This Pi extension asks Jev whether each completed tool call and its full result should be kept, then locally retains, truncates, or drops verbatim tool evidence in the compaction summary.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T01:25:20Z",
+    "lastCommitAt": "2026-09-20T01:57:27Z",
+    "headSha": "e0086cbb70c684acf35cfe24261e65a708c9f045",
+    "metadataFetchedAt": "2026-09-20T03:05:54.865Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18278604?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T03:05:54.865Z",
+    "evidence": [
+      {
+        "url": "https://github.com/joslynSmall/fast-jev-compaction-pi/blob/e0086cbb70c684acf35cfe24261e65a708c9f045/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/joslynSmall/fast-jev-compaction-pi/blob/e0086cbb70c684acf35cfe24261e65a708c9f045/src/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "e0086cbb70c684acf35cfe24261e65a708c9f045",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/joslynSmall/fast-jev-compaction-pi/blob/e0086cbb70c684acf35cfe24261e65a708c9f045/README.md",
+          "hash": "3d0241ee59c852fc73cacaa1b5156cdbe32b65a1b6e7b88b88ad971bbaa1d4ae"
+        },
+        {
+          "path": "src/jev.ts",
+          "url": "https://github.com/joslynSmall/fast-jev-compaction-pi/blob/e0086cbb70c684acf35cfe24261e65a708c9f045/src/jev.ts",
+          "hash": "61d304649486ca0401cfda6e04654dc1b9bacd9221ef47de58a4baa250512cf0"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 29,
+      "issueBodySha256": "7181c0a19e226bcc698115fb8cb53f26115caca4795668e57d8005427c11eb43",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/29"
+    }
   }
 ]
