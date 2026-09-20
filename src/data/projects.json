@@ -31535,5 +31535,283 @@
       "issueBodySha256": "d94addc7bc3ea8116328889bb591634e76deca6b146a4d7fd2acca497549ecd0",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/24"
     }
+  },
+  {
+    "id": "shitianfang:jev-use",
+    "name": "jev-use",
+    "author": "shitianfang",
+    "url": "https://github.com/shitianfang/jev-use",
+    "repoId": 1377012125,
+    "category": "Context GC & Filter",
+    "plainSummary": "把 Claude Code / Codex / pi 中不需要输出文本的判断步骤交给 Jev 执行，需要写字或置信度不足的步骤按类型化契约退回 LLM。",
+    "jevDecisionPoint": "`judge()`（第 35 行）把关于同一个 state 的多个 noul / choice / score 问题打成一次调用；`toVerdict()`（第 100~157 行）按原语分别处理 `noul`、`choice`、`score` 的答案与置信度。同文件的 `gate()`（第 170 行）是可选的 PreToolUse 门禁，只能 deny 或 ask。置信度不足或本就不该由 Jev 决定的步骤，通过类型化 escalation 契约（`writing`、`open_ended`、`oversized`、`unsure`、`unreachable`）退回 LLM，而不是让 Jev 猜。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "减少后续处理的冗余信息。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "classification-ranking",
+      "mcp-integrations"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Claude Code / Codex / pi plugin that hands agent steps needing no text output to Jev (TypeSafe's judgment model) — measured p50 ~230 ms and ~$0.02 per 1,000 judgments, with typed escalation back to the LLM",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "not-needed",
+        "requestedFields": []
+      },
+      "plainSummary": {
+        "source": "issue"
+      },
+      "plainSummaryEn": {
+        "source": "repo-description"
+      },
+      "jevDecisionPoint": {
+        "source": "issue"
+      }
+    },
+    "stars": 5,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T10:13:56Z",
+    "lastCommitAt": "2026-09-19T21:12:15Z",
+    "headSha": "56f3099ba5a9049195f931486450610ba1567514",
+    "metadataFetchedAt": "2026-09-20T01:59:21.183Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/61344989?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T01:59:21.183Z",
+    "evidence": [
+      {
+        "url": "https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/src/backends/typesafe.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "56f3099ba5a9049195f931486450610ba1567514",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/README.md",
+          "hash": "81d66c3b733dca5461b25a3078ae7a3f34d221aef3b8a8d9d794a6a76d92b634"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/README.zh-CN.md",
+          "hash": "ea1f4371dd8e442fb74c909b95fbb5ec6e96d580b2a38e78af493bea25396d88"
+        },
+        {
+          "path": "src/backends/typesafe.ts",
+          "url": "https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/src/backends/typesafe.ts",
+          "hash": "d84a891794f9327a8ceff83343134babdcd08e787dff1cc1c0015d0eb2e4c927"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 25,
+      "issueBodySha256": "02cdb69e9ca3909d1c5ec92c6ca2a4cfa82fd50c1bf3953502a6928d8822ba37",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/25"
+    }
+  },
+  {
+    "id": "replynodes:jev-web-analyzer",
+    "name": "jev-web-analyzer",
+    "author": "replynodes",
+    "url": "https://github.com/replynodes/jev-web-analyzer",
+    "repoId": 1377089678,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "jev-web-analyzer：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
+    "jevDecisionPoint": "由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "See what Jev thinks about your SaaS website — powered by ReplyNodes web context and Vercel AI Gateway.",
+    "enrichment": {
+      "issueTextTrusted": false,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "repo-description"
+      }
+    },
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-19T11:47:09Z",
+    "lastCommitAt": "2026-09-20T01:35:47Z",
+    "headSha": "bb50b94a540af98c4dae63fc6265f4513121353e",
+    "metadataFetchedAt": "2026-09-20T01:59:33.221Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/307085583?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T01:59:33.221Z",
+    "evidence": [
+      {
+        "url": "https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/app/api/analyze/route.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/app/api/analyze/route.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "bb50b94a540af98c4dae63fc6265f4513121353e",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/README.md",
+          "hash": "e16cdbc622631f73b5b36204fd9b9531f2550a11b7b4aa4f1b8a73e21e841d91"
+        },
+        {
+          "path": "app/api/analyze/route.test.ts",
+          "url": "https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/app/api/analyze/route.test.ts",
+          "hash": "89c39ac40301f2afeaa2154135146a14d3215804dbee352ba0a865a86ade28c9"
+        },
+        {
+          "path": "app/api/analyze/route.ts",
+          "url": "https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/app/api/analyze/route.ts",
+          "hash": "39eda8ed12d448bbb08878494bb5b4d99ccb1ffc1f619269fcf7b296ceb28527"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 26,
+      "issueBodySha256": "ab0c928b54b1a35c4dce65e134797d6b714e24b079b6c6b7695bc09837f65a96",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/26"
+    }
+  },
+  {
+    "id": "harshpuri84:slopcheck-jev",
+    "name": "slopcheck-jev",
+    "author": "harshpuri84",
+    "url": "https://github.com/harshpuri84/slopcheck-jev",
+    "repoId": 1377331118,
+    "category": "CLI & Pipelines",
+    "plainSummary": "slopcheck-jev 在终端和自动化脚本中加入文本判断。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPointEn": "**Deleting a feature made it more accurate.** The first build made a second Jev call to pin each tell to a sentence. Removing it took precision from 0.80 to 0.95 and latency from 1,365 ms to 575 ms. Jev returns typed answers rather than text, so a quote has to come from a second round of typed questions about lines, and that round was where every defect lived. The README documents the two intermediate designs that were worse.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A prose linter that catches AI writing tells. Regex settles the 18 a pattern can settle. Jev takes the 15 that need reading, as 15 Nouls in one call, 604 ms median. It ships as a Claude Code `Stop` hook that scores Claude's own output after every turn and warns rather than blocks.",
+    "enrichment": {
+      "issueTextTrusted": true,
+      "ai": {
+        "attempted": false,
+        "status": "missing-token",
+        "requestedFields": [
+          "plainSummary"
+        ]
+      },
+      "plainSummary": {
+        "source": "rules"
+      },
+      "plainSummaryEn": {
+        "source": "issue"
+      },
+      "jevDecisionPointEn": {
+        "source": "issue"
+      }
+    },
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T15:42:25Z",
+    "lastCommitAt": "2026-09-19T21:15:09Z",
+    "headSha": "f37c440b84aaa09e0c2de5f441f19a32f8711781",
+    "metadataFetchedAt": "2026-09-20T01:59:45.282Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/234730463?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T01:59:45.282Z",
+    "evidence": [
+      {
+        "url": "https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/slopcheck/gate.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/slopcheck/judge.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "f37c440b84aaa09e0c2de5f441f19a32f8711781",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/README.md",
+          "hash": "eff63b63b4081d6f25e0a98e89d6d260ad0f50a074a31946855bfbaf1373e7aa"
+        },
+        {
+          "path": "slopcheck/gate.py",
+          "url": "https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/slopcheck/gate.py",
+          "hash": "5a81882e3cb493276b36a74c5931149b185ca014fe728a338ecb682375a6a2bb"
+        },
+        {
+          "path": "slopcheck/judge.py",
+          "url": "https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/slopcheck/judge.py",
+          "hash": "96adf0a8b65c5ffcbf398acea50c34d0508d7453195088114e9b8ded53b19738"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 27,
+      "issueBodySha256": "d1e6020b6c8e09ea8147ba3c17811d0b17d70660c3d28dfab414d9d44e39c9ba",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/27"
+    }
   }
 ]

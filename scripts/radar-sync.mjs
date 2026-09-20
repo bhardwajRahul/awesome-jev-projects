@@ -63,7 +63,7 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
   // identifier and provider request marker are both required; names alone fail.
   const routerDecision = codeSources.some(hasOpenRouterJevSource);
   const exact = routerDecision ||
-    /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe(?:_ai|_sdk)?\s+import|typesafe(?:_ai|-ai|_sdk|-sdk)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\b(?:JevClient|TypeSafeClient)\b/i.test(
+    /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe(?:_ai|_sdk)?\s+import|typesafe(?:_ai|-ai|_sdk|-sdk)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\b(?:JevClient|TypeSafeClient)\b|TYPESAFE_API_KEY|(?<![~/\w.-])typesafe-ai\/jev/i.test(
       text,
     );
   const context =
@@ -72,7 +72,7 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
       text,
     );
   const implementation = routerDecision ||
-    /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|from\s+typesafe(?:_ai|_sdk)?\s+import|(?:import|require|npm\s+(?:i|install)|pip\s+install|uv\s+add).{0,100}(?:typesafe|jev)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|TypeSafeClient|JevClient|TYPESAFE_API_KEY|JEV_API_KEY|typesafe\.Client|typesafe\.AsyncClient/i.test(
+    /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|from\s+typesafe(?:_ai|_sdk)?\s+import|(?:import|require|npm\s+(?:i|install)|pip\s+install|uv\s+add).{0,100}(?:typesafe|jev)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|TypeSafeClient|JevClient|TYPESAFE_API_KEY|JEV_API_KEY|typesafe\.Client|typesafe\.AsyncClient|(?<![~/\w.-])typesafe-ai\/jev/i.test(
       text,
     );
   const listOnly =
@@ -94,7 +94,7 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
     evidence: text
       .split("\n")
       .filter((l) =>
-        /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|@typesafe|typesafe\/jev|openrouter\.ai|from\s+typesafe|\bjev\b|TYPESAFE_API_KEY|TypeSafeClient/i.test(
+        /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|@typesafe|typesafe\/jev|typesafe-ai\/jev|openrouter\.ai|from\s+typesafe|\bjev\b|TYPESAFE_API_KEY|TypeSafeClient/i.test(
           l,
         ),
       )

@@ -440,6 +440,9 @@ test("strict ingestion accepts TypeSafe SDK decision calls", async () => {
     ["src/main.ts", 'import { TypeSafeClient } from "@typesafe/sdk";\nconst client = new TypeSafeClient();\nconst result = await client.choice(options);'],
     ["core/decision/TypeSafeBackend.kt", 'import me.ethanxu.typesafe.sdk.TypeSafeClient\nval client = TypeSafeClient()\nval decision = client.systemOne(input)'],
     ["src/call.js", 'const model = "typesafe/jev-latest";\nawait fetch("https://api.typesafe.ai/v1/choice", { method: "POST", body: JSON.stringify({ model }) });'],
+    ["app/api/analyze/route.ts", 'import { experimental_evaluate as evaluate } from "ai";\nconst MODEL = "typesafe-ai/jev";\nawait evaluate({ model: MODEL });'],
+    ["src/backends/typesafe.ts", 'export const TYPESAFE_BASE_URL = "https://api.typesafe.ai";\nexport const TYPESAFE_DEFAULT_MODEL = "jev-latest";\nawait postJson("typesafe", `${TYPESAFE_BASE_URL}/v1/systemone`, { Authorization: `Bearer ${apiKey}` }, body);'],
+    ["slopcheck/judge.py", 'import urllib.request\nkey = os.environ["TYPESAFE_API_KEY"]\nreq = urllib.request.Request("https://api.typesafe.ai/v1/systemone", headers={"Authorization": f"Bearer {key}"})\nquestions = {"tell": {"type": "noul"}}'],
   ];
   for (const [path, text] of cases) {
     const f = fixture({
