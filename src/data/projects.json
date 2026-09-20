@@ -33831,5 +33831,108 @@
       "issueBodySha256": "0fa7c898a9fa19175fb304e2bb21666bcbde3c8315822f1bac0bdd20240b9443",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/40"
     }
+  },
+  {
+    "id": "keltokhy:jgrep",
+    "name": "jgrep",
+    "author": "keltokhy",
+    "url": "https://github.com/keltokhy/jgrep",
+    "repoId": 1375750028,
+    "category": "CLI & Pipelines",
+    "plainSummary": "jgrep 是用自然语言描述替代正则表达式来过滤文本行、结构化记录、函数和 diff 片段的命令行工具，每条记录交由 Jev 作 Noul 判断后输出符合项。",
+    "jevDecisionPoint": "Jev 对每个输入单元（行、段落、函数、diff hunk）判断是否符合用户自然语言描述，返回概率后由本地阈值过滤。",
+    "jevDecisionPointEn": "Jev judges whether each input unit matches the user description; local code applies the probability threshold and returns matching source material.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "search-retrieval",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Filters text, structured records, functions, and diff hunks against plain-English descriptions using Jev Noul judgments.",
+    "stars": 12,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T11:11:25Z",
+    "lastCommitAt": "2026-09-20T15:44:34Z",
+    "headSha": "fdceb6bdf79165a133667b8e57f3b7244545f0a2",
+    "metadataFetchedAt": "2026-09-20T15:55:36.376Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/83777601?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T15:55:36.376Z",
+    "evidence": [
+      {
+        "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/__main__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/cli.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/code_inputs.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/core.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "fdceb6bdf79165a133667b8e57f3b7244545f0a2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/README.md",
+          "hash": "a4c9bbd76ac7e216417726fdbb613e36e7444db0e31bc45c27b25bc17683e828"
+        },
+        {
+          "path": "src/jgrep/__init__.py",
+          "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/__init__.py",
+          "hash": "c40c839a0d8260c1c32da45bf8a2b115cda97f5a9d72ec256a1237d2eb97700e"
+        },
+        {
+          "path": "src/jgrep/__main__.py",
+          "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/__main__.py",
+          "hash": "1eecf4744c62687d174cc2e17dedec924143f7e547ed952258c6c347f27c4c86"
+        },
+        {
+          "path": "src/jgrep/cli.py",
+          "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/cli.py",
+          "hash": "3404fccb3ad698323ac7897617312a83036f4d8cd9805b7bd13b77ab7306b42a"
+        },
+        {
+          "path": "src/jgrep/code_inputs.py",
+          "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/code_inputs.py",
+          "hash": "cb299501362d3e1183f7799812e88f53a1dfff0318edb1ca1b1739f47ae4341d"
+        },
+        {
+          "path": "src/jgrep/core.py",
+          "url": "https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/core.py",
+          "hash": "f264444166e120cdb58dd09a4611094f0a994793400e042cf73d75a1329e975c"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 43,
+      "issueBodySha256": "30cf0ac6c202204401b6697fa4fef91d79737bd7070ec392b05cbf55fe1a0328",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/43"
+    }
   }
 ]

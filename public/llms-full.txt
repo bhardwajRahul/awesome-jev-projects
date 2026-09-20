@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 334
+Catalog entries: 335
 
 ## Install the Agent Skill
 
@@ -4983,3 +4983,21 @@ Selects source-linked evidence within a token budget using Jev Noul relevance ju
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/keltokhy/jselect/
 - Source evidence: https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/README.md
 - Source evidence: https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/src/jselect/judge.py
+
+## jgrep
+
+Filters text, structured records, functions, and diff hunks against plain-English descriptions using Jev Noul judgments.
+
+- Repository: https://github.com/keltokhy/jgrep
+- Category: CLI & Pipelines
+- Jev decision: Jev judges whether each input unit matches the user description; local code applies the probability threshold and returns matching source material.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/keltokhy/jgrep/
+- Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/README.md
+- Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/__init__.py
+- Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/__main__.py
+- Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/cli.py
+- Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/code_inputs.py
+- Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/core.py
