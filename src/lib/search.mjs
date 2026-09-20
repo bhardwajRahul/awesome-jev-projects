@@ -143,10 +143,14 @@ function makeField(values, weight, native) {
 }
 function makeDocument(project) {
   const name = identity(project.name), author = identity(project.author);
+  const camelNames = [project.name, project.id]
+    .flatMap(str => typeof str === 'string' ? [str.replace(/([a-z0-9])([A-Z])/gu, '$1 $2').replace(/([A-Z]+)([A-Z][a-z])/gu, '$1 $2')] : [])
+    .map(normalize)
+    .filter(Boolean);
   const path = urlPath(project.url);
   const url = canonicalUrl(project.url);
   const urlSlug = (urlIdentity(project.url) ?? path).split('/').filter(Boolean).at(-1) ?? '';
-  const names = [...new Set([name, identity(project.id), author && name ? `${author}/${name}` : '',
+  const names = [...new Set([name, ...camelNames, identity(project.id), author && name ? `${author}/${name}` : '',
     urlIdentity(project.url), identity(path.replace(/^\/+|\/+$/gu, ''))].filter(Boolean))];
   const topics = strings(project.topics).map(normalize);
   const rawTags = strings(project.tags);
@@ -216,6 +220,21 @@ function wordMatches(index, term, nativeOnly, fuzzy) {
   const exact = postings.get(term);
   if (exact) return new Map([...exact].map(([id, score]) => [id, { score, exact: true, coverage: 1 }]));
   const result = new Map();
+  if (term.length >= 2 && !/^\d+$/u.test(term) && !literalTechnologies.has(term) && term !== 'context') {
+    for (const [candidate, docs] of postings) {
+      if (candidate.startsWith(term)) {
+        const ratio = Math.max(0.6, term.length / candidate.length);
+        for (const [id, score] of docs) {
+          const prev = result.get(id);
+          const newScore = score * ratio;
+          if (!prev || newScore > prev.score) {
+            result.set(id, { score: newScore, exact: true, coverage: ratio });
+          }
+        }
+      }
+    }
+    if (result.size > 0) return result;
+  }
   if (!fuzzy || term === 'context' || !/^[a-z]{5,}$/u.test(term)) return result;
   for (let length = term.length - 1; length <= term.length + 1; length++) {
     for (const candidate of index.wordLengths.get(length) ?? []) {
@@ -266,6 +285,8 @@ function identityTier(document, query, wordQuery, queryUrl) {
   if (document.author === query) return { tier: 0, score: 1050 };
   if (document.identities.some(value => value.startsWith(query))) return { tier: 1, score: 550 };
   if (wordQuery && document.nameWords.some(value => ` ${value} `.includes(` ${wordQuery} `))) return { tier: 1, score: 520 };
+  if (query.length >= 2 && !/^\d+$/u.test(query) && document.identities.some(value => value.split(/[-_/:.]/).some(part => part.startsWith(query)))) return { tier: 1, score: 510 };
+  if (wordQuery && wordQuery.length >= 2 && !/^\d+$/u.test(wordQuery) && document.nameWords.some(value => words(value).some(word => word.startsWith(wordQuery)))) return { tier: 1, score: 500 };
   return null;
 }
 

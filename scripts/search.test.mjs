@@ -477,3 +477,37 @@ test('fallback never lets taxonomy prose satisfy native Rust, Claude or Playwrig
   assert.deepEqual(queryIds(items, 'Claude alpha beta gamma'), []);
   assert.deepEqual(queryIds(items, 'Playwright alpha beta gamma'), []);
 });
+
+test('prefix search and subword matching consistently finds projects (Ultra vs UltraFast parity)', () => {
+  const catalog = JSON.parse(readFileSync(new URL('../src/data/projects.json', import.meta.url), 'utf8'));
+  const index = createProjectSearch(catalog);
+
+  const ultraFastResults = searchProjects(index, 'UltraFast').map((p) => p.id);
+  const ultraResults = searchProjects(index, 'Ultra').map((p) => p.id);
+  const ulResults = searchProjects(index, 'ul').map((p) => p.id);
+
+  assert.ok(ultraFastResults.includes('jev-ultrafast'), 'UltraFast must find jev-ultrafast');
+  assert.ok(ultraFastResults.includes('chy4pro:jevbrowserext'), 'UltraFast must find JevBrowserExt');
+  assert.ok(ultraResults.includes('jev-ultrafast'), 'Ultra prefix must find jev-ultrafast');
+  assert.ok(ultraResults.includes('chy4pro:jevbrowserext'), 'Ultra prefix must find JevBrowserExt');
+  assert.equal(ultraResults[0], 'jev-ultrafast', 'jev-ultrafast must rank first due to name identity match');
+  assert.ok(ulResults.includes('jev-ultrafast'), 'ul 2-char prefix must find jev-ultrafast');
+  assert.ok(ulResults.includes('chy4pro:jevbrowserext'), 'ul 2-char prefix must find JevBrowserExt');
+
+  // ext prefix finds JevBrowserExt and extension projects
+  const extResults = searchProjects(index, 'ext').map((p) => p.id);
+  assert.ok(extResults.includes('chy4pro:jevbrowserext'), 'ext must find JevBrowserExt');
+});
+
+test('camelCase and hyphenated segment prefix matching works in isolation', () => {
+  const items = [
+    project('p1', { name: 'jev-ultrafast', plainSummaryEn: 'A fast automation driver.' }),
+    project('p2', { name: 'JevBrowserExt', plainSummaryEn: 'Based on jev-ultrafast.' }),
+    project('p3', { name: 'unrelated', plainSummaryEn: 'Nothing related here.' }),
+  ];
+  assert.deepEqual(queryIds(items, 'UltraFast'), ['p1', 'p2']);
+  assert.deepEqual(queryIds(items, 'Ultra'), ['p1', 'p2']);
+  assert.deepEqual(queryIds(items, 'ul'), ['p1', 'p2']);
+  assert.deepEqual(queryIds(items, 'browser'), ['p2']);
+  assert.deepEqual(queryIds(items, 'ext'), ['p2']);
+});
