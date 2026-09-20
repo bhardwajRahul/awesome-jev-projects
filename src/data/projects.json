@@ -32159,5 +32159,144 @@
       "issueBodySha256": "e971f396511a596150f9e70ff02c231ecae17bc520c18c49dd88d4f50cb11883",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/31"
     }
+  },
+  {
+    "id": "zeredy879:minojev",
+    "name": "minojev",
+    "author": "zeredy879",
+    "url": "https://github.com/zeredy879/minojev",
+    "repoId": 1375466726,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "独立实现的 System-1 决策模型：一次前向传播输出 Choice、Noul(Boolean)、Score 的校准概率分布，全程零输出 token，可在笔记本 CPU 上离线训练。",
+    "jevDecisionPoint": "minojev 是独立开源复现（不调用 TypeSafe API）：自研 backbone + 决策头，从隐藏状态直接读取 Choice / Boolean(等价 Noul) / Score 分布，温度校准在 dev 集拟合。迷宫 Demo 中每步一次前向回答 9 个问题（1 个四向 Choice + 4 个安全 Noul + 1 个距离 Score），代码用安全概率做掩码后执行动作。附带六个业务领域（客服、审核、代码评审、退款、分诊、线索）的合成数据集与后训练流程。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions",
+      "domain-workflows"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Decisions, not tokens: minojev reads calibrated, typed probability distributions straight from hidden states in one forward pass — zero output tokens, fully reproducible on a laptop CPU.",
+    "stars": 24,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T06:25:36Z",
+    "lastCommitAt": "2026-09-20T02:47:47Z",
+    "headSha": "36733a15440c80467386447fd41464ea46dd972d",
+    "metadataFetchedAt": "2026-09-20T05:48:50.342Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/66517906?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T05:48:50.342Z",
+    "evidence": [
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/model.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/backbone.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/bench.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/calibrate.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/cli.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/data.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/encoding.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "36733a15440c80467386447fd41464ea46dd972d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/README.md",
+          "hash": "3718d5a935b20f2fa2a5959f49f59b92df3e8b7653ebdf139b1f4d1e0387b724"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/README.zh-CN.md",
+          "hash": "c4e7f36fb6c799894d4f4d6f90a3b29b81baf061c5a76bc4ec0a8b577c6ed3b0"
+        },
+        {
+          "path": "src/minojev/model.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/model.py",
+          "hash": "2cdf0177be8c96855d619f67cd85fbbca9660e72b68b570d26dadaeade164c7a"
+        },
+        {
+          "path": "src/minojev/__init__.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/__init__.py",
+          "hash": "816107ed26457c745a65e3de4763cea811e8884085c4674588347234bf1cdcd3"
+        },
+        {
+          "path": "src/minojev/backbone.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/backbone.py",
+          "hash": "884f800285d6ef60ff69ba671dab16dbbf4f18e12f2361dad53ad639a7c7dceb"
+        },
+        {
+          "path": "src/minojev/bench.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/bench.py",
+          "hash": "2b8c5ea3a3c644f79dd0041e1c556f57f499a4f9c75bbd9130b3831f69a8af1d"
+        },
+        {
+          "path": "src/minojev/calibrate.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/calibrate.py",
+          "hash": "f2502850ebc30354b4afdbd7061d7eff255b0c3a69b7e2a6221b0a20eeabcbdd"
+        },
+        {
+          "path": "src/minojev/cli.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/cli.py",
+          "hash": "23247a7ac13174a81703d5066d01c514ee674235b5b6ee169051557a753d138c"
+        },
+        {
+          "path": "src/minojev/data.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/data.py",
+          "hash": "4b453096438d24a42d066862681d21f89085a0ca55375bde16a802bf6e556e61"
+        },
+        {
+          "path": "src/minojev/encoding.py",
+          "url": "https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/encoding.py",
+          "hash": "15cf0f05c9ee2f905cb73b01970b3cb942d1eb7d9c7c3979239a383b480151cb"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 32,
+      "issueBodySha256": "83a7cadc4c6ff542415fa277cffa9ef31c22c692019f24b930b6c2958d2b22c4",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/32"
+    }
   }
 ]
