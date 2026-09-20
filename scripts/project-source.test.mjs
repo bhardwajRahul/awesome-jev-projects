@@ -443,6 +443,7 @@ test("strict ingestion accepts TypeSafe SDK decision calls", async () => {
     ["app/api/analyze/route.ts", 'import { experimental_evaluate as evaluate } from "ai";\nconst MODEL = "typesafe-ai/jev";\nawait evaluate({ model: MODEL });'],
     ["src/backends/typesafe.ts", 'export const TYPESAFE_BASE_URL = "https://api.typesafe.ai";\nexport const TYPESAFE_DEFAULT_MODEL = "jev-latest";\nawait postJson("typesafe", `${TYPESAFE_BASE_URL}/v1/systemone`, { Authorization: `Bearer ${apiKey}` }, body);'],
     ["slopcheck/judge.py", 'import urllib.request\nkey = os.environ["TYPESAFE_API_KEY"]\nreq = urllib.request.Request("https://api.typesafe.ai/v1/systemone", headers={"Authorization": f"Bearer {key}"})\nquestions = {"tell": {"type": "noul"}}'],
+    ["lib/main.dart", "import 'package:jev_dart/jev_dart.dart';\nfinal client = JevClient(apiKey);\nfinal res = await client.choice(prompt);"],
   ];
   for (const [path, text] of cases) {
     const f = fixture({

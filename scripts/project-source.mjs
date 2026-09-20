@@ -347,15 +347,15 @@ function codeCandidate(entry) {
     !/(?:^|\/)(?:package(?:-lock)?\.json|models\.json|catalog\.json)|(?:\.min\.[cm]?js|\.lock|\.generated\.[^/]+|\.g\.[^/]+)$/i.test(
       path,
     ) &&
-    /\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua)$/i.test(
+    /\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart)$/i.test(
       path,
     )
   );
 }
 
 function stripSourceComments(text, path) {
-  // Preserve quoted endpoints while removing comments and Python documentation strings.
-  let code = /\.py$/i.test(path)
+  // Preserve quoted endpoints while removing comments and Python/Dart documentation strings.
+  let code = /\.(?:py|dart)$/i.test(path)
     ? text.replace(/("""|\x27\x27\x27)[\s\S]*?\1/g, " ")
     : text;
   const commentsAndStrings = /\.(?:py|rb|sh)$/i.test(path)
@@ -385,7 +385,7 @@ function hasImplementationEvidence(text, path) {
   const code = stripSourceComments(text, path);
   if (hasOpenRouterJevIntegration(code)) return true;
 
-  const providerImport = /\bfrom\s+typesafe(?:_ai|_sdk)?(?:\.[\w.]+)?\s+import\b|\bimport\s+(?:[\w.]+\.)?typesafe(?:_ai|_sdk)?(?:\.[\w.]+)*\b|\b(?:from|require\s*\(|import\s*\()\s*["'](?:@typesafe\/(?:jev|sdk)|typesafe(?:-ai|-sdk)?)["']/i.test(code);
+  const providerImport = /\bfrom\s+typesafe(?:_ai|_sdk)?(?:\.[\w.]+)?\s+import\b|\bimport\s+(?:[\w.]+\.)?typesafe(?:_ai|_sdk)?(?:\.[\w.]+)*\b|\b(?:from|require\s*\(|import\s*\(?)\s*["'](?:package:(?:jev|typesafe)[\w./-]*|@typesafe\/(?:jev|sdk)|typesafe(?:-ai|-sdk)?)["']/i.test(code);
   const sdkCall = /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient))\s*\(|\.\s*(?:choice|score|noul|decision|query|ask|systemOne|system_one)\s*\(/i.test(code);
   if (providerImport && sdkCall) return true;
 
@@ -403,8 +403,8 @@ function hasImplementationEvidence(text, path) {
   const pyHttp = /\burllib\.request\.(?:Request|urlopen)\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai/i.test(code);
   if (pyHttp && (hasSystemOnePath || hasJevIdentity)) return true;
 
-  const hasHttpDispatch = /\b(?:postJson|httpPost|request|client\.post|api\.post|post)\s*\(/i.test(code);
-  if (hasTypesafeHost && (hasSystemOnePath || hasJevIdentity) && (hasHttpDispatch || /Authorization:\s*`Bearer/i.test(code))) {
+  const hasHttpDispatch = /\b(?:postJson|httpPost|request|client\.post|api\.post|post|send)\s*\(/i.test(code);
+  if (hasTypesafeHost && (hasSystemOnePath || hasJevIdentity) && (hasHttpDispatch || /\bAuthorization\b.*?\bBearer\b/i.test(code))) {
     return true;
   }
 
