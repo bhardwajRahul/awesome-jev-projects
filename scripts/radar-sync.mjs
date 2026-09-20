@@ -104,9 +104,10 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
 }
 
 const enrichSummary = createSummaryEnricher();
-export async function summarizeWithGitHubModels(repo, readme, fallbackSummary) {
+export async function enrichCandidateSummary(repo, readme, fallbackSummary) {
   return enrichSummary({ repo, readme, fallback: fallbackSummary });
 }
+export const summarizeWithGitHubModels = enrichCandidateSummary;
 
 export function summarize(repo, readme, taxonomy) {
   const focused = `${repo.name} ${repo.description ?? ""} ${(repo.topics ?? []).join(" ")} ${readme.slice(0, 7000)}`;
@@ -481,7 +482,7 @@ export async function main() {
       const nativeReadmes = inspection.readmeFiles;
       const sourceText =
         nativeReadmes.map((file) => file.text).join("\n\n") || readme;
-      const summary = await summarizeWithGitHubModels(
+      const summary = await enrichCandidateSummary(
         repo,
         sourceText,
         summarize(repo, sourceText, taxonomy),

@@ -44,6 +44,8 @@ jobs:
           RADAR_MODE: ${{ inputs.mode || 'full' }}
           GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
+          MUSE_ENDPOINT: ${{ secrets.MUSE_ENDPOINT || vars.MUSE_ENDPOINT || '' }}
+          MUSE_MODEL: ${{ secrets.MUSE_MODEL || vars.MUSE_MODEL || '' }}
           RADAR_MAX_PAGES: "2"
           RADAR_MAX_CANDIDATES: "60"
       - name: Retain data snapshot before any dependencies run
