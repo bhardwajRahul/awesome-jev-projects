@@ -33934,5 +33934,71 @@
       "issueBodySha256": "30cf0ac6c202204401b6697fa4fef91d79737bd7070ec392b05cbf55fe1a0328",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/43"
     }
+  },
+  {
+    "id": "ctmx:openrouter-jev-mcp",
+    "name": "openrouter-jev-mcp",
+    "author": "ctmx",
+    "url": "https://github.com/ctmx/openrouter-jev-mcp",
+    "repoId": 1377472668,
+    "category": "MCP & Integrations",
+    "plainSummary": "该项目是通过 OpenRouter 提供 Jev Choice、Score 和 Noul 类型化决策的 Python 网关和 MCP 服务器，供编码 Agent 调用。",
+    "jevDecisionPoint": "Jev 对代码 diff 状态执行根因多选一分类、安全风险连续打分和是否可上线的二元门禁判断。",
+    "jevDecisionPointEn": "The server exposes Jev Choice (`jev_classify`), Score (`jev_score`), and Noul (`jev_check`) decisions over standard stdio MCP to AI coding agents, executing requests against OpenRouter's decisions endpoint:",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "mcp-integrations",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A Python decision gateway and Model Context Protocol (MCP) server exposing TypeSafe's Jev model through OpenRouter's decisions endpoint to Claude Code, Codex, and Cursor agents.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T18:05:20Z",
+    "lastCommitAt": "2026-09-20T18:47:18Z",
+    "headSha": "e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7",
+    "metadataFetchedAt": "2026-09-20T18:48:23.830Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/49662053?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T18:48:23.830Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ctmx/openrouter-jev-mcp/blob/e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ctmx/openrouter-jev-mcp/blob/e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7/examples/demo_typesafe_sdk.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ctmx/openrouter-jev-mcp/blob/e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7/README.md",
+          "hash": "17ff1d9c2ece03ab84b2064d1a2db69005649f83f69ed076ff3211b1e97b9c41"
+        },
+        {
+          "path": "examples/demo_typesafe_sdk.py",
+          "url": "https://github.com/ctmx/openrouter-jev-mcp/blob/e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7/examples/demo_typesafe_sdk.py",
+          "hash": "7ae265d0be07dd23a66f8cef048193c478f6c262aa476ef645dbe255c66030ab"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 44,
+      "issueBodySha256": "b46e68c9a4b424c96490c271d26892db2a2ce7424301d46e4712c2b9a5db997b",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/44"
+    }
   }
 ]

@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 335
+Catalog entries: 336
 
 ## Install the Agent Skill
 
@@ -5001,3 +5001,17 @@ Filters text, structured records, functions, and diff hunks against plain-Englis
 - Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/cli.py
 - Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/code_inputs.py
 - Source evidence: https://github.com/keltokhy/jgrep/blob/fdceb6bdf79165a133667b8e57f3b7244545f0a2/src/jgrep/core.py
+
+## openrouter-jev-mcp
+
+A Python decision gateway and Model Context Protocol (MCP) server exposing TypeSafe's Jev model through OpenRouter's decisions endpoint to Claude Code, Codex, and Cursor agents.
+
+- Repository: https://github.com/ctmx/openrouter-jev-mcp
+- Category: MCP & Integrations
+- Jev decision: The server exposes Jev Choice (\`jev\_classify\`), Score (\`jev\_score\`), and Noul (\`jev\_check\`) decisions over standard stdio MCP to AI coding agents, executing requests against OpenRouter's decisions endpoint:
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/ctmx/openrouter-jev-mcp/
+- Source evidence: https://github.com/ctmx/openrouter-jev-mcp/blob/e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7/README.md
+- Source evidence: https://github.com/ctmx/openrouter-jev-mcp/blob/e9d4bb38dbba7c7dba0cd4d0504ada741c87d1d7/examples/demo_typesafe_sdk.py
