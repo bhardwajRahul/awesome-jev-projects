@@ -217,16 +217,20 @@ function oneEdit(a, b) {
 }
 function wordMatches(index, term, nativeOnly, fuzzy) {
   const postings = nativeOnly || literalTechnologies.has(term) ? index.nativeTokens : index.tokens;
-  const exact = postings.get(term);
-  if (exact) return new Map([...exact].map(([id, score]) => [id, { score, exact: true, coverage: 1 }]));
   const result = new Map();
+  const exact = postings.get(term);
+  if (exact) {
+    for (const [id, score] of exact) {
+      result.set(id, { score, exact: true, coverage: 1 });
+    }
+  }
   if (term.length >= 2 && !/^\d+$/u.test(term) && !literalTechnologies.has(term) && term !== 'context') {
     for (const [candidate, docs] of postings) {
-      if (candidate.startsWith(term)) {
+      if (candidate.startsWith(term) && candidate !== term) {
         const ratio = Math.max(0.6, term.length / candidate.length);
         for (const [id, score] of docs) {
           const prev = result.get(id);
-          const newScore = score * ratio;
+          const newScore = score * ratio * 0.9;
           if (!prev || newScore > prev.score) {
             result.set(id, { score: newScore, exact: true, coverage: ratio });
           }

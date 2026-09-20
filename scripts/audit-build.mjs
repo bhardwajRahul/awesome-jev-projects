@@ -110,6 +110,37 @@ const manifest = JSON.parse(await readFile(join(base, "site-manifest.json"), "ut
 assert.equal(manifest.projects, projects.length, "Stale site manifest");
 const sitemap = await readFile(join(base, "sitemap.xml"), "utf8");
 assert.equal((sitemap.match(/<loc>/g) ?? []).length, (manifest.indexablePages ?? manifest.pages) + (manifest.resources ?? 0), "Sitemap page count mismatch");
+
+// Verify strict count alignment across public/dist banners, READMEs, and machine docs
+const root = resolve(base, "..");
+for (const bannerName of ["banner.svg", "banner-zh.svg", "banner-ja.svg", "banner-ko.svg"]) {
+  const distBanner = await readFile(join(base, bannerName), "utf8");
+  const publicBanner = await readFile(join(root, "public", bannerName), "utf8");
+  const expectedText = `${projects.length} VERIFIED REPOS`;
+  assert.ok(distBanner.includes(expectedText), `dist/${bannerName} count mismatch: expected "${expectedText}"`);
+  assert.ok(publicBanner.includes(expectedText), `public/${bannerName} count mismatch: expected "${expectedText}"`);
+}
+
+for (const readmeName of ["README.md", "README.zh-CN.md", "README.ja.md", "README.ko.md"]) {
+  const readmeContent = await readFile(join(root, readmeName), "utf8");
+  assert.ok(
+    readmeContent.includes(`Curated%20Projects-${projects.length}%2B`),
+    `${readmeName} badge count mismatch: expected ${projects.length}`
+  );
+  assert.ok(
+    readmeContent.includes(`${projects.length} curated projects`) ||
+    readmeContent.includes(`${projects.length} 个精选项目`) ||
+    readmeContent.includes(`${projects.length} 件の厳選プロジェクト`) ||
+    readmeContent.includes(`${projects.length} 개 엄선 프로젝트`),
+    `${readmeName} intro project count mismatch: expected ${projects.length}`
+  );
+}
+
+const llmsTxt = await readFile(join(base, "llms.txt"), "utf8");
+assert.ok(
+  llmsTxt.includes(`Catalog entries: ${projects.length}`),
+  `llms.txt catalog count mismatch: expected ${projects.length}`
+);
 assert.ok(!html.includes('<div id="root"></div>'), "Homepage must include crawlable rendered content");
 assert.ok(html.includes('id="initial-projects"'), "Missing same-build initial project snapshot");
 assert.ok(

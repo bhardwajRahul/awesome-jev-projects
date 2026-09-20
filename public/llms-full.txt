@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 306
+Catalog entries: 326
 
 ## Install the Agent Skill
 
@@ -4540,3 +4540,310 @@ Open-source Pi coding-agent extension that uses Jev to check tool calls before t
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/harshwasan/pi-jev-sentinel/
 - Source evidence: https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/README.md
 - Source evidence: https://github.com/harshwasan/pi-jev-sentinel/blob/8a9ae145eaf165b9ff1c600ea0188a585aa12db5/src/guard.ts
+
+## jev-use
+
+Claude Code / Codex / pi plugin that hands agent steps needing no text output to Jev (TypeSafe's judgment model) — measured p50 ~230 ms and ~$0.02 per 1,000 judgments, with typed escalation back to the LLM
+
+- Repository: https://github.com/shitianfang/jev-use
+- Category: Context GC & Filter
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/shitianfang/jev-use/
+- Source evidence: https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/README.md
+- Source evidence: https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/README.zh-CN.md
+- Source evidence: https://github.com/shitianfang/jev-use/blob/56f3099ba5a9049195f931486450610ba1567514/src/backends/typesafe.ts
+
+## jev-web-analyzer
+
+See what Jev thinks about your SaaS website — powered by ReplyNodes web context and Vercel AI Gateway.
+
+- Repository: https://github.com/replynodes/jev-web-analyzer
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/replynodes/jev-web-analyzer/
+- Source evidence: https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/README.md
+- Source evidence: https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/app/api/analyze/route.test.ts
+- Source evidence: https://github.com/replynodes/jev-web-analyzer/blob/bb50b94a540af98c4dae63fc6265f4513121353e/app/api/analyze/route.ts
+
+## slopcheck-jev
+
+A prose linter that catches AI writing tells. Regex settles the 18 a pattern can settle. Jev takes the 15 that need reading, as 15 Nouls in one call, 604 ms median. It ships as a Claude Code \`Stop\` hook that scores Claude's own output after every turn and warns rather than blocks.
+
+- Repository: https://github.com/harshpuri84/slopcheck-jev
+- Category: CLI & Pipelines
+- Jev decision: \*\*Deleting a feature made it more accurate.\*\* The first build made a second Jev call to pin each tell to a sentence. Removing it took precision from 0.80 to 0.95 and latency from 1,365 ms to 575 ms. Jev returns typed answers rather than text, so a quote has to come from a second round of typed questions about lines, and that round was where every defect lived. The README documents the two intermediate designs that were worse.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/harshpuri84/slopcheck-jev/
+- Source evidence: https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/README.md
+- Source evidence: https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/slopcheck/gate.py
+- Source evidence: https://github.com/harshpuri84/slopcheck-jev/blob/f37c440b84aaa09e0c2de5f441f19a32f8711781/slopcheck/judge.py
+
+## jev\_dart
+
+Jev Dart SDK to build cli, server and Flutter apps.
+
+- Repository: https://github.com/Solido/jev_dart
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/solido/jev_dart/
+- Source evidence: https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/README.md
+- Source evidence: https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/lib/jev_dart.dart
+- Source evidence: https://github.com/Solido/jev_dart/blob/03e4d03fbfe2046c1b730364aac88d7df54e8a0f/bin/jev_dart.dart
+
+## fast-jev-compaction-pi
+
+This Pi extension asks Jev whether each completed tool call and its full result should be kept, then locally retains, truncates, or drops verbatim tool evidence in the compaction summary.
+
+- Repository: https://github.com/joslynSmall/fast-jev-compaction-pi
+- Category: Context GC & Filter
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/joslynsmall/fast-jev-compaction-pi/
+- Source evidence: https://github.com/joslynSmall/fast-jev-compaction-pi/blob/e0086cbb70c684acf35cfe24261e65a708c9f045/README.md
+- Source evidence: https://github.com/joslynSmall/fast-jev-compaction-pi/blob/e0086cbb70c684acf35cfe24261e65a708c9f045/src/jev.ts
+
+## jev-social
+
+Jev-powered Instagram, TikTok, and LinkedIn research: typed routing, real browser evidence, streamed post cards, video capture, and cited socai reports.
+
+- Repository: https://github.com/socai-io/jev-social
+- Category: Domain & Vertical Tools
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/socai-io/jev-social/
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/README.md
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/bin/jev-social.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/public/app.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/actions.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/app.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/classifier.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/config.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/env.js
+- Source evidence: https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/errors.js
+
+## jev-libero
+
+Two LIBERO tasks, one control engine. Each demo loads its own JSON task definition. Videos follow simulation time, with decision and physics-preview waiting omitted.
+
+- Repository: https://github.com/Dimweaker/jev-libero
+- Category: High-Frequency & Simulation
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/dimweaker/jev-libero/
+- Source evidence: https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/README.md
+- Source evidence: https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/README.zh-CN.md
+- Source evidence: https://github.com/Dimweaker/jev-libero/blob/667b3bbeb0e40594e6a9993356ce84e70afc936d/src/jev_libero/client.py
+
+## minojev
+
+Decisions, not tokens: minojev reads calibrated, typed probability distributions straight from hidden states in one forward pass — zero output tokens, fully reproducible on a laptop CPU.
+
+- Repository: https://github.com/zeredy879/minojev
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zeredy879/minojev/
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/README.md
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/README.zh-CN.md
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/model.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/__init__.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/backbone.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/bench.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/calibrate.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/cli.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/data.py
+- Source evidence: https://github.com/zeredy879/minojev/blob/36733a15440c80467386447fd41464ea46dd972d/src/minojev/encoding.py
+
+## ask-jev-skill
+
+A skill for Hermes and other agents to query TypeSafe Jev for bounded option judgments and confidence escalations.
+
+- Repository: https://github.com/shantanugoel/ask-jev-skill
+- Category: SDK & Decision Frameworks
+- Jev decision: Evaluates candidate intents for agent workflows; escalates uncertain choices to human review or higher-tier models.
+- Purpose: Equips autonomous agents with deterministic narrow judgments, mitigating infinite-loop hallucinations.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/shantanugoel/ask-jev-skill/
+- Source evidence: https://github.com/shantanugoel/ask-jev-skill/blob/72313d3c88f8dbff40a11ffe69656ff9843ea78e/README.md
+- Source evidence: https://github.com/shantanugoel/ask-jev-skill/blob/72313d3c88f8dbff40a11ffe69656ff9843ea78e/scripts/askjev.py
+
+## every
+
+Ask a yes/no question of every function in a codebase. Ranked answers in seconds, for cents. Grep whose pattern is a question, powered by TypeSafe Jev.
+
+- Repository: https://github.com/sufianetaouil/every
+- Category: Data & Search
+- Jev decision: Converts natural language questions into boolean/probability queries across functions, ranking matches locally by confidence.
+- Purpose: Enables natural language function discovery across codebases at low cost, similar to an intelligent grep.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/sufianetaouil/every/
+- Source evidence: https://github.com/sufianetaouil/every/blob/aaa72d582a831420dfd23a788e3bc948c798c248/README.md
+- Source evidence: https://github.com/sufianetaouil/every/blob/aaa72d582a831420dfd23a788e3bc948c798c248/reference/probe_jev.py
+
+## tsai-civ2
+
+An experimental harness where TypeSafe Jev plays classic Civilization II in a browser, computing live action probability distributions.
+
+- Repository: https://github.com/phyous/tsai-civ2
+- Category: High-Frequency & Simulation
+- Jev decision: Evaluates city builds, tech research, diplomatic postures, and unit moves per turn from game state.
+- Purpose: Demonstrates Jev real-time probability distributions applied to complex strategic planning and game loops.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: NOASSERTION
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/phyous/tsai-civ2/
+- Source evidence: https://github.com/phyous/tsai-civ2/blob/dab97616d1b5ef2ae80d277076d14b8886eac009/README.md
+- Source evidence: https://github.com/phyous/tsai-civ2/blob/dab97616d1b5ef2ae80d277076d14b8886eac009/civ2/typesafe.py
+
+## jev-bfs
+
+Wikipedia link race pathfinder guided by Jev: assesses outbound links to navigate between two articles in real time.
+
+- Repository: https://github.com/komikat/jev-bfs
+- Category: Data & Search
+- Jev decision: Applies Jev semantic heuristic scoring and pruning to outbound links at each BFS exploration step.
+- Purpose: Combines classic graph traversal with probabilistic judgments to prune the Wikipedia multi-hop search space.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/komikat/jev-bfs/
+- Source evidence: https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/README.md
+- Source evidence: https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/__init__.py
+- Source evidence: https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/__main__.py
+- Source evidence: https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/cli.py
+- Source evidence: https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/core.py
+
+## jev-router
+
+An open-source LLM router built on LiteLLM and Jev: dynamically routes requests based on task complexity and context.
+
+- Repository: https://github.com/prismhq/jev-router
+- Category: Routing & Cost Optimization
+- Jev decision: Evaluates reasoning requirements of input prompts via single forward pass, delegating dispatch to LiteLLM.
+- Purpose: Achieves high-throughput prompt triage and cost optimization without brittle heuristic regexes.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/prismhq/jev-router/
+- Source evidence: https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/README.md
+- Source evidence: https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/__init__.py
+- Source evidence: https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/config.py
+- Source evidence: https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/deciders.py
+
+## jev-secret-detection
+
+Benchmark and tool evaluating how well TypeSafe Jev identifies real secret credentials in file snippets.
+
+- Repository: https://github.com/teyhouse/jev-secret-detection
+- Category: Security & Guardrails
+- Jev decision: Submits code snippets to Jev to evaluate hardcoded credential risk, returning boolean and confidence scores.
+- Purpose: Evaluates the feasibility and precision of low-latency non-generative models in pre-commit security gates.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/teyhouse/jev-secret-detection/
+- Source evidence: https://github.com/teyhouse/jev-secret-detection/blob/fc707416f00a6891b6a03458cc5c6de598fe47b2/README.md
+- Source evidence: https://github.com/teyhouse/jev-secret-detection/blob/fc707416f00a6891b6a03458cc5c6de598fe47b2/main.py
+
+## limpet
+
+A Stop hook guardrail for coding agents: prevents premature completion by judging plain-language rules via Jev.
+
+- Repository: https://github.com/noplan-inc/limpet
+- Category: SDK & Decision Frameworks
+- Jev decision: Intercepts agent termination signals, using Jev to verify if context meets natural language acceptance criteria.
+- Purpose: Prevents coding agents from cutting corners or faking completion, boosting autonomous task completion rates.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/noplan-inc/limpet/
+- Source evidence: https://github.com/noplan-inc/limpet/blob/7a841b006900cb48df74ad68167dbed17afc504f/README.md
+- Source evidence: https://github.com/noplan-inc/limpet/blob/7a841b006900cb48df74ad68167dbed17afc504f/limpet.py
+
+## pi-jev-router
+
+Automatic model router for Pi coding assistant: integrates Jev via Vercel AI Gateway to dispatch tasks efficiently.
+
+- Repository: https://github.com/mejiasd3v/pi-jev-router
+- Category: Routing & Cost Optimization
+- Jev decision: Quickly estimates task complexity from code context and user query, routing between SLMs and frontier models.
+- Purpose: Brings out-of-the-box intelligent cost-saving routing directly into the Pi terminal workflow.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/mejiasd3v/pi-jev-router/
+- Source evidence: https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/README.md
+- Source evidence: https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/index.test.mjs
+- Source evidence: https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/index.ts
+
+## pi-typesafe-jev
+
+A Pi extension exposing TypeSafe judgments as five narrow tools, keeping threshold and action control in host code.
+
+- Repository: https://github.com/legacybridge-tech/pi-typesafe-jev
+- Category: SDK & Decision Frameworks
+- Jev decision: Packages choice, score, and boolean judgments into five Pi tools for structured agent decisions.
+- Purpose: Strictly decouples semantic evaluation from execution, keeping automated scripts safely constrained.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: NOASSERTION
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/legacybridge-tech/pi-typesafe-jev/
+- Source evidence: https://github.com/legacybridge-tech/pi-typesafe-jev/blob/17e66fcd6ecfbb4c3083f748af510bf59cda985f/README.md
+- Source evidence: https://github.com/legacybridge-tech/pi-typesafe-jev/blob/17e66fcd6ecfbb4c3083f748af510bf59cda985f/src/client.ts
+
+## robo-harness
+
+SO-101 robot-arm workbench combining Bun/Effect and Python drivers, using Jev for joint action constraints.
+
+- Repository: https://github.com/grmkris/robo-harness
+- Category: Domain & Vertical Tools
+- Jev decision: Assesses spatial coordinates and sensor states, using Jev to select safe step actions within bounded budgets.
+- Purpose: Extends TypeSafe Jev low-latency discrete judgments to physical-world robotic arm motion control.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/grmkris/robo-harness/
+- Source evidence: https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/README.md
+- Source evidence: https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/apps/server/src/decision/jev.test.ts
+- Source evidence: https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/apps/server/src/decision/jev.ts
+
+## snake-jev
+
+Real-time Snake game driven by parallel Jev assessments, deciding optimal turns in a single API call per tick.
+
+- Repository: https://github.com/siroccomask/snake-jev
+- Category: High-Frequency & Simulation
+- Jev decision: Scans obstacles and food locations per tick, querying Jev in parallel for survival and approach probabilities.
+- Purpose: Demonstrates Jev high-frequency, deterministic low-latency performance in real-time game ticks.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/siroccomask/snake-jev/
+- Source evidence: https://github.com/siroccomask/snake-jev/blob/86f01b686df2e6d5b566b80d015de9b8b34450a8/README.md
+- Source evidence: https://github.com/siroccomask/snake-jev/blob/86f01b686df2e6d5b566b80d015de9b8b34450a8/jev_controller.py
+
+## sqlite3-jev
+
+SQLite C extension enabling TypeSafe Jev judgments as native SQL functions for semantic scoring and choices.
+
+- Repository: https://github.com/mattn/sqlite3-jev
+- Category: Domain & Vertical Tools
+- Jev decision: Registers custom functions like jev\_choice and jev\_score directly inside the SQLite query pipeline.
+- Purpose: Enables row-level semantic classification directly inside relational SQL queries without glue code.
+- Review scope: Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/mattn/sqlite3-jev/
+- Source evidence: https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/README.md
+- Source evidence: https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/jev.c

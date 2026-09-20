@@ -32298,5 +32298,788 @@
       "issueBodySha256": "83a7cadc4c6ff542415fa277cffa9ef31c22c692019f24b930b6c2958d2b22c4",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/32"
     }
+  },
+  {
+    "id": "shantanugoel:ask-jev-skill",
+    "name": "ask-jev-skill",
+    "author": "shantanugoel",
+    "url": "https://github.com/shantanugoel/ask-jev-skill",
+    "repoId": 1374296003,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "Hermes Agent 与通用智能体的 Jev 技能扩展：为代理提供封闭选项评估与置信度不足时的升级决策机制。",
+    "jevDecisionPoint": "为 Agent 工作流在多动作选择时调用 Jev 评估候选意图；低置信度时交由人工或上级模型处理。",
+    "jevDecisionPointEn": "Evaluates candidate intents for agent workflows; escalates uncertain choices to human review or higher-tier models.",
+    "highlightBenefit": "为自主智能体增加确定性的窄域决策保护，减少无限轮循环幻觉。",
+    "highlightBenefitEn": "Equips autonomous agents with deterministic narrow judgments, mitigating infinite-loop hallucinations.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "A skill for Hermes and other agents to query TypeSafe Jev for bounded option judgments and confidence escalations.",
+    "stars": 34,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T10:57:10Z",
+    "lastCommitAt": "2026-09-17T11:15:56Z",
+    "headSha": "72313d3c88f8dbff40a11ffe69656ff9843ea78e",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/390304?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/shantanugoel/ask-jev-skill/blob/72313d3c88f8dbff40a11ffe69656ff9843ea78e/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shantanugoel/ask-jev-skill/blob/72313d3c88f8dbff40a11ffe69656ff9843ea78e/scripts/askjev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "72313d3c88f8dbff40a11ffe69656ff9843ea78e",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/shantanugoel/ask-jev-skill/blob/72313d3c88f8dbff40a11ffe69656ff9843ea78e/README.md",
+          "hash": "00c11f69be10fb03807142648478ec771bd17886d94c40ccb7f85debdccce2bc"
+        },
+        {
+          "path": "scripts/askjev.py",
+          "url": "https://github.com/shantanugoel/ask-jev-skill/blob/72313d3c88f8dbff40a11ffe69656ff9843ea78e/scripts/askjev.py",
+          "hash": "ca8531279efebee8bfe31a9b57cd9cce1e2c1366e83613d50d60be8725c828c2"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sufianetaouil:every",
+    "name": "every",
+    "author": "sufianetaouil",
+    "url": "https://github.com/sufianetaouil/every",
+    "repoId": 1373990115,
+    "category": "Data & Search",
+    "plainSummary": "代码库全量函数语义问答工具：对代码库内每个函数发起是非问题提问，按 Noul 概率在秒级内排列出最相关的函数。",
+    "jevDecisionPoint": "将自然语言问题转化为布尔/概率判断，遍历代码库函数计算匹配置信度，由本地策略排序呈现。",
+    "jevDecisionPointEn": "Converts natural language questions into boolean/probability queries across functions, ranking matches locally by confidence.",
+    "highlightBenefit": "以极低单次调用成本实现类似 grep 的自然语言函数级代码发现。",
+    "highlightBenefitEn": "Enables natural language function discovery across codebases at low cost, similar to an intelligent grep.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "Ask a yes/no question of every function in a codebase. Ranked answers in seconds, for cents. Grep whose pattern is a question, powered by TypeSafe Jev.",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T05:38:34Z",
+    "lastCommitAt": "2026-09-17T06:02:19Z",
+    "headSha": "aaa72d582a831420dfd23a788e3bc948c798c248",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/15270674?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/sufianetaouil/every/blob/aaa72d582a831420dfd23a788e3bc948c798c248/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/sufianetaouil/every/blob/aaa72d582a831420dfd23a788e3bc948c798c248/reference/probe_jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "aaa72d582a831420dfd23a788e3bc948c798c248",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/sufianetaouil/every/blob/aaa72d582a831420dfd23a788e3bc948c798c248/README.md",
+          "hash": "937c6827f8aae50d283df4dbb78f16ece49d961f2099a4c61f6727390628cdcb"
+        },
+        {
+          "path": "reference/probe_jev.py",
+          "url": "https://github.com/sufianetaouil/every/blob/aaa72d582a831420dfd23a788e3bc948c798c248/reference/probe_jev.py",
+          "hash": "794b4d8c4a5bbd0cc6c08643fe0966230648768c5da43106ff46990302967144"
+        }
+      ]
+    }
+  },
+  {
+    "id": "phyous:tsai-civ2",
+    "name": "tsai-civ2",
+    "author": "phyous",
+    "url": "https://github.com/phyous/tsai-civ2",
+    "repoId": 1373432965,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "Jev 玩原版《文明 II》实验框架：在浏览器中运行经典游戏引擎，实时输出各行动的概率分布并做出决策。",
+    "jevDecisionPoint": "每回合读取游戏地图与单位状态，由 Jev 评估城市建造、科技研发、外交姿态与行动走位。",
+    "jevDecisionPointEn": "Evaluates city builds, tech research, diplomatic postures, and unit moves per turn from game state.",
+    "highlightBenefit": "探索 Jev 实时概率分布在复杂策略博弈与长期规划环境下的落地表现。",
+    "highlightBenefitEn": "Demonstrates Jev real-time probability distributions applied to complex strategic planning and game loops.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "An experimental harness where TypeSafe Jev plays classic Civilization II in a browser, computing live action probability distributions.",
+    "stars": 1,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "NOASSERTION",
+    "createdAt": "2026-09-16T17:42:36Z",
+    "lastCommitAt": "2026-09-18T03:20:46Z",
+    "headSha": "dab97616d1b5ef2ae80d277076d14b8886eac009",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/716386?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/phyous/tsai-civ2/blob/dab97616d1b5ef2ae80d277076d14b8886eac009/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/phyous/tsai-civ2/blob/dab97616d1b5ef2ae80d277076d14b8886eac009/civ2/typesafe.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "dab97616d1b5ef2ae80d277076d14b8886eac009",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/phyous/tsai-civ2/blob/dab97616d1b5ef2ae80d277076d14b8886eac009/README.md",
+          "hash": "db64a1a37267ce9620888131d2d521c3283beb858913a31f0e7bd0a3623458e3"
+        },
+        {
+          "path": "civ2/typesafe.py",
+          "url": "https://github.com/phyous/tsai-civ2/blob/dab97616d1b5ef2ae80d277076d14b8886eac009/civ2/typesafe.py",
+          "hash": "2a19688b6371378c842e55bb71b4866656ae9b79a2efc495ddca4c0063428a18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "komikat:jev-bfs",
+    "name": "jev-bfs",
+    "author": "komikat",
+    "url": "https://github.com/komikat/jev-bfs",
+    "repoId": 1374007837,
+    "category": "Data & Search",
+    "plainSummary": "基于 Jev 引导的维基百科链接竞速寻路器：利用 Jev 评估出站链接相关性，在终端实时寻径两词条之间的最短路径。",
+    "jevDecisionPoint": "在 BFS 搜索树的每个分支点，由 Jev 对当前页面的出站链接进行语义启发式打分并剪枝。",
+    "jevDecisionPointEn": "Applies Jev semantic heuristic scoring and pruning to outbound links at each BFS exploration step.",
+    "highlightBenefit": "结合传统图搜索算法与概率决策，显著缩减维基百科多跳路径的搜索空间。",
+    "highlightBenefitEn": "Combines classic graph traversal with probabilistic judgments to prune the Wikipedia multi-hop search space.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "Wikipedia link race pathfinder guided by Jev: assesses outbound links to navigate between two articles in real time.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T06:00:48Z",
+    "lastCommitAt": "2026-09-17T06:00:27Z",
+    "headSha": "d83ef1199fabcb2922030a27e0db3e27f6cd759c",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/41486636?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/__main__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/cli.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/core.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "d83ef1199fabcb2922030a27e0db3e27f6cd759c",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/README.md",
+          "hash": "c41813228111c86f513fbf3e54afa7884609f3d8868cf9abe55082e7aa93fcf1"
+        },
+        {
+          "path": "jev_bfs/__init__.py",
+          "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/__init__.py",
+          "hash": "d40a57cb0b0584a11671e27aae4ae099d7e6cbe3bce861fe8d99ec4290c5e62e"
+        },
+        {
+          "path": "jev_bfs/__main__.py",
+          "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/__main__.py",
+          "hash": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279"
+        },
+        {
+          "path": "jev_bfs/cli.py",
+          "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/cli.py",
+          "hash": "1f08ef400dab608cb119cf8cde225d2f9650a019979c37369504eebcab0c44e7"
+        },
+        {
+          "path": "jev_bfs/core.py",
+          "url": "https://github.com/komikat/jev-bfs/blob/d83ef1199fabcb2922030a27e0db3e27f6cd759c/jev_bfs/core.py",
+          "hash": "1ac9542bf1c777025779a00f335ce8f4ac42220d221f3743436534fd8da79293"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prismhq:jev-router",
+    "name": "jev-router",
+    "author": "prismhq",
+    "url": "https://github.com/prismhq/jev-router",
+    "repoId": 1373815069,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "基于 LiteLLM 与 Jev 构建的开源模型路由器：根据输入任务复杂度与上下文自动选择性价比最高的大模型。",
+    "jevDecisionPoint": "通过 System-1 单次前向推理对输入 Prompt 评定推理需求档位，再由本地 LiteLLM 路由分发请求。",
+    "jevDecisionPointEn": "Evaluates reasoning requirements of input prompts via single forward pass, delegating dispatch to LiteLLM.",
+    "highlightBenefit": "无需复杂的启发式正则即可实现高吞吐的任务分级与模型降本调度。",
+    "highlightBenefitEn": "Achieves high-throughput prompt triage and cost optimization without brittle heuristic regexes.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "An open-source LLM router built on LiteLLM and Jev: dynamically routes requests based on task complexity and context.",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T01:51:32Z",
+    "lastCommitAt": "2026-09-17T01:51:29Z",
+    "headSha": "583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/186116915?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/config.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/deciders.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/README.md",
+          "hash": "b2fea569bac307266d7bf2af34a8726bcebc37758a0ce09a53d52c36282e6c48"
+        },
+        {
+          "path": "jev_router/__init__.py",
+          "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/__init__.py",
+          "hash": "887ce672f50813c7818fc5b0ab29b55cf0c7fb77d712e41a5d57dc7e65659b31"
+        },
+        {
+          "path": "jev_router/config.py",
+          "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/config.py",
+          "hash": "702af56568251272ba620f9519882b80e85a092757e37464499ba427af06b0a4"
+        },
+        {
+          "path": "jev_router/deciders.py",
+          "url": "https://github.com/prismhq/jev-router/blob/583f0a1d1e0534cda3b6bbfa4b19aa1ec25d73a7/jev_router/deciders.py",
+          "hash": "454f834597b4621d101f0e0c74bd23e90fa2dd236a6ac946eaa3fee275ba15dc"
+        }
+      ]
+    }
+  },
+  {
+    "id": "teyhouse:jev-secret-detection",
+    "name": "jev-secret-detection",
+    "author": "teyhouse",
+    "url": "https://github.com/teyhouse/jev-secret-detection",
+    "repoId": 1374314212,
+    "category": "Security & Guardrails",
+    "plainSummary": "利用 Jev 模型检验代码片段中的真实凭据泄露：评估小模型在代码安全门禁与敏感密钥识别中的表现。",
+    "jevDecisionPoint": "将文件代码片段输入 Jev 判定是否存在硬编码密钥风险，返回布尔与置信评分。",
+    "jevDecisionPointEn": "Submits code snippets to Jev to evaluate hardcoded credential risk, returning boolean and confidence scores.",
+    "highlightBenefit": "验证低延迟无生成模型在 CI/CD pre-commit 安全静态扫描中的可行性与准确率。",
+    "highlightBenefitEn": "Evaluates the feasibility and precision of low-latency non-generative models in pre-commit security gates.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "Benchmark and tool evaluating how well TypeSafe Jev identifies real secret credentials in file snippets.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-17T11:15:02Z",
+    "lastCommitAt": "2026-09-18T06:50:34Z",
+    "headSha": "fc707416f00a6891b6a03458cc5c6de598fe47b2",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/828439?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/teyhouse/jev-secret-detection/blob/fc707416f00a6891b6a03458cc5c6de598fe47b2/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/teyhouse/jev-secret-detection/blob/fc707416f00a6891b6a03458cc5c6de598fe47b2/main.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "fc707416f00a6891b6a03458cc5c6de598fe47b2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/teyhouse/jev-secret-detection/blob/fc707416f00a6891b6a03458cc5c6de598fe47b2/README.md",
+          "hash": "9745109cded82770ea1c749981b11bd94cf7bfa16896352d4af8775cca6a005f"
+        },
+        {
+          "path": "main.py",
+          "url": "https://github.com/teyhouse/jev-secret-detection/blob/fc707416f00a6891b6a03458cc5c6de598fe47b2/main.py",
+          "hash": "3b9f9da5438ce1b071e37cfcbbd164db0ce922b9643ac90aac4ffaedd270e5c0"
+        }
+      ]
+    }
+  },
+  {
+    "id": "noplan-inc:limpet",
+    "name": "limpet",
+    "author": "noplan-inc",
+    "url": "https://github.com/noplan-inc/limpet",
+    "repoId": 1374039225,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "编程智能体专用 Stop Hook 门禁：防止 Coding Agent 过早宣布完工，用 Jev 依据自然语言规则客观裁定完成度。",
+    "jevDecisionPoint": "在 Agent 触发终止指令时拦截，由 Jev 核对任务提示词与上下文是否满足预定验收条件。",
+    "jevDecisionPointEn": "Intercepts agent termination signals, using Jev to verify if context meets natural language acceptance criteria.",
+    "highlightBenefit": "用轻量级规则裁判阻止代理偷懒或伪造完成，显著提高自动化开发交付完整度。",
+    "highlightBenefitEn": "Prevents coding agents from cutting corners or faking completion, boosting autonomous task completion rates.",
+    "tags": [
+      "multilanguage-sdk",
+      "coding-agents"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "A Stop hook guardrail for coding agents: prevents premature completion by judging plain-language rules via Jev.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 1,
+    "license": "MIT",
+    "createdAt": "2026-09-17T06:37:04Z",
+    "lastCommitAt": "2026-09-17T07:53:36Z",
+    "headSha": "7a841b006900cb48df74ad68167dbed17afc504f",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/58355348?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/noplan-inc/limpet/blob/7a841b006900cb48df74ad68167dbed17afc504f/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/noplan-inc/limpet/blob/7a841b006900cb48df74ad68167dbed17afc504f/limpet.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "7a841b006900cb48df74ad68167dbed17afc504f",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/noplan-inc/limpet/blob/7a841b006900cb48df74ad68167dbed17afc504f/README.md",
+          "hash": "5b7206f19ecdd5621c643a2ff93cd97bef44875666dd3c8afed1855260fe3c73"
+        },
+        {
+          "path": "limpet.py",
+          "url": "https://github.com/noplan-inc/limpet/blob/7a841b006900cb48df74ad68167dbed17afc504f/limpet.py",
+          "hash": "5554a0095fcc55c8b90ca36d66da75a2e19b57014498856f648c2096d60ff2d9"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mejiasd3v:pi-jev-router",
+    "name": "pi-jev-router",
+    "author": "mejiasd3v",
+    "url": "https://github.com/mejiasd3v/pi-jev-router",
+    "repoId": 1374204163,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "面向 Pi 编程助手的自动模型路由器：通过 Vercel AI Gateway 集成 Jev，自动为不同编码任务分配合适模型。",
+    "jevDecisionPoint": "根据当前代码上下文与用户提问快速评估难度，动态选择小模型或前沿模型处理。",
+    "jevDecisionPointEn": "Quickly estimates task complexity from code context and user query, routing between SLMs and frontier models.",
+    "highlightBenefit": "为 Pi 终端工具链提供开箱即用的智能化降本分流机制。",
+    "highlightBenefitEn": "Brings out-of-the-box intelligent cost-saving routing directly into the Pi terminal workflow.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "Automatic model router for Pi coding assistant: integrates Jev via Vercel AI Gateway to dispatch tasks efficiently.",
+    "stars": 7,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T09:24:10Z",
+    "lastCommitAt": "2026-09-18T12:34:52Z",
+    "headSha": "24043d08b4c522a0c07aa432e82cd29bc4e88dd4",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/630925?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/index.test.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/index.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "24043d08b4c522a0c07aa432e82cd29bc4e88dd4",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/README.md",
+          "hash": "8bf08c65ebcc21bea6ebdfb14e8dba314979eb81a6f48badff418d0612089794"
+        },
+        {
+          "path": "index.test.mjs",
+          "url": "https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/index.test.mjs",
+          "hash": "aec74af87b0f69990f4432b1a253016655781491475dccd54cd8aa94d0842220"
+        },
+        {
+          "path": "index.ts",
+          "url": "https://github.com/mejiasd3v/pi-jev-router/blob/24043d08b4c522a0c07aa432e82cd29bc4e88dd4/index.ts",
+          "hash": "737b507082da4e9ef4c637e6282ca8260e626b44ac28a6ae2fb2f5314e65ad6a"
+        }
+      ]
+    }
+  },
+  {
+    "id": "legacybridge-tech:pi-typesafe-jev",
+    "name": "pi-typesafe-jev",
+    "author": "legacybridge-tech",
+    "url": "https://github.com/legacybridge-tech/pi-typesafe-jev",
+    "repoId": 1373875654,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "为 Pi 扩展注入 TypeSafe Jev 的 5 种窄域判断工具：把决策权交给模型的同时将动作阈值保留给宿主应用。",
+    "jevDecisionPoint": "将选择、评分与是非等五类标准判定封装为 Pi 工具，供主代理在需要结构化裁决时调用。",
+    "jevDecisionPointEn": "Packages choice, score, and boolean judgments into five Pi tools for structured agent decisions.",
+    "highlightBenefit": "严格分离“语义评估”与“业务执行”，确保自动化脚本始终处于受控逻辑内。",
+    "highlightBenefitEn": "Strictly decouples semantic evaluation from execution, keeping automated scripts safely constrained.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "A Pi extension exposing TypeSafe judgments as five narrow tools, keeping threshold and action control in host code.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "NOASSERTION",
+    "createdAt": "2026-09-17T03:21:12Z",
+    "lastCommitAt": "2026-09-17T04:04:56Z",
+    "headSha": "17e66fcd6ecfbb4c3083f748af510bf59cda985f",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/253618205?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/legacybridge-tech/pi-typesafe-jev/blob/17e66fcd6ecfbb4c3083f748af510bf59cda985f/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/legacybridge-tech/pi-typesafe-jev/blob/17e66fcd6ecfbb4c3083f748af510bf59cda985f/src/client.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "17e66fcd6ecfbb4c3083f748af510bf59cda985f",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/legacybridge-tech/pi-typesafe-jev/blob/17e66fcd6ecfbb4c3083f748af510bf59cda985f/README.md",
+          "hash": "dc687dd16ed4fd54f2bd4734ad41c438712f415640dad5b288e5c6953640869d"
+        },
+        {
+          "path": "src/client.ts",
+          "url": "https://github.com/legacybridge-tech/pi-typesafe-jev/blob/17e66fcd6ecfbb4c3083f748af510bf59cda985f/src/client.ts",
+          "hash": "184afe7c5d877d6a7c78471e5828e2ee3f23be98346c1f4fe8cb7276f201788a"
+        }
+      ]
+    }
+  },
+  {
+    "id": "grmkris:robo-harness",
+    "name": "robo-harness",
+    "author": "grmkris",
+    "url": "https://github.com/grmkris/robo-harness",
+    "repoId": 1359930277,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "SO-101 机械臂具身智能控制工作台：整合 Bun/Effect 与 Python 驱动，利用 Jev 做关节动作边界决策与预算控制。",
+    "jevDecisionPoint": "在每一步机器人运动规划中，评估空间坐标与传感器状态，由 Jev 在候选安全区间选择执行步骤。",
+    "jevDecisionPointEn": "Assesses spatial coordinates and sensor states, using Jev to select safe step actions within bounded budgets.",
+    "highlightBenefit": "将 TypeSafe Jev 的低时延离散决策优势拓展至物理世界机械臂实时控制场景。",
+    "highlightBenefitEn": "Extends TypeSafe Jev low-latency discrete judgments to physical-world robotic arm motion control.",
+    "tags": [
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "SO-101 robot-arm workbench combining Bun/Effect and Python drivers, using Jev for joint action constraints.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-07T07:53:41Z",
+    "lastCommitAt": "2026-09-18T08:27:25Z",
+    "headSha": "143699975b09df94b4d986329cdae5fdf9541d31",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/15545195?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/apps/server/src/decision/jev.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/apps/server/src/decision/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "143699975b09df94b4d986329cdae5fdf9541d31",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/README.md",
+          "hash": "e3a0c71d11f19569e01a81f3c1153097765cecd3e162c905a10235426546869e"
+        },
+        {
+          "path": "apps/server/src/decision/jev.test.ts",
+          "url": "https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/apps/server/src/decision/jev.test.ts",
+          "hash": "bf0d33192fd65361a3df75924ba9a2b5cbf0bf0db42b777cdb8cb65fa961e3b3"
+        },
+        {
+          "path": "apps/server/src/decision/jev.ts",
+          "url": "https://github.com/grmkris/robo-harness/blob/143699975b09df94b4d986329cdae5fdf9541d31/apps/server/src/decision/jev.ts",
+          "hash": "ed75d66037a3df433b83670a95f710790cd074741b00716043859cb6633821e0"
+        }
+      ]
+    }
+  },
+  {
+    "id": "siroccomask:snake-jev",
+    "name": "snake-jev",
+    "author": "siroccomask",
+    "url": "https://github.com/siroccomask/snake-jev",
+    "repoId": 1374241877,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "Jev 并行概率驱动的贪吃蛇实时游戏控制：在每个游戏 Tick 仅需一次并发 API 调用即可选出最佳转向。",
+    "jevDecisionPoint": "实时扫描蛇头四周障碍与食物方位，由 Jev 同时对上下左右四个方向输出存活与逼近概率。",
+    "jevDecisionPointEn": "Scans obstacles and food locations per tick, querying Jev in parallel for survival and approach probabilities.",
+    "highlightBenefit": "验证了 Jev 在高频、确定性帧率要求下的并发低时延决策表现。",
+    "highlightBenefitEn": "Demonstrates Jev high-frequency, deterministic low-latency performance in real-time game ticks.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "Real-time Snake game driven by parallel Jev assessments, deciding optimal turns in a single API call per tick.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T10:02:13Z",
+    "lastCommitAt": "2026-09-17T10:02:07Z",
+    "headSha": "86f01b686df2e6d5b566b80d015de9b8b34450a8",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/9921926?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/siroccomask/snake-jev/blob/86f01b686df2e6d5b566b80d015de9b8b34450a8/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/siroccomask/snake-jev/blob/86f01b686df2e6d5b566b80d015de9b8b34450a8/jev_controller.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "86f01b686df2e6d5b566b80d015de9b8b34450a8",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/siroccomask/snake-jev/blob/86f01b686df2e6d5b566b80d015de9b8b34450a8/README.md",
+          "hash": "9f5d6fb4a0b86951704dc7539918844fb1c6fceb2dc8f90eef1a4c3b17ba3428"
+        },
+        {
+          "path": "jev_controller.py",
+          "url": "https://github.com/siroccomask/snake-jev/blob/86f01b686df2e6d5b566b80d015de9b8b34450a8/jev_controller.py",
+          "hash": "e072a719d86a6f9b999ab3325093d3bf7ba65082e42b0a1928fe400cb0a432d6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mattn:sqlite3-jev",
+    "name": "sqlite3-jev",
+    "author": "mattn",
+    "url": "https://github.com/mattn/sqlite3-jev",
+    "repoId": 1375308388,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "将 TypeSafe Jev 判断能力下沉为 SQLite 自定义 SQL 函数的 C 语言扩展：直接在 SQL 查询中实现语义打分与选择。",
+    "jevDecisionPoint": "在 SQLite 执行引擎中注册 jev_choice、jev_score 等自定义函数，在查询扫描行时直接调用 Jev API。",
+    "jevDecisionPointEn": "Registers custom functions like jev_choice and jev_score directly inside the SQLite query pipeline.",
+    "highlightBenefit": "无需额外编写业务胶水代码，即可在大规模结构化关系型数据上执行行级语义分类与推理。",
+    "highlightBenefitEn": "Enables row-level semantic classification directly inside relational SQL queries without glue code.",
+    "tags": [
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "curated",
+    "claimStatus": "经由公共仓库代码审查确认真实 Jev 可执行集成证据；决策机制提取自实际源码，未经本站性能跑分测试。",
+    "claimStatusEn": "Verified with code-level Jev executable integration evidence; decision mechanisms extracted from source.",
+    "plainSummaryEn": "SQLite C extension enabling TypeSafe Jev judgments as native SQL functions for semantic scoring and choices.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T03:12:25Z",
+    "lastCommitAt": "2026-09-18T03:12:25Z",
+    "headSha": "2172600da148182703f8f221089d9304d0fb97f9",
+    "metadataFetchedAt": "2026-09-20T07:18:35.969Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/10111?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T07:18:35.969Z",
+    "evidence": [
+      {
+        "url": "https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/jev.c",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "2172600da148182703f8f221089d9304d0fb97f9",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/README.md",
+          "hash": "5ac9ba96334b33bc7d9ffb12463f09a93263a79071637d6a7bbd0fd541710197"
+        },
+        {
+          "path": "jev.c",
+          "url": "https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/jev.c",
+          "hash": "f5bc0389c23c0c86e75d78de8e24fb13fad5e98f35c0d14d655a76132d2bc5c0"
+        }
+      ]
+    }
   }
 ]

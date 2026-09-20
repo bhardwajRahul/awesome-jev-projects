@@ -145,9 +145,17 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
   const decision = localizedProjectText(p ?? {}, 'jevDecisionPoint', locale);
   const link = p ? `https://logicrw.github.io${projectPath(p.id, locale)}` : '';
   const summary = p ? `${p.name} — ${p.author}\n${plain.text}\n${t.decision}: ${decision.text}\n${link}` : '';
-  const avatar = p?.avatarUrl && /^https:\/\/avatars\.githubusercontent\.com\//.test(p.avatarUrl) ? p.avatarUrl : null;
-  const avatarReady = Boolean(avatar && avatarResult?.src === avatar && avatarResult.ok);
-  const avatarFailed = Boolean(avatar && avatarResult?.src === avatar && !avatarResult.ok);
+  const remoteAvatar = p?.avatarUrl && /^https:\/\/avatars\.githubusercontent\.com\//.test(p.avatarUrl) ? p.avatarUrl : null;
+  const localAvatar = p?.author && /^[a-zA-Z0-9_\-\.]+$/.test(p.author) ? `${import.meta.env.BASE_URL}avatars/${p.author.toLowerCase()}.png` : null;
+  const [avatarAttempt, setAvatarAttempt] = useState<string | null>(null);
+  const activeAvatarSrc = avatarAttempt ?? remoteAvatar;
+  const avatarReady = Boolean(activeAvatarSrc && avatarResult?.src === activeAvatarSrc && avatarResult.ok);
+  const avatarFailed = Boolean(activeAvatarSrc && avatarResult?.src === activeAvatarSrc && !avatarResult.ok);
+
+  useEffect(() => {
+    setAvatarAttempt(null);
+    setAvatarResult(null);
+  }, [p?.id, draw.turn]);
 
   useEffect(() => {
     if (draw.turn > 0 && (draw.turn + 1) % 10 === 0) {
@@ -156,10 +164,18 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
   }, [draw.turn]);
 
   useEffect(() => {
-    if (avatar && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
-      setAvatarResult({ src: avatar, ok: true });
+    if (activeAvatarSrc && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
+      setAvatarResult({ src: activeAvatarSrc, ok: true });
     }
-  }, [avatar, draw.turn]);
+  }, [activeAvatarSrc, draw.turn]);
+
+  const handleAvatarError = () => {
+    if (activeAvatarSrc === remoteAvatar && localAvatar) {
+      setAvatarAttempt(localAvatar);
+    } else if (activeAvatarSrc) {
+      setAvatarResult({ src: activeAvatarSrc, ok: false });
+    }
+  };
 
   useEffect(() => { closeHandler.current = onClose; }, [onClose]);
   useEffect(() => {
@@ -321,7 +337,7 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
             <div className="gacha-identity">
               <span className="gacha-avatar-frame" aria-hidden="true">
                 <span className="gacha-avatar gacha-initial" hidden={avatarReady}>{p.author.slice(0, 2).toUpperCase()}</span>
-                {avatar && !avatarFailed && <img ref={imageRef} key={avatar} src={avatar} alt="" className="gacha-avatar" width="42" height="42" decoding="async" referrerPolicy="no-referrer" data-ready={avatarReady} onLoad={() => setAvatarResult({ src: avatar, ok: true })} onError={() => setAvatarResult({ src: avatar, ok: false })} />}
+                {activeAvatarSrc && !avatarFailed && <img ref={imageRef} key={activeAvatarSrc} src={activeAvatarSrc} alt="" className="gacha-avatar" width="42" height="42" decoding="async" referrerPolicy="no-referrer" data-ready={avatarReady} onLoad={() => setAvatarResult({ src: activeAvatarSrc, ok: true })} onError={handleAvatarError} />}
               </span>
               <div><h3>{p.name}</h3><span className="gacha-author">{p.author}</span></div>
             </div>

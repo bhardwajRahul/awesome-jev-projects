@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { escapeHTML, safeJSON, projectRoute, pageHead, LOCALES } from "./site-content.mjs";
 import { secureHTML, contentSecurityPolicy } from "./finalize-pages.mjs";
 
@@ -27,4 +28,26 @@ test("CSP hashes structured data but refuses executable inline scripts", () => {
   assert.ok(secureHTML(html).indexOf('Content-Security-Policy') < secureHTML(html).indexOf('<script'));
   assert.throws(()=>secureHTML('<meta charset="UTF-8"><script>alert(1)</script>'));
   assert.throws(()=>secureHTML('<meta charset="UTF-8"><script type="module">alert(1)</script>'));
+});
+
+test("banners and README documents strictly match canonical project count", async () => {
+  const root = new URL("../", import.meta.url);
+  const projects = JSON.parse(await readFile(new URL("src/data/projects.json", root), "utf8"));
+  const expectedCount = projects.length;
+
+  for (const bannerName of ["banner.svg", "banner-zh.svg", "banner-ja.svg", "banner-ko.svg"]) {
+    const banner = await readFile(new URL(`public/${bannerName}`, root), "utf8");
+    assert.ok(
+      banner.includes(`${expectedCount} VERIFIED REPOS`),
+      `Banner public/${bannerName} must show ${expectedCount} VERIFIED REPOS`
+    );
+  }
+
+  for (const readme of ["README.md", "README.zh-CN.md", "README.ja.md", "README.ko.md"]) {
+    const content = await readFile(new URL(readme, root), "utf8");
+    assert.ok(
+      content.includes(`Curated%20Projects-${expectedCount}%2B`),
+      `${readme} badge must match canonical project count ${expectedCount}`
+    );
+  }
 });

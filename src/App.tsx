@@ -37,6 +37,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { validateSubmission, createIssueUrl } from "./lib/submission.mjs";
 import { safePublicUrl } from "./lib/safe-url.mjs";
+import { getAvatarSources } from "./lib/avatar.mjs";
 import type { SubmissionErrors, SubmissionValues } from "./lib/submission.mjs";
 import { translate, categoryLabel, readLocale, locales, localeMeta, localizedProjectText, projectPath, popularSearches } from "./lib/i18n";
 import type { Locale } from "./lib/i18n";
@@ -176,24 +177,47 @@ const date = (s: string | null | undefined, locale: Locale) =>
     : "—";
 const safeUrl = (u: string | null | undefined): string => safePublicUrl(u);
 function ProjectAvatar({ project }: { project: Project }) {
-  const [result, setResult] = useState<{ src: string; ok: boolean } | null>(null);
+  const sources = useMemo(
+    () => getAvatarSources(project.author, project.avatarUrl, import.meta.env.BASE_URL),
+    [project.author, project.avatarUrl]
+  );
+  const [sourceIndex, setSourceIndex] = useState(0);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
-  const src = project.avatarUrl;
-  const ready = Boolean(src && result?.src === src && result.ok);
-  const failed = Boolean(src && result?.src === src && !result.ok);
+
   useEffect(() => {
-    if (src && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
-      setResult({ src, ok: true });
+    setSourceIndex(0);
+    setReady(false);
+    setFailed(false);
+  }, [project.author, project.avatarUrl]);
+
+  const currentSrc = sources[sourceIndex] ?? null;
+
+  useEffect(() => {
+    if (currentSrc && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
+      setReady(true);
     }
-  }, [src]);
+  }, [currentSrc]);
+
+  const handleError = () => {
+    if (sourceIndex + 1 < sources.length) {
+      setSourceIndex((prev) => prev + 1);
+    } else {
+      setFailed(true);
+    }
+  };
+
   return (
     <span className="avatar-frame" aria-hidden="true">
-      <span className="avatar-fallback" hidden={ready}>{project.author.slice(0, 2).toUpperCase()}</span>
-      {src && !failed && (
+      <span className="avatar-fallback" hidden={ready}>
+        {project.author.slice(0, 2).toUpperCase()}
+      </span>
+      {currentSrc && !failed && (
         <img
           ref={imageRef}
-          key={src}
-          src={src}
+          key={currentSrc}
+          src={currentSrc}
           alt=""
           className="avatar"
           width="40"
@@ -202,8 +226,8 @@ function ProjectAvatar({ project }: { project: Project }) {
           decoding="async"
           referrerPolicy="no-referrer"
           data-ready={ready}
-          onLoad={() => setResult({ src, ok: true })}
-          onError={() => setResult({ src, ok: false })}
+          onLoad={() => setReady(true)}
+          onError={handleError}
         />
       )}
     </span>
