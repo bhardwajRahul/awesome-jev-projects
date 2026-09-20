@@ -37,7 +37,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { validateSubmission, createIssueUrl } from "./lib/submission.mjs";
 import { safePublicUrl } from "./lib/safe-url.mjs";
-import { getAvatarSources } from "./lib/avatar.mjs";
+import { getAvatarSources, isAvatarCached, markAvatarCached, prefetchAvatars } from "./lib/avatar.mjs";
 import type { SubmissionErrors, SubmissionValues } from "./lib/submission.mjs";
 import { translate, categoryLabel, readLocale, locales, localeMeta, localizedProjectText, projectPath, popularSearches } from "./lib/i18n";
 import type { Locale } from "./lib/i18n";
@@ -193,9 +193,12 @@ function ProjectAvatar({ project }: { project: Project }) {
   }, [project.author, project.avatarUrl]);
 
   const currentSrc = sources[sourceIndex] ?? null;
+  const isCached = Boolean(currentSrc && isAvatarCached(currentSrc));
+  const isReady = ready || isCached;
 
   useEffect(() => {
     if (currentSrc && imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
+      markAvatarCached(currentSrc);
       setReady(true);
     }
   }, [currentSrc]);
@@ -210,7 +213,7 @@ function ProjectAvatar({ project }: { project: Project }) {
 
   return (
     <span className="avatar-frame" aria-hidden="true">
-      <span className="avatar-fallback" hidden={ready}>
+      <span className="avatar-fallback" hidden={isReady}>
         {project.author.slice(0, 2).toUpperCase()}
       </span>
       {currentSrc && !failed && (
@@ -225,8 +228,11 @@ function ProjectAvatar({ project }: { project: Project }) {
           loading="lazy"
           decoding="async"
           referrerPolicy="no-referrer"
-          data-ready={ready}
-          onLoad={() => setReady(true)}
+          data-ready={isReady}
+          onLoad={() => {
+            markAvatarCached(currentSrc);
+            setReady(true);
+          }}
           onError={handleError}
         />
       )}
@@ -329,6 +335,10 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
     updatedAt,
     retry,
   } = useCatalogSWR({ initialProjects });
+
+  useEffect(() => {
+    prefetchAvatars(projects, import.meta.env.BASE_URL);
+  }, [projects]);
 
   const [saved, setSaved] = useState<string[]>(getSaved);
 

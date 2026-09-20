@@ -11,6 +11,9 @@ import {
   isSafeAvatarUrl,
   getLocalAvatarPath,
   getAvatarSources,
+  isAvatarCached,
+  markAvatarCached,
+  prefetchAvatars,
 } from "../src/lib/avatar.mjs";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
@@ -108,4 +111,15 @@ test("avatar static integrity: public/avatars contains cached image files for ca
     verifiedCount >= 280,
     `Expected at least 280 verified avatars in public/avatars, found ${verifiedCount}`
   );
+});
+
+test("avatar memory cache: tracks loaded avatars and supports prefetch guard in non-browser env", () => {
+  assert.equal(isAvatarCached("/sample-test-avatar.png"), false);
+  markAvatarCached("/sample-test-avatar.png");
+  assert.equal(isAvatarCached("/sample-test-avatar.png"), true);
+
+  // In Node environment, prefetchAvatars safely no-ops without throwing
+  assert.doesNotThrow(() => {
+    prefetchAvatars([{ author: "foo" }, null, undefined]);
+  });
 });
