@@ -33175,5 +33175,125 @@
       "issueBodySha256": "cbbd4afd7a7e6f48fe8b170a0a96cba2f9b40587f6020120728ce21efaacd037",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/33"
     }
+  },
+  {
+    "id": "rajdhakad9826:jev-router",
+    "name": "jev-router",
+    "author": "rajdhakad9826",
+    "url": "https://github.com/rajdhakad9826/jev-router",
+    "repoId": 1377283715,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "基于 Jev 评分概率与期望损失最小化（Expected Loss Minimization）实现的成本敏感型大模型路由器。",
+    "jevDecisionPoint": "决策说明：\n在 classify 方法中使用 Jev score 对模型能力层级进行概率评分，后续结合成本损失矩阵计算最优模型。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Cost-aware LLM router that picks the cheapest model capable of handling a query, using TypeSafe's Jev for fast classification instead of an LLM call.",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T14:56:21Z",
+    "lastCommitAt": "2026-09-19T16:24:58Z",
+    "headSha": "9c332db56da87a559a1e18d0331c8fcb303b40fd",
+    "metadataFetchedAt": "2026-09-20T11:42:36.299Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/111659873?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T11:42:36.299Z",
+    "evidence": [
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/router.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/jev/classifier.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/loss.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/normalise.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/selection.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/index.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/types.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "9c332db56da87a559a1e18d0331c8fcb303b40fd",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/README.md",
+          "hash": "8b221a10d95f05fd465926a5a7ba6f25a9921ff5d920c51cc49c265b51cdc8c4"
+        },
+        {
+          "path": "src/router.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/router.ts",
+          "hash": "d480fb6cac73e9ec54b04607b609d68a0233c779168e124083a34dc904484643"
+        },
+        {
+          "path": "src/jev/classifier.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/jev/classifier.ts",
+          "hash": "347647766740976a71d7aeb6455ae2dba04762a801d89c2965e2b2a442f44326"
+        },
+        {
+          "path": "src/core/loss.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/loss.ts",
+          "hash": "56f663bf2855114b9b34d5d359de97fb31db0b897deea7c3a7695823baab6d3f"
+        },
+        {
+          "path": "src/core/normalise.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/normalise.ts",
+          "hash": "c805820524fe68257210cf9b65ef1245cf7ab274c8dff4e752413615254625f8"
+        },
+        {
+          "path": "src/core/selection.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/selection.ts",
+          "hash": "b61171411e03820e904e5563f539c9b7a244710da1dc1665687b6336fdec0664"
+        },
+        {
+          "path": "src/index.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/index.ts",
+          "hash": "118086aa857c57892cfabbc5516d5cee7623e8ef2c0b1608375de25f2e726e20"
+        },
+        {
+          "path": "src/types.ts",
+          "url": "https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/types.ts",
+          "hash": "0548aad89ba4a0864c198ef3158b11dbcea8b0da74c239132ef6ffd9faa95b49"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 35,
+      "issueBodySha256": "57e6c9f0d854288dee9bc021d188ab5ab026ef6e6120034e3969561e3a2716c1",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/35"
+    }
   }
 ]
