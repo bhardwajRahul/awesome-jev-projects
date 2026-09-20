@@ -33635,5 +33635,134 @@
       "issueBodySha256": "b4b88fae92d1b379246edcbcfbaaba2c806dd2b849fb59e11f4359b8b729e08f",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/38"
     }
+  },
+  {
+    "id": "spoonnotfound:soupbase",
+    "name": "soupbase",
+    "author": "spoonnotfound",
+    "url": "https://github.com/spoonnotfound/soupbase",
+    "repoId": 1376834360,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "汤底 Soupbase 是中英文海龟汤游戏，由 Jev 判定玩家提问和还原内容；应用代码校验结构化结果与置信度，决定是否通关。支持私有创作、链接分享和自行部署。",
+    "jevDecisionPoint": "两类判断均使用 Choice；没有使用 Score 或 Noul。提示与主动揭晓读取已保存内容，不依赖模型生成。这里选择游戏分类，不主张高频性能，也不声明未经测量的速度、成本或准确率。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Soupbase is a bilingual Chinese-English Turtle Soup game where Jev judges player questions and reconstructions, and the app checks structured Choice results and confidence to decide clearance.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T06:50:42Z",
+    "lastCommitAt": "2026-09-19T08:58:33Z",
+    "headSha": "4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa",
+    "metadataFetchedAt": "2026-09-20T15:27:22.788Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/20537546?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T15:27:22.788Z",
+    "evidence": [
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/api/%5B...path%5D/route.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/model-trace.tsx",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/server/api.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/server/model.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/%5Blocale%5D/page.tsx",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/layout.tsx",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/page.tsx",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/app.tsx",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/README.md",
+          "hash": "f48c87725e68e0778338e97741bfc716304c30711ff38b897e27855e4c2cbeea"
+        },
+        {
+          "path": "src/app/api/[...path]/route.ts",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/api/%5B...path%5D/route.ts",
+          "hash": "3e6c62d2d08787eddd8b304c300794c50d6cf6a38097cd53f870339d021ca283"
+        },
+        {
+          "path": "src/components/model-trace.tsx",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/model-trace.tsx",
+          "hash": "7b3472563cf1ee793733db68672776c97101e5758023e1391f3e621778cbef5b"
+        },
+        {
+          "path": "src/server/api.ts",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/server/api.ts",
+          "hash": "d997595c50b4f123073049c927a4c4d6daedb892849b01455f6e2cd28000ac55"
+        },
+        {
+          "path": "src/server/model.ts",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/server/model.ts",
+          "hash": "a6fe1eaab8718e62a793b48908046f84162d854520881ea791bba10b5805fc82"
+        },
+        {
+          "path": "src/app/[locale]/page.tsx",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/%5Blocale%5D/page.tsx",
+          "hash": "08a847d88ad0eb388c155eebfd4074853e10a4386624963f252325e4a660f0a4"
+        },
+        {
+          "path": "src/app/layout.tsx",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/layout.tsx",
+          "hash": "3a185fe7a8d89886dc5985aeef1ddb594f31459b368a950a299422da705a9604"
+        },
+        {
+          "path": "src/app/page.tsx",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/page.tsx",
+          "hash": "d91343b48db3abe574b9145264fefd37784c4c91cd337291b8fd007816ca05a3"
+        },
+        {
+          "path": "src/components/app.tsx",
+          "url": "https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/app.tsx",
+          "hash": "f422e62cd0b04354d09c0eec0ee509c8f4899d036f5265d1cf688662a903b109"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 39,
+      "issueBodySha256": "b0bec4a360feb2bbf893751e469e3146ded5801d575e45f63d021af3297cb505",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/39"
+    }
   }
 ]

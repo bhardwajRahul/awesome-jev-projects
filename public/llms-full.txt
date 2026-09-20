@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 332
+Catalog entries: 333
 
 ## Install the Agent Skill
 
@@ -4948,3 +4948,24 @@ Jev Issue Radar is a read-only dashboard for GitHub duplicate-issue triage. It r
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/patrick-sch03/jev-issue-radar/
 - Source evidence: https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/README.md
 - Source evidence: https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/lib/jev.mjs
+
+## soupbase
+
+Soupbase is a bilingual Chinese-English Turtle Soup game where Jev judges player questions and reconstructions, and the app checks structured Choice results and confidence to decide clearance.
+
+- Repository: https://github.com/spoonnotfound/soupbase
+- Category: High-Frequency & Simulation
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/spoonnotfound/soupbase/
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/README.md
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/api/%5B...path%5D/route.ts
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/model-trace.tsx
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/server/api.ts
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/server/model.ts
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/%5Blocale%5D/page.tsx
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/layout.tsx
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/page.tsx
+- Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/app.tsx
