@@ -95,6 +95,8 @@ const additions = {
     privacyText: "쿠키 없는 가벼운 Cloudflare Web Analytics를 사용하여 기본적인 통계를 집계하며 DNT/GPC 설정을 존중합니다."
   },
 };
+const categories = [...new Set(projects.map((p) => p.category))].sort();
+
 for (const locale of LOCALES) {
   const c=COPY[locale], t=text[locale], homepage=SITE+localePrefix(locale);
   const bannerFile=`public/banner${locale==='en'?'':locale==='zh'?'-zh':`-${locale}`}.svg`;
@@ -121,10 +123,10 @@ for (const locale of LOCALES) {
     ko: "💡 **왜 Jev와 System-1 결정 아키텍처인가?**"
   }[locale];
   const whyBody = {
-    zh: `构建自主智能体（Agent）时，如果把每一个分支选项都交给秒级响应的大推理模型（System 2），不仅**延迟高、成本高**，而且极易发生上下文漂移。\n\n**TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：\n- ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。\n- 🎯 **原生确定性输出**：原生支持 \`Choice\`（多选一）、\`Score\`（打分）与 \`Noul\`（二元逻辑与概率），免去易碎的正则提取。\n- 🛡️ **严格拒绝概念炒作**：全网严选 **${projects.length}+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。`,
-    en: `When building autonomous agents, routing every small branching decision to a heavy reasoning model (System 2) incurs seconds of latency, runaway token costs, and context drift.\n\n**TypeSafe Jev (System 1)** is purpose-built for fast, typed discrete decisions:\n- ⚡ **Sub-100ms Latency**: Delivers decisions in 50–100ms to keep agent loops snappy.\n- 🎯 **Native Typed Outputs**: Built-in primitives for \`Choice\`, \`Score\`, and \`Noul\` without fragile JSON regex parsing.\n- 🛡️ **Zero Vaporware**: ${projects.length}+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.`,
-    ja: `Agent を構築する際、すべての分岐判断を巨大な推論モデル（System 2）に委ねると、数秒の遅延と高いコスト、文脈ドリフトが発生します。\n\n**TypeSafe Jev（System 1）** は、離散選択、スコアリング、真偽値判定に特化した軽量モデルです：\n- ⚡ **100ms 未満の高速応答**：50–100ms で判断を完了し、Agent の高速ループを維持します。\n- 🎯 **ネイティブな型安全出力**：\`Choice\`、\`Score\`、\`Noul\` を直接返し、壊れやすい正規表現パースが不要です。\n- 🛡️ **誇大広告を排除**：17 の実用分野にわたる ${projects.length}+ 件の検証済みオープンソースコードのみを厳選掲載しています。`,
-    ko: `에이전트를 구축할 때 모든 일상적인 분기 결정을 거대 추론 모델(System 2)에 맡기면 수 초의 지연 시간과 높은 비용, 문맥 왜곡이 발생합니다.\n\n**TypeSafe Jev (System 1)**는 빠른 타입 안전 결정을 위해 제작된 경량 모델입니다:\n- ⚡ **100ms 미만 초고속 응답**: 50–100ms 내에 결정을 내려 에이전트 루프의 민첩성을 유지합니다.\n- 🎯 **네이티브 타입 출력**: \`Choice\`, \`Score\`, \`Noul\`을 지원하여 취약한 JSON 정규식 파싱이 필요 없습니다.\n- 🛡️ **과대 광고 배제**: 17개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 ${projects.length}+개 프로젝트만을 엄선했습니다.`
+    zh: `构建自主智能体（Agent）时，如果把每一个分支选项都交给秒级响应的大推理模型（System 2），不仅**延迟高、成本高**，而且极易发生上下文漂移。\n\n**TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：\n- ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。\n- 🎯 **原生确定性输出**：原生支持 \`Choice\`（多选一）、\`Score\`（打分）与 \`Noul\`（二元逻辑与概率），免去易碎的正则提取。\n- 🛡️ **严格拒绝概念炒作**：全网严选 **${projects.length}+** 个绑定真实公开开源源码版本的落地项目，覆盖 ${categories.length} 大核心工程赛道。`,
+    en: `When building autonomous agents, routing every small branching decision to a heavy reasoning model (System 2) incurs seconds of latency, runaway token costs, and context drift.\n\n**TypeSafe Jev (System 1)** is purpose-built for fast, typed discrete decisions:\n- ⚡ **Sub-100ms Latency**: Delivers decisions in 50–100ms to keep agent loops snappy.\n- 🎯 **Native Typed Outputs**: Built-in primitives for \`Choice\`, \`Score\`, and \`Noul\` without fragile JSON regex parsing.\n- 🛡️ **Zero Vaporware**: ${projects.length}+ projects rigorously anchored to verifiable, commit-pinned public open source across ${categories.length} real-world domains.`,
+    ja: `Agent を構築する際、すべての分岐判断を巨大な推論モデル（System 2）に委ねると、数秒の遅延と高いコスト、文脈ドリフトが発生します。\n\n**TypeSafe Jev（System 1）** は、離散選択、スコアリング、真偽値判定に特化した軽量モデルです：\n- ⚡ **100ms 未満の高速応答**：50–100ms で判断を完了し、Agent の高速ループを維持します。\n- 🎯 **ネイティブな型安全出力**：\`Choice\`、\`Score\`、\`Noul\` を直接返し、壊れやすい正規表現パースが不要です。\n- 🛡️ **誇大広告を排除**：${categories.length} の実用分野にわたる ${projects.length}+ 件の検証済みオープンソースコードのみを厳選掲載しています。`,
+    ko: `에이전트를 구축할 때 모든 일상적인 분기 결정을 거대 추론 모델(System 2)에 맡기면 수 초의 지연 시간과 높은 비용, 문맥 왜곡이 발생합니다。\n\n**TypeSafe Jev (System 1)**는 빠른 타입 안전 결정을 위해 제작된 경량 모델입니다:\n- ⚡ **100ms 미만 초고속 응답**: 50–100ms 내에 결정을 내려 에이전트 루프의 민첩성을 유지합니다.\n- 🎯 **네이티브 타입 출력**: \`Choice\`, \`Score\`, \`Noul\`을 지원하여 취약한 JSON 정규식 파싱이 필요 없습니다.\n- 🛡️ **과대 광고 배제**: ${categories.length}개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 ${projects.length}+개 프로젝트만을 엄선했습니다.`
   }[locale];
 
   const comparisonTable = {
@@ -216,7 +218,6 @@ for (const locale of LOCALES) {
 
   out+=paidPlacementMarkdown(partners,locale)+`\n## ${additions[locale].agent}\n\n${additions[locale].agentText}\n\n\`\`\`bash\n${INSTALL_COMMANDS.join("\n")}\n\`\`\`\n\n[Agent Skill](${SITE}skill.md) · [llms.txt](${SITE}llms.txt) · [llms-full.txt](${SITE}llms-full.txt)\n\n`;
   out+=`## ${c.categories}\n\n`;
-  const categories=[...new Set(projects.map(p=>p.category))].sort();
   for(const category of categories){const count=projects.filter(p=>p.category===category).length;out+=`- [${categoryLabel(category,locale)} (${count})](${SITE+categoryRoute(category,locale)})\n`;}
   for(const category of categories){
     out+=`\n## ${categoryLabel(category,locale)}\n\n`;
