@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 329
+Catalog entries: 330
 
 ## Install the Agent Skill
 
@@ -4899,3 +4899,17 @@ Ultra-fast, fail-open advisory decisions and verbatim extractive reading view fo
 - Source evidence: https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/README.md
 - Source evidence: https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/ask_jev.py
 - Source evidence: https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/jev_context.py
+
+## slop-grader
+
+Rule-based CLI and agent skill that evaluates text and markdown files against custom rulesets for AI slop, grammar, and technical doc quality using Jev scores and line-by-line violation flags, then guides an AI agent to auto-fix violations.
+
+- Repository: https://github.com/lukstei/slop-grader
+- Category: CLI & Pipelines
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/lukstei/slop-grader/
+- Source evidence: https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/README.md
+- Source evidence: https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/src/providers/jev.test.ts

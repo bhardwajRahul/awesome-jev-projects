@@ -33371,5 +33371,72 @@
       "issueBodySha256": "ac4ff3937ba96ef756470e2a87a856f272e6d0f1bf4b5499f793b79068a6b634",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/36"
     }
+  },
+  {
+    "id": "lukstei:slop-grader",
+    "name": "slop-grader",
+    "author": "lukstei",
+    "url": "https://github.com/lukstei/slop-grader",
+    "repoId": 1378047861,
+    "category": "CLI & Pipelines",
+    "plainSummary": "这是一个基于规则的 CLI 工具，用 Jev 的 Score 做文档级打分、用 Choice 和 Noul 做逐行违规标记，并把结果交给 Agent 去修复文本和 Markdown 文件。",
+    "jevDecisionPoint": "决策说明：\n在 `src/providers/jev.ts` 的 `evaluateBatch` 中调用 `@typesafe-ai/sdk` (`client.system_one`)，对文档级别使用 `score` 进行标准维度评分，对行级别使用 `choice` / `noul` 进行细粒度违规检测，并将结构化违规结果输出给下游 AI agent 自动化修复。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "coding-agents",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Rule-based CLI and agent skill that evaluates text and markdown files against custom rulesets for AI slop, grammar, and technical doc quality using Jev scores and line-by-line violation flags, then guides an AI agent to auto-fix violations.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-20T07:12:51Z",
+    "lastCommitAt": "2026-09-20T13:48:21Z",
+    "headSha": "aedb334961fd201d958a7dbfc3a0ba09c8c8c99d",
+    "metadataFetchedAt": "2026-09-20T13:53:29.863Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/292363?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T13:53:29.863Z",
+    "evidence": [
+      {
+        "url": "https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/src/providers/jev.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "aedb334961fd201d958a7dbfc3a0ba09c8c8c99d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/README.md",
+          "hash": "b6a6402e4f59029d0eaf6203bda95d1f2f52287841bb14a20e61bee4f4a5ba16"
+        },
+        {
+          "path": "src/providers/jev.test.ts",
+          "url": "https://github.com/lukstei/slop-grader/blob/aedb334961fd201d958a7dbfc3a0ba09c8c8c99d/src/providers/jev.test.ts",
+          "hash": "cff3842a6b82e7ddcfe1e7863435dd64023e9578fcff0a6779a7ad42e5c6f34b"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 37,
+      "issueBodySha256": "efbfcb28cf07e738c5b10888826db1ae51b487164816c71e92c08cf365e89e7a",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/37"
+    }
   }
 ]
