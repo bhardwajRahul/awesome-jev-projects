@@ -31954,5 +31954,134 @@
       "issueBodySha256": "7181c0a19e226bcc698115fb8cb53f26115caca4795668e57d8005427c11eb43",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/29"
     }
+  },
+  {
+    "id": "socai-io:jev-social",
+    "name": "jev-social",
+    "author": "socai-io",
+    "url": "https://github.com/socai-io/jev-social",
+    "repoId": 1376303804,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "该项目由 Jev 逐步选择 Instagram、TikTok 和 LinkedIn 的搜索、打开主页或帖子、读取评论及下载视频等操作，并由 socai 在真实浏览器中执行后整理成带引用的报告。",
+    "jevDecisionPoint": "Jev 在每一步从具体只读操作候选中选择平台路由和下一个要执行的搜索/打开/读取/下载或结束操作。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Jev-powered Instagram, TikTok, and LinkedIn research: typed routing, real browser evidence, streamed post cards, video capture, and cited socai reports.",
+    "stars": 9,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-18T18:48:15Z",
+    "lastCommitAt": "2026-09-20T03:30:11Z",
+    "headSha": "cde1ff8fe5793421fcedf7a78d34015fb28ca85f",
+    "metadataFetchedAt": "2026-09-20T03:39:35.565Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/291013799?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T03:39:35.565Z",
+    "evidence": [
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/bin/jev-social.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/public/app.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/actions.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/app.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/classifier.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/config.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/env.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/errors.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "cde1ff8fe5793421fcedf7a78d34015fb28ca85f",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/README.md",
+          "hash": "6417a4aeeb0eac80f4761c1d7bad135ad3919bde649b30ef248c5e3e4ef8e810"
+        },
+        {
+          "path": "bin/jev-social.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/bin/jev-social.js",
+          "hash": "a7b2357bf4e887f7d29d09ff665d9c3e22455b21f5ccfcd868e472ced6f32202"
+        },
+        {
+          "path": "public/app.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/public/app.js",
+          "hash": "1ddb4840fc65f866dd11dca3478030654e17f199ea2773c3a34f7921c59c5544"
+        },
+        {
+          "path": "src/actions.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/actions.js",
+          "hash": "9465784b1e68d64f0e1142582e743a265f839ff682dec7d68b28f057c60ace78"
+        },
+        {
+          "path": "src/app.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/app.js",
+          "hash": "2554cfecae354498b0b1c467a0d40a690d477fbf4907765aaaf445b9eb52753f"
+        },
+        {
+          "path": "src/classifier.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/classifier.js",
+          "hash": "c802e214cab67ef5e47f9943e105fcdaacddd92bd590e82c9de792506cd17377"
+        },
+        {
+          "path": "src/config.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/config.js",
+          "hash": "f6b8ef90a10276e0f31316edb480b5b66654e1e3f1aff0a038dfda8e27ab95e5"
+        },
+        {
+          "path": "src/env.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/env.js",
+          "hash": "9bc51e2b94e644e134991bac282e1f8f96b8186b2f30369d5d36edbb3c49e046"
+        },
+        {
+          "path": "src/errors.js",
+          "url": "https://github.com/socai-io/jev-social/blob/cde1ff8fe5793421fcedf7a78d34015fb28ca85f/src/errors.js",
+          "hash": "022037899239f17ddb1c71af4e726db104b3449969be4c5827c4c9f77a992127"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 30,
+      "issueBodySha256": "e1782734d4194ba57680e854606099b84130ece8968af75b6f2178137c62b5b3",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/30"
+    }
   }
 ]
