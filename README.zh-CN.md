@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-333%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-334%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@
 **TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：
 - ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
-- 🛡️ **严格拒绝概念炒作**：全网严选 **333+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
+- 🛡️ **严格拒绝概念炒作**：全网严选 **334+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
 ### 📊 架构分工对比：System 1 (Jev) vs System 2 (大推理模型)
 
@@ -50,7 +50,7 @@
 - ⚡ **毫秒级吸顶搜索与浮动过滤**：即便页面下滑，也可随时唤出浮动分类面板，支持多标签一键点选过滤。
 - 🔍 **100% 绑定固定源码**：所有收录项目均核验真实 commit SHA 与具体接入点，绝无空气包装与死链。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **333 个精选项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **334 个精选项目**
 
 由社区维护的 Jev 项目与架构雷达，收录具有公开源码与清晰集成逻辑的开源项目，帮助开发者快速探索和落地 System-1 决策架构。
 
@@ -85,7 +85,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [代码与图谱 (11)](https://logicrw.github.io/awesome-jev-projects/categories/codebase-graph-pathfinding/)
 - [上下文与记忆 (20)](https://logicrw.github.io/awesome-jev-projects/categories/context-gc-filter/)
 - [音乐与界面创作 (11)](https://logicrw.github.io/awesome-jev-projects/categories/creative-tools/)
-- [数据与搜索 (17)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
+- [数据与搜索 (18)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
 - [决策工具 (12)](https://logicrw.github.io/awesome-jev-projects/categories/decision-tools/)
 - [行业应用 (22)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
@@ -621,6 +621,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 每篇文档一个 Noul 相关度；超长列表再切批并发请求，结果可按阈值丢掉或按分数排序。
   - **这个项目的用途**: 用概率当阈值或排序键，不必再接一个生成式重排器。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hev/reranker/) · 许可证: Apache-2.0
+
+- [**jselect**](https://github.com/keltokhy/jselect) — jselect 根据任务挑选带来源引用的原文片段，并用 Jev 判断相关性，在 Token 预算内组装可直接供 Agent 阅读的上下文。
+  - **Jev 在哪一步做判断**: Jev 对每个文本片段做出 Noul 二元判断，决定其是否为当前任务的有用证据。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/keltokhy/jselect/) · 许可证: MIT
 
 - [**llama-index-jev**](https://github.com/WiktorB2004/llama-index-jev) — 为 LlamaIndex 提供 Jev 重排序器和路由器，给检索片段评分或选择查询工具。
   - **Jev 在哪一步做判断**: 用 Score 给候选片段评相关性，用 Choice 选择查询引擎或工具。

@@ -33764,5 +33764,72 @@
       "issueBodySha256": "b0bec4a360feb2bbf893751e469e3146ded5801d575e45f63d021af3297cb505",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/39"
     }
+  },
+  {
+    "id": "keltokhy:jselect",
+    "name": "jselect",
+    "author": "keltokhy",
+    "url": "https://github.com/keltokhy/jselect",
+    "repoId": 1377542063,
+    "category": "Data & Search",
+    "plainSummary": "jselect 根据任务挑选带来源引用的原文片段，并用 Jev 判断相关性，在 Token 预算内组装可直接供 Agent 阅读的上下文。",
+    "jevDecisionPoint": "Jev 对每个文本片段做出 Noul 二元判断，决定其是否为当前任务的有用证据。",
+    "jevDecisionPointEn": "Jev judges whether each passage is useful evidence for the supplied task; local code selects verbatim passages and citations within the token budget.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "context-compaction",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Selects source-linked evidence within a token budget using Jev Noul relevance judgments and local diversity-aware selection.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T19:28:43Z",
+    "lastCommitAt": "2026-09-20T15:44:34Z",
+    "headSha": "460b217110a6fa2f3546813f1dc4f77b062e82cd",
+    "metadataFetchedAt": "2026-09-20T15:53:25.919Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/83777601?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T15:53:25.920Z",
+    "evidence": [
+      {
+        "url": "https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/src/jselect/judge.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "460b217110a6fa2f3546813f1dc4f77b062e82cd",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/README.md",
+          "hash": "52c6b8049547913d8361d948900705df1f7b870902d6fff7927779c5540e84d4"
+        },
+        {
+          "path": "src/jselect/judge.py",
+          "url": "https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/src/jselect/judge.py",
+          "hash": "ff34877b18ed390298bb12c0618d7e79a2769ae1b8f6011d5af37d45abd3ae34"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 40,
+      "issueBodySha256": "0fa7c898a9fa19175fb304e2bb21666bcbde3c8315822f1bac0bdd20240b9443",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/40"
+    }
   }
 ]

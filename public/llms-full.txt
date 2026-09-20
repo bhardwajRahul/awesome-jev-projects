@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 333
+Catalog entries: 334
 
 ## Install the Agent Skill
 
@@ -4969,3 +4969,17 @@ Soupbase is a bilingual Chinese-English Turtle Soup game where Jev judges player
 - Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/layout.tsx
 - Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/app/page.tsx
 - Source evidence: https://github.com/spoonnotfound/soupbase/blob/4e071a5a500f7db2a8ec4f5a3f99aa02a4c784aa/src/components/app.tsx
+
+## jselect
+
+Selects source-linked evidence within a token budget using Jev Noul relevance judgments and local diversity-aware selection.
+
+- Repository: https://github.com/keltokhy/jselect
+- Category: Data & Search
+- Jev decision: Jev judges whether each passage is useful evidence for the supplied task; local code selects verbatim passages and citations within the token budget.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/keltokhy/jselect/
+- Source evidence: https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/README.md
+- Source evidence: https://github.com/keltokhy/jselect/blob/460b217110a6fa2f3546813f1dc4f77b062e82cd/src/jselect/judge.py
