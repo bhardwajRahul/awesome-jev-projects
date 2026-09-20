@@ -46,11 +46,38 @@ export function createGitHubClient({
     const relative = mutationPath && parsed.pathname.startsWith(mutationPath)
       ? parsed.pathname.slice(mutationPath.length) : null;
     const sha = (value) => /^[a-f\d]{40}$/.test(value ?? "");
-    const safeTree = body?.tree?.length === 1 && body.tree[0].path === "src/data/projects.json" &&
-      body.tree[0].mode === "100644" && body.tree[0].type === "blob" &&
-      typeof body.tree[0].content === "string" && Buffer.byteLength(body.tree[0].content) <= 10_000_000 &&
-      !body.tree[0].sha && sha(body.base_tree);
+    const isAllowedTreePath = (p) => {
+      if (typeof p !== "string") return false;
+      if (p === "src/data/projects.json") return true;
+      if ([
+        "README.md", "README.zh-CN.md", "README.ja.md", "README.ko.md",
+        "public/banner.svg", "public/banner-zh.svg", "public/banner-ja.svg", "public/banner-ko.svg",
+        "public/llms.txt", "public/llms-full.txt", "public/sitemap.xml",
+      ].includes(p)) return true;
+      if (/^public\/avatars\/[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\.png$/i.test(p)) return true;
+      return false;
+    };
+    const isSafeEntry = (entry) => {
+      if (!entry || typeof entry !== "object") return false;
+      if (entry.mode !== "100644" || entry.type !== "blob") return false;
+      if (!isAllowedTreePath(entry.path)) return false;
+      if (entry.sha) {
+        return sha(entry.sha) && entry.content === undefined;
+      }
+      return typeof entry.content === "string" && Buffer.byteLength(entry.content) <= 10_000_000;
+    };
+    const safeTree = Array.isArray(body?.tree) &&
+      body.tree.length >= 1 && body.tree.length <= 100 &&
+      sha(body?.base_tree) &&
+      body.tree.some((e) => e?.path === "src/data/projects.json") &&
+      new Set(body.tree.map((e) => e?.path)).size === body.tree.length &&
+      body.tree.every(isSafeEntry);
+    const safeBlob = method === "POST" && relative === "git/blobs" &&
+      (body?.encoding === "base64" || body?.encoding === "utf-8") &&
+      typeof body?.content === "string" &&
+      Buffer.byteLength(body.content) <= 30_000_000;
     const allowedWrite = relative && !parsed.search && (
+      safeBlob ||
       (method === "POST" && relative === "git/trees" && safeTree) ||
       (method === "POST" && relative === "git/commits" && sha(body?.tree) &&
         body?.parents?.length === 1 && sha(body.parents[0])) ||

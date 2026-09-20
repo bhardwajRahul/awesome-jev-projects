@@ -360,3 +360,42 @@ test("Git object writes allow only one fixed JSON file and non-force main update
   await f.api("/repos/logicrw/test/git/refs/heads/main", { method: "PATCH", body: { sha, force: false } });
   assert.equal(f.calls.length, 3);
 });
+
+test("Git object writes allow bounded asset blobs and multi-asset tree entries", async () => {
+  const sha = "b".repeat(40);
+  const blobSha = "c".repeat(40);
+  const f = fixture([{}, {}], { writeRepository: "logicrw/test" });
+  await f.api("/repos/logicrw/test/git/blobs", {
+    method: "POST",
+    body: { encoding: "base64", content: Buffer.from("valid avatar content").toString("base64") },
+  });
+  await f.api("/repos/logicrw/test/git/trees", {
+    method: "POST",
+    body: {
+      base_tree: sha,
+      tree: [
+        { path: "src/data/projects.json", mode: "100644", type: "blob", content: "[]" },
+        { path: "README.md", mode: "100644", type: "blob", sha: blobSha },
+        { path: "public/avatars/kubet.png", mode: "100644", type: "blob", sha: blobSha },
+      ],
+    },
+  });
+  assert.equal(f.calls.length, 2);
+
+  // Rejects arbitrary unsafe path in tree
+  const unsafeTree = fixture([], { writeRepository: "logicrw/test" });
+  await assert.rejects(
+    unsafeTree.api("/repos/logicrw/test/git/trees", {
+      method: "POST",
+      body: {
+        base_tree: sha,
+        tree: [
+          { path: "src/data/projects.json", mode: "100644", type: "blob", content: "[]" },
+          { path: "scripts/evil.js", mode: "100644", type: "blob", sha: blobSha },
+        ],
+      },
+    }),
+    /write scope/,
+  );
+});
+
