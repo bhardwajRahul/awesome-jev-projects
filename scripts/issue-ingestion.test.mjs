@@ -1,6 +1,7 @@
 import test from "node:test";
 import { createSummaryEnricher } from "./source-enrichment.mjs";
 import assert from "node:assert/strict";
+import { assetDigest, DERIVED_DOCUMENTS } from "./ingestion-assets.mjs";
 import {
   prepareSubmission,
   publishSubmission,
@@ -62,6 +63,7 @@ const fallback = {
 };
 const project = {
   id: "example:jev-tool",
+  author: "example",
   url: "https://github.com/example/jev-tool",
   repoId: 42,
   ingestion: {
@@ -75,6 +77,13 @@ const contents = (rows) => ({
   encoding: "base64",
   content: Buffer.from(JSON.stringify(rows)).toString("base64"),
 });
+function assetBundleFor(rows) {
+  return {
+    version: 1, reviewedSourceSha: sha,
+    candidateSha256: assetDigest(JSON.stringify(rows, null, 2) + "\n"),
+    files: DERIVED_DOCUMENTS.map((path) => ({ path, content: Buffer.from(path.endsWith(".svg") ? '<svg xmlns="http://www.w3.org/2000/svg"></svg>\n' : "generated document\n").toString("base64") })),
+  };
+}
 
 test("non-submissions, ambiguous URLs, and duplicate projects never reach AI", async () => {
   let calls = 0;
@@ -154,7 +163,7 @@ test("verified ingestion fixes repository identity and retains immutable evidenc
     enrich: async (input) => {
       assert.equal(input.issueTrusted, true);
       assert.equal(input.issueBody, issue.body);
-      return fallback;
+      return { ...fallback, enrichment: { internal: "provider diagnostic" } };
     },
     now: () => "2026-09-18T00:00:00Z",
   });
@@ -165,8 +174,9 @@ test("verified ingestion fixes repository identity and retains immutable evidenc
   assert.equal(result.project.ingestion.issueBodySha256, bodyHash(issue.body));
   assert.equal(result.project.sourceVerification.sha, sha);
   assert.equal(result.project.plainSummary, fallback.plainSummary);
+  assert.equal(Object.hasOwn(result.project, "enrichment"), false);
 });
-function publisher({ rows = [], head = sha, afterTree, onRef, large = false } = {}) {
+function publisher({ rows = [], head = sha, afterTree, onRef, large = false, assets = assetBundleFor([...rows, project]) } = {}) {
   const calls = [];
   const preparedCommit = "c".repeat(40);
   let currentHead = head;
@@ -180,13 +190,20 @@ function publisher({ rows = [], head = sha, afterTree, onRef, large = false } = 
       return large ? { sha: "immutable-blob", encoding: "none", size: 1_100_000 } : contents(rows);
     }
     if (path.includes("/git/blobs/")) return contents(rows);
+    if (path.endsWith("/git/blobs")) {
+      assert.equal(options.method, "POST");
+      assert.equal(options.body.encoding, "base64");
+      return { sha: "f".repeat(40) };
+    }
     if (path.endsWith(`/git/commits/${sha}`)) return { tree: { sha: "b".repeat(40) } };
     if (path.endsWith("/git/trees")) {
       assert.equal(options.method, "POST");
       assert.equal(options.body.base_tree, "b".repeat(40));
-      assert.equal(options.body.tree.length, 1);
+      assert.equal(options.body.tree.length, 1 + assets.files.length);
       assert.equal(options.body.tree[0].path, "src/data/projects.json");
       assert.deepEqual(JSON.parse(options.body.tree[0].content), [...rows, project]);
+      assert.deepEqual(options.body.tree.slice(1).map(({ path }) => path), assets.files.map(({ path }) => path));
+      assert.ok(options.body.tree.slice(1).every(({ sha: blob, mode, type }) => blob === "f".repeat(40) && mode === "100644" && type === "blob"));
       if (afterTree) currentHead = afterTree;
       return { sha: "d".repeat(40) };
     }
@@ -205,13 +222,29 @@ function publisher({ rows = [], head = sha, afterTree, onRef, large = false } = 
     }
     assert.fail(`Unexpected request ${path}`);
   };
-  return { api, calls, preparedCommit, run: () => publishSubmission({ api, repository, project, reviewedSourceSha: sha }) };
+  return { api, calls, preparedCommit, run: () => publishSubmission({ api, repository, project, reviewedSourceSha: sha, assetBundle: assets }) };
 }
 test("publication preserves the reviewed snapshot and atomically advances only its parent", async () => {
   const other = { id: "other:repo", url: "https://github.com/other/repo" };
   const f = publisher({ rows: [other] });
   assert.deepEqual(await f.run(), { status: "ingested", changed: true, commit: f.preparedCommit });
   assert.equal(f.calls.filter((c) => c.path.endsWith("/git/refs/heads/main")).length, 1);
+  assert.deepEqual(f.calls.filter((call) => call.path.endsWith("/git/blobs")).map(({ body }) => body.content), assetBundleFor([other, project]).files.map(({ content }) => content));
+});
+test("binary avatars are included with the validated docs and dataset in the same atomic tree", async () => {
+  const assets = assetBundleFor([project]);
+  const avatar = Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), Buffer.alloc(240)]).toString("base64");
+  assets.files.push({ path: "public/avatars/example.png", content: avatar });
+  const f = publisher({ assets });
+  assert.equal((await f.run()).status, "ingested");
+  assert.equal(f.calls.filter((call) => call.path.endsWith("/git/blobs")).at(-1).body.content, avatar);
+});
+test("publication rejects missing or differently validated assets before creating any object", async () => {
+  for (const assets of [null, assetBundleFor([]), { ...assetBundleFor([project]), reviewedSourceSha: "e".repeat(40) }]) {
+    const f = publisher({ assets });
+    await assert.rejects(f.run(), /Validated assets/);
+    assert.equal(f.calls.filter((call) => call.method).length, 0);
+  }
 });
 test("a code or schema commit after review blocks publication before every mutation", async () => {
   const f = publisher({ head: "e".repeat(40) });
@@ -530,4 +563,3 @@ test("prepareSubmission fast-rejects structural issues with needsEvidence false 
   assert.equal(result.needsEvidence, false);
   assert.equal(reviewerCalls, 0);
 });
-

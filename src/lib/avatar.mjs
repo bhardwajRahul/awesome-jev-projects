@@ -16,7 +16,8 @@ export function isSafeAvatarUrl(url) {
   if (typeof url !== "string" || !url) return false;
   try {
     const parsed = new URL(url);
-    return parsed.protocol === "https:" && parsed.hostname === "avatars.githubusercontent.com";
+    return parsed.protocol === "https:" && parsed.hostname === "avatars.githubusercontent.com"
+      && !parsed.username && !parsed.password && !parsed.port;
   } catch {
     return false;
   }

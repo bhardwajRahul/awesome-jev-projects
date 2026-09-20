@@ -16,6 +16,7 @@ import {
   createSubmissionReviewer,
 } from "./source-enrichment.mjs";
 import { summarize, verifyIntegration, atomicJSON } from "./radar-sync.mjs";
+import { readAssetBundle, validateAssetBundle } from "./ingestion-assets.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const SITE_URL = "https://logicrw.github.io/awesome-jev-projects/";
 export const bodyHash = (body) =>
@@ -219,7 +220,9 @@ export async function prepareSubmission({
   if (reviewVerdict?.plainSummaryEn) {
     baseSummary.plainSummaryEn = reviewVerdict.plainSummaryEn;
   }
-  const editorial = await enrich({
+  // Provider diagnostics are not canonical project data. Strip them before the
+  // candidate is persisted so review, validation and publication use identical bytes.
+  const { enrichment: _enrichment, ...editorial } = await enrich({
     repo,
     readme,
     issueBody: issue.body ?? "",
@@ -303,6 +306,7 @@ export async function publishSubmission({
   repository,
   project,
   reviewedSourceSha,
+  assetBundle,
   maxAttempts = 4,
 }) {
   requireOwner(repository);
@@ -365,15 +369,26 @@ export async function publishSubmission({
           existing.ingestion.issueBodySha256 === ingestion.issueBodySha256;
         return { status: own ? "ingested" : "duplicate", changed: false };
       }
+      const candidateContent = JSON.stringify([...current, project], null, 2) + "\n";
+      const assets = validateAssetBundle(assetBundle, { reviewedSourceSha, candidateContent });
       const base = await api(`/repos/${repository}/git/commits/${reviewedSourceSha}`);
       if (!/^[a-f\d]{40}$/.test(base.tree?.sha ?? ""))
         throw new Error("Reviewed commit has no valid tree");
+      const assetEntries = [];
+      for (const { path, bytes } of assets) {
+        // Base64 blobs preserve the exact validated bytes, including binary avatars.
+        const blob = await api(`/repos/${repository}/git/blobs`, {
+          method: "POST", body: { encoding: "base64", content: bytes.toString("base64") },
+        });
+        if (!/^[a-f\d]{40}$/.test(blob.sha ?? "")) throw new Error("Invalid prepared asset blob SHA");
+        assetEntries.push({ path, mode: "100644", type: "blob", sha: blob.sha });
+      }
       const tree = await api(`/repos/${repository}/git/trees`, {
         method: "POST",
         body: {
           base_tree: base.tree.sha,
           tree: [{ path: "src/data/projects.json", mode: "100644", type: "blob",
-            content: JSON.stringify([...current, project], null, 2) + "\n" }],
+            content: candidateContent }, ...assetEntries],
         },
       });
       if (!/^[a-f\d]{40}$/.test(tree.sha ?? "")) throw new Error("Invalid prepared tree SHA");
@@ -633,11 +648,17 @@ async function main() {
       throw new Error("No validated prepared project");
     if (prepared.reviewedSourceSha !== process.env.INGEST_REVIEWED_SHA)
       throw new Error("Immutable receipt does not match the reviewed source SHA");
+    if (!process.env.INGEST_ASSET_FILE) throw new Error("Validated ingestion assets are required");
+    const candidateContent = await readFile(resolve(dirname(resultPath), "candidate-projects.json"), "utf8");
+    const assetBundle = await readAssetBundle(process.env.INGEST_ASSET_FILE, {
+      reviewedSourceSha: prepared.reviewedSourceSha, candidateContent,
+    });
     const result = await publishSubmission({
       api,
       repository,
       project: prepared.project,
       reviewedSourceSha: prepared.reviewedSourceSha,
+      assetBundle,
     });
     await atomicJSON(resultPath, { ...prepared, publication: result });
     await output({

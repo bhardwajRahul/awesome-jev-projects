@@ -9,6 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "radar": "node scripts/radar-sync.mjs",
     "test": "node --test scripts/*.test.mjs",
+    "pretest": "node scripts/prepare-public-data.mjs && node scripts/generate-readme.mjs",
     "predev": "node scripts/prepare-public-data.mjs && node scripts/generate-readme.mjs",
     "prebuild": "node scripts/prepare-public-data.mjs && node scripts/generate-readme.mjs",
     "sync:avatars": "node scripts/sync-avatars.mjs",

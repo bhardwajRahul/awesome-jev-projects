@@ -94,6 +94,8 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      artifact_id: ${{ steps.assets.outputs.artifact-id }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -109,8 +111,24 @@ jobs:
           merge-multiple: true
       - run: node scripts/workflow-data.mjs ingestion "$RUNNER_TEMP/candidate"
       - run: npm ci --ignore-scripts --no-fund --no-audit
-      - name: Validate candidate data and website
-        run: npm test && npm run build
+      - name: Validate candidate data and website with MOS self-healing
+        run: node scripts/mos-self-heal.mjs validate
+        env:
+          MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
+          MUSE_ENDPOINT: ${{ secrets.MUSE_ENDPOINT || vars.MUSE_ENDPOINT || '' }}
+          MUSE_MODEL: ${{ secrets.MUSE_MODEL || vars.MUSE_MODEL || '' }}
+      - name: Bind validated derived assets to the immutable candidate
+        run: node scripts/ingestion-assets.mjs "$RUNNER_TEMP/candidate/candidate-projects.json" "$RUNNER_TEMP/validated-assets/ingestion-assets.json"
+        env:
+          INGEST_REVIEWED_SHA: ${{ needs.review.outputs.source_sha }}
+      - name: Retain validated data-only assets
+        id: assets
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: issue-ingestion-assets-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/validated-assets/ingestion-assets.json
+          if-no-files-found: error
+          retention-days: 14
   publish:
     outputs:
       retry: ${{ steps.publish.outputs.retry }}
@@ -131,18 +149,25 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
-      # IDs come directly from review; validation cannot replace its immutable artifact.
+      # The original review remains canonical authority; validation supplies only bounded assets.
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           artifact-ids: ${{ needs.review.outputs.artifact_id }}
           path: ${{ runner.temp }}/candidate
           merge-multiple: true
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          artifact-ids: ${{ needs.validate.outputs.artifact_id }}
+          path: ${{ runner.temp }}/validated-assets
+          merge-multiple: true
+      # Node built-ins only. No dependency execution or regeneration in this write-enabled job.
       - name: Append through an atomic main-branch commit
         id: publish
         run: node scripts/issue-ingestion.mjs publish
         env:
           GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           INGEST_RESULT_FILE: ${{ runner.temp }}/candidate/ingestion-result.json
+          INGEST_ASSET_FILE: ${{ runner.temp }}/validated-assets/ingestion-assets.json
           INGEST_REVIEWED_SHA: ${{ needs.review.outputs.source_sha }}
           INGEST_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
   record-retry:
@@ -194,4 +219,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RADAR_GITHUB_TOKEN || github.token }}
           INGEST_RESULT_FILE: ${{ runner.temp }}/candidate/ingestion-result.json
 # The Pages workflow reconciles accepted Issues only after live deployment.
-
