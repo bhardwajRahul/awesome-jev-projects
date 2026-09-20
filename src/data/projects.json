@@ -33568,5 +33568,72 @@
       "issueBodySha256": "2d206b56fba37e72c0cdf0af205eb3c6fd5583953e5dfd5e5f053518607aec56",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/34"
     }
+  },
+  {
+    "id": "patrick-sch03:jev-issue-radar",
+    "name": "jev-issue-radar",
+    "author": "Patrick-SCH03",
+    "url": "https://github.com/Patrick-SCH03/jev-issue-radar",
+    "repoId": 1378404944,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "Jev Issue Radar 是一个只读的 GitHub 重复问题分类看板，它检索候选问题并用 Jev 的 Choice 将每对问题判为重复、相关、不同或信息不足，同时并排展示双方原始报告中的选中段落供维护者审查。",
+    "jevDecisionPoint": "对每对原始问题与候选问题判定重复、相关、不同或信息不足，并选择原因类别与双方原文证据行ID。",
+    "jevDecisionPointEn": "The app never closes issues, posts comments, or changes labels. Retrieval is currently lexical and bounded to a recent-item scan; this limitation is explicit in the UI and README.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "domain-workflows",
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Jev Issue Radar is a read-only dashboard for GitHub duplicate-issue triage. It retrieves likely candidates, asks Jev whether each pair is duplicate, related, distinct, or insufficiently documented, and shows selected passages from both original reports for a maintainer to review.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T14:10:07Z",
+    "lastCommitAt": "2026-09-20T14:12:45Z",
+    "headSha": "6ea5391aa229ce77466774d2ee6af1abb631bb7a",
+    "metadataFetchedAt": "2026-09-20T14:16:44.234Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/191001608?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T14:16:44.234Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/lib/jev.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "6ea5391aa229ce77466774d2ee6af1abb631bb7a",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/README.md",
+          "hash": "82f82f1d34b187c136470d2af35e2e1958a1cf7b26cb37d01e4291b1e3b3ca82"
+        },
+        {
+          "path": "lib/jev.mjs",
+          "url": "https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/lib/jev.mjs",
+          "hash": "587d993479c4d4423c56fcc7fe3adf7766adf8f45c7db65bb0b5f5c7e195d452"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 38,
+      "issueBodySha256": "b4b88fae92d1b379246edcbcfbaaba2c806dd2b849fb59e11f4359b8b729e08f",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/38"
+    }
   }
 ]

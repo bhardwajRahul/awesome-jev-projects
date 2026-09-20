@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 331
+Catalog entries: 332
 
 ## Install the Agent Skill
 
@@ -4934,3 +4934,17 @@ An automated research paper radar that fetches the latest papers from arXiv, eva
 - Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/cli.py
 - Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/config.py
 - Source evidence: https://github.com/LYchoon/paper-radar-jev/blob/fbadf01c69806730eb157bdc97f662a38b522593/src/paper_radar/evaluator.py
+
+## jev-issue-radar
+
+Jev Issue Radar is a read-only dashboard for GitHub duplicate-issue triage. It retrieves likely candidates, asks Jev whether each pair is duplicate, related, distinct, or insufficiently documented, and shows selected passages from both original reports for a maintainer to review.
+
+- Repository: https://github.com/Patrick-SCH03/jev-issue-radar
+- Category: Domain & Vertical Tools
+- Jev decision: The app never closes issues, posts comments, or changes labels. Retrieval is currently lexical and bounded to a recent-item scan; this limitation is explicit in the UI and README.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/patrick-sch03/jev-issue-radar/
+- Source evidence: https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/README.md
+- Source evidence: https://github.com/Patrick-SCH03/jev-issue-radar/blob/6ea5391aa229ce77466774d2ee6af1abb631bb7a/lib/jev.mjs
