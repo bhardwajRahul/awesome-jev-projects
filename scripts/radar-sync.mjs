@@ -6,7 +6,10 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { createGitHubClient } from "./github-client.mjs";
-import { createSummaryEnricher } from "./source-enrichment.mjs";
+import {
+  createSummaryEnricher,
+  createSubmissionReviewer,
+} from "./source-enrichment.mjs";
 import { inspectRepository, hasOpenRouterJevSource } from "./project-source.mjs";
 
 /** Manual/editorial copy must survive metadata sync. Keep existing statuses; curated is the same class. */
@@ -104,6 +107,7 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
 }
 
 const enrichSummary = createSummaryEnricher();
+const reviewCandidate = createSubmissionReviewer();
 export async function enrichCandidateSummary(repo, readme, fallbackSummary) {
   return enrichSummary({ repo, readme, fallback: fallbackSummary });
 }
@@ -482,10 +486,62 @@ export async function main() {
       const nativeReadmes = inspection.readmeFiles;
       const sourceText =
         nativeReadmes.map((file) => file.text).join("\n\n") || readme;
+
+      // L2: MUSE API Review Gate — Evaluate if candidate genuinely integrates Jev primitives
+      const codeSources = (evidence.implementationFiles ?? []).filter(
+        (file) => !nativeReadmes.some((rf) => rf.path === file.path),
+      );
+      let reviewVerdict = null;
+      if (typeof reviewCandidate === "function" && repo) {
+        reviewVerdict = await reviewCandidate({
+          repo,
+          readme: sourceText,
+          codeSources,
+          issueBody: "",
+          issueTrusted: false,
+          taxonomy,
+        });
+      }
+
+      if (reviewVerdict && reviewVerdict.verified === false) {
+        receipts.push({
+          repo: full,
+          status: "rejected",
+          reason: reviewVerdict.reason || "MUSE 审查未通过：未发现有效的 Jev 原语决策调用",
+          reviewDetails: {
+            verified: false,
+            confidence: reviewVerdict.confidence,
+            reason: reviewVerdict.reason,
+          },
+        });
+        report.discovery.rejected++;
+        continue;
+      }
+
+      const baseSummary = summarize(repo, sourceText, taxonomy);
+      if (reviewVerdict?.category && taxonomy.some((t) => t.category === reviewVerdict.category)) {
+        baseSummary.category = reviewVerdict.category;
+      }
+      if (reviewVerdict?.tags?.length) {
+        baseSummary.tags = inferCanonicalTags({
+          category: baseSummary.category,
+          tags: reviewVerdict.tags,
+        });
+      }
+      if (reviewVerdict?.jevDecisionPoint) {
+        baseSummary.jevDecisionPoint = reviewVerdict.jevDecisionPoint;
+      }
+      if (reviewVerdict?.plainSummary) {
+        baseSummary.plainSummary = reviewVerdict.plainSummary;
+      }
+      if (reviewVerdict?.plainSummaryEn) {
+        baseSummary.plainSummaryEn = reviewVerdict.plainSummaryEn;
+      }
+
       const summary = await enrichCandidateSummary(
         repo,
         sourceText,
-        summarize(repo, sourceText, taxonomy),
+        baseSummary,
       );
       const sourceUrl = implementation.url;
       const project = {
