@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 328
+Catalog entries: 329
 
 ## Install the Agent Skill
 
@@ -4884,3 +4884,18 @@ Cost-aware LLM router that picks the cheapest model capable of handling a query,
 - Source evidence: https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/core/selection.ts
 - Source evidence: https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/index.ts
 - Source evidence: https://github.com/rajdhakad9826/jev-router/blob/9c332db56da87a559a1e18d0331c8fcb303b40fd/src/types.ts
+
+## ask-jev
+
+Ultra-fast, fail-open advisory decisions and verbatim extractive reading view for AI coding agents and CLI pipelines
+
+- Repository: https://github.com/logicrw/ask-jev
+- Category: CLI & Pipelines
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: GPL-3.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/logicrw/ask-jev/
+- Source evidence: https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/README.md
+- Source evidence: https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/ask_jev.py
+- Source evidence: https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/jev_context.py

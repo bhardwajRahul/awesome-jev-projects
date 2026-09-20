@@ -33295,5 +33295,81 @@
       "issueBodySha256": "57e6c9f0d854288dee9bc021d188ab5ab026ef6e6120034e3969561e3a2716c1",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/35"
     }
+  },
+  {
+    "id": "logicrw:ask-jev",
+    "name": "ask-jev",
+    "author": "logicrw",
+    "url": "https://github.com/logicrw/ask-jev",
+    "repoId": 1378258355,
+    "category": "CLI & Pipelines",
+    "plainSummary": "面向 AI 编程智能体与 CLI 管道的有界决策与原文提纯工具，硬性 280ms 时限，纯 Python 标准库零依赖，全链路 Fail-Open 优雅降级。",
+    "jevDecisionPoint": "决策说明：\n在 ask_decision 与 auto_mark_text 中调用 Jev 的 Choice 与 Noul 原语，执行快速语义裁决与物理行保真提纯。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "coding-agents",
+      "context-compaction"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Ultra-fast, fail-open advisory decisions and verbatim extractive reading view for AI coding agents and CLI pipelines",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "GPL-3.0",
+    "createdAt": "2026-09-20T11:23:53Z",
+    "lastCommitAt": "2026-09-20T11:31:13Z",
+    "headSha": "8485cf82dc2ed5e8b0950933384021fc116b00b6",
+    "metadataFetchedAt": "2026-09-20T11:44:40.272Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/34853455?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T11:44:40.272Z",
+    "evidence": [
+      {
+        "url": "https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/ask_jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/jev_context.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "8485cf82dc2ed5e8b0950933384021fc116b00b6",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/README.md",
+          "hash": "30a5c0740f4aaae5371b633d07a14b33265183ed8c9326089b35c2fd0d13d1e7"
+        },
+        {
+          "path": "scripts/ask_jev.py",
+          "url": "https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/ask_jev.py",
+          "hash": "a9d3553caa5c29464d34abd9c8788b276cc4a97da54c3192c2b49a3b11c2046d"
+        },
+        {
+          "path": "scripts/jev_context.py",
+          "url": "https://github.com/logicrw/ask-jev/blob/8485cf82dc2ed5e8b0950933384021fc116b00b6/scripts/jev_context.py",
+          "hash": "db8d12579085ca79037ee91f79726c1e1688a4cb6a645b910a4fbb9ff2a8210d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 36,
+      "issueBodySha256": "ac4ff3937ba96ef756470e2a87a856f272e6d0f1bf4b5499f793b79068a6b634",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/36"
+    }
   }
 ]
