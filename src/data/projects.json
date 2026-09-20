@@ -33081,5 +33081,99 @@
         }
       ]
     }
+  },
+  {
+    "id": "kubet:azdaja",
+    "name": "azdaja",
+    "author": "kubet",
+    "url": "https://github.com/kubet/azdaja",
+    "repoId": 1331422547,
+    "category": "Context GC & Filter",
+    "plainSummary": "Azdaja 是与 harness 无关的递归语言模型层，将完整资料保存在本地求值器中并只对选定内容做语义递归，可配合 Jev 进行类型化语义判断。",
+    "jevDecisionPoint": "Jev 对选定的源码窗口就显式问题返回Noul/Choice/Score概率，供RLM决定下一步检查、合并或探索的内容。",
+    "jevDecisionPointEn": "Jev receives selected source material and explicit questions. It can rank passages, classify records, assess whether evidence supports a claim and judge whether records match for semantic joins. Its returned probabilities let the RLM compare results and decide what to inspect, combine or explore next.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "cli-git-gates",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Bare, open-source RLM layer for existing coding agents",
+    "stars": 6,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-08-11T23:07:02Z",
+    "lastCommitAt": "2026-09-19T11:00:45Z",
+    "headSha": "0ac5f0de0c99a5db0d32fa8691dbf08c14663923",
+    "metadataFetchedAt": "2026-09-20T11:34:37.850Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/41026612?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-20T11:34:37.850Z",
+    "evidence": [
+      {
+        "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/examples/jev_batch_review.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/examples/jev_review_queue.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/src/judge_batch.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/src/judge.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "0ac5f0de0c99a5db0d32fa8691dbf08c14663923",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/README.md",
+          "hash": "2c162ca033b62bd4b928324ebbc4585467a3b0f557a0ae2509b62d7f84345091"
+        },
+        {
+          "path": "examples/jev_batch_review.py",
+          "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/examples/jev_batch_review.py",
+          "hash": "234492a4a08c5df0ae5bc6a1ba4e08023196a91afcac47de72c7743c3f0c3d2d"
+        },
+        {
+          "path": "examples/jev_review_queue.py",
+          "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/examples/jev_review_queue.py",
+          "hash": "efb33ab3698bc5f56bf268321e485750fac3823eaafa5c078f603b9c5673b3d1"
+        },
+        {
+          "path": "src/judge_batch.rs",
+          "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/src/judge_batch.rs",
+          "hash": "f7bdf72afda8bfb9e898260acc96b6f762d90b98ff9d9748c6c5a670efa2ebce"
+        },
+        {
+          "path": "src/judge.rs",
+          "url": "https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/src/judge.rs",
+          "hash": "b9128b26a07db112784c0cfd67f41292fc62baf8aa4e2002ff5f49814b40fd08"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 33,
+      "issueBodySha256": "cbbd4afd7a7e6f48fe8b170a0a96cba2f9b40587f6020120728ce21efaacd037",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/33"
+    }
   }
 ]

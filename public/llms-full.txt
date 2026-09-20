@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 326
+Catalog entries: 327
 
 ## Install the Agent Skill
 
@@ -4847,3 +4847,20 @@ SQLite C extension enabling TypeSafe Jev judgments as native SQL functions for s
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/mattn/sqlite3-jev/
 - Source evidence: https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/README.md
 - Source evidence: https://github.com/mattn/sqlite3-jev/blob/2172600da148182703f8f221089d9304d0fb97f9/jev.c
+
+## azdaja
+
+Bare, open-source RLM layer for existing coding agents
+
+- Repository: https://github.com/kubet/azdaja
+- Category: Context GC & Filter
+- Jev decision: Jev receives selected source material and explicit questions. It can rank passages, classify records, assess whether evidence supports a claim and judge whether records match for semantic joins. Its returned probabilities let the RLM compare results and decide what to inspect, combine or explore next.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/kubet/azdaja/
+- Source evidence: https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/README.md
+- Source evidence: https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/examples/jev_batch_review.py
+- Source evidence: https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/examples/jev_review_queue.py
+- Source evidence: https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/src/judge_batch.rs
+- Source evidence: https://github.com/kubet/azdaja/blob/0ac5f0de0c99a5db0d32fa8691dbf08c14663923/src/judge.rs
