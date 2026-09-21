@@ -1,215 +1,437 @@
-.card-dispenser {
-  position: relative; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto auto; justify-items: center;
-  width: 100%; min-width: 0; min-height: 268px; padding: 16px 20px 18px; overflow: hidden;
-  border: 1px solid var(--border-strong); border-radius: 18px; color: var(--text);
-  background: linear-gradient(160deg, var(--metal-top, var(--surface-raised)) 0%, var(--surface) 60%, var(--metal-bottom, var(--surface-inset)) 100%);
-  box-shadow: 0 1px 0 var(--material-edge, rgba(255, 255, 255, 0.08)) inset, 0 4px 20px -4px color-mix(in srgb, var(--night-canvas, #000) 18%, transparent), 0 2px 6px color-mix(in srgb, var(--night-canvas, #000) 10%, transparent);
-  cursor: pointer; text-align: left;
-  transform: translateY(0); transition: transform 140ms ease-out, box-shadow 180ms ease-out, border-color 180ms ease-out;
-}
-.card-dispenser::before {
-  content: ""; position: absolute; inset: 5px; z-index: -1; pointer-events: none;
-  border: 1px solid var(--material-edge, var(--surface-raised)); border-bottom-color: var(--border-strong); border-radius: 14px;
-}
-.card-dispenser:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; box-shadow: var(--shadow-material-hover, var(--shadow-hover)); }
+/* ==========================================================================
+   Modern Neo-Swiss Flat + Y2K Holographic Card Dispenser
+   Clean hairline geometry, high-contrast typography, and rainbow chrome foil.
+   ========================================================================== */
 
-/* Header plate */
-.cd-plate { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; color: var(--text-muted); font: 9.5px/1.4 var(--mono, ui-monospace, monospace); letter-spacing: .055em; }
-.cd-plate > span:first-child { padding: 4px 7px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface-inset); box-shadow: inset 0 1px 2px color-mix(in srgb, var(--night-canvas) 12%, transparent); }
-.cd-plate-divider { padding: 0 3px; color: var(--brass); }
+.card-dispenser {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  justify-items: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 268px;
+  padding: 16px 20px 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  text-align: left;
+  transform: translateY(0);
+  transition: transform 160ms var(--motion-ease), box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card-dispenser:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Header plate: Neo-Swiss technical precision bar */
+.cd-plate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  color: var(--text-muted);
+  font: 10px/1.4 var(--mono, ui-monospace, monospace);
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+.cd-plate > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface-raised);
+  font-weight: 550;
+  color: var(--text);
+}
+.cd-plate-divider {
+  padding: 0 2px;
+  color: var(--text-quiet);
+  opacity: .6;
+}
 .cd-led {
   position: relative;
   flex: 0 0 8px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--accent), var(--accent-text));
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.55), 0 0 0 1.5px var(--border-strong), 0 0 0 3px var(--surface-inset);
+  background: var(--accent-text);
+  box-shadow: 0 0 0 1.5px var(--border-strong);
 }
 .cd-led::after {
   content: "";
   position: absolute;
-  inset: -3px;
+  inset: -2px;
   border-radius: inherit;
-  background: radial-gradient(circle, var(--accent) 25%, transparent 72%);
-  opacity: .5;
-  animation: cd-led-breathe 3.2s ease-in-out infinite;
+  background: radial-gradient(circle, var(--accent) 30%, transparent 72%);
+  opacity: .6;
+  animation: cd-led-breathe 2.8s ease-in-out infinite;
 }
 
-/* Stage & Feed slot */
-.cd-stage { position: relative; display: grid; place-items: center; width: min(100%, 286px); min-height: 148px; perspective: 1000px; }
-.cd-feed { position: absolute; inset: auto 12px 14px; height: 22px; border: 1px solid var(--border-strong); border-radius: 999px; background: var(--night-canvas); box-shadow: inset 0 4px 10px color-mix(in srgb, black 65%, transparent), 0 1px 2px color-mix(in srgb, white 8%, transparent); }
-.cd-feed-lip { position: absolute; inset: 2px 6px auto; height: 3px; border-radius: 2px; background: color-mix(in srgb, var(--accent) 30%, transparent); opacity: .6; }
+/* Stage & Minimal Feed Guide */
+.cd-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 286px);
+  min-height: 146px;
+  perspective: 900px;
+}
+.cd-feed {
+  position: absolute;
+  inset: auto 16px 14px;
+  height: 16px;
+  border: 1px dashed var(--border);
+  border-radius: 999px;
+  background: var(--surface-inset);
+  opacity: .75;
+}
+.cd-feed-lip {
+  position: absolute;
+  inset: 2px 8px auto;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border-strong);
+  opacity: .5;
+}
 
-/* Card Deck */
-.cd-deck { position: relative; width: 200px; height: 126px; margin-bottom: 4px; transform: rotateX(12deg); transform-style: preserve-3d; perspective: 600px; }
-.cd-card { position: absolute; inset: 0; border: 1px solid var(--border-strong); border-radius: 11px; transform-origin: 50% 90%; box-shadow: inset 0 1px 0 color-mix(in srgb, white 25%, transparent), 0 2px 6px color-mix(in srgb, var(--night-canvas) 14%, transparent), 0 10px 24px -3px color-mix(in srgb, var(--night-canvas) 24%, transparent); transition: transform 420ms cubic-bezier(.2, 1.4, .4, 1), box-shadow 360ms ease-out; }
+/* Card Deck: Isometric paper stack */
+.cd-deck {
+  position: relative;
+  width: 204px;
+  height: 128px;
+  margin-bottom: 4px;
+  transform: rotateX(10deg);
+  transform-style: preserve-3d;
+  perspective: 600px;
+}
+.cd-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  transform-origin: 50% 90%;
+  transition: transform 380ms cubic-bezier(.16, 1.3, .3, 1), box-shadow 300ms ease;
+}
 
-/* Back cards: Dark-tech geometric card-back texture */
+/* Back cards: Swiss geometric grid patterns */
 .cd-back {
-  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 15%, var(--surface-inset)), var(--surface-inset) 85%);
-  transform: translate(-24px, -4px) rotate(-11deg);
+  background: var(--surface-inset);
+  border: 1.5px solid var(--border-strong);
+  box-shadow: 0 4px 12px -2px color-mix(in srgb, var(--night-canvas) 12%, transparent);
+  transform: translate(-22px, -4px) rotate(-10deg);
   overflow: hidden;
 }
 .cd-middle {
-  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--brass) 15%, var(--surface-inset)), var(--surface-inset) 85%);
-  transform: translate(24px, -7px) rotate(10deg);
+  background: var(--surface-raised);
+  border: 1.5px solid var(--border-strong);
+  box-shadow: 0 4px 14px -2px color-mix(in srgb, var(--night-canvas) 14%, transparent);
+  transform: translate(22px, -6px) rotate(9deg);
   overflow: hidden;
 }
 .cd-back-pattern {
-  position: absolute; inset: 4px;
-  border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
-  border-radius: 7px;
-  display: grid; place-items: center;
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
   background:
-    repeating-linear-gradient(45deg, color-mix(in srgb, var(--border-strong) 20%, transparent) 0px, color-mix(in srgb, var(--border-strong) 20%, transparent) 1px, transparent 1px, transparent 6px),
-    repeating-linear-gradient(-45deg, color-mix(in srgb, var(--border-strong) 20%, transparent) 0px, color-mix(in srgb, var(--border-strong) 20%, transparent) 1px, transparent 1px, transparent 6px);
+    radial-gradient(circle at center, var(--border-strong) 1px, transparent 1px);
+  background-size: 8px 8px;
 }
 .cd-back-pattern::before {
-  content: ""; position: absolute; inset: 4px;
-  border: 1px dashed color-mix(in srgb, var(--brass) 45%, var(--border));
-  border-radius: 4px;
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
 }
 .cd-back-pattern::after {
-  content: "◈"; display: grid; place-items: center;
-  width: 26px; height: 26px;
-  border: 1px solid var(--brass); border-radius: 50%;
-  font-size: 13px; line-height: 1; color: var(--brass);
-  background: linear-gradient(145deg, var(--brass-soft), var(--surface-inset));
-  box-shadow: 0 0 8px color-mix(in srgb, var(--brass) 24%, transparent);
+  content: "⊕";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 50%;
+  font-size: 13px;
+  font-family: var(--mono);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--night-canvas) 10%, transparent);
 }
 
-/* Front card */
+/* Front card: Y2K Acid Holographic Foil Sticker Card */
 .cd-front {
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding: 10px 12px 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 11px 13px 10px;
   color: var(--text);
-  background: linear-gradient(140deg, var(--surface-raised) 35%, var(--surface) 80%, color-mix(in srgb, var(--accent) 7%, var(--surface)));
-  transform: rotate(-2.5deg) translateZ(8px);
+  border: 2px solid var(--text);
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow:
+    0 2px 0 var(--text),
+    0 12px 28px -4px color-mix(in srgb, var(--night-canvas) 22%, transparent);
+  transform: rotate(-2.5deg) translateZ(10px);
   overflow: hidden;
 }
+
+/* The Rainbow Y2K Holographic Foil Layer */
 .cd-front-foil {
-  position: absolute; inset: 0; pointer-events: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background: linear-gradient(
-    125deg,
-    transparent 20%,
-    color-mix(in srgb, var(--accent) 24%, transparent) 42%,
-    color-mix(in srgb, var(--brass) 20%, transparent) 52%,
-    color-mix(in srgb, var(--accent) 18%, transparent) 62%,
-    transparent 80%
+    135deg,
+    rgba(255, 105, 180, 0.28) 0%,
+    rgba(255, 215, 0, 0.3) 20%,
+    rgba(50, 205, 50, 0.28) 40%,
+    rgba(0, 191, 255, 0.32) 60%,
+    rgba(147, 112, 219, 0.3) 80%,
+    rgba(255, 105, 180, 0.28) 100%
   );
-  background-size: 250% 250%;
+  background-size: 300% 300%;
   background-position: 0% 0%;
-  opacity: .65;
-  transition: opacity 300ms ease, background-position 650ms ease;
+  opacity: .55;
+  mix-blend-mode: color-burn;
+  transition: opacity 300ms ease, background-position 700ms ease;
 }
-.cd-card-header { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+:root[data-theme="dark"] .cd-front-foil {
+  opacity: .45;
+  mix-blend-mode: screen;
+}
+
+.cd-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
 .cd-card-badge {
-  display: inline-flex; align-items: center; gap: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   padding: 2.5px 8px;
-  border: 1px solid var(--border); border-radius: 999px;
-  background: var(--surface-inset);
-  color: var(--text-muted); font: 9px/1.3 var(--mono, ui-monospace, monospace); letter-spacing: .06em;
+  border: 1.5px solid var(--text);
+  border-radius: 999px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font: 9px/1.3 var(--mono, ui-monospace, monospace);
+  font-weight: 700;
+  letter-spacing: .08em;
+  box-shadow: 0 1px 0 var(--text);
 }
-.cd-badge-pip { width: 4.5px; height: 4.5px; border-radius: 50%; background: var(--accent-text); }
+.cd-badge-pip {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: var(--accent-text);
+}
 .cd-seal {
-  display: grid; place-items: center;
-  width: 26px; height: 26px;
-  border: 1px solid var(--brass); border-radius: 50%;
-  color: var(--brass);
-  background: linear-gradient(145deg, var(--brass-soft), var(--surface));
-  box-shadow: inset 0 1px 0 var(--material-edge, var(--surface-raised)), 0 2px 4px color-mix(in srgb, var(--brass) 22%, transparent);
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--text);
+  border-radius: 50%;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(0, 191, 255, 0.5));
+  box-shadow: 0 1px 0 var(--text);
 }
+
 .cd-card-title {
-  position: relative; z-index: 1;
-  display: block; margin: 5px 0 4px;
-  font-size: 13px; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; color: var(--text);
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 5px 0 4px;
+  font-size: 13.5px;
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  color: var(--text);
 }
-.cd-card-tags { position: relative; z-index: 1; display: flex; flex-wrap: nowrap; gap: 3px; }
+.cd-card-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3px;
+}
 .cd-card-tag {
-  flex: 1 1 0; min-width: 0; display: inline-flex; align-items: center; justify-content: center;
-  padding: 2px 4px;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  flex: 1 1 0;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5px 4px;
+  border: 1px solid var(--text);
   border-radius: 4px;
-  background: color-mix(in srgb, var(--surface-inset) 85%, transparent);
-  font-size: 8.5px; line-height: 1.25; color: var(--text-muted); white-space: nowrap;
+  background: var(--surface-raised);
+  font-size: 8.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+  white-space: nowrap;
+  box-shadow: 0 1px 0 var(--text);
 }
 .cd-card-footer {
-  position: relative; z-index: 1;
-  display: flex; align-items: center; justify-content: space-between; gap: 6px;
-  padding-top: 5px; margin-top: 2px;
-  border-top: 1px dashed color-mix(in srgb, var(--border) 70%, transparent);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-top: 5px;
+  margin-top: 2px;
+  border-top: 1px dashed var(--border-strong);
 }
 .cd-card-prompt {
-  display: inline-flex; align-items: center; gap: 3px;
-  font-size: 9.5px; font-weight: 600; color: var(--accent-text); letter-spacing: .02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .03em;
 }
-.cd-prompt-sparkle { color: var(--brass); font-size: 8.5px; }
-.cd-card-serial { font: 8px/1 var(--mono, ui-monospace, monospace); color: var(--text-quiet); letter-spacing: .06em; }
+.cd-prompt-sparkle {
+  color: var(--accent-text);
+  font-size: 9.5px;
+}
+.cd-card-serial {
+  font: 8.5px/1 var(--mono, ui-monospace, monospace);
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: .06em;
+}
 
-/* Count & Slot */
-.cd-count { margin: 0 0 6px; font-size: 10.5px; line-height: 1.4; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+/* Count indicator */
+.cd-count {
+  margin: 0 0 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .01em;
+}
+
+/* High-Contrast Action Pill Button (TypeSafe [ Playground -> ] Aesthetic) */
 .cd-slot {
-  position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  width: 100%; min-height: 42px; padding: 10px 16px;
-  border: 1px solid var(--border-strong); border-radius: 9px;
-  color: var(--night-text); background: var(--night-canvas);
-  box-shadow: inset 0 2px 6px color-mix(in srgb, black 50%, transparent), 0 1px 2px color-mix(in srgb, var(--text) 8%, transparent);
-  font-size: 12.5px; line-height: 1.4; font-weight: 650;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1.5px solid var(--primary-bg);
+  border-radius: 10px;
+  color: var(--primary-text);
+  background: var(--primary-bg);
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--night-canvas) 20%, transparent), 0 4px 12px -2px color-mix(in srgb, var(--primary-bg) 35%, transparent);
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  transition: transform 140ms ease, box-shadow 160ms ease, opacity 160ms ease;
 }
+
 .cd-slot-glow {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse at 85% 50%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 60%);
-  opacity: 0; transition: opacity 240ms ease-out;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: translateX(-100%);
+  transition: transform 500ms ease;
 }
+
 .cd-slot-label { position: relative; z-index: 1; }
-.cd-slot-cue { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 4px; color: var(--accent); }
-.cd-slot-sparkle { font-size: 9px; color: var(--accent); opacity: .8; }
-.cd-slot svg { flex: 0 0 auto; color: var(--accent); transition: transform 260ms ease-out; }
+.cd-slot-cue {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent);
+}
+.cd-slot-sparkle { font-size: 10px; color: var(--accent); }
+.cd-slot svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+  transition: transform 220ms var(--motion-ease);
+}
 
 /* Hover & Focus Interactions */
-.card-dispenser:focus-visible .cd-front { transform: translateY(-12px) rotate(-1.5deg) translateZ(22px); }
-.card-dispenser:focus-visible .cd-back { transform: translate(-30px, -6px) rotate(-15deg); }
-.card-dispenser:focus-visible .cd-middle { transform: translate(30px, -11px) rotate(14deg); }
+.card-dispenser:focus-visible .cd-front {
+  transform: translateY(-12px) rotate(-1deg) translateZ(24px);
+  box-shadow: 0 4px 0 var(--text), 0 20px 38px -6px color-mix(in srgb, var(--night-canvas) 32%, transparent);
+}
+.card-dispenser:focus-visible .cd-back { transform: translate(-28px, -5px) rotate(-14deg); }
+.card-dispenser:focus-visible .cd-middle { transform: translate(28px, -9px) rotate(13deg); }
 .card-dispenser:focus-visible .cd-front-foil { opacity: .95; background-position: 100% 100%; }
-.card-dispenser:focus-visible .cd-slot-glow { opacity: 1; }
-.card-dispenser:focus-visible .cd-slot { border-color: color-mix(in srgb, var(--accent) 50%, var(--border-strong)); }
+.card-dispenser:focus-visible .cd-slot-glow { transform: translateX(100%); }
 .card-dispenser:focus-visible .cd-slot svg { transform: translateX(4px); }
-.card-dispenser:focus-visible .cd-led::after { animation: none; opacity: 1; filter: drop-shadow(0 0 5px var(--accent)); }
 
 @media (hover: hover) and (pointer: fine) {
   .card-dispenser:hover {
-    box-shadow: 0 1px 0 var(--material-edge, rgba(255, 255, 255, 0.15)) inset, 0 12px 36px -4px color-mix(in srgb, var(--night-canvas, #000) 24%, transparent), 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
-    border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong));
+    transform: translateY(-2px);
+    border-color: var(--text);
+    box-shadow: 0 8px 24px -4px color-mix(in srgb, var(--night-canvas) 16%, transparent);
   }
-  .card-dispenser:hover .cd-front { transform: translateY(-12px) rotate(-1.5deg) translateZ(22px); }
-  .card-dispenser:hover .cd-back { transform: translate(-30px, -6px) rotate(-15deg); }
-  .card-dispenser:hover .cd-middle { transform: translate(30px, -11px) rotate(14deg); }
-  .card-dispenser:hover .cd-front-foil { opacity: .95; background-position: 100% 100%; }
-  .card-dispenser:hover .cd-slot-glow { opacity: 1; }
-  .card-dispenser:hover .cd-slot { border-color: color-mix(in srgb, var(--accent) 50%, var(--border-strong)); }
+  .card-dispenser:hover .cd-front {
+    transform: translateY(-12px) rotate(-1deg) translateZ(24px);
+    box-shadow: 0 4px 0 var(--text), 0 20px 38px -6px color-mix(in srgb, var(--night-canvas) 30%, transparent);
+  }
+  .card-dispenser:hover .cd-back { transform: translate(-28px, -5px) rotate(-14deg); }
+  .card-dispenser:hover .cd-middle { transform: translate(28px, -9px) rotate(13deg); }
+  .card-dispenser:hover .cd-front-foil { opacity: .92; background-position: 100% 100%; }
+  .card-dispenser:hover .cd-slot-glow { transform: translateX(100%); }
   .card-dispenser:hover .cd-slot svg { transform: translateX(4px); }
   .card-dispenser:hover .cd-led::after { animation: none; opacity: 1; filter: drop-shadow(0 0 5px var(--accent)); }
 }
 
-/* Pressed interaction */
+/* Pressed interaction: Snappy tactile feedback */
 .card-dispenser[data-pressed] {
   transform: translateY(1px);
-  box-shadow: inset 0 2px 4px color-mix(in srgb, var(--night-canvas) 20%, transparent), 0 1px 3px color-mix(in srgb, var(--night-canvas) 12%, transparent);
+  box-shadow: var(--shadow-soft);
 }
 .card-dispenser[data-pressed] .cd-front {
-  transform: translateY(-16px) translateZ(28px) rotate(0deg);
-  transition: transform 120ms cubic-bezier(.16, 1, .3, 1);
+  transform: translateY(-16px) translateZ(30px) rotate(0deg);
+  transition: transform 100ms cubic-bezier(.16, 1, .3, 1);
 }
-.card-dispenser[data-pressed] .cd-slot { transform: translateY(2px); }
-@keyframes cd-led-breathe {
-  0%, 100% { opacity: .35; transform: scale(0.9); }
-  50% { opacity: .85; transform: scale(1.15); }
+.card-dispenser[data-pressed] .cd-slot {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--night-canvas);
 }
 
-/* Mobile viewport */
+@keyframes cd-led-breathe {
+  0%, 100% { opacity: .35; transform: scale(0.85); }
+  50% { opacity: .9; transform: scale(1.15); }
+}
+
+/* ==========================================================================
+   Mobile Viewport (<= 768px): Unified Vertical Tactile Deck
+   ========================================================================== */
 @media (max-width: 768px) {
   .card-dispenser {
     display: flex;
@@ -219,14 +441,13 @@
     height: auto;
     min-height: 252px;
     padding: 14px 16px 16px;
-    border-radius: 16px;
+    border-radius: 14px;
     gap: 10px;
   }
-  .card-dispenser::before { border-radius: 12px; }
   .cd-plate {
     width: 100%;
-    font-size: 8.5px;
-    letter-spacing: .03em;
+    font-size: 9px;
+    letter-spacing: .04em;
   }
   .cd-plate > span:first-child { padding: 3.5px 7px; }
   .cd-stage {
@@ -238,10 +459,10 @@
     min-height: 124px;
     margin: 4px 0 2px;
   }
-  .cd-feed { inset: auto 8px 8px; height: 18px; }
+  .cd-feed { inset: auto 8px 8px; height: 16px; }
   .cd-deck {
-    width: 172px;
-    height: 110px;
+    width: 176px;
+    height: 112px;
     margin-bottom: 2px;
   }
   .cd-back { transform: translate(-18px, -3px) rotate(-10deg); }
@@ -250,19 +471,20 @@
   .cd-back-pattern::after { width: 22px; height: 22px; font-size: 11px; }
   .cd-front {
     padding: 9px 11px 8px;
-    transform: rotate(-2deg) translateZ(6px);
+    transform: rotate(-2deg) translateZ(8px);
+    border-width: 1.5px;
   }
-  .cd-card-badge { padding: 2px 6px; font-size: 8px; }
+  .cd-card-badge { padding: 2px 6px; font-size: 8px; border-width: 1px; }
   .cd-badge-pip { width: 4px; height: 4px; }
-  .cd-seal { width: 22px; height: 22px; }
-  .cd-seal svg { width: 14px; height: 14px; }
+  .cd-seal { width: 20px; height: 20px; border-width: 1px; }
+  .cd-seal svg { width: 13px; height: 13px; }
   .cd-card-title {
     margin: 4px 0 3px;
     font-size: 12px;
     line-height: 1.3;
   }
   .cd-card-tags { gap: 3px; }
-  .cd-card-tag { padding: 1.5px 5px; font-size: 8px; }
+  .cd-card-tag { padding: 1.5px 4.5px; font-size: 8px; border-width: 1px; }
   .cd-card-tag:nth-child(n+4) { display: none; }
   .cd-card-footer { padding-top: 4px; margin-top: 2px; justify-content: space-between; }
   .cd-card-prompt { font-size: 9px; }
@@ -270,7 +492,7 @@
   .cd-count {
     position: static;
     margin: 0;
-    font-size: 10px;
+    font-size: 10.5px;
     text-align: center;
     color: var(--text-muted);
   }
@@ -279,18 +501,18 @@
     width: 100%;
     min-height: 46px;
     gap: 8px;
-    padding: 10px 14px;
-    font-size: 12px;
+    padding: 10px 16px;
+    font-size: 12.5px;
     border-radius: 10px;
   }
 }
 
 @media (max-width: 380px) {
   .card-dispenser { padding: 12px 12px 14px; min-height: 236px; gap: 8px; }
-  .cd-deck { width: 154px; height: 102px; }
+  .cd-deck { width: 156px; height: 104px; }
   .cd-stage { min-height: 114px; }
   .cd-card-title { font-size: 11px; }
-  .cd-slot { min-height: 44px; padding: 9px 12px; font-size: 11.5px; }
+  .cd-slot { min-height: 44px; padding: 9px 12px; font-size: 12px; }
 }
 
 /* Reduced motion */

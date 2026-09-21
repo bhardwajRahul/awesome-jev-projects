@@ -78,8 +78,8 @@ p { margin: 0; }
 .sort-label { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-shrink: 0; margin-left: auto; }
 .sort-label select { background: none; border: 0; color: var(--text-muted); font-size: 14px; cursor: pointer; max-width: 180px; min-height: 36px; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; scroll-margin-top: 80px; }
-.project-card { background: linear-gradient(180deg, var(--surface-raised), var(--surface)); border: 1px solid var(--border); border-radius: 12px; padding: 22px 22px 0; display: flex; flex-direction: column; min-width: 0; box-shadow: var(--shadow-material); transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; cursor: pointer; }
-.project-card:hover { transform: translateY(-2px); border-color: var(--border-strong); box-shadow: var(--shadow-material-hover); }
+.project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px 22px 0; display: flex; flex-direction: column; min-width: 0; box-shadow: var(--shadow-soft); transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; cursor: pointer; }
+.project-card:hover { transform: translateY(-2px); border-color: var(--border-strong); box-shadow: var(--shadow-hover); }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
 .project-identity { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .avatar-frame { position: relative; display: inline-flex; width: 40px; height: 40px; flex: 0 0 40px; }
@@ -349,7 +349,7 @@ p { margin: 0; }
 .toast svg { color: var(--accent-text); }
 .catalog-notice { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 110; background: var(--code-bg); color: var(--code-text); padding: 10px 16px; border-radius: 9px; font-size: 13px; line-height: 1.5; box-shadow: var(--shadow-dialog); max-width: calc(100vw - 30px); pointer-events: none; }
 .auto-label { margin-left: auto; border: 1px solid var(--border); padding: 1px 5px; border-radius: 4px; font-size: 10px; }
-.project-card .decision-block { background: var(--surface-inset); box-shadow: var(--shadow-recess); }
+.project-card .decision-block { background: var(--surface-inset); }
 .card-category .auto-label { color: var(--text-muted); }
 .footer > a:last-child { display: flex; align-items: center; gap: 5px; font-size: 12px; }
 .modal-head .icon-button { flex-shrink: 0; }
@@ -438,7 +438,7 @@ p { margin: 0; }
 .nav-item.active::after { position: absolute; inset: auto 0 0; height: 2px; content: ''; background: var(--accent-text); }
 .nav-count { font-family: var(--mono); font-size: 10px; padding: 2px 5px; border-radius: 4px; color: var(--text-muted); background: var(--surface-inset); }
 .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; margin-left: auto; }
-.header-ecosystem { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--metal-top), var(--metal-bottom)); box-shadow: inset 0 1px 0 var(--material-edge), var(--shadow-soft); }
+.header-ecosystem { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--surface); box-shadow: var(--shadow-soft); }
 .header-ecosystem > :is(button, a) { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 0 11px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--text-muted); font-size: 12px; font-weight: 500; white-space: nowrap; transition: box-shadow 160ms ease, transform 160ms ease; }
 .header-ecosystem > :is(button, a) + :is(button, a)::before { position: absolute; inset: 7px auto 7px -2px; width: 1px; content: ""; background: var(--border-strong); opacity: .3; pointer-events: none; transition: opacity 140ms ease; }
 .header-ecosystem > :is(button, a):hover::before,
@@ -450,10 +450,10 @@ p { margin: 0; }
 .header-ecosystem > :is(button, a):focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
 .github-star-btn svg { color: var(--brass); }
 .github-star-btn .star-label-short { display: none; }
-.header .submit-top { min-height: 40px; padding: 0 16px; border-radius: 10px; gap: 7px; font-size: 13px; font-weight: 550; border: 1px solid color-mix(in srgb, var(--primary-bg) 75%, black 25%); background: linear-gradient(180deg, color-mix(in srgb, var(--primary-bg) 92%, white 8%), var(--primary-bg)); box-shadow: inset 0 1px 0 color-mix(in srgb, white 14%, transparent), 0 1px 2px color-mix(in srgb, var(--text) 14%, transparent), 0 3px 8px -1px color-mix(in srgb, var(--text) 18%, transparent); transition: box-shadow 180ms ease, transform 180ms ease; }
-.header .submit-top:hover { background: linear-gradient(180deg, color-mix(in srgb, var(--primary-bg) 88%, white 12%), var(--primary-bg)); box-shadow: inset 0 1px 0 color-mix(in srgb, white 18%, transparent), 0 2px 5px color-mix(in srgb, var(--text) 18%, transparent), 0 7px 16px -2px color-mix(in srgb, var(--text) 22%, transparent); transform: translateY(-1px); }
+.header .submit-top { min-height: 40px; padding: 0 16px; border-radius: 8px; gap: 7px; font-size: 13px; font-weight: 600; border: 1px solid var(--primary-bg); background: var(--primary-bg); color: var(--primary-text); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease; }
+.header .submit-top:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12); opacity: 0.95; }
 .submit-label-short, .sponsor-label-short { display: none; }
-.header .submit-top:active { transform: translateY(1px); box-shadow: inset 0 2px 4px color-mix(in srgb, black 28%, transparent), 0 1px 2px color-mix(in srgb, var(--text) 10%, transparent); }
+.header .submit-top:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); }
 .header-utilities { display: flex; align-items: center; flex-shrink: 0; padding: 3px; gap: 2px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--surface); box-shadow: inset 0 1px 0 var(--material-edge), var(--shadow-soft); }
 .header-utilities .theme-toggle { width: 32px; min-width: 32px; height: 32px; min-height: 32px; border-radius: var(--radius-pill); transition: box-shadow 150ms ease, transform 150ms ease; }
 .header-utilities .theme-toggle:hover { background: var(--surface-raised); box-shadow: 0 1px 2px color-mix(in srgb, var(--text) 8%, transparent); }
