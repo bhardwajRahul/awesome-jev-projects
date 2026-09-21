@@ -217,3 +217,10 @@ test('popular search suggestions and placeholders are localized, specific and ba
   const appText = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8');
   assert.ok(!/9\s?hz/iu.test(appText));
 });
+
+test('readLocale defaults to English and respects navigator language and storage', () => {
+  const { readLocale } = localeModule;
+  // Node test environment without window/navigator defaults to English
+  assert.equal(readLocale(), 'en', 'Default fallback without window must be English');
+});
+

@@ -16,7 +16,7 @@ const partners = activeSponsors(JSON.parse(await readFile(resolve(root, "src/dat
 const categories = [...new Set(projects.map((p) => p.category))].sort();
 const baseHTML = await readFile(resolve(dist, "index.html"), "utf8");
 // Only immutable build asset references are reused; remote source text cannot add markup.
-const assets = [...baseHTML.matchAll(/<(?:script\b[^>]*\bsrc="[^"]+"[^>]*><\/script>|link\b[^>]*(?:rel="stylesheet"|rel="modulepreload")[^>]*>)/g)].map((m) => m[0]).filter(tag => !tag.includes("theme-init.js"));
+const assets = [...baseHTML.matchAll(/<(?:script\b[^>]*\bsrc="[^"]+"[^>]*><\/script>|link\b[^>]*(?:rel="stylesheet"|rel="modulepreload")[^>]*>)/g)].map((m) => m[0]).filter(tag => !tag.includes("theme-init.js") && !tag.includes("locale-init.js"));
 const homeAssets = assets.join("\n");
 const styleAssets = assets.filter((tag) => tag.includes('rel="stylesheet"')).join("\n");
 const vite = await createServer({ root, server: { middlewareMode: true, hmr: false, ws: false }, appType: "custom", logLevel: "error" });
@@ -41,7 +41,7 @@ function footer(locale) {
 }
 function frame({ locale, title, description, route, alternates, schema, content, home = false, indexable = true }) {
   const c = COPY[locale];
-  return `<!doctype html><html lang="${c.lang}"><head><meta charset="UTF-8" /><script src="${BASE}theme-init.js"></script><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#fafafa" /><meta name="referrer" content="strict-origin-when-cross-origin" />
+  return `<!doctype html><html lang="${c.lang}"><head><meta charset="UTF-8" /><script src="${BASE}theme-init.js"></script><script src="${BASE}locale-init.js"></script><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#fafafa" /><meta name="referrer" content="strict-origin-when-cross-origin" />
 ${pageHead({locale, title, description, route, alternates, schema, indexable})}
 <link rel="icon" href="${BASE}favicon.svg" type="image/svg+xml" />
 ${home ? homeAssets : styleAssets}<link rel="stylesheet" href="${BASE}directory.css" />${analyticsMarkup(analytics)}</head><body>${content}</body></html>`;

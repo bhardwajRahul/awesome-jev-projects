@@ -51,6 +51,7 @@ import { GachaDialog } from "./components/GachaDialog.tsx";
 import { CardDispenser } from "./components/CardDispenser.tsx";
 import { Jevy } from "./components/Jevy.tsx";
 import { MaintainerCard } from "./components/MaintainerCard.tsx";
+import { MobileWebviewBar } from "./components/MobileWebviewBar.tsx";
 import "./styles/hero-engineering.css";
 import "./styles/maintainer.css";
 import { eligibleProjects } from "./lib/discovery.mjs";
@@ -1041,6 +1042,9 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                   >
                     <Icon size={16} />
                     <span>{label(c)}</span>
+                    {c === "Browser & OS Action" && (
+                      <span className="category-hot-badge" title="Top community use case">HOT</span>
+                    )}
                     <b>{projects.filter((p) => p.category === c).length}</b>
                   </button>
                 );
@@ -1955,6 +1959,7 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
           {toast}
         </div>
       )}
+      <MobileWebviewBar locale={locale} />
     </>
   );
 }

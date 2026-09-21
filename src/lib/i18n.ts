@@ -756,13 +756,20 @@ export function localeFromPath(path: string, base = "/awesome-jev-projects/"): L
   return match ? match[1] as Locale : null;
 }
 export function readLocale(): Locale {
-  if (typeof window === "undefined") return "zh";
+  if (typeof window === "undefined") return "en";
   const pathLocale = localeFromPath(window.location.pathname);
   if (pathLocale) return pathLocale;
   try {
     const saved = window.localStorage.getItem("awesome-jev:locale");
-    return locales.includes(saved as Locale) ? saved as Locale : "zh";
-  } catch { return "zh"; }
+    if (locales.includes(saved as Locale)) return saved as Locale;
+  } catch {}
+  if (typeof navigator !== "undefined") {
+    const nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+    if (nav.startsWith("zh")) return "zh";
+    if (nav.startsWith("ja")) return "ja";
+    if (nav.startsWith("ko")) return "ko";
+  }
+  return "en";
 }
 export type ProjectTextKey = "plainSummary" | "jevDecisionPoint" | "highlightBenefit" | "claimStatus" | "reviewReason";
 export function localizedProjectText(project: object, key: ProjectTextKey, locale: Locale): { text: string; language: Locale } {
