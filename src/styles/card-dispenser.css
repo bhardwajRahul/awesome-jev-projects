@@ -123,7 +123,7 @@
   inset: 0;
   border-radius: 12px;
   transform-origin: 50% 90%;
-  transition: transform 380ms cubic-bezier(.16, 1.3, .3, 1), box-shadow 300ms ease;
+  transition: transform 280ms cubic-bezier(.16, 1, .3, 1), box-shadow 280ms ease;
 }
 
 /* Back cards: Swiss geometric grid patterns */
@@ -183,12 +183,12 @@
   justify-content: space-between;
   padding: 12px 14px 11px;
   color: var(--text);
-  border: 2px solid var(--text);
+  border: 1px solid var(--border-strong);
   border-radius: 12px;
   background: var(--surface-raised);
   box-shadow:
-    0 2px 0 var(--text),
-    0 12px 28px -4px color-mix(in srgb, var(--night-canvas) 22%, transparent);
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 12px 28px -6px color-mix(in srgb, var(--night-canvas) 18%, transparent);
   transform: rotate(-2.5deg) translateZ(10px);
   overflow: hidden;
 }
@@ -232,14 +232,14 @@
   align-items: center;
   gap: 5px;
   padding: 2.5px 8px;
-  border: 1.5px solid var(--text);
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
   background: var(--surface-raised);
   color: var(--text);
   font: 9px/1.3 var(--mono, ui-monospace, monospace);
   font-weight: 700;
   letter-spacing: .08em;
-  box-shadow: 0 1px 0 var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 .cd-badge-pip {
   width: 4.5px;
@@ -252,11 +252,11 @@
   place-items: center;
   width: 24px;
   height: 24px;
-  border: 1.5px solid var(--text);
+  border: 1px solid var(--border-strong);
   border-radius: 50%;
   color: var(--text);
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(0, 191, 255, 0.5));
-  box-shadow: 0 1px 0 var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .cd-card-title {
@@ -284,15 +284,14 @@
   align-items: center;
   justify-content: center;
   padding: 2.5px 4px;
-  border: 1px solid var(--text);
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: var(--surface-raised);
+  background: var(--surface-inset);
   font-size: 8.5px;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--text);
+  color: var(--text-muted);
   white-space: nowrap;
-  box-shadow: 0 1px 0 var(--text);
 }
 .cd-card-footer {
   position: relative;
@@ -348,11 +347,11 @@
   max-width: 270px;
   min-height: 40px;
   padding: 8px 18px;
-  border: 1.5px solid var(--primary-bg);
+  border: 1px solid var(--primary-bg);
   border-radius: 999px;
   color: var(--primary-text);
   background: var(--primary-bg);
-  box-shadow: 0 1.5px 0 color-mix(in srgb, var(--night-canvas) 20%, transparent), 0 3px 10px -2px color-mix(in srgb, var(--primary-bg) 35%, transparent);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px -3px color-mix(in srgb, var(--primary-bg) 28%, transparent);
   font-size: 12.5px;
   line-height: 1.3;
   font-weight: 650;
@@ -388,7 +387,7 @@
 /* Hover & Focus Interactions */
 .card-dispenser:focus-visible .cd-front {
   transform: rotate(-3deg) translateZ(14px);
-  box-shadow: 0 4px 0 var(--text), 0 16px 32px -4px color-mix(in srgb, var(--night-canvas) 28%, transparent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 18px 36px -6px color-mix(in srgb, var(--night-canvas) 24%, transparent);
 }
 .card-dispenser:focus-visible .cd-back { transform: translate(-32px, -6px) rotate(-14deg); }
 .card-dispenser:focus-visible .cd-middle { transform: translate(32px, -10px) rotate(13deg); }
@@ -402,7 +401,7 @@
   }
   .card-dispenser:hover .cd-front {
     transform: rotate(-3deg) translateZ(14px);
-    box-shadow: 0 4px 0 var(--text), 0 16px 32px -4px color-mix(in srgb, var(--night-canvas) 28%, transparent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 18px 36px -6px color-mix(in srgb, var(--night-canvas) 24%, transparent);
   }
   .card-dispenser:hover .cd-back { transform: translate(-32px, -6px) rotate(-14deg); }
   .card-dispenser:hover .cd-middle { transform: translate(32px, -10px) rotate(13deg); }
@@ -423,7 +422,7 @@
 }
 .card-dispenser[data-pressed] .cd-slot {
   transform: translateY(2px);
-  box-shadow: 0 1px 0 var(--night-canvas);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes cd-led-breathe {

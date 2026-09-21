@@ -38,7 +38,7 @@
   pointer-events: none;
 }
 
-/* Y2K Graphic Pill Status Badge */
+/* Precision Instrument Status Pill */
 .hero-engine-status {
   display: inline-flex;
   align-items: center;
@@ -47,19 +47,19 @@
   min-height: 26px;
   margin-bottom: 12px;
   padding: 3px 10px;
-  border: 1.5px solid var(--text);
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
   background: var(--surface-raised);
-  box-shadow: 0 1.5px 0 var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   color: var(--text);
   font: 10px/1.4 var(--mono, ui-monospace, monospace);
-  font-weight: 650;
-  letter-spacing: .04em;
+  font-weight: 600;
+  letter-spacing: .025em;
   white-space: nowrap;
 }
 .hero-index-count {
   padding-left: 8px;
-  border-left: 1.5px solid var(--border-strong);
+  border-left: 1px solid var(--border);
   color: var(--text-muted);
 }
 .hero-index-count b {
@@ -93,7 +93,7 @@
   font-size: clamp(30px, 3vw, 41px);
   line-height: 1.18;
   font-weight: 750;
-  letter-spacing: -.032em;
+  letter-spacing: -.024em;
   color: var(--text);
 }
 .hero-tactile .hero-copy > p {
@@ -139,13 +139,19 @@
 .hero-maker-copy .hero-primitives .primitive-chip {
   display: inline-flex;
   align-items: center;
-  padding: 1px 5px;
-  border-radius: 3px;
+  padding: 1.5px 6px;
+  border-radius: 4px;
   background: var(--surface-inset);
   color: var(--text-muted);
   border: 1px solid var(--border);
   font-weight: 600;
-  letter-spacing: .04em;
+  letter-spacing: .03em;
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+.hero-maker-copy .hero-primitives .primitive-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+  transform: translateY(-0.5px);
 }
 .hero-maker-copy .hero-primitives .primitive-dot {
   color: var(--border-strong);
