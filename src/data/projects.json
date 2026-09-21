@@ -40392,5 +40392,107 @@
       ]
     },
     "sourceHash": "e8b9940e42fad264261a073a670b3fb35105b9ed876e44eaa5f9c53f2e94e488"
+  },
+  {
+    "id": "wjw66:deepseek-harness-jev-pre-compaction",
+    "name": "deepseek-harness-jev-pre-compaction",
+    "author": "wjw66",
+    "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction",
+    "repoId": 1380108114,
+    "category": "Context GC & Filter",
+    "plainSummary": "在上下文接近deepseek-harness插件，在上下文压缩阈值前，自动识别并移除低价值的工具结果，降低上下文占用",
+    "jevDecisionPoint": "判断当前是否应该提前裁剪上下文，以及每个工具结果是否值得继续保留。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "减少后续处理的冗余信息。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A pre-compaction advisor for DeepSeek Harness. Runs before the standard `compaction-basic` backend, using TypeSafe JEV to safely prune low-value tool results from model context. Original session events stay in the append-only log; only the model-visible view is replaced with compact markers or archive pointers to reduce context bloat.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-21T16:19:50Z",
+    "lastCommitAt": "2026-09-21T17:57:13Z",
+    "headSha": "b0b37f03fcae0c3b0b4116a9a9c3385588372d5c",
+    "metadataFetchedAt": "2026-09-21T18:13:38.053Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/49147577?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T18:13:38.053Z",
+    "evidence": [
+      {
+        "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/README.zh.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/jev/client.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/decision/apply.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/trigger/gate.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/jev/protocol.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "b0b37f03fcae0c3b0b4116a9a9c3385588372d5c",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/README.md",
+          "hash": "f9896d2208a287b87b35e854a02704c98276ea92e3fa39b05e68f055782e12ad"
+        },
+        {
+          "path": "README.zh.md",
+          "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/README.zh.md",
+          "hash": "08b95b76dfdde33a18eccb2ca28f4027cdd814c7f9f62915a10048c44150b96a"
+        },
+        {
+          "path": "src/jev/client.ts",
+          "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/jev/client.ts",
+          "hash": "1af18f66fe051e56915533eb1fdc552146bc19d6aae6f3f5e0f3384904eb3dad"
+        },
+        {
+          "path": "src/decision/apply.ts",
+          "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/decision/apply.ts",
+          "hash": "11ee42113910e8bbe1c09fda4407394c35ec0075fd218778bb0a509fc9790a01"
+        },
+        {
+          "path": "src/trigger/gate.ts",
+          "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/trigger/gate.ts",
+          "hash": "7ff20d084273a543a40f452cd00bf5cc2afc87444d22b38121319104585ae11d"
+        },
+        {
+          "path": "src/jev/protocol.ts",
+          "url": "https://github.com/wjw66/deepseek-harness-jev-pre-compaction/blob/b0b37f03fcae0c3b0b4116a9a9c3385588372d5c/src/jev/protocol.ts",
+          "hash": "3e6c7f65aa1246a840b4001e14275c57351656e933962a722e1b75a25264f401"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 58,
+      "issueBodySha256": "1d77dee4599930b42e45abd368f8d4e19c77e45ed20131316c9e2b36b061c430",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/58"
+    }
   }
 ]
