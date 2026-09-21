@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 384
+Catalog entries: 385
 
 ## Install the Agent Skill
 
@@ -5668,3 +5668,18 @@ Chess moves, evaluations, persona opponents, and game classification using TypeS
 - Source evidence: https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/README.md
 - Source evidence: https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/src/typeSafeClient.ts
 - Source evidence: https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/public/app.js
+
+## tc39-atlas
+
+Interactive semantic explorer and taxonomy for TC39 proposals. Applies TypeSafe AI System One (Jev) to classify ECMAScript proposals across adoption pathways, cognitive overhead, web-compatibility risk, and foundational intent archetypes.
+
+- Repository: https://github.com/hemanth/tc39-atlas
+- Category: Domain & Vertical Tools
+- Jev decision: tc39-atlas enriches ECMAScript proposals using TypeSafe System One (Jev) across multi-dimensional rubrics (domain, complexity score, adoption choice, cognitive overhead score, web-compat risk score, and intent archetypes).
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/tc39-atlas/
+- Source evidence: https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/README.md
+- Source evidence: https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/lib/typesafeEngine.ts
+- Source evidence: https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/server/typesafeApi.ts

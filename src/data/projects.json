@@ -37720,5 +37720,81 @@
       "issueBodySha256": "d02f9fb9da89cecc25b90994aacf5065b647e61af2cf798f1c789f9213360a0a",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/51"
     }
+  },
+  {
+    "id": "hemanth:tc39-atlas",
+    "name": "tc39-atlas",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/tc39-atlas",
+    "repoId": 1374030677,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "该项目是交互式 TC39 提案语义浏览工具，使用 Jev 按采用路径、认知负担、Web 兼容风险和意图原型对 ECMAScript 提案进行分类展示。",
+    "jevDecisionPoint": "Jev 对每个 TC39 提案在采用路径、复杂度、动机、Web 兼容风险和意图原型等维度上执行 Choice 多选、Score 打分和 Noul 门禁判断。",
+    "jevDecisionPointEn": "tc39-atlas enriches ECMAScript proposals using TypeSafe System One (Jev) across multi-dimensional rubrics (domain, complexity score, adoption choice, cognitive overhead score, web-compat risk score, and intent archetypes).",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "domain-workflows",
+      "classification-ranking",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Interactive semantic explorer and taxonomy for TC39 proposals. Applies TypeSafe AI System One (Jev) to classify ECMAScript proposals across adoption pathways, cognitive overhead, web-compatibility risk, and foundational intent archetypes.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-17T06:27:38Z",
+    "lastCommitAt": "2026-09-17T06:51:58Z",
+    "headSha": "fef00f6f3707a0b52b21dc08b769f7be5ccf08f4",
+    "metadataFetchedAt": "2026-09-21T07:02:16.113Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T07:02:16.114Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/lib/typesafeEngine.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/server/typesafeApi.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "fef00f6f3707a0b52b21dc08b769f7be5ccf08f4",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/README.md",
+          "hash": "16e5cb9905481adb998adeaac3f254f854044b46e0aa7761ebc010e4f687d7bb"
+        },
+        {
+          "path": "src/lib/typesafeEngine.ts",
+          "url": "https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/lib/typesafeEngine.ts",
+          "hash": "a0dbf4e05d020bda79c2806254ad4f9971eca9b8ba3afaa0e1a239222e1e361a"
+        },
+        {
+          "path": "src/server/typesafeApi.ts",
+          "url": "https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/server/typesafeApi.ts",
+          "hash": "1ffbae718e43d1c83d1c0fe7edf99e467016c727419d8f29a39771857f5f3aff"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 54,
+      "issueBodySha256": "7598221925715f693f2c92b9008ca88482a81429bdf91b9ae920bbd25b6f7f2c",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/54"
+    }
   }
 ]
