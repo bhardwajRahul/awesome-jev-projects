@@ -37926,5 +37926,81 @@
       "issueBodySha256": "431730fc32a06510cff0dea1af5d12098aa94c50662a8f3bb1506520612d6033",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/52"
     }
+  },
+  {
+    "id": "hemanth:hfjev",
+    "name": "hfjev",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/hfjev",
+    "repoId": 1378199149,
+    "category": "Data & Search",
+    "plainSummary": "hfjev 可加载 Hugging Face 数据集，并使用 Choice、Score 和 Noul 等 Jev 原语对每一行进行类型化语义分类。",
+    "jevDecisionPoint": "Jev对每条Hugging Face数据集文本在情感、主题、深度、剧透等类型化维度上并行做出Choice多选、Score打分和Noul门禁判定。",
+    "jevDecisionPointEn": "hfjev classifies dataset rows in parallel across typed Choice, Score, and Noul dimensions against TypeSafe System One.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Classify Hugging Face datasets across typed semantic dimensions with TypeSafe Jev System One. Auto-adapts evaluation rubrics to dataset domains (reviews, news, LLM tuning, support) and classifies rows in a single parallel System One call with calibrated probabilities.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T10:08:36Z",
+    "lastCommitAt": "2026-09-21T05:14:17Z",
+    "headSha": "122245bedc52af5e73e21cb26263e4d174313ce7",
+    "metadataFetchedAt": "2026-09-21T07:06:52.720Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T07:06:52.720Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/js/bin/hfjev.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/playground/src/components/ApiKeyModal.tsx",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "122245bedc52af5e73e21cb26263e4d174313ce7",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/README.md",
+          "hash": "fbe90f57d289b3d6f6486b0da6a1e4f873681647593835af26185345e1633828"
+        },
+        {
+          "path": "js/bin/hfjev.js",
+          "url": "https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/js/bin/hfjev.js",
+          "hash": "2bec4c50d8e260465b0177c53212719095bf0d4512e4918b1096112826934779"
+        },
+        {
+          "path": "playground/src/components/ApiKeyModal.tsx",
+          "url": "https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/playground/src/components/ApiKeyModal.tsx",
+          "hash": "0d030da7767b5d62a4952cd4ea4c672a8a892160b497198222156490643843ca"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 50,
+      "issueBodySha256": "48292766b742ad1ac65920c695902d889a6b182dbbbecbc1be1b846df5299897",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/50"
+    }
   }
 ]

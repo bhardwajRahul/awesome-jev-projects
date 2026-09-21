@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 386
+Catalog entries: 387
 
 ## Install the Agent Skill
 
@@ -5704,3 +5704,18 @@ Pre-install security gate for npm lifecycle scripts using TypeSafe System One. E
 - Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/simulator.js
 - Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/tui.js
 - Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/utils.js
+
+## hfjev
+
+Classify Hugging Face datasets across typed semantic dimensions with TypeSafe Jev System One. Auto-adapts evaluation rubrics to dataset domains (reviews, news, LLM tuning, support) and classifies rows in a single parallel System One call with calibrated probabilities.
+
+- Repository: https://github.com/hemanth/hfjev
+- Category: Data & Search
+- Jev decision: hfjev classifies dataset rows in parallel across typed Choice, Score, and Noul dimensions against TypeSafe System One.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/hfjev/
+- Source evidence: https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/README.md
+- Source evidence: https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/js/bin/hfjev.js
+- Source evidence: https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/playground/src/components/ApiKeyModal.tsx
