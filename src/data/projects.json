@@ -38002,5 +38002,72 @@
       "issueBodySha256": "48292766b742ad1ac65920c695902d889a6b182dbbbecbc1be1b846df5299897",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/50"
     }
+  },
+  {
+    "id": "hemanth:tool-prune",
+    "name": "tool-prune",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/tool-prune",
+    "repoId": 1374567718,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "该项目为 AI Agent 提供校准化的工具选择与 schema 裁剪功能，可在调用 LLM 前筛选出相关候选工具，并支持离线 TurboQuant 与云端 TypeSafe System One（Jev）双引擎。",
+    "jevDecisionPoint": "Jev 对用户意图做原子决策：用 choice 选出最匹配的工具并给出校准概率，用 noul 判断是否需要开放式创造性生成。",
+    "jevDecisionPointEn": "Jev makes atomic decisions on tool selection (`choice`) and whether user intent requires open-ended creative generation (`noul`), with calibrated probability distributions.",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "mcp-integrations",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Calibrated tool selection and schema pruning for AI agents. Dual-engine: zero-dependency offline TurboQuant or TypeSafe System One (Jev). Prunes candidate MCP tools and schemas down to the relevant set before calling LLMs to eliminate hallucinations and save tokens.",
+    "stars": 5,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T14:27:29Z",
+    "lastCommitAt": "2026-09-19T20:56:53Z",
+    "headSha": "e55c586901a4cb33cb138a856cee74869430af9e",
+    "metadataFetchedAt": "2026-09-21T07:09:28.188Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T07:09:28.188Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/js/lib/router.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "e55c586901a4cb33cb138a856cee74869430af9e",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/README.md",
+          "hash": "d6c92050347a24e5222683654279b196d00ed354b59f422a0c1bc9abd9231bce"
+        },
+        {
+          "path": "js/lib/router.js",
+          "url": "https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/js/lib/router.js",
+          "hash": "6cc2e1a062ab442f3dc1324c9bc11a59503e8f751472a07caf1768b843e0a990"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 49,
+      "issueBodySha256": "ebb657d0f21ff6db3b79e35e4d92f83206bb087151f70f35095952739cd93d01",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/49"
+    }
   }
 ]

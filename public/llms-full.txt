@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 387
+Catalog entries: 388
 
 ## Install the Agent Skill
 
@@ -5719,3 +5719,17 @@ Classify Hugging Face datasets across typed semantic dimensions with TypeSafe Je
 - Source evidence: https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/README.md
 - Source evidence: https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/js/bin/hfjev.js
 - Source evidence: https://github.com/hemanth/hfjev/blob/122245bedc52af5e73e21cb26263e4d174313ce7/playground/src/components/ApiKeyModal.tsx
+
+## tool-prune
+
+Calibrated tool selection and schema pruning for AI agents. Dual-engine: zero-dependency offline TurboQuant or TypeSafe System One (Jev). Prunes candidate MCP tools and schemas down to the relevant set before calling LLMs to eliminate hallucinations and save tokens.
+
+- Repository: https://github.com/hemanth/tool-prune
+- Category: Routing & Cost Optimization
+- Jev decision: Jev makes atomic decisions on tool selection (\`choice\`) and whether user intent requires open-ended creative generation (\`noul\`), with calibrated probability distributions.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/tool-prune/
+- Source evidence: https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/README.md
+- Source evidence: https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/js/lib/router.js
