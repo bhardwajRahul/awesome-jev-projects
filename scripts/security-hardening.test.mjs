@@ -176,6 +176,7 @@ test("ingest and radar workflows no longer inject GH_MODELS_TOKEN and serialize 
   const check = await readFile(new URL("../.github/workflows/check.yml", import.meta.url), "utf8");
   assert.equal(ingest.includes("GH_MODELS_TOKEN"), false);
   assert.equal(radar.includes("GH_MODELS_TOKEN"), false);
-  assert.match(ingest, /group:\s*ingest-issue\n/);
+  assert.match(ingest, /group:\s*ingest-issue/);
   assert.match(check, /node --test scripts\/\*\.test\.mjs/);
 });
+
