@@ -38069,5 +38069,143 @@
       "issueBodySha256": "ebb657d0f21ff6db3b79e35e4d92f83206bb087151f70f35095952739cd93d01",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/49"
     }
+  },
+  {
+    "id": "zjunlp:jevloop",
+    "name": "JevLoop",
+    "author": "zjunlp",
+    "url": "https://github.com/zjunlp/JevLoop",
+    "repoId": 1378477219,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "**你的 agent loop 里每一个岔路口都是一次完整的大模型调用。而它们没有一个是「生成」。**",
+    "jevDecisionPoint": "Jev 负责裁决 Agent 循环中的每个分叉：是否需行动、选哪个工具、风险定级与是否需人工授权、步骤是否成功、是否完成及能否交付。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "The agent loop where decisions don't cost a large language model call. Zero deps, runs offline, no API key needed.",
+    "stars": 7,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-20T15:21:09Z",
+    "lastCommitAt": "2026-09-21T06:19:14Z",
+    "headSha": "c6024d9a304c79205c1996e94504de1075834144",
+    "metadataFetchedAt": "2026-09-21T07:29:34.293Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/41887875?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T07:29:34.293Z",
+    "evidence": [
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/agent.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/backends.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decision-compile.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decision-shape.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decisiondoc.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decisions.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/policy.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/budget.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "c6024d9a304c79205c1996e94504de1075834144",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/README.md",
+          "hash": "1a6454d1ef13dff9eb63c512ce7736ef15fa988df100a77b4137bace13fa4729"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/README.zh-CN.md",
+          "hash": "3e2e4f19c0faa519aaad73f3ea6a9c92f7cc7820d313bc9ef170408a410f4777"
+        },
+        {
+          "path": "src/agent.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/agent.ts",
+          "hash": "0c373ac9e6f0b9c96c39ffbb869d78fb863575310c6751c14a75b3015953305b"
+        },
+        {
+          "path": "src/backends.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/backends.ts",
+          "hash": "922591f754e12c30c2d46b855924cf8dd6c9b668665b276d0520839da47a1564"
+        },
+        {
+          "path": "src/decision-compile.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decision-compile.ts",
+          "hash": "c79e1e974cdc5425c56f20bbef0ab7188eaff4ab3e07a6cbca54bc8e95f1bbf9"
+        },
+        {
+          "path": "src/decision-shape.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decision-shape.ts",
+          "hash": "574fb621b65a3672b1928f77800432858cdd6530d9a83df8ff80dd81f00929bd"
+        },
+        {
+          "path": "src/decisiondoc.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decisiondoc.ts",
+          "hash": "c48ba4e05d7d951d7493b58a9b7904e39cfdf579070dc5b415cb99b36a6e75ea"
+        },
+        {
+          "path": "src/decisions.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decisions.ts",
+          "hash": "f41269218b1ec9f7119cf52b2fabae964fee8fe5a3ca6ee2abdc8652f3544a3e"
+        },
+        {
+          "path": "src/policy.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/policy.ts",
+          "hash": "3dd6eba330b79ce305d3ecf5fb7fbd8edc433500bbcc626427f4d14b800cbaef"
+        },
+        {
+          "path": "src/budget.ts",
+          "url": "https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/budget.ts",
+          "hash": "dd75d917b6b7bc00e82eb3d30acf915b6917ec4d3320e63ac0c8a8b04899c0f1"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 55,
+      "issueBodySha256": "e39a27f88544789f0655451cbb6288be5743c4d3f0da52bac0f30caa05edb599",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/55"
+    }
   }
 ]

@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 388
+Catalog entries: 389
 
 ## Install the Agent Skill
 
@@ -5733,3 +5733,25 @@ Calibrated tool selection and schema pruning for AI agents. Dual-engine: zero-de
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/tool-prune/
 - Source evidence: https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/README.md
 - Source evidence: https://github.com/hemanth/tool-prune/blob/e55c586901a4cb33cb138a856cee74869430af9e/js/lib/router.js
+
+## JevLoop
+
+The agent loop where decisions don't cost a large language model call. Zero deps, runs offline, no API key needed.
+
+- Repository: https://github.com/zjunlp/JevLoop
+- Category: Routing & Cost Optimization
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zjunlp/jevloop/
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/README.md
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/README.zh-CN.md
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/agent.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/backends.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decision-compile.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decision-shape.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decisiondoc.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/decisions.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/policy.ts
+- Source evidence: https://github.com/zjunlp/JevLoop/blob/c6024d9a304c79205c1996e94504de1075834144/src/budget.ts
