@@ -35415,5 +35415,80 @@
       ]
     },
     "sourceHash": "e0eb1c17ddd4f01f9b864bbcd2f4b7f70202399271c8e9a570dd10581f6e66ab"
+  },
+  {
+    "id": "kolawong:fast-compaction-dsh",
+    "name": "fast-compaction-dsh",
+    "author": "kolawong",
+    "url": "https://github.com/kolawong/fast-compaction-dsh",
+    "repoId": 1378434612,
+    "category": "Context GC & Filter",
+    "plainSummary": "DSH 的上下文压缩插件",
+    "jevDecisionPoint": "用 jev-latest 对每个工具调用做快速的 保留/截断/删除 判定，替换掉有损的压缩摘要——保留的内容逐字不动，任何东西都不会被改写。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Verdict-based context compaction for DeepSeek Harness — replaces lossy LLM summaries with fast keep/truncate/drop decisions from jev-latest; everything kept stays verbatim. Port of tamaratran/fast-jev-compaction.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-20T14:37:51Z",
+    "lastCommitAt": "2026-09-20T17:32:37Z",
+    "headSha": "322dc84518c3ea541c22182f954e42b93f1bec88",
+    "metadataFetchedAt": "2026-09-21T00:24:10.922Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/33373300?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T00:24:10.922Z",
+    "evidence": [
+      {
+        "url": "https://github.com/kolawong/fast-compaction-dsh/blob/322dc84518c3ea541c22182f954e42b93f1bec88/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kolawong/fast-compaction-dsh/blob/322dc84518c3ea541c22182f954e42b93f1bec88/README.zh.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kolawong/fast-compaction-dsh/blob/322dc84518c3ea541c22182f954e42b93f1bec88/src/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "322dc84518c3ea541c22182f954e42b93f1bec88",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/kolawong/fast-compaction-dsh/blob/322dc84518c3ea541c22182f954e42b93f1bec88/README.md",
+          "hash": "30f77598ddce5493e9116f7d005f5ebfb1c4db982dc01f49c5ceb10cc8e75b08"
+        },
+        {
+          "path": "README.zh.md",
+          "url": "https://github.com/kolawong/fast-compaction-dsh/blob/322dc84518c3ea541c22182f954e42b93f1bec88/README.zh.md",
+          "hash": "ae2caa02d118fbb6803a25cb3aa2526752db49e02eea4020c40380b0a32ebcc8"
+        },
+        {
+          "path": "src/jev.ts",
+          "url": "https://github.com/kolawong/fast-compaction-dsh/blob/322dc84518c3ea541c22182f954e42b93f1bec88/src/jev.ts",
+          "hash": "f634fdc32a509bd53b4ce7eb353540d18c38585638191359a12574d6239c0134"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 45,
+      "issueBodySha256": "1459fc26d53c4122c62011f852a748b3c08528698a01b4ce4dbb2ef6c938c2d8",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/45"
+    }
   }
 ]
