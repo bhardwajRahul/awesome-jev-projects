@@ -37560,5 +37560,89 @@
       "issueBodySha256": "95f3fec32270321f6df8ab467f3b102ca9307fba224e8248f3142019a166b6be",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/47"
     }
+  },
+  {
+    "id": "hemanth:traffic-guard",
+    "name": "traffic-guard",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/traffic-guard",
+    "repoId": 1375493003,
+    "category": "Security & Guardrails",
+    "plainSummary": "该项目是为传入 HTTP 请求提供流量分类与拦截判断的网关，提供 Node.js 与 Python 实现，并可选用 TypeSafe System One 通过 Noul、Choice 和 Score 进行语义评估。",
+    "jevDecisionPoint": "Jev 并行回答 is_bot/is_attack/is_spoofed 是否拦截、traffic_type 分类多选一、risk_level 风险打分，以决定放行/挑战/限速/拦截。",
+    "jevDecisionPointEn": "traffic-guard progressively evaluates requests against TypeSafe System One using Noul (`is_bot`, `is_attack`, `is_spoofed`), Choice (`traffic_type`), and Score (`risk_level`).",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "High-throughput traffic and attack defense gate for incoming HTTP traffic with zero required dependencies, wire-order header validation, and TypeSafe System One acceleration for bot mitigation, exploit detection, and risk scoring.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-18T06:51:34Z",
+    "lastCommitAt": "2026-09-18T14:50:19Z",
+    "headSha": "192673bd801866827a81ecfb19413f0e74a90990",
+    "metadataFetchedAt": "2026-09-21T06:57:48.861Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T06:57:48.861Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/node/src/gate.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/node/src/policy.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/python/traffic_guard/gate.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "192673bd801866827a81ecfb19413f0e74a90990",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/README.md",
+          "hash": "0166710c3d884bcc80d5cf9ae651d22386340ddb79c3c206cdecf1b2d6bcde3b"
+        },
+        {
+          "path": "node/src/gate.ts",
+          "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/node/src/gate.ts",
+          "hash": "e2c6f0acaca5c9dbf30c3f0fe108b0ee5db67d5b0125eff2d595542b55716327"
+        },
+        {
+          "path": "node/src/policy.ts",
+          "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/node/src/policy.ts",
+          "hash": "05756afc9862f69e7ef51fd49f4ee511b7b96248e0b5ad346a8ba536b96c9d41"
+        },
+        {
+          "path": "python/traffic_guard/gate.py",
+          "url": "https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/python/traffic_guard/gate.py",
+          "hash": "26937af7a29ee1baf1f1f0cb360d099d5d722127c1be54f4b046b8001b0bf24c"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 53,
+      "issueBodySha256": "290e2e311b56fcd1a12801f78df78f059a1c0046c35245c50528e110cd32b133",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/53"
+    }
   }
 ]
