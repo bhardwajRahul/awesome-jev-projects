@@ -37493,5 +37493,72 @@
       "issueBodySha256": "4690a696352a97cc0edbce051c9fbacbafb39c0cd725d8213ab5874fafcbf4ee",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/48"
     }
+  },
+  {
+    "id": "hemanth:jevish",
+    "name": "jevish",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/jevish",
+    "repoId": 1376930626,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "jevish 是一个 JavaScript 语义模式匹配与零样本判断库，使用 Jev 的 Choice 做标签分类、使用 Noul 做布尔判定，并支持本地与云端 Jev 协同执行。",
+    "jevDecisionPoint": "当本地零依赖引擎置信度不足时，由云端 Jev System One 裁决零样本标签多选一和布尔谓词真假。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "classification-ranking",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Every mode auto-curries when called with only the patterns:",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T08:38:51Z",
+    "lastCommitAt": "2026-09-19T16:28:18Z",
+    "headSha": "8766b550901b07cf080dc6c0e61ccf325d35f047",
+    "metadataFetchedAt": "2026-09-21T06:55:19.328Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T06:55:19.328Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/jevish/blob/8766b550901b07cf080dc6c0e61ccf325d35f047/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/jevish/blob/8766b550901b07cf080dc6c0e61ccf325d35f047/lib/engine.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "8766b550901b07cf080dc6c0e61ccf325d35f047",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/jevish/blob/8766b550901b07cf080dc6c0e61ccf325d35f047/README.md",
+          "hash": "3e1b57620f2e6e342afea0b2dac399298a5cd8b59689da24f3850ffb1d1d4433"
+        },
+        {
+          "path": "lib/engine.js",
+          "url": "https://github.com/hemanth/jevish/blob/8766b550901b07cf080dc6c0e61ccf325d35f047/lib/engine.js",
+          "hash": "fbb58fc5d107b738c342171b4957f2a67bba422778dcf1bb800ff46e63f4e3b0"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 47,
+      "issueBodySha256": "95f3fec32270321f6df8ab467f3b102ca9307fba224e8248f3142019a166b6be",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/47"
+    }
   }
 ]

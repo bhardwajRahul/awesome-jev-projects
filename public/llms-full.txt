@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 381
+Catalog entries: 382
 
 ## Install the Agent Skill
 
@@ -5623,3 +5623,17 @@ Replaces hardcoded RAG thresholds with explicit calibrated decision points. Five
 - Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_rag_jev.py
 - Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_scifact_ragjev.py
 - Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/decision.py
+
+## jevish
+
+Every mode auto-curries when called with only the patterns:
+
+- Repository: https://github.com/hemanth/jevish
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/jevish/
+- Source evidence: https://github.com/hemanth/jevish/blob/8766b550901b07cf080dc6c0e61ccf325d35f047/README.md
+- Source evidence: https://github.com/hemanth/jevish/blob/8766b550901b07cf080dc6c0e61ccf325d35f047/lib/engine.js
