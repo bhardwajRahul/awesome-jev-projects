@@ -35714,5 +35714,108 @@
       "issueBodySha256": "172810c73b5124517934ceedd0d4b5bb219783eaa9e1a29dc97acc3dabd15a13",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/41"
     }
+  },
+  {
+    "id": "keltokhy:jsort",
+    "name": "jsort",
+    "author": "keltokhy",
+    "url": "https://github.com/keltokhy/jsort",
+    "repoId": 1377498598,
+    "category": "CLI & Pipelines",
+    "plainSummary": "按自然语言描述的维度对文本行/段落/文件进行两两比较排序并输出分数与标准误的命令行工具。",
+    "jevDecisionPoint": "Jev 对给定的自然语言维度判断文本 A 是否比文本 B 排名更高。",
+    "jevDecisionPointEn": "Jev judges whether text A ranks higher than text B on the supplied criterion; local code schedules comparisons and fits a Bradley-Terry scale with standard errors.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "classification-ranking",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Ranks text along a plain-English criterion using pairwise Jev Noul comparisons and a locally fitted Bradley-Terry scale.",
+    "stars": 8,
+    "forks": 0,
+    "openIssues": 1,
+    "license": "MIT",
+    "createdAt": "2026-09-19T18:35:25Z",
+    "lastCommitAt": "2026-09-20T15:44:35Z",
+    "headSha": "380dfe57760241681c4743bece352ea4c5086c39",
+    "metadataFetchedAt": "2026-09-21T02:11:23.511Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/83777601?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T02:11:23.512Z",
+    "evidence": [
+      {
+        "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/model.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/__main__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/cli.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/core.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "380dfe57760241681c4743bece352ea4c5086c39",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/README.md",
+          "hash": "86f3c134923082be89d9770e5a3f1033efc6e6da6b075fc835e6e7140d6308b8"
+        },
+        {
+          "path": "src/jsort/model.py",
+          "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/model.py",
+          "hash": "da6dc2d627dd98f2a10d98c3d9642655bf9fb99b32d721066f800475f9d8ebf4"
+        },
+        {
+          "path": "src/jsort/__init__.py",
+          "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/__init__.py",
+          "hash": "ccbc7d5dac7b11d784fa77252214955168597b2a7995548b1957902d06998221"
+        },
+        {
+          "path": "src/jsort/__main__.py",
+          "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/__main__.py",
+          "hash": "1eecf4744c62687d174cc2e17dedec924143f7e547ed952258c6c347f27c4c86"
+        },
+        {
+          "path": "src/jsort/cli.py",
+          "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/cli.py",
+          "hash": "280ddd8c47ccc5444a988cdaff6da227646d7c26c30f9d86391ff26d2aef46fa"
+        },
+        {
+          "path": "src/jsort/core.py",
+          "url": "https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/core.py",
+          "hash": "426019e113636d6fab157af18125713fd5be25795413c586f591ba0b1a5752de"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 42,
+      "issueBodySha256": "4c51b94f8cb940c4deb7033f9605698f0e0387f6048e560183f1f6157ae49e72",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/42"
+    }
   }
 ]

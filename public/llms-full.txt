@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 357
+Catalog entries: 358
 
 ## Install the Agent Skill
 
@@ -5302,3 +5302,21 @@ The string baselines are best-match Jaro-Winkler and best-match TF-IDF cosine; t
 - Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/block.py
 - Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/cli.py
 - Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/core.py
+
+## jsort
+
+Ranks text along a plain-English criterion using pairwise Jev Noul comparisons and a locally fitted Bradley-Terry scale.
+
+- Repository: https://github.com/keltokhy/jsort
+- Category: CLI & Pipelines
+- Jev decision: Jev judges whether text A ranks higher than text B on the supplied criterion; local code schedules comparisons and fits a Bradley-Terry scale with standard errors.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/keltokhy/jsort/
+- Source evidence: https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/README.md
+- Source evidence: https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/model.py
+- Source evidence: https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/__init__.py
+- Source evidence: https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/__main__.py
+- Source evidence: https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/cli.py
+- Source evidence: https://github.com/keltokhy/jsort/blob/380dfe57760241681c4743bece352ea4c5086c39/src/jsort/core.py
