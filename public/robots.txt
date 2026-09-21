@@ -1,29 +1,96 @@
 User-agent: *
 Allow: /
 
-# GEO: Explicitly allow modern AI Search Bots & Research Crawlers
+# -----------------------------------------------------------------------------
+# GEO: Generative Engine Optimization & Modern AI Search Crawlers
+# -----------------------------------------------------------------------------
+
+# OpenAI (SearchGPT, ChatGPT Web Search & Model Training)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
-User-agent: PerplexityBot
+# Anthropic (Claude & Claude Web Search)
+User-agent: Claude-Web
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI Search Engine
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-Search
+Allow: /
+
+# xAI (Grok)
 User-agent: GrokBot
 Allow: /
 
-User-agent: Applebot
+User-agent: xai-crawler
+Allow: /
+
+# Google & Gemini Ecosystem
+User-agent: Googlebot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft & GitHub Copilot Ecosystem
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# Meta AI (Llama & External Agents)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Mistral AI & European LLMs
+User-agent: MistralBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Technical Knowledge Graphs & Developer Search
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
 Allow: /
 
 User-agent: cohere-ai
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+# -----------------------------------------------------------------------------
+# Sitemap & Machine-readable Indexes
+# -----------------------------------------------------------------------------
 Sitemap: https://logicrw.github.io/awesome-jev-projects/sitemap.xml
