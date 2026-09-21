@@ -10,25 +10,26 @@
   grid-template-rows: auto 1fr auto auto;
   justify-items: center;
   width: 100%;
+  max-width: 360px;
   min-width: 0;
-  min-height: 268px;
-  padding: 16px 20px 18px;
-  overflow: hidden;
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
+  min-height: 0;
+  padding: 4px 8px 6px;
+  margin-inline: auto;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
   color: var(--text);
-  background: var(--surface);
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  box-shadow: none;
   cursor: pointer;
   text-align: left;
   transform: translateY(0);
-  transition: transform 160ms var(--motion-ease), box-shadow 180ms ease, border-color 180ms ease;
+  transition: transform 160ms var(--motion-ease);
 }
 
 .card-dispenser:focus-visible {
   outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  box-shadow: var(--shadow-hover);
+  outline-offset: 4px;
 }
 
 /* Header plate: Neo-Swiss technical precision bar */
@@ -38,8 +39,10 @@
   justify-content: space-between;
   gap: 10px;
   width: 100%;
+  max-width: 250px;
+  margin-bottom: 4px;
   color: var(--text-muted);
-  font: 10px/1.4 var(--mono, ui-monospace, monospace);
+  font: 9.5px/1.3 var(--mono, ui-monospace, monospace);
   letter-spacing: .065em;
   text-transform: uppercase;
 }
@@ -83,14 +86,14 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 286px);
-  min-height: 146px;
+  width: min(100%, 256px);
+  min-height: 122px;
   perspective: 900px;
 }
 .cd-feed {
   position: absolute;
-  inset: auto 16px 14px;
-  height: 16px;
+  inset: auto 12px 10px;
+  height: 14px;
   border: 1px dashed var(--border);
   border-radius: 999px;
   background: var(--surface-inset);
@@ -108,9 +111,9 @@
 /* Card Deck: Isometric paper stack */
 .cd-deck {
   position: relative;
-  width: 204px;
-  height: 128px;
-  margin-bottom: 4px;
+  width: 188px;
+  height: 114px;
+  margin-bottom: 2px;
   transform: rotateX(10deg);
   transform-style: preserve-3d;
   perspective: 600px;
@@ -324,8 +327,8 @@
 
 /* Count indicator */
 .cd-count {
-  margin: 0 0 8px;
-  font-size: 11px;
+  margin: 0 0 6px;
+  font-size: 10px;
   line-height: 1.4;
   font-weight: 500;
   color: var(--text-muted);
@@ -340,17 +343,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  min-height: 44px;
-  padding: 10px 18px;
+  max-width: 240px;
+  min-height: 38px;
+  padding: 8px 16px;
   border: 1.5px solid var(--primary-bg);
-  border-radius: 10px;
+  border-radius: 999px;
   color: var(--primary-text);
   background: var(--primary-bg);
-  box-shadow: 0 2px 0 color-mix(in srgb, var(--night-canvas) 20%, transparent), 0 4px 12px -2px color-mix(in srgb, var(--primary-bg) 35%, transparent);
-  font-size: 13px;
-  line-height: 1.4;
+  box-shadow: 0 1.5px 0 color-mix(in srgb, var(--night-canvas) 20%, transparent), 0 3px 10px -2px color-mix(in srgb, var(--primary-bg) 35%, transparent);
+  font-size: 12px;
+  line-height: 1.3;
   font-weight: 650;
   letter-spacing: -.01em;
   transition: transform 140ms ease, box-shadow 160ms ease, opacity 160ms ease;
@@ -395,8 +399,6 @@
 @media (hover: hover) and (pointer: fine) {
   .card-dispenser:hover {
     transform: translateY(-2px);
-    border-color: var(--text);
-    box-shadow: 0 8px 24px -4px color-mix(in srgb, var(--night-canvas) 16%, transparent);
   }
   .card-dispenser:hover .cd-front {
     transform: translateY(-12px) rotate(-1deg) translateZ(24px);
@@ -439,10 +441,13 @@
     align-items: center;
     justify-content: flex-start;
     height: auto;
-    min-height: 252px;
-    padding: 14px 16px 16px;
-    border-radius: 14px;
-    gap: 10px;
+    min-height: 0;
+    padding: 6px 12px 10px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    gap: 8px;
   }
   .cd-plate {
     width: 100%;
@@ -508,11 +513,11 @@
 }
 
 @media (max-width: 380px) {
-  .card-dispenser { padding: 12px 12px 14px; min-height: 236px; gap: 8px; }
+  .card-dispenser { padding: 4px 6px 6px; min-height: 0; gap: 6px; }
   .cd-deck { width: 156px; height: 104px; }
   .cd-stage { min-height: 114px; }
   .cd-card-title { font-size: 11px; }
-  .cd-slot { min-height: 44px; padding: 9px 12px; font-size: 12px; }
+  .cd-slot { min-height: 38px; padding: 7px 12px; font-size: 11.5px; }
 }
 
 /* Reduced motion */

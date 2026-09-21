@@ -5,24 +5,24 @@
 
 .hero.hero-tactile {
   align-items: center;
-  gap: clamp(28px, 4vw, 52px);
-  padding-block: 32px 24px;
+  gap: clamp(24px, 3vw, 44px);
+  padding-block: 16px 12px;
 }
 
 .hero-tactile .hero-copy {
   position: relative;
   isolation: isolate;
-  padding: 12px 0 0 16px;
+  padding: 4px 0 0 14px;
 }
 
 .hero-tactile .hero-copy::before {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: -14px -18px -8px -18px;
+  inset: -10px -14px -6px -14px;
   background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
   background-size: 16px 16px;
-  opacity: .4;
+  opacity: .35;
   mask-image: linear-gradient(90deg, transparent, black 6%, black 88%, transparent);
   pointer-events: none;
 }
@@ -32,9 +32,9 @@
   position: absolute;
   z-index: -1;
   inset: 4px auto 4px 0;
-  width: 6px;
+  width: 4px;
   border-left: 1.5px solid var(--border-strong);
-  opacity: .7;
+  opacity: .6;
   pointer-events: none;
 }
 
@@ -44,15 +44,15 @@
   align-items: center;
   max-width: 100%;
   gap: 8px;
-  min-height: 30px;
-  margin-bottom: 22px;
-  padding: 4px 11px;
+  min-height: 26px;
+  margin-bottom: 12px;
+  padding: 3px 10px;
   border: 1.5px solid var(--text);
   border-radius: 999px;
   background: var(--surface-raised);
   box-shadow: 0 1.5px 0 var(--text);
   color: var(--text);
-  font: 10.5px/1.4 var(--mono, ui-monospace, monospace);
+  font: 10px/1.4 var(--mono, ui-monospace, monospace);
   font-weight: 650;
   letter-spacing: .04em;
   white-space: nowrap;
@@ -89,51 +89,50 @@
 
 /* Swiss High-Impact Display Typography */
 .hero-tactile h1 {
-  margin-bottom: 16px;
-  font-size: clamp(36px, 3.3vw, 48px);
-  line-height: 1.15;
+  margin-bottom: 8px;
+  font-size: clamp(28px, 2.7vw, 38px);
+  line-height: 1.14;
   font-weight: 750;
   letter-spacing: -.036em;
   color: var(--text);
 }
 .hero-tactile .hero-copy > p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  max-width: 42ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 44ch;
   color: var(--text-muted);
 }
 
-/* Curator Workbench Cluster */
+/* Curator Signature Cluster: Clean, Uncaged & Airy */
 .hero-maker-row {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(16px, 2vw, 24px);
+  gap: clamp(14px, 1.8vw, 20px);
   width: fit-content;
   max-width: 520px;
-  min-height: 120px;
-  margin-top: 14px;
-  padding: 12px 18px;
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
-  background: var(--surface);
-  box-shadow: var(--shadow-soft);
+  min-height: 0;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 .hero-maker-copy {
   flex: 0 1 auto;
   min-width: 0;
 }
 .hero-maker-copy > p {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--text);
   font-weight: 650;
-  line-height: 1.45;
+  line-height: 1.4;
   letter-spacing: -.01em;
 }
 .hero-maker-copy > span {
   display: block;
-  margin-top: 3px;
-  font: 10px/1.5 var(--mono);
+  margin-top: 2px;
+  font: 9.5px/1.4 var(--mono);
   color: var(--text-muted);
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -142,28 +141,28 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 6px;
 }
 .hero-tactile .hero-links-row .text-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   margin-top: 0;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
 }
 
 .hero-maker-row > .jevy {
-  flex: 0 0 142px;
-  width: 142px;
+  flex: 0 0 114px;
+  width: 114px;
 }
 .hero-tactile .hero-workbench {
   position: relative;
-  padding-top: 4px;
+  padding-top: 0;
 }
 .hero-tactile .hero-tool-row {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 @keyframes hero-led-pulse {
@@ -173,73 +172,72 @@
 
 @media (max-width: 1280px) {
   .hero.hero-tactile { gap: clamp(20px, 2.5vw, 32px); }
-  .hero-maker-row { max-width: 480px; gap: 16px; padding: 10px 14px; }
-  .hero-maker-row > .jevy { flex: 0 0 128px; width: 128px; }
+  .hero-maker-row { max-width: 480px; gap: 14px; padding: 0; }
+  .hero-maker-row > .jevy { flex: 0 0 110px; width: 110px; }
 }
 
 @media (max-width: 1024px) {
-  .hero.hero-tactile { gap: 24px; }
+  .hero.hero-tactile { gap: 20px; }
   .hero-engine-status { font-size: 10px; gap: 6px; padding-inline: 9px; }
   .hero-index-count { padding-left: 6px; }
-  .hero-tactile h1 { font-size: 35px; }
-  .hero-maker-row { max-width: 100%; gap: 14px; }
-  .hero-maker-row > .jevy { flex: 0 0 114px; width: 114px; }
+  .hero-tactile h1 { font-size: clamp(26px, 3.2vw, 34px); }
+  .hero-maker-row { max-width: 100%; gap: 14px; padding: 0; }
+  .hero-maker-row > .jevy { flex: 0 0 102px; width: 102px; }
 }
 
 @media (max-width: 768px) {
-  .hero.hero-tactile { padding-block: 18px 14px; gap: 16px; }
-  .hero-tactile .hero-copy { padding: 4px 0 0 12px; min-height: 0; }
+  .hero.hero-tactile { padding-block: 14px 10px; gap: 14px; }
+  .hero-tactile .hero-copy { padding: 4px 0 0 8px; min-height: 0; }
   .hero-tactile .hero-copy::before { inset: 0 -4px -6px; background-size: 14px 14px; }
-  .hero-engine-status { min-height: 28px; margin-bottom: 12px; font-size: 10px; padding: 3px 10px; }
-  .hero-tactile h1 { font-size: clamp(30px, 7.8vw, 36px); line-height: 1.2; font-weight: 700; margin-bottom: 10px; }
-  .hero-tactile .hero-copy > p { max-width: 100%; font-size: 13.5px; line-height: 1.65; }
+  .hero-engine-status { min-height: 26px; margin-bottom: 8px; font-size: 9.5px; padding: 2px 8px; }
+  .hero-tactile h1 { font-size: clamp(26px, 7vw, 32px); line-height: 1.18; font-weight: 700; margin-bottom: 8px; }
+  .hero-tactile .hero-copy > p { max-width: 100%; font-size: 13px; line-height: 1.55; }
   .hero-maker-row {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
     max-width: 100%;
     min-height: 0;
-    margin-top: 14px;
-    padding: 12px 14px;
-    border: 1px solid var(--border-strong);
-    border-radius: 12px;
-    background: var(--surface);
-    box-shadow: var(--shadow-soft);
+    margin-top: 10px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
   }
   .hero-maker-copy { display: block; flex: 1 1 auto; min-width: 0; padding-top: 0; }
-  .hero-maker-copy > p { font-size: 12.5px; line-height: 1.45; }
-  .hero-maker-copy > span { font-size: 9.5px; line-height: 1.4; margin-top: 3px; }
+  .hero-maker-copy > p { font-size: 12px; line-height: 1.4; }
+  .hero-maker-copy > span { font-size: 9px; line-height: 1.4; margin-top: 2px; }
   .hero-tactile .hero-links-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
-    margin-top: 8px;
+    gap: 8px;
+    margin-top: 6px;
   }
   .hero-tactile .hero-links-row .text-link {
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    font-size: 11px;
+    font-size: 10.5px;
     margin-top: 0;
   }
-  .hero-curator-seal { display: inline-flex; font-size: 10.5px; padding: 2.5px 7px; }
-  .hero-maker-row > .jevy { flex: 0 0 90px; width: 90px; align-self: center; }
+  .hero-curator-seal { display: inline-flex; font-size: 10px; padding: 2px 6px; }
+  .hero-maker-row > .jevy { flex: 0 0 84px; width: 84px; align-self: center; }
   .hero-tactile .hero-workbench { padding-top: 0; }
-  .hero-tactile .hero-tool-row { margin-bottom: 8px; }
+  .hero-tactile .hero-tool-row { margin-bottom: 6px; }
 }
 
 @media (max-width: 430px) {
-  .hero.hero-tactile { padding-block: 12px 10px; gap: 12px; }
+  .hero.hero-tactile { padding-block: 10px 8px; gap: 10px; }
   .hero-tactile .hero-copy { min-height: 0; }
-  .hero-engine-status { margin-bottom: 10px; }
-  .hero.hero-tactile h1 { font-size: clamp(28px, 8vw, 32px); line-height: 1.2; }
-  .hero-maker-row { gap: 10px; padding: 10px 12px; border-radius: 10px; }
-  .hero-maker-copy > p { font-size: 12px; }
-  .hero-maker-row > .jevy { flex: 0 0 82px; width: 82px; }
+  .hero-engine-status { margin-bottom: 8px; }
+  .hero.hero-tactile h1 { font-size: clamp(24px, 7.5vw, 29px); line-height: 1.18; }
+  .hero-maker-row { gap: 10px; padding: 0; }
+  .hero-maker-copy > p { font-size: 11.5px; }
+  .hero-maker-row > .jevy { flex: 0 0 76px; width: 76px; }
   .hero-tactile .hero-links-row { gap: 8px; }
   .hero-tactile .hero-links-row .text-link { font-size: 10.5px; }
   .hero-curator-seal { font-size: 10px; padding: 2px 6px; }
