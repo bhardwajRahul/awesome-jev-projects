@@ -37644,5 +37644,81 @@
       "issueBodySha256": "290e2e311b56fcd1a12801f78df78f059a1c0046c35245c50528e110cd32b133",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/53"
     }
+  },
+  {
+    "id": "hemanth:jev-chess",
+    "name": "jev-chess",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/jev-chess",
+    "repoId": 1376725840,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "该项目使用 TypeSafe AI System One 的 Choice、Score 和 Noul 原语，将自然语言走棋意图解析为合法走法，并提供局面评估、历史棋手风格对手和整局对局分类。",
+    "jevDecisionPoint": "Jev 负责将自然语言走棋意图解析为合法走法，并对走法的锐度、战略主题、王翼攻击风险和棋风人格维度进行打分与选择。",
+    "jevDecisionPointEn": "jev-chess invokes Jev primitives via `@typesafe-ai/sdk` for natural-language move resolution, multi-dimensional position evaluations, and persona style scoring.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "games-simulation",
+      "typed-decisions",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Chess moves, evaluations, persona opponents, and game classification using TypeSafe AI System One models. Resolves natural language move intents into legal moves, evaluates positional sharpness and king risk in parallel, and powers historical persona opponents (Tal, Capablanca, Petrosian).",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-19T04:29:34Z",
+    "lastCommitAt": "2026-09-19T04:29:13Z",
+    "headSha": "2e35170801a0374119f1862209f3cd818c00f467",
+    "metadataFetchedAt": "2026-09-21T07:00:01.247Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T07:00:01.247Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/src/typeSafeClient.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/public/app.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "2e35170801a0374119f1862209f3cd818c00f467",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/README.md",
+          "hash": "5fd1cc6c24ee978d3189c81834148c8b948d49bd5ffa34b25d66a15ddeb9190b"
+        },
+        {
+          "path": "src/typeSafeClient.ts",
+          "url": "https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/src/typeSafeClient.ts",
+          "hash": "502b6443db961703b9fa0be1ebbce7ad445bed67f4e45bc058c8bec3e01a749f"
+        },
+        {
+          "path": "public/app.js",
+          "url": "https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/public/app.js",
+          "hash": "c0bf3b875569acc5239cc70c20b73383fb97023ade7bf602dce1c1301d69874d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 51,
+      "issueBodySha256": "d02f9fb9da89cecc25b90994aacf5065b647e61af2cf798f1c789f9213360a0a",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/51"
+    }
   }
 ]

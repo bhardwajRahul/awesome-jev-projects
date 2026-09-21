@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 383
+Catalog entries: 384
 
 ## Install the Agent Skill
 
@@ -5653,3 +5653,18 @@ High-throughput traffic and attack defense gate for incoming HTTP traffic with z
 - Source evidence: https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/node/src/gate.ts
 - Source evidence: https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/node/src/policy.ts
 - Source evidence: https://github.com/hemanth/traffic-guard/blob/192673bd801866827a81ecfb19413f0e74a90990/python/traffic_guard/gate.py
+
+## jev-chess
+
+Chess moves, evaluations, persona opponents, and game classification using TypeSafe AI System One models. Resolves natural language move intents into legal moves, evaluates positional sharpness and king risk in parallel, and powers historical persona opponents (Tal, Capablanca, Petrosian).
+
+- Repository: https://github.com/hemanth/jev-chess
+- Category: High-Frequency & Simulation
+- Jev decision: jev-chess invokes Jev primitives via \`@typesafe-ai/sdk\` for natural-language move resolution, multi-dimensional position evaluations, and persona style scoring.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/jev-chess/
+- Source evidence: https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/README.md
+- Source evidence: https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/src/typeSafeClient.ts
+- Source evidence: https://github.com/hemanth/jev-chess/blob/2e35170801a0374119f1862209f3cd818c00f467/public/app.js
