@@ -345,43 +345,47 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
         </div>
         <div className="gacha-stage" data-milestone={isMilestone ? 'true' : 'false'}>
           <GachaFireworks trigger={fireworkTrigger} />
-          <article ref={card} key={draw.turn} className="gacha-card" data-rarity={rarity(p)} onPointerMove={tilt} onPointerLeave={resetTilt} onPointerCancel={resetTilt}>
-            <div className="gacha-card-top">
-              <div className="gacha-card-badges">
-                <span className="gacha-tier"><Star size={13} aria-hidden="true" />{rarity(p) === 'ssr' ? 'SSR · 1k+' : t.rising}</span>
+          <article ref={card} className="gacha-card" data-rarity={rarity(p)} onPointerMove={tilt} onPointerLeave={resetTilt} onPointerCancel={resetTilt}>
+            <div key={draw.turn} className="gacha-card-inner">
+              <div className="gacha-card-top">
+                <div className="gacha-card-badges">
+                  <span className="gacha-tier"><Star size={13} aria-hidden="true" />{rarity(p) === 'ssr' ? 'SSR · 1k+' : t.rising}</span>
+                </div>
+                <span className="gacha-stars">{p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)} Stars</span>
               </div>
-              <span className="gacha-stars">{p.stars == null ? '—' : new Intl.NumberFormat(locale).format(p.stars)} Stars</span>
+              <div className="gacha-identity">
+                <span className="gacha-avatar-frame" aria-hidden="true">
+                  <span className="gacha-avatar gacha-initial" hidden={avatarReady}>{p.author.slice(0, 2).toUpperCase()}</span>
+                  {activeAvatarSrc && !avatarFailed && (
+                    <img
+                      ref={imageRef}
+                      key={activeAvatarSrc}
+                      src={activeAvatarSrc}
+                      alt=""
+                      className="gacha-avatar"
+                      width="42"
+                      height="42"
+                      loading="eager"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      data-ready={avatarReady}
+                      onLoad={() => {
+                        markAvatarCached(activeAvatarSrc);
+                        setAvatarResult({ src: activeAvatarSrc, ok: true });
+                      }}
+                      onError={handleAvatarError}
+                    />
+                  )}
+                </span>
+                <div><h3>{p.name}</h3><span className="gacha-author">{p.author}</span></div>
+              </div>
+              <div className="gacha-card-body">
+                <span className="gacha-category">{categoryLabel(p.category, locale)}</span>
+                <p className="gacha-summary" lang={localeMeta[plain.language].language}>{plain.text}</p>
+                <div className="gacha-decision"><span>{t.decision}</span><p lang={localeMeta[decision.language].language}>{decision.text}</p></div>
+              </div>
+              <a className="gacha-github" href={p.url} target="_blank" rel="noopener noreferrer">{t.github}<ArrowUpRight size={17} aria-hidden="true" /></a>
             </div>
-            <div className="gacha-identity">
-              <span className="gacha-avatar-frame" aria-hidden="true">
-                <span className="gacha-avatar gacha-initial" hidden={avatarReady}>{p.author.slice(0, 2).toUpperCase()}</span>
-                {activeAvatarSrc && !avatarFailed && (
-                  <img
-                    ref={imageRef}
-                    key={activeAvatarSrc}
-                    src={activeAvatarSrc}
-                    alt=""
-                    className="gacha-avatar"
-                    width="42"
-                    height="42"
-                    loading="eager"
-                    decoding="async"
-                    referrerPolicy="no-referrer"
-                    data-ready={avatarReady}
-                    onLoad={() => {
-                      markAvatarCached(activeAvatarSrc);
-                      setAvatarResult({ src: activeAvatarSrc, ok: true });
-                    }}
-                    onError={handleAvatarError}
-                  />
-                )}
-              </span>
-              <div><h3>{p.name}</h3><span className="gacha-author">{p.author}</span></div>
-            </div>
-            <span className="gacha-category">{categoryLabel(p.category, locale)}</span>
-            <p className="gacha-summary" lang={localeMeta[plain.language].language}>{plain.text}</p>
-            <div className="gacha-decision"><span>{t.decision}</span><p lang={localeMeta[decision.language].language}>{decision.text}</p></div>
-            <a className="gacha-github" href={p.url} target="_blank" rel="noopener noreferrer">{t.github}<ArrowUpRight size={17} aria-hidden="true" /></a>
           </article>
         </div>
         <p className="gacha-sr-only" role="status" aria-live="polite" aria-atomic="true">{t.drawBadge.replace('{n}', String(draw.turn + 1))}: {t.drawn}: {p.name}, {p.author}</p>
