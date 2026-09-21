@@ -38207,5 +38207,89 @@
       "issueBodySha256": "e39a27f88544789f0655451cbb6288be5743c4d3f0da52bac0f30caa05edb599",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/55"
     }
+  },
+  {
+    "id": "4rays:profanity-checker",
+    "name": "profanity-checker",
+    "author": "4rays",
+    "url": "https://github.com/4rays/profanity-checker",
+    "repoId": 1378776635,
+    "category": "Security & Guardrails",
+    "plainSummary": "profanity-checker：Jev 判断输入文本是否含亵渎语言，以及用户名是否含字面或伪装（谐音/形近）的亵渎内容。",
+    "jevDecisionPoint": "Jev 判断输入文本是否含亵渎语言，以及用户名是否含字面或伪装（谐音/形近）的亵渎内容。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "减少后续处理的冗余信息。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Deploy this Worker once, then call it from your other Workers.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T21:07:29Z",
+    "lastCommitAt": "2026-09-20T21:02:58Z",
+    "headSha": "0a0466f614a9c35e4697a0e8a20600e0104e8151",
+    "metadataFetchedAt": "2026-09-21T09:44:04.204Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/110794587?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T09:44:04.205Z",
+    "evidence": [
+      {
+        "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/src/endpoints/profanityCheck.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/src/index.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/src/types.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "0a0466f614a9c35e4697a0e8a20600e0104e8151",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/README.md",
+          "hash": "00d78e6389d5e3e1503bb8ad349b5438255112eff25b3f5a58b5cc9d72688abf"
+        },
+        {
+          "path": "src/endpoints/profanityCheck.ts",
+          "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/src/endpoints/profanityCheck.ts",
+          "hash": "d08813a55314bf790ee011951cb16372c6b7992f86ef43e18e19c97a021984f2"
+        },
+        {
+          "path": "src/index.ts",
+          "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/src/index.ts",
+          "hash": "0266926577d9ed72a49483d830ff9fa944bee85ccaf4e8b54b293e4dc56fbf31"
+        },
+        {
+          "path": "src/types.ts",
+          "url": "https://github.com/4rays/profanity-checker/blob/0a0466f614a9c35e4697a0e8a20600e0104e8151/src/types.ts",
+          "hash": "1b71187e10b25a153dda09581409cb7ab8030edacac74b92599dec0fdc061039"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 56,
+      "issueBodySha256": "80c6a6e3d4e9cb319de744451e698ec4bd4dfd73c215a44437fb34f3c6bdd0ed",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/56"
+    }
   }
 ]
