@@ -35490,5 +35490,99 @@
       "issueBodySha256": "1459fc26d53c4122c62011f852a748b3c08528698a01b4ce4dbb2ef6c938c2d8",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/45"
     }
+  },
+  {
+    "id": "kyu1204:jgrep",
+    "name": "jgrep",
+    "author": "kyu1204",
+    "url": "https://github.com/kyu1204/jgrep",
+    "repoId": 1376721952,
+    "category": "CLI & Pipelines",
+    "plainSummary": "jgrep 是用英文描述代码行为来搜索代码、git diff 和表格行的命令行工具，它把代码块与每个块一个 Noul 问题一起发给 Jev，并输出命中的 file:line，同时支持用 Noul/Choice/Score 问题检查 diff 和为 CSV/JSONL 的每一行打分。",
+    "jevDecisionPoint": "Jev 对每个代码块/差异块或表格行逐一判断是否符合英文描述（Noul二值判断，Rows模式还支持Choice多选和Score打分）。",
+    "jevDecisionPointEn": "Measured (2026-09-19, jev-1.13.0): a 896-chunk TypeScript `src/` tree in 1.8 s for $0.010 (240k input tokens); repeat query 0 s from cache.",
+    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "search-retrieval",
+      "coding-agents"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "grep for what code does, not what it's called. Semantic code search powered by TypeSafe Jev.",
+    "stars": 9,
+    "forks": 2,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-19T04:24:17Z",
+    "lastCommitAt": "2026-09-19T06:07:35Z",
+    "headSha": "e91569b6c871717ac47ac1e94e4387110ac900f1",
+    "metadataFetchedAt": "2026-09-21T01:15:02.279Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/33680799?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T01:15:02.279Z",
+    "evidence": [
+      {
+        "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/cli.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/init.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/jgrep.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/jgrep.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "e91569b6c871717ac47ac1e94e4387110ac900f1",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/README.md",
+          "hash": "622cd3e5e6fd17d00a9a89943580ca5eb375810cc66648df651ecb807e60c89d"
+        },
+        {
+          "path": "src/cli.ts",
+          "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/cli.ts",
+          "hash": "07433448d5565f199934b735a652f8accd915c3a8691ab140e25d6914128626c"
+        },
+        {
+          "path": "src/init.ts",
+          "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/init.ts",
+          "hash": "f4df68dd41a894ceca3018d102509fff43e7ceafc19febe20f9cce619e4b8f0e"
+        },
+        {
+          "path": "src/jgrep.test.ts",
+          "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/jgrep.test.ts",
+          "hash": "6df8d4e7977d6688e7a623af02035a6c565a938463fdfa93c4fc0ab87499b17e"
+        },
+        {
+          "path": "src/jgrep.ts",
+          "url": "https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/jgrep.ts",
+          "hash": "463b88431c2d1e45f6a74083dca574a58c77d56638da5b6cf042173576eb6db6"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 46,
+      "issueBodySha256": "3e1c0d239318aae9a6e6bcbfdbbf340c39becb93cf732d06d26b3e8564bfece6",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/46"
+    }
   }
 ]
