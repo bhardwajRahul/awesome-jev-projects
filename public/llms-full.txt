@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 356
+Catalog entries: 357
 
 ## Install the Agent Skill
 
@@ -5281,3 +5281,24 @@ grep for what code does, not what it's called. Semantic code search powered by T
 - Source evidence: https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/init.ts
 - Source evidence: https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/jgrep.test.ts
 - Source evidence: https://github.com/kyu1204/jgrep/blob/e91569b6c871717ac47ac1e94e4387110ac900f1/src/jgrep.ts
+
+## jlink
+
+The string baselines are best-match Jaro-Winkler and best-match TF-IDF cosine; the table shows the better of the two. Exact matching after normalization scores 0.26, 0.41, 0.00, 0.00 and 0.22.
+
+- Repository: https://github.com/keltokhy/jlink
+- Category: Data & Search
+- Jev decision: Jev judges whether two candidate records refer to the same entity under a user-supplied match definition; local code generates candidates and resolves accepted matches.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/keltokhy/jlink/
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/README.md
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/judge.py
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/__init__.py
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/__main__.py
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/assets/review.js
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/audit.py
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/block.py
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/cli.py
+- Source evidence: https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/core.py

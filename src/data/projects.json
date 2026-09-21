@@ -35584,5 +35584,135 @@
       "issueBodySha256": "3e1c0d239318aae9a6e6bcbfdbbf340c39becb93cf732d06d26b3e8564bfece6",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/46"
     }
+  },
+  {
+    "id": "keltokhy:jlink",
+    "name": "jlink",
+    "author": "keltokhy",
+    "url": "https://github.com/keltokhy/jlink",
+    "repoId": 1375750110,
+    "category": "Data & Search",
+    "plainSummary": "jlink 让用户用 plain English 写出匹配规则，在本地做候选 blocking 生成记录对，再用 Jev Noul 逐对判断是否为同一实体并给出概率，然后解析链接并提供审计与引用文本。",
+    "jevDecisionPoint": "Jev 根据用户用自然语言给出的匹配规则，判断两个候选记录是否指向同一实体并返回匹配概率。",
+    "jevDecisionPointEn": "Jev judges whether two candidate records refer to the same entity under a user-supplied match definition; local code generates candidates and resolves accepted matches.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "database-vector",
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "The string baselines are best-match Jaro-Winkler and best-match TF-IDF cosine; the table shows\nthe better of the two. Exact matching after normalization scores 0.26, 0.41, 0.00, 0.00 and\n0.22.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 1,
+    "license": "MIT",
+    "createdAt": "2026-09-18T11:11:29Z",
+    "lastCommitAt": "2026-09-21T01:35:01Z",
+    "headSha": "65533df0b531283f2980374ada18c0fd74b6c7ab",
+    "metadataFetchedAt": "2026-09-21T02:09:02.095Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/83777601?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T02:09:02.095Z",
+    "evidence": [
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/judge.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/__main__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/assets/review.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/audit.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/block.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/cli.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/core.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "65533df0b531283f2980374ada18c0fd74b6c7ab",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/README.md",
+          "hash": "136f642b94f594dd7a9982ba98273947c7b769cc4d2b6a2bfc264a3bbf289ecf"
+        },
+        {
+          "path": "src/jlink/judge.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/judge.py",
+          "hash": "5613087fdce1a30ec6e7fe0fc0594aa46d1ec098114d585edfebcc8ff8ae00e7"
+        },
+        {
+          "path": "src/jlink/__init__.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/__init__.py",
+          "hash": "d6a19fbdc67f9cab19c810e49c428b5a4b2af9a4f5226f5cf92b6c097a31e8e3"
+        },
+        {
+          "path": "src/jlink/__main__.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/__main__.py",
+          "hash": "1eecf4744c62687d174cc2e17dedec924143f7e547ed952258c6c347f27c4c86"
+        },
+        {
+          "path": "src/jlink/assets/review.js",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/assets/review.js",
+          "hash": "eac1a290e19cc6b0da8dac55487faa3f0653fce046454b4e80d455f9ee55052d"
+        },
+        {
+          "path": "src/jlink/audit.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/audit.py",
+          "hash": "e5dd41f4d0a26f2c9cf1254de086161d6d0ad1c51dc7acaf713f221881715c23"
+        },
+        {
+          "path": "src/jlink/block.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/block.py",
+          "hash": "f22e4c90260c670d344dde55c81ffe2707f70d51361969079d8828eba374d3ea"
+        },
+        {
+          "path": "src/jlink/cli.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/cli.py",
+          "hash": "12e9b1c42a8d94ef76d8b6da5ac36e393facf0f1a8ac904782866a32193d1d5b"
+        },
+        {
+          "path": "src/jlink/core.py",
+          "url": "https://github.com/keltokhy/jlink/blob/65533df0b531283f2980374ada18c0fd74b6c7ab/src/jlink/core.py",
+          "hash": "9808053ff58559e6513508495b96cc0d40c7ffa2f38f19cc0a456a7763ba3321"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 41,
+      "issueBodySha256": "172810c73b5124517934ceedd0d4b5bb219783eaa9e1a29dc97acc3dabd15a13",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/41"
+    }
   }
 ]
