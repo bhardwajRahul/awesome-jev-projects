@@ -108,11 +108,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(20px, 2.8vw, 38px);
+  gap: clamp(16px, 2.2vw, 30px);
   width: fit-content;
-  max-width: 680px;
+  max-width: 580px;
   min-height: 0;
-  margin-top: 18px;
+  margin-top: 14px;
   padding: 0;
   border: none;
   background: transparent;
@@ -168,8 +168,8 @@
 }
 
 .hero-maker-row > .jevy {
-  flex: 0 0 204px;
-  width: 204px;
+  flex: 0 0 156px;
+  width: 156px;
 }
 .hero-tactile .hero-workbench {
   position: relative;
@@ -186,8 +186,8 @@
 
 @media (max-width: 1280px) {
   .hero.hero-tactile { gap: clamp(20px, 2.5vw, 32px); }
-  .hero-maker-row { max-width: 580px; gap: 20px; padding: 0; }
-  .hero-maker-row > .jevy { flex: 0 0 176px; width: 176px; }
+  .hero-maker-row { max-width: 520px; gap: 18px; padding: 0; }
+  .hero-maker-row > .jevy { flex: 0 0 140px; width: 140px; }
 }
 
 @media (max-width: 1024px) {
@@ -195,8 +195,8 @@
   .hero-engine-status { font-size: 10px; gap: 6px; padding-inline: 9px; }
   .hero-index-count { padding-left: 6px; }
   .hero-tactile h1 { font-size: clamp(26px, 3.2vw, 34px); }
-  .hero-maker-row { max-width: 100%; gap: 18px; padding: 0; }
-  .hero-maker-row > .jevy { flex: 0 0 150px; width: 150px; }
+  .hero-maker-row { max-width: 100%; gap: 16px; padding: 0; }
+  .hero-maker-row > .jevy { flex: 0 0 126px; width: 126px; }
 }
 
 @media (max-width: 768px) {

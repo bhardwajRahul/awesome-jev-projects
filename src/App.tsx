@@ -756,11 +756,6 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
   return (
     <>
       <a className="skip-link" href="#project-results">{t("跳转到项目列表")}</a>
-      {catalogAdded > 0 && (
-        <div className="catalog-notice" role="status">
-          {t("目录已更新 (新增 N 个项目)，已自动同步").replace("N", String(catalogAdded))}
-        </div>
-      )}
       <header className="header">
         <a
           className="brand"

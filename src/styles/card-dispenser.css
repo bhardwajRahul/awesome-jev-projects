@@ -10,7 +10,7 @@
   grid-template-rows: auto 1fr auto auto;
   justify-items: center;
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
   min-width: 0;
   min-height: 0;
   padding: 4px 8px 6px;
@@ -39,7 +39,7 @@
   justify-content: space-between;
   gap: 10px;
   width: 100%;
-  max-width: 250px;
+  max-width: 284px;
   margin-bottom: 4px;
   color: var(--text-muted);
   font: 9.5px/1.3 var(--mono, ui-monospace, monospace);
@@ -86,8 +86,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 256px);
-  min-height: 122px;
+  width: min(100%, 290px);
+  min-height: 138px;
   perspective: 900px;
 }
 .cd-feed {
@@ -111,8 +111,8 @@
 /* Card Deck: Isometric paper stack */
 .cd-deck {
   position: relative;
-  width: 188px;
-  height: 114px;
+  width: 218px;
+  height: 130px;
   margin-bottom: 2px;
   transform: rotateX(10deg);
   transform-style: preserve-3d;
@@ -131,14 +131,14 @@
   background: var(--surface-inset);
   border: 1.5px solid var(--border-strong);
   box-shadow: 0 4px 12px -2px color-mix(in srgb, var(--night-canvas) 12%, transparent);
-  transform: translate(-22px, -4px) rotate(-10deg);
+  transform: translate(-26px, -5px) rotate(-10deg);
   overflow: hidden;
 }
 .cd-middle {
   background: var(--surface-raised);
   border: 1.5px solid var(--border-strong);
   box-shadow: 0 4px 14px -2px color-mix(in srgb, var(--night-canvas) 14%, transparent);
-  transform: translate(22px, -6px) rotate(9deg);
+  transform: translate(26px, -7px) rotate(9deg);
   overflow: hidden;
 }
 .cd-back-pattern {
@@ -181,7 +181,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 11px 13px 10px;
+  padding: 12px 14px 11px;
   color: var(--text);
   border: 2px solid var(--text);
   border-radius: 12px;
@@ -345,15 +345,15 @@
   justify-content: space-between;
   gap: 10px;
   width: 100%;
-  max-width: 240px;
-  min-height: 38px;
-  padding: 8px 16px;
+  max-width: 270px;
+  min-height: 40px;
+  padding: 8px 18px;
   border: 1.5px solid var(--primary-bg);
   border-radius: 999px;
   color: var(--primary-text);
   background: var(--primary-bg);
   box-shadow: 0 1.5px 0 color-mix(in srgb, var(--night-canvas) 20%, transparent), 0 3px 10px -2px color-mix(in srgb, var(--primary-bg) 35%, transparent);
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.3;
   font-weight: 650;
   letter-spacing: -.01em;
@@ -387,11 +387,11 @@
 
 /* Hover & Focus Interactions */
 .card-dispenser:focus-visible .cd-front {
-  transform: translateY(-12px) rotate(-1deg) translateZ(24px);
-  box-shadow: 0 4px 0 var(--text), 0 20px 38px -6px color-mix(in srgb, var(--night-canvas) 32%, transparent);
+  transform: rotate(-3deg) translateZ(14px);
+  box-shadow: 0 4px 0 var(--text), 0 16px 32px -4px color-mix(in srgb, var(--night-canvas) 28%, transparent);
 }
-.card-dispenser:focus-visible .cd-back { transform: translate(-28px, -5px) rotate(-14deg); }
-.card-dispenser:focus-visible .cd-middle { transform: translate(28px, -9px) rotate(13deg); }
+.card-dispenser:focus-visible .cd-back { transform: translate(-32px, -6px) rotate(-14deg); }
+.card-dispenser:focus-visible .cd-middle { transform: translate(32px, -10px) rotate(13deg); }
 .card-dispenser:focus-visible .cd-front-foil { opacity: .95; background-position: 100% 100%; }
 .card-dispenser:focus-visible .cd-slot-glow { transform: translateX(100%); }
 .card-dispenser:focus-visible .cd-slot svg { transform: translateX(4px); }
@@ -401,11 +401,11 @@
     transform: translateY(-2px);
   }
   .card-dispenser:hover .cd-front {
-    transform: translateY(-12px) rotate(-1deg) translateZ(24px);
-    box-shadow: 0 4px 0 var(--text), 0 20px 38px -6px color-mix(in srgb, var(--night-canvas) 30%, transparent);
+    transform: rotate(-3deg) translateZ(14px);
+    box-shadow: 0 4px 0 var(--text), 0 16px 32px -4px color-mix(in srgb, var(--night-canvas) 28%, transparent);
   }
-  .card-dispenser:hover .cd-back { transform: translate(-28px, -5px) rotate(-14deg); }
-  .card-dispenser:hover .cd-middle { transform: translate(28px, -9px) rotate(13deg); }
+  .card-dispenser:hover .cd-back { transform: translate(-32px, -6px) rotate(-14deg); }
+  .card-dispenser:hover .cd-middle { transform: translate(32px, -10px) rotate(13deg); }
   .card-dispenser:hover .cd-front-foil { opacity: .92; background-position: 100% 100%; }
   .card-dispenser:hover .cd-slot-glow { transform: translateX(100%); }
   .card-dispenser:hover .cd-slot svg { transform: translateX(4px); }
