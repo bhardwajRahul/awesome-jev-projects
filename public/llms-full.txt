@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 380
+Catalog entries: 381
 
 ## Install the Agent Skill
 
@@ -5606,3 +5606,20 @@ The signal result above was challenged on three points: no non-AI baseline, sele
 - License: Not declared
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/anisselbd/jev-phishing-bench/
 - Source evidence: https://github.com/anisselbd/jev-phishing-bench/blob/1d56e8c64d029a9554a0874e2ef2901ed196e230/run_jev.py
+
+## jevrag
+
+Replaces hardcoded RAG thresholds with explicit calibrated decision points. Five primitives (retrieval stopping, chunk splitting, context selection, answer abstention, cache trust) behind one swappable state → Decision → confidence → action interface, each evaluated on real datasets with a calibration harness that reports honestly.
+
+- Repository: https://github.com/ajanm007/jevrag
+- Category: SDK & Decision Frameworks
+- Jev decision: jevrag/decision.py — the \`ask(state, questions) -\> DecisionResult\` method calls \`api.typesafe.ai/v1/systemone\` via the Jev backend. All five primitives in \`jevrag/primitives/\` route through this method.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/ajanm007/jevrag/
+- Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/README.md
+- Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/adapters/rag_jev_selector.py
+- Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_rag_jev.py
+- Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_scifact_ragjev.py
+- Source evidence: https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/decision.py

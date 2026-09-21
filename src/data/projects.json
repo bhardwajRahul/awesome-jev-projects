@@ -37399,5 +37399,99 @@
       ]
     },
     "sourceHash": "d8c594d78718577ba73fef6f9d774d490e9bb97e65070a63d2dec9d682563665"
+  },
+  {
+    "id": "ajanm007:jevrag",
+    "name": "jevrag",
+    "author": "ajanm007",
+    "url": "https://github.com/ajanm007/jevrag",
+    "repoId": 1378186244,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "该项目为 RAG 流程提供可插拔的决策层，通过统一的 state → Decision → confidence → action 接口实现检索停止、分块、上下文选择、回答拒答和缓存信任五类决策，并以 Jev 作为首个可替换后端，同时提供校准评估工具。",
+    "jevDecisionPoint": "Jev 根据检索状态对证据充分性、块边界、上下文选择、答案弃答和缓存信任五个 RAG 决策点给出类型化答案与置信度。",
+    "jevDecisionPointEn": "jevrag/decision.py — the `ask(state, questions) -> DecisionResult` method calls `api.typesafe.ai/v1/systemone` via the Jev backend. All five primitives in `jevrag/primitives/` route through this method.",
+    "highlightBenefit": "减少后续处理的冗余信息。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Replaces hardcoded RAG thresholds with explicit calibrated decision points. Five primitives (retrieval stopping, chunk splitting, context selection, answer abstention, cache trust) behind one swappable state → Decision → confidence → action interface, each evaluated on real datasets with a calibration harness that reports honestly.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T09:52:52Z",
+    "lastCommitAt": "2026-09-20T18:26:43Z",
+    "headSha": "2b5563a9a4a68c592e727fc390890798dd5be2fb",
+    "metadataFetchedAt": "2026-09-21T06:52:37.539Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/120266872?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T06:52:37.539Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/adapters/rag_jev_selector.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_rag_jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_scifact_ragjev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/decision.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "2b5563a9a4a68c592e727fc390890798dd5be2fb",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/README.md",
+          "hash": "03d6778b9f4f0af6041b38b4a37cc9059b2c0cb23d5d8fafa964eb4cf2631e7d"
+        },
+        {
+          "path": "jevrag/adapters/rag_jev_selector.py",
+          "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/adapters/rag_jev_selector.py",
+          "hash": "d44a9b00e01390a339a1c194694a809ecb17f01f630dd10d1b149d8f3caff940"
+        },
+        {
+          "path": "scripts/eval_rag_jev.py",
+          "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_rag_jev.py",
+          "hash": "7c85f4103fc11f47a6ecb40c7ced9aebd3f3c1269d5835b0e7811a27f8b821e8"
+        },
+        {
+          "path": "scripts/eval_scifact_ragjev.py",
+          "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/scripts/eval_scifact_ragjev.py",
+          "hash": "a52b20dbdc221e7e5dda27ed87b516627f2bca5c2c732969a197c13471239429"
+        },
+        {
+          "path": "jevrag/decision.py",
+          "url": "https://github.com/ajanm007/jevrag/blob/2b5563a9a4a68c592e727fc390890798dd5be2fb/jevrag/decision.py",
+          "hash": "e12efe05fb9223d06c40e44ba9f292fc05e5f5779a52c5ff12c5e96914c9958a"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 48,
+      "issueBodySha256": "4690a696352a97cc0edbce051c9fbacbafb39c0cd725d8213ab5874fafcbf4ee",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/48"
+    }
   }
 ]
