@@ -29,6 +29,7 @@ test('daily discovery is identical in four locales while existing Header, Sponso
       assert.ok(html.includes('class="jevy"'), 'The original mechanical assistant is present in every locale');
       const status = html.match(/<div class="hero-engine-status"[\s\S]*?<\/div>/)?.[0];
       assert.ok(status?.includes(String(rows.length)), 'The status badge uses the actual catalog size');
+      assert.ok(html.includes(`✓ ${rows.length} VERIFIED`), `${initialLocale}: Curator seal dynamically reflects catalog size`);
       if (['en', 'ko'].includes(initialLocale)) assert.doesNotMatch(status, /\p{Script=Han}/u);
       assert.ok(html.includes('class="header-ecosystem"') && html.includes('class="header-utilities"'));
       assert.ok(html.includes('class="discovery-entry" hidden=""'), 'Secondary draw link stays hidden on the deck tab');

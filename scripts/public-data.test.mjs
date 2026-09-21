@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { publicProjects } from "./prepare-public-data.mjs";
+import { readFile } from "node:fs/promises";
+import { publicProjects, syncOgCard } from "./prepare-public-data.mjs";
 test("public projection excludes diagnostics, API errors, discovery queries, and credentials", () => {
   const [project] = publicProjects([
     {
@@ -138,3 +139,11 @@ test("pending entries retain identity but do not republish unverified source cla
   assert.deepEqual(original,snapshot);
   assert.ok(published.plainSummaryJa && published.plainSummaryKo);
 });
+
+test("syncOgCard synchronizes og-card.svg metrics dynamically to match catalog count", async () => {
+  await syncOgCard(389);
+  const svg = await readFile(new URL("../public/og-card.svg", import.meta.url), "utf8");
+  assert.ok(svg.includes(">389+</text>"), "og-card.svg metric must contain 389+");
+  assert.ok(svg.includes("JEV-SYS1-CORE · #389"), "og-card.svg core ID must contain #389");
+});
+

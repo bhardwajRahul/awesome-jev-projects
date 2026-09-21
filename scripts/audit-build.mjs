@@ -92,6 +92,15 @@ assert.equal(image.readUInt32BE(20), 630);
 const projects = JSON.parse(
   await readFile(join(base, "projects.json"), "utf8"),
 );
+const ogSvg = await readFile(join(base, "og-card.svg"), "utf8");
+assert.ok(
+  ogSvg.includes(`>${projects.length}+</text>`),
+  `og-card.svg metric must match catalog count ${projects.length}+`,
+);
+assert.ok(
+  ogSvg.includes(`JEV-SYS1-CORE · #${projects.length}`),
+  `og-card.svg core ID must match catalog count #${projects.length}`,
+);
 assert.equal(
   projects.filter((project) => project.pinned).length,
   14,

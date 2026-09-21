@@ -234,8 +234,8 @@ export function GachaDialog({ projects, locale, onClose }: { projects: Project[]
 
   function redraw() {
     revision.current++;
+    resetTilt();
     setFeedback(null); setFallback(''); setAvatarResult(null);
-    cancelAnimationFrame(tiltFrame.current);
     setDraw((previous) => ({ project: drawProject(projects, previous.project?.id) as Project | null, turn: previous.turn + 1 }));
   }
   async function copyText(text: string) {

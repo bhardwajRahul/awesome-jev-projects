@@ -1,4 +1,5 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
 export const publicFields = [
@@ -105,6 +106,37 @@ export function publicProjects(rows) {
     return project;
   });
 }
+export async function syncOgCard(count) {
+  const svgPath = new URL("../public/og-card.svg", import.meta.url);
+  try {
+    const svg = await readFile(svgPath, "utf8");
+    const updatedSvg = svg
+      .replace(
+        /(<text [^>]*font-size="30"[^>]*fill="#f0ca7d">)\d+\+(<\/text>)/,
+        `$1${count}+$2`
+      )
+      .replace(
+        /(JEV-SYS1-CORE · #)\d+/,
+        `$1${count}`
+      );
+    if (svg !== updatedSvg) {
+      await writeFile(svgPath, updatedSvg, "utf8");
+      console.log(`Updated public/og-card.svg project count to ${count}+`);
+    }
+    // If sips is available on macOS, regenerate public/og-card.png
+    try {
+      const pngPath = new URL("../public/og-card.png", import.meta.url);
+      const res = spawnSync("sips", ["-s", "format", "png", fileURLToPath(svgPath), "--out", fileURLToPath(pngPath)], { stdio: "pipe" });
+      if (res.status === 0) {
+        console.log(`Regenerated public/og-card.png to match ${count}+ projects.`);
+      }
+    } catch {
+      // Ignore if sips is not available (e.g. Linux CI)
+    }
+  } catch {
+    // Ignore if public/og-card.svg is not found
+  }
+}
 export async function preparePublicData() {
   const rows = JSON.parse(
     await readFile(
@@ -119,6 +151,7 @@ export async function preparePublicData() {
     new URL("../public/projects.json", import.meta.url),
     JSON.stringify(publicProjects(rows)) + "\n",
   );
+  await syncOgCard(rows.length);
   console.log(
     `Prepared ${rows.length} public project records; no radar logs or configuration included.`,
   );
@@ -128,3 +161,4 @@ if (
   resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 )
   await preparePublicData();
+
