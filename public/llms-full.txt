@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 385
+Catalog entries: 386
 
 ## Install the Agent Skill
 
@@ -5683,3 +5683,24 @@ Interactive semantic explorer and taxonomy for TC39 proposals. Applies TypeSafe 
 - Source evidence: https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/README.md
 - Source evidence: https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/lib/typesafeEngine.ts
 - Source evidence: https://github.com/hemanth/tc39-atlas/blob/fef00f6f3707a0b52b21dc08b769f7be5ccf08f4/src/server/typesafeApi.ts
+
+## pkg-gate
+
+Pre-install security gate for npm lifecycle scripts using TypeSafe System One. Evaluates preinstall, install, and postinstall hooks across intent, threat severity, secret access, and remote execution to intercept supply-chain attacks before execution.
+
+- Repository: https://github.com/hemanth/pkg-gate
+- Category: Security & Guardrails
+- Jev decision: pkg-gate uses \`@typesafe-ai/sdk\` to evaluate lifecycle scripts in parallel across intent (Choice), threat severity (Score), secret exfiltration (Noul), and remote execution (Noul).
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hemanth/pkg-gate/
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/README.md
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/gate.js
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/index.d.ts
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/index.js
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/questions.js
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/resolver.js
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/simulator.js
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/tui.js
+- Source evidence: https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/utils.js

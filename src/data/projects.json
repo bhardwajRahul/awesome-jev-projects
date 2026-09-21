@@ -37796,5 +37796,135 @@
       "issueBodySha256": "7598221925715f693f2c92b9008ca88482a81429bdf91b9ae920bbd25b6f7f2c",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/54"
     }
+  },
+  {
+    "id": "hemanth:pkg-gate",
+    "name": "pkg-gate",
+    "author": "hemanth",
+    "url": "https://github.com/hemanth/pkg-gate",
+    "repoId": 1373812692,
+    "category": "Security & Guardrails",
+    "plainSummary": "pkg-gate 是在安装前评估 npm 生命周期脚本的门禁工具，它使用 TypeSafe System One 以 Choice 判断意图、以 Score 评估威胁严重程度、以 Noul 判断机密访问和远程执行，并输出 allow、warn 或 block 的判定结果。",
+    "jevDecisionPoint": "对每个 preinstall/install/postinstall 脚本并行判定意图分类、威胁评分与窃密/远程执行概率，以决定放行、告警或拦截。",
+    "jevDecisionPointEn": "pkg-gate uses `@typesafe-ai/sdk` to evaluate lifecycle scripts in parallel across intent (Choice), threat severity (Score), secret exfiltration (Noul), and remote execution (Noul).",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "cli-git-gates",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Pre-install security gate for npm lifecycle scripts using TypeSafe System One. Evaluates preinstall, install, and postinstall hooks across intent, threat severity, secret access, and remote execution to intercept supply-chain attacks before execution.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-17T01:47:58Z",
+    "lastCommitAt": "2026-09-17T18:48:28Z",
+    "headSha": "7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8",
+    "metadataFetchedAt": "2026-09-21T07:04:41.830Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-21T07:04:41.830Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/gate.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/index.d.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/index.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/questions.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/resolver.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/simulator.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/tui.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/utils.js",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/README.md",
+          "hash": "c486b37a2a47fc1316b40eebcb0808a096aa856487da15b081a71cd0697f63dd"
+        },
+        {
+          "path": "src/gate.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/gate.js",
+          "hash": "c433ca812d1dfb0a7662814a3a6facd5804b66b611cfa228cd3d30b6a3de493e"
+        },
+        {
+          "path": "src/index.d.ts",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/index.d.ts",
+          "hash": "7381a5972d2e3e1124784f2da3f69b7bf7ef027fee99de66a61a50c39ccaf522"
+        },
+        {
+          "path": "src/index.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/index.js",
+          "hash": "cd817971799fb75dffe16dd39b8e919c87b1f67d9f68fa74fa5c3f14a71b3c8b"
+        },
+        {
+          "path": "src/questions.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/questions.js",
+          "hash": "e55ce1bc727bcf4365c7cb7d5f025b52059e41f5a377573093b922c6d6678847"
+        },
+        {
+          "path": "src/resolver.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/resolver.js",
+          "hash": "0551b59fe78519b6610a785a2e556a460c2324eb4e4930193fcbcf022aecb204"
+        },
+        {
+          "path": "src/simulator.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/simulator.js",
+          "hash": "d0a8951f690c4a79c3fe7373a9783dd96efaba58891db64eb1764e7f537df416"
+        },
+        {
+          "path": "src/tui.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/tui.js",
+          "hash": "a9649179d51f75b98b01f62ee93779cbe0528d3d639494a347bdc4282f6ecdd6"
+        },
+        {
+          "path": "src/utils.js",
+          "url": "https://github.com/hemanth/pkg-gate/blob/7649d07768b3682c1d9d9ef94f0b6232c1e2f8d8/src/utils.js",
+          "hash": "c2b2c4058f92c68e51a987de138d057fdbb3a81fcfa48a91df39175ae6bf92f7"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 52,
+      "issueBodySha256": "431730fc32a06510cff0dea1af5d12098aa94c50662a8f3bb1506520612d6033",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/52"
+    }
   }
 ]
