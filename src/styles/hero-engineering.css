@@ -5,8 +5,8 @@
 
 .hero.hero-tactile {
   align-items: center;
-  gap: clamp(24px, 3vw, 44px);
-  padding-block: 16px 12px;
+  gap: clamp(28px, 3.5vw, 48px);
+  padding-block: 32px 22px;
 }
 
 .hero-tactile .hero-copy {
@@ -89,17 +89,17 @@
 
 /* Swiss High-Impact Display Typography */
 .hero-tactile h1 {
-  margin-bottom: 8px;
-  font-size: clamp(28px, 2.7vw, 38px);
-  line-height: 1.14;
+  margin-bottom: 10px;
+  font-size: clamp(30px, 3vw, 41px);
+  line-height: 1.18;
   font-weight: 750;
-  letter-spacing: -.036em;
+  letter-spacing: -.032em;
   color: var(--text);
 }
 .hero-tactile .hero-copy > p {
-  font-size: 13.5px;
-  line-height: 1.55;
-  max-width: 44ch;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 46ch;
   color: var(--text-muted);
 }
 
@@ -108,11 +108,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(14px, 1.8vw, 20px);
+  gap: clamp(20px, 2.8vw, 38px);
   width: fit-content;
-  max-width: 520px;
+  max-width: 680px;
   min-height: 0;
-  margin-top: 10px;
+  margin-top: 18px;
   padding: 0;
   border: none;
   background: transparent;
@@ -123,26 +123,40 @@
   min-width: 0;
 }
 .hero-maker-copy > p {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--text);
   font-weight: 650;
   line-height: 1.4;
   letter-spacing: -.01em;
 }
-.hero-maker-copy > span {
-  display: block;
-  margin-top: 2px;
+.hero-maker-copy .hero-primitives {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
   font: 9.5px/1.4 var(--mono);
+}
+.hero-maker-copy .hero-primitives .primitive-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--surface-inset);
   color: var(--text-muted);
+  border: 1px solid var(--border);
+  font-weight: 600;
   letter-spacing: .04em;
-  text-transform: uppercase;
+}
+.hero-maker-copy .hero-primitives .primitive-dot {
+  color: var(--border-strong);
+  font-size: 10px;
 }
 .hero-tactile .hero-links-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 6px;
+  gap: 12px;
+  margin-top: 8px;
 }
 .hero-tactile .hero-links-row .text-link {
   display: inline-flex;
@@ -154,8 +168,8 @@
 }
 
 .hero-maker-row > .jevy {
-  flex: 0 0 114px;
-  width: 114px;
+  flex: 0 0 204px;
+  width: 204px;
 }
 .hero-tactile .hero-workbench {
   position: relative;
@@ -172,8 +186,8 @@
 
 @media (max-width: 1280px) {
   .hero.hero-tactile { gap: clamp(20px, 2.5vw, 32px); }
-  .hero-maker-row { max-width: 480px; gap: 14px; padding: 0; }
-  .hero-maker-row > .jevy { flex: 0 0 110px; width: 110px; }
+  .hero-maker-row { max-width: 580px; gap: 20px; padding: 0; }
+  .hero-maker-row > .jevy { flex: 0 0 176px; width: 176px; }
 }
 
 @media (max-width: 1024px) {
@@ -181,8 +195,8 @@
   .hero-engine-status { font-size: 10px; gap: 6px; padding-inline: 9px; }
   .hero-index-count { padding-left: 6px; }
   .hero-tactile h1 { font-size: clamp(26px, 3.2vw, 34px); }
-  .hero-maker-row { max-width: 100%; gap: 14px; padding: 0; }
-  .hero-maker-row > .jevy { flex: 0 0 102px; width: 102px; }
+  .hero-maker-row { max-width: 100%; gap: 18px; padding: 0; }
+  .hero-maker-row > .jevy { flex: 0 0 150px; width: 150px; }
 }
 
 @media (max-width: 768px) {
@@ -197,7 +211,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 14px;
     width: 100%;
     max-width: 100%;
     min-height: 0;
@@ -209,7 +223,8 @@
   }
   .hero-maker-copy { display: block; flex: 1 1 auto; min-width: 0; padding-top: 0; }
   .hero-maker-copy > p { font-size: 12px; line-height: 1.4; }
-  .hero-maker-copy > span { font-size: 9px; line-height: 1.4; margin-top: 2px; }
+  .hero-maker-copy .hero-primitives { font-size: 8.5px; gap: 3px; margin-top: 2px; }
+  .hero-maker-copy .hero-primitives .primitive-chip { padding: 0 4px; font-size: 8.5px; }
   .hero-tactile .hero-links-row {
     display: flex;
     flex-wrap: wrap;
@@ -225,7 +240,7 @@
     margin-top: 0;
   }
   .hero-curator-seal { display: inline-flex; font-size: 10px; padding: 2px 6px; }
-  .hero-maker-row > .jevy { flex: 0 0 84px; width: 84px; align-self: center; }
+  .hero-maker-row > .jevy { flex: 0 0 102px; width: 102px; align-self: center; }
   .hero-tactile .hero-workbench { padding-top: 0; }
   .hero-tactile .hero-tool-row { margin-bottom: 6px; }
 }

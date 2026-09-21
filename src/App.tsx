@@ -870,31 +870,37 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
             <div className="hero-maker-row">
               <div className="hero-maker-copy">
                 <p>{heroStatus.note}</p>
-                <span>{heroStatus.detail}</span>
-            <div className="hero-links-row">
-              <a
-                className="text-link"
-                href="https://typesafe.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("认识 TypeSafe 的决策模型")}
-                <ArrowUpRight size={15} />
-              </a>
-              <a
-                className="hero-curator-seal"
-                href="https://x.com/0xLogicrw"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="X (Twitter) @0xLogicrw"
-              >
-                <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-                <span>Curated by <b>@0xLogicrw</b></span>
-                <ArrowUpRight size={11} aria-hidden="true" />
-              </a>
-            </div>
+                <div className="hero-primitives" aria-label={heroStatus.detail}>
+                  <span className="primitive-chip">CHOICE</span>
+                  <span className="primitive-dot" aria-hidden="true">·</span>
+                  <span className="primitive-chip">SCORE</span>
+                  <span className="primitive-dot" aria-hidden="true">·</span>
+                  <span className="primitive-chip">NOUL</span>
+                </div>
+                <div className="hero-links-row">
+                  <a
+                    className="text-link"
+                    href="https://typesafe.ai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("认识 TypeSafe 的决策模型")}
+                    <ArrowUpRight size={15} />
+                  </a>
+                  <a
+                    className="hero-curator-seal"
+                    href="https://x.com/0xLogicrw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Curated by @0xLogicrw — 380 projects human-verified"
+                    aria-label="Curated by @0xLogicrw, 380 projects human-verified"
+                  >
+                    <span className="seal-tag">CURATED</span>
+                    <span className="seal-author">@0xLogicrw</span>
+                    <span className="seal-check">✓ 380 VERIFIED</span>
+                    <ArrowUpRight size={11} aria-hidden="true" />
+                  </a>
+                </div>
               </div>
               <Jevy locale={locale} />
             </div>

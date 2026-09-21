@@ -2,7 +2,7 @@
    Components consume these roles directly; themes never restyle components. */
 :root {
   color-scheme: light;
-  --neutral-0: #fcfcf9;
+  --neutral-0: #ffffff;
   --neutral-1: #fafaf8;
   --neutral-2: #f3f4ef;
   --neutral-3: #e9ede4;
