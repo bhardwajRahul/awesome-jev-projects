@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 486
+Catalog entries: 487
 
 ## Install the Agent Skill
 
@@ -7043,3 +7043,17 @@ A semantic control-flow library for Effect: Jev's \`Choice\` / \`Noul\` / \`Scor
 - Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/procedure.test.mjs
 - Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/examples/headline.ts
 - Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/internal/hash.ts
+
+## jev-by-example
+
+Ten runnable Jev examples for agent decisions: memory conflicts, tool-result checks, recovery, context selection, and handoffs. JavaScript, zero dependencies.
+
+- Repository: https://github.com/ReallyArtificial/jev-by-example
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/reallyartificial/jev-by-example/
+- Source evidence: https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/README.md
+- Source evidence: https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/src/client.mjs

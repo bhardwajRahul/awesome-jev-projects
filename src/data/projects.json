@@ -45282,5 +45282,72 @@
       "issueBodySha256": "6c922695e7d6c40909edc9d2b6a5db150a72c593c88f6b966f17611c134c4a7b",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/68"
     }
+  },
+  {
+    "id": "reallyartificial:jev-by-example",
+    "name": "jev-by-example",
+    "author": "ReallyArtificial",
+    "url": "https://github.com/ReallyArtificial/jev-by-example",
+    "repoId": 1380535667,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "该仓库提供十个可运行的 JavaScript 示例，用小型 Jev 判断结合应用逻辑演示 Agent 决策。",
+    "jevDecisionPoint": "Jev 在记忆调和、证据缺口、重试对账等十个场景中以 Choice/Score/Noul 做出类型化判断以决定下一步提案。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions",
+      "coding-agents"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Ten runnable Jev examples for agent decisions: memory conflicts, tool-result checks, recovery, context selection, and handoffs. JavaScript, zero dependencies.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-21T21:05:45Z",
+    "lastCommitAt": "2026-09-21T21:05:35Z",
+    "headSha": "d35379e7cc7290bcc519d006d82c922555e63364",
+    "metadataFetchedAt": "2026-09-22T13:05:31.447Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/273097514?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T13:05:31.447Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/src/client.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "d35379e7cc7290bcc519d006d82c922555e63364",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/README.md",
+          "hash": "2db17df33031b68b0bc4c866e37f94951119d47a9b21e064f3952330d31ac017"
+        },
+        {
+          "path": "src/client.mjs",
+          "url": "https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/src/client.mjs",
+          "hash": "0c8d38d736753f39fe593d1159a1a97c637dcc0be9f52a41ac47818c680f4d5c"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 69,
+      "issueBodySha256": "d0439eae83453a78023cb875ce4c96749f3e139c639ba338fcf7af065e1377ef",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/69"
+    }
   }
 ]
