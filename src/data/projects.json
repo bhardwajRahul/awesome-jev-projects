@@ -42515,5 +42515,81 @@
       ]
     },
     "sourceHash": "fcb474c8fb7ba30ddf81f6ada56eed78be08ec64eac17ef7fdf95953a1c373e4"
+  },
+  {
+    "id": "ruban-24:switchboard",
+    "name": "switchboard",
+    "author": "ruban-24",
+    "url": "https://github.com/ruban-24/switchboard",
+    "repoId": 1378294353,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "Switchboard 是面向 Claude Code 和 Codex 的本地模型路由工具，它用 Jev 评估新对话任务并按置信度规则选择模型与推理强度，然后在后续对话、工具调用和恢复会话中固定该选择。",
+    "jevDecisionPoint": "Jev 对新会话任务的能力档位、上下文是否充足及各候选模型的最低充分推理努力度做出结构化 choice 判断。",
+    "jevDecisionPointEn": "Jev classifies the task's capability tier, whether context is sufficient, and the lowest adequate reasoning effort for the candidate model. Application code applies confidence floors, maps the result to a model and effort, and persists that pair for later turns and tool continuations.",
+    "highlightBenefit": "按任务分配模型资源；具体成本收益需看项目测试。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "coding-agents",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Switchboard is a local Claude Code and Codex router. It assesses a new conversation's task with Jev, applies deterministic confidence rules to select the model and reasoning effort, and pins that route through follow-ups, tool calls, and resume to avoid unnecessary prompt-cache disruption.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-20T12:08:07Z",
+    "lastCommitAt": "2026-09-21T14:05:08Z",
+    "headSha": "15de067f844ed05a585fcddae339ad57dd427379",
+    "metadataFetchedAt": "2026-09-22T03:24:00.142Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/167326848?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T03:24:00.142Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ruban-24/switchboard/blob/15de067f844ed05a585fcddae339ad57dd427379/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ruban-24/switchboard/blob/15de067f844ed05a585fcddae339ad57dd427379/src/jev-questions.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ruban-24/switchboard/blob/15de067f844ed05a585fcddae339ad57dd427379/src/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "15de067f844ed05a585fcddae339ad57dd427379",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ruban-24/switchboard/blob/15de067f844ed05a585fcddae339ad57dd427379/README.md",
+          "hash": "6e606b51248f9b06bdf295aed765e7458260fcdc999ef6c9e89e593faf777361"
+        },
+        {
+          "path": "src/jev-questions.ts",
+          "url": "https://github.com/ruban-24/switchboard/blob/15de067f844ed05a585fcddae339ad57dd427379/src/jev-questions.ts",
+          "hash": "42cbfe4977b97c4d182024b475bf3e39a7198ad77b4263094369118b9e0d49bb"
+        },
+        {
+          "path": "src/jev.ts",
+          "url": "https://github.com/ruban-24/switchboard/blob/15de067f844ed05a585fcddae339ad57dd427379/src/jev.ts",
+          "hash": "0148d39f47e08a3192a47205b73d65a9ef4ad60d6213b7418afb209a4e6a5c38"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 60,
+      "issueBodySha256": "9f0d4f676c3be0b8efb75def16d5df80060cba0ee190705d40981ce17713f5ee",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/60"
+    }
   }
 ]

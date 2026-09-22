@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-420%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-449%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@
 **TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：
 - ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
-- 🛡️ **严格拒绝概念炒作**：全网严选 **420+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
+- 🛡️ **严格拒绝概念炒作**：全网严选 **449+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
 ### 📊 架构分工对比：System 1 (Jev) vs System 2 (大推理模型)
 
@@ -50,7 +50,7 @@
 - ⚡ **毫秒级吸顶搜索与浮动过滤**：即便页面下滑，也可随时唤出浮动分类面板，支持多标签一键点选过滤。
 - 🔍 **100% 绑定固定源码**：所有收录项目均核验真实 commit SHA 与具体接入点，绝无空气包装与死链。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **420 个精选项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **449 个精选项目**
 
 由社区维护的 Jev 项目与架构雷达，收录具有公开源码与清晰集成逻辑的开源项目，帮助开发者快速探索和落地 System-1 决策架构。
 
@@ -79,22 +79,22 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 ## 分类
 
-- [浏览器与桌面 (34)](https://logicrw.github.io/awesome-jev-projects/categories/browser-os-action/)
-- [命令行与流水线 (26)](https://logicrw.github.io/awesome-jev-projects/categories/cli-pipelines/)
+- [浏览器与桌面 (36)](https://logicrw.github.io/awesome-jev-projects/categories/browser-os-action/)
+- [命令行与流水线 (27)](https://logicrw.github.io/awesome-jev-projects/categories/cli-pipelines/)
 - [分类与目录 (2)](https://logicrw.github.io/awesome-jev-projects/categories/classification-taxonomy/)
 - [代码与图谱 (12)](https://logicrw.github.io/awesome-jev-projects/categories/codebase-graph-pathfinding/)
-- [上下文与记忆 (25)](https://logicrw.github.io/awesome-jev-projects/categories/context-gc-filter/)
+- [上下文与记忆 (27)](https://logicrw.github.io/awesome-jev-projects/categories/context-gc-filter/)
 - [音乐与界面创作 (15)](https://logicrw.github.io/awesome-jev-projects/categories/creative-tools/)
-- [数据与搜索 (26)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
+- [数据与搜索 (27)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
 - [决策工具 (12)](https://logicrw.github.io/awesome-jev-projects/categories/decision-tools/)
-- [行业应用 (26)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
+- [行业应用 (31)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
-- [游戏与实时决策 (35)](https://logicrw.github.io/awesome-jev-projects/categories/high-frequency-simulation/)
-- [MCP 与集成 (22)](https://logicrw.github.io/awesome-jev-projects/categories/mcp-integrations/)
-- [模型路由与降本 (34)](https://logicrw.github.io/awesome-jev-projects/categories/routing-cost-optimization/)
-- [SDK 与决策框架 (75)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-decision-frameworks/)
+- [游戏与实时决策 (37)](https://logicrw.github.io/awesome-jev-projects/categories/high-frequency-simulation/)
+- [MCP 与集成 (26)](https://logicrw.github.io/awesome-jev-projects/categories/mcp-integrations/)
+- [模型路由与降本 (36)](https://logicrw.github.io/awesome-jev-projects/categories/routing-cost-optimization/)
+- [SDK 与决策框架 (83)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-decision-frameworks/)
 - [SDK 与兼容接入 (6)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-integrations/)
-- [安全与内容审核 (37)](https://logicrw.github.io/awesome-jev-projects/categories/security-guardrails/)
+- [安全与内容审核 (39)](https://logicrw.github.io/awesome-jev-projects/categories/security-guardrails/)
 - [语音与对话 (4)](https://logicrw.github.io/awesome-jev-projects/categories/voice-conversation/)
 
 ## 浏览器与桌面
@@ -119,15 +119,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把屏幕读取、动作选择与文本生成分开。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/awlevin/typesafe-computer-use/) · 许可证: MIT
 
-- [**omg.dev**](https://github.com/BennyKok/omg.dev) — omg.dev 的移动端测试脚本可让 Jev 读取可访问性树并选择下一步交互。
-  - **Jev 在哪一步做判断**: 判断要操作的控件、步骤是否完成或是否受阻，再由测试执行器操作界面。
-  - **这个项目的用途**: 给移动端测试加入基于当前界面状态的选择。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/bennykok/omg.dev/) · 许可证: MIT
-
 - [**Jev-cu**](https://github.com/Sac-Y/Jev-cu) — Codex Computer Use 辅助循环：界面文字候选交给 Jev，读取与执行交给桌面工具。
   - **Jev 在哪一步做判断**: 选择元素、动作、完成度和风险，本地策略决定执行、停止或要求确认。
   - **这个项目的用途**: 以文字候选表达判断输入，默认先 dry-run。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/sac-y/jev-cu/) · 许可证: 未声明
+
+- [**omg.dev**](https://github.com/BennyKok/omg.dev) — omg.dev 的移动端测试脚本可让 Jev 读取可访问性树并选择下一步交互。
+  - **Jev 在哪一步做判断**: 判断要操作的控件、步骤是否完成或是否受阻，再由测试执行器操作界面。
+  - **这个项目的用途**: 给移动端测试加入基于当前界面状态的选择。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/bennykok/omg.dev/) · 许可证: MIT
 
 - [**mobile-jev**](https://github.com/droidrun/mobile-jev) — 通过 Mobilerun 控制 Android 手机，网页面板与命令行可查看 Jev 的操作过程。
   - **Jev 在哪一步做判断**: 根据手机界面选择应用、控件和下一步动作，Mobilerun 执行操作。
@@ -154,15 +154,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 让界面选择与执行分开，便于检查每一步。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/savka777/jev-use/) · 许可证: MIT
 
-- [**jev-browser**](https://github.com/Ying-Kai-Liao/jev-browser) — 浏览器自动化库、CLI 和 MCP：调用方模型给出目标与待输入文字，Jev 选择具体操作。
-  - **Jev 在哪一步做判断**: 从页面候选中选择元素、动作和值，并评估完成、错误与不可逆操作。
-  - **这个项目的用途**: 把浏览器动作循环与调用方规划分开，并返回状态与轨迹。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ying-kai-liao/jev-browser/) · 许可证: MIT
-
 - [**typesafe-adblock**](https://github.com/realZachi/typesafe-adblock) — 一个实验性 Chrome 扩展，让 Jev 判断候选 DOM 元素是否是广告，再高亮或移除。
   - **Jev 在哪一步做判断**: 对元素文本、标签和链接等信息批量询问 Noul，按阈值应用页面操作。
   - **这个项目的用途**: 展示语义判断如何连接到具体页面元素。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/realzachi/typesafe-adblock/) · 许可证: MIT
+
+- [**jev-browser**](https://github.com/Ying-Kai-Liao/jev-browser) — 浏览器自动化库、CLI 和 MCP：调用方模型给出目标与待输入文字，Jev 选择具体操作。
+  - **Jev 在哪一步做判断**: 从页面候选中选择元素、动作和值，并评估完成、错误与不可逆操作。
+  - **这个项目的用途**: 把浏览器动作循环与调用方规划分开，并返回状态与轨迹。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ying-kai-liao/jev-browser/) · 许可证: MIT
 
 - [**jev-macos-loop**](https://github.com/jcpsimmons/jev-macos-loop) — 在 Mac 本地识别屏幕文字和控件，把文字选项交给 Jev，再点击它选中的元素。
   - **Jev 在哪一步做判断**: Jev 从本地视觉、OCR 与无障碍标签组成的有限元素列表中选择；坐标和输入执行留在 Mac。
@@ -174,25 +174,20 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 在用户自己的标签里跑，不截图；操作、目标元素和输入文案可以分开检查。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/chy4pro/jevbrowserext/) · 许可证: MIT
 
-- [**jev-ego**](https://github.com/romaluev/jev-ego) — 面向 ego lite 的浏览器 Agent，把页面可操作元素编号后交给 Jev 选择下一步。
-  - **Jev 在哪一步做判断**: Jev 在一次请求中选择操作及目标；需要自由文本时使用单独的文字辅助模型。
-  - **这个项目的用途**: 提供观察、建议和执行入口；上传、弹窗等能力仍需其他浏览器工具。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/romaluev/jev-ego/) · 许可证: 未声明
-
 - [**jevfill**](https://github.com/imohitmayank/jevfill) — Jevfill 是一个 Chrome 扩展，可调用 Jev 根据用户粘贴的纯文本笔记自动填写网页表单。
   - **Jev 在哪一步做判断**: Jev 为每个扫描到的表单字段从用户笔记行中选择最匹配的一行并返回置信度。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/imohitmayank/jevfill/) · 许可证: MIT
 
+- [**jev-ego**](https://github.com/romaluev/jev-ego) — 面向 ego lite 的浏览器 Agent，把页面可操作元素编号后交给 Jev 选择下一步。
+  - **Jev 在哪一步做判断**: Jev 在一次请求中选择操作及目标；需要自由文本时使用单独的文字辅助模型。
+  - **这个项目的用途**: 提供观察、建议和执行入口；上传、弹窗等能力仍需其他浏览器工具。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/romaluev/jev-ego/) · 许可证: 未声明
+
 - [**AskJev**](https://github.com/ranjan2829/AskJev) — 通过 MCP 把 Agent 接到浏览器，由 Jev 选择网页动作，并对付款、删除等操作设置确认环节。
   - **Jev 在哪一步做判断**: 从当前网页控件中选动作，并评估操作风险与不可逆程度。
   - **这个项目的用途**: 把自动操作与用户确认放在同一工作流中。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ranjan2829/askjev/) · 许可证: MIT
-
-- [**jev-clerk**](https://github.com/stas4000/jev-clerk) — 在 macOS 桌面上把供应商发票录入会计软件：Jev 每步从封闭动作表里选点击对象，深度模型只改剧本。
-  - **Jev 在哪一步做判断**: POST \`https://api.typesafe.ai/v1/systemone\`，默认 \`jev-latest\`，每步做封闭动作 Choice。
-  - **这个项目的用途**: 屏幕动作由 Jev 的封闭选择驱动；作者演示数字未经本站复测。GitHub SPDX 为空，LICENSE 文件是 MIT。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/stas4000/jev-clerk/) · 许可证: 未声明
 
 - [**aside-jev**](https://github.com/himomohi/aside-jev) — 给 Aside 浏览器 Agent 提供 Jev 判断的 MCP 服务器与 skill。
   - **Jev 在哪一步做判断**: Agent 列出候选动作，Jev 选择候选 ID，再由 Agent 通过 Aside 执行并复核。
@@ -203,6 +198,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 从页面观测中选择操作、匹配表单字段或提取结构化内容，Playwright 执行。
   - **这个项目的用途**: 支持持久会话与页面结果回读；回读不等于已验证数据库持久化。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/tontoko/jev-browser/) · 许可证: Apache-2.0
+
+- [**jev-clerk**](https://github.com/stas4000/jev-clerk) — 在 macOS 桌面上把供应商发票录入会计软件：Jev 每步从封闭动作表里选点击对象，深度模型只改剧本。
+  - **Jev 在哪一步做判断**: POST \`https://api.typesafe.ai/v1/systemone\`，默认 \`jev-latest\`，每步做封闭动作 Choice。
+  - **这个项目的用途**: 屏幕动作由 Jev 的封闭选择驱动；作者演示数字未经本站复测。GitHub SPDX 为空，LICENSE 文件是 MIT。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/stas4000/jev-clerk/) · 许可证: 未声明
 
 - [**jev-yt-time-saver**](https://github.com/jaibhasin/jev-yt-time-saver) — jev-yt-time-saver：Jev 根据视频标题、频道、时长、描述和搜索意图判断每个 YouTube 视频是否浪费时间并给出浪费分数。
   - **Jev 在哪一步做判断**: Jev 根据视频标题、频道、时长、描述和搜索意图判断每个 YouTube 视频是否浪费时间并给出浪费分数。
@@ -228,6 +228,16 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 根据当前页面状态和候选元素列表，在每一步决定点击、输入或停止等浏览器操作。
   - **这个项目的用途**: 让现有 Agent 通过通用接口使用 Jev。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/rorshopping/jev-browser-local/) · 许可证: 未声明
+
+- [**jev-browser-pilot**](https://github.com/aidil2105/jev-browser-pilot) — 该项目提供有界决策层，由代码负责观察、执行与验证，Jev 模型每步只选择一个候选操作。
+  - **Jev 在哪一步做判断**: Jev 根据当前页面观察文本和目标，从候选操作ID列表中选择下一步应执行的唯一操作。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/aidil2105/jev-browser-pilot/) · 许可证: MIT
+
+- [**jev-browser-qa**](https://github.com/jonymusky/jev-browser-qa) — 该项目用 Playwright 执行并录制浏览器流程，用 Jev 判断自然语言断言、按意图选择控件和执行目标导向点击循环，并提供 JSON-flow CLI、运行看板和 Agent skill。
+  - **Jev 在哪一步做判断**: Jev负责判断自然语言断言是否成立、按意图在可见控件中选择点击目标、以及在目标驱动循环中决定下一步点击。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jonymusky/jev-browser-qa/) · 许可证: MIT
 
 - [**jev-ra**](https://github.com/brnyxx/jev-ra) — \*\*面向 CLI 编码智能体的高速浏览器操作层。\*\* Claude Code、Codex 或任何 MCP 客户端把目标交给 jev-ra。System One 决策模型 TypeSafe Jev 在一次往返中同时选出每一步的操作和目标元素。制定计划、 提供要输入的文本、读取页面内容、在 jev-ra 上交时接手，这些都由调用方的智能体完成。循环内不会再跑 第二个 LLM。
   - **Jev 在哪一步做判断**: Jev 在每一步用一次请求同时决定操作类型、目标元素、输入值、步骤有效性与目标是否达成。
@@ -297,40 +307,40 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/win4r/jev-skill-suggester/) · 许可证: MIT
 
+- [**SemDecide**](https://github.com/sharziki/semdecide) — 基于 Python 的语义判断 CLI，可给文本或 JSONL 管道做判断、分类、打分和过滤。
+  - **Jev 在哪一步做判断**: 将输入交给 Jev，按返回概率与本地阈值生成结果及退出码。
+  - **这个项目的用途**: 把结构化判断接进 Bash 和 CI，保留明确的输出与失败状态。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/semdecide/) · 许可证: MIT
+
 - [**jev-code**](https://github.com/rhighs/jev-code) — 一个实验性编程终端，让 Jev 逐步选择 AST 节点来组成 Python 或 Bash，也能作为命令行判断工具。
   - **Jev 在哪一步做判断**: 从有限的语法与动作选项中选择，由本地程序生成代码或执行工具。
   - **这个项目的用途**: 把编程选择和命令行判断过程显示为可回看的记录。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/rhighs/jev-code/) · 许可证: 未声明
-
-- [**jev-axi**](https://github.com/shiftynick/jev-axi) — 在命令行调用 Jev 做 pick、rate、check、rank、triage、guard，并可接到 Agent 工具调用前的 hook。
-  - **Jev 在哪一步做判断**: 把输入状态和选项转为结构化问题，返回结果或供本地安全策略使用的风险分数。
-  - **这个项目的用途**: 在脚本和 Agent 工作流里复用同一套判断命令。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/shiftynick/jev-axi/) · 许可证: MIT
 
 - [**jev-cli**](https://github.com/Nasrallah-AL/jev-cli) — 名为 jevctl 的终端工具，把核验、分类与评分问题接到文本输入和脚本里。
   - **Jev 在哪一步做判断**: 把输入与固定答案集合发给 Jev，再按本地阈值输出判断和概率。
   - **这个项目的用途**: 提供可用于管道和 CI 的结构化结果，也支持检查请求和 dry-run。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/nasrallah-al/jev-cli/) · 许可证: MIT
 
+- [**jev-axi**](https://github.com/shiftynick/jev-axi) — 在命令行调用 Jev 做 pick、rate、check、rank、triage、guard，并可接到 Agent 工具调用前的 hook。
+  - **Jev 在哪一步做判断**: 把输入状态和选项转为结构化问题，返回结果或供本地安全策略使用的风险分数。
+  - **这个项目的用途**: 在脚本和 Agent 工作流里复用同一套判断命令。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/shiftynick/jev-axi/) · 许可证: MIT
+
 - [**jgrep**](https://github.com/keltokhy/jgrep) — jgrep 是用自然语言描述替代正则表达式来过滤文本行、结构化记录、函数和 diff 片段的命令行工具，每条记录交由 Jev 作 Noul 判断后输出符合项。
   - **Jev 在哪一步做判断**: Jev 对每个输入单元（行、段落、函数、diff hunk）判断是否符合用户自然语言描述，返回概率后由本地阈值过滤。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/keltokhy/jgrep/) · 许可证: MIT
 
-- [**SemDecide**](https://github.com/sharziki/semdecide) — 基于 Python 的语义判断 CLI，可给文本或 JSONL 管道做判断、分类、打分和过滤。
-  - **Jev 在哪一步做判断**: 将输入交给 Jev，按返回概率与本地阈值生成结果及退出码。
-  - **这个项目的用途**: 把结构化判断接进 Bash 和 CI，保留明确的输出与失败状态。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/semdecide/) · 许可证: MIT
+- [**jgrep**](https://github.com/kyu1204/jgrep) — jgrep 是用英文描述代码行为来搜索代码、git diff 和表格行的命令行工具，它把代码块与每个块一个 Noul 问题一起发给 Jev，并输出命中的 file:line，同时支持用 Noul/Choice/Score 问题检查 diff 和为 CSV/JSONL 的每一行打分。
+  - **Jev 在哪一步做判断**: Jev 对每个代码块/差异块或表格行逐一判断是否符合英文描述（Noul二值判断，Rows模式还支持Choice多选和Score打分）。
+  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kyu1204/jgrep/) · 许可证: MIT
 
 - [**jev-superpowers**](https://github.com/AkashPriyadarshii/jev-superpowers) — 面向编码智能体的系统化开发流程框架，融合 Jev 进行无幻觉依赖审查、完成度门禁与错误重试决策。
   - **Jev 在哪一步做判断**: 在智能体执行循环的关键检查点，利用 Jev 评估代码变更质量、测试覆盖与第三方包合法性，决定是否推进或回滚。
   - **这个项目的用途**: 将确定性代码流水线与 Jev 快速二元判断结合，防止编码 Agent 在长程任务中产生方向偏离或引入未知包。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/akashpriyadarshii/jev-superpowers/) · 许可证: MIT
-
-- [**jgrep**](https://github.com/kyu1204/jgrep) — jgrep 是用英文描述代码行为来搜索代码、git diff 和表格行的命令行工具，它把代码块与每个块一个 Noul 问题一起发给 Jev，并输出命中的 file:line，同时支持用 Noul/Choice/Score 问题检查 diff 和为 CSV/JSONL 的每一行打分。
-  - **Jev 在哪一步做判断**: Jev 对每个代码块/差异块或表格行逐一判断是否符合英文描述（Noul二值判断，Rows模式还支持Choice多选和Score打分）。
-  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kyu1204/jgrep/) · 许可证: MIT
 
 - [**rift**](https://github.com/exYze/rift) — Rust 编程终端 Rift 的可选 TypeSafe 决策客户端，给受限判断调用 Jev。
   - **Jev 在哪一步做判断**: 向 System One 提交状态和类型化问题，解析答案供终端工作流使用。
@@ -346,6 +356,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 对给定的自然语言维度判断文本 A 是否比文本 B 排名更高。
   - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/keltokhy/jsort/) · 许可证: MIT
+
+- [**slop-grader**](https://github.com/lukstei/slop-grader) — 这是一个基于规则的 CLI 工具，用 Jev 的 Score 做文档级打分、用 Choice 和 Noul 做逐行违规标记，并把结果交给 Agent 去修复文本和 Markdown 文件。
+  - **Jev 在哪一步做判断**: 决策说明： 在 \`src/providers/jev.ts\` 的 \`evaluateBatch\` 中调用 \`@typesafe-ai/sdk\` (\`client.system\_one\`)，对文档级别使用 \`score\` 进行标准维度评分，对行级别使用 \`choice\` / \`noul\` 进行细粒度违规检测，并将结构化违规结果输出给下游 AI agent 自动化修复。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lukstei/slop-grader/) · 许可证: MIT
 
 - [**jev-oas-sentinel**](https://github.com/ShuhanSun/jev-oas-sentinel) — 该工具比较两个 OpenAPI 文档，用确定性检查发现结构兼容性问题，并用 TypeSafe Jev 评估变更描述中的语义风险。
   - **Jev 在哪一步做判断**: Jev 对新旧 OpenAPI 契约片段的兼容性种类、受影响语义维度、旧承诺是否保留及迁移负担进行分类与打分。
@@ -367,15 +382,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 减少后续处理的冗余信息。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ddfeyes/jev-mode/) · 许可证: MIT
 
-- [**slop-grader**](https://github.com/lukstei/slop-grader) — 这是一个基于规则的 CLI 工具，用 Jev 的 Score 做文档级打分、用 Choice 和 Noul 做逐行违规标记，并把结果交给 Agent 去修复文本和 Markdown 文件。
-  - **Jev 在哪一步做判断**: 决策说明： 在 \`src/providers/jev.ts\` 的 \`evaluateBatch\` 中调用 \`@typesafe-ai/sdk\` (\`client.system\_one\`)，对文档级别使用 \`score\` 进行标准维度评分，对行级别使用 \`choice\` / \`noul\` 进行细粒度违规检测，并将结构化违规结果输出给下游 AI agent 自动化修复。
-  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lukstei/slop-grader/) · 许可证: MIT
-
 - [**ask-jev**](https://github.com/logicrw/ask-jev) — 面向 AI 编程智能体与 CLI 管道的有界决策与原文提纯工具，硬性 280ms 时限，纯 Python 标准库零依赖，全链路 Fail-Open 优雅降级。
   - **Jev 在哪一步做判断**: 决策说明： 在 ask\_decision 与 auto\_mark\_text 中调用 Jev 的 Choice 与 Noul 原语，执行快速语义裁决与物理行保真提纯。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/logicrw/ask-jev/) · 许可证: GPL-3.0
+
+- [**jev-console**](https://github.com/wenchenxi/jev-console) — 给 TypeSafe 的 \*\*Jev（System One 决策模型）\*\* 做的本地小控制台 + 命令行。
+  - **Jev 在哪一步做判断**: Jev 根据用户提供的 state 对 noul 是否判断、choice 多选一、score 档位打分问题给出校准概率和置信度。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/wenchenxi/jev-console/) · 许可证: MIT
 
 - [**pr-sieve**](https://github.com/Thestral12/pr-sieve) — GitHub Action 把 \`.jev.yml\` 规则编译成 Jev 问题，按数值决定 fail、comment 或 pass。
   - **Jev 在哪一步做判断**: 规则编成最多 12 个问题（\`src/types.ts\` 的 \`MAX\_JEV\_QUESTIONS\`）；\`AKIA…\` 与私钥装甲由 \`src/redact.ts\` 命中后，\`src/pipeline.ts\` 本地失败且不调用 Jev。
@@ -536,15 +551,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 可把判断附在日志上，同时保留原归档路径。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/reachjalil/jevlogs/) · 许可证: MIT
 
-- [**omp-jev-compaction**](https://github.com/jerryfane/omp-jev-compaction) — 为 Oh My Pi 删减工具历史的扩展，保留原文并复用旧判断以减少前缀反复改写。
-  - **Jev 在哪一步做判断**: Jev 判断工具调用和结果的保留价值，扩展据此截短并附上可恢复提示。
-  - **这个项目的用途**: 将删减决策记下来，在后续请求中重复应用。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jerryfane/omp-jev-compaction/) · 许可证: MIT
-
 - [**pi-fast-jev-compaction**](https://github.com/joelhooks/pi-fast-jev-compaction) — Pi 扩展：清理过时工具历史，保留原文；不足以释放上下文时交给 Pi 原生摘要。
   - **Jev 在哪一步做判断**: 分别判断调用和结果是否保留，并在送给模型的上下文中执行过滤。
   - **这个项目的用途**: 保留原始会话文件，并记录每次删减决定。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/joelhooks/pi-fast-jev-compaction/) · 许可证: MIT
+
+- [**omp-jev-compaction**](https://github.com/jerryfane/omp-jev-compaction) — 为 Oh My Pi 删减工具历史的扩展，保留原文并复用旧判断以减少前缀反复改写。
+  - **Jev 在哪一步做判断**: Jev 判断工具调用和结果的保留价值，扩展据此截短并附上可恢复提示。
+  - **这个项目的用途**: 将删减决策记下来，在后续请求中重复应用。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jerryfane/omp-jev-compaction/) · 许可证: MIT
 
 - [**fast-dev-compaction**](https://github.com/leonaaardob/fast-dev-compaction) — Codex 插件与上下文压缩工具，在会话生命周期钩子中利用 Jev 判定历史记录的保留价值并进行无损还原。
   - **Jev 在哪一步做判断**: 在会话上下文触达上限时，由 Jev 逐条评估历史消息和工具调用的保留必要性，仅剪除冗余噪音。
@@ -571,25 +586,35 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 减少后续处理的冗余信息。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kamilpostrozny/pi-fast-jev-compaction/) · 许可证: MIT
 
+- [**pi-jev-compaction**](https://github.com/nourhelmi/pi-jev-compaction) — 该 Pi 扩展使用 Jev 评估较旧的工具输出并将其从上下文中清除，同时保留原始会话记录以便通过检索取回。
+  - **Jev 在哪一步做判断**: Jev 对最多16个陈旧工具输出打分，判断其仍被需要的概率，低于阈值则清除。
+  - **这个项目的用途**: 减少后续处理的冗余信息。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/nourhelmi/pi-jev-compaction/) · 许可证: MIT
+
 - [**pi-jev-context**](https://github.com/kevinpita/pi-jev-context) — Pi 的可逆上下文筛选扩展，用 Jev 判断旧消息是否仍值得发给主模型。
   - **Jev 在哪一步做判断**: 对历史片段做相关性判断，低分片段从后续请求隐藏，原始会话保留。
   - **这个项目的用途**: 可关闭筛选恢复完整上下文；启用时部分历史内容会发送给 TypeSafe。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kevinpita/pi-jev-context/) · 许可证: MIT
+
+- [**your-signal**](https://github.com/MithrilMan/your-signal) — 一个自带 key 的 Chrome 扩展，让 Jev 按个人偏好给 X 信息流评分，再调整帖子的显示方式。
+  - **Jev 在哪一步做判断**: 评估帖子相关性、实质内容、实用性与推广倾向，由本地权重和阈值决定高亮、折叠或隐藏。
+  - **这个项目的用途**: 让个人信息流规则可调整，显示变化可恢复。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/mithrilman/your-signal/) · 许可证: MIT
 
 - [**jev-context**](https://github.com/zbush/jev-context) — Codex 代码搜索插件：ripgrep 找候选，Jev 过滤后只返回判为相关的片段。
   - **Jev 在哪一步做判断**: 对代码片段与当前问题的相关性做判断，过滤 No 和 Unknown 结果。
   - **这个项目的用途**: 记录过滤前后载荷，可按指定 tokenizer 核算返回文本的变化。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zbush/jev-context/) · 许可证: MIT
 
+- [**openclaw-jev-compaction**](https://github.com/SqaaSSL/openclaw-jev-compaction) — 这是一个为 OpenClaw 提供的逐字上下文压缩引擎，它请 Jev 判断哪些工具调用和工具结果仍需保留并删除其余内容，且从不做总结。
+  - **Jev 在哪一步做判断**: Jev 对每个工具调用及其结果分别打分，决定原文保留、截断结果还是整体删除。
+  - **这个项目的用途**: 减少后续处理的冗余信息。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/sqaassl/openclaw-jev-compaction/) · 许可证: MIT
+
 - [**pi-jev-compaction**](https://github.com/Wang-auspicious/pi-jev-compaction) — 给 Pi 做抽取式上下文压缩：让 Jev 判断旧的只读工具记录是否仍有用，保留部分直接复制原文。
   - **Jev 在哪一步做判断**: 以完整工具调用与返回为单位判断相关性，由代码移除被判为无用的记录对。
   - **这个项目的用途**: 保留原文证据和 Pi 的近期消息边界，不让 Jev 改写摘要。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/wang-auspicious/pi-jev-compaction/) · 许可证: MIT
-
-- [**your-signal**](https://github.com/MithrilMan/your-signal) — 一个自带 key 的 Chrome 扩展，让 Jev 按个人偏好给 X 信息流评分，再调整帖子的显示方式。
-  - **Jev 在哪一步做判断**: 评估帖子相关性、实质内容、实用性与推广倾向，由本地权重和阈值决定高亮、折叠或隐藏。
-  - **这个项目的用途**: 让个人信息流规则可调整，显示变化可恢复。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/mithrilman/your-signal/) · 许可证: MIT
 
 - [**deepseek-harness-jev-pre-compaction**](https://github.com/wjw66/deepseek-harness-jev-pre-compaction) — 在上下文接近deepseek-harness插件，在上下文压缩阈值前，自动识别并移除低价值的工具结果，降低上下文占用
   - **Jev 在哪一步做判断**: 判断当前是否应该提前裁剪上下文，以及每个工具结果是否值得继续保留。
@@ -624,15 +649,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把句子评分与对应视频片段对齐，便于逐段回看。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/chetaslua/jevmeter/) · 许可证: MIT
 
-- [**vibecheck**](https://github.com/RafalWilinski/vibecheck) — 在 X 发帖前显示一个 Jev 评分卡，检查草稿的清晰度、语气、冒犯倾向等维度。
-  - **Jev 在哪一步做判断**: 把草稿及回复/引用上下文交给 Jev，返回多个评分与发帖建议。
-  - **这个项目的用途**: 在发送前集中查看对文案的不同评价角度。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/rafalwilinski/vibecheck/) · 许可证: 未声明
-
 - [**jev-paint**](https://github.com/achimala/jev-paint) — 把 Jev 的结构化判断接进程序；具体用途与决策流程请查看项目源码。
   - **Jev 在哪一步做判断**: Jev 为每个网格像素点的颜色类别输出概率分布，决定画面的色彩、明暗与轮廓形态。
   - **这个项目的用途**: 保留可编辑的组成部分与决策过程。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/achimala/jev-paint/) · 许可证: MIT
+
+- [**vibecheck**](https://github.com/RafalWilinski/vibecheck) — 在 X 发帖前显示一个 Jev 评分卡，检查草稿的清晰度、语气、冒犯倾向等维度。
+  - **Jev 在哪一步做判断**: 把草稿及回复/引用上下文交给 Jev，返回多个评分与发帖建议。
+  - **这个项目的用途**: 在发送前集中查看对文案的不同评价角度。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/rafalwilinski/vibecheck/) · 许可证: 未声明
 
 - [**refgarden**](https://github.com/AlbionaHoti/refgarden) — 创意参考图库，汇集 The Met、NASA 与 Cosmos 的素材；本地 Explore 模式可使用 Jev。
   - **Jev 在哪一步做判断**: Jev 根据标题和描述挑选搜索词与值得突出的参考素材，不读取图片像素。
@@ -659,30 +684,30 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kolibril13/jev-in-blender-experiment/) · 许可证: MIT
 
-- [**slidepilot**](https://github.com/harshil1712/slidepilot) — 基于语音语义理解的 Slidev 自动翻页控制器，运行于 Cloudflare Agents 与 Jev 之上。
-  - **Jev 在哪一步做判断**: 监听演讲者实时转录文本，由 Jev 评估当前页面核心要点是否已讲述完毕，并触发页面跳转或停顿。
-  - **这个项目的用途**: 摆脱物理翻页笔束缚，结合确定性规则与语义完成度判定，实现自然流畅的演示文稿演讲同步。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/harshil1712/slidepilot/) · 许可证: MIT
-
 - [**ComfyUI-Jev**](https://github.com/hndrr/ComfyUI-Jev) — 该项目为 ComfyUI 提供使用 Jev 进行文本选择、条件判断、评分和数字提取的自定义节点，并可将结果传递给其他节点使用。
   - **Jev 在哪一步做判断**: Jev根据自然语言指令对输入文本状态执行候选选择、条件真假判断、打分和数值提取，并为请求选择本地Skill。
   - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hndrr/comfyui-jev/) · 许可证: MIT
+
+- [**slidepilot**](https://github.com/harshil1712/slidepilot) — 基于语音语义理解的 Slidev 自动翻页控制器，运行于 Cloudflare Agents 与 Jev 之上。
+  - **Jev 在哪一步做判断**: 监听演讲者实时转录文本，由 Jev 评估当前页面核心要点是否已讲述完毕，并触发页面跳转或停顿。
+  - **这个项目的用途**: 摆脱物理翻页笔束缚，结合确定性规则与语义完成度判定，实现自然流畅的演示文稿演讲同步。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/harshil1712/slidepilot/) · 许可证: MIT
 
 - [**jev-got**](https://github.com/phureewat29/jev-got) — 《权力的游戏》文字冒险：大模型写剧情，Jev 判断地点、情绪和危险，再切换配乐与背景。
   - **Jev 在哪一步做判断**: 对新剧情判断 location、beat、mood、danger、inFiction 五项状态。
   - **这个项目的用途**: 用固定状态驱动界面和下一回合，不必从生成的故事里硬拆字段。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/phureewat29/got-jev/) · 许可证: 未声明
 
-- [**let-jev-speak**](https://github.com/suidouble/let-jev-speak) — 该项目通过一次一词地反复调用分类接口，让只做分类的 Jev 拼出自由文本回答。
-  - **Jev 在哪一步做判断**: Jev 通过 choice 问答逐词决定答案的下一个单词，并通过路由 choice 决定使用哪个领域词表。
-  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/suidouble/let-jev-speak/) · 许可证: MIT
-
 - [**jev-music-theory-1**](https://github.com/adammichaelwood/jev-music-theory-1) — 用 Jev 做和声练习、乐理选择题，并通过连续选择和弦播放电钢琴。
   - **Jev 在哪一步做判断**: 从声部、音高、时值或和弦候选中选择，代码评分或合成播放。
   - **这个项目的用途**: 把乐理测验和可听见的音乐实验放在同一项目中。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/adammichaelwood/jev-music-theory-1/) · 许可证: 未声明
+
+- [**let-jev-speak**](https://github.com/suidouble/let-jev-speak) — 该项目通过一次一词地反复调用分类接口，让只做分类的 Jev 拼出自由文本回答。
+  - **Jev 在哪一步做判断**: Jev 通过 choice 问答逐词决定答案的下一个单词，并通过路由 choice 决定使用哪个领域词表。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/suidouble/let-jev-speak/) · 许可证: MIT
 
 
 ## 数据与搜索
@@ -722,20 +747,25 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 在查询表格或 Parquet 数据时直接使用结构化判断。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/colliber/duckdb-jev/) · 许可证: MIT
 
-- [**jevql**](https://github.com/kylemclaren/jevql) — 在普通 PostgreSQL 查询外加一层语义处理，用 Jev 筛选、分组和排序，无需安装数据库扩展。
-  - **Jev 在哪一步做判断**: CLI 或服务层解析 jev\_\* 调用，把行文本发给 Jev，再用结果完成查询。
-  - **这个项目的用途**: 通过 CLI、HTTP、MCP 与 SDK 复用同一套语义 SQL 接口。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kylemclaren/jevql/) · 许可证: MIT
-
 - [**jev-curate**](https://github.com/AkashPriyadarshii/jev-curate) — Rust 数据集筛选实验，用 Jev 给文本记录评分并分流到保留或拒绝结果。
   - **Jev 在哪一步做判断**: 本地预过滤后调用 TypeSafe，按各项概率和评分阈值决定是否保留记录。
   - **这个项目的用途**: 提供本地预过滤与分数阈值，适合研究按记录筛选的数据管道。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/akashpriyadarshii/jev-curate/) · 许可证: MIT
 
+- [**jevql**](https://github.com/kylemclaren/jevql) — 在普通 PostgreSQL 查询外加一层语义处理，用 Jev 筛选、分组和排序，无需安装数据库扩展。
+  - **Jev 在哪一步做判断**: CLI 或服务层解析 jev\_\* 调用，把行文本发给 Jev，再用结果完成查询。
+  - **这个项目的用途**: 通过 CLI、HTTP、MCP 与 SDK 复用同一套语义 SQL 接口。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kylemclaren/jevql/) · 许可证: MIT
+
 - [**reranker**](https://github.com/hev/reranker) — 把查询和最多约 30 篇候选放进一次 Jev state，每篇一个 Noul「是否相关」，用来过滤或重排。
   - **Jev 在哪一步做判断**: 每篇文档一个 Noul 相关度；超长列表再切批并发请求，结果可按阈值丢掉或按分数排序。
   - **这个项目的用途**: 用概率当阈值或排序键，不必再接一个生成式重排器。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hev/reranker/) · 许可证: Apache-2.0
+
+- [**jevframe**](https://github.com/ktaletsk/jevframe) — 该库使用 TypeSafe Jev 对 pandas 和 Polars DataFrame 的每一行提出自然语言问题，并返回带完整概率分布的文本分类、情感分析和评分结果。
+  - **Jev 在哪一步做判断**: Jev 针对每一行上下文回答自然语言问题，判定情感、主题分类与等级评分并返回完整概率分布。
+  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ktaletsk/jevframe/) · 许可证: MIT
 
 - [**jev-search**](https://github.com/larguesa/jev-search) — 这是一个用 Jev 按语义逐行检索文本的 Python 命令行工具，用作关键词搜索的补充视角。
   - **Jev 在哪一步做判断**: Jev 对每一行 l{i} 判定其是否满足查询语义意图，返回 noul 概率分数。
@@ -757,6 +787,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/peu77/jevfind/) · 许可证: MIT
 
+- [**jlink**](https://github.com/keltokhy/jlink) — jlink 让用户用 plain English 写出匹配规则，在本地做候选 blocking 生成记录对，再用 Jev Noul 逐对判断是否为同一实体并给出概率，然后解析链接并提供审计与引用文本。
+  - **Jev 在哪一步做判断**: Jev 根据用户用自然语言给出的匹配规则，判断两个候选记录是否指向同一实体并返回匹配概率。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/keltokhy/jlink/) · 许可证: MIT
+
 - [**jev-in-codex**](https://github.com/teempai/jev-in-codex) — 该仓库是 Codex 插件，通过 Jev 对工作区内 JSONL 文本记录进行批量标注，生成每条记录带一个标签的输出文件以供复核。
   - **Jev 在哪一步做判断**: Jev 对输入 JSONL 中每条文本记录做出单选分类决策，输出唯一标签与置信度。
   - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
@@ -766,11 +801,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 把行数据和候选问题发给 Jev，再把答案映射为 SQL 可查询结果。
   - **这个项目的用途**: 提供批处理、缓存和预算控制，并保留判断历史。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/eugeneboondock/jevsql/) · 许可证: MIT
-
-- [**jlink**](https://github.com/keltokhy/jlink) — jlink 让用户用 plain English 写出匹配规则，在本地做候选 blocking 生成记录对，再用 Jev Noul 逐对判断是否为同一实体并给出概率，然后解析链接并提供审计与引用文本。
-  - **Jev 在哪一步做判断**: Jev 根据用户用自然语言给出的匹配规则，判断两个候选记录是否指向同一实体并返回匹配概率。
-  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/keltokhy/jlink/) · 许可证: MIT
 
 - [**jselect**](https://github.com/keltokhy/jselect) — jselect 根据任务挑选带来源引用的原文片段，并用 Jev 判断相关性，在 Token 预算内组装可直接供 Agent 阅读的上下文。
   - **Jev 在哪一步做判断**: Jev 对每个文本片段做出 Noul 二元判断，决定其是否为当前任务的有用证据。
@@ -928,15 +958,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把引用、来源位置和人工确认状态对应起来，方便回查。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/choxos/jev-reviewer/) · 许可证: MIT
 
-- [**JevScout**](https://github.com/hqman/JevScout) — 供编程 Agent 调用的求职检索演示 Skill，通过 Chrome 浏览公司招聘页，用 Jev 筛选 AI 与软件工程职位并保存结果。
-  - **Jev 在哪一步做判断**: Jev 用 Choice 识别页面类型，用 Noul 评估招聘链接、职位相关性、筛选控件和候选人匹配度；本地阈值决定导航、打开职位与保存。
-  - **这个项目的用途**: 把招聘入口、职位筛选和详情匹配连成一次 CLI 流程，输出本地 JSON 与 Markdown 报告。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hqman/jevscout/) · 许可证: 未声明
-
 - [**jev-seo**](https://github.com/AkashPriyadarshii/jev-seo) — Rust SEO/GEO 命令行与 MCP 实验工具，结合网页检查、DuckDuckGo 查询和可选 Jev 评分。
   - **Jev 在哪一步做判断**: 给搜索意图、内容直接性和内容缺口分类，并按自定义 rubric 估计可引用性。
   - **这个项目的用途**: 把本地检查、搜索结果和模型评分整理成可查看的报告。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/akashpriyadarshii/jev-seo/) · 许可证: MIT
+
+- [**JevScout**](https://github.com/hqman/JevScout) — 供编程 Agent 调用的求职检索演示 Skill，通过 Chrome 浏览公司招聘页，用 Jev 筛选 AI 与软件工程职位并保存结果。
+  - **Jev 在哪一步做判断**: Jev 用 Choice 识别页面类型，用 Noul 评估招聘链接、职位相关性、筛选控件和候选人匹配度；本地阈值决定导航、打开职位与保存。
+  - **这个项目的用途**: 把招聘入口、职位筛选和详情匹配连成一次 CLI 流程，输出本地 JSON 与 Markdown 报告。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hqman/jevscout/) · 许可证: 未声明
 
 - [**Jev-Trades**](https://github.com/zadescoxp/Jev-Trades) — 用实时加密货币行情练习模拟交易。Jev 给出交易判断，面板展示虚拟仓位和技术指标，不连真实下单接口。
   - **Jev 在哪一步做判断**: 读取已完成的分钟 K 线与技术指标，对启用的资产返回结构化交易判断；Python 按置信度和仓位限制更新模拟账户。
@@ -953,10 +983,30 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 提供开箱即用的 Web 可视化界面，方便开发者直观调试 Jev 提示词、观察决策原语边界并对比不同模型表现。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/bunsdev/typesafe-ai-playground/) · 许可证: MIT
 
+- [**jevernetes**](https://github.com/sunil-sadasivan/jevernetes) — Jevernetes 在终端和本地仪表盘中实时采集 Kubernetes 日志，支持用 Jev 做语义搜索和分析、查看上下文，并把选中的日志证据整理后交给 coding Agent。
+  - **Jev 在哪一步做判断**: Jev 对每条日志组判断是否值得调查的重要性、严重度和类别，以及是否匹配用户搜索问题。
+  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/sunil-sadasivan/jevernetes/) · 许可证: Apache-2.0
+
+- [**Working-Memory-Jev**](https://github.com/AustinAWay/Working-Memory-Jev) — 这是一个在本地运行的教学辅助工具，它使用 Jev API 分析英语教学文本在各阅读步骤中的主动分组、来源连接和需求变化，并与1–5槽位预算进行比较。
+  - **Jev 在哪一步做判断**: Jev 对文本熟悉度、激活/背景状态、分组和关系归属做出有界选择，以估计每一步的记忆负荷。
+  - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/austinaway/working-memory-jev/) · 许可证: 未声明
+
 - [**jevtest**](https://github.com/joshhu/jevtest) — 情緒測謊器：嘴上說「好」，心裡真的好嗎？用 TypeSafe Jev（System One 模型）透過 OpenRouter 即時判斷，並與一般 LLM 對照
   - **Jev 在哪一步做判断**: Jev 判断对方回复背后的真实含义、火气等级以及是否需要马上主动关心。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/joshhu/jevtest/) · 许可证: 未声明
+
+- [**JevSeek**](https://github.com/morcoan/JevSeek) — 本地编码桌面与 CLI 智能体，将 Jev 的动作路由与 DeepSeek 的代码参数生成分层解耦协同。
+  - **Jev 在哪一步做判断**: 由 Jev 根据当前工作区状态与用户意图快速判定下一步工具类型，再交由大语言模型补全具体参数。
+  - **这个项目的用途**: 结合了 Jev 的毫秒级离散路由能力与生成模型的强代码生成能力，降低端到端思考延迟并节省 Token 消耗。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/morcoan/jevseek/) · 许可证: MIT
+
+- [**sqlite3-jev**](https://github.com/mattn/sqlite3-jev) — 将 TypeSafe Jev 判断能力下沉为 SQLite 自定义 SQL 函数的 C 语言扩展：直接在 SQL 查询中实现语义打分与选择。
+  - **Jev 在哪一步做判断**: 在 SQLite 执行引擎中注册 jev\_choice、jev\_score 等自定义函数，在查询扫描行时直接调用 Jev API。
+  - **这个项目的用途**: 无需额外编写业务胶水代码，即可在大规模结构化关系型数据上执行行级语义分类与推理。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/mattn/sqlite3-jev/) · 许可证: MIT
 
 - [**work-with-jev**](https://github.com/Adkid-Zephyr/work-with-jev) — \*\*工作群消息太多？用 Jev 挑出需要你处理的事，整理成一份跨群待办。\*\*
   - **Jev 在哪一步做判断**: Jev 判断每条工作消息是否与当前用户相关、是否需行动、是否紧急、有无参考价值，并返回概率以分入四类。
@@ -968,30 +1018,40 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 用合成样例看清工程判断如何接入程序；示例阈值需要用自己的数据重测。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/foadsf/jev-for-engineers/) · 许可证: MIT
 
+- [**jevchess**](https://github.com/choxos/jevchess) — 该项目是让Jev与OpenRouter大模型、Stockfish引擎或人类实时对弈、回放并统计战绩的单页国际象棋应用。
+  - **Jev 在哪一步做判断**: Jev在每一手从全部合法走法中以Choice选出最佳着法并以Score给出局面评估。
+  - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/choxos/jevchess/) · 许可证: MIT
+
+- [**JevEmon**](https://github.com/daniel4x/JevEmon) — JevEmon从宝可梦火红ROM内存读取地图与队伍状态，让Jev在可到达目的地中选择行走目标并指挥野生宝可梦对战，从主角家一路走到常青市。
+  - **Jev 在哪一步做判断**: Jev从已验证可达的目的地列表中选择下一站行走目标，遇野怪时再选择出招或换宠。
+  - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/daniel4x/jevemon/) · 许可证: GPL-3.0
+
 - [**jevscan**](https://github.com/jevbook/jevscan) — 读取 EVM Token 市场特征，输出关注或回避等风险判断，提供库、CLI 和 MCP 接口。
   - **Jev 在哪一步做判断**: 默认用本地规则计算；配置 TypeSafe key 后才把特征送给 Jev 做结构化判断。
   - **这个项目的用途**: 把行情特征、判断来源和分数放在一起，便于检查风险信号。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jevbook/jevscan/) · 许可证: MIT
-
-- [**JevSeek**](https://github.com/morcoan/JevSeek) — 本地编码桌面与 CLI 智能体，将 Jev 的动作路由与 DeepSeek 的代码参数生成分层解耦协同。
-  - **Jev 在哪一步做判断**: 由 Jev 根据当前工作区状态与用户意图快速判定下一步工具类型，再交由大语言模型补全具体参数。
-  - **这个项目的用途**: 结合了 Jev 的毫秒级离散路由能力与生成模型的强代码生成能力，降低端到端思考延迟并节省 Token 消耗。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/morcoan/jevseek/) · 许可证: MIT
 
 - [**jevsume**](https://github.com/unownone/jevsume) — 给简历做一次结构化体检。既检查措辞、结构和机器可读性，也能对照具体职位描述，看这份简历是否匹配。
   - **Jev 在哪一步做判断**: 对提取出的简历文本与职位要求逐项判断和打分，再由 Worker 汇总成页面里的评审结果。
   - **这个项目的用途**: 能保存输入、问题与输出，方便回看每次评审；没有 API key 时运行的是模拟结果。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/unownone/jevsume/) · 许可证: 未声明
 
-- [**sqlite3-jev**](https://github.com/mattn/sqlite3-jev) — 将 TypeSafe Jev 判断能力下沉为 SQLite 自定义 SQL 函数的 C 语言扩展：直接在 SQL 查询中实现语义打分与选择。
-  - **Jev 在哪一步做判断**: 在 SQLite 执行引擎中注册 jev\_choice、jev\_score 等自定义函数，在查询扫描行时直接调用 Jev API。
-  - **这个项目的用途**: 无需额外编写业务胶水代码，即可在大规模结构化关系型数据上执行行级语义分类与推理。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/mattn/sqlite3-jev/) · 许可证: MIT
-
 - [**jev-issue-radar**](https://github.com/Patrick-SCH03/jev-issue-radar) — Jev Issue Radar 是一个只读的 GitHub 重复问题分类看板，它检索候选问题并用 Jev 的 Choice 将每对问题判为重复、相关、不同或信息不足，同时并排展示双方原始报告中的选中段落供维护者审查。
   - **Jev 在哪一步做判断**: 对每对原始问题与候选问题判定重复、相关、不同或信息不足，并选择原因类别与双方原文证据行ID。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/patrick-sch03/jev-issue-radar/) · 许可证: MIT
+
+- [**jev-trade**](https://github.com/Waxmell114514/jev-trade) — 把 BTC、ETH 的行情变成文字状态，让 Jev 给交易判断，再放进含延迟和费用的模拟撮合里观察。
+  - **Jev 在哪一步做判断**: 代码先计算市场特征；Jev 回答有限的方向与风险问题，本地策略决定模拟仓位。
+  - **这个项目的用途**: 把判断、延迟和执行成本放到同一实验记录里比较。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/waxmell114514/jev-trade/) · 许可证: 未声明
+
+- [**jev-trading**](https://github.com/EthanAlgoX/jev-trading) — 1. Keep \*\*Demo\*\* selected (\`演示体验\`). 2. Click \*\*Try a decision\*\* (\`体验一次决策\`). 3. Review the action, probabilities, and data quality on the right. 4. Open a record in \*\*Recent analyses\*\* (\`最近分析\`) or select \*\*Export evidence\*\* (\`导出完整依据\`).
+  - **Jev 在哪一步做判断**: Jev 根据行情、基本面、新闻与持仓情况在买入/卖出/持有三个动作中做出分类决策并返回概率分布。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ethanalgox/jev-trading/) · 许可证: 未声明
 
 - [**leadgenrationaivoiceagent**](https://github.com/sumitrevolt/leadgenrationaivoiceagent) — 营销与语音平台中的 TypeSafe 实验模块，用 Jev 为预设 Agent 角色选择专长标签。
   - **Jev 在哪一步做判断**: 把角色资料与有限专长候选交给 Choice，代码再映射为能力标签。
@@ -1007,11 +1067,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 对每个 TC39 提案在采用路径、复杂度、动机、Web 兼容风险和意图原型等维度上执行 Choice 多选、Score 打分和 Noul 门禁判断。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hemanth/tc39-atlas/) · 许可证: 未声明
-
-- [**jev-trade**](https://github.com/Waxmell114514/jev-trade) — 把 BTC、ETH 的行情变成文字状态，让 Jev 给交易判断，再放进含延迟和费用的模拟撮合里观察。
-  - **Jev 在哪一步做判断**: 代码先计算市场特征；Jev 回答有限的方向与风险问题，本地策略决定模拟仓位。
-  - **这个项目的用途**: 把判断、延迟和执行成本放到同一实验记录里比较。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/waxmell114514/jev-trade/) · 许可证: 未声明
 
 
 ## 评测与观测
@@ -1046,15 +1101,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 保留对照方法与结果，方便检查模型差异。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/iammrduncan/typesafe-ai-benchmark/) · 许可证: MIT
 
-- [**jev-playground**](https://github.com/mizchi/jev-playground) — MoonBit 与 TypeScript 的 Jev 实验集，覆盖棋类、浏览器、命令风险和小型语言。
-  - **Jev 在哪一步做判断**: 不同实验把候选动作或判断题交给 Jev，再由对应程序执行或记录。
-  - **这个项目的用途**: 提供源码、实验记录和部分可离线重放的样例，便于比较决策设计。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/mizchi/jev-playground/) · 许可证: 未声明
-
 - [**Canny**](https://github.com/qkal/Canny) — 为 Claude Code 与 Codex CLI 记录执行账本，检查改动后是否有通过的验证。
   - **Jev 在哪一步做判断**: Jev 可识别完成声明和语义规则问题；阻止结束依赖账本事实与本地规则。
   - **这个项目的用途**: 区分执行证据与模型意见，Jev 不单独决定任务已通过验收。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/qkal/canny/) · 许可证: MIT
+
+- [**jev-playground**](https://github.com/mizchi/jev-playground) — MoonBit 与 TypeScript 的 Jev 实验集，覆盖棋类、浏览器、命令风险和小型语言。
+  - **Jev 在哪一步做判断**: 不同实验把候选动作或判断题交给 Jev，再由对应程序执行或记录。
+  - **这个项目的用途**: 提供源码、实验记录和部分可离线重放的样例，便于比较决策设计。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/mizchi/jev-playground/) · 许可证: 未声明
 
 - [**jev-benchmarks**](https://github.com/AbdelStark/jev-benchmarks) — 把 Jev 和 GLiNER 放到同一批分类题上，除了答对率，也检查概率靠不靠谱。
   - **Jev 在哪一步做判断**: 对固定文本和标签集合做分类，记录每个标签的概率、耗时和失败。
@@ -1071,6 +1126,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把阈值选择与模型漂移检查接到报告和 CI 中。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/abhixhek/jevcal/) · 许可证: MIT
 
+- [**jev-benchmark**](https://github.com/wondertwins/jev-benchmark) — 通过国际象棋和游戏 NPC 对话对象识别，测试 Jev 的选择与判断边界。
+  - **Jev 在哪一步做判断**: 在合法棋步中选择，或分别判断玩家话语是否在对某个 NPC 说。
+  - **这个项目的用途**: 公开标注数据、原始请求响应与评测代码。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/wondertwins/jev-benchmark/) · 许可证: MIT
+
 - [**jev-lm**](https://github.com/y0usaf/jev-lm) — 把下一个词当选择题，试着用 Jev 拼出句子；也能让它挑选本地草拟的整段续写。
   - **Jev 在哪一步做判断**: Choice 选词，Noul 判断候选续写能否接上以及是否该停止。
   - **这个项目的用途**: 用一套小实验看清决策模型拿来生成文字时会遇到什么问题。
@@ -1080,11 +1140,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 用 Choice、Noul 和分档评分给候选片段排序，再计算检索指标。
   - **这个项目的用途**: 提供原始响应、评分代码和分数据集结果，便于检查比较条件。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/anessbelbati/jev-rerank-bench/) · 许可证: MIT
-
-- [**jev-benchmark**](https://github.com/wondertwins/jev-benchmark) — 通过国际象棋和游戏 NPC 对话对象识别，测试 Jev 的选择与判断边界。
-  - **Jev 在哪一步做判断**: 在合法棋步中选择，或分别判断玩家话语是否在对某个 NPC 说。
-  - **这个项目的用途**: 公开标注数据、原始请求响应与评测代码。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/wondertwins/jev-benchmark/) · 许可证: MIT
 
 - [**jev-pref**](https://github.com/doeixd/jev-pref) — 把 AGENTS.md 中的项目偏好整理为规则，再用 Jev 检查 hunk、暂存文件或 PR。
   - **Jev 在哪一步做判断**: Jev 判断代码变更是否触及配置规则，程序将答案映射为检查结果。
@@ -1204,50 +1259,55 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 在连续交互中观察决策效果；频率依实际运行而定。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lykycy123/robojev/) · 许可证: Apache-2.0
 
-- [**typesafe-snake**](https://github.com/sorrycc/typesafe-snake) — 由 TypeSafe Jev 模型自动操作的贪吃蛇游戏，每 tick 执行一次原子决策，合法移动与物理事实均由本地代码生成。
-  - **Jev 在哪一步做判断**: 将当前蛇身坐标、食物位置与合法转向候选组装为状态，由 Jev 选择下一步最佳转向（UP/DOWN/LEFT/RIGHT）。
-  - **这个项目的用途**: 验证了 Jev 在离散空间快速做二元/多元选择的单步决策能力，且底层严格杜绝撞墙等非法动作。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/sorrycc/typesafe-snake/) · 许可证: 未声明
-
 - [**tsai-sc**](https://github.com/phyous/tsai-sc) — 让 Jev 操作原版 StarCraft shareware 的 Strongarm 关卡，读取状态与推理时暂停游戏。
   - **Jev 在哪一步做判断**: 从结构化游戏状态中选择命令，再通过鼠标和键盘输入执行。
   - **这个项目的用途**: 作者提供关卡胜利录像与校验报告；这是有限任务实验，不是实时竞技基准。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/phyous/tsai-sc/) · 许可证: MIT
 
-- [**jev-reflex-autonomy-lab**](https://github.com/khordoo/jev-reflex-autonomy-lab) — jev-reflex-autonomy-lab：Jev 作为 System 1 反射层，为每架无人机从 HOLD、转向、加减速等飞行动作中选择下一个最佳动作。
-  - **Jev 在哪一步做判断**: Jev 作为 System 1 反射层，为每架无人机从 HOLD、转向、加减速等飞行动作中选择下一个最佳动作。
-  - **这个项目的用途**: 在连续交互中观察决策效果；频率依实际运行而定。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/khordoo/jev-reflex-autonomy-lab/) · 许可证: 未声明
-
-- [**live-jev**](https://github.com/vinilana/live-jev) — 浏览器里的俯视小车模拟器，用 Jev 选择车道与速度，并可与聊天模型对跑。
-  - **Jev 在哪一步做判断**: Jev 批量回答变道、速度、危险程度和行人让行问题，本地规则执行动作。
-  - **这个项目的用途**: 同一条种子路线可比较两种控制器；紧急制动另有本地逻辑。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/vinilana/live-jev/) · 许可证: 未声明
-
-- [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) — 在 ManiSkill 模拟机械臂中，让 Jev 把英文目标拆成一连串预设动作。
-  - **Jev 在哪一步做判断**: 根据仿真坐标、夹爪和物体状态，从约三十个动作原语中选择动作及目标。
-  - **这个项目的用途**: 将动作选择与 Python 的底层控制分开。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/taruntomar122/jev-askable-arm/) · 许可证: MIT
+- [**typesafe-snake**](https://github.com/sorrycc/typesafe-snake) — 由 TypeSafe Jev 模型自动操作的贪吃蛇游戏，每 tick 执行一次原子决策，合法移动与物理事实均由本地代码生成。
+  - **Jev 在哪一步做判断**: 将当前蛇身坐标、食物位置与合法转向候选组装为状态，由 Jev 选择下一步最佳转向（UP/DOWN/LEFT/RIGHT）。
+  - **这个项目的用途**: 验证了 Jev 在离散空间快速做二元/多元选择的单步决策能力，且底层严格杜绝撞墙等非法动作。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/sorrycc/typesafe-snake/) · 许可证: 未声明
 
 - [**OneVOneJev**](https://github.com/emrickgarrett/OneVOneJev) — 在浏览器里和 Jev 玩 1v1 射击。它读取结构化战况，选择走位、瞄准和开火。
   - **Jev 在哪一步做判断**: 每个决策 tick 同时询问移动、视角、开镜、开火与跳跃；API 不可用时使用启发式逻辑。
   - **这个项目的用途**: 在持续交互的游戏中观察结构化决策。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/one-v-one-jev/) · 许可证: 未声明
 
+- [**laya-vs-jev-arena**](https://github.com/PromptEngineer48/laya-vs-jev-arena) — 该项目让本地开源 Laya 与 API 驱动的 Jev 在贪吃蛇竞速和格斗对战中同场竞技，每一步动作都由模型实时决策。
+  - **Jev 在哪一步做判断**: 在贪吃蛇中决定转向方向与是否冲刺，在格斗中决定移动攻击格挡动作与是否重击。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/promptengineer48/laya-vs-jev-arena/) · 许可证: MIT
+
+- [**live-jev**](https://github.com/vinilana/live-jev) — 浏览器里的俯视小车模拟器，用 Jev 选择车道与速度，并可与聊天模型对跑。
+  - **Jev 在哪一步做判断**: Jev 批量回答变道、速度、危险程度和行人让行问题，本地规则执行动作。
+  - **这个项目的用途**: 同一条种子路线可比较两种控制器；紧急制动另有本地逻辑。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/vinilana/live-jev/) · 许可证: 未声明
+
+- [**jev-reflex-autonomy-lab**](https://github.com/khordoo/jev-reflex-autonomy-lab) — jev-reflex-autonomy-lab：Jev 作为 System 1 反射层，为每架无人机从 HOLD、转向、加减速等飞行动作中选择下一个最佳动作。
+  - **Jev 在哪一步做判断**: Jev 作为 System 1 反射层，为每架无人机从 HOLD、转向、加减速等飞行动作中选择下一个最佳动作。
+  - **这个项目的用途**: 在连续交互中观察决策效果；频率依实际运行而定。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/khordoo/jev-reflex-autonomy-lab/) · 许可证: 未声明
+
+- [**jev-askable-arm**](https://github.com/TarunTomar122/jev-askable-arm) — 在 ManiSkill 模拟机械臂中，让 Jev 把英文目标拆成一连串预设动作。
+  - **Jev 在哪一步做判断**: 根据仿真坐标、夹爪和物体状态，从约三十个动作原语中选择动作及目标。
+  - **这个项目的用途**: 将动作选择与 Python 的底层控制分开。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/taruntomar122/jev-askable-arm/) · 许可证: MIT
+
 - [**heist-one**](https://github.com/AbdelStark/heist-one) — 可观察的浏览器潜行游戏，由 Jev 驱动守卫的强类型状态判断，而确定性代码引擎控制物理世界与移动规律。
   - **Jev 在哪一步做判断**: 在游戏主循环或事件触发时，由 Jev 判定守卫的警觉状态（怀疑、警报、搜寻），并将决策输出实时同步给渲染引擎。
   - **这个项目的用途**: 探索了利用 Jev 作为游戏 NPC 离散决策大脑的可行性，使 AI 行为既具备语义理解力又受确定性游戏规则约束。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/abdelstark/heist-one/) · 许可证: MIT
 
+- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) — 在浏览器里跑两份 Doom 引擎，让 Jev 根据游戏状态选择战术动作。
+  - **Jev 在哪一步做判断**: 读取结构化血量、弹药和可见目标，从战术宏中选一项，再交给本地控制器执行。
+  - **这个项目的用途**: 能在相同起点对照不同策略，并查看每次模型决策。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lukaske/jev-doom-agent/) · 许可证: 未声明
+
 - [**jevscape**](https://github.com/Skyvern-AI/jevscape) — RuneBench 的 Jev 扩展，使用 rs-sdk 的有界动作目录驱动 RuneScape 游戏任务。
   - **Jev 在哪一步做判断**: 按游戏状态选择目标动作、当前 tick 干预与下一次询问间隔。
   - **这个项目的用途**: 提供动作分布面板、运行记录和 burst/tick 两种控制方式。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/skyvern-ai/jevscape/) · 许可证: 未声明
-
-- [**laya-vs-jev-arena**](https://github.com/PromptEngineer48/laya-vs-jev-arena) — 该项目让本地开源 Laya 与 API 驱动的 Jev 在贪吃蛇竞速和格斗对战中同场竞技，每一步动作都由模型实时决策。
-  - **Jev 在哪一步做判断**: 在贪吃蛇中决定转向方向与是否冲刺，在格斗中决定移动攻击格挡动作与是否重击。
-  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/promptengineer48/laya-vs-jev-arena/) · 许可证: MIT
 
 - [**jev\_deep\_rl**](https://github.com/taodav/jev_deep_rl) — 该项目将 Jev 作为 Gymnasium 和 Atari 环境中的策略，通过游戏专用适配器把观测转换为结构化状态并选择合法动作，同时记录奖励与决策而不训练模型权重。
   - **Jev 在哪一步做判断**: Jev 根据结构化游戏状态通过单个 Choice 问题选择合法的下一步动作。
@@ -1258,11 +1318,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev根据实时游戏状态决定所选角色、关卡、每次升级选项和每秒四次的行走方向。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/oldmoldycake/jev_vampire_survivors/) · 许可证: MIT
-
-- [**jev-doom-agent**](https://github.com/lukaske/jev-doom-agent) — 在浏览器里跑两份 Doom 引擎，让 Jev 根据游戏状态选择战术动作。
-  - **Jev 在哪一步做判断**: 读取结构化血量、弹药和可见目标，从战术宏中选一项，再交给本地控制器执行。
-  - **这个项目的用途**: 能在相同起点对照不同策略，并查看每次模型决策。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lukaske/jev-doom-agent/) · 许可证: 未声明
 
 - [**jev-little-airways**](https://github.com/lbotinelly/jev-little-airways) — 小岛机场模拟器，让 Jev 判断飞机航路、避让、紧急广播与降落顺序。
   - **Jev 在哪一步做判断**: 把飞机和周边交通状态转为问题，Jev 的回答驱动模拟器动作。
@@ -1279,10 +1334,30 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把游戏运行和网络推理分开，不必每一帧都等待模型。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/amoghcreator/doom-jev/) · 许可证: 未声明
 
+- [**jev-robotics-demo**](https://github.com/FazalAAli/jev-robotics-demo) — MuJoCo 机械臂叠方块演示：程序提出候选动作，Jev 选择目标、抓放和是否完成。
+  - **Jev 在哪一步做判断**: 在候选目标、是否抓放、任务是否完成之间做 Choice 和 Noul。
+  - **这个项目的用途**: 动作候选在本地物理副本里生成，选择交给 Jev；作者对照数字未经本站复测。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/fazalaali/jev-robotics-demo/) · 许可证: MIT
+
+- [**soupbase**](https://github.com/spoonnotfound/soupbase) — 汤底 Soupbase 是中英文海龟汤游戏，由 Jev 判定玩家提问和还原内容；应用代码校验结构化结果与置信度，决定是否通关。支持私有创作、链接分享和自行部署。
+  - **Jev 在哪一步做判断**: 两类判断均使用 Choice；没有使用 Score 或 Noul。提示与主动揭晓读取已保存内容，不依赖模型生成。这里选择游戏分类，不主张高频性能，也不声明未经测量的速度、成本或准确率。
+  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/spoonnotfound/soupbase/) · 许可证: MIT
+
 - [**jev-broadcast-lab**](https://github.com/4anti/jev-broadcast-lab) — 一个以国际象棋为主的 Jev 实验台，也能试工单分类、文档匹配和审核。
   - **Jev 在哪一步做判断**: 从 chess.js 算出的合法走法中选择一步；Stockfish 分数只给操作者看。
   - **这个项目的用途**: 可以同时观察模型选步和本地棋力评估，检查两者的差别。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/4anti/jev-broadcast-lab/) · 许可证: 未声明
+
+- [**jev-chess**](https://github.com/hemanth/jev-chess) — 该项目使用 TypeSafe AI System One 的 Choice、Score 和 Noul 原语，将自然语言走棋意图解析为合法走法，并提供局面评估、历史棋手风格对手和整局对局分类。
+  - **Jev 在哪一步做判断**: Jev 负责将自然语言走棋意图解析为合法走法，并对走法的锐度、战略主题、王翼攻击风险和棋风人格维度进行打分与选择。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hemanth/jev-chess/) · 许可证: 未声明
+
+- [**jev-gamepilot**](https://github.com/newuser7171/jev-gamepilot) — 该项目是基于 Laya 和 TypeSafe Jev System One 的自主游戏 Agent，可捕获游戏画面并在 Windows PC 游戏和 Android 手机游戏上执行操作。
+  - **Jev 在哪一步做判断**: Jev根据障碍物类型与距离选择跳跃、低头或正常奔跑，并评估碰撞威胁等级与是否需要空中快速下落。
+  - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/newuser7171/jev-gamepilot/) · 许可证: 未声明
 
 - [**jev-gpt**](https://github.com/florian-hoenicke/jev-gpt) — 用级联 Choice 把 Jev 当成逐词分类器，在词树上逐层选出下一个词。
   - **Jev 在哪一步做判断**: POST \`/v1/systemone\`，\`jev-latest\`，每层一个 \`type: choice\` 问题。
@@ -1294,30 +1369,20 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 保留动作、时延与对局记录，便于复查一次游戏过程。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/icohen007/jev-play-ping-pong/) · 许可证: MIT
 
-- [**jev-robotics-demo**](https://github.com/FazalAAli/jev-robotics-demo) — MuJoCo 机械臂叠方块演示：程序提出候选动作，Jev 选择目标、抓放和是否完成。
-  - **Jev 在哪一步做判断**: 在候选目标、是否抓放、任务是否完成之间做 Choice 和 Noul。
-  - **这个项目的用途**: 动作候选在本地物理副本里生成，选择交给 Jev；作者对照数字未经本站复测。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/fazalaali/jev-robotics-demo/) · 许可证: MIT
-
 - [**jevarena**](https://github.com/raihankhan-rk/jevarena) — 两个 Jev Agent 在并排的浏览器 Snake 游戏里对战，观众可以查看每步方向选择。
   - **Jev 在哪一步做判断**: 根据结构化棋盘状态，从当前允许的方向按钮中选择点击目标。
   - **这个项目的用途**: 把候选按钮、操作概率和游戏进展一起显示。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/raihankhan-rk/jevarena/) · 许可证: MIT
 
+- [**jevtown**](https://github.com/gaborishka/jevtown) — 把 Jev 的结构化判断接进程序；具体用途与决策流程请查看项目源码。
+  - **Jev 在哪一步做判断**: Jev 为每个 AI 人格决定对帖子的具体反应（滑过、点赞、转发、屏蔽、购买等）及曝光与追问的概率。
+  - **这个项目的用途**: 在连续交互中观察决策效果；频率依实际运行而定。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/gaborishka/jevtown/) · 许可证: MIT
+
 - [**mk-jev-fly-brain**](https://github.com/lavallee/mk-jev-fly-brain) — 在 mk.js 格斗游戏中比较果蝇连接组脉冲仿真、Jev 和规则策略。
   - **Jev 在哪一步做判断**: Jev 读取格斗状态，从与其他控制器相同的七个动作中选择下一步。
   - **这个项目的用途**: 用不同控制组、对局档案和实验说明比较各部分贡献。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lavallee/mk-jev-fly-brain/) · 许可证: MIT
-
-- [**soupbase**](https://github.com/spoonnotfound/soupbase) — 汤底 Soupbase 是中英文海龟汤游戏，由 Jev 判定玩家提问和还原内容；应用代码校验结构化结果与置信度，决定是否通关。支持私有创作、链接分享和自行部署。
-  - **Jev 在哪一步做判断**: 两类判断均使用 Choice；没有使用 Score 或 Noul。提示与主动揭晓读取已保存内容，不依赖模型生成。这里选择游戏分类，不主张高频性能，也不声明未经测量的速度、成本或准确率。
-  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/spoonnotfound/soupbase/) · 许可证: MIT
-
-- [**jev-chess**](https://github.com/hemanth/jev-chess) — 该项目使用 TypeSafe AI System One 的 Choice、Score 和 Noul 原语，将自然语言走棋意图解析为合法走法，并提供局面评估、历史棋手风格对手和整局对局分类。
-  - **Jev 在哪一步做判断**: Jev 负责将自然语言走棋意图解析为合法走法，并对走法的锐度、战略主题、王翼攻击风险和棋风人格维度进行打分与选择。
-  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hemanth/jev-chess/) · 许可证: 未声明
 
 - [**tsai-civ2**](https://github.com/phyous/tsai-civ2) — Jev 玩原版《文明 II》实验框架：在浏览器中运行经典游戏引擎，实时输出各行动的概率分布并做出决策。
   - **Jev 在哪一步做判断**: 每回合读取游戏地图与单位状态，由 Jev 评估城市建造、科技研发、外交姿态与行动走位。
@@ -1362,15 +1427,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 让 Agent 在共同接口下比较或替换判断后端。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/gamesonrblx/jevbridge/) · 许可证: MIT
 
-- [**synkora-ai**](https://github.com/getsynkora/synkora-ai) — Synkora Agent 平台内置可选 TypeSafe 客户端与工具，用于分类、评分和是非判断。
-  - **Jev 在哪一步做判断**: 把工作流状态和命名问题发送给 Jev，并将结构化答案交还 Agent。
-  - **这个项目的用途**: 让现有平台工作流调用同一组判断能力。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/getsynkora/synkora-ai/) · 许可证: MIT
-
 - [**pi-typesafe**](https://github.com/DevMortimer/pi-typesafe) — Pi 的 Jev 扩展，提供判断工具、终端试验命令和供其他扩展复用的 API。
   - **Jev 在哪一步做判断**: 通过共享客户端批量提交判断题，验证响应并记录用量与可用性。
   - **这个项目的用途**: 统一密钥与客户端管理，其他扩展可复用同一决策接口。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/devmortimer/pi-typesafe/) · 许可证: MIT
+
+- [**synkora-ai**](https://github.com/getsynkora/synkora-ai) — Synkora Agent 平台内置可选 TypeSafe 客户端与工具，用于分类、评分和是非判断。
+  - **Jev 在哪一步做判断**: 把工作流状态和命名问题发送给 Jev，并将结构化答案交还 Agent。
+  - **这个项目的用途**: 让现有平台工作流调用同一组判断能力。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/getsynkora/synkora-ai/) · 许可证: MIT
 
 - [**pi-jev**](https://github.com/TheoOliveira/pi-jev) — 为 Pi Agent 按任务寻找工具与技能，并提供结构化判断和可选的历史筛选。
   - **Jev 在哪一步做判断**: 判断候选工具、技能和历史记录与当前任务的相关性，供本地规则决定加载或保留。
@@ -1402,6 +1467,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 保留决策日志，部分客户端仅观察或自行决定是否采纳。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/felpsdev/jev-classifier/) · 许可证: MIT
 
+- [**jev-codex-plugin**](https://github.com/integrate-your-mind/jev-codex-plugin) — 该 Codex 插件提供 Jev 决策咨询、失败命令诊断和基于证据的完成情况检查功能。
+  - **Jev 在哪一步做判断**: Jev 比较可用候选项并选出最优工具/模型/策略，或对失败原因与完成证据给出分类评估。
+  - **这个项目的用途**: 让现有 Agent 通过通用接口使用 Jev。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/integrate-your-mind/jev-codex-plugin/) · 许可证: MIT
+
 - [**jev-mcp**](https://github.com/rajasekharponakala/jev-mcp) — 该项目是封装 Jev 模型的 MCP 服务器，为 Agent 提供类型化的 noul 判断、多选和评分结果。
   - **Jev 在哪一步做判断**: 对输入的 state 内容执行 noul 二值判断、choice 多选分类或 score 等级评分的类型化决策。
   - **这个项目的用途**: 让现有 Agent 通过通用接口使用 Jev。
@@ -1432,10 +1502,25 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 让方案比较保留明确的候选与输入依据。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/thesammykins/jev_ampcode/) · 许可证: 未声明
 
+- [**jev-agent-toolkit**](https://github.com/reiswaffel78/jev-agent-toolkit) — 该仓库提供便携式 Agent Skill，教编码 Agent 将 Jev 用作有界判断层，并附带可选 MCP 桥及面向代码、浏览器研究、Blender 和 Unreal Engine 的工作流。
+  - **Jev 在哪一步做判断**: Jev 对工单的子系统归属、严重程度及退款与安全意图进行有界语义判断并返回校准概率。
+  - **这个项目的用途**: 让现有 Agent 通过通用接口使用 Jev。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/reiswaffel78/jev-agent-toolkit/) · 许可证: MIT
+
+- [**jev-eyes**](https://github.com/LeddoEngano/jev-eyes) — jev-eyes 在本地把图片转成 Jev 可决策的文字和布局状态，并提供 CLI、MCP server 和 Agent skill。
+  - **Jev 在哪一步做判断**: Jev基于OCR文本与空间布局构成的state判断图像内容属性以及是否需要升级到视觉模型。
+  - **这个项目的用途**: 让现有 Agent 通过通用接口使用 Jev。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/leddoengano/jev-eyes/) · 许可证: MIT
+
 - [**jev-mcp**](https://github.com/BYK/jev-mcp) — 以评测为重点的 Jev MCP 服务，可单次提问、批量处理并比较问题和阈值。
   - **Jev 在哪一步做判断**: 对状态运行 Choice、Score、Noul，再用标注样本计算准确率与校准等指标。
   - **这个项目的用途**: 让问题设计与阈值选择有可检查的样本结果。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/byk/jev-mcp/) · 许可证: MIT
+
+- [**jev-mcp**](https://github.com/CodeIA-Academy/jev-mcp) — 该项目是一个无依赖的本地 MCP 服务器，将 Jev 作为 ask\_jev 和 list\_jev\_models 工具提供给 Agent 使用。
+  - **Jev 在哪一步做判断**: Jev 根据传入的 state 对 choice/score/noul 类型问题返回带概率和置信度的分类、评分或真值判断，供代理决定路由与后续动作。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/codeia-academy/jev-mcp/) · 许可证: MIT
 
 - [**mcp-server-jev**](https://github.com/MattiooFR/mcp-server-jev) — 该项目为 Codex、Claude 等 MCP 客户端提供 jev\_evaluate 工具，使用 Jev 对提供的文本进行分类、判断和打分。
   - **Jev 在哪一步做判断**: 对调用方提供的 state 内容执行 noul 二值判断、choice 分类选择和 score 等级评分的类型化决策。
@@ -1570,6 +1655,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 按任务分配模型资源；具体成本收益需看项目测试。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/minilv/jev-auto-router/) · 许可证: Apache-2.0
 
+- [**tiershift**](https://github.com/iamvatsalpatel/tiershift) — 基于 YAML 声明策略的模型分级路由工具，在约 180 毫秒内通过 Jev 将请求路由到满足要求的最低成本模型。
+  - **Jev 在哪一步做判断**: 无需微调训练数据，利用纯文本 YAML 规则由 Jev 对请求进行离散分类判断，命中阈值即向下分流。
+  - **这个项目的用途**: 支持 TypeScript 与 Python 双语言生态，极低决策延迟，帮助团队透明化控制大模型调用成本。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/iamvatsalpatel/tiershift/) · 许可证: MIT
+
 - [**Janus**](https://github.com/FirasSX914/Janus) — 模型适用性测量与路由框架，评估业务数据在 Jev 与传统大模型之间的收益边界并执行最优动态分发。
   - **Jev 在哪一步做判断**: 通过内置的 TypeSafe 提供者向 Jev 发起基准测试请求，统计离散判断准确度与延迟，生成自动化路由策略。
   - **这个项目的用途**: 用实测数据消除模型选型主观臆断，在保证任务成功率的同时实现系统整体调用的成本最小化。
@@ -1595,15 +1685,20 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 可导出选择结果，检查路由是否符合自己的回答偏好。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hugo-alves/jev-router-playground/) · 许可证: MIT
 
+- [**laya-jev-lab**](https://github.com/yibie/laya-jev-lab) — 该仓库对比 Jev 与 Laya 在中文客服工单分类上的测量结果，并提供本地优先的 cascade 实验脚本。
+  - **Jev 在哪一步做判断**: Jev 对每条中文客服消息执行 choice 分类决策，判断其所属类别。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/yibie/laya-jev-lab/) · 许可证: MIT
+
 - [**opencode-jev-orchestrator**](https://github.com/aaronshaf/opencode-jev-orchestrator) — OpenCode 编排器：会话停在廉价父模型上，Jev 判定本轮偏难时才通过工具拉起更强的子 Agent。
   - **Jev 在哪一步做判断**: 三个 Score 衡量任务、推理和工具复杂度，再 Choice 选出 fast / balanced / strong / long；本地策略决定停留、升级或并行。
   - **这个项目的用途**: 会话停在廉价父模型上；只有判定为难的轮次才另开更强的子 Agent。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/aaronshaf/opencode-jev-orchestrator/) · 许可证: MIT
 
-- [**tiershift**](https://github.com/iamvatsalpatel/tiershift) — 基于 YAML 声明策略的模型分级路由工具，在约 180 毫秒内通过 Jev 将请求路由到满足要求的最低成本模型。
-  - **Jev 在哪一步做判断**: 无需微调训练数据，利用纯文本 YAML 规则由 Jev 对请求进行离散分类判断，命中阈值即向下分流。
-  - **这个项目的用途**: 支持 TypeScript 与 Python 双语言生态，极低决策延迟，帮助团队透明化控制大模型调用成本。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/iamvatsalpatel/tiershift/) · 许可证: MIT
+- [**switchboard**](https://github.com/ruban-24/switchboard) — Switchboard 是面向 Claude Code 和 Codex 的本地模型路由工具，它用 Jev 评估新对话任务并按置信度规则选择模型与推理强度，然后在后续对话、工具调用和恢复会话中固定该选择。
+  - **Jev 在哪一步做判断**: Jev 对新会话任务的能力档位、上下文是否充足及各候选模型的最低充分推理努力度做出结构化 choice 判断。
+  - **这个项目的用途**: 按任务分配模型资源；具体成本收益需看项目测试。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ruban-24/switchboard/) · 许可证: Apache-2.0
 
 - [**todo-jev**](https://github.com/maker-KK/todo-jev) — 结合 skill 条件和环境检查的任务路由实验，推荐规则、skill 或大模型处理路径。
   - **Jev 在哪一步做判断**: Jev 分类请求并匹配候选 skill；没有密钥或调用失败时使用启发式回退。
@@ -1718,30 +1813,30 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/devin-axis/jev-dsh-decision/) · 许可证: 未声明
 
-- [**ruby\_decision\_model**](https://github.com/obie/ruby_decision_model) — Ruby 决策模型客户端，可通过 TypeSafe 原生接口或 OpenRouter 调用 Jev。
-  - **Jev 在哪一步做判断**: 用统一 Client 提交状态与类型化问题，解析选择、概率、评分及用量。
-  - **这个项目的用途**: 只依赖 Ruby 标准库，可在统一接口下切换 provider。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/obie/ruby_decision_model/) · 许可证: MIT
-
 - [**jevbench**](https://github.com/fstandhartinger/jevbench) — 该仓库提供 JevBench 基准，向 Jev 类决策模型输入状态和有界评分规则，并对返回的类型化答案按 Intelligence、Calibration、Speed 和 Cost 四个维度计分。
   - **Jev 在哪一步做判断**: Jev 根据输入的 state 和有界 rubric，对 noul/choice/score 三类问题返回类型化答案及每个选项的概率分布。
   - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/fstandhartinger/jevbench/) · 许可证: MIT
+
+- [**ruby\_decision\_model**](https://github.com/obie/ruby_decision_model) — Ruby 决策模型客户端，可通过 TypeSafe 原生接口或 OpenRouter 调用 Jev。
+  - **Jev 在哪一步做判断**: 用统一 Client 提交状态与类型化问题，解析选择、概率、评分及用量。
+  - **这个项目的用途**: 只依赖 Ruby 标准库，可在统一接口下切换 provider。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/obie/ruby_decision_model/) · 许可证: MIT
 
 - [**ask-jev-skill**](https://github.com/shantanugoel/ask-jev-skill) — Hermes Agent 与通用智能体的 Jev 技能扩展：为代理提供封闭选项评估与置信度不足时的升级决策机制。
   - **Jev 在哪一步做判断**: 为 Agent 工作流在多动作选择时调用 Jev 评估候选意图；低置信度时交由人工或上级模型处理。
   - **这个项目的用途**: 为自主智能体增加确定性的窄域决策保护，减少无限轮循环幻觉。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/shantanugoel/ask-jev-skill/) · 许可证: MIT
 
-- [**minojev**](https://github.com/zeredy879/minojev) — 独立实现的 System-1 决策模型：一次前向传播输出 Choice、Noul(Boolean)、Score 的校准概率分布，全程零输出 token，可在笔记本 CPU 上离线训练。
-  - **Jev 在哪一步做判断**: minojev 是独立开源复现（不调用 TypeSafe API）：自研 backbone + 决策头，从隐藏状态直接读取 Choice / Boolean(等价 Noul) / Score 分布，温度校准在 dev 集拟合。迷宫 Demo 中每步一次前向回答 9 个问题（1 个四向 Choice + 4 个安全 Noul + 1 个距离 Score），代码用安全概率做掩码后执行动作。附带六个业务领域（客服、审核、代码评审、退款、分诊、线索）的合成数据集与后训练流程。
-  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zeredy879/minojev/) · 许可证: MIT
-
 - [**jev**](https://github.com/dannote/jev) — 把 Jev 接成 Elixir/OTP 异步进程，在 GenServer 中用模式匹配处理返回结果。
   - **Jev 在哪一步做判断**: 将应用状态和 Choice、Score、Noul 问题发往 TypeSafe，再以消息返回答案。
   - **这个项目的用途**: 可在现有消息处理和监督机制里组织决策流程。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/dannote/jev/) · 许可证: MIT
+
+- [**minojev**](https://github.com/zeredy879/minojev) — 独立实现的 System-1 决策模型：一次前向传播输出 Choice、Noul(Boolean)、Score 的校准概率分布，全程零输出 token，可在笔记本 CPU 上离线训练。
+  - **Jev 在哪一步做判断**: minojev 是独立开源复现（不调用 TypeSafe API）：自研 backbone + 决策头，从隐藏状态直接读取 Choice / Boolean(等价 Noul) / Score 分布，温度校准在 dev 集拟合。迷宫 Demo 中每步一次前向回答 9 个问题（1 个四向 Choice + 4 个安全 Noul + 1 个距离 Score），代码用安全概率做掩码后执行动作。附带六个业务领域（客服、审核、代码评审、退款、分诊、线索）的合成数据集与后训练流程。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zeredy879/minojev/) · 许可证: MIT
 
 - [**jev-capability-atlas**](https://github.com/Zaious/jev-capability-atlas) — \*\*機制上\*\*：它很快、很便宜，只能做「選一個選項/打個分/回答是非」這種窄判斷，不會寫文字解釋自己在想什麼。因為答案空間是你自己先定義好的，它\*\*結構上不可能吐出選項清單以外的東西\*\*——這跟自由生成文字的模型偶爾格式跑掉、甚至生出一個你沒列的分類，是不同等級的保證，不是機率低，是型別上不可能（但這只保證答案落在清單裡，不保證選到的那個是對的，細節見下面「不是瞎猜」那節）。
   - **Jev 在哪一步做判断**: Jev 在各测试套件中执行窄判断，如引用支持度、反讽识别、历史问答等选项选择与是非打分决策。
@@ -1788,10 +1883,20 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 将问题、返回类型与分支代码放在同一套可检查定义中。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/inanna-malick/jev-dsl/) · 许可证: MIT
 
+- [**jeview**](https://github.com/andududu/jeview) — Jeview 是一个本地网关，把代码发往 Jev 的每次调用转发出去，存入本地 SQLite 数据库，并在实时地图上展示。
+  - **Jev 在哪一步做判断**: Jeview 自身不做决策，所有经网关转发的 System One 请求均由 Jev 负责回答和裁决。
+  - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/andududu/jeview/) · 许可证: MIT
+
 - [**zod-jev**](https://github.com/jomatsu/zod-jev) — 为 Zod 校验增加语义规则，例如描述是否匹配或文本是否包含个人信息。
   - **Jev 在哪一步做判断**: 把同次解析的语义条件合并为 Jev Noul 问题，再按概率返回通过、拒绝或不可用。
   - **这个项目的用途**: 沿用 Zod 的错误结构，将语义校验问题定位到字段。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jomatsu/zod-jev/) · 许可证: MIT
+
+- [**typesafe-sdk**](https://github.com/joshmn/typesafe-sdk) — TypeSafe System One 的社区 Ruby 客户端，默认使用 jev-latest。
+  - **Jev 在哪一步做判断**: 用 Choice、Score、Noul 构造问题，发送请求后按答案类型提供访问接口。
+  - **这个项目的用途**: Ruby 程序可直接读取选择、分数和概率。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/joshmn/typesafe-sdk/) · 许可证: MIT
 
 - [**typesafeai-dotnet-sdk**](https://github.com/saibimajdi/typesafeai-dotnet-sdk) — 适用于 .NET 8+ 的 TypeSafe AI / Jev 客户端 SDK，支持 Choice、Score 与 Noul 决策原语与强类型响应解析。
   - **Jev 在哪一步做判断**: 在 TypeSafeClient 中封装 System One API 请求，以并行 HTTP 管道评估 typed questions 并映射为不可变 C# 记录。
@@ -1803,6 +1908,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 同一套接口覆盖调用、失败记录和评估，便于比较问法与阈值。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/docxology/daf-jev/) · 许可证: MIT
 
+- [**JevOps**](https://github.com/endomorphosis/JevOps) — JevOps 是一个 TypeSafe / Jev 内核，提供门控、缓存、任务网格和 Lean IR 相关模块，但本身不编写 Lean 代码。
+  - **Jev 在哪一步做判断**: Jev 作为门控对候选方案执行 choice/score/noul 结构化评估，以决定是否放行或选择最优分支。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/endomorphosis/jevops/) · 许可证: AGPL-3.0
+
 - [**questions**](https://github.com/nitoba/questions) — TypeScript 决策库：用 Zod 或原生问题描述判断，默认请求 TypeSafe Jev，也可改用 Vercel 或生成式适配器。
   - **Jev 在哪一步做判断**: 把 state 和 Choice / Score / Noul 发到 \`/v1/systemone\`，默认模型 \`jev-latest\`。
   - **这个项目的用途**: 同一套问题定义可以换 TypeSafe、Vercel 或生成式后端，不改调用代码。
@@ -1813,10 +1923,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 复用 Elixir 数据结构与客户端封装接入判断接口。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/nshkrdotcom/typesafe_sdk/) · 许可证: MIT
 
-- [**typesafe-sdk**](https://github.com/joshmn/typesafe-sdk) — TypeSafe System One 的社区 Ruby 客户端，默认使用 jev-latest。
-  - **Jev 在哪一步做判断**: 用 Choice、Score、Noul 构造问题，发送请求后按答案类型提供访问接口。
-  - **这个项目的用途**: Ruby 程序可直接读取选择、分数和概率。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/joshmn/typesafe-sdk/) · 许可证: MIT
+- [**jev-go**](https://github.com/Stumble/jev-go) — 社区 Go SDK 与命令行，支持 TypeSafe 直连和 Vercel AI Gateway。
+  - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
+  - **这个项目的用途**: 封装请求和响应解析，便于在应用中接入结构化判断。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/stumble/jev-go/) · 许可证: MIT
+
+- [**jev-rs**](https://github.com/yijunyu/jev-rs) — 这是一个 Rust 编写的 Jev 兼容引擎，可在一次 prefill 中让任意 LLM 返回关于一段 state 的 noul、choice 和 score 类型判断及其概率，并可作为 MCP 工具供 Agent 调用。
+  - **Jev 在哪一步做判断**: Jev 根据输入的 state 文本对 noul、choice、score 等类型化问题给出带概率的判断。
+  - **这个项目的用途**: 让现有 Agent 通过通用接口使用 Jev。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/yijunyu/jev-rs/) · 许可证: Apache-2.0
 
 - [**typesafe-ai-rs**](https://github.com/gilljon/typesafe-ai-rs) — 独立维护的 Rust SDK，提供异步与阻塞客户端、重试和响应元数据。
   - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
@@ -1843,11 +1958,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/collapseindex/jev-builder/) · 许可证: 未声明
 
-- [**jev-go**](https://github.com/Stumble/jev-go) — 社区 Go SDK 与命令行，支持 TypeSafe 直连和 Vercel AI Gateway。
-  - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
-  - **这个项目的用途**: 封装请求和响应解析，便于在应用中接入结构化判断。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/stumble/jev-go/) · 许可证: MIT
-
 - [**jev-go**](https://github.com/Gaurav-Gosain/jev-go) — Go 版 TypeSafe System One 客户端，提供类型化问题、答案与批量调用辅助。
   - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
   - **这个项目的用途**: 封装请求和响应解析，便于在应用中接入结构化判断。
@@ -1862,6 +1972,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev对每张合成支持工单的所属队列、是否愤怒和优先级分别做出choice、boolean、score决策并返回校准概率。
   - **这个项目的用途**: 在现有程序中复用接入代码，减少重复处理接口细节。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/scienthoon/jev-ood-calibration/) · 许可证: MIT
+
+- [**jev-web-analyzer**](https://github.com/replynodes/jev-web-analyzer) — jev-web-analyzer：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+  - **Jev 在哪一步做判断**: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
+  - **这个项目的用途**: 在现有程序中复用接入代码，减少重复处理接口细节。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/replynodes/jev-web-analyzer/) · 许可证: Apache-2.0
 
 - [**jevex**](https://github.com/jvsteiner/jevex) — Jev 指挥工具循环的 Agent 实验，聊天模型负责参数与最终文字，MCP 工具执行操作。
   - **Jev 在哪一步做判断**: Jev 选择下一步动作并审批具体调用，执行结果回到下一轮状态。
@@ -1898,10 +2013,10 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把模型调用、执行策略和评测分开组织。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hamakyo/jev-starter/) · 许可证: MIT
 
-- [**jev-web-analyzer**](https://github.com/replynodes/jev-web-analyzer) — jev-web-analyzer：由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
-  - **Jev 在哪一步做判断**: 由业务代码定义问题，客户端负责提交 Jev 请求并解析结构化结果。
-  - **这个项目的用途**: 在现有程序中复用接入代码，减少重复处理接口细节。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/replynodes/jev-web-analyzer/) · 许可证: Apache-2.0
+- [**Jev4Mellea**](https://github.com/SoundBlaster/Jev4Mellea) — 这是一个将 Jev 语义检查接入 Mellea 的 Python 适配器，用于验证文本、分类文本或按有序量表评分。
+  - **Jev 在哪一步做判断**: Jev 负责对候选文本执行 Noul 验证、Choice 分类和 Score 评分等语义判定。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/soundblaster/jev4mellea/) · 许可证: Apache-2.0
 
 - [**jevclient**](https://github.com/AboveColin/jevclient) — Jev 的异步 Python 客户端，一次请求可提交多个结构化判断问题。
   - **Jev 在哪一步做判断**: 通过 aiohttp 调用 TypeSafe 接口，把分类、分数与概率解析为对象。
@@ -1912,6 +2027,16 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
   - **这个项目的用途**: 封装请求和响应解析，便于在应用中接入结构化判断。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/fgn/jevgo/) · 许可证: MIT
+
+- [**jevriel**](https://github.com/thehan-co/jevriel) — 这是一个帮助 AI Agent 使用 TypeSafe JEV 构建决策点、升级现有 LLM 工作流并测量效果的 skill 和插件。
+  - **Jev 在哪一步做判断**: JEV根据传入的状态对路由选择、相关性排序、候选抽取和证据支持度等有界问题返回类型化选择与评分以决定下一步。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/thehan-co/jevriel/) · 许可证: Apache-2.0
+
+- [**limpet**](https://github.com/noplan-inc/limpet) — 编程智能体专用 Stop Hook 门禁：防止 Coding Agent 过早宣布完工，用 Jev 依据自然语言规则客观裁定完成度。
+  - **Jev 在哪一步做判断**: 在 Agent 触发终止指令时拦截，由 Jev 核对任务提示词与上下文是否满足预定验收条件。
+  - **这个项目的用途**: 用轻量级规则裁判阻止代理偷懒或伪造完成，显著提高自动化开发交付完整度。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/noplan-inc/limpet/) · 许可证: MIT
 
 - [**pi-typesafe-jev**](https://github.com/legacybridge-tech/pi-typesafe-jev) — 为 Pi 扩展注入 TypeSafe Jev 的 5 种窄域判断工具：把决策权交给模型的同时将动作阈值保留给宿主应用。
   - **Jev 在哪一步做判断**: 将选择、评分与是非等五类标准判定封装为 Pi 工具，供主代理在需要结构化裁决时调用。
@@ -1928,6 +2053,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 在 Go 程序中复用请求、类型映射和错误处理代码。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/2389-research/typesafe-go/) · 许可证: MIT
 
+- [**typesafe-jev-examples**](https://github.com/rajivkuriakose/typesafe-jev-examples) — 该仓库提供通过 OpenRouter 调用 Jev 完成工单分类和文章重排序的可运行示例。
+  - **Jev 在哪一步做判断**: Jev 对工单应分诊到哪个部门、是否紧急及业务影响等作类型化判断，并对候选文章是否真正回答用户问题作相关性判断。
+  - **这个项目的用途**: 在现有程序中复用接入代码，减少重复处理接口细节。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/rajivkuriakose/typesafe-jev-examples/) · 许可证: MIT
+
 - [**jev\_dart**](https://github.com/Solido/jev_dart) — 这是 Jev 的纯 Dart 客户端，用于发送状态和类型化问题并返回可供代码分支的结构化答案，可用于 CLI、服务端和 Flutter 应用。
   - **Jev 在哪一步做判断**: Jev 根据输入文本在 billing/technical/other 之间做 Choice 分类，并用 Noul 判断是否紧急。
   - **这个项目的用途**: 在现有程序中复用接入代码，减少重复处理接口细节。
@@ -1937,6 +2067,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 把应用状态和问题发送给 Jev，解析 Choice、Score 或 Noul 答案。
   - **这个项目的用途**: 封装请求和响应解析，便于在应用中接入结构化判断。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/guillemus/jev-go/) · 许可证: 未声明
+
+- [**jev-lab**](https://github.com/q93304989-bit/jev-lab) — 最简 Jev 调用演示器：单页分类器，把请求 JSON、概率分布、confidence、耗时与 token 都摊开给你看
+  - **Jev 在哪一步做判断**: Jev根据输入文本在自定义类别上做choice分类，给出各标签概率分布与confidence。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/q93304989-bit/jev-lab/) · 许可证: MIT
 
 - [**jev-skills**](https://github.com/laguagu/jev-skills) — 该仓库为使用 Jev 构建应用的 Agent 提供实用技能与示例，涵盖 API 设置、决策模式、路由、排序与证据检查。
   - **Jev 在哪一步做判断**: 对每个声明与证据段落对判定 supports/contradicts/irrelevant，再合成为 supported/contradicted/conflicting/not\_stated/review。
@@ -1948,15 +2083,20 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/litshing/jevcore/) · 许可证: 未声明
 
+- [**jevinf**](https://github.com/zerodegress/jevinf) — Jev 这一系决策模型的推理引擎：每条候选路径按分段前向计算并复用前缀，上面架一层符合 Jev wire 契约的服务。目前接上的后端是 NanoJev。
+  - **Jev 在哪一步做判断**: Jev 根据事件状态对计费、紧急程度、负责团队和客户情绪等问题做出是否判断、选项选择和程度打分。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zerodegress/jevinf/) · 许可证: MIT
+
+- [**jevish**](https://github.com/hemanth/jevish) — jevish 是一个 JavaScript 语义模式匹配与零样本判断库，使用 Jev 的 Choice 做标签分类、使用 Noul 做布尔判定，并支持本地与云端 Jev 协同执行。
+  - **Jev 在哪一步做判断**: 当本地零依赖引擎置信度不足时，由云端 Jev System One 裁决零样本标签多选一和布尔谓词真假。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hemanth/jevish/) · 许可证: MIT
+
 - [**jevrag**](https://github.com/ajanm007/jevrag) — 该项目为 RAG 流程提供可插拔的决策层，通过统一的 state → Decision → confidence → action 接口实现检索停止、分块、上下文选择、回答拒答和缓存信任五类决策，并以 Jev 作为首个可替换后端，同时提供校准评估工具。
   - **Jev 在哪一步做判断**: Jev 根据检索状态对证据充分性、块边界、上下文选择、答案弃答和缓存信任五个 RAG 决策点给出类型化答案与置信度。
   - **这个项目的用途**: 减少后续处理的冗余信息。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/ajanm007/jevrag/) · 许可证: MIT
-
-- [**limpet**](https://github.com/noplan-inc/limpet) — 编程智能体专用 Stop Hook 门禁：防止 Coding Agent 过早宣布完工，用 Jev 依据自然语言规则客观裁定完成度。
-  - **Jev 在哪一步做判断**: 在 Agent 触发终止指令时拦截，由 Jev 核对任务提示词与上下文是否满足预定验收条件。
-  - **这个项目的用途**: 用轻量级规则裁判阻止代理偷懒或伪造完成，显著提高自动化开发交付完整度。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/noplan-inc/limpet/) · 许可证: MIT
 
 - [**qualm**](https://github.com/qddegtya/qualm) — TypeScript 的 Jev 判断封装，把不确定结果作为显式 unsure 分支处理。
   - **Jev 在哪一步做判断**: 保留判断概率与选项类型，低置信度时交给调用方提供的回退分支。
@@ -1987,11 +2127,6 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: 将状态和类型化问题发送到 System One，以 async/await 获取结构化答案。
   - **这个项目的用途**: 让 Swift 应用复用 Jev 请求与响应处理。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/marandaneto/typesafe-sdk-swift/) · 许可证: MIT
-
-- [**jevish**](https://github.com/hemanth/jevish) — jevish 是一个 JavaScript 语义模式匹配与零样本判断库，使用 Jev 的 Choice 做标签分类、使用 Noul 做布尔判定，并支持本地与云端 Jev 协同执行。
-  - **Jev 在哪一步做判断**: 当本地零依赖引擎置信度不足时，由云端 Jev System One 裁决零样本标签多选一和布尔谓词真假。
-  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hemanth/jevish/) · 许可证: MIT
 
 - [**typesafe-ai-ruby**](https://github.com/hnegishi/typesafe-ai-ruby) — 无第三方运行时依赖的 Ruby 客户端，把 Choice / Score / Noul 发到 TypeSafe System One。
   - **Jev 在哪一步做判断**: \`system\_one\` POST 到 \`/v1/systemone\`，默认 \`https://api.typesafe.ai\` 与 \`jev-latest\`。
@@ -2026,15 +2161,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 在现有 RubyLLM 程序里复用明确的结构化判断接口。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kieranklaassen/ruby_llm-typesafe/) · 许可证: MIT
 
-- [**laravel-typesafe-jev**](https://github.com/Butochnikov/laravel-typesafe-jev) — 把 Jev 接入 Laravel，提供配置、依赖注入、Facade 和可记录请求的测试替身。
-  - **Jev 在哪一步做判断**: 复用社区 PHP SDK 发出三类判断请求，保留类型、异步 Promise 和异常。
-  - **这个项目的用途**: Laravel 服务与队列任务可以沿用自己的配置和测试方式。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/butochnikov/laravel-typesafe-jev/) · 许可证: MIT
-
 - [**jev-resilience**](https://github.com/Vicente-MD/jev-resilience) — 给 Spring WebFlux 检查“HTTP 200 但正文其实报错”的响应。
   - **Jev 在哪一步做判断**: Jev 判断响应正文是否是隐藏错误或维护通知，超过阈值就抛出业务异常。
   - **这个项目的用途**: 让现有错误处理能看到状态码掩盖的失败。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/vicente-md/jev-resilience/) · 许可证: 未声明
+
+- [**laravel-typesafe-jev**](https://github.com/Butochnikov/laravel-typesafe-jev) — 把 Jev 接入 Laravel，提供配置、依赖注入、Facade 和可记录请求的测试替身。
+  - **Jev 在哪一步做判断**: 复用社区 PHP SDK 发出三类判断请求，保留类型、异步 Promise 和异常。
+  - **这个项目的用途**: Laravel 服务与队列任务可以沿用自己的配置和测试方式。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/butochnikov/laravel-typesafe-jev/) · 许可证: MIT
 
 
 ## 安全与内容审核
@@ -2084,15 +2219,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把判断、处置记录与人工纠正入口放在同一审核流程中。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/brainstormity/jev-moderation-bot/) · 许可证: 未声明
 
-- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) — 给 Pi 的命令和文件操作增加规则检查，再由 Jev 评估需要进一步判断的操作。
-  - **Jev 在哪一步做判断**: 本地规则先处理拒绝和允许项，Jev 再检查 bash、write、edit 的授权与风险。
-  - **这个项目的用途**: 保留规则与判断记录，方便调整操作门槛。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jomatsu/pi-jev-auto-mode/) · 许可证: MIT
-
 - [**is-malicious**](https://github.com/luantak/is-malicious) — 命令行代码库恶意行为扫描器，在运行未知代码前利用 Jev 分析源码、CI 配置与构建脚本的可疑行为。
   - **Jev 在哪一步做判断**: 将待检文件内容切片与安全规则输入 Jev，由 Jev 判断代码是否包含数据外发、混淆加载或凭据嗅探等风险。
   - **这个项目的用途**: 在不直接执行脚本的安全沙箱前置阶段提供多维度危险信号预警，帮助开发者排查供应链中毒隐患。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/luantak/is-malicious/) · 许可证: MIT
+
+- [**pi-jev-auto-mode**](https://github.com/jomatsu/pi-jev-auto-mode) — 给 Pi 的命令和文件操作增加规则检查，再由 Jev 评估需要进一步判断的操作。
+  - **Jev 在哪一步做判断**: 本地规则先处理拒绝和允许项，Jev 再检查 bash、write、edit 的授权与风险。
+  - **这个项目的用途**: 保留规则与判断记录，方便调整操作门槛。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jomatsu/pi-jev-auto-mode/) · 许可证: MIT
 
 - [**jev-guard**](https://github.com/leepokai/jev-guard) — 在编程 Agent 调工具前后加一道检查：操作是否危险、是不是用户要求的、返回内容里有没有诱导 Agent 越界的指令。
   - **Jev 在哪一步做判断**: 结合会话对工具风险、用户意图与提示注入迹象做判断，由本地规则决定放行、提醒或拦截。
@@ -2114,15 +2249,15 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/win4r/jev-security-scan/) · 许可证: MIT
 
-- [**jev-auto-approve**](https://github.com/metalbear-co/jev-auto-approve) — 这是一个 GitHub Action，调用 Jev 并行询问多个是否问题，仅当所有置信度达标时自动批准 PR，否则跳过并评论分数。
-  - **Jev 在哪一步做判断**: Jev 对每个问题给出 yes/no 校准概率，判断 PR 是否可合并、测试是否充分、是否需要人工审查，只有全部达到阈值才批准。
-  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/metalbear-co/jev-auto-approve/) · 许可证: MIT
-
 - [**pi-jev-sentinel**](https://github.com/harshwasan/pi-jev-sentinel) — 这是一个 Pi coding-agent 扩展，用 Jev 检查工具调用的意图和风险，并筛查工具输出和回复中的注入指示，同时隐去密钥后再发送。
   - **Jev 在哪一步做判断**: 评估内容是否满足安全或证据要求，由本地策略放行或拦截。
   - **这个项目的用途**: 给现有流程增加可检查的判断环节。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/harshwasan/pi-jev-sentinel/) · 许可证: MIT
+
+- [**jev-auto-approve**](https://github.com/metalbear-co/jev-auto-approve) — 这是一个 GitHub Action，调用 Jev 并行询问多个是否问题，仅当所有置信度达标时自动批准 PR，否则跳过并评论分数。
+  - **Jev 在哪一步做判断**: Jev 对每个问题给出 yes/no 校准概率，判断 PR 是否可合并、测试是否充分、是否需要人工审查，只有全部达到阈值才批准。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/metalbear-co/jev-auto-approve/) · 许可证: MIT
 
 - [**jev-block-android-ad**](https://github.com/ufec/jev-block-android-ad) — Android 通知与短信过滤实验：先执行本地验证码等规则，再让 Jev 判断消息是否是广告噪声。
   - **Jev 在哪一步做判断**: 对通过本地门槛的文本做类别判断，由本地映射决定允许或拦截。
@@ -2159,6 +2294,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把需要停下确认的节点显式记录下来。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/hyunjunjeon/jev-judgment/) · 许可证: MIT
 
+- [**jev-phishing-bench**](https://github.com/anisselbd/jev-phishing-bench) — jev-phishing-bench：Jev 负责判断每封邮件是否为钓鱼邮件、链接是否可点击，并对五个钓鱼信号给出概率。
+  - **Jev 在哪一步做判断**: Jev 负责判断每封邮件是否为钓鱼邮件、链接是否可点击，并对五个钓鱼信号给出概率。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/anisselbd/jev-phishing-bench/) · 许可证: 未声明
+
 - [**oc-plugins**](https://github.com/OpeOginni/oc-plugins) — OpenCode 插件集合中的 oc-auto-perms，用 Jev 按自然语言规则检查工具操作意图。
   - **Jev 在哪一步做判断**: 将拟执行操作与权限规则交给 Jev，再由本地逻辑选择允许、拒绝或询问用户。
   - **这个项目的用途**: 让权限规则与每次工具操作的判断对应起来。
@@ -2189,10 +2329,10 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/bojansandhaus/jev-decisions/) · 许可证: MIT
 
-- [**jev-phishing-bench**](https://github.com/anisselbd/jev-phishing-bench) — jev-phishing-bench：Jev 负责判断每封邮件是否为钓鱼邮件、链接是否可点击，并对五个钓鱼信号给出概率。
-  - **Jev 在哪一步做判断**: Jev 负责判断每封邮件是否为钓鱼邮件、链接是否可点击，并对五个钓鱼信号给出概率。
-  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
-  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/anisselbd/jev-phishing-bench/) · 许可证: 未声明
+- [**jev-edge**](https://github.com/kiwi0719/jev-edge) — 该项目是在 nginx/OpenResty 等网关入口处运行的三层请求过滤器，用 TypeSafe Jev 判断提示注入和滥用，并具备 fail-open、缓存和热更新能力。
+  - **Jev 在哪一步做判断**: Jev 对网关入站请求文本是否为提示注入或滥用进行打分，返回概率以决定放行、拦截或旁路观察。
+  - **这个项目的用途**: 给现有流程增加可检查的判断环节。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/kiwi0719/jev-edge/) · 许可证: Apache-2.0
 
 - [**jev-pii-checker**](https://github.com/coo-quack/jev-pii-checker) — 把文本交给 TypeSafe Jev 做 PII 类别 Noul 和敏感度 Score，再用正则与分词标出跨度。
   - **Jev 在哪一步做判断**: 对每个文本块并行询问 12 类 PII 是否出现，并给出 none / low / high 敏感度。
@@ -2203,6 +2343,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 对每次 Agent 工具调用一次性评估风险等级、是否不可逆破坏及爆炸半径，以决定放行或拦截。
   - **这个项目的用途**: 给现有流程增加可检查的判断环节。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/lgy1027/jevshield/) · 许可证: Apache-2.0
+
+- [**jev-preflight**](https://github.com/muse0509/jev-preflight) — jev-preflight：Jev 对行为回归、鉴权等八个风险轴一次性打分，判断本轮变更是否达到需复查的高风险阈值。
+  - **Jev 在哪一步做判断**: Jev 对行为回归、鉴权等八个风险轴一次性打分，判断本轮变更是否达到需复查的高风险阈值。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/muse0509/jev-preflight/) · 许可证: MIT
 
 - [**profanity-checker**](https://github.com/4rays/profanity-checker) — profanity-checker：Jev 判断输入文本是否含亵渎语言，以及用户名是否含字面或伪装（谐音/形近）的亵渎内容。
   - **Jev 在哪一步做判断**: Jev 判断输入文本是否含亵渎语言，以及用户名是否含字面或伪装（谐音/形近）的亵渎内容。
