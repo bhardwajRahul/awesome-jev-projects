@@ -45349,5 +45349,135 @@
       "issueBodySha256": "d0439eae83453a78023cb875ce4c96749f3e139c639ba338fcf7af065e1377ef",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/69"
     }
+  },
+  {
+    "id": "reallyartificial:stuntdouble",
+    "name": "stuntdouble",
+    "author": "ReallyArtificial",
+    "url": "https://github.com/ReallyArtificial/stuntdouble",
+    "repoId": 1381718067,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "stuntdouble 是一个零依赖 Node 代理，转发应用发往 Jev 的请求并同步询问 Kev、Laya 等本地模型，然后记录所有回答并生成两者决策是否一致的替换评估报告。",
+    "jevDecisionPoint": "Jev 对每个请求中的 noul、choice、score 问题给出结构化决策答案，代理以此为基准判断本地模型能否替换。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "evaluation-benchmarks",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Drop-in /v1/systemone proxy that shadows Jev with local decision models (Kev, Laya) and reports whether you can swap",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 6,
+    "license": "MIT",
+    "createdAt": "2026-09-22T14:32:37Z",
+    "lastCommitAt": "2026-09-22T16:16:20Z",
+    "headSha": "cbe91a853c6195bb920aa2aa5fa26d9647a35731",
+    "metadataFetchedAt": "2026-09-22T16:19:07.221Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/273097514?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T16:19:07.221Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/backends.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/compare.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/contract.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/proxy.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/verdict.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/cli.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/record.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/report.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "cbe91a853c6195bb920aa2aa5fa26d9647a35731",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/README.md",
+          "hash": "355277c4d02e9275cdaf10f9f77bc50e7c53dc796d052c6156ab2e94fad18e41"
+        },
+        {
+          "path": "src/backends.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/backends.mjs",
+          "hash": "7a53a5f7684bda6fd52ac551593d9fc0aeeaa12fb34cd2c72b84e6082cfa80d3"
+        },
+        {
+          "path": "src/compare.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/compare.mjs",
+          "hash": "b4f20c4803b6c60d4ce914792ee1e034f8ddcbc376532c9f66d20478292942a3"
+        },
+        {
+          "path": "src/contract.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/contract.mjs",
+          "hash": "22013c03b5b6858581fe6efb480089eed6e9c076d9018f59561f104844584278"
+        },
+        {
+          "path": "src/proxy.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/proxy.mjs",
+          "hash": "b15dc76e247562840829657844773b726c74aba6b9d3355cb4777048c66285ee"
+        },
+        {
+          "path": "src/verdict.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/verdict.mjs",
+          "hash": "955d4e90dc55081793321352236d34b150bc66c0aeb975d9e26f89523ce2777d"
+        },
+        {
+          "path": "src/cli.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/cli.mjs",
+          "hash": "4f8f98ea0b56c1c8202af980e2037b25cdd87ff4e39a7ce2c85981bcbb53423d"
+        },
+        {
+          "path": "src/record.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/record.mjs",
+          "hash": "b89230e36ff4ca28dcfc5e77fd97f8147c64d5ba42a8c2d0fc803105cac2bef8"
+        },
+        {
+          "path": "src/report.mjs",
+          "url": "https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/report.mjs",
+          "hash": "f83eec4a80c7aeea86fde77197c858f628bc56de88031038b31bc1738e8e82af"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 70,
+      "issueBodySha256": "b619613bc031b9e2179670fc6b094a37f73336af5714c00fe653afc6567220d1",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/70"
+    }
   }
 ]

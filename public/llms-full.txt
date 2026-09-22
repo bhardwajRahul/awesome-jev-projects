@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 487
+Catalog entries: 488
 
 ## Install the Agent Skill
 
@@ -7057,3 +7057,24 @@ Ten runnable Jev examples for agent decisions: memory conflicts, tool-result che
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/reallyartificial/jev-by-example/
 - Source evidence: https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/README.md
 - Source evidence: https://github.com/ReallyArtificial/jev-by-example/blob/d35379e7cc7290bcc519d006d82c922555e63364/src/client.mjs
+
+## stuntdouble
+
+Drop-in /v1/systemone proxy that shadows Jev with local decision models (Kev, Laya) and reports whether you can swap
+
+- Repository: https://github.com/ReallyArtificial/stuntdouble
+- Category: Routing & Cost Optimization
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/reallyartificial/stuntdouble/
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/README.md
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/backends.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/compare.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/contract.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/proxy.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/verdict.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/cli.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/record.mjs
+- Source evidence: https://github.com/ReallyArtificial/stuntdouble/blob/cbe91a853c6195bb920aa2aa5fa26d9647a35731/src/report.mjs
