@@ -47827,5 +47827,134 @@
       "issueBodySha256": "319cefc31e287525443b07305dbe4039cf2268ce9ee157d85ecb0696c6335b04",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/71"
     }
+  },
+  {
+    "id": "rxova:jev-planner",
+    "name": "jev-planner",
+    "author": "rxova",
+    "url": "https://github.com/rxova/jev-planner",
+    "repoId": 1379633668,
+    "category": "CLI & Pipelines",
+    "plainSummary": "jev-planner：Jev 对多Agent生成的计划打分并抉择是否需要交叉评审、哪个计划更强以及由谁来合并最终计划。",
+    "jevDecisionPoint": "Jev 对多Agent生成的计划打分并抉择是否需要交叉评审、哪个计划更强以及由谁来合并最终计划。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "按任务分配模型资源；具体成本收益需看项目测试。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "With **N** agents, `--mode ultra` makes **2N + 1** agent calls: drafts, reviews, and final\nsynthesis, plus **N** if Jev requests another review. The default `balanced` makes as few as **N + 1**\nand never more than `ultra`; `fast` makes **N**, or **N + 1** when it merges. Each Jev evaluation is a separate TypeSafe call.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-21T11:50:13Z",
+    "lastCommitAt": "2026-09-22T18:43:31Z",
+    "headSha": "3bbe776ef75b283a6246eb88a216c4552546ff6c",
+    "metadataFetchedAt": "2026-09-22T18:58:32.028Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/260505225?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T18:58:32.028Z",
+    "evidence": [
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.types.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/bin.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/index.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/program/program.schema.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/program/program.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "3bbe776ef75b283a6246eb88a216c4552546ff6c",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/README.md",
+          "hash": "295cf0336277351c3564758f4ed23b9038b8ed4cb1a082dc851e4cf600ce2b9e"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/README.md",
+          "hash": "295cf0336277351c3564758f4ed23b9038b8ed4cb1a082dc851e4cf600ce2b9e"
+        },
+        {
+          "path": "packages/jev-planner/src/jev/jev.test.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.test.ts",
+          "hash": "adbc759122d5c44b5ef95069894f672807730232116edd51df7916ef05aeb5aa"
+        },
+        {
+          "path": "packages/jev-planner/src/jev/jev.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.ts",
+          "hash": "bf5582d2310e2b5bc6153fd0d880ddbad9720e4ee654f8a8b857c2853520c372"
+        },
+        {
+          "path": "packages/jev-planner/src/jev/jev.types.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.types.ts",
+          "hash": "b1db22f1590179c077e49733caf371d008c60bc9170c441cfc00692a9565c767"
+        },
+        {
+          "path": "packages/jev-planner/src/bin.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/bin.ts",
+          "hash": "6b89a27152b58f69328280f369c1e73abf19036dd55928db1b566a60e7387112"
+        },
+        {
+          "path": "packages/jev-planner/src/index.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/index.ts",
+          "hash": "bf8dff2a781aa3c07f579c358a84ad0527f5df8d58b1950d47b26d87e4834d26"
+        },
+        {
+          "path": "packages/jev-planner/src/program/program.schema.test.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/program/program.schema.test.ts",
+          "hash": "2cc6398ba9edae14c71add721e7ea402d6e37a6489254c794dff9fd79d765b5c"
+        },
+        {
+          "path": "packages/jev-planner/src/program/program.test.ts",
+          "url": "https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/program/program.test.ts",
+          "hash": "4e9e525091cace96abdc0f6330b4db0756e7c1fbe720a9fc0960186403ab7f5c"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 72,
+      "issueBodySha256": "9367037da22ada862c34ddeb3dfb5f9cdd96fb70c0882143a11a37c7dd562051",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/72"
+    }
   }
 ]

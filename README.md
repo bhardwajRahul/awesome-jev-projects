@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-520%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-521%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@ When building autonomous agents, routing every small branching decision to a hea
 **TypeSafe Jev (System 1)** is purpose-built for fast, typed discrete decisions:
 - ⚡ **Sub-100ms Latency**: Delivers decisions in 50–100ms to keep agent loops snappy.
 - 🎯 **Native Typed Outputs**: Built-in primitives for `Choice`, `Score`, and `Noul` without fragile JSON regex parsing.
-- 🛡️ **Zero Vaporware**: 520+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
+- 🛡️ **Zero Vaporware**: 521+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
 
 ### 📊 Architecture Comparison: System 1 (Jev) vs System 2 (Reasoning LLMs)
 
@@ -50,7 +50,7 @@ When building autonomous agents, routing every small branching decision to a hea
 - ⚡ **Sticky Search & Floating Popover Filter**: Filter tags and categories anytime while scrolling via the anchored toolbar popover.
 - 🔍 **100% Commit-Pinned Code Evidence**: Every listed project links to immutable source files and explicit decision points.
 
-> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **520 curated projects**
+> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **521 curated projects**
 
 A community-maintained directory and radar for Jev, highlighting open-source projects with verified code and clear decision architectures.
 
@@ -80,7 +80,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 ## Categories
 
 - [Browser & OS Action (39)](https://logicrw.github.io/awesome-jev-projects/en/categories/browser-os-action/)
-- [CLI & Pipelines (33)](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/)
+- [CLI & Pipelines (34)](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/)
 - [Classification (2)](https://logicrw.github.io/awesome-jev-projects/en/categories/classification-taxonomy/)
 - [Code Navigation (13)](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/)
 - [Context GC (31)](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/)
@@ -456,6 +456,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Rules become at most twelve questions (\`MAX\_JEV\_QUESTIONS\` in src/types.ts). AKIA and private-key armor from src/redact.ts fail locally in src/pipeline.ts with no Jev call.
   - **What this project offers**: Does not write reviews, suggest patches, or approve. Policy is read from the base-ref config.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/thestral12/pr-sieve/) · License: MIT
+
+- [**jev-planner**](https://github.com/rxova/jev-planner) — With \*\*N\*\* agents, \`--mode ultra\` makes \*\*2N + 1\*\* agent calls: drafts, reviews, and final synthesis, plus \*\*N\*\* if Jev requests another review. The default \`balanced\` makes as few as \*\*N + 1\*\* and never more than \`ultra\`; \`fast\` makes \*\*N\*\*, or \*\*N + 1\*\* when it merges. Each Jev evaluation is a separate TypeSafe call.
+  - **Where Jev makes a decision**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **What this project offers**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/rxova/jev-planner/) · License: MIT
 
 - [**slopcheck-jev**](https://github.com/harshpuri84/slopcheck-jev) — A prose linter that catches AI writing tells. Regex settles the 18 a pattern can settle. Jev takes the 15 that need reading, as 15 Nouls in one call, 604 ms median. It ships as a Claude Code \`Stop\` hook that scores Claude's own output after every turn and warns rather than blocks.
   - **Where Jev makes a decision**: \*\*Deleting a feature made it more accurate.\*\* The first build made a second Jev call to pin each tell to a sentence. Removing it took precision from 0.80 to 0.95 and latency from 1,365 ms to 575 ms. Jev returns typed answers rather than text, so a quote has to come from a second round of typed questions about lines, and that round was where every defect lived. The README documents the two intermediate designs that were worse.

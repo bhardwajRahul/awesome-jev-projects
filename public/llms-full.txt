@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 520
+Catalog entries: 521
 
 ## Install the Agent Skill
 
@@ -7495,3 +7495,24 @@ Jev Trip is an explainable day-trip planner. The LLM plans ahead; Jev chooses an
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/liaoyuhua/jev-trip/
 - Source evidence: https://github.com/liaoyuhua/jev-trip/blob/782a5f8b46d5bdf0b0048f33751551797ccc0de2/README.md
 - Source evidence: https://github.com/liaoyuhua/jev-trip/blob/782a5f8b46d5bdf0b0048f33751551797ccc0de2/lib/providers/jev.ts
+
+## jev-planner
+
+With \*\*N\*\* agents, \`--mode ultra\` makes \*\*2N + 1\*\* agent calls: drafts, reviews, and final synthesis, plus \*\*N\*\* if Jev requests another review. The default \`balanced\` makes as few as \*\*N + 1\*\* and never more than \`ultra\`; \`fast\` makes \*\*N\*\*, or \*\*N + 1\*\* when it merges. Each Jev evaluation is a separate TypeSafe call.
+
+- Repository: https://github.com/rxova/jev-planner
+- Category: CLI & Pipelines
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/rxova/jev-planner/
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/README.md
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/README.md
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.test.ts
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.ts
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/jev/jev.types.ts
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/bin.ts
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/index.ts
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/program/program.schema.test.ts
+- Source evidence: https://github.com/rxova/jev-planner/blob/3bbe776ef75b283a6246eb88a216c4552546ff6c/packages/jev-planner/src/program/program.test.ts
