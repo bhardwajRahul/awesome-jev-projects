@@ -45161,5 +45161,126 @@
       "issueBodySha256": "e15fe9e5b0c138cccf1d6652f72a244baf74834f3d58ff5f97e38636876c25c7",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/67"
     }
+  },
+  {
+    "id": "doeixd:discern",
+    "name": "discern",
+    "author": "doeixd",
+    "url": "https://github.com/doeixd/discern",
+    "repoId": 1379691269,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "Effect 的语义控制流库：把 Jev 的 Choice / Noul / Score 答案变成带类型的分支。阈值由调用方提供，低于阈值的答案走显式的 `Uncertain` 分支（编译器强制处理），而不是被四舍五入成最高分标签；procedure 路由先用确定性谓词筛选候选，只剩一个时完全跳过模型调用。",
+    "jevDecisionPoint": "**单文件证据（provider 接入与决策调用在同一源码文件中）/ Single-file evidence — provider wiring and the decision call live in the same file:**",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A semantic control-flow library for Effect: Jev's `Choice` / `Noul` / `Score` answers become typed branches. Thresholds are caller-supplied, and an answer below them takes an explicit `Uncertain` branch the compiler forces you to handle rather than being rounded up to the top label. Procedure routing filters candidates with deterministic predicates first and skips the model call entirely when one candidate survives.",
+    "stars": 10,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-21T12:26:10Z",
+    "lastCommitAt": "2026-09-21T14:42:09Z",
+    "headSha": "41d7cde74362650d81b1014b4386314d49bc1c9b",
+    "metadataFetchedAt": "2026-09-22T12:06:49.360Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/13461122?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T12:06:49.361Z",
+    "evidence": [
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/model.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/index.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/LICENSE",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/integration.types.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/procedure.test.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/examples/headline.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/internal/hash.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "41d7cde74362650d81b1014b4386314d49bc1c9b",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/README.md",
+          "hash": "9b536788e867102bf286a9014d5aad712844c4bc6798acf6b4674425a5f3e21a"
+        },
+        {
+          "path": "src/model.ts",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/model.ts",
+          "hash": "70eac5f243aeceff77fec9a39b8ce49979b73fbac2065eaa41a4e878c4b45a5d"
+        },
+        {
+          "path": "src/index.ts",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/index.ts",
+          "hash": "bb210b44ea39d3eba232d4973b9cb8169e01ed931df2648eb7fdaea050e249ff"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/LICENSE",
+          "hash": "cb028010aaaf409a9cd92e69d2e2f0e4bee6de68b917b70e4f668b6857691903"
+        },
+        {
+          "path": "test/integration.types.ts",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/integration.types.ts",
+          "hash": "fc1dfb6da6b551a8420f523a74565f189c03e558af0d153db47daf06f96ded45"
+        },
+        {
+          "path": "test/procedure.test.mjs",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/procedure.test.mjs",
+          "hash": "e32bbe00b7304ed02a29ddb1215b442d911466a1f047f1a77725fb050fcf5656"
+        },
+        {
+          "path": "examples/headline.ts",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/examples/headline.ts",
+          "hash": "d2cf0aec829cef0c2f4e1f38a56c250097bb62a679c5f2b3bcff8b9c6d988c42"
+        },
+        {
+          "path": "src/internal/hash.ts",
+          "url": "https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/internal/hash.ts",
+          "hash": "82ded0d9ec712858072b49e3b70785c1536cfc921a52131d4e39d2b536547170"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 68,
+      "issueBodySha256": "6c922695e7d6c40909edc9d2b6a5db150a72c593c88f6b966f17611c134c4a7b",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/68"
+    }
   }
 ]

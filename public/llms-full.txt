@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 485
+Catalog entries: 486
 
 ## Install the Agent Skill
 
@@ -7023,3 +7023,23 @@ Runnable search tutorials using Gemini embeddings, Milvus retrieval, and Jev jud
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/milvus-io/bootcamp/
 - Source evidence: https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/README.md
 - Source evidence: https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/route_search_queries.ipynb
+
+## discern
+
+A semantic control-flow library for Effect: Jev's \`Choice\` / \`Noul\` / \`Score\` answers become typed branches. Thresholds are caller-supplied, and an answer below them takes an explicit \`Uncertain\` branch the compiler forces you to handle rather than being rounded up to the top label. Procedure routing filters candidates with deterministic predicates first and skips the model call entirely when one candidate survives.
+
+- Repository: https://github.com/doeixd/discern
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/doeixd/discern/
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/README.md
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/model.ts
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/index.ts
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/LICENSE
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/integration.types.ts
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/test/procedure.test.mjs
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/examples/headline.ts
+- Source evidence: https://github.com/doeixd/discern/blob/41d7cde74362650d81b1014b4386314d49bc1c9b/src/internal/hash.ts
