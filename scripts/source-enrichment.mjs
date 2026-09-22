@@ -35,6 +35,24 @@ function redact(value, token = "") {
     );
 }
 
+export function extractCodeWindow(rawText, maxLength = 10000) {
+  if (typeof rawText !== "string") return "";
+  if (rawText.length <= maxLength) return rawText;
+  const pattern = /(?:https:\/\/api\.typesafe\.ai|\/v1\/systemone|requests\.(?:post|request)|client\.post|api\.request|\bchoice\b|\bscore\b|\bnoul\b|@typesafe\/jev|typesafe-ai)/i;
+  const match = pattern.exec(rawText);
+  if (match) {
+    const matchIndex = match.index;
+    const half = Math.floor(maxLength / 2);
+    let start = Math.max(0, matchIndex - half);
+    let end = Math.min(rawText.length, start + maxLength);
+    if (end - start < maxLength) {
+      start = Math.max(0, end - maxLength);
+    }
+    return rawText.slice(start, end);
+  }
+  return rawText.slice(0, maxLength);
+}
+
 /** Transparent quality gate: short prose, adequate language content, and a concrete function. */
 export function isSummary(value, language, token) {
   if (typeof value !== "string") return false;
@@ -449,7 +467,7 @@ export function createSubmissionReviewer({
 
       const truncatedCodeSources = codeSources.slice(0, 8).map((src) => ({
         path: src.path,
-        text: redact(src.text ?? "", token).slice(0, 6000),
+        text: extractCodeWindow(redact(src.text ?? "", token), 10000),
       }));
 
       const requestBody = {

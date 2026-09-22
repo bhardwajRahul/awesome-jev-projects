@@ -4,6 +4,8 @@ import { createHash } from "node:crypto";
 import {
   extractSubmittedRepository,
   extractSubmittedCategory,
+  extractSubmittedCodePaths,
+  decodeNotebookCode,
   inspectRepository,
   readLocalizedReadmes,
 } from "./project-source.mjs";
@@ -554,4 +556,34 @@ test("submitted categories require an exact or prefixed taxonomy name, not a sub
     extractSubmittedCategory("## 项目分类\nfree-airdrop\n", taxonomy),
     null,
   );
+});
+
+test("extractSubmittedCodePaths extracts repository blob links", () => {
+  const text = `
+    Check this implementation:
+    https://github.com/milvus-io/bootcamp/blob/main/bootcamp/RAG/search_with_jev/rerank_search_results.ipynb#L10-L20
+    and also:
+    https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/route_search_queries.ipynb
+    unrelated link:
+    https://github.com/other/repo/blob/main/foo.py
+  `;
+  const paths = extractSubmittedCodePaths(text, "milvus-io/bootcamp");
+  assert.deepEqual(paths.sort(), [
+    "bootcamp/RAG/search_with_jev/rerank_search_results.ipynb",
+    "bootcamp/RAG/search_with_jev/route_search_queries.ipynb",
+  ].sort());
+});
+
+test("decodeNotebookCode extracts code cell content", () => {
+  const notebook = JSON.stringify({
+    cells: [
+      { cell_type: "markdown", source: ["# Title\n"] },
+      { cell_type: "code", source: ["import requests\n", "requests.post('https://api.typesafe.ai/v1/systemone')\n"] },
+      { cell_type: "code", source: "print('done')" },
+    ],
+  });
+  const code = decodeNotebookCode(notebook);
+  assert.match(code, /https:\/\/api\.typesafe\.ai\/v1\/systemone/);
+  assert.match(code, /print\('done'\)/);
+  assert.equal(code.includes("# Title"), false);
 });

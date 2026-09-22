@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-482%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-485%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@
 **TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：
 - ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
-- 🛡️ **严格拒绝概念炒作**：全网严选 **482+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
+- 🛡️ **严格拒绝概念炒作**：全网严选 **485+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
 ### 📊 架构分工对比：System 1 (Jev) vs System 2 (大推理模型)
 
@@ -50,7 +50,7 @@
 - ⚡ **毫秒级吸顶搜索与浮动过滤**：即便页面下滑，也可随时唤出浮动分类面板，支持多标签一键点选过滤。
 - 🔍 **100% 绑定固定源码**：所有收录项目均核验真实 commit SHA 与具体接入点，绝无空气包装与死链。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **482 个精选项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **485 个精选项目**
 
 由社区维护的 Jev 项目与架构雷达，收录具有公开源码与清晰集成逻辑的开源项目，帮助开发者快速探索和落地 System-1 决策架构。
 
@@ -85,7 +85,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [代码与图谱 (13)](https://logicrw.github.io/awesome-jev-projects/categories/codebase-graph-pathfinding/)
 - [上下文与记忆 (30)](https://logicrw.github.io/awesome-jev-projects/categories/context-gc-filter/)
 - [音乐与界面创作 (16)](https://logicrw.github.io/awesome-jev-projects/categories/creative-tools/)
-- [数据与搜索 (30)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
+- [数据与搜索 (33)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
 - [决策工具 (12)](https://logicrw.github.io/awesome-jev-projects/categories/decision-tools/)
 - [行业应用 (34)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
@@ -757,10 +757,25 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 
 ## 数据与搜索
 
+- [**deep-searcher**](https://github.com/zilliztech/deep-searcher) — 开源深度研究与私域检索框架，集成 Jev 决策对搜索步长与早停做评估判断。
+  - **Jev 在哪一步做判断**: Jev 在每轮检索后评估是否已获取充分信息，判定是否触发搜索早停。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zilliztech/deep-searcher/) · 许可证: Apache-2.0
+
+- [**GPTCache**](https://github.com/zilliztech/GPTCache) — 基于 Jev 的语义缓存评估器，通过 Noul 二元判断核验缓存响应是否可复用于当前请求。
+  - **Jev 在哪一步做判断**: Jev 判断当前请求与缓存上下文的语义匹配度，决定是否复用既有响应。
+  - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zilliztech/gptcache/) · 许可证: MIT
+
 - [**memsearch**](https://github.com/zilliztech/memsearch) — memsearch：Jev 对每个候选记忆片段判断其是否包含回答查询所需的特定事实并给出noul相关性分数，用于重排序检索结果。
   - **Jev 在哪一步做判断**: Jev 对每个候选记忆片段判断其是否包含回答查询所需的特定事实并给出noul相关性分数，用于重排序检索结果。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/zilliztech/memsearch/) · 许可证: MIT
+
+- [**bootcamp**](https://github.com/milvus-io/bootcamp) — Milvus 官方实战教程：结合 Milvus 向量检索与 Jev 原语，实现搜索重排、查询路由与门禁过滤。
+  - **Jev 在哪一步做判断**: Jev 在 Milvus 检索结果上做 Noul 打分排序与查询意图路由。
+  - **这个项目的用途**: 把语义判断接进已有的数据查询流程。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/milvus-io/bootcamp/) · 许可证: Apache-2.0
 
 - [**kody**](https://github.com/kentcdodds/kody) — 可选的二段检索：先扩大混合召回，再用 Cloudflare Workers AI 上的 \`typesafe/jev\` Score 重排。
   - **Jev 在哪一步做判断**: 对每个候选发 Score 问题，按分数重排并丢掉低分结果；模型 ID 为 \`typesafe/jev\`。

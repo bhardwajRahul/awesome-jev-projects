@@ -103,6 +103,7 @@ export function extractSubmittedTags(issueBody) {
       const title = heading[1]
         .replace(/[*_]/g, "")
         .replace(/[:：]\s*$/, "")
+        .replace(/\s*[\(（][\s\S]*?[\)）]\s*$/, "")
         .trim();
       capturing = TAGS_FIELD.test(title);
     } else if (capturing) {
@@ -154,6 +155,7 @@ export function extractSubmittedCategory(issueBody, taxonomy = []) {
       const title = heading[1]
         .replace(/[*_]/g, "")
         .replace(/[:：]\s*$/, "")
+        .replace(/\s*[\(（][\s\S]*?[\)）]\s*$/, "")
         .trim();
       capturing = CATEGORY_FIELD.test(title);
     } else if (capturing) {
@@ -179,6 +181,28 @@ export function extractSubmittedCategory(issueBody, taxonomy = []) {
     if (candidate) return candidate.category;
   }
   return null;
+}
+
+/** Extract explicit repository code paths linked in the issue text or comments. */
+export function extractSubmittedCodePaths(text, repository) {
+  if (typeof text !== "string" || !repository) return [];
+  const paths = new Set();
+  const escaped = repository.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(
+    `https:\\/\\/github\\.com\\/${escaped}\\/blob\\/[^/\\s"')\\]>]+\\/([^\\s"')\\]#?]+)`,
+    "gi",
+  );
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    let candidate = match[1];
+    try {
+      candidate = decodeURIComponent(candidate);
+    } catch {}
+    if (safePath(candidate)) {
+      paths.add(candidate);
+    }
+  }
+  return [...paths];
 }
 
 function safePath(value) {
@@ -213,6 +237,21 @@ function decodeFile(file) {
   const buffer = Buffer.from(file.content, "base64");
   if (buffer.byteLength > MAX_FILE_BYTES || buffer.includes(0)) return null;
   return buffer.toString("utf8");
+}
+
+export function decodeNotebookCode(text) {
+  try {
+    const nb = JSON.parse(text);
+    if (!Array.isArray(nb?.cells)) return null;
+    return nb.cells
+      .filter((cell) => cell?.cell_type === "code")
+      .map((cell) =>
+        Array.isArray(cell.source) ? cell.source.join("") : (cell?.source ?? ""),
+      )
+      .join("\n\n");
+  } catch {
+    return null;
+  }
 }
 
 function chineseReadme(path) {
@@ -347,7 +386,7 @@ function codeCandidate(entry) {
     !/(?:^|\/)(?:package(?:-lock)?\.json|models\.json|catalog\.json)|(?:\.min\.[cm]?js|\.lock|\.generated\.[^/]+|\.g\.[^/]+)$/i.test(
       path,
     ) &&
-    /\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart)$/i.test(
+    /\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb)$/i.test(
       path,
     )
   );
@@ -355,10 +394,10 @@ function codeCandidate(entry) {
 
 function stripSourceComments(text, path) {
   // Preserve quoted endpoints while removing comments and Python/Dart/JVM documentation strings.
-  let code = /\.(?:py|dart|java|kt)$/i.test(path)
+  let code = /\.(?:py|dart|java|kt|ipynb)$/i.test(path)
     ? text.replace(/("""|\x27\x27\x27)[\s\S]*?\1/g, " ")
     : text;
-  const commentsAndStrings = /\.(?:py|rb|sh)$/i.test(path)
+  const commentsAndStrings = /\.(?:py|rb|sh|ipynb)$/i.test(path)
     ? /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|#[^\n]*/g
     : /\.(?:lua)$/i.test(path)
     ? /"(?:\\[\s\S]|[^"\\])*"|'(?:\\[\s\S]|[^'\\])*'|--[^\n]*/g
@@ -432,6 +471,7 @@ export async function inspectRepository({
   exclusions = [],
   verifyIntegration,
   requireCodeEvidence = false,
+  preferredPaths = [],
 }) {
   if (
     typeof repository !== "string" ||
@@ -527,11 +567,14 @@ export async function inspectRepository({
       if (error.status !== 404) throw error;
       tree = { tree: [] };
     }
+    const preferredSet = new Set(preferredPaths.map((p) => p.toLowerCase()));
     const candidates = (tree.tree ?? [])
       .slice(0, 5000)
-      .filter(codeCandidate)
+      .filter((entry) => codeCandidate(entry) || (preferredSet.has(entry.path.toLowerCase()) && safePath(entry.path)))
       .sort(
         (a, b) =>
+          Number(preferredSet.has(b.path.toLowerCase())) -
+            Number(preferredSet.has(a.path.toLowerCase())) ||
           Number(/typesafe|jev/i.test(posix.basename(b.path))) -
             Number(/typesafe|jev/i.test(posix.basename(a.path))) ||
           Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(a.path)) -
@@ -554,8 +597,12 @@ export async function inspectRepository({
         if (error.status === 404) continue;
         throw error;
       }
-      const text = decodeFile(file);
+      let text = decodeFile(file);
       if (text === null) continue;
+      if (/\.ipynb$/i.test(entry.path)) {
+        const nbCode = decodeNotebookCode(text);
+        if (nbCode !== null) text = nbCode;
+      }
       const source = sourceFile(canonical, sha, entry.path, text);
       files.push(source);
       if (hasImplementationEvidence(text, entry.path)) implementationFiles.push(source);

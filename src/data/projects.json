@@ -44945,5 +44945,221 @@
       "issueBodySha256": "bdfb3d58e90711d91971cf93e5c6562bafdb7811c09154688abf52d8777cfb7c",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/63"
     }
+  },
+  {
+    "id": "zilliztech:gptcache",
+    "name": "GPTCache",
+    "author": "zilliztech",
+    "url": "https://github.com/zilliztech/GPTCache",
+    "repoId": 618276831,
+    "category": "Data & Search",
+    "plainSummary": "基于 Jev 的语义缓存评估器，通过 Noul 二元判断核验缓存响应是否可复用于当前请求。",
+    "jevDecisionPoint": "Jev 判断当前请求与缓存上下文的语义匹配度，决定是否复用既有响应。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Semantic cache with a Jev evaluator that uses Noul judgments to check whether a cached response can serve an incoming request.",
+    "stars": 8200,
+    "forks": 596,
+    "openIssues": 101,
+    "license": "MIT",
+    "createdAt": "2023-03-24T05:51:16Z",
+    "lastCommitAt": "2026-09-22T08:26:00Z",
+    "headSha": "a74ac654473f7bf4109118e8576945161616e17a",
+    "metadataFetchedAt": "2026-09-22T11:20:04.560Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18416694?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T11:20:04.561Z",
+    "evidence": [
+      {
+        "url": "https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/similarity_evaluation/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "a74ac654473f7bf4109118e8576945161616e17a",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/README.md",
+          "hash": "b87b5f73df7bdca3c15406db78aaa2830e1bc48fd0136cb63a1bca01a2da08de"
+        },
+        {
+          "path": "gptcache/similarity_evaluation/jev.py",
+          "url": "https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/similarity_evaluation/jev.py",
+          "hash": "d1497f21a1a96af728d7a8044d4c470033efbbfbe464b081a23eebce46d9e642"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 65,
+      "issueBodySha256": "7005f4b1ed50f9d2409be8e73143bf2df5ce099d7706696cb4cb7b5f73beec32",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/65"
+    }
+  },
+  {
+    "id": "zilliztech:deep-searcher",
+    "name": "deep-searcher",
+    "author": "zilliztech",
+    "url": "https://github.com/zilliztech/deep-searcher",
+    "repoId": 929200745,
+    "category": "Data & Search",
+    "plainSummary": "开源深度研究与私域检索框架，集成 Jev 决策对搜索步长与早停做评估判断。",
+    "jevDecisionPoint": "Jev 在每轮检索后评估是否已获取充分信息，判定是否触发搜索早停。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Open Source Deep Research alternative with Jev search-stopping evaluation.",
+    "stars": 8275,
+    "forks": 803,
+    "openIssues": 55,
+    "license": "Apache-2.0",
+    "createdAt": "2025-02-08T02:07:05Z",
+    "lastCommitAt": "2026-09-22T10:08:42Z",
+    "headSha": "ddc36db317836bd42302b36f03166bec5324708d",
+    "metadataFetchedAt": "2026-09-22T11:20:12.166Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/18416694?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T11:20:12.166Z",
+    "evidence": [
+      {
+        "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/full100_core.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/run_full100.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "ddc36db317836bd42302b36f03166bec5324708d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/README.md",
+          "hash": "0512766da4400d353e8430b0bd1ff1860b9b804bfc1f2b4eebbb87a3a1959c77"
+        },
+        {
+          "path": "evaluation/jev_stopping/full100_core.py",
+          "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/full100_core.py",
+          "hash": "9b123839fda6e9e2d54f803dec546e31bf9602694ac5f11f8cbab689708233f4"
+        },
+        {
+          "path": "evaluation/jev_stopping/README.md",
+          "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/README.md",
+          "hash": "b93ea83f6c0545ecbf95e41766bd6df263a472ff089f540f62825d22d4aabdd7"
+        },
+        {
+          "path": "evaluation/jev_stopping/run_full100.py",
+          "url": "https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/run_full100.py",
+          "hash": "36abe4caa9e964bd0505f6dea7252ba076b48f36b32a3fbcc581e2b72c0b02c6"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 66,
+      "issueBodySha256": "bf8ddf1364bd5cf2e6780d95e3ab868ed65b71f92273bdb52c228cc1ec9f6837",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/66"
+    }
+  },
+  {
+    "id": "milvus-io:bootcamp",
+    "name": "bootcamp",
+    "author": "milvus-io",
+    "url": "https://github.com/milvus-io/bootcamp",
+    "repoId": 201441751,
+    "category": "Data & Search",
+    "plainSummary": "Milvus 官方实战教程：结合 Milvus 向量检索与 Jev 原语，实现搜索重排、查询路由与门禁过滤。",
+    "jevDecisionPoint": "Jev 在 Milvus 检索结果上做 Noul 打分排序与查询意图路由。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Runnable search tutorials using Gemini embeddings, Milvus retrieval, and Jev judgments for reranking, filtering, and routing.",
+    "stars": 2444,
+    "forks": 683,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2019-08-09T10:00:06Z",
+    "lastCommitAt": "2026-09-22T10:42:57Z",
+    "headSha": "15a2212dc12c637479af0661d0038415bb83a17e",
+    "metadataFetchedAt": "2026-09-22T11:20:18.149Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/51735404?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T11:20:18.149Z",
+    "evidence": [
+      {
+        "url": "https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/route_search_queries.ipynb",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "15a2212dc12c637479af0661d0038415bb83a17e",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/README.md",
+          "hash": "5723074dc1642f6d74be9180a5996390a7b68db754f3369385520d7d1b472f1a"
+        },
+        {
+          "path": "bootcamp/RAG/search_with_jev/route_search_queries.ipynb",
+          "url": "https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/route_search_queries.ipynb",
+          "hash": "f4ca8857769963b18e0b4675fab30ed2f006cf88c39d1dc173f145cfe29c9496"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 67,
+      "issueBodySha256": "e15fe9e5b0c138cccf1d6652f72a244baf74834f3d58ff5f97e38636876c25c7",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/67"
+    }
   }
 ]

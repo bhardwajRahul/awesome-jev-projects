@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   createSummaryEnricher,
   createSubmissionReviewer,
+  extractCodeWindow,
 } from "./source-enrichment.mjs";
 
 const chinese = "用 Jev 为日志打分，只把与当前任务相关的内容留在上下文里。";
@@ -627,6 +628,17 @@ test("Muse Reviewer gracefully handles missing token, HTTP errors, and circuits"
   assert.equal(resCircuit.verified, null);
   assert.equal(resCircuit.status, "circuit-open");
   assert.equal(attempts, 1);
+});
+
+test("extractCodeWindow centers on key Jev primitives when file exceeds maxLength", () => {
+  const prefix = "A".repeat(8000);
+  const core = "requests.post('https://api.typesafe.ai/v1/systemone', json={})";
+  const suffix = "B".repeat(8000);
+  const full = prefix + core + suffix;
+
+  const window = extractCodeWindow(full, 5000);
+  assert.equal(window.length, 5000);
+  assert.equal(window.includes(core), true);
 });
 
 

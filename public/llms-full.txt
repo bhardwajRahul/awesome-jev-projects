@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 482
+Catalog entries: 485
 
 ## Install the Agent Skill
 
@@ -6979,3 +6979,47 @@ A persistent, unified memory layer for all your AI agents (e.g. Claude Code, Cod
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zilliztech/memsearch/
 - Source evidence: https://github.com/zilliztech/memsearch/blob/f6da1ef67975d890d946b375a2a16c9302ddce76/README.md
 - Source evidence: https://github.com/zilliztech/memsearch/blob/f6da1ef67975d890d946b375a2a16c9302ddce76/src/memsearch/jev_reranker.py
+
+## GPTCache
+
+Semantic cache with a Jev evaluator that uses Noul judgments to check whether a cached response can serve an incoming request.
+
+- Repository: https://github.com/zilliztech/GPTCache
+- Category: Data & Search
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zilliztech/gptcache/
+- Source evidence: https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/README.md
+- Source evidence: https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/similarity_evaluation/jev.py
+
+## deep-searcher
+
+Open Source Deep Research alternative with Jev search-stopping evaluation.
+
+- Repository: https://github.com/zilliztech/deep-searcher
+- Category: Data & Search
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zilliztech/deep-searcher/
+- Source evidence: https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/README.md
+- Source evidence: https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/full100_core.py
+- Source evidence: https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/README.md
+- Source evidence: https://github.com/zilliztech/deep-searcher/blob/ddc36db317836bd42302b36f03166bec5324708d/evaluation/jev_stopping/run_full100.py
+
+## bootcamp
+
+Runnable search tutorials using Gemini embeddings, Milvus retrieval, and Jev judgments for reranking, filtering, and routing.
+
+- Repository: https://github.com/milvus-io/bootcamp
+- Category: Data & Search
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/milvus-io/bootcamp/
+- Source evidence: https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/README.md
+- Source evidence: https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/route_search_queries.ipynb

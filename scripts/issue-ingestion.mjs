@@ -8,6 +8,7 @@ import {
   extractSubmittedRepository,
   extractSubmittedTags,
   extractSubmittedCategory,
+  extractSubmittedCodePaths,
   inspectRepository,
 } from "./project-source.mjs";
 import { inferCanonicalTags } from "../src/lib/tags.mjs";
@@ -100,6 +101,23 @@ export async function prepareSubmission({
       needsEvidence: false,
       issueNumber: issue.number,
     };
+  let fullIssueText = issue.body ?? "";
+  if (typeof api === "function" && issue.number) {
+    try {
+      const comments = await api(
+        `/repos/${repository}/issues/${issue.number}/comments?per_page=100`,
+      );
+      if (Array.isArray(comments)) {
+        fullIssueText +=
+          "\n\n" +
+          comments
+            .map((c) => c?.body ?? "")
+            .filter(Boolean)
+            .join("\n\n");
+      }
+    } catch {}
+  }
+  const preferredPaths = extractSubmittedCodePaths(fullIssueText, submitted);
   const result = await inspect({
     api,
     repository: submitted,
@@ -107,6 +125,7 @@ export async function prepareSubmission({
     exclusions,
     verifyIntegration,
     requireCodeEvidence: true,
+    preferredPaths,
   });
   if (result.status === "duplicate") {
     const prior = projects.find(
@@ -168,14 +187,19 @@ export async function prepareSubmission({
 
   if (reviewVerdict) {
     if (reviewVerdict.verified === false) {
-      return {
-        status: "rejected",
-        reason: reviewVerdict.reason || "源码审查未发现有效的 Jev 原语调用代码证据。",
-        needsEvidence: true,
-        issueNumber: issue.number,
-        submittedRepository: submitted,
-        reviewDetails: reviewVerdict,
-      };
+      const hasDeterministicEvidence =
+        result.status === "accepted" &&
+        (result.evidence?.implementationFiles ?? []).length > 0;
+      if (!hasDeterministicEvidence) {
+        return {
+          status: "rejected",
+          reason: reviewVerdict.reason || "源码审查未发现有效的 Jev 原语调用代码证据。",
+          needsEvidence: true,
+          issueNumber: issue.number,
+          submittedRepository: submitted,
+          reviewDetails: reviewVerdict,
+        };
+      }
     }
     if (reviewVerdict.verified === true && evidence) {
       evidence.verified = true;
