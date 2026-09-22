@@ -25,8 +25,8 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [.well-known/agent-skills/awesome-jev/SKILL.md](https://logicrw.github.io/awesome-jev-projects/.well-known/agent-skills/awesome-jev/SKILL.md)
 
 ## Language directories
-- [Chinese](https://logicrw.github.io/awesome-jev-projects/catalog/)
 - [English](https://logicrw.github.io/awesome-jev-projects/en/catalog/)
+- [Chinese](https://logicrw.github.io/awesome-jev-projects/catalog/)
 - [Japanese](https://logicrw.github.io/awesome-jev-projects/ja/catalog/)
 - [Korean](https://logicrw.github.io/awesome-jev-projects/ko/catalog/)
 

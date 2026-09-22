@@ -737,7 +737,7 @@ const categoryTranslations: Record<string, Partial<Record<Locale, string>>> = {
   }
 };
 
-export const locales: Locale[] = ["zh", "en", "ja", "ko"];
+export const locales: Locale[] = ["en", "zh", "ja", "ko"];
 export const localeMeta: Record<Locale, { label: string; language: string; title: string; description: string }> = {
   zh: { label: "简体中文", language: "zh-CN", title: "Awesome Jev — System-1 Agent 架构雷达", description: "社区维护的 System-1 Agent 架构雷达。按用途浏览 Jev 开源与公开源码项目，核对接入方式、许可证与固定版本源码。" },
   en: { label: "English", language: "en", title: "Awesome Jev — System-1 Agent Architecture Radar", description: "A community-maintained radar for System-1 Agent architectures with Jev. Explore projects, SDKs and integrations with licenses and source evidence." },

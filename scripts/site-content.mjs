@@ -1,7 +1,7 @@
 export const SITE = "https://logicrw.github.io/awesome-jev-projects/";
 export const BASE = "/awesome-jev-projects/";
 export const REPOSITORY = "https://github.com/logicrw/awesome-jev-projects";
-export const LOCALES = ["zh", "en", "ja", "ko"];
+export const LOCALES = ["en", "zh", "ja", "ko"];
 export const COPY = {
   zh: {
     lang: "zh-CN", og: "zh_CN", suffix: "", name: "中文",
