@@ -47761,5 +47761,71 @@
       ]
     },
     "sourceHash": "6bcbe567eaa8e941d19c6b648083ae6cc576fe490518bb944af9b75b0ea0819b"
+  },
+  {
+    "id": "liaoyuhua:jev-trip",
+    "name": "jev-trip",
+    "author": "liaoyuhua",
+    "url": "https://github.com/liaoyuhua/jev-trip",
+    "repoId": 1381979235,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "Jev Trip 是一个可解释的单日行程规划器，由 LLM 提出活动草案并由 Jev 筛选候选以及核对交通与行程。",
+    "jevDecisionPoint": "Jev 负责筛选候选地点、比较交通方案优劣、回答偏好契合与体验重复等类型化问题并审查行程违规。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Jev Trip is an explainable day-trip planner. The LLM plans ahead; Jev chooses and checks. Deterministic code handles route facts, time calculations, validation, and versioning.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-22T16:55:38Z",
+    "lastCommitAt": "2026-09-22T17:56:48Z",
+    "headSha": "782a5f8b46d5bdf0b0048f33751551797ccc0de2",
+    "metadataFetchedAt": "2026-09-22T18:01:37.146Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/27546147?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T18:01:37.146Z",
+    "evidence": [
+      {
+        "url": "https://github.com/liaoyuhua/jev-trip/blob/782a5f8b46d5bdf0b0048f33751551797ccc0de2/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/liaoyuhua/jev-trip/blob/782a5f8b46d5bdf0b0048f33751551797ccc0de2/lib/providers/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "782a5f8b46d5bdf0b0048f33751551797ccc0de2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/liaoyuhua/jev-trip/blob/782a5f8b46d5bdf0b0048f33751551797ccc0de2/README.md",
+          "hash": "bf93f1b7f4deea30e98d2f3097ac33ea6bf79f7ca527211e76f59b2d92f14863"
+        },
+        {
+          "path": "lib/providers/jev.ts",
+          "url": "https://github.com/liaoyuhua/jev-trip/blob/782a5f8b46d5bdf0b0048f33751551797ccc0de2/lib/providers/jev.ts",
+          "hash": "efae1b08e2b3268c487b542e78be78e3240d1ddc2a206ac3207b1afa04be454d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 71,
+      "issueBodySha256": "319cefc31e287525443b07305dbe4039cf2268ce9ee157d85ecb0696c6335b04",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/71"
+    }
   }
 ]
