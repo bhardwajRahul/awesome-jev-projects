@@ -760,7 +760,7 @@ async function main() {
       const feedbackBody = [
         "👋 **Awesome Jev 项目收录反馈**",
         "",
-        "非常感谢您向 Awesome Jev 社区提交项目！我们的自动化审核助手（结合 Muse Spark 1.3 代码理解）在阅读您的仓库源码后整理了如下参考反馈：",
+        "非常感谢您向 Awesome Jev 社区提交项目！自动化代码集成流水线在对您的仓库进行源码检查后，整理了如下参考反馈：",
         "",
         `- **当前状态**：${needsEvidence ? "期待补充代码证据 (Needs Evidence)" : "暂未检测到有效集成"}`,
         `- **审查分析**：${reason}`,
