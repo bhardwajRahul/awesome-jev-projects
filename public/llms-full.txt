@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 481
+Catalog entries: 482
 
 ## Install the Agent Skill
 
@@ -6965,3 +6965,17 @@ Graph RAG with pure vector search, achieving SOTA performance in multi-hop reaso
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zilliztech/vector-graph-rag/
 - Source evidence: https://github.com/zilliztech/vector-graph-rag/blob/656bdf2182ab137e1cc8f5bce9a6a84f507116d6/README.md
 - Source evidence: https://github.com/zilliztech/vector-graph-rag/blob/656bdf2182ab137e1cc8f5bce9a6a84f507116d6/src/vector_graph_rag/llm/jev.py
+
+## memsearch
+
+A persistent, unified memory layer for all your AI agents (e.g. Claude Code, Codex, DSH), backed by Markdown and Milvus.
+
+- Repository: https://github.com/zilliztech/memsearch
+- Category: Data & Search
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/zilliztech/memsearch/
+- Source evidence: https://github.com/zilliztech/memsearch/blob/f6da1ef67975d890d946b375a2a16c9302ddce76/README.md
+- Source evidence: https://github.com/zilliztech/memsearch/blob/f6da1ef67975d890d946b375a2a16c9302ddce76/src/memsearch/jev_reranker.py
