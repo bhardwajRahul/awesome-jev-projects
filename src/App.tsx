@@ -888,12 +888,11 @@ function App({ initialProjects, initialLocale, initialDay }: AppProps = {}) {
                     href="https://x.com/0xLogicrw"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title={`Curated by @0xLogicrw — ${projects.length} projects human-verified`}
-                    aria-label={`Curated by @0xLogicrw, ${projects.length} projects human-verified`}
+                    title="Curated by @0xLogicrw"
+                    aria-label="Curated by @0xLogicrw"
                   >
                     <span className="seal-tag">CURATED</span>
                     <span className="seal-author">@0xLogicrw</span>
-                    <span className="seal-check">✓ {projects.length} VERIFIED</span>
                     <ArrowUpRight size={11} aria-hidden="true" />
                   </a>
                 </div>
