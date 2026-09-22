@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 479
+Catalog entries: 480
 
 ## Install the Agent Skill
 
@@ -6937,3 +6937,17 @@ MCP server for Jev (TypeSafe System One): the three official question types — 
 - Source evidence: https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.md
 - Source evidence: https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.zh-CN.md
 - Source evidence: https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/src/jev_mcp_server/client.py
+
+## alphaoptimizer
+
+AlphaOptimizer is an open-source tool from AlphaTales that helps Codex work with large command and tool outputs. Instead of sending a huge log or search result straight into the context window, AlphaOptimizer keeps the useful parts visible, keeps the original output available for a limited time, and uses Jev to help rank what matters when an API key is configured.
+
+- Repository: https://github.com/alpha-tales/alphaoptimizer
+- Category: Context GC & Filter
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/alpha-tales/alphaoptimizer/
+- Source evidence: https://github.com/alpha-tales/alphaoptimizer/blob/90789e96bf872a9297199ecd28d36d76dd4ec1f2/README.md
+- Source evidence: https://github.com/alpha-tales/alphaoptimizer/blob/90789e96bf872a9297199ecd28d36d76dd4ec1f2/src/providers/jev.ts

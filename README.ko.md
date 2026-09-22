@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/ko/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#분류"><img src="https://img.shields.io/badge/Curated%20Projects-479%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#분류"><img src="https://img.shields.io/badge/Curated%20Projects-480%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@
 **TypeSafe Jev (System 1)**는 빠른 타입 안전 결정을 위해 제작된 경량 모델입니다:
 - ⚡ **100ms 미만 초고속 응답**: 50–100ms 내에 결정을 내려 에이전트 루프의 민첩성을 유지합니다.
 - 🎯 **네이티브 타입 출력**: `Choice`, `Score`, `Noul`을 지원하여 취약한 JSON 정규식 파싱이 필요 없습니다.
-- 🛡️ **과대 광고 배제**: 17개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 479+개 프로젝트만을 엄선했습니다.
+- 🛡️ **과대 광고 배제**: 17개 실제 엔지니어링 영역에 걸쳐 공개 소스 커밋이 검증된 480+개 프로젝트만을 엄선했습니다.
 
 ### 📊 아키텍처 비교: System 1 (Jev) vs System 2 (거대 추론 모델)
 
@@ -50,7 +50,7 @@
 - ⚡ **고정 검색바 및 플로팅 필터**: 페이지를 스크롤하는 중에도 툴바에서 언제든지 태그와 카테고리를 즉시 필터링할 수 있습니다.
 - 🔍 **100% 커밋 고정 소스 검증**: 수록된 모든 프로젝트는 공개 소스 코드의 구체적인 결정 지점과 직접 연결됩니다.
 
-> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **479 개 엄선 프로젝트**
+> **[검색 및 필터 ↗](https://logicrw.github.io/awesome-jev-projects/ko/)** · **480 개 엄선 프로젝트**
 
 커뮤니티가 운영하는 Jev 프로젝트 디렉터리로, 공개 소스 코드와 명확한 결정 아키텍처를 갖춘 오픈소스 프로젝트를 선별하여 제공합니다.
 
@@ -83,7 +83,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [CLI 및 파이프라인 (29)](https://logicrw.github.io/awesome-jev-projects/ko/categories/cli-pipelines/)
 - [분류 및 카탈로그 (2)](https://logicrw.github.io/awesome-jev-projects/ko/categories/classification-taxonomy/)
 - [코드 및 그래프 탐색 (13)](https://logicrw.github.io/awesome-jev-projects/ko/categories/codebase-graph-pathfinding/)
-- [Context GC 및 메모리 (29)](https://logicrw.github.io/awesome-jev-projects/ko/categories/context-gc-filter/)
+- [Context GC 및 메모리 (30)](https://logicrw.github.io/awesome-jev-projects/ko/categories/context-gc-filter/)
 - [음악 및 UI 제작 (16)](https://logicrw.github.io/awesome-jev-projects/ko/categories/creative-tools/)
 - [데이터 및 검색 (28)](https://logicrw.github.io/awesome-jev-projects/ko/categories/data-search/)
 - [판단 도구 (12)](https://logicrw.github.io/awesome-jev-projects/ko/categories/decision-tools/)
@@ -585,6 +585,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev가 판단하는 지점**: Jev가 호출과 결과의 필요성을 판단하면 선택된 내용을 복원 안내와 함께 축약한다.
   - **프로젝트의 용도**: 정리 판단을 기억해 이후 요청에 다시 적용한다.
   - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/jerryfane/omp-jev-compaction/) · 라이선스: MIT
+
+- [**alphaoptimizer**](https://github.com/alpha-tales/alphaoptimizer) — AlphaOptimizer is an open-source tool from AlphaTales that helps Codex work with large command and tool outputs. Instead of sending a huge log or search result straight into the context window, AlphaOptimizer keeps the useful parts visible, keeps the original output available for a limited time, and uses Jev to help rank what matters when an API key is configured.
+  - **Jev가 판단하는 지점**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **프로젝트의 용도**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [상세 설명 및 고정 버전 소스](https://logicrw.github.io/awesome-jev-projects/ko/projects/alpha-tales/alphaoptimizer/) · 라이선스: MIT
 
 - [**deepseek-harness-jev-pre-compaction**](https://github.com/wjw66/deepseek-harness-jev-pre-compaction) — A pre-compaction advisor for DeepSeek Harness. Runs before the standard \`compaction-basic\` backend, using TypeSafe JEV to safely prune low-value tool results from model context. Original session events stay in the append-only log; only the model-visible view is replaced with compact markers or archive pointers to reduce context bloat.
   - **Jev가 판단하는 지점**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.

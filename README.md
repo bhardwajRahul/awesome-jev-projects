@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/en/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-479%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#categories"><img src="https://img.shields.io/badge/Curated%20Projects-480%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@ When building autonomous agents, routing every small branching decision to a hea
 **TypeSafe Jev (System 1)** is purpose-built for fast, typed discrete decisions:
 - ⚡ **Sub-100ms Latency**: Delivers decisions in 50–100ms to keep agent loops snappy.
 - 🎯 **Native Typed Outputs**: Built-in primitives for `Choice`, `Score`, and `Noul` without fragile JSON regex parsing.
-- 🛡️ **Zero Vaporware**: 479+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
+- 🛡️ **Zero Vaporware**: 480+ projects rigorously anchored to verifiable, commit-pinned public open source across 17 real-world domains.
 
 ### 📊 Architecture Comparison: System 1 (Jev) vs System 2 (Reasoning LLMs)
 
@@ -50,7 +50,7 @@ When building autonomous agents, routing every small branching decision to a hea
 - ⚡ **Sticky Search & Floating Popover Filter**: Filter tags and categories anytime while scrolling via the anchored toolbar popover.
 - 🔍 **100% Commit-Pinned Code Evidence**: Every listed project links to immutable source files and explicit decision points.
 
-> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **479 curated projects**
+> **[Search and filter ↗](https://logicrw.github.io/awesome-jev-projects/en/)** · **480 curated projects**
 
 A community-maintained directory and radar for Jev, highlighting open-source projects with verified code and clear decision architectures.
 
@@ -83,7 +83,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [CLI & Pipelines (29)](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/)
 - [Classification (2)](https://logicrw.github.io/awesome-jev-projects/en/categories/classification-taxonomy/)
 - [Code Navigation (13)](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/)
-- [Context GC (29)](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/)
+- [Context GC (30)](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/)
 - [Creative Tools (16)](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/)
 - [Data & Search (28)](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/)
 - [Decision Tools (12)](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/)
@@ -585,6 +585,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Where Jev makes a decision**: Jev judges tool-call and output utility; the extension truncates selected content with recovery notes.
   - **What this project offers**: Remembers pruning decisions and reapplies them across requests.
   - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/jerryfane/omp-jev-compaction/) · License: MIT
+
+- [**alphaoptimizer**](https://github.com/alpha-tales/alphaoptimizer) — AlphaOptimizer is an open-source tool from AlphaTales that helps Codex work with large command and tool outputs. Instead of sending a huge log or search result straight into the context window, AlphaOptimizer keeps the useful parts visible, keeps the original output available for a limited time, and uses Jev to help rank what matters when an API key is configured.
+  - **Where Jev makes a decision**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+  - **What this project offers**: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+  - [Project details and fixed source](https://logicrw.github.io/awesome-jev-projects/en/projects/alpha-tales/alphaoptimizer/) · License: MIT
 
 - [**deepseek-harness-jev-pre-compaction**](https://github.com/wjw66/deepseek-harness-jev-pre-compaction) — A pre-compaction advisor for DeepSeek Harness. Runs before the standard \`compaction-basic\` backend, using TypeSafe JEV to safely prune low-value tool results from model context. Original session events stay in the append-only log; only the model-visible view is replaced with compact markers or archive pointers to reduce context bloat.
   - **Where Jev makes a decision**: Jev returns a structured decision for the local program; consult the source for the exact decision policy.

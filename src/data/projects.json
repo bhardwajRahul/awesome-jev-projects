@@ -44747,5 +44747,71 @@
       "issueBodySha256": "dcfa5fca158f7cae01319509968a13d5393113493e48a7c6a2ed443e5c3cc8b7",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/61"
     }
+  },
+  {
+    "id": "alpha-tales:alphaoptimizer",
+    "name": "alphaoptimizer",
+    "author": "alpha-tales",
+    "url": "https://github.com/alpha-tales/alphaoptimizer",
+    "repoId": 1381139516,
+    "category": "Context GC & Filter",
+    "plainSummary": "AlphaOptimizer 会筛选 Codex 的大型命令与工具输出，保留关键行并将完整输出暂存本地供按需读取，在配置密钥时使用 Jev 排序相关内容。",
+    "jevDecisionPoint": "Jev 判断每个候选文本块是否包含与当前目标相关的证据。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "减少后续处理的冗余信息。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "AlphaOptimizer is an open-source tool from AlphaTales that helps Codex work with large command and\ntool outputs. Instead of sending a huge log or search result straight into the context window,\nAlphaOptimizer keeps the useful parts visible, keeps the original output available for a limited\ntime, and uses Jev to help rank what matters when an API key is configured.",
+    "stars": 3,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-22T08:42:25Z",
+    "lastCommitAt": "2026-09-22T09:56:12Z",
+    "headSha": "90789e96bf872a9297199ecd28d36d76dd4ec1f2",
+    "metadataFetchedAt": "2026-09-22T10:11:22.517Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/166517402?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T10:11:22.518Z",
+    "evidence": [
+      {
+        "url": "https://github.com/alpha-tales/alphaoptimizer/blob/90789e96bf872a9297199ecd28d36d76dd4ec1f2/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/alpha-tales/alphaoptimizer/blob/90789e96bf872a9297199ecd28d36d76dd4ec1f2/src/providers/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "90789e96bf872a9297199ecd28d36d76dd4ec1f2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/alpha-tales/alphaoptimizer/blob/90789e96bf872a9297199ecd28d36d76dd4ec1f2/README.md",
+          "hash": "469c36c46921b587300728be862d50166e53daf91d42419d78e23010a5678ea6"
+        },
+        {
+          "path": "src/providers/jev.ts",
+          "url": "https://github.com/alpha-tales/alphaoptimizer/blob/90789e96bf872a9297199ecd28d36d76dd4ec1f2/src/providers/jev.ts",
+          "hash": "30b209ffe613ffc4c40540f163f4860ea1b53e7186b3cf3bdb533e7d3de862f3"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 62,
+      "issueBodySha256": "eef7c47dedc99e70c206381743abf91f765f4cea046421a9b79958d474d99195",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/62"
+    }
   }
 ]
