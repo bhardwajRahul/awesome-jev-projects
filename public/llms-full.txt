@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 478
+Catalog entries: 479
 
 ## Install the Agent Skill
 
@@ -6922,3 +6922,18 @@ Jev decides what to keep. Compaction never rewrites the transcript.
 - License: MIT
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/softpudding/jev-frontier-100/
 - Source evidence: https://github.com/softpudding/jev-frontier-100/blob/9abacec47394f3b393f81fbe3cdd524f028bc088/src/jf100/budget_runner.py
+
+## jev-mcp-server
+
+MCP server for Jev (TypeSafe System One): the three official question types — choice, score, noul — plus batch classify. Calibrated probabilities, ~0.5s, \<$0.001/call.
+
+- Repository: https://github.com/wangkuangkuang/jev-mcp-server
+- Category: MCP & Integrations
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/wangkuangkuang/jev-mcp-server/
+- Source evidence: https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.md
+- Source evidence: https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.zh-CN.md
+- Source evidence: https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/src/jev_mcp_server/client.py

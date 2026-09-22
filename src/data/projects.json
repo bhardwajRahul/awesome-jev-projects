@@ -44671,5 +44671,81 @@
       ]
     },
     "sourceHash": "5b5f12a6b9232a17780629353b7d943f4b5c22c967e97e01cae2e0517bb40ad7"
+  },
+  {
+    "id": "wangkuangkuang:jev-mcp-server",
+    "name": "jev-mcp-server",
+    "author": "wangkuangkuang",
+    "url": "https://github.com/wangkuangkuang/jev-mcp-server",
+    "repoId": 1380824731,
+    "category": "MCP & Integrations",
+    "plainSummary": "Jev 官方三种问题类型（choice/score/noul）的 Python MCP 服务器，外加批量 classify 与一键写入 5 家 agent 客户端配置的安装器，附实测延迟与成本数据。",
+    "jevDecisionPoint": "Jev 对 choice 多选一、score 等级打分、noul 二元判断及批量 classify 请求返回校准概率与置信度完成决策。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "让现有 Agent 通过通用接口使用 Jev。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "mcp-integrations",
+      "typed-decisions",
+      "coding-agents"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "MCP server for Jev (TypeSafe System One): the three official question types — choice, score, noul — plus batch classify. Calibrated probabilities, ~0.5s, <$0.001/call.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-22T03:29:24Z",
+    "lastCommitAt": "2026-09-22T06:28:29Z",
+    "headSha": "d16066cf2dc444140a9d9caba0ddbbeb06f6ae85",
+    "metadataFetchedAt": "2026-09-22T06:53:28.184Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/61895777?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-22T06:53:28.184Z",
+    "evidence": [
+      {
+        "url": "https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/src/jev_mcp_server/client.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "d16066cf2dc444140a9d9caba0ddbbeb06f6ae85",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.md",
+          "hash": "32d72cac691bd2418d520ade2fcad23299cbfb96d55f4dcbc061f982f6a56c98"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/README.zh-CN.md",
+          "hash": "ef34b4166d641d00fee69ecc5734ab5bad05cf9de98088966bf38ba7af76b383"
+        },
+        {
+          "path": "src/jev_mcp_server/client.py",
+          "url": "https://github.com/wangkuangkuang/jev-mcp-server/blob/d16066cf2dc444140a9d9caba0ddbbeb06f6ae85/src/jev_mcp_server/client.py",
+          "hash": "2a8c9d4441f993e0d44df1d0276cf03d78ab41536d397394e30ad74a6cbe1479"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 61,
+      "issueBodySha256": "dcfa5fca158f7cae01319509968a13d5393113493e48a7c6a2ed443e5c3cc8b7",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/61"
+    }
   }
 ]
