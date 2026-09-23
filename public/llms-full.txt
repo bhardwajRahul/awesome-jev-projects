@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 628
+Catalog entries: 629
 
 ## Install the Agent Skill
 
@@ -8953,3 +8953,17 @@ Grep-shaped Rust CLI for coding agents that finds files matching a plain-languag
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/romeromarcelo/jev-retrieval/
 - Source evidence: https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/README.md
 - Source evidence: https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/src/jev/client.rs
+
+## jev-toolspace
+
+Jev answers yes/no (\`noul\`) questions about a shared state and returns an independent probability for each one. One API call scores every tool in a menu with one question per tool, and a tool's score does not compete with the others.
+
+- Repository: https://github.com/xuan7zhang/jev-toolspace
+- Category: Context GC & Filter
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/xuan7zhang/jev-toolspace/
+- Source evidence: https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/README.md
+- Source evidence: https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/jev/client.py

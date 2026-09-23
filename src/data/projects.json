@@ -55995,5 +55995,71 @@
       "issueBodySha256": "ac8cde052e79a4e43679130a81b81db08e6536d3db1521d7c0d270de75fa867b",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/85"
     }
+  },
+  {
+    "id": "xuan7zhang:jev-toolspace",
+    "name": "jev-toolspace",
+    "author": "xuan7zhang",
+    "url": "https://github.com/xuan7zhang/jev-toolspace",
+    "repoId": 1380523984,
+    "category": "Context GC & Filter",
+    "plainSummary": "该仓库使用 Jev 作为相关性判断器，为 tool-using LLM Agent 构建任务级工具空间，对每个请求或执行轨迹为注册表中每个工具打分并保留 top-K 工具。",
+    "jevDecisionPoint": "对每个请求或任务，Jev对注册表中每个工具独立判断“回答该请求是否依赖此工具”并返回相关概率，用于选出Top-K工具空间。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Jev answers yes/no (`noul`) questions about a shared state and returns an independent probability for each one. One API call scores every tool in a menu with one question per tool, and a tool's score does not compete with the others.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-21T20:55:15Z",
+    "lastCommitAt": "2026-09-23T06:17:35Z",
+    "headSha": "66ced0f673893b1057d5e7d1693a7b21b1028083",
+    "metadataFetchedAt": "2026-09-23T16:31:41.051Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/63955845?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T16:31:41.051Z",
+    "evidence": [
+      {
+        "url": "https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/jev/client.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "66ced0f673893b1057d5e7d1693a7b21b1028083",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/README.md",
+          "hash": "a9d7cdfeaf20e11941275e9b5fe83a5e06e60768b3fe5b40c12e34fcdfd2c1f8"
+        },
+        {
+          "path": "jev/client.py",
+          "url": "https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/jev/client.py",
+          "hash": "5ef4b5415e302050dddb727a8a221adfa3cf2c7b14cf46a7722ddcd554f1d73e"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 84,
+      "issueBodySha256": "c937ecf5ef67878abcc44ed3d2f549bd7e2a148f9f97a176ff1580851776a2e1",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/84"
+    }
   }
 ]
