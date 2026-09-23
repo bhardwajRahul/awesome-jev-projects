@@ -53334,5 +53334,134 @@
       ]
     },
     "sourceHash": "6e6041aca29a2a38872c9bde854e6480214b07461a75b98e417f77003edf35fd"
+  },
+  {
+    "id": "texasoct:jev-gateway",
+    "name": "jev-gateway",
+    "author": "TexasOct",
+    "url": "https://github.com/TexasOct/jev-gateway",
+    "repoId": 1380393772,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "制定不同的模型使用策略，达到控制模型成本/更高效的agent工作效率。",
+    "jevDecisionPoint": "jev主要负责根据我们自定义的规则进行模型分流，策略与模型打标允许自定义，支持选择和打分。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Session-aware OpenAI-compatible model-routing gateway powered by JEV",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-21T19:16:31Z",
+    "lastCommitAt": "2026-09-22T20:01:28Z",
+    "headSha": "fdeb380c17cfd663e8227276f60ce917aab755a3",
+    "metadataFetchedAt": "2026-09-23T07:27:52.985Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/92920184?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T07:27:52.985Z",
+    "evidence": [
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/strategy/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/decision.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/gateway.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/strategy/policy.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/catalog.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/config.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/logging/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "fdeb380c17cfd663e8227276f60ce917aab755a3",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/README.md",
+          "hash": "95e9834af0cc9a41029edbb6ff4b0abdfe033d2622e3cda1a851dc01d0bfe479"
+        },
+        {
+          "path": "jev_gateway/strategy/jev.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/strategy/jev.py",
+          "hash": "766d738ee18c66c305361b63a639ef31f4aaac871c15935329a93f8655ce2db9"
+        },
+        {
+          "path": "jev_gateway/decision.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/decision.py",
+          "hash": "018890fe339784d310d4907a30a4883b8862392a44a5cfa41220dd6584e6a83a"
+        },
+        {
+          "path": "jev_gateway/gateway.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/gateway.py",
+          "hash": "300f2eda939af1228b4dcae6bbeb70d51a4d54942d82f00bb7f74a3ef33ad004"
+        },
+        {
+          "path": "jev_gateway/strategy/policy.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/strategy/policy.py",
+          "hash": "4dbb761c43a9d76268779cb6095b84031c1c1038a3eb866041cdd15678834ee7"
+        },
+        {
+          "path": "jev_gateway/__init__.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/__init__.py",
+          "hash": "7aab9ff751e628cdb11bbed973ccf5e04f328ee3e4110027d97cda725d5b78ac"
+        },
+        {
+          "path": "jev_gateway/catalog.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/catalog.py",
+          "hash": "22489c9368a9298f84529337cac7892ecbaa4acf8d341bbef5f3d4ae5669b2ee"
+        },
+        {
+          "path": "jev_gateway/config.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/config.py",
+          "hash": "9f841f0be59a4e89a6ac286efd57b9c0cf65368391f44894f617d3b2eb42eb14"
+        },
+        {
+          "path": "jev_gateway/logging/__init__.py",
+          "url": "https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/logging/__init__.py",
+          "hash": "0309940836d04046ea13e7adbbe2aa041f87d52d4fa39a64406576f769258b70"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 77,
+      "issueBodySha256": "64372e8b12d3cb95f518b52c9af490978c5dbbb49357b8eb7d9dee62bb10d69a",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/77"
+    }
   }
 ]
