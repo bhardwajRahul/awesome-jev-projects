@@ -56190,5 +56190,134 @@
       "issueBodySha256": "6d62c62806070d1e3e53c222b2dc26601725dda1616377823b38f84261f84a13",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/86"
     }
+  },
+  {
+    "id": "jsk4581:jev-blindspot",
+    "name": "jev-blindspot",
+    "author": "jsk4581",
+    "url": "https://github.com/jsk4581/jev-blindspot",
+    "repoId": 1381761106,
+    "category": "CLI & Pipelines",
+    "plainSummary": "这是一个给 Claude Code 和 Codex CLI 用的侧边面板助手，先用 Jev 判断每次提交的提示词是否值得再看一遍，只有通过时才让 Agent 自身的只读无头模式读取项目并返回盲点，且不拦截提示词也不向会话添加内容。",
+    "jevDecisionPoint": "Jev 在每次提示提交时一次性判断该请求是否存在值得复查的盲点以及风险等级，从而决定是否触发深度分析。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "cli-git-gates",
+      "coding-agents"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A side panel for Claude Code and Codex CLI that shows the blind spots of each prompt you submit: what the request would have needed to consider and shows no sign of. Jev decides, in one call per prompt, whether the prompt is worth a second look; only then does the agent's own headless mode read the project and return the items. Nothing blocks the prompt, nothing is added to the session.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-22T14:55:57Z",
+    "lastCommitAt": "2026-09-22T15:09:30Z",
+    "headSha": "e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14",
+    "metadataFetchedAt": "2026-09-23T18:44:39.619Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/54371251?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T18:44:39.620Z",
+    "evidence": [
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/client.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/questions.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/thresholds.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/bin/jev-blindspot-hook.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/bin/jev-blindspot.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/state.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/brain/prompt.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/brain/runner.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/README.md",
+          "hash": "6c0d1144bf89e6479bc72d4ad7ad4e8376fce8107068e05ec35749624e53f9d7"
+        },
+        {
+          "path": "src/gate/client.ts",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/client.ts",
+          "hash": "b1e5d940bfd090ed46913244e9e36f4a4ea3769c37c664bb474908b0e994a2e4"
+        },
+        {
+          "path": "src/gate/questions.ts",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/questions.ts",
+          "hash": "1595718acf8567bebde12e94256c305c588de0f69c98afd961073780b18c8a90"
+        },
+        {
+          "path": "src/gate/thresholds.ts",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/thresholds.ts",
+          "hash": "479cb6c495097b40f96d6a7c8139d5e1f99dc9c0e180a351809ca85dff4b1638"
+        },
+        {
+          "path": "bin/jev-blindspot-hook.mjs",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/bin/jev-blindspot-hook.mjs",
+          "hash": "c7748affdcd1d27562d80d8a0227bc88d8c8022fc9a124aaeb6d2c8b3eeccd78"
+        },
+        {
+          "path": "bin/jev-blindspot.mjs",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/bin/jev-blindspot.mjs",
+          "hash": "b0b48b6c4dbccdd8648f11b8c4fc1fe7b0a8aa2e5f9790fcfe29dd475a3b51f4"
+        },
+        {
+          "path": "src/gate/state.ts",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/state.ts",
+          "hash": "46d687282a3ed18d2a05e0e7669be9fb5c99f23288a1acbfe74dd99c789659f6"
+        },
+        {
+          "path": "src/brain/prompt.ts",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/brain/prompt.ts",
+          "hash": "13c7b77e0d9b875701e62990ea960d3aad4d3a48a60f23f66e632386871515f6"
+        },
+        {
+          "path": "src/brain/runner.ts",
+          "url": "https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/brain/runner.ts",
+          "hash": "2452f44f4378ad475746d675e23f49d721c69635f916b04f703d9f1d423a85f7"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 87,
+      "issueBodySha256": "8431fafa02354042a905d98a62dbda1ece4e5930a3a7cc6af5f58dca3d957a13",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/87"
+    }
   }
 ]

@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 630
+Catalog entries: 631
 
 ## Install the Agent Skill
 
@@ -8988,3 +8988,24 @@ Code, recorded outputs, and analysis scripts for probability-output experiments 
 - Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/core.mjs
 - Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/run.mjs
 - Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/scripts/analyze.py
+
+## jev-blindspot
+
+A side panel for Claude Code and Codex CLI that shows the blind spots of each prompt you submit: what the request would have needed to consider and shows no sign of. Jev decides, in one call per prompt, whether the prompt is worth a second look; only then does the agent's own headless mode read the project and return the items. Nothing blocks the prompt, nothing is added to the session.
+
+- Repository: https://github.com/jsk4581/jev-blindspot
+- Category: CLI & Pipelines
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/jsk4581/jev-blindspot/
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/README.md
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/client.ts
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/questions.ts
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/thresholds.ts
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/bin/jev-blindspot-hook.mjs
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/bin/jev-blindspot.mjs
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/gate/state.ts
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/brain/prompt.ts
+- Source evidence: https://github.com/jsk4581/jev-blindspot/blob/e46f60ba44ecb321ce196a6dcf32f5bbdfeb9a14/src/brain/runner.ts
