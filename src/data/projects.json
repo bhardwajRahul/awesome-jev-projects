@@ -50431,5 +50431,144 @@
       ]
     },
     "sourceHash": "3e928b72146baa7deee05ab13a054a81dcb856b6af7fcad7cddc8c1108ce1201"
+  },
+  {
+    "id": "vizuh:sabi",
+    "name": "sabi",
+    "author": "vizuh",
+    "url": "https://github.com/vizuh/sabi",
+    "repoId": 1375657623,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "Sabi 位于编码 harness 与模型提供方之间。harness 保持自己原有的 agent 循环；Sabi 决定每一轮推理由哪个模型、哪一级推理强度（reasoning effort）和哪个提供方来服务——贯穿整条轨迹持续决策，而不只在第一次提示时决定。",
+    "jevDecisionPoint": "Jev 根据轨迹证据判断是否存在真实问题及下一步难度，以选择 cheap/mid/strong 路由层级和继续/委托/派生等控制器动作。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "coding-agents",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Adaptive inference scheduling for AI agents — per-round model, effort and provider routing for coding harnesses: a Command Code mod or a local OpenAI-compatible proxy.",
+    "stars": 15,
+    "forks": 1,
+    "openIssues": 7,
+    "license": "MIT",
+    "createdAt": "2026-09-18T09:34:40Z",
+    "lastCommitAt": "2026-09-23T00:28:30Z",
+    "headSha": "208ee753f7598514d0de2ec8966d31b70766bc01",
+    "metadataFetchedAt": "2026-09-23T00:32:46.212Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/153324875?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T00:32:46.213Z",
+    "evidence": [
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/server/src/typesafe.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/core/src/judge.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/core/test/judge.test.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/core/src/jevPrReview.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/agents.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/model-health.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/service.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "208ee753f7598514d0de2ec8966d31b70766bc01",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/README.md",
+          "hash": "c94a918c81bd03833bf9d4d5bb8b0ec4402d97847147c33b400441d60595e5c3"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/README.zh-CN.md",
+          "hash": "c77a94f444fa4164c2780183b1b6ab1a5d9bb08f02684462ae44d655b6e5a570"
+        },
+        {
+          "path": "packages/controller/src/jev.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/jev.ts",
+          "hash": "0095e9822c31d4b7e0ea2a8875d78c12c934c3ef18bfff3a2e2a71ea022e6919"
+        },
+        {
+          "path": "packages/server/src/typesafe.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/server/src/typesafe.ts",
+          "hash": "9f1c95e96919b89067eff5341180e726429a95e94ef2fdec1ec67aedc4412dbd"
+        },
+        {
+          "path": "packages/core/src/judge.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/core/src/judge.ts",
+          "hash": "87b0a8184e5a9b581dd602f32aade59be39d26f8ab898521203fad0f51b243e9"
+        },
+        {
+          "path": "packages/core/test/judge.test.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/core/test/judge.test.ts",
+          "hash": "d3d685049e78c93b5515020dc4a681f7b30c4b4bf224646276af64320a2e9873"
+        },
+        {
+          "path": "packages/core/src/jevPrReview.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/core/src/jevPrReview.ts",
+          "hash": "cb60ac34a5972a1679aa9b84c03a46a3c4f9761ac61b00f23328887faf06f857"
+        },
+        {
+          "path": "packages/controller/src/agents.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/agents.ts",
+          "hash": "1fc872b3bb1623946c88fdc5642eb24bb3c6f3eca65ee54c25089f16b503366f"
+        },
+        {
+          "path": "packages/controller/src/model-health.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/model-health.ts",
+          "hash": "d09fc7ccfd22dfdfbfa1508473b9beca0b440fb8984af89302f29d17ad30dd55"
+        },
+        {
+          "path": "packages/controller/src/service.ts",
+          "url": "https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/service.ts",
+          "hash": "e0c13a6ab04989cde2824df946b476e18ec5ae6327deb1c59895f50376ff8505"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 74,
+      "issueBodySha256": "6b1b8b9edfe1ee1f2593456a9c6c56ee106a6ba43e1c6a996baba0f734f3228a",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/74"
+    }
   }
 ]
