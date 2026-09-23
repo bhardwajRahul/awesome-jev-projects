@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 596
+Catalog entries: 597
 
 ## Install the Agent Skill
 
@@ -8523,3 +8523,17 @@ Session-aware OpenAI-compatible model-routing gateway powered by JEV
 - Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/qwen/client.py
 - Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/__init__.py
 - Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/adapters/__init__.py
+
+## reflex
+
+A coding agent and personal assistant built on the Pi coding agent. Jev checks every tool call, turn and voice transcript, and code decides what happens next: allow, ask or block an action, which model tier to use, and whether a "done" was actually verified.
+
+- Repository: https://github.com/kaustav1996/reflex
+- Category: Security & Guardrails
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/kaustav1996/reflex/
+- Source evidence: https://github.com/kaustav1996/reflex/blob/d2737cbafe207c378e2e04cd0f79b7734458c912/README.md
+- Source evidence: https://github.com/kaustav1996/reflex/blob/d2737cbafe207c378e2e04cd0f79b7734458c912/src/extensions/typesafe/client.ts

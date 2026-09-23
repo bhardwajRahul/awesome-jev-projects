@@ -53592,5 +53592,72 @@
       "issueBodySha256": "1f00fd0d9e4475f1fbf7a0ccb473dff26b45df9eaf6774f383111fa27db3cc9e",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/78"
     }
+  },
+  {
+    "id": "kaustav1996:reflex",
+    "name": "reflex",
+    "author": "kaustav1996",
+    "url": "https://github.com/kaustav1996/reflex",
+    "repoId": 1376052589,
+    "category": "Security & Guardrails",
+    "plainSummary": "这是一个基于 Pi coding Agent 的编码助手与个人助理，Jev 会检查每次工具调用、对话轮次和语音转录，代码据此决定放行、询问或拦截、选择模型档位并核验完成状态。",
+    "jevDecisionPoint": "Jev 对每个工具调用、轮次和语音转录回答是否破坏性、是否触及秘密、风险等级以及模型层级等问题，代码据此决定放行、询问或拦截。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "让界面选择与执行分开，便于检查每一步。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "coding-agents",
+      "llm-routing-cost"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A coding agent and personal assistant built on the Pi coding agent. Jev checks every tool call, turn and voice transcript, and code decides what happens next: allow, ask or block an action, which model tier to use, and whether a \"done\" was actually verified.",
+    "stars": 2,
+    "forks": 1,
+    "openIssues": 53,
+    "license": "MIT",
+    "createdAt": "2026-09-18T15:18:29Z",
+    "lastCommitAt": "2026-09-23T08:44:14Z",
+    "headSha": "d2737cbafe207c378e2e04cd0f79b7734458c912",
+    "metadataFetchedAt": "2026-09-23T09:10:32.540Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/21956467?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T09:10:32.540Z",
+    "evidence": [
+      {
+        "url": "https://github.com/kaustav1996/reflex/blob/d2737cbafe207c378e2e04cd0f79b7734458c912/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/kaustav1996/reflex/blob/d2737cbafe207c378e2e04cd0f79b7734458c912/src/extensions/typesafe/client.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "d2737cbafe207c378e2e04cd0f79b7734458c912",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/kaustav1996/reflex/blob/d2737cbafe207c378e2e04cd0f79b7734458c912/README.md",
+          "hash": "853f9e9969f788b671fe248795995330e733eff2a8341241bf3c826994540433"
+        },
+        {
+          "path": "src/extensions/typesafe/client.ts",
+          "url": "https://github.com/kaustav1996/reflex/blob/d2737cbafe207c378e2e04cd0f79b7734458c912/src/extensions/typesafe/client.ts",
+          "hash": "9471e33c85d7d85eaac9d942d946e2ed339557ee8a81c89cecf6e20f39d29baa"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 79,
+      "issueBodySha256": "1972751bd720065ba444c0e07a68065d5deaf92b43ba98da3e80b28d3cdfcb88",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/79"
+    }
   }
 ]
