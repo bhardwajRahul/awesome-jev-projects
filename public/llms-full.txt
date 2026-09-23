@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 629
+Catalog entries: 630
 
 ## Install the Agent Skill
 
@@ -8967,3 +8967,24 @@ Jev answers yes/no (\`noul\`) questions about a shared state and returns an inde
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/xuan7zhang/jev-toolspace/
 - Source evidence: https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/README.md
 - Source evidence: https://github.com/xuan7zhang/jev-toolspace/blob/66ced0f673893b1057d5e7d1693a7b21b1028083/jev/client.py
+
+## jev-does-not-play-dice
+
+Code, recorded outputs, and analysis scripts for probability-output experiments with Jev: fair random draws, Noul (Yes/No) questions, and forecast documents.
+
+- Repository: https://github.com/KantaHayashiAI/jev-does-not-play-dice
+- Category: SDK & Decision Frameworks
+- Jev decision: The live evaluator calls hosted Jev through the Vercel AI SDK \`experimental\_evaluate\` path:
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/kantahayashiai/jev-does-not-play-dice/
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/README.md
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/live.mjs
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/reconstruct.mjs
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/runner.mjs
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/data/summary/SUMMARY.md
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/docs/methods.md
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/core.mjs
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/run.mjs
+- Source evidence: https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/scripts/analyze.py

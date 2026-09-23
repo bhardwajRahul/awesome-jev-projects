@@ -56061,5 +56061,134 @@
       "issueBodySha256": "c937ecf5ef67878abcc44ed3d2f549bd7e2a148f9f97a176ff1580851776a2e1",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/84"
     }
+  },
+  {
+    "id": "kantahayashiai:jev-does-not-play-dice",
+    "name": "jev-does-not-play-dice",
+    "author": "KantaHayashiAI",
+    "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice",
+    "repoId": 1375761276,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "该项目对公平随机事件和预测文档上Jev概率输出的可复现离线评测与校准分析。",
+    "jevDecisionPoint": "Jev在公平随机事件中从多个候选结果中多选一并输出概率分布，同时对固定命题进行二元真假概率判断。",
+    "jevDecisionPointEn": "The live evaluator calls hosted Jev through the Vercel AI SDK `experimental_evaluate` path:",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Code, recorded outputs, and analysis scripts for probability-output experiments with Jev: fair random draws, Noul (Yes/No) questions, and forecast documents.",
+    "stars": 2,
+    "forks": 1,
+    "openIssues": 1,
+    "license": "MIT",
+    "createdAt": "2026-09-18T11:21:53Z",
+    "lastCommitAt": "2026-09-23T17:47:00Z",
+    "headSha": "da7b3453e6e0c392b745ccf568963e6827fc5b2f",
+    "metadataFetchedAt": "2026-09-23T18:41:04.620Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/130632231?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T18:41:04.620Z",
+    "evidence": [
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/live.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/reconstruct.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/runner.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/data/summary/SUMMARY.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/docs/methods.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/core.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/run.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/scripts/analyze.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "da7b3453e6e0c392b745ccf568963e6827fc5b2f",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/README.md",
+          "hash": "ea603d29514a7b42b00de7930fcc6e618355ae303d0870f043c39301287fe695"
+        },
+        {
+          "path": "src/live.mjs",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/live.mjs",
+          "hash": "52be3e45f7522a0de3f27dd84a5cc36bad7d55005b9950dcc20cbf1518c85e87"
+        },
+        {
+          "path": "src/reconstruct.mjs",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/reconstruct.mjs",
+          "hash": "e3fe5b3267f97f9f49ccda85c04d36c2bfdee8677f71fbbbae19f56839dc4864"
+        },
+        {
+          "path": "src/runner.mjs",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/runner.mjs",
+          "hash": "5352c22f400545c8ab1e836737bb706fc3adad90ce10a9666556548bb6d3ac7c"
+        },
+        {
+          "path": "data/summary/SUMMARY.md",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/data/summary/SUMMARY.md",
+          "hash": "2ade677175deaf7c66452bfff5c2861d274c8a06bf7c20bd6140caef07fa6a57"
+        },
+        {
+          "path": "docs/methods.md",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/docs/methods.md",
+          "hash": "cabbd59434a85b72e1fb7a4e50f87d9fb2a8684e683d9f16513832a635ce597b"
+        },
+        {
+          "path": "src/core.mjs",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/core.mjs",
+          "hash": "b2d64c8d9918169b25d037f8283ab92b0d6079df3c78d470fecb2d5f0d3afe69"
+        },
+        {
+          "path": "src/run.mjs",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/src/run.mjs",
+          "hash": "1ec7baf894d04011fa8558ab6cd977a5534cfce5e72265fb4c76c539ab613717"
+        },
+        {
+          "path": "scripts/analyze.py",
+          "url": "https://github.com/KantaHayashiAI/jev-does-not-play-dice/blob/da7b3453e6e0c392b745ccf568963e6827fc5b2f/scripts/analyze.py",
+          "hash": "d0925074795c4cb0eaeee36a8dd0da1ee6f4d1788303d32fba0281de2e79b406"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 86,
+      "issueBodySha256": "6d62c62806070d1e3e53c222b2dc26601725dda1616377823b38f84261f84a13",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/86"
+    }
   }
 ]
