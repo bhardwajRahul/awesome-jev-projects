@@ -1,0 +1,1102 @@
+{
+  "lastAttemptAt": "2026-09-23T21:19:20.649Z",
+  "mode": "full",
+  "lastSuccessfulAt": null,
+  "status": "partial",
+  "sources": [
+    {
+      "name": "repositories: topic:jev fork:false",
+      "query": "topic:jev fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 1493,
+      "pages": 2,
+      "firstPage": 9
+    },
+    {
+      "name": "repositories: typesafe jev fork:false",
+      "query": "typesafe jev fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 2441,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "repositories: typesafe-ai fork:false",
+      "query": "typesafe-ai fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 1028,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "repositories: jev-mcp fork:false",
+      "query": "jev-mcp fork:false",
+      "status": "bounded",
+      "count": 58,
+      "total": 258,
+      "pages": 1,
+      "firstPage": 3
+    },
+    {
+      "name": "repositories: jev decision fork:false",
+      "query": "jev decision fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 1259,
+      "pages": 2,
+      "firstPage": 9
+    },
+    {
+      "name": "repositories: \"TypeSafe AI\" in:readme fork:false",
+      "query": "\"TypeSafe AI\" in:readme fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 4905,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "repositories: \"Jev API\" in:readme fork:false",
+      "query": "\"Jev API\" in:readme fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 1821,
+      "pages": 2,
+      "firstPage": 1
+    },
+    {
+      "name": "repositories: topic:typesafe-ai fork:false",
+      "query": "topic:typesafe-ai fork:false",
+      "status": "bounded",
+      "count": 138,
+      "total": 338,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "repositories: topic:typesafe ai fork:false",
+      "query": "topic:typesafe ai fork:false",
+      "status": "bounded",
+      "count": 200,
+      "total": 226,
+      "pages": 2,
+      "firstPage": 1
+    },
+    {
+      "name": "repositories: \"api.typesafe.ai\" in:readme fork:false",
+      "query": "\"api.typesafe.ai\" in:readme fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 1810,
+      "pages": 2,
+      "firstPage": 1
+    },
+    {
+      "name": "repositories: \"typesafe.ai\" \"jev\" in:readme fork:false",
+      "query": "\"typesafe.ai\" \"jev\" in:readme fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 4726,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "repositories: \"from typesafe import jev\" in:readme fork:false",
+      "query": "\"from typesafe import jev\" in:readme fork:false",
+      "status": "ok",
+      "count": 0,
+      "total": 0,
+      "pages": 1,
+      "firstPage": 1
+    },
+    {
+      "name": "repositories: \"@typesafe/jev\" in:readme fork:false",
+      "query": "\"@typesafe/jev\" in:readme fork:false",
+      "status": "search-cap",
+      "count": 200,
+      "total": 3701,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "code: \"api.typesafe.ai\" in:file",
+      "query": "\"api.typesafe.ai\" in:file",
+      "status": "search-cap",
+      "count": 200,
+      "total": 16352,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "code: \"typesafe.ai\" in:file",
+      "query": "\"typesafe.ai\" in:file",
+      "status": "search-cap",
+      "count": 200,
+      "total": 28608,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "code: \"from typesafe import\" in:file",
+      "query": "\"from typesafe import\" in:file",
+      "status": "ok",
+      "count": 63,
+      "total": 63,
+      "pages": 1,
+      "firstPage": 1
+    },
+    {
+      "name": "code: \"@typesafe/jev\" in:file",
+      "query": "\"@typesafe/jev\" in:file",
+      "status": "ok",
+      "count": 20,
+      "total": 20,
+      "pages": 1,
+      "firstPage": 1
+    },
+    {
+      "name": "commits: \"typesafe.ai\"",
+      "query": "\"typesafe.ai\"",
+      "status": "search-cap",
+      "count": 200,
+      "total": 3132,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "commits: \"Jev\" \"AI\"",
+      "query": "\"Jev\" \"AI\"",
+      "status": "search-cap",
+      "count": 200,
+      "total": 91792,
+      "pages": 2,
+      "firstPage": 1
+    },
+    {
+      "name": "issues: \"typesafe.ai\" is:pr in:title,body",
+      "query": "\"typesafe.ai\" is:pr in:title,body",
+      "status": "ok",
+      "count": 178,
+      "total": 178,
+      "pages": 2,
+      "firstPage": 1
+    },
+    {
+      "name": "issues: \"Jev\" \"TypeSafe\" is:pr in:title,body",
+      "query": "\"Jev\" \"TypeSafe\" is:pr in:title,body",
+      "status": "search-cap",
+      "count": 200,
+      "total": 8346,
+      "pages": 2,
+      "firstPage": 3
+    },
+    {
+      "name": "Known repository metadata + latest commit",
+      "status": "ok",
+      "count": 631
+    }
+  ],
+  "newProjects": 30,
+  "schedule": "0 */6 * * *",
+  "schedulerStatus": "active",
+  "submissionRepository": "logicrw/awesome-jev-projects",
+  "metadata": {
+    "ok": 631,
+    "failed": 0
+  },
+  "discovery": {
+    "candidates": 2192,
+    "checked": 60,
+    "rejected": 30,
+    "deferred": 2132
+  },
+  "runUrl": "https://github.com/logicrw/awesome-jev-projects/actions/runs/35921685724",
+  "finishedAt": "2026-09-23T22:11:16.314Z",
+  "totalProjects": 661,
+  "projectsSha256": "af935cbce44fc4397fe1e1be5e03576d8278da85d1262b554ca38c98507d6492",
+  "receipts": [
+    {
+      "repo": "TheoLeeCJ/SemIf-OpenJev",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "Alex314618-create/JevRev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/Alex314618-create/JevRev/blob/931499f03743508660030488bbb837d70b800868/src/judge.ts",
+      "sourceHash": "6c27c9a0942e993b927316e2959c2d117626885a20b2ceb80d13637493626758",
+      "evidence": [
+        "JevRev puts Jev beside the LLM: a semantic layer that filters",
+        "The Jev answers are replayed for a deterministic demo. The implementations,",
+        "and submits the round to JevLoop. Loop checks the evidence, asks Jev only the",
+        "| Command | Role in the LLM + Jev workflow |",
+        "node dist/cli.js sift --input proposals.json --replay examples/parser-jev-response.json",
+        "JevRev keeps the decision boundary the same whether Jev is hosted, local, or",
+        "Hosted Jev in a POSIX shell:",
+        "node dist/cli.js sift --input proposals.json --provider jev"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Alex314618-create/JevRev/blob/931499f03743508660030488bbb837d70b800868/README.md",
+          "hash": "6a33100d42127bd2b428176de0d6134d963cf53d5763e48fe0cb5d2f3389573b"
+        }
+      ]
+    },
+    {
+      "repo": "vinilana/jev-gateway",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "danielgshea/jev-as-a-judge",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "openqa-cn/jev-browser",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "zhulinchng/jevper",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "agencyenterprise/jev-recipes",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "littlewindy123/jev-weekend-shopping-chrome",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "mattn/go-jev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/mattn/go-jev/blob/85f5994cb5136ff5360dd904b65253469dc95d2e/jev.go",
+      "sourceHash": "27de8c755789b6362daa5aa206fbfe1b0788a9d79ef616576965c3726d87a4d8",
+      "evidence": [
+        "# go-jev",
+        "Go SDK for [TypeSafe Jev](https://docs.typesafe.ai/), a decision-only model",
+        "text. Comes with `jev-cli`, a command-line tool built on it for UNIX pipelines.",
+        "go get github.com/mattn/go-jev",
+        "import \"github.com/mattn/go-jev\"",
+        "c := jev.NewClient(jev.WithAPIKey(os.Getenv(\"TYPESAFE_API_KEY\")))",
+        "a, err := c.Ask(ctx, \"Help! My payouts have been failing for 3 days.\", jev.Question{",
+        "\tCriteria: jev.Options{ // keeps option order"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/mattn/go-jev/blob/85f5994cb5136ff5360dd904b65253469dc95d2e/README.md",
+          "hash": "6b3d656cbe32367c882c9fa4517686576c06470e3f36c9553519bdcf2c17fc9c"
+        }
+      ]
+    },
+    {
+      "repo": "ravinarayanan89/JevForce",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "littlewindy123/jev-bili-filter",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "prasanthj/duckdb-jev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/prasanthj/duckdb-jev/blob/928da7173d53c34cb40d36b2ef1dc66174c9e91c/src/jev_extension.cpp",
+      "sourceHash": "5ba67cf0c40ce3d897a3ee7163367d65b53390e42972f0920a6525284d8a0afb",
+      "evidence": [
+        "# Jev for DuckDB",
+        "[![Native build and tests](https://github.com/prasanthj/duckdb-jev/actions/workflows/release.yml/badge.svg)](https://github.com/prasanthj/duckdb-jev/actions/workflows/release.yml)",
+        "[![Native CI](https://github.com/prasanthj/duckdb-jev/actions/workflows/ci.yml/badge.svg)](https://github.com/prasanthj/duckdb-jev/actions/workflows/ci.yml)",
+        "[![Latest release](https://img.shields.io/github/v/release/prasanthj/duckdb-jev?display_name=tag&sort=semver)](https://github.com/prasanthj/duckdb-jev/releases/latest)",
+        "High-throughput, robust native C++ DuckDB extension for semantic predicates, classification and rubric scoring through TypeSafe/Jev. It batches and streams inference directly from SQL without Python UDF registration or a",
+        "*Real Jev responses on synthetic data; timings are from one local run. Reproduce the animation with `vhs examples/terminal_demo.tape`.*",
+        "- **Safe credentials:** reads a scoped DuckDB `jev` secret first and falls back to `TYPESAFE_API_KEY`; API keys never appear in query results or cache keys.",
+        "![Live Jev Choice performance: batching matrix for 100 rows and scaling results through 2,049 rows](docs/images/live-performance.svg)"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/prasanthj/duckdb-jev/blob/928da7173d53c34cb40d36b2ef1dc66174c9e91c/README.md",
+          "hash": "34080d48ed4b539ff8c7c1d4e4fd475b987c246cc64fc8816ac04a63810640e4"
+        }
+      ]
+    },
+    {
+      "repo": "Selmar/typesafe-jev-calibrate-for-code-review",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/Selmar/typesafe-jev-calibrate-for-code-review/blob/bfb86b7e5337a4959d2e963cda4d2370d87152b8/calibrate.py",
+      "sourceHash": "9737751d8f11cd2a301db7965de82e53511a658d95fc063079eaf94fe9f1e9fd",
+      "evidence": [
+        "# Calibrating Jev as a code reviewer",
+        "TypeSafe Jev launched a week ago. There are some code-review tools built on it, and I've written one as well. There doesn't seem to be a lot of talk about what it takes to build tools where the output is worth reading.",
+        "From these conventions I wrote two Jev rulesets, one for comments and one for code. I also had the AI write me a small CLI tool to interface with Jev (around 400 lines of python) and I tested using 4 project files that I",
+        "C# says a member with no access modifier is private. [Jev knows that](https://console.typesafe.ai/playground?share=shr_1c122c9a08033fe485eb82f5c3ee6906dac). But making it *derive* rather than *read* the fact costs accura",
+        "I conclude that you'd best feed Jev extra information from the code analyzer (if relevant), which I haven't seen anyone do yet.",
+        "As it stands, Jev as a review tool for me (and the AI) is a helpful addition. It has clear limits, and works best in small measurable contexts, where it could augment code analyzer results. Setting it up takes some time,",
+        "- Double- or triple-check that your extractor is doing a good job; wrong data sent to Jev will absolutely lead you astray, because it will not tell you.",
+        "- Be careful with AI results when iterating on the rules. It will try to optimize the rules for your code based on Jev's scores, and in doing so, bias it towards said code."
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Selmar/typesafe-jev-calibrate-for-code-review/blob/bfb86b7e5337a4959d2e963cda4d2370d87152b8/README.md",
+          "hash": "67c3fd5f5f46ac90ec78383af96b6eba6b5bf0837244764eaf0d2b8df63bbcf7"
+        }
+      ]
+    },
+    {
+      "repo": "web3w/jev-trader",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "boldbug1/jev-triage",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/boldbug1/jev-triage/blob/880912e1f522ec72396b3a4872a90a898cacb3a0/main.go",
+      "sourceHash": "59b36ea725bceb1f2dd6fbc20366cd0e29b0fa9092e103d061f06ea83a4210b9",
+      "evidence": [
+        "# Jev Triage",
+        "A small command-line tool, written in Go, that reads a list of messages and sorts them by urgency. It uses **Jev**, a decision model from [TypeSafe AI](https://docs.typesafe.ai), to answer three questions about each mess",
+        "## What is Jev?",
+        "Jev is built around the decision instead of the text. You send it a **state** (text or JSON) and some **named questions**. It sends back typed answers with probabilities:",
+        "- **Speed and cost.** TypeSafe reports Jev as up to 193.6x faster and 444.6x cheaper than LLMs on its own workflow evaluations. These are vendor numbers, so test them on your own data.",
+        "Jev decides. It does not write text, so it sits next to an LLM instead of replacing it.",
+        "- A TypeSafe API key (Jev is a paid, usage-priced API)",
+        "git clone https://github.com/boldbug1/jev-triage.git"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/boldbug1/jev-triage/blob/880912e1f522ec72396b3a4872a90a898cacb3a0/README.md",
+          "hash": "77edb71cc1b3376810689cb952c040ba59c5473f22f43361787b7ed66258dd2d"
+        }
+      ]
+    },
+    {
+      "repo": "cachix/jev-action",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "Larkspur-Wang/Jev_steer_or_queue",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/Larkspur-Wang/Jev_steer_or_queue/blob/f53d1676eac233646b2ba1f792f0f73a6acbe7d5/claude-code/scripts/jev_router.py",
+      "sourceHash": "b2c13e51537dffd06b17ff427ce8f81b98c4d759789576a0bfccb67747b6052c",
+      "evidence": [
+        "<img src=\"assets/banner.svg\" alt=\"Jev steer or queue\" width=\"100%\">",
+        "A hook that lets [TypeSafe Jev](https://docs.typesafe.ai/) make that call in about half a second.",
+        "[![Powered by Jev](https://img.shields.io/badge/powered%20by-TypeSafe%20Jev-7c5cff?style=flat-square)](https://docs.typesafe.ai/)",
+        "| Jev says | Meaning | What the hook does |",
+        "Messages sent while the agent is idle are never touched and never sent to Jev.",
+        "    H -- mid-turn --> J[Jev<br/>~0.5 s]",
+        "/plugin install jev-steer-or-queue@jev-steer-or-queue",
+        "1. **TypeSafe API key.** Get one at [console.typesafe.ai](https://console.typesafe.ai/). It is stored in the system keychain. Leave it empty to use the `TYPESAFE_API_KEY` environment variable."
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Larkspur-Wang/Jev_steer_or_queue/blob/f53d1676eac233646b2ba1f792f0f73a6acbe7d5/README.md",
+          "hash": "960c81e479534ac97f7018dc1982b5ed4fa642b4558236f0c7a6115dc119dc5a"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/Larkspur-Wang/Jev_steer_or_queue/blob/f53d1676eac233646b2ba1f792f0f73a6acbe7d5/README.zh-CN.md",
+          "hash": "d8e0609a0d0a8c156816099406dcab3217d8762406124a2f2426b4bf13dcd889"
+        }
+      ]
+    },
+    {
+      "repo": "eran-broder/jev-skills",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/eran-broder/jev-skills/blob/d1a7b9000408ca628881051bc442eb6e8b689151/src/jev/client.ts",
+      "sourceHash": "d0f46f7f705f6928073b7cfa551b04c0132a38326c9a71e90af9446c94d8c20e",
+      "evidence": [
+        "# jev-skills",
+        "A plugin for Claude Code and Codex that takes every skill out of the context window and lets a calibrated classifier, TypeSafe's Jev, decide on each turn which ones the model should see.",
+        "claude plugin marketplace add eran-broder/jev-skills",
+        "claude plugin install jev-skills@jev-skills --config typesafe_api_key=<key>",
+        "[![72-second walkthrough with real runs and numbers](media/poster.png)](media/jev-skills.mp4)",
+        "That is what Jev is. It is a System One model: you send it a state and typed questions, and it returns probabilities, not prose. It answers 400 questions in one request in under a second, for about a tenth of a cent.",
+        "    H -->|state + one question per skill| J[Jev]",
+        "  jev-skills loaded: pineapple-protocol (0.97)"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/eran-broder/jev-skills/blob/d1a7b9000408ca628881051bc442eb6e8b689151/README.md",
+          "hash": "75fcc0c8b0d4dc6c1582be7a61980b99a5bdd828a6bb8dbca45ae4cc2c2e7ff8"
+        }
+      ]
+    },
+    {
+      "repo": "erkamyaman/jev-enforce",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/erkamyaman/jev-enforce/blob/4471e0cb5cb7bedaabd4e1d647eb7774131f2dfe/src/jev.ts",
+      "sourceHash": "4db66201a23092b4e0e54f43b9c5ab5f1e599e28be70b59727d523a8f022c7cc",
+      "evidence": [
+        "# jev-enforce",
+        "[![npm](https://img.shields.io/npm/v/jev-enforce?color=cb3837&logo=npm)](https://www.npmjs.com/package/jev-enforce)",
+        "[![downloads](https://img.shields.io/npm/dw/jev-enforce)](https://www.npmjs.com/package/jev-enforce)",
+        "Claude Code plugin that checks every reply and every file edit against your CLAUDE.md (or AGENTS.md), using TypeSafe's Jev. Break a rule and Claude gets it quoted back and fixes it, in the same turn.",
+        "![jev-enforce catching six broken rules in one check](demo/demo.gif)",
+        "Jev makes it cheap enough to run every turn: it answers typed yes/no questions instead of writing text, all of them in one request. One question per rule, about 350ms, about 3 cents per 1,000 checks.",
+        "npx jev-enforce check --as code src/orders.ts",
+        "claude plugin marketplace add erkamyaman/jev-enforce"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/erkamyaman/jev-enforce/blob/4471e0cb5cb7bedaabd4e1d647eb7774131f2dfe/README.md",
+          "hash": "5d83d34f31f688be4fdd3d4ad76c01c56095cee3bf965a67ca774386dfbc2be1"
+        }
+      ]
+    },
+    {
+      "repo": "matthew004-web/heyreach-jev-bot",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/matthew004-web/heyreach-jev-bot/blob/f8f10dce37d882730fd56a28bb9b6765e0e8a9f8/gtm_bot/jev.py",
+      "sourceHash": "061564c131b4191d74aead6651dc9d4f7dfe4bb19f887cb797bb02e85f9207b8",
+      "evidence": [
+        "# HeyReach-jev-bot",
+        "Signal-based LinkedIn outbound scoring for [HeyReach](https://heyreach.io), running on Jev (TypeSafe System One).",
+        "| `TYPESAFE_API_KEY` | [console.typesafe.ai](https://console.typesafe.ai) | Jev, the model that reads leads and messages |",
+        "Two sentences about your offer, your target roles, the company type you sell to, your employee range and who to exclude. That's everything Jev knows about your business, so be specific. Claude can fill it for you:",
+        "You get, per tier and per variant Jev picked, one lead list and one single-message DRAFT campaign. Every lead carries its verdict as HeyReach custom fields, so you can read it in the UI:",
+        "- A TypeSafe API key for Jev",
+        "Jev is cheap enough that you can score everything instead of sampling. The demo's 12 leads and 14 messages are 26 requests: about 2.6 seconds and $0.0013 in total. Learning from 400 past conversations is about 800 reques",
+        "## What Jev judges"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/matthew004-web/heyreach-jev-bot/blob/f8f10dce37d882730fd56a28bb9b6765e0e8a9f8/README.md",
+          "hash": "a29da1dfc0d6f63870058668e85cb9f1f6aa4e796647738ea8c4cc6572502491"
+        }
+      ]
+    },
+    {
+      "repo": "g0runmezadam/jev-architecture-research",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/g0runmezadam/jev-architecture-research/blob/59b71e6156bc08ed7a8311a2eb3ab3638791c1dd/research/experiments/scripts/architecture_probes.py",
+      "sourceHash": "69d8280818d3c76c6d6fe89adbaa20cbc172eda56fb25b717f0009a4d97f763d",
+      "evidence": [
+        "# Jev Architecture Research",
+        "> Black-box reverse engineering of the Jev decision model.",
+        "**Website:** [jev.com.tr](http://jev.com.tr/) · **Research archive:** [`docs/MASTER_REPORT.md`](docs/MASTER_REPORT.md)",
+        "This repository is an evidence-first archive of experiments that study Jev as a",
+        "Jev's weights, training data, source code or internal traces.",
+        "applicable Jev API account and an environment variable for the key; secrets are",
+        "  title  = {Jev Architecture Research: A Black-Box Reverse-Engineering Archive},",
+        "  url    = {https://github.com/g0runmezadam/jev-architecture-research}"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/g0runmezadam/jev-architecture-research/blob/59b71e6156bc08ed7a8311a2eb3ab3638791c1dd/README.md",
+          "hash": "d21b1d9031f2bfd12d389e9b1fc30e82bce64e7418874d4ef7b64604ffe9508b"
+        }
+      ]
+    },
+    {
+      "repo": "mahmut-gundogdu/bes-kelime-jev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/mahmut-gundogdu/bes-kelime-jev/blob/5cf8a0d5c8b992bd2299c12fa3ce7d00cc9fc4c3/src/jev.ts",
+      "sourceHash": "bdb39346b6edbe9302b6a7ecf376fb401a8331192d4c5d01c37881688054be6a",
+      "evidence": [
+        "# 5 Kelime — İsmail Jev",
+        "[TypeSafe AI'ın Jev modeli](https://vercel.com/ai-gateway/models/jev) karar verir.",
+        "**Canlı demo:** https://5-kelime-ismail-jev.vercel.app",
+        "> The phrase is picked by Jev, TypeSafe AI's evaluation model, through Vercel AI Gateway —",
+        "Jev bir sohbet modeli değil, **evaluation** modeli. Serbest metin üretmez; tipli sorulara",
+        "// Jev'in ham cevabı",
+        "olarak tiplenir. [`WORDS`](src/jev.ts) sabitine kelime eklediğinizde hem API seçeneği",
+        "Noktalama modelden gelen iki sayıdan kodda türetilir ([`punctuate()`](src/jev.ts)):"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/mahmut-gundogdu/bes-kelime-jev/blob/5cf8a0d5c8b992bd2299c12fa3ce7d00cc9fc4c3/README.md",
+          "hash": "840857eb49ff553cb8b566380200933641bf153d00ed24085872c61914e8cfa3"
+        }
+      ]
+    },
+    {
+      "repo": "rahulthakore16/n8n-nodes-jev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/rahulthakore16/n8n-nodes-jev/blob/17d7bea45102da8ce985c9210e17f8ae9ebc24bd/nodes/Jev/helpers/client.ts",
+      "sourceHash": "eb6ad8e820ffc5930eca2f6d0793ff1e29dc6219af559e26d78d3bf916c93352",
+      "evidence": [
+        "# n8n-nodes-typesafe-jev",
+        "Turn emails, support tickets, user prompts, and JSON state into decisions your workflow can use directly. [Jev by TypeSafe AI](https://typesafe.ai/blog/introducing-system-one-models-and-jev) evaluates typed questions rat",
+        "[Setup](#30-second-setup) · [Operations](#operations) · [Outputs](#outputs-and-confidence) · [Examples](#copy-paste-workflows) · [Cost comparison](#jev-vs-a-cheap-llm) · [Development](#development)",
+        "1. Open **Settings → Community Nodes → Install**, enter `n8n-nodes-typesafe-jev`, and install.",
+        "2. Create a **TypeSafe Jev API** credential. Paste the API key from **[console.typesafe.ai](https://console.typesafe.ai)**.",
+        "3. Drag **Jev (TypeSafe AI)** onto the canvas, select your credential, choose an operation, and add a question. State defaults to `{{ $json }}`.",
+        "- This package uses the official **`@typesafe-ai/sdk`** runtime dependency. It is **not an n8n-verified / n8n Cloud package**: current verification rules prohibit runtime dependencies.",
+        "Empty text, null state, unsupported values, circular references, and non-finite numbers in objects are rejected. Ordinary text like `123` remains text in Auto mode. Binary attachments pass through to the output but are *"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/rahulthakore16/n8n-nodes-jev/blob/17d7bea45102da8ce985c9210e17f8ae9ebc24bd/README.md",
+          "hash": "7bf6442f8feb04e1646b6c4fcab9eb4f21a6a0e5770aa80423796eaf0bf3c219"
+        }
+      ]
+    },
+    {
+      "repo": "jevaidev/jev-ai-radar",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "justhalfbit/dsh-plugin-jev-effort-selector",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "ZJU-REAL/CUA-JEV",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/ZJU-REAL/CUA-JEV/blob/795adcf62c479fea001163647c97f8135d2a55fd/src/cua_jev/policy.py",
+      "sourceHash": "4280da34dfcf55e5a8d9859d9bd68e6384e005b0dd49f54ae3d9bb01003e0e84",
+      "evidence": [
+        "# <img src=\"src/cua_jev/ui/static/logo-mark.svg\" width=\"44\" alt=\"ZJU-REAL Lab logo\"> CUA-JEV: Jev for Computer Use",
+        "[Webpage](https://zjureal.com/CUA-JEV/) · [中文文档](README.zh-CN.md)",
+        "CUA-JEV is an open-source reference framework for Jev-powered computer use. A task adapter turns structured state from the browser, desktop UI, office applications, terminal, or filesystem into **legal, executable, verif",
+        "Jev's fast, typed decisions are a promising fit for downstream systems that must choose actions repeatedly under latency constraints, including computer use, embodied agents, and potentially autonomous driving. [RoboJEV]",
+        "> **Scope:** This is not a general agent that can operate any application from an arbitrary instruction. Each of the four workflows currently has a task-specific adapter, candidate generator, and terminal verifier. Jev s",
+        "The [experimental open-task paths](docs/OPEN_TASKS.md) separate model planning from Jev's typed action selection. They discover browser DOM elements or Windows UI Automation controls dynamically and offer grounded struct",
+        "![CUA-JEV architecture: task adapters, Jev selection, guarded execution, and independent verification](assets/architecture.svg)",
+        "## Why Jev × computer use?"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ZJU-REAL/CUA-JEV/blob/795adcf62c479fea001163647c97f8135d2a55fd/README.md",
+          "hash": "7bf495bc5587f3174d6250c76eb4680b4d4e46c63336d9dec702335c47403cb4"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/ZJU-REAL/CUA-JEV/blob/795adcf62c479fea001163647c97f8135d2a55fd/README.zh-CN.md",
+          "hash": "8e38f26ab06066d442e4d80c06bf29df4082f577d8e0b34f809e23facffd0848"
+        }
+      ]
+    },
+    {
+      "repo": "AIAnytime/jev-crash-course",
+      "status": "rejected",
+      "reason": "现有代码证据仅包含 01-what-is-jev/jevlib.py 中的客户端工厂函数 client()/async_client()（基于 typesafe_sdk.TypeSafeClient），未展示任何实际的决策原语调用（如 choice/score/noul/systemOne/system_one 或 /v1/systemone HTTP 请求）。请补充各项目 app.py / engines.py 中执行 Jev 判断的具体文件路径、函数名及行号，以证明是真实可运行的 live API 调用而非仅文档提及。",
+      "reviewDetails": {
+        "verified": false,
+        "confidence": 0.6,
+        "reason": "现有代码证据仅包含 01-what-is-jev/jevlib.py 中的客户端工厂函数 client()/async_client()（基于 typesafe_sdk.TypeSafeClient），未展示任何实际的决策原语调用（如 choice/score/noul/systemOne/system_one 或 /v1/systemone HTTP 请求）。请补充各项目 app.py / engines.py 中执行 Jev 判断的具体文件路径、函数名及行号，以证明是真实可运行的 live API 调用而非仅文档提及。"
+      }
+    },
+    {
+      "repo": "h0j5bz0adh0-stack/jev-pilot",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/h0j5bz0adh0-stack/jev-pilot/blob/44d9d4bf435aaf90b46a203c6152240022a7380e/jev_pilot/client.py",
+      "sourceHash": "9d58d57bef2d2095280e0379605f4a957a1928cbad3a2fe98ec02016924c54ad",
+      "evidence": [
+        "# jev-pilot ⚡",
+        "[![PyPI Version](https://img.shields.io/pypi/v/jev-pilot.svg)](https://pypi.org/project/jev-pilot/)",
+        "[![Powered by TypeSafe Jev](https://img.shields.io/badge/Powered%20by-TypeSafe%20Jev-10b981.svg)](https://typesafe.ai)",
+        "## 💡 What is jev-pilot? (The Problem it Solves)",
+        "**jev-pilot** gives your agent a **System 1 (fast, calibrated intuition)** using TypeSafe's Jev model:",
+        "       [ System 1: jev-pilot ]       [ System 2: Big LLM ]",
+        "pip install jev-pilot",
+        "`jev-pilot` automatically resolves your API key in the following priority order:"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/h0j5bz0adh0-stack/jev-pilot/blob/44d9d4bf435aaf90b46a203c6152240022a7380e/README.md",
+          "hash": "2760e589771a48a59f1defa133da6180aff805bc5468e5c32302942f380cc17d"
+        }
+      ]
+    },
+    {
+      "repo": "ikashana/jev-dingtalk",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "Eric-Zhou-0302/jev-A-share-trader",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/Eric-Zhou-0302/jev-A-share-trader/blob/a7ad82306fbe8e0a2ef92a54f236684c7e4139d5/src/jev_trader/jev.py",
+      "sourceHash": "285f030741262d3432f03768670a5a86485ababf909fb354ad4ae63e6bca86b1",
+      "evidence": [
+        "<h1 align=\"center\">jev-A-share-trader</h1>",
+        "<p align=\"center\"><strong>基于 Jev 的 A 股技术分析工作台</strong></p>",
+        "  <a href=\"https://github.com/Eric-Zhou-0302/jev-A-share-trader/actions/workflows/ci.yml\"><img src=\"https://github.com/Eric-Zhou-0302/jev-A-share-trader/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a>",
+        "  <a href=\"https://github.com/Eric-Zhou-0302/jev-A-share-trader/tree/v0.1.1\"><img src=\"https://img.shields.io/badge/version-0.1.1-3d6047\" alt=\"v0.1.1\" /></a>",
+        "`jev-A-share-trader` 使用 AKShare 或 Tushare 获取 A 股行情，计算技术指标与形态证据，由 Jev 评估各个维度，再汇总为一个买入、持有或卖出判断。你可以分析一只股票、跟踪自选股，也可以批量扫描自己指定的沪深京 A 股列表。",
+        "git clone https://github.com/Eric-Zhou-0302/jev-A-share-trader.git",
+        "cd jev-A-share-trader",
+        "jev serve"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Eric-Zhou-0302/jev-A-share-trader/blob/a7ad82306fbe8e0a2ef92a54f236684c7e4139d5/README.md",
+          "hash": "fbdb1b46d6123d73ab9da0b4aaef9119ffbf3157730f7b807da8827adfc834a2"
+        }
+      ]
+    },
+    {
+      "repo": "mcftira/jev-route",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/mcftira/jev-route/blob/8e1e1d9a377d953d0cab4d4c64abe6de6d3aa5d1/src/jev_route/backends/jev.py",
+      "sourceHash": "9ddaf83033093d42e38a7dbe60eadcc751ccf4b622789e41cd8bf7ac916cdac4",
+      "evidence": [
+        "![jev-route](docs/banner.jpg)",
+        "# jev-route",
+        "jev-route is a router you run **today** on [TypeSafe Jev](https://typesafe.ai)'s calibrated",
+        "                      │ 3. redact    4. decide (jev | mock |          │",
+        "                        backend.name: jev  ────►  backend.name: distilled",
+        "design notes (\"Jev Engineering for Coding Agents\") argues the same thesis we",
+        "**LiteLLM native JEV classifier.** LiteLLM shipped a native complexity classifier, and platform-side complexity routing is a commodity now. What it does not have: a sensitivity layer, decision logging, distillation — and",
+        "- [Bootstrap on Jev](#bootstrap-on-jev)"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/mcftira/jev-route/blob/8e1e1d9a377d953d0cab4d4c64abe6de6d3aa5d1/README.md",
+          "hash": "b77d5efdf8e0d1f3e011ef47ab6f5f4e66f970b5bc82dcfa8be79fee3fadc8c9"
+        }
+      ]
+    },
+    {
+      "repo": "0xwhrari/grok-jev-guard",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/0xwhrari/grok-jev-guard/blob/6083fb0584ffc61857fac755447e93d121925b48/src/grok_jev_guard/jev.py",
+      "sourceHash": "3ca9e49c365e025a41b20f26ad240b057d0c7fc0c02117a7e1e4afb3f2265407",
+      "evidence": [
+        "  <img src=\"./media/banner.svg\" alt=\"Grok Bot × Jev Guard\" width=\"100%\" />",
+        "  Local policy owns hard boundaries. Jev judges ambiguity. Grok Bot executes inside the returned envelope.",
+        "  <img alt=\"TypeSafe Jev\" src=\"https://img.shields.io/badge/decision%20layer-TypeSafe%20Jev-111111?style=flat-square&labelColor=111111&color=25d64a\" />",
+        "`grok-jev-guard` sits immediately before a meaningful Grok Bot tool sequence. It receives a compact description of the pending operation and returns one explicit action:",
+        "| Jev | typed judgments about intent, approval expectation, destructive potential, scope fit and risk |",
+        "## Why another Grok Bot + Jev project?",
+        "Explicit high-consequence facts are evaluated locally **before the Jev SDK is imported**. A model answer cannot downgrade `publishes_external: true`, `financial_action: true`, `deletes_data: true`, a permission change, a",
+        "observed state → local hard gate → redaction → Jev judgments → action + limits"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/0xwhrari/grok-jev-guard/blob/6083fb0584ffc61857fac755447e93d121925b48/README.md",
+          "hash": "c7794d9fe124c66c1d9683c4e1f1f03ab24118f9b28b5fcf6a1eb66d60455998"
+        }
+      ]
+    },
+    {
+      "repo": "SupratikB23/JevCanvas",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "LiuHao-1443/jev-table-tennis",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/LiuHao-1443/jev-table-tennis/blob/7dabac437d9c52da1156e9c88204d0680c4d7c63/jev_eval_compare.py",
+      "sourceHash": "eae5c895116c49867cbb2b81da4c97b55d709b3bb1d77d4ea00a2545b523dcd3",
+      "evidence": [
+        "# Human vs JEV · Table Tennis",
+        "> Every single movement of the paddle on the right is decided live by [Jev](https://typesafe.ai),",
+        "You play on the left with a mouse; Jev plays on the right with its head.",
+        "                         │  POST /jev/decide  (state + question only)",
+        "              │  api.typesafe.ai                 │",
+        "| Where the ball will land, where to stand | **Jev** — whichever option it picks is where the paddle goes |",
+        "| Where to wait while the ball is not incoming | **Jev** |",
+        "| The arc of its serve | **Jev** (it picks an arc bucket) |"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/LiuHao-1443/jev-table-tennis/blob/7dabac437d9c52da1156e9c88204d0680c4d7c63/README.md",
+          "hash": "5545428cfd2eaffb4141e3f6ce9ce03553eb1abea574a4b2b8b5c2220430316b"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/LiuHao-1443/jev-table-tennis/blob/7dabac437d9c52da1156e9c88204d0680c4d7c63/README.zh-CN.md",
+          "hash": "8939daf3f26c4ca8f3932f1a62da42d386397d69410741efdb6d84cd1e5e57af"
+        }
+      ]
+    },
+    {
+      "repo": "chy4pro/jev-dev-kit",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "pjdurden/jevkit-js",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "zzz1YAO/DataJev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/zzz1YAO/DataJev/blob/b42d67c7f2034a802451615c7e60e2c39c174fc3/datajev/controllers/jev.py",
+      "sourceHash": "9feecaf0724ef59c3610ff2cc03f45397042156702332b0a1a52881dbaeb2b9a",
+      "evidence": [
+        "**Let LLMs analyze. Let Jev decide what to analyze next.**",
+        "- **Jev** controls the analytical trajectory.",
+        "    D --> E[Jev controller]",
+        "The controller is responsible for the next bounded decision. Jev sees a",
+        "TYPESAFE_API_KEY=...",
+        "  --controller jev \\",
+        "## The Jev decisions",
+        "Jev does not calculate correlations, write Python, perform statistical analysis,"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/zzz1YAO/DataJev/blob/b42d67c7f2034a802451615c7e60e2c39c174fc3/README.md",
+          "hash": "5ef2f874c5c665535e8d9607f82a4d474b5ce9165c352288d8fc98142aafa70b"
+        }
+      ]
+    },
+    {
+      "repo": "TOSUKUi/jev-bridge",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "Alpha-Harper-Franklin/jev-drive",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/Alpha-Harper-Franklin/jev-drive/blob/474228e19e50b56cf7b4a983580c81c163005c67/jev_drive/api.py",
+      "sourceHash": "cd77d83aaf785caf8432ca7ea9a48b472a93b84ea866b7d11b828ed9dd2fc76e",
+      "evidence": [
+        "# Jev + Autonomous Driving",
+        "JevDrive tests where Jev can help an existing driving policy choose **continue, observe, replan, or defer**. A local controller and feasibility checks own vehicle execution. Jev receives structured text; a separate visio",
+        "**Status: working research prototype.** The live Jev client, recorded-image comparison, response gate, and evaluation utilities are implemented. A 27-image GPU diagnostic has been run. CARLA/BeamNG closed-loop integratio",
+        "On 27 recorded simulator images from 9 source groups, using Qwen2.5-VL-7B on one RTX 4090 and Jev 1.13.0:",
+        "| Qwen description → Jev | 47 / 54 | 774 ms | 3,966 ms |",
+        "Each image has two candidate orderings. Caption generation is included in both caption pipelines. These workloads differ, and the timings do not establish equal task quality. Jev attempts included five HTTP 503 failures,",
+        "git clone https://github.com/Alpha-Harper-Franklin/jev-drive.git",
+        "cd jev-drive"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Alpha-Harper-Franklin/jev-drive/blob/474228e19e50b56cf7b4a983580c81c163005c67/README.md",
+          "hash": "b6c8692128c9b27d84fed7d62128094265295e09bd7f4d4368c2354f262dfdd8"
+        }
+      ]
+    },
+    {
+      "repo": "Dililianxice/jev-inner-speech-bci",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "g0runmezadam/what-is-jev",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "tubone24/jev-practice-speed",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/tubone24/jev-practice-speed/blob/442c54caf51de763f966dd9cf59865e28167b34e/src/core/jev-core.js",
+      "sourceHash": "7c1865544d2815d52a7d94d7ad55628c673cb89d94a18af007c01ee8f7a2b293",
+      "evidence": [
+        "# JEV SPEED",
+        "[TypeSafe AI's Jev](https://typesafe.ai/). The whole point of the app is to **measure and show",
+        "Jev's decision speed and decision accuracy in real time**.",
+        "You (26 red cards)  vs  Jev (26 black cards)",
+        "Jev is a **System One model** — it generates no text, and instead returns pre-defined typed",
+        "has Jev pick \"which move should I play right now?\" with a **choice**.",
+        "And crucially, **the final verdict on whether a move breaks the rules is not left to Jev** —",
+        "`public/js/rules.js` decides it mechanically. Even a move Jev called legal is always run through"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/tubone24/jev-practice-speed/blob/442c54caf51de763f966dd9cf59865e28167b34e/README.md",
+          "hash": "5467840ab63fb7932ded2cc9a2546b6c36140203acec078b4ecdc9da7b9ce918"
+        }
+      ]
+    },
+    {
+      "repo": "gaborishka/jev-wrapped",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/gaborishka/jev-wrapped/blob/c771f42aea93f8c1e75e5f8737faac142a843c66/shared/jev.js",
+      "sourceHash": "dc37ae139eb5c020271eb8684a6160ee752528782aaea0e8f81e2dbcc3298076",
+      "evidence": [
+        "# Jev Wrapped",
+        "Paste the name of a public Telegram channel and get a card: what the channel posts, how much of it is ads, clickbait and emotional pressure, and how the mix changed over the last twelve months. Every post is judged separ",
+        "A channel with about 1,500 posts takes 35 to 85 seconds, depending on the way to Jev, and costs about $0.10 at list price. The whole thing is one Cloudflare Worker and fits the free plan.",
+        "Requirements: Node 22 or newer and a key for Jev: from [TypeSafe](https://typesafe.ai) itself or from [OpenRouter](https://openrouter.ai/settings/keys).",
+        "git clone https://github.com/gaborishka/jev-wrapped.git",
+        "cd jev-wrapped",
+        "3. **Judging.** Each post with text goes to Jev in its own request with four typed questions (`shared/questions.js`): the kind of post (one of ten), is it a paid ad, does it use clickbait, does it push on emotions. HTTP ",
+        "The browser asks for up to four pages at a time (the plan says how many), which makes up to 24 Jev requests in flight, and shows every answer as it arrives. If a page comes back throttled, it goes to the end of the line "
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/gaborishka/jev-wrapped/blob/c771f42aea93f8c1e75e5f8737faac142a843c66/README.md",
+          "hash": "6e95194277230dfff35b7ecdb683696f5a9d7a25694732f50f3b4f5efefc1ef8"
+        }
+      ]
+    },
+    {
+      "repo": "llt22/jev-lab",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/llt22/jev-lab/blob/984586e2ce6c433979d49f835a5d72ed8c50a0bd/experiments/json-render-jev/src/demo.tsx",
+      "sourceHash": "13ed624cddf77c192cc1bfb998389a02a3982dbcb612bc7714efc7b1c38e0bc7",
+      "evidence": [
+        "# Awesome Jev Lab",
+        "> A curated map of **Jev / TypeSafe System One** resources, real-world use cases, and reproducible benchmarks.",
+        "[![Model](https://img.shields.io/badge/tested-jev--1.13.0-blueviolet)](https://docs.typesafe.ai/models)",
+        "Jev turns natural-language state into typed decisions: **Noul** for yes/no, **Choice** for selecting an option, and **Score** for ordered ratings. This repository combines an ecosystem guide with independent tests, raw a",
+        "| Understand Jev in five minutes | [TypeSafe Quick Start](https://docs.typesafe.ai/introduction/quickstart) |",
+        "| Check claims against measurements | [Jev Lab validation report](docs/jev-validation-2026-09-18.md) |",
+        "| Vercel AI Gateway | `typesafe-ai/jev` through AI SDK's evaluation API | [Vercel announcement](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |",
+        "| LangChain | Python and JS integration, model routing, and tool-risk middleware | [Integration guide](https://blog.langchain.com/building-a-harness-with-jev/) |"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/llt22/jev-lab/blob/984586e2ce6c433979d49f835a5d72ed8c50a0bd/README.md",
+          "hash": "b796893e268297807b9d902af351362de8bc595adefeea5a3ed46b5ce00df561"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/llt22/jev-lab/blob/984586e2ce6c433979d49f835a5d72ed8c50a0bd/README.zh-CN.md",
+          "hash": "249f24407da7d82bd76e3af7572ff7d4906471ab700fd0188a9b899138154c7d"
+        }
+      ]
+    },
+    {
+      "repo": "fellowship-dev/jev-second-brain",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "TomRichner/can-jev-bayes",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/TomRichner/can-jev-bayes/blob/e1514233f8d99f53bd49ea971a15078956496f82/src/jevbandits/client.py",
+      "sourceHash": "dba591f9c045e367ca542e6289cb5587f0175b4214097053f03eca68a90becb5",
+      "evidence": [
+        "# can-jev-bayes",
+        "Jev Bayes, No?",
+        "How well can Jev make sequential decisions under uncertainty, and how can Bayesian methods help it learn and act more effectively?",
+        "[Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's model for structured judgments and decisions. This project studies it on classic problems with well-understood Bayesian methods and, where computationally fea",
+        "Our central hypothesis is that **Bayesian-informed instructions and externally computed statistics can improve Jev's sequential decisions, with benefits that depend on the task, representation, and execution rule**. We t",
+        "- Instructions that explain the future value of exploration, and sampling from Jev's answer distribution, can change how it balances learning and immediate reward.",
+        "- Supplying Bayesian action values or recommendations can improve performance beyond statistical summaries alone, provided Jev can reliably use that advice.",
+        "Ten experiments and a batching validation are complete for `jev-1.13.0` on stationary Bernoulli bandits: **598,080 evaluation/control questions across fixed-state probes and 1,560 independent online environments**. Start"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/TomRichner/can-jev-bayes/blob/e1514233f8d99f53bd49ea971a15078956496f82/README.md",
+          "hash": "39489b85613631d49bbea6315eb319cb804dd51ced5480a88048cf145aaabdbd"
+        }
+      ]
+    },
+    {
+      "repo": "charetterat/awesome-jev-essentials",
+      "status": "rejected",
+      "reason": "mention-only directory"
+    },
+    {
+      "repo": "xienda/dsh-jev-verify",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/xienda/dsh-jev-verify/blob/b51687b67703ac9de77959a5602f681ebbffb4ca/lib/index.js",
+      "sourceHash": "f42165badb151e32873918b7ed5bfa448d8dc6277ebfc1530a699283503d3bc7",
+      "evidence": [
+        "# dsh-jev-verify",
+        "Jev — TypeSafe AI's **System One** decision model — as a first-class plugin for",
+        "Jev does not generate text. Given a \\`state\\` plus typed questions it returns",
+        "exfiltration, ...); risky-looking commands that pass it are judged by **Jev**",
+        "- without a \\`TYPESAFE_API_KEY\\`, tools and guard fail with explicit setup instructions (the guard fails open with a warning — it never silently pretends to have checked);",
+        "## Why Jev",
+        "TypeSafe AI (founded by Diogo Almeida, ex-OpenAI / ChatGPT research) released Jev",
+        "dsh plugin --profile web add dsh-jev-verify"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/xienda/dsh-jev-verify/blob/b51687b67703ac9de77959a5602f681ebbffb4ca/README.md",
+          "hash": "c60d2326f26373b25e2a451e09156fa6b3947870070feca606239bad4d2e9a25"
+        },
+        {
+          "path": "README.zh.md",
+          "url": "https://github.com/xienda/dsh-jev-verify/blob/b51687b67703ac9de77959a5602f681ebbffb4ca/README.zh.md",
+          "hash": "0b09350cd5fb7085250786272394caf5cb7bea2fd62e414ba6d8ce2098699da6"
+        }
+      ]
+    },
+    {
+      "repo": "DarioFontanel/jev-claude-code",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "lalitsonawane/jev-snake",
+      "status": "rejected",
+      "reason": "提交的材料中只提供了 src/app/api/jev-move/route.test.ts 测试文件，该文件用 mock 的 fetch 验证了对 https://api.typesafe.ai/v1/systemone 的调用意图和 AbortSignal 透传，但缺少真正执行 Jev 调用的实现文件 src/app/api/jev-move/route.ts 本体。请补充提供 route.ts 源码，需包含：读取 TYPESAFE_API_KEY、fetch POST 到 /v1/systemone（含 model: jev-latest、Choice criteria/legal_moves 构造）、解析 answers.move.choice/probabilities 并校验为合法方向的完整逻辑及行号引用，才能确认为真实功能集成而非仅文档和测试描述。",
+      "reviewDetails": {
+        "verified": false,
+        "confidence": 0.8,
+        "reason": "提交的材料中只提供了 src/app/api/jev-move/route.test.ts 测试文件，该文件用 mock 的 fetch 验证了对 https://api.typesafe.ai/v1/systemone 的调用意图和 AbortSignal 透传，但缺少真正执行 Jev 调用的实现文件 src/app/api/jev-move/route.ts 本体。请补充提供 route.ts 源码，需包含：读取 TYPESAFE_API_KEY、fetch POST 到 /v1/systemone（含 model: jev-latest、Choice criteria/legal_moves 构造）、解析 answers.move.choice/probabilities 并校验为合法方向的完整逻辑及行号引用，才能确认为真实功能集成而非仅文档和测试描述。"
+      }
+    },
+    {
+      "repo": "Tatuck/jev-boe-demo",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "miounet11/jevcode",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/miounet11/jevcode/blob/d25371563c422e26f20022236b30bc5141fe4b1e/scripts/jev-client.mjs",
+      "sourceHash": "da5d90a3d12abafaa671d8e2e6a2ad2537311bfd539d908513bbee3792a43c82",
+      "evidence": [
+        "**Jev 技术解决方案与最佳实践** — [www.jevcode.ai](https://www.jevcode.ai)",
+        "Jev 是 TypeSafe 的 System One 决策模型：你给它**状态 + 类型化问题**，它返回**可直接进代码的决策**（带置信度），不是聊天文案。",
+        "- 认识 Jev：https://www.jevcode.ai/zh/introduction/",
+        "## 自动化发布管线（Jev 做守门人）",
+        "本站的特色：**发布什么、何时发布、是否合格，由 Jev 判断**。整个循环对其他「判断模型 + 静态站」项目可直接参考：",
+        "  ├─ 3. Jev 门 ①    值得发布吗？（noul）→ 发到哪里？（choice）",
+        "  ├─ 5. Jev 门 ②    release 合格吗？（noul）→ 风险几分？（score 0-3）",
+        "1. **判断与生成分离**：Jev 只做门控（该不该/哪里/几时/风险），不生成内容——"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/miounet11/jevcode/blob/d25371563c422e26f20022236b30bc5141fe4b1e/README.md",
+          "hash": "3a379f0127b163f7adfd3fa67706e76ff654a7479f38659259f8a1a151fc1e72"
+        }
+      ]
+    },
+    {
+      "repo": "kongyo2/similarity-ts-jev",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "Omrigotlieb/awesome-jev",
+      "status": "rejected",
+      "reason": "mention-only directory"
+    },
+    {
+      "repo": "yanglei070-ux/bili-hardcore-jev",
+      "status": "rejected",
+      "reason": "提供的代码文件 bili_hardcore_jev.py 仅能看到内嵌的二维码生成器（QrCode / QrSegment 等）部分，未包含任何 JEV / TypeSafe 决策原语的真实调用（如 choice、score、noul、systemOne、@typesafe/jev、typesafe-ai、OpenRouter decisions 或 /v1/systemone HTTP 请求）。README 中虽描述了“交给 JEV 选答案”，但缺少可验证的代码证据。请补充包含 JEV API Key 读取、构造题目+选项请求、解析返回的选项与把握度、以及答题循环中调用的相关函数名和行号。",
+      "reviewDetails": {
+        "verified": false,
+        "confidence": 0.9,
+        "reason": "提供的代码文件 bili_hardcore_jev.py 仅能看到内嵌的二维码生成器（QrCode / QrSegment 等）部分，未包含任何 JEV / TypeSafe 决策原语的真实调用（如 choice、score、noul、systemOne、@typesafe/jev、typesafe-ai、OpenRouter decisions 或 /v1/systemone HTTP 请求）。README 中虽描述了“交给 JEV 选答案”，但缺少可验证的代码证据。请补充包含 JEV API Key 读取、构造题目+选项请求、解析返回的选项与把握度、以及答题循环中调用的相关函数名和行号。"
+      }
+    },
+    {
+      "repo": "maxlibin/jev-toto",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/maxlibin/jev-toto/blob/45e3aa53868ae6a161b775313ed7acee429fc171/src/jev.rs",
+      "sourceHash": "91bf0c77d0d00a8d7dfb793c89fa3219bafaf8b01969c0400c51f63837f167b2",
+      "evidence": [
+        "# jev-toto",
+        "A small Rust CLI that asks [TypeSafe's Jev](https://docs.typesafe.ai) model how your Singapore TOTO numbers look against the last 300 draws.",
+        "TOTO draws are random. Nothing here predicts the next draw. Jev is a calibrated judgement model, so what you get is its read on each number's recent statistics (how often it was drawn, how recently, how that compares wit",
+        "git clone https://github.com/maxlibin/jev-toto",
+        "cd jev-toto",
+        "export TYPESAFE_API_KEY=...   # from https://typesafe.ai",
+        "Counting and comparison happen in Rust, because Jev is documented as unreliable at arithmetic. Jev receives per-number facts plus plain-English labels and answers two questions per number in one request: a yes/no probabi",
+        "//! TypeSafe Jev client and request shaping."
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/maxlibin/jev-toto/blob/45e3aa53868ae6a161b775313ed7acee429fc171/README.md",
+          "hash": "5e63e5e4753ecf7ef532b9d0b24cb0ca0bfb18d9489950a8cd1ae74341312433"
+        }
+      ]
+    },
+    {
+      "repo": "arnab621/typesafe-jev-plugin",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/arnab621/typesafe-jev-plugin/blob/761f0652abe4543ab554e4ed35f8ec3772ec4409/scripts/typesafe_client.py",
+      "sourceHash": "6461d29bbb1c5614f851593ffd52a6b50a65831d896bc6b91bdce9a7506acab2",
+      "evidence": [
+        "# typesafe-jev-plugin",
+        "## What is TypeSafe Jev?",
+        "Jev from Typesafe.ai is a \"System One\" AI model that returns **typed, calibrated judgments** instead of generating text. You define what to classify (a Choice), score (a Score), or verify (a Noul), and Jev returns a stru",
+        "2. **Run a dataset** — point the signature JSON at a CSV or Excel file; the plugin calls Jev for every row (for excel/csv data) and writes results back based on your output template signature.",
+        "/plugin install /path/to/typesafe-jev-plugin",
+        "cc --plugin-dir /path/to/typesafe-jev-plugin",
+        "You should see `typesafe-jev-plugin` listed with two skills: `create-signature` and `run-dataset`.",
+        "export TYPESAFE_API_KEY=your-key-here"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/arnab621/typesafe-jev-plugin/blob/761f0652abe4543ab554e4ed35f8ec3772ec4409/README.md",
+          "hash": "3275e6f747433e52813327f48b563c8ff0e7406d52948ca91f0fa2f04212e8a9"
+        }
+      ]
+    },
+    {
+      "repo": "saksham-malhotra-27/jev-relevance",
+      "status": "rejected",
+      "reason": "no implementation source evidence"
+    },
+    {
+      "repo": "darthblanc/tictacjev",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/darthblanc/tictacjev/blob/6b00b6226e60398e334425f5a215445fbf227799/backend/app/jev_client.py",
+      "sourceHash": "7baa672c8bda5f02ac5ca1cf190ff417c804b55095790c1f3e86de88c821fec2",
+      "evidence": [
+        "# Tic Tac Jev",
+        "Tic-tac-toe, but every move for one side comes from [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev), a System One Model built for fast, structured decisions — unstructured state in, typed probabilis",
+        "Each Jev move is a structured, typed decision, not free-form text. The backend hands Jev the board as a `Choice` question — one labeled criterion per open cell (\"center\", \"top-right corner\", etc.) — and gets back a chose",
+        "It's a small decision space — 9 cells, at most 8 legal moves at any turn — which makes Jev's reasoning easy to watch end to end, move by move.",
+        "![Jev move expanded with probability bars](assets/screenshot-3.png)",
+        "- `POST /games/{id}/moves` submits a human move, then — if the game isn't over — asks Jev for its move.",
+        "- On each Jev turn, `JevClient.choose_move` (`backend/app/jev_client.py`) builds a `Choice` question whose criteria are only the currently-empty cells, sends the board as natural-language state, and gets back a `ChoiceAn",
+        "- The full move history — including Jev's confidence and per-cell probabilities — is kept on the game state and returned to the frontend, which renders it live in the move log."
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/darthblanc/tictacjev/blob/6b00b6226e60398e334425f5a215445fbf227799/README.md",
+          "hash": "b92f4ec8abf8891f8ec9f77b9be1d49a082fb438f422bff591dbd68bc1179f4e"
+        }
+      ]
+    },
+    {
+      "repo": "lianghsun/jev-tmmluplus-eval",
+      "status": "accepted",
+      "sourceUrl": "https://github.com/lianghsun/jev-tmmluplus-eval/blob/d5544a7507882c35ed8acebbf62fd464643c3afe/src/jev_tmmlu/client.py",
+      "sourceHash": "17763f7d436e8c068ba70ae3dcca182050ff5e1253948994a6ef6fe685da018a",
+      "evidence": [
+        "# jev-tmmluplus-eval",
+        "Sit **[Jev](https://typesafe.ai)** — TypeSafe AI's *System One Model* — for",
+        "Every question is put to Jev as **one four-way choice (A/B/C/D)**.",
+        "## Why Jev makes this benchmark unusual",
+        "Jev is not a chat model. You hand it a `state` plus a map of typed questions, and it",
+        "  \"model\": \"jev-latest\",",
+        "  \"model\": \"jev-1.13.0\",",
+        "Jev cannot answer \"E\", cannot refuse, and cannot bury the answer in prose. Off-schema"
+      ],
+      "readmeSources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/lianghsun/jev-tmmluplus-eval/blob/d5544a7507882c35ed8acebbf62fd464643c3afe/README.md",
+          "hash": "31c0951e289db347896dd038e7e7c64ae8adc4fa77cf37fc99e1206db80c128c"
+        }
+      ]
+    }
+  ]
+}
