@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-625%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-626%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@
 **TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：
 - ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
-- 🛡️ **严格拒绝概念炒作**：全网严选 **625+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
+- 🛡️ **严格拒绝概念炒作**：全网严选 **626+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
 ### 📊 架构分工对比：System 1 (Jev) vs System 2 (大推理模型)
 
@@ -50,7 +50,7 @@
 - ⚡ **毫秒级吸顶搜索与浮动过滤**：即便页面下滑，也可随时唤出浮动分类面板，支持多标签一键点选过滤。
 - 🔍 **100% 绑定固定源码**：所有收录项目均核验真实 commit SHA 与具体接入点，绝无空气包装与死链。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **625 个精选项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **626 个精选项目**
 
 由社区维护的 Jev 项目与架构雷达，收录具有公开源码与清晰集成逻辑的开源项目，帮助开发者快速探索和落地 System-1 决策架构。
 
@@ -91,7 +91,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
 - [游戏与实时决策 (46)](https://logicrw.github.io/awesome-jev-projects/categories/high-frequency-simulation/)
 - [MCP 与集成 (40)](https://logicrw.github.io/awesome-jev-projects/categories/mcp-integrations/)
-- [模型路由与降本 (49)](https://logicrw.github.io/awesome-jev-projects/categories/routing-cost-optimization/)
+- [模型路由与降本 (50)](https://logicrw.github.io/awesome-jev-projects/categories/routing-cost-optimization/)
 - [SDK 与决策框架 (110)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-decision-frameworks/)
 - [SDK 与兼容接入 (6)](https://logicrw.github.io/awesome-jev-projects/categories/sdk-integrations/)
 - [安全与内容审核 (53)](https://logicrw.github.io/awesome-jev-projects/categories/security-guardrails/)
@@ -2239,6 +2239,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 根据轨迹证据判断是否存在真实问题及下一步难度，以选择 cheap/mid/strong 路由层级和继续/委托/派生等控制器动作。
   - **这个项目的用途**: 把语义判断接到已有的命令行工作流。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/vizuh/sabi/) · 许可证: MIT
+
+- [**stuntd**](https://github.com/bladedevoff/stuntd) — stuntd 是一个本地代理，用于记录应用向 Jev 兼容服务或 OpenAI 兼容服务发出的类型化决策请求，并为每个决策点在冻结的 Laya 编码器上训练小的模型头，在置信度足够时本地作答，否则回退到上游服务。
+  - **Jev 在哪一步做判断**: Jev 负责回答每个请求中的 Choice 分类、Score 评分和 Noul 是否判断，运行时再决定由本地训练头还是上游提供者回答。
+  - **这个项目的用途**: 在现有程序中复用接入代码，减少重复处理接口细节。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/bladedevoff/stuntd/) · 许可证: Apache-2.0
 
 - [**pi-jev-router**](https://github.com/mejiasd3v/pi-jev-router) — 面向 Pi 编程助手的自动模型路由器：通过 Vercel AI Gateway 集成 Jev，自动为不同编码任务分配合适模型。
   - **Jev 在哪一步做判断**: 根据当前代码上下文与用户提问快速评估难度，动态选择小模型或前沿模型处理。

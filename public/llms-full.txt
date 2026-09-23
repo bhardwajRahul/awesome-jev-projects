@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 625
+Catalog entries: 626
 
 ## Install the Agent Skill
 
@@ -8903,3 +8903,24 @@ Local Telegram filter stores channel messages locally and sends them in batches 
 - Source evidence: https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/README.md
 - Source evidence: https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/README.md
 - Source evidence: https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/server/jev.py
+
+## stuntd
+
+Local proxy that learns your app's typed LLM decisions and answers them with a Laya head. Jev and OpenAI compatible.
+
+- Repository: https://github.com/bladedevoff/stuntd
+- Category: Routing & Cost Optimization
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/bladedevoff/stuntd/
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/README.md
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/proxy/jev.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/__init__.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/schema.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/site.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/__init__.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/answer.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/schema.py
+- Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/state.py

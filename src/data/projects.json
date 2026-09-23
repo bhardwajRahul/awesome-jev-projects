@@ -55724,5 +55724,135 @@
       "issueBodySha256": "bbae8b737f1d591a4b60888b5f34bb88fe08710e970cac4b41020423e231875c",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/80"
     }
+  },
+  {
+    "id": "bladedevoff:stuntd",
+    "name": "stuntd",
+    "author": "bladedevoff",
+    "url": "https://github.com/bladedevoff/stuntd",
+    "repoId": 1382518952,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "stuntd 是一个本地代理，用于记录应用向 Jev 兼容服务或 OpenAI 兼容服务发出的类型化决策请求，并为每个决策点在冻结的 Laya 编码器上训练小的模型头，在置信度足够时本地作答，否则回退到上游服务。",
+    "jevDecisionPoint": "Jev 负责回答每个请求中的 Choice 分类、Score 评分和 Noul 是否判断，运行时再决定由本地训练头还是上游提供者回答。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions",
+      "coding-agents"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Local proxy that learns your app's typed LLM decisions and answers them with a Laya head. Jev and OpenAI compatible.",
+    "stars": 15,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-23T00:46:32Z",
+    "lastCommitAt": "2026-09-23T01:47:02Z",
+    "headSha": "ee218f52eda33d9f9afda6b9cf4924fb52862b69",
+    "metadataFetchedAt": "2026-09-23T14:38:23.190Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/99643174?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T14:38:23.190Z",
+    "evidence": [
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/proxy/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/schema.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/site.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/answer.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/schema.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/state.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "ee218f52eda33d9f9afda6b9cf4924fb52862b69",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/README.md",
+          "hash": "1b720d813423ba031e61474f9d3abca0610634fb24b200f58c79cd1ce9cf9a58"
+        },
+        {
+          "path": "stuntd/proxy/jev.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/proxy/jev.py",
+          "hash": "783dd584c2cbdb9611ef658141c0692e2babbe4700be8bf0d07d9a8c3fdd9cad"
+        },
+        {
+          "path": "stuntd/decisions/__init__.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/__init__.py",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "stuntd/decisions/schema.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/schema.py",
+          "hash": "81b8e15041661e84f90dfe756f385ac444e786fd0b99cedf2eaee5e553d16b91"
+        },
+        {
+          "path": "stuntd/decisions/site.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/decisions/site.py",
+          "hash": "0d32cdac5ce746fb0acdd495a3b8b9823e8c7fd16f90d248714530e76d731cf4"
+        },
+        {
+          "path": "stuntd/jev/__init__.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/__init__.py",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "stuntd/jev/answer.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/answer.py",
+          "hash": "97c83949c038954c6ecfc3c81a2725e994fada46325daabd2ca5dc7b895d75bf"
+        },
+        {
+          "path": "stuntd/jev/schema.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/schema.py",
+          "hash": "34845d5f5404f12f4b9c4906741acdaeff5f9b03d6f581f1593fee1f213eb3bd"
+        },
+        {
+          "path": "stuntd/jev/state.py",
+          "url": "https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/state.py",
+          "hash": "b1e4b6455b02c67a5fbed26019288118d574389c0cc02d68f6d0bb8a30aae3ff"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 81,
+      "issueBodySha256": "8369f5c50145f0fd8258ed1e86738d61162a5c03dd69ae2d38d7d85e990d4e43",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/81"
+    }
   }
 ]
