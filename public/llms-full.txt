@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 595
+Catalog entries: 596
 
 ## Install the Agent Skill
 
@@ -8502,3 +8502,24 @@ Session-aware OpenAI-compatible model-routing gateway powered by JEV
 - Source evidence: https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/catalog.py
 - Source evidence: https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/config.py
 - Source evidence: https://github.com/TexasOct/jev-gateway/blob/fdeb380c17cfd663e8227276f60ce917aab755a3/jev_gateway/logging/__init__.py
+
+## jev-research-pipeline
+
+\*\*Code owns the loop, Jev judges, Qwen writes: a daily research monitor for standing questions.\*\*
+
+- Repository: https://github.com/shimo4228/jev-research-pipeline
+- Category: Data & Search
+- Jev decision: For each (fetched source, open research question) pair, Jev answers Noul gates (on topic, method transferable, evidence compatible) and then Score dimensions through Pydantic AI's native \`typesafe:\` model; deterministic code applies the thresholds and routes each pair to keep / review / drop.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/shimo4228/jev-research-pipeline/
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/README.md
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/jev/core.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/__init__.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/document.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/jsonld.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/nodes.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/qwen/client.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/__init__.py
+- Source evidence: https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/adapters/__init__.py

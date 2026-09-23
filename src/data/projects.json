@@ -53463,5 +53463,134 @@
       "issueBodySha256": "64372e8b12d3cb95f518b52c9af490978c5dbbb49357b8eb7d9dee62bb10d69a",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/77"
     }
+  },
+  {
+    "id": "shimo4228:jev-research-pipeline",
+    "name": "jev-research-pipeline",
+    "author": "shimo4228",
+    "url": "https://github.com/shimo4228/jev-research-pipeline",
+    "repoId": 1382992172,
+    "category": "Data & Search",
+    "plainSummary": "该项目是一个每日研究监测管道，确定性 Python 控制流程，TypeSafe Jev 按研究问题筛选来源，Qwen 撰写 Obsidian 笔记。",
+    "jevDecisionPoint": "对每个（抓取来源、开放研究问题）二元组，Jev 先回答是否相关/方法可迁移/证据兼容等 Noul 门控，再给出加权 Score 维度，由代码按阈值路由到保留/待审/丢弃。",
+    "jevDecisionPointEn": "For each (fetched source, open research question) pair, Jev answers Noul gates (on topic, method transferable, evidence compatible) and then Score dimensions through Pydantic AI's native `typesafe:` model; deterministic code applies the thresholds and routes each pair to keep / review / drop.",
+    "highlightBenefit": "增加一组可记录、可对照的判断信号。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "cli-git-gates"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "**Code owns the loop, Jev judges, Qwen writes: a daily research monitor for standing questions.**",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-23T07:43:42Z",
+    "lastCommitAt": "2026-09-23T07:43:28Z",
+    "headSha": "0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe",
+    "metadataFetchedAt": "2026-09-23T07:52:59.609Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/54734315?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T07:52:59.609Z",
+    "evidence": [
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/jev/core.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/document.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/jsonld.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/nodes.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/qwen/client.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/adapters/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/README.md",
+          "hash": "5dd887ae1fa62b4066e7422e4d6f9d6c6c53c03fdd747ebafa03f4b591314bb8"
+        },
+        {
+          "path": "src/jev_research_pipeline/jev/core.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/jev/core.py",
+          "hash": "30f0c5dd31328b4f99f09e2fc5bcec18c66ee4faaadd4671b5ef75cf8feff438"
+        },
+        {
+          "path": "src/jev_research_pipeline/model/__init__.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/__init__.py",
+          "hash": "1dfc0610da038d0d94456e3cfd7ae92d8d90279eaa1b76e879265bbeaba0896a"
+        },
+        {
+          "path": "src/jev_research_pipeline/model/document.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/document.py",
+          "hash": "4e120f5978176cb397d73f167947e5a3ceabe78b01dd80cff8f3aa5b30ffe68c"
+        },
+        {
+          "path": "src/jev_research_pipeline/model/jsonld.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/jsonld.py",
+          "hash": "f3c51ae513a56c1da5bfd7ae5611aa8ea8fc8bd57b88703bfb347e7ecfa993da"
+        },
+        {
+          "path": "src/jev_research_pipeline/model/nodes.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/model/nodes.py",
+          "hash": "1b4335517e7a79408b554eb2420933cc3b60ae6d960a9a9f07558b647b917a3c"
+        },
+        {
+          "path": "src/jev_research_pipeline/qwen/client.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/qwen/client.py",
+          "hash": "6db0a9e30a417dd826acbc0ca9f151fdd034f66fd5fa399b0ae2a5468ad8629f"
+        },
+        {
+          "path": "src/jev_research_pipeline/__init__.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/__init__.py",
+          "hash": "f03c7be353bad40010eb53590eabf65f3552d24d5452af6614020456bfec90ea"
+        },
+        {
+          "path": "src/jev_research_pipeline/adapters/__init__.py",
+          "url": "https://github.com/shimo4228/jev-research-pipeline/blob/0927707f29b23dc98bf5b5a5aa8cc7395dab2ffe/src/jev_research_pipeline/adapters/__init__.py",
+          "hash": "3be534384a77c93829d6f94339dc2fb3974f48e1a6aa2e40f824fce0c8bea024"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 78,
+      "issueBodySha256": "1f00fd0d9e4475f1fbf7a0ccb473dff26b45df9eaf6774f383111fa27db3cc9e",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/78"
+    }
   }
 ]
