@@ -55649,5 +55649,80 @@
       ]
     },
     "sourceHash": "202d75dcd16e86b3e9310e5d9251690fccc0f5ba68bc858cd5c85a6a21dbf193"
+  },
+  {
+    "id": "wing9897:jev.tg",
+    "name": "jev.tg",
+    "author": "Wing9897",
+    "url": "https://github.com/Wing9897/jev.tg",
+    "repoId": 1383061718,
+    "category": "Context GC & Filter",
+    "plainSummary": "Laya 是選用本機模型，權重不在這個 repo。需要時再裝，第一次判斷才會下載：",
+    "jevDecisionPoint": "Jev 对每批 Telegram 消息逐条判断是否符合用户自然语言条件，并对整批进行类型分类。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "context-compaction",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Local Telegram filter stores channel messages locally and sends them in batches to Jev or a local model to keep only messages matching natural-language conditions.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-23T08:31:40Z",
+    "lastCommitAt": "2026-09-23T12:05:32Z",
+    "headSha": "a1b46138231df1c8772c5a789b578b00519bc4ce",
+    "metadataFetchedAt": "2026-09-23T12:26:21.035Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/108944765?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T12:26:21.035Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/server/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "a1b46138231df1c8772c5a789b578b00519bc4ce",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/README.md",
+          "hash": "9f3b231bf97f375669688cf3875dbaff653143232adaf1750861f1ec01a007ee"
+        },
+        {
+          "path": "README.md",
+          "url": "https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/README.md",
+          "hash": "9f3b231bf97f375669688cf3875dbaff653143232adaf1750861f1ec01a007ee"
+        },
+        {
+          "path": "server/jev.py",
+          "url": "https://github.com/Wing9897/jev.tg/blob/a1b46138231df1c8772c5a789b578b00519bc4ce/server/jev.py",
+          "hash": "9c6ea4104ddb86af4cd932b6dad64afecea04b851b5dff7e1273eb815d545672"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 80,
+      "issueBodySha256": "bbae8b737f1d591a4b60888b5f34bb88fe08710e970cac4b41020423e231875c",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/80"
+    }
   }
 ]

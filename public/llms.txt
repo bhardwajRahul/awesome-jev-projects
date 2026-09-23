@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 597
+Catalog entries: 625
 
 ## Install the Agent Skill
 
@@ -31,22 +31,22 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Korean](https://logicrw.github.io/awesome-jev-projects/ko/catalog/)
 
 ## Categories
-- [Browser & OS Action](https://logicrw.github.io/awesome-jev-projects/en/categories/browser-os-action/): 42
-- [CLI & Pipelines](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/): 51
+- [Browser & OS Action](https://logicrw.github.io/awesome-jev-projects/en/categories/browser-os-action/): 45
+- [CLI & Pipelines](https://logicrw.github.io/awesome-jev-projects/en/categories/cli-pipelines/): 53
 - [Classification & Taxonomy](https://logicrw.github.io/awesome-jev-projects/en/categories/classification-taxonomy/): 2
 - [Codebase & Graph Pathfinding](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/): 14
-- [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 34
+- [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 36
 - [Creative Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/): 19
-- [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 36
+- [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 39
 - [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 25
-- [Domain & Vertical Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/): 52
+- [Domain & Vertical Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/): 55
 - [Evaluation & Observability](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/): 29
-- [High-Frequency & Simulation](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/): 45
-- [MCP & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/mcp-integrations/): 39
-- [Routing & Cost Optimization](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/): 48
-- [SDK & Decision Frameworks](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/): 102
+- [High-Frequency & Simulation](https://logicrw.github.io/awesome-jev-projects/en/categories/high-frequency-simulation/): 46
+- [MCP & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/mcp-integrations/): 40
+- [Routing & Cost Optimization](https://logicrw.github.io/awesome-jev-projects/en/categories/routing-cost-optimization/): 49
+- [SDK & Decision Frameworks](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-decision-frameworks/): 110
 - [SDK & Integrations](https://logicrw.github.io/awesome-jev-projects/en/categories/sdk-integrations/): 6
-- [Security & Guardrails](https://logicrw.github.io/awesome-jev-projects/en/categories/security-guardrails/): 49
+- [Security & Guardrails](https://logicrw.github.io/awesome-jev-projects/en/categories/security-guardrails/): 53
 - [Voice & Conversation](https://logicrw.github.io/awesome-jev-projects/en/categories/voice-conversation/): 4
 
 ## Sponsorship · Paid placements
