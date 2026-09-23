@@ -55854,5 +55854,80 @@
       "issueBodySha256": "8369f5c50145f0fd8258ed1e86738d61162a5c03dd69ae2d38d7d85e990d4e43",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/81"
     }
+  },
+  {
+    "id": "allebee:jevk5",
+    "name": "jevk5",
+    "author": "allebee",
+    "url": "https://github.com/allebee/jevk5",
+    "repoId": 1381765937,
+    "category": "High-Frequency & Simulation",
+    "plainSummary": "该项目是一个开放决策模型，对给定状态返回 noul、choice 和 score 等类型化答案及其概率，并提供让 Jev 与该模型在相同棋盘和问题上直接对比的俄罗斯方块程序。",
+    "jevDecisionPoint": "Jev 在每一步 Tetris 落子时，从所有合法摆放描述中以 choice 类型决策选出最佳 placement。",
+    "jevDecisionPointEn": "Disclosure, so the listing is accurate: this project is primarily an **open alternative** to Jev (it is ranked second of 76 on JevBench v1.4, behind Jev itself), not an application built on top of Jev. Its Jev integration is the comparison harness above and the shared wire format. If the directory is only for projects that consume Jev, please close this — no hard feelings.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "games-simulation",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "An open model that answers the same typed questions Jev answers — yes/no, choice, score — in one forward pass with zero generated tokens (~13 ms on an H100), plus a head-to-head harness that puts Jev and the open model on the identical board and question so the two can be compared directly. It serves TypeSafe's `/v1/systemone` wire format, so a Jev client can point at it unchanged.",
+    "stars": 5,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-22T14:58:40Z",
+    "lastCommitAt": "2026-09-23T15:02:50Z",
+    "headSha": "708556582fb419e9038e2f7f654f2805daddc4ba",
+    "metadataFetchedAt": "2026-09-23T15:04:15.400Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/108667115?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T15:04:15.400Z",
+    "evidence": [
+      {
+        "url": "https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/jevk5/server.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/examples/tetris.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "708556582fb419e9038e2f7f654f2805daddc4ba",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/README.md",
+          "hash": "051d3a65d2307beda6d0ac1dc42d2b5458df928f67b931cec9462eafd80ced8f"
+        },
+        {
+          "path": "jevk5/server.py",
+          "url": "https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/jevk5/server.py",
+          "hash": "2ebde38db58a1603ee390f72eb8737d5e969003973788640fa0e1edd58d75977"
+        },
+        {
+          "path": "examples/tetris.py",
+          "url": "https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/examples/tetris.py",
+          "hash": "9c03eda29cb28c7e7a68703aa6812b32a8bf7a284416406c840095b29feac9a0"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 83,
+      "issueBodySha256": "bdd4ebc39af9ff42cf56443ab31651f2a86517cf3b9eb168a4f5be892a5a18d4",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/83"
+    }
   }
 ]

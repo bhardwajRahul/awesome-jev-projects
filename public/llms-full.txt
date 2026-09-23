@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 626
+Catalog entries: 627
 
 ## Install the Agent Skill
 
@@ -8924,3 +8924,18 @@ Local proxy that learns your app's typed LLM decisions and answers them with a L
 - Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/answer.py
 - Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/schema.py
 - Source evidence: https://github.com/bladedevoff/stuntd/blob/ee218f52eda33d9f9afda6b9cf4924fb52862b69/stuntd/jev/state.py
+
+## jevk5
+
+An open model that answers the same typed questions Jev answers — yes/no, choice, score — in one forward pass with zero generated tokens (~13 ms on an H100), plus a head-to-head harness that puts Jev and the open model on the identical board and question so the two can be compared directly. It serves TypeSafe's \`/v1/systemone\` wire format, so a Jev client can point at it unchanged.
+
+- Repository: https://github.com/allebee/jevk5
+- Category: High-Frequency & Simulation
+- Jev decision: Disclosure, so the listing is accurate: this project is primarily an \*\*open alternative\*\* to Jev (it is ranked second of 76 on JevBench v1.4, behind Jev itself), not an application built on top of Jev. Its Jev integration is the comparison harness above and the shared wire format. If the directory is only for projects that consume Jev, please close this — no hard feelings.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/allebee/jevk5/
+- Source evidence: https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/README.md
+- Source evidence: https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/jevk5/server.py
+- Source evidence: https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/examples/tetris.py
