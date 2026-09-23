@@ -50570,5 +50570,125 @@
       "issueBodySha256": "6b1b8b9edfe1ee1f2593456a9c6c56ee106a6ba43e1c6a996baba0f734f3228a",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/74"
     }
+  },
+  {
+    "id": "pc418:jev-calculator",
+    "name": "jev-calculator",
+    "author": "pc418",
+    "url": "https://github.com/pc418/jev-calculator",
+    "repoId": 1382464655,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "这是一个由 Jev 逐字选择答案字符并展示每步概率分布的计算器。",
+    "jevDecisionPoint": "Jev 在每一步根据算式和已生成前缀，从13个字符选项中决定下一个输出字符。",
+    "jevDecisionPointEn": "Do the calculation in a probalistic way. Select digit one at a time.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Vars live in `wrangler.jsonc`: `JEV_BASE_URL` / `JEV_MODEL` (gateway), `TYPESAFE_BASE_URL` /\n`TYPESAFE_MODEL` (direct fallback), `TURNSTILE_SITEKEY`, `TURNSTILE_HOSTNAMES`, `JEV_DISABLED` (kill\nswitch). Rate limits are Workers Rate Limiting bindings: `API_LIMIT` per IP and `FALLBACK_LIMIT` for\nthe direct route as a whole.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-22T23:28:16Z",
+    "lastCommitAt": "2026-09-23T00:36:21Z",
+    "headSha": "1aae2c4d2777ea7f646e3290cba4941bb27967de",
+    "metadataFetchedAt": "2026-09-23T02:45:47.812Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/271863285?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T02:45:47.812Z",
+    "evidence": [
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/worker/jev.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/columns.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/keypad.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/main.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/runner.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/sparkline.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/shared/expression.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "1aae2c4d2777ea7f646e3290cba4941bb27967de",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/README.md",
+          "hash": "e3d96780462bafa98ff9d6816e4570282fe911a9f10d9b87113c14fd0857423e"
+        },
+        {
+          "path": "worker/jev.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/worker/jev.ts",
+          "hash": "ade3e883790acead1c96f42d26602fd073bd8b242d3d00517e769a464918490a"
+        },
+        {
+          "path": "src/columns.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/columns.ts",
+          "hash": "f96e81a06be513a867654398bf3060757d948ca67a0104862313702b8a992bfc"
+        },
+        {
+          "path": "src/keypad.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/keypad.ts",
+          "hash": "514bd301026f51331c4b84ebfd50753900a084586c1ff3678ae2f1b0734b963b"
+        },
+        {
+          "path": "src/main.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/main.ts",
+          "hash": "2d5829071689610213ef33109b0fbeb691739600b583cf5b17b6a84e79a2261e"
+        },
+        {
+          "path": "src/runner.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/runner.ts",
+          "hash": "3679ca6b641e2271c28cb75045edef5690ee4f6c738204ba7775e0616b32432c"
+        },
+        {
+          "path": "src/sparkline.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/sparkline.ts",
+          "hash": "270b09c834944da3b23746c921c6f2e023bbb24976c43facdfe651fb0935a7a8"
+        },
+        {
+          "path": "shared/expression.ts",
+          "url": "https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/shared/expression.ts",
+          "hash": "2ad07dcc6caa3b497b3bc040fe3ef68c6a6d72042b4207fe5c8d686933383882"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 75,
+      "issueBodySha256": "63b401a123233fe72a0c11e19a8f16e8d34bac826ca9772c225a5c16304a9c8f",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/75"
+    }
   }
 ]

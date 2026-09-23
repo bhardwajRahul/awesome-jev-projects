@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 556
+Catalog entries: 557
 
 ## Install the Agent Skill
 
@@ -7980,3 +7980,23 @@ Adaptive inference scheduling for AI agents — per-round model, effort and prov
 - Source evidence: https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/agents.ts
 - Source evidence: https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/model-health.ts
 - Source evidence: https://github.com/vizuh/sabi/blob/208ee753f7598514d0de2ec8966d31b70766bc01/packages/controller/src/service.ts
+
+## jev-calculator
+
+Vars live in \`wrangler.jsonc\`: \`JEV\_BASE\_URL\` / \`JEV\_MODEL\` (gateway), \`TYPESAFE\_BASE\_URL\` / \`TYPESAFE\_MODEL\` (direct fallback), \`TURNSTILE\_SITEKEY\`, \`TURNSTILE\_HOSTNAMES\`, \`JEV\_DISABLED\` (kill switch). Rate limits are Workers Rate Limiting bindings: \`API\_LIMIT\` per IP and \`FALLBACK\_LIMIT\` for the direct route as a whole.
+
+- Repository: https://github.com/pc418/jev-calculator
+- Category: Domain & Vertical Tools
+- Jev decision: Do the calculation in a probalistic way. Select digit one at a time.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/pc418/jev-calculator/
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/README.md
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/worker/jev.ts
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/columns.ts
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/keypad.ts
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/main.ts
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/runner.ts
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/src/sparkline.ts
+- Source evidence: https://github.com/pc418/jev-calculator/blob/1aae2c4d2777ea7f646e3290cba4941bb27967de/shared/expression.ts
