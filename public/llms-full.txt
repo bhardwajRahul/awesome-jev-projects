@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 627
+Catalog entries: 628
 
 ## Install the Agent Skill
 
@@ -8939,3 +8939,17 @@ An open model that answers the same typed questions Jev answers — yes/no, choi
 - Source evidence: https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/README.md
 - Source evidence: https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/jevk5/server.py
 - Source evidence: https://github.com/allebee/jevk5/blob/708556582fb419e9038e2f7f654f2805daddc4ba/examples/tetris.py
+
+## jev-retrieval
+
+Grep-shaped Rust CLI for coding agents that finds files matching a plain-language concept: a local BM25 pass recalls candidates, Jev verifies each file window-by-window with Noul gates, and one listwise Choice per lane reranks the kept files into \`path:line score\` output with calibrated probabilities. (Author-submitted: I am the maintainer.)
+
+- Repository: https://github.com/romeromarcelo/jev-retrieval
+- Category: Data & Search
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/romeromarcelo/jev-retrieval/
+- Source evidence: https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/README.md
+- Source evidence: https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/src/jev/client.rs

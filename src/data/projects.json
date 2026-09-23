@@ -55929,5 +55929,71 @@
       "issueBodySha256": "bdd4ebc39af9ff42cf56443ab31651f2a86517cf3b9eb168a4f5be892a5a18d4",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/83"
     }
+  },
+  {
+    "id": "romeromarcelo:jev-retrieval",
+    "name": "jev-retrieval",
+    "author": "romeromarcelo",
+    "url": "https://github.com/romeromarcelo/jev-retrieval",
+    "repoId": 1382485504,
+    "category": "Data & Search",
+    "plainSummary": "这是一个用 Rust 编写的代码与文档检索命令行工具，先用本地 BM25 召回候选文件，再用 Jev 的 Noul 逐窗口验证相关性，最后用 Choice 重排并输出带分数的文件路径与行号。",
+    "jevDecisionPoint": "Jev 对每个候选文件的文本窗口做 Noul 二元相关性门禁过滤，再用每通道一次的 Choice 多选一重排确定最终文件排序和校准分数。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Grep-shaped Rust CLI for coding agents that finds files matching a plain-language concept: a local BM25 pass recalls candidates, Jev verifies each file window-by-window with Noul gates, and one listwise Choice per lane reranks the kept files into `path:line  score` output with calibrated probabilities. (Author-submitted: I am the maintainer.)",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-23T00:00:25Z",
+    "lastCommitAt": "2026-09-23T16:17:55Z",
+    "headSha": "d6af3725276b1dae65b43272b9df5357b5b6c017",
+    "metadataFetchedAt": "2026-09-23T16:21:38.019Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/31069339?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-23T16:21:38.019Z",
+    "evidence": [
+      {
+        "url": "https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/src/jev/client.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "d6af3725276b1dae65b43272b9df5357b5b6c017",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/README.md",
+          "hash": "7ff6b743b193c4a1bef0725c6ff439b2e9428688bff3bdd82210320538cb99a1"
+        },
+        {
+          "path": "src/jev/client.rs",
+          "url": "https://github.com/romeromarcelo/jev-retrieval/blob/d6af3725276b1dae65b43272b9df5357b5b6c017/src/jev/client.rs",
+          "hash": "1bf3ca379a360a5def3a103e29d3b4919001989053239c63e85fdb5612fd0a1e"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 85,
+      "issueBodySha256": "ac8cde052e79a4e43679130a81b81db08e6536d3db1521d7c0d270de75fa867b",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/85"
+    }
   }
 ]
