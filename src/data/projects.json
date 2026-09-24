@@ -60435,5 +60435,152 @@
       ]
     },
     "sourceHash": "30452f91d50c9e0a6ad55aac2367a903f7725aff8b7f312292d44ee81789a6c2"
+  },
+  {
+    "id": "suenot:codex-jev-router",
+    "name": "codex-jev-router",
+    "author": "suenot",
+    "url": "https://github.com/suenot/codex-jev-router",
+    "repoId": 1383963530,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "Jev judges a short Codex subagent task summary, then local confidence rules select a model and reasoning tier or fall back to Sol. 基于 Jev 判断 Codex 子代理任务摘要，由本地规则选择模型与推理档位。",
+    "jevDecisionPoint": "Jev根据子代理任务摘要选择luna_low/luna_medium/sol_low/sol_high档位并用Noul判断是否为极难任务。",
+    "jevDecisionPointEn": "Uses Choice to select a subagent tier and Noul to flag exceptionally difficult tasks; routes at subagent creation while keeping thresholds and fallback behavior in local code.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Portable JevRouter setup for cost-aware Codex subagent model selection, with English and Russian instructions",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-23T17:55:26Z",
+    "lastCommitAt": "2026-09-24T14:59:48Z",
+    "headSha": "00af76b2d6d1ce8f70a5774002b3cff534bd02b5",
+    "metadataFetchedAt": "2026-09-24T15:48:36.294Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1426876?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-24T15:48:36.294Z",
+    "evidence": [
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/README.zh-Hans.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/README.zh-Hant.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/router.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/decider.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/route.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/skill-suggestion-hook.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/skill-suggestion.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/benchmarks/django-source-tasks-2026-09-24/grade.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/scripts/benchmark.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/scripts/doctor.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "00af76b2d6d1ce8f70a5774002b3cff534bd02b5",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/README.md",
+          "hash": "d4f2932ccc1752c0eef1cc37a62323e98ebaf2bd67742a25aa6722b6791ae037"
+        },
+        {
+          "path": "README.zh-Hans.md",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/README.zh-Hans.md",
+          "hash": "635d211831a3819ce10fc61401350f6ce909e9047fb146a03e50ee5232686507"
+        },
+        {
+          "path": "README.zh-Hant.md",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/README.zh-Hant.md",
+          "hash": "98f0d382d95c5cbf38106b72a9fa4349ddc1bb752cd4a318f89112f1242d62ac"
+        },
+        {
+          "path": "src/router.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/router.mjs",
+          "hash": "632dab677d8bcd5c4d8d356e2c1844d9e1a0bad0bdc6decf9f8fdd3ea675c22d"
+        },
+        {
+          "path": "src/decider.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/decider.mjs",
+          "hash": "945f71fa17dace5d993f38ee3aa6b2139c42f3af9a9c2ceddc8a3580e19ee156"
+        },
+        {
+          "path": "src/route.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/route.mjs",
+          "hash": "ca4f337849e04838c75b5955430eada33798f9d9ebb0b8c51041840805bd71f8"
+        },
+        {
+          "path": "src/skill-suggestion-hook.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/skill-suggestion-hook.mjs",
+          "hash": "85efd036a21571a4f2fb520ac4cbf790669c66f6355edd63f8924f26e6c92aa7"
+        },
+        {
+          "path": "src/skill-suggestion.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/src/skill-suggestion.mjs",
+          "hash": "d73ceba5a434b9385dea1d1b4e861acf4658085fcf57195f7b6f2766153e2d05"
+        },
+        {
+          "path": "benchmarks/django-source-tasks-2026-09-24/grade.py",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/benchmarks/django-source-tasks-2026-09-24/grade.py",
+          "hash": "73633a25495f61e8251cba6f832693c89036e5a8c2064f0ea28ae87e2477be4c"
+        },
+        {
+          "path": "scripts/benchmark.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/scripts/benchmark.mjs",
+          "hash": "54cddf3275cf297eccbe119bf262f548bf546fd91e04f4af58647563dc070944"
+        },
+        {
+          "path": "scripts/doctor.mjs",
+          "url": "https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/scripts/doctor.mjs",
+          "hash": "14dc0cc154c4fbb4eba5df04209d95cc5a81b5073210536301d22090b182b9dd"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 90,
+      "issueBodySha256": "36ba2b45d4c0226fceeca0646a62c2529b666f087cbf0dca22af7b913a434d09",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/90"
+    }
   }
 ]
