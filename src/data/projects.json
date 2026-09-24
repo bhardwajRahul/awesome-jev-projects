@@ -58483,5 +58483,71 @@
       ]
     },
     "sourceHash": "17763f7d436e8c068ba70ae3dcca182050ff5e1253948994a6ef6fe685da018a"
+  },
+  {
+    "id": "milvus-io:milvus-model",
+    "name": "milvus-model",
+    "author": "milvus-io",
+    "url": "https://github.com/milvus-io/milvus-model",
+    "repoId": 774339341,
+    "category": "Data & Search",
+    "plainSummary": "该库为 Milvus 集成了来自 OpenAI、Voyage AI、Cohere、Jina AI、TypeSafe 以及 SentenceTransformers 和 Hugging Face TEI 的 embedding 和 reranker 模型。",
+    "jevDecisionPoint": "Jev 对每个候选文档判断其是否提供与查询相关的证据，并输出 noul 概率分数用于重排序。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接进已有的数据查询流程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A library integrating embedding and reranker models from OpenAI, SentenceTransformers etc for semantic search in vector database.",
+    "stars": 60,
+    "forks": 29,
+    "openIssues": 16,
+    "license": "Apache-2.0",
+    "createdAt": "2024-03-19T11:29:57Z",
+    "lastCommitAt": "2026-09-23T03:28:05Z",
+    "headSha": "a5c59e849db2875cfe91d0e59438958f5ec9d54e",
+    "metadataFetchedAt": "2026-09-24T03:52:44.158Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/51735404?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-24T03:52:44.158Z",
+    "evidence": [
+      {
+        "url": "https://github.com/milvus-io/milvus-model/blob/a5c59e849db2875cfe91d0e59438958f5ec9d54e/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/milvus-io/milvus-model/blob/a5c59e849db2875cfe91d0e59438958f5ec9d54e/src/pymilvus/model/reranker/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "a5c59e849db2875cfe91d0e59438958f5ec9d54e",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/milvus-io/milvus-model/blob/a5c59e849db2875cfe91d0e59438958f5ec9d54e/README.md",
+          "hash": "c6d8287570ae63cda99306681390916c071ea80e2d1324d2e9dc93c7795a812e"
+        },
+        {
+          "path": "src/pymilvus/model/reranker/jev.py",
+          "url": "https://github.com/milvus-io/milvus-model/blob/a5c59e849db2875cfe91d0e59438958f5ec9d54e/src/pymilvus/model/reranker/jev.py",
+          "hash": "05506b65a06e6ea8c39930bd41ba6a356f3fd24c4a84a87f229c09ad2ef36424"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 89,
+      "issueBodySha256": "b524c6432c822f05f921066e4be24cd916c41acc30feb298f17187e94513e5b1",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/89"
+    }
   }
 ]
