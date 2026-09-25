@@ -60582,5 +60582,71 @@
       "issueBodySha256": "36ba2b45d4c0226fceeca0646a62c2529b666f087cbf0dca22af7b913a434d09",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/90"
     }
+  },
+  {
+    "id": "brianluby:momus-review",
+    "name": "momus-review",
+    "author": "brianluby",
+    "url": "https://github.com/brianluby/momus-review",
+    "repoId": 1387763479,
+    "category": "Security & Guardrails",
+    "plainSummary": "Momus对Git变更或指定目录下的源文件按正确性、安全性、可靠性、兼容性和测试缺口五个维度做分阶段评审，并对强信号补充证据定位、类型判定、严重程度评分和负责人分派，其中Jev只负责有界的判断问答。",
+    "jevDecisionPoint": "Jev 对每个文件在正确性、安全性、可靠性、兼容性、测试缺口五个维度做 yes/no 筛查，并对高信号跟进定位证据、分类缺陷类型、打分严重度和路由负责人。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "在现有程序中复用接入代码，减少重复处理接口细节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Code review on rust and javascript (+languages soon) applications. Following lenses correctness, security, reliability, compatibility and testGap.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-25T15:20:58Z",
+    "lastCommitAt": "2026-09-25T19:40:31Z",
+    "headSha": "ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497",
+    "metadataFetchedAt": "2026-09-25T19:43:27.707Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/3779002?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-25T19:43:27.707Z",
+    "evidence": [
+      {
+        "url": "https://github.com/brianluby/momus-review/blob/ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/brianluby/momus-review/blob/ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497/src/review/typesafe.rs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/brianluby/momus-review/blob/ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497/README.md",
+          "hash": "70d2a9bd1a1301522d569f4387d3ea5407e860330829bccb2c37147415e77ef7"
+        },
+        {
+          "path": "src/review/typesafe.rs",
+          "url": "https://github.com/brianluby/momus-review/blob/ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497/src/review/typesafe.rs",
+          "hash": "3c07eaf37255416abc18055fd89f8726e2563ffe261e9636a8de0de763f3d3be"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 91,
+      "issueBodySha256": "d55d53572f63d99bc8014eadd44e0d870c39cc517a652c8d8aa13fb1dc0d246a",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/91"
+    }
   }
 ]

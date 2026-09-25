@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 689
+Catalog entries: 690
 
 ## Install the Agent Skill
 
@@ -9774,3 +9774,17 @@ Portable JevRouter setup for cost-aware Codex subagent model selection, with Eng
 - Source evidence: https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/benchmarks/django-source-tasks-2026-09-24/grade.py
 - Source evidence: https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/scripts/benchmark.mjs
 - Source evidence: https://github.com/suenot/codex-jev-router/blob/00af76b2d6d1ce8f70a5774002b3cff534bd02b5/scripts/doctor.mjs
+
+## momus-review
+
+Code review on rust and javascript (+languages soon) applications. Following lenses correctness, security, reliability, compatibility and testGap.
+
+- Repository: https://github.com/brianluby/momus-review
+- Category: Security & Guardrails
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/brianluby/momus-review/
+- Source evidence: https://github.com/brianluby/momus-review/blob/ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497/README.md
+- Source evidence: https://github.com/brianluby/momus-review/blob/ecfe27ea4d4cb0a1746dc1a083a0cc3ae1719497/src/review/typesafe.rs
