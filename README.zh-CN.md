@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Mentioned in Awesome" /></a>
   <a href="https://logicrw.github.io/awesome-jev-projects/"><img src="https://img.shields.io/badge/Live%20Radar-logicrw.github.io-d7fa91?style=flat-square&labelColor=1a201a&logo=safari" alt="Live Radar" /></a>
-  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-690%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
+  <a href="#分类"><img src="https://img.shields.io/badge/Curated%20Projects-691%2B-2563eb?style=flat-square" alt="Projects Count" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-d97706.svg?style=flat-square" alt="License: MIT" /></a>
   <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml"><img src="https://img.shields.io/badge/Submissions-via%20Issue-16a34a.svg?style=flat-square" alt="Submissions via Issue" /></a>
 </p>
@@ -32,7 +32,7 @@
 **TypeSafe Jev（System 1）** 是专门针对离散选择、连续打分与概率优化的百毫秒级决策模型：
 - ⚡ **百毫秒内极速返回**：50–100ms 快速完成判定，保障 Agent 主循环高频敏捷。
 - 🎯 **原生确定性输出**：原生支持 `Choice`（多选一）、`Score`（打分）与 `Noul`（二元逻辑与概率），免去易碎的正则提取。
-- 🛡️ **严格拒绝概念炒作**：全网严选 **690+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
+- 🛡️ **严格拒绝概念炒作**：全网严选 **691+** 个绑定真实公开开源源码版本的落地项目，覆盖 17 大核心工程赛道。
 
 ### 📊 架构分工对比：System 1 (Jev) vs System 2 (大推理模型)
 
@@ -50,7 +50,7 @@
 - ⚡ **毫秒级吸顶搜索与浮动过滤**：即便页面下滑，也可随时唤出浮动分类面板，支持多标签一键点选过滤。
 - 🔍 **100% 绑定固定源码**：所有收录项目均核验真实 commit SHA 与具体接入点，绝无空气包装与死链。
 
-> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **690 个精选项目**
+> **[搜索与筛选 ↗](https://logicrw.github.io/awesome-jev-projects/)** · **691 个精选项目**
 
 由社区维护的 Jev 项目与架构雷达，收录具有公开源码与清晰集成逻辑的开源项目，帮助开发者快速探索和落地 System-1 决策架构。
 
@@ -87,7 +87,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [音乐与界面创作 (20)](https://logicrw.github.io/awesome-jev-projects/categories/creative-tools/)
 - [数据与搜索 (44)](https://logicrw.github.io/awesome-jev-projects/categories/data-search/)
 - [决策工具 (25)](https://logicrw.github.io/awesome-jev-projects/categories/decision-tools/)
-- [行业应用 (67)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
+- [行业应用 (68)](https://logicrw.github.io/awesome-jev-projects/categories/domain-vertical-tools/)
 - [评测与观测 (29)](https://logicrw.github.io/awesome-jev-projects/categories/evaluation-observability/)
 - [游戏与实时决策 (52)](https://logicrw.github.io/awesome-jev-projects/categories/high-frequency-simulation/)
 - [MCP 与集成 (43)](https://logicrw.github.io/awesome-jev-projects/categories/mcp-integrations/)
@@ -1742,6 +1742,11 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
   - **Jev 在哪一步做判断**: Jev 在每一步根据算式和已生成前缀，从13个字符选项中决定下一个输出字符。
   - **这个项目的用途**: 把选择和打分接进现有程序；暂无可核验的性能对照。
   - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/pc418/jev-calculator/) · 许可证: MIT
+
+- [**JevPulse**](https://github.com/jaygajera17/JevPulse) — 该项目批量分析 YouTube 视频评论并生成观众共识与证据报告。
+  - **Jev 在哪一步做判断**: Jev 对每条评论并行判定是否为实质观点、意图类型、具体程度、是否含事实主张及对视频专属标准的支持度。
+  - **这个项目的用途**: 增加一组可记录、可对照的判断信号。
+  - [项目详情与固定源码](https://logicrw.github.io/awesome-jev-projects/projects/jaygajera17/jevpulse/) · 许可证: 未声明
 
 
 ## 评测与观测
