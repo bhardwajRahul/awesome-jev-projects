@@ -60906,5 +60906,71 @@
       "issueBodySha256": "0434168e8a3b4179bce90b3fda580bb2c245b9f8451131d0da8ce21b6a455f9e",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/93"
     }
+  },
+  {
+    "id": "ngocvychu38-web:cube-lab",
+    "name": "cube-lab",
+    "author": "ngocvychu38-web",
+    "url": "https://github.com/ngocvychu38-web/cube-lab",
+    "repoId": 1384863520,
+    "category": "Domain & Vertical Tools",
+    "plainSummary": "完整开发复盘与技术说明：[实现过程与原理](docs/实现过程与原理.md)，包括需求演进、状态模型、七步搜索算法、Jev协议、动画、音效、计时、本地存储、发布记录与验证边界。",
+    "jevDecisionPoint": "魔搭是魔方复原规则，以及从多个选择里面选择一个操作方向。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "domain-workflows",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Cube Lab is an interactive 3D Rubik's Cube app that generates candidate solutions with local planners and uses Jev to select moves across seven solving stages with animations and recorded turning sounds.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": null,
+    "createdAt": "2026-09-24T06:39:14Z",
+    "lastCommitAt": "2026-09-25T14:31:55Z",
+    "headSha": "6f7d2675c3c3b5bb54f9460cec2854032c1db53d",
+    "metadataFetchedAt": "2026-09-26T18:40:14.054Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/275395148?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-26T18:40:14.055Z",
+    "evidence": [
+      {
+        "url": "https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/netlify/functions/jev.mjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "6f7d2675c3c3b5bb54f9460cec2854032c1db53d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/README.md",
+          "hash": "f639733fec3e77659f2ae595f3fa481ceb4bb48011f6f7c9c41cce863d79c118"
+        },
+        {
+          "path": "netlify/functions/jev.mjs",
+          "url": "https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/netlify/functions/jev.mjs",
+          "hash": "9bcae849e340e2cfdc0bad0c43d8120163628f048a2acddd61fb74e535c94f36"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 94,
+      "issueBodySha256": "45e129902ac9138683720dabf4cf95357ec5c8a3bdfedeb53501244728d716ce",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/94"
+    }
   }
 ]

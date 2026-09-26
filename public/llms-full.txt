@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 692
+Catalog entries: 693
 
 ## Install the Agent Skill
 
@@ -9830,3 +9830,17 @@ Jebadiah, an open System One decision model: trainer, data builders, evals and e
 - Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_prompt.py
 - Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/jebadiah_engine.py
 - Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/mps_delta.py
+
+## cube-lab
+
+Cube Lab is an interactive 3D Rubik's Cube app that generates candidate solutions with local planners and uses Jev to select moves across seven solving stages with animations and recorded turning sounds.
+
+- Repository: https://github.com/ngocvychu38-web/cube-lab
+- Category: Domain & Vertical Tools
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Not declared
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/ngocvychu38-web/cube-lab/
+- Source evidence: https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/README.md
+- Source evidence: https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/netlify/functions/jev.mjs
