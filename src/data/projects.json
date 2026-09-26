@@ -60777,5 +60777,134 @@
       "issueBodySha256": "521512e0fb1bc67c5ca19020c2d53e4130a1c87104baf9c47b7ce5e6e59d1738",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/92"
     }
+  },
+  {
+    "id": "getainode:jebadiah",
+    "name": "jebadiah",
+    "author": "getainode",
+    "url": "https://github.com/getainode/jebadiah",
+    "repoId": 1388164796,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "该仓库提供开放 System One 决策模型 Jebadiah 的训练器、数据构建工具、评测工具以及全部运行配置与结果记录。",
+    "jevDecisionPoint": "Jev 针对同一结构化 state 对每个 choice/noul/score 问题直接输出选项概率分布与最优答案。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "保留可编辑的组成部分与决策过程。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Jebadiah, an open System One decision model: trainer, data builders, evals and every run record",
+    "stars": 1,
+    "forks": 1,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-25T20:37:49Z",
+    "lastCommitAt": "2026-09-25T22:32:32Z",
+    "headSha": "74a0cd92965529e90a411532e9887b544c931b2d",
+    "metadataFetchedAt": "2026-09-26T17:57:09.373Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/275500205?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-26T17:57:09.374Z",
+    "evidence": [
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/app.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/engine.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/ainode_prompt_verbatim.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_model.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_prompt.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/jebadiah_engine.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/mps_delta.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "74a0cd92965529e90a411532e9887b544c931b2d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/README.md",
+          "hash": "a45693b052264073237037dc1f1b5c51e4c7b07693d839589711ae685d7c0ef2"
+        },
+        {
+          "path": "server/src/jebadiah_server/app.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/app.py",
+          "hash": "006e176211bfe889eef5548c32049dffce69c6abdb2e791c7fe478deaac8efdb"
+        },
+        {
+          "path": "server/src/jebadiah_server/engine.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/engine.py",
+          "hash": "837240ba68acd4bd91a597b3dbafca407a0c7778fbe2bb03a7720e6eebf64a3a"
+        },
+        {
+          "path": "server/src/jebadiah_server/model_scripts/__init__.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/__init__.py",
+          "hash": "c068e79b8d9393863d36e4b1b638e2c9bcec8937370685a360cfcf8f4ef4bbcb"
+        },
+        {
+          "path": "server/src/jebadiah_server/model_scripts/ainode_prompt_verbatim.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/ainode_prompt_verbatim.py",
+          "hash": "61e81179cbe39fc02607cda64770e02a433356ff1ef0020bea893d610cb9e8f9"
+        },
+        {
+          "path": "server/src/jebadiah_server/model_scripts/jebadiah_model.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_model.py",
+          "hash": "2c5c90dcdb748064d7be855314772b4ab8bf9ac842b0f650554e23f20acfd360"
+        },
+        {
+          "path": "server/src/jebadiah_server/model_scripts/jebadiah_prompt.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_prompt.py",
+          "hash": "35edd3fe1ec0b02c695f8b01efd6a0ed392f3ae4f726ade54861f8fa1eb77624"
+        },
+        {
+          "path": "eval/decision-index/jebadiah_engine.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/jebadiah_engine.py",
+          "hash": "304f7caab9bca9e675ab44f318483ac3232f0e3c26e5707287233d39f7f84560"
+        },
+        {
+          "path": "eval/decision-index/mps_delta.py",
+          "url": "https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/mps_delta.py",
+          "hash": "78cf21dfa40def690c0314fdeaffb369e67eaa4984ec3804417127c0ac8bce8e"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 93,
+      "issueBodySha256": "0434168e8a3b4179bce90b3fda580bb2c245b9f8451131d0da8ce21b6a455f9e",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/93"
+    }
   }
 ]

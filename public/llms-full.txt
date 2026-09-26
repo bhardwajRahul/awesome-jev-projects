@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 691
+Catalog entries: 692
 
 ## Install the Agent Skill
 
@@ -9809,3 +9809,24 @@ Analyze the YouTube comments to gain insights into what the audience is saying f
 - Source evidence: https://github.com/jaygajera17/JevPulse/blob/98eda03f8915af432dbcf5296d05f7273533b0e1/src/routes/analysis.routes.js
 - Source evidence: https://github.com/jaygajera17/JevPulse/blob/98eda03f8915af432dbcf5296d05f7273533b0e1/src/services/analysis.service.js
 - Source evidence: https://github.com/jaygajera17/JevPulse/blob/98eda03f8915af432dbcf5296d05f7273533b0e1/src/services/consensus.service.js
+
+## jebadiah
+
+Jebadiah, an open System One decision model: trainer, data builders, evals and every run record
+
+- Repository: https://github.com/getainode/jebadiah
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/getainode/jebadiah/
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/README.md
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/app.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/engine.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/__init__.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/ainode_prompt_verbatim.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_model.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/server/src/jebadiah_server/model_scripts/jebadiah_prompt.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/jebadiah_engine.py
+- Source evidence: https://github.com/getainode/jebadiah/blob/74a0cd92965529e90a411532e9887b544c931b2d/eval/decision-index/mps_delta.py
