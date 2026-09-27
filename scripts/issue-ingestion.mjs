@@ -133,11 +133,17 @@ export async function prepareSubmission({
       (p) =>
         p.ingestion?.repository === repository &&
         p.ingestion.issueNumber === issue.number &&
-        p.ingestion.issueBodySha256 === bodyHash(issue.body) &&
         (p.repoId === result.repo?.id ||
           publicIdentity(p) === result.repo?.full_name?.toLowerCase()),
     );
     if (prior) return { status: "resume", project: prior };
+    return {
+      status: "duplicate",
+      reason: result.reason,
+      needsEvidence: false,
+      issueNumber: issue.number,
+      submittedRepository: submitted,
+    };
   }
 
   const structuralRejections = new Set([
@@ -625,11 +631,16 @@ async function main() {
         reviewer,
         commentBody: event.comment?.body ?? "",
       });
-      if (result.status === "ready")
+      if (result.status === "ready") {
+        const withoutCurrent = projects.filter(
+          (p) => !(p.ingestion?.repository === repository && p.ingestion?.issueNumber === number) &&
+                 !sameProject(p, result.project)
+        );
         await atomicJSON(resolve(root, "src/data/projects.json"), [
-          ...projects,
+          ...withoutCurrent,
           result.project,
         ]);
+      }
     }
     const reviewedSourceSha = process.env.INGEST_REVIEWED_SHA;
     if (!/^[a-f\d]{40}$/.test(reviewedSourceSha ?? ""))
