@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 694
+Catalog entries: 695
 
 ## Install the Agent Skill
 
@@ -37,7 +37,7 @@ npx skills add https://logicrw.github.io/awesome-jev-projects/
 - [Codebase & Graph Pathfinding](https://logicrw.github.io/awesome-jev-projects/en/categories/codebase-graph-pathfinding/): 14
 - [Context GC & Filter](https://logicrw.github.io/awesome-jev-projects/en/categories/context-gc-filter/): 40
 - [Creative Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/creative-tools/): 20
-- [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 44
+- [Data & Search](https://logicrw.github.io/awesome-jev-projects/en/categories/data-search/): 45
 - [Decision Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/decision-tools/): 25
 - [Domain & Vertical Tools](https://logicrw.github.io/awesome-jev-projects/en/categories/domain-vertical-tools/): 69
 - [Evaluation & Observability](https://logicrw.github.io/awesome-jev-projects/en/categories/evaluation-observability/): 29

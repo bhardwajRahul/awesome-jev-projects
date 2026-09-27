@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 694
+Catalog entries: 695
 
 ## Install the Agent Skill
 
@@ -9864,3 +9864,21 @@ jevos is an open-source, Jev-compatible alternative to TypeSafe's Jev for yes/no
 - Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/backend.py
 - Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/decisions.py
 - Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/models.py
+
+## sieve
+
+Sieve checks a folder of Markdown notes against itself. Crosscheck compares every note with every other, from both sides, and lists the pairs that contradict each other, the pairs that make the same point twice, and the notes that have gone stale. It also ranks the whole folder by any plain-English question, and lints notes against plain-English rules in CI. No index, no embeddings, no generated text. Node, no dependencies.
+
+- Repository: https://github.com/nothans/sieve
+- Category: Data & Search
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/nothans/sieve/
+- Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/README.md
+- Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/jev.cjs
+- Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/crosscheck.cjs
+- Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lenses.cjs
+- Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lint.cjs
+- Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/backends.cjs

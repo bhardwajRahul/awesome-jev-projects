@@ -61093,5 +61093,107 @@
       "issueBodySha256": "11e9bf4834ae1c20396588596c822553358e1b2178c3fa5df7848afa3bc4a6f6",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/95"
     }
+  },
+  {
+    "id": "nothans:sieve",
+    "name": "sieve",
+    "author": "nothans",
+    "url": "https://github.com/nothans/sieve",
+    "repoId": 1384559328,
+    "category": "Data & Search",
+    "plainSummary": "sieve：Jev 对每对笔记做五选一关系判断、对每个问题或规则给出是否成立的概率，用于矛盾检测、排序和门禁。",
+    "jevDecisionPoint": "Jev 对每对笔记做五选一关系判断、对每个问题或规则给出是否成立的概率，用于矛盾检测、排序和门禁。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "classification-ranking"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Sieve checks a folder of Markdown notes against itself.\nCrosscheck compares every note with every other, from both sides, and lists the pairs that contradict each other, the pairs that make the same point twice, and the notes that have gone stale.\nIt also ranks the whole folder by any plain-English question, and lints notes against plain-English rules in CI.\nNo index, no embeddings, no generated text. Node, no dependencies.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-24T03:27:14Z",
+    "lastCommitAt": "2026-09-27T16:17:04Z",
+    "headSha": "24fa8c1ffbd1db2224dd3480affc93a9a98b15fe",
+    "metadataFetchedAt": "2026-09-27T16:21:05.845Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/691549?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-27T16:21:05.845Z",
+    "evidence": [
+      {
+        "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/jev.cjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/crosscheck.cjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lenses.cjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lint.cjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/backends.cjs",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "24fa8c1ffbd1db2224dd3480affc93a9a98b15fe",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/README.md",
+          "hash": "b5cf9b54601d941a02f1155b2e5184d3eef0ed5033c341178574fe6bd2ff8145"
+        },
+        {
+          "path": "lib/jev.cjs",
+          "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/jev.cjs",
+          "hash": "e1b5b37e115da47016931f44ab7fc67e86baeaf5bb41fea1d1b865ac231a4899"
+        },
+        {
+          "path": "lib/crosscheck.cjs",
+          "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/crosscheck.cjs",
+          "hash": "33622f51f64bc2d108406f1af24e2e1f373499fd3486e6fd304a7e786b11fcfb"
+        },
+        {
+          "path": "lib/lenses.cjs",
+          "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lenses.cjs",
+          "hash": "f039a7c28c136d6f927a24738f650a32b38216b65db692d010b15fd385b6935a"
+        },
+        {
+          "path": "lib/lint.cjs",
+          "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lint.cjs",
+          "hash": "1bc898a9b63e11187fde6d5964009e674f0f5eafa57252e22d060b7ba57377ec"
+        },
+        {
+          "path": "lib/backends.cjs",
+          "url": "https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/backends.cjs",
+          "hash": "b5ce3c264afc72c207a200a75e401d68d372fc97bd3fea60afb73d28012d8ee4"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 96,
+      "issueBodySha256": "705106e2ffd61bafd19239b95bd4b9ceeaaec9ee882718750cad2cb14d7fc246",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/96"
+    }
   }
 ]
