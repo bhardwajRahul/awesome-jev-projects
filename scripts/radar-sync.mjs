@@ -65,16 +65,21 @@ export function verifyIntegration(repo, text, { codeSources = [] } = {}) {
   // Jev is also available through OpenRouter's decisions API. An exact model
   // identifier and provider request marker are both required; names alone fail.
   const routerDecision = codeSources.some(hasOpenRouterJevSource);
-  const exact = routerDecision ||
+  const serverSystemOne =
+    /(?:@[\w.]*\.post|router\.(?:post|handle|POST)|app\.(?:post|all)|Route\s*\(\s*["']POST["']|Endpoint|def\s+post|fn\s+handle|route|path\s*=)\s*\(?["']?\/v1\/(?:systemone|decide)["']?/i.test(text) &&
+    /\bchoice\b/i.test(text) &&
+    (/\bscore\b/i.test(text) || /\bnoul\b/i.test(text) || /\blogits?\b/i.test(text) || /\bconfidence\b/i.test(text) || /\bquestions?\b/i.test(text));
+  const exact = routerDecision || serverSystemOne ||
     /(?<![\w.-])(?:api\.)?typesafe\.ai(?![\w.-])|@typesafe\/(?:jev|sdk)|from\s+typesafe(?:_ai|_sdk)?\s+import|typesafe(?:_ai|-ai|_sdk|-sdk)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|\b(?:JevClient|TypeSafeClient)\b|TYPESAFE_API_KEY|(?<![~/\w.-])typesafe-ai\/jev/i.test(
       text,
     );
   const context =
-    /(?:\b|_)jev(?:[A-Za-z0-9_]|\b)/i.test(text) &&
+    serverSystemOne ||
+    (/(?:\b|_)jev(?:[A-Za-z0-9_]|\b)/i.test(text) &&
     /\b(ai|llm|agent|decision|inference|classification|model|choice|score|noul)\b/i.test(
       text,
-    );
-  const implementation = routerDecision ||
+    ));
+  const implementation = routerDecision || serverSystemOne ||
     /(?<![\w.-])api\.typesafe\.ai(?![\w.-])|from\s+typesafe(?:_ai|_sdk)?\s+import|(?:import|require|npm\s+(?:i|install)|pip\s+install|uv\s+add).{0,100}(?:typesafe|jev)|\bjev\.(?:choice|score|noul|decision|query|client|ask)|TypeSafeClient|JevClient|TYPESAFE_API_KEY|JEV_API_KEY|typesafe\.Client|typesafe\.AsyncClient|(?<![~/\w.-])typesafe-ai\/jev/i.test(
       text,
     );

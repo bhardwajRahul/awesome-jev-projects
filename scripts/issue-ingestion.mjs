@@ -75,6 +75,7 @@ export async function prepareSubmission({
   reviewer,
   inspect = inspectRepository,
   now = () => new Date().toISOString(),
+  commentBody = "",
 }) {
   requireOwner(repository);
   if (
@@ -101,7 +102,7 @@ export async function prepareSubmission({
       needsEvidence: false,
       issueNumber: issue.number,
     };
-  let fullIssueText = issue.body ?? "";
+  let fullIssueText = [issue.body ?? "", commentBody].filter(Boolean).join("\n\n");
   if (typeof api === "function" && issue.number) {
     try {
       const comments = await api(
@@ -622,6 +623,7 @@ async function main() {
         api,
         enrich,
         reviewer,
+        commentBody: event.comment?.body ?? "",
       });
       if (result.status === "ready")
         await atomicJSON(resolve(root, "src/data/projects.json"), [
@@ -639,6 +641,7 @@ async function main() {
       ...result,
       reviewedSourceSha,
       ...(issueNumber > 0 ? { issueNumber } : {}),
+      triggerCommentId: event?.comment?.id ?? null,
     };
     if (result.project && Object.prototype.hasOwnProperty.call(result.project, "enrichment")) {
       const { enrichment: _omit, ...project } = result.project;
@@ -771,7 +774,14 @@ async function main() {
       prepared.reason ||
       "仓库源码中暂未检测到有效的 Jev/TypeSafe 原语调用代码证据。";
     const needsEvidence = prepared.needsEvidence === true;
-    const marker = `<!-- awesome-jev-review-feedback:${issueNumber} -->`;
+    const triggerCommentId = prepared.triggerCommentId;
+    const isCommentTrigger =
+      Number.isSafeInteger(triggerCommentId) && triggerCommentId > 0;
+    const initialMarker = `<!-- awesome-jev-review-feedback:${issueNumber} -->`;
+    const recheckMarker = isCommentTrigger
+      ? `<!-- awesome-jev-review-recheck:${issueNumber}:${triggerCommentId} -->`
+      : null;
+    const marker = recheckMarker || initialMarker;
     let alreadyCommented = false;
     for (let page = 1; page <= 5; page++) {
       const comments = await api(
@@ -781,20 +791,35 @@ async function main() {
       if (alreadyCommented || comments.length < 100) break;
     }
     if (!alreadyCommented) {
-      const feedbackBody = [
-        "👋 **Awesome Jev 项目收录反馈**",
-        "",
-        "非常感谢您向 Awesome Jev 社区提交项目！自动化代码集成流水线在对您的仓库进行源码检查后，整理了如下参考反馈：",
-        "",
-        `- **当前状态**：${needsEvidence ? "期待补充代码证据 (Needs Evidence)" : "暂未检测到有效集成"}`,
-        `- **审查分析**：${reason}`,
-        "",
-        needsEvidence
-          ? "> 💡 **如何快速复核**：如果项目中已接入 Jev / TypeSafe 决策机制（例如 Dart、Go、Rust、Java、Python、TS/JS 等多语言 SDK，或 OpenRouter decisions、`/v1/systemone` 调用），欢迎直接在本 Issue 中回复补充包含决策调用的**具体代码文件路径与关键行代码链接**。流水线将自动重新复查并推进收录！"
-          : "> 💡 **如有误判**：开源生态百花齐放，如果自动化审查存在理解偏差或尚未覆盖到您的接入方式，非常欢迎在本 Issue 中留言指出具体的代码位置与调用逻辑，我们会第一时间跟进！",
-        "",
-        marker,
-      ].join("\n");
+      const feedbackBody = isCommentTrigger
+        ? [
+            "👋 **Awesome Jev 自动复查反馈**",
+            "",
+            "流水线已自动根据您补充的代码线索进行了重新复查：",
+            "",
+            `- **复查状态**：${needsEvidence ? "期待进一步补充代码证据 (Needs Evidence)" : "暂未检测到有效集成"}`,
+            `- **审查分析**：${reason}`,
+            "",
+            needsEvidence
+              ? "> 💡 请确认提供的链接或路径是否包含具体的决策原语调用逻辑（如 choice / score / noul / systemOne / /v1/systemone 等）。补充后流水线将再次自动复查推进收录！"
+              : "> 💡 如有误判，非常欢迎指出具体的代码位置与调用逻辑，我们会持续跟进！",
+            "",
+            marker,
+          ].join("\n")
+        : [
+            "👋 **Awesome Jev 项目收录反馈**",
+            "",
+            "非常感谢您向 Awesome Jev 社区提交项目！自动化代码集成流水线在对您的仓库进行源码检查后，整理了如下参考反馈：",
+            "",
+            `- **当前状态**：${needsEvidence ? "期待补充代码证据 (Needs Evidence)" : "暂未检测到有效集成"}`,
+            `- **审查分析**：${reason}`,
+            "",
+            needsEvidence
+              ? "> 💡 **如何快速复核**：如果项目中已接入 Jev / TypeSafe 决策机制（例如 Dart、Go、Rust、Java、Python、TS/JS 等多语言 SDK，或 OpenRouter decisions、`/v1/systemone` 调用），欢迎直接在本 Issue 中回复补充包含决策调用的**具体代码文件路径与关键行代码链接**。流水线将自动重新复查并推进收录！"
+              : "> 💡 **如有误判**：开源生态百花齐放，如果自动化审查存在理解偏差或尚未覆盖到您的接入方式，非常欢迎在本 Issue 中留言指出具体的代码位置与调用逻辑，我们会第一时间跟进！",
+            "",
+            marker,
+          ].join("\n");
       await api(`/repos/${repository}/issues/${issueNumber}/comments`, {
         method: "POST",
         body: { body: feedbackBody },

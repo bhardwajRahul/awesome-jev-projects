@@ -4,7 +4,9 @@ import { posix } from "node:path";
 import { normalizeRepository } from "../src/lib/submission.mjs";
 import { resolveTagId } from "../src/lib/tags.mjs";
 
-const MAX_FILE_BYTES = 90_000;
+const MAX_README_BYTES = 90_000;
+const MAX_FILE_BYTES = 120_000;
+const MAX_NOTEBOOK_BYTES = 500_000;
 const MAX_READMES = 3;
 const MAX_CODE_FILES = 8;
 const SHA = /^[a-f\d]{40,64}$/i;
@@ -188,20 +190,32 @@ export function extractSubmittedCodePaths(text, repository) {
   if (typeof text !== "string" || !repository) return [];
   const paths = new Set();
   const escaped = repository.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const regex = new RegExp(
-    `https:\\/\\/github\\.com\\/${escaped}\\/blob\\/[^/\\s"')\\]>]+\\/([^\\s"')\\]#?]+)`,
+  const blobRegex = new RegExp(
+    `(?:https:\\/\\/raw\\.githubusercontent\\.com\\/${escaped}\\/[^/\\s"')\\]>]+\\/|https:\\/\\/github\\.com\\/${escaped}\\/(?:blob|tree|raw)\\/[^/\\s"')\\]>]+\\/)([^\\s"')\\]#?]+)`,
     "gi",
   );
   let match;
-  while ((match = regex.exec(text)) !== null) {
+  while ((match = blobRegex.exec(text)) !== null) {
     let candidate = match[1];
     try {
       candidate = decodeURIComponent(candidate);
     } catch {}
+    candidate = candidate.replace(/(?::\d+(?:-\d+)?|[.,;:!?)>\]])+$/, "").trim();
     if (safePath(candidate)) {
       paths.add(candidate);
     }
   }
+
+  const inlineRegex =
+    /`([^`\n\r]+\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb))`|(?:\b(?:path|file|in|at|under)\s*[:=]?\s*["']?)([a-z\d_.-]+(?:\/[a-z\d_.-]+)+\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb))\b/gi;
+  while ((match = inlineRegex.exec(text)) !== null) {
+    let candidate = (match[1] || match[2] || "").trim();
+    candidate = candidate.replace(/(?::\d+(?:-\d+)?|[.,;:!?)>\]])+$/, "").trim();
+    if (safePath(candidate)) {
+      paths.add(candidate);
+    }
+  }
+
   return [...paths];
 }
 
@@ -223,19 +237,19 @@ function sourceFile(repository, sha, path, text) {
   };
 }
 
-function decodeFile(file) {
+function decodeFile(file, maxBytes = MAX_FILE_BYTES) {
   if (
     !file ||
     file.type === "symlink" ||
     file.type === "submodule" ||
     file.encoding !== "base64" ||
     typeof file.content !== "string" ||
-    (typeof file.size === "number" && file.size > MAX_FILE_BYTES) ||
-    file.content.length > Math.ceil((MAX_FILE_BYTES * 4) / 3) + 4_000
+    (typeof file.size === "number" && file.size > maxBytes) ||
+    file.content.length > Math.ceil((maxBytes * 4) / 3) + 4_000
   )
     return null;
   const buffer = Buffer.from(file.content, "base64");
-  if (buffer.byteLength > MAX_FILE_BYTES || buffer.includes(0)) return null;
+  if (buffer.byteLength > maxBytes || buffer.includes(0)) return null;
   return buffer.toString("utf8");
 }
 
@@ -304,7 +318,7 @@ export async function readLocalizedReadmes({
     safePath(readmePath) &&
     typeof readme === "string" &&
     readme &&
-    Buffer.byteLength(readme) <= MAX_FILE_BYTES
+    Buffer.byteLength(readme) <= MAX_README_BYTES
   ) {
     files.push(sourceFile(repository, sha, readmePath, readme));
   }
@@ -346,7 +360,7 @@ export async function readLocalizedReadmes({
       if (error.status === 404) continue;
       throw error;
     }
-    const text = decodeFile(file);
+    const text = decodeFile(file, MAX_README_BYTES);
     if (text !== null) files.push(sourceFile(repository, sha, path, text));
   }
   return files;
@@ -375,11 +389,13 @@ function identityMatches(project, names, repositoryId) {
 
 function codeCandidate(entry) {
   const path = entry.path;
+  const isNotebook = /\.ipynb$/i.test(path);
+  const maxBytes = isNotebook ? MAX_NOTEBOOK_BYTES : MAX_FILE_BYTES;
   return (
     entry.type === "blob" &&
     entry.mode !== "120000" &&
     safePath(path) &&
-    (entry.size ?? 0) <= MAX_FILE_BYTES &&
+    (entry.size ?? 0) <= maxBytes &&
     !/(?:^|\/)(?:docs?|documentation|node_modules|vendor|dist|build|coverage|\.git|\.github|\.env[^/]*|fixtures?|tests?|__tests__|generated|__pycache__)(?:\/|$)/i.test(
       path,
     ) &&
@@ -411,7 +427,7 @@ export function hasOpenRouterJevSource({ path, text }) {
 }
 
 function hasOpenRouterJevIntegration(code) {
-  const jevModel = /["'`]~?typesafe\/jev-(?:latest|\d+(?:\.\d+)*(?:-\d{8})?)["'`]/i.test(code);
+  const jevModel = /["'`]~?(?:typesafe-ai|typesafe)\/jev(?:-(?:latest|\d+(?:\.\d+)*(?:-\d{8})?))?["'`]/i.test(code);
   const openRouterRequest = /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)["'`]/i.test(code);
   const openRouterSdk = /\b(?:from|require\s*\(|import\s*\()\s*["']@openrouter\/sdk["']/i.test(code) &&
     /\.\s*alpha\s*\.\s*decisions\s*\.\s*create\s*\(/i.test(code);
@@ -459,6 +475,13 @@ function hasImplementationEvidence(text, path) {
   const jevPrimitive = /["']type["']\s*:\s*["'](?:noul|choice|score)["']|\b(?:noul|choice|score)\b.{0,50}\banswer/i.test(code);
   const anyHttpRequest = /\b(?:urllib\.request|requests|httpx|aiohttp|fetch|axios|postJson|http\.(?:Post|Get|Client|NewRequest)|reqwest|ureq)\b/i.test(code);
   if (typesafeKey && jevPrimitive && anyHttpRequest) return true;
+
+  const serverSystemOne =
+    /(?:@[\w.]*\.post|router\.(?:post|handle|POST)|app\.(?:post|all)|Route\s*\(\s*["']POST["']|Endpoint|def\s+post|fn\s+handle|route)\s*\(\s*["']\/v1\/(?:systemone|decide)["']/i.test(code) ||
+    /(?:path\s*=\s*["']\/v1\/systemone["']|["']\/v1\/systemone["']\s*,\s*(?:tags|summary|description|handler|func))/i.test(code) ||
+    /\b(?:client|session)\.post\s*\(\s*["']\/v1\/systemone["']/i.test(code);
+  const serverPrimitives = /\bchoice\b/i.test(code) && (/\bscore\b/i.test(code) || /\bnoul\b/i.test(code) || /\blogits?\b/i.test(code) || /\bquestions?\b/i.test(code));
+  if (serverSystemOne && serverPrimitives) return true;
 
   return false;
 }
@@ -568,25 +591,41 @@ export async function inspectRepository({
       tree = { tree: [] };
     }
     const preferredSet = new Set(preferredPaths.map((p) => p.toLowerCase()));
-    const candidates = (tree.tree ?? [])
+    const allTree = tree.tree ?? [];
+    const isPreferred = (entryPath) => {
+      const lower = entryPath.toLowerCase();
+      if (preferredSet.has(lower)) return true;
+      for (const p of preferredPaths) {
+        const plower = p.toLowerCase();
+        if (lower.endsWith("/" + plower) || plower.endsWith("/" + lower)) return true;
+      }
+      return false;
+    };
+    const preferredCandidates = allTree.filter(
+      (entry) => entry.type === "blob" && safePath(entry.path) && isPreferred(entry.path),
+    );
+    const seenPreferred = new Set(preferredCandidates.map((c) => c.path.toLowerCase()));
+    const directProbes = preferredPaths
+      .filter((p) => safePath(p) && !seenPreferred.has(p.toLowerCase()))
+      .map((p) => ({ path: p, type: "blob" }));
+    const generalCandidates = allTree
       .slice(0, 5000)
-      .filter((entry) => codeCandidate(entry) || (preferredSet.has(entry.path.toLowerCase()) && safePath(entry.path)))
-      .sort(
-        (a, b) =>
-          Number(preferredSet.has(b.path.toLowerCase())) -
-            Number(preferredSet.has(a.path.toLowerCase())) ||
-          Number(/typesafe|jev/i.test(posix.basename(b.path))) -
-            Number(/typesafe|jev/i.test(posix.basename(a.path))) ||
-          Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(a.path)) -
-            Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(b.path)) ||
-          Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(b.path)) -
-            Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(a.path)) ||
-          Number(/jev|typesafe/i.test(b.path)) -
-            Number(/jev|typesafe/i.test(a.path)) ||
-          Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(b.path)) -
-            Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(a.path)) ||
-          a.path.localeCompare(b.path),
-      );
+      .filter((entry) => codeCandidate(entry) && !seenPreferred.has(entry.path.toLowerCase()));
+    const candidates = [...preferredCandidates, ...directProbes, ...generalCandidates].sort(
+      (a, b) =>
+        Number(isPreferred(b.path)) - Number(isPreferred(a.path)) ||
+        Number(/typesafe|jev/i.test(posix.basename(b.path))) -
+          Number(/typesafe|jev/i.test(posix.basename(a.path))) ||
+        Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(a.path)) -
+          Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(b.path)) ||
+        Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(b.path)) -
+          Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(a.path)) ||
+        Number(/jev|typesafe/i.test(b.path)) -
+          Number(/jev|typesafe/i.test(a.path)) ||
+        Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(b.path)) -
+          Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(a.path)) ||
+        a.path.localeCompare(b.path),
+    );
     for (const entry of candidates.slice(0, MAX_CODE_FILES)) {
       let file;
       try {
@@ -597,9 +636,10 @@ export async function inspectRepository({
         if (error.status === 404) continue;
         throw error;
       }
-      let text = decodeFile(file);
+      const isNotebook = /\.ipynb$/i.test(entry.path);
+      let text = decodeFile(file, isNotebook ? MAX_NOTEBOOK_BYTES : MAX_FILE_BYTES);
       if (text === null) continue;
-      if (/\.ipynb$/i.test(entry.path)) {
+      if (isNotebook) {
         const nbCode = decodeNotebookCode(text);
         if (nbCode !== null) text = nbCode;
       }

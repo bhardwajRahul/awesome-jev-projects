@@ -38,7 +38,7 @@ function redact(value, token = "") {
 export function extractCodeWindow(rawText, maxLength = 10000) {
   if (typeof rawText !== "string") return "";
   if (rawText.length <= maxLength) return rawText;
-  const pattern = /(?:https:\/\/api\.typesafe\.ai|\/v1\/systemone|requests\.(?:post|request)|client\.post|api\.request|\bchoice\b|\bscore\b|\bnoul\b|@typesafe\/jev|typesafe-ai)/i;
+  const pattern = /(?:typesafe|jev|openrouter|\/v1\/systemone|\bchoice\b|\bscore\b|\bnoul\b|@typesafe\/jev|system_?one)/i;
   const match = pattern.exec(rawText);
   if (match) {
     const matchIndex = match.index;

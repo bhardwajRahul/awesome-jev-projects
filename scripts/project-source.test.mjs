@@ -558,17 +558,23 @@ test("submitted categories require an exact or prefixed taxonomy name, not a sub
   );
 });
 
-test("extractSubmittedCodePaths extracts repository blob links", () => {
+test("extractSubmittedCodePaths extracts repository blob links, raw URLs, tree URLs, and inline paths with trailing punctuation", () => {
   const text = `
     Check this implementation:
-    https://github.com/milvus-io/bootcamp/blob/main/bootcamp/RAG/search_with_jev/rerank_search_results.ipynb#L10-L20
-    and also:
-    https://github.com/milvus-io/bootcamp/blob/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/route_search_queries.ipynb
+    (https://github.com/milvus-io/bootcamp/blob/main/bootcamp/RAG/search_with_jev/rerank_search_results.ipynb#L10-L20),
+    and raw link:
+    https://raw.githubusercontent.com/milvus-io/bootcamp/master/bootcamp/RAG/search_with_jev/route_search_queries.ipynb:98
+    and tree link:
+    https://github.com/milvus-io/bootcamp/tree/15a2212dc12c637479af0661d0038415bb83a17e/bootcamp/RAG/search_with_jev/demo.py.
+    also inline code \`bootcamp/RAG/search_with_jev/helper.py\` and path: bootcamp/RAG/search_with_jev/eval.py
     unrelated link:
     https://github.com/other/repo/blob/main/foo.py
   `;
   const paths = extractSubmittedCodePaths(text, "milvus-io/bootcamp");
   assert.deepEqual(paths.sort(), [
+    "bootcamp/RAG/search_with_jev/demo.py",
+    "bootcamp/RAG/search_with_jev/eval.py",
+    "bootcamp/RAG/search_with_jev/helper.py",
     "bootcamp/RAG/search_with_jev/rerank_search_results.ipynb",
     "bootcamp/RAG/search_with_jev/route_search_queries.ipynb",
   ].sort());
@@ -587,3 +593,77 @@ test("decodeNotebookCode extracts code cell content", () => {
   assert.match(code, /print\('done'\)/);
   assert.equal(code.includes("# Title"), false);
 });
+
+test("inspectRepository finds preferred candidates located beyond 5000 entries and via suffix matching", async () => {
+  const dummyEntries = Array.from({ length: 5500 }, (_, i) => ({
+    type: "blob",
+    path: `src/dummy/file_${String(i).padStart(5, "0")}.py`,
+    mode: "100644",
+    size: 20,
+  }));
+  const targetPath = "bootcamp/RAG/search_with_jev/rerank.ipynb";
+  const notebookContent = JSON.stringify({
+    cells: [
+      {
+        cell_type: "code",
+        source: [
+          'import requests, os\n',
+          'API_URL = "https://api.typesafe.ai/v1/systemone"\n',
+          'requests.post(API_URL, headers={"Authorization": "Bearer key"})\n',
+        ],
+      },
+    ],
+  });
+  dummyEntries.push({
+    type: "blob",
+    path: targetPath,
+    mode: "100644",
+    size: notebookContent.length,
+  });
+
+  const f = fixture({
+    [`/repos/${repository}/git/trees/${sha}?recursive=1`]: { tree: dummyEntries },
+    [`/repos/${repository}/contents/${targetPath}?ref=${sha}`]: encoded(notebookContent, targetPath),
+  });
+
+  // Test suffix matching: author supplied only "search_with_jev/rerank.ipynb"
+  const result = await inspect(f, {
+    requireCodeEvidence: true,
+    preferredPaths: ["search_with_jev/rerank.ipynb"],
+  });
+  assert.equal(result.status, "accepted");
+  assert.equal(result.evidence.implementationFiles.length, 1);
+  assert.equal(result.evidence.implementationFiles[0].path, targetPath);
+});
+
+test("inspectRepository accepts self-hosted Jev server implementations serving /v1/systemone", async () => {
+  const serverPath = "server/src/server/app.py";
+  const serverCode = `
+from fastapi import FastAPI, Request
+app = FastAPI()
+
+@app.post("/v1/systemone", tags=["decisions"])
+async def systemone(request: Request):
+    """Answers choice, score, and noul questions from model logits directly."""
+    body = await request.json()
+    questions = body.get("questions", {})
+    return {"answers": {"intent": {"choice": "billing", "confidence": 0.95}}}
+`;
+  const f = fixture({
+    [`/repos/${repository}/git/trees/${sha}?recursive=1`]: {
+      tree: [
+        { type: "blob", path: serverPath, mode: "100644", size: serverCode.length },
+      ],
+    },
+    [`/repos/${repository}/contents/${serverPath}?ref=${sha}`]: encoded(serverCode, serverPath),
+  });
+
+  const result = await inspect(f, {
+    requireCodeEvidence: true,
+    preferredPaths: [serverPath],
+  });
+  assert.equal(result.status, "accepted");
+  assert.equal(result.evidence.implementationFiles.length, 1);
+  assert.equal(result.evidence.implementationFiles[0].path, serverPath);
+});
+
