@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 695
+Catalog entries: 696
 
 ## Install the Agent Skill
 
@@ -9882,3 +9882,20 @@ Sieve checks a folder of Markdown notes against itself. Crosscheck compares ever
 - Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lenses.cjs
 - Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/lint.cjs
 - Source evidence: https://github.com/nothans/sieve/blob/24fa8c1ffbd1db2224dd3480affc93a9a98b15fe/lib/backends.cjs
+
+## jev-engineering
+
+A Claude Code tool-call gate. Clearly safe commands run with no permission prompt, clearly dangerous ones are blocked with the reason, and unclear ones get the normal prompt. Also ships review-router, a GitHub Action that routes AI code review to a full or quick read. Disclosure: I built and maintain it.
+
+- Repository: https://github.com/eugeniughelbur/jev-engineering
+- Category: Security & Guardrails
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/eugeniughelbur/jev-engineering/
+- Source evidence: https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/README.md
+- Source evidence: https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/build/lib/jev_gate.py
+- Source evidence: https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/jev_gate.py
+- Source evidence: https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/integrations/opencode/jev-gate.ts
+- Source evidence: https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/usecases/jevchecks.py

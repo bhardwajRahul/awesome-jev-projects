@@ -61195,5 +61195,98 @@
       "issueBodySha256": "705106e2ffd61bafd19239b95bd4b9ceeaaec9ee882718750cad2cb14d7fc246",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/96"
     }
+  },
+  {
+    "id": "eugeniughelbur:jev-engineering",
+    "name": "jev-engineering",
+    "author": "eugeniughelbur",
+    "url": "https://github.com/eugeniughelbur/jev-engineering",
+    "repoId": 1378736229,
+    "category": "Security & Guardrails",
+    "plainSummary": "该项目提供基于 Jev 的工具调用门禁和评审路由等示例，根据输入内容决定放行、拦截或提示确认。",
+    "jevDecisionPoint": "Jev 判断每条待执行的工具调用命令是否具有破坏性，并在允许、人工确认、拦截三种处置中做出选择。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "给现有流程增加可检查的判断环节。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A Claude Code tool-call gate. Clearly safe commands run with no permission prompt, clearly dangerous ones are blocked with the reason, and unclear ones get the normal prompt. Also ships review-router, a GitHub Action that routes AI code review to a full or quick read. Disclosure: I built and maintain it.",
+    "stars": 4,
+    "forks": 2,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-20T20:09:26Z",
+    "lastCommitAt": "2026-09-27T21:53:45Z",
+    "headSha": "f538e7a81b4d775e9b9929fa6da0891132e9713b",
+    "metadataFetchedAt": "2026-09-27T22:02:53.356Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/229805713?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-27T22:02:53.357Z",
+    "evidence": [
+      {
+        "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/build/lib/jev_gate.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/jev_gate.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/integrations/opencode/jev-gate.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/usecases/jevchecks.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "f538e7a81b4d775e9b9929fa6da0891132e9713b",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/README.md",
+          "hash": "ea09a2d280fcf1077aa0de17655f5c6039cf9ca9a61285fb06470f5ee7cb6832"
+        },
+        {
+          "path": "build/lib/jev_gate.py",
+          "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/build/lib/jev_gate.py",
+          "hash": "2bf7f2ec7c547fa6f6a76860f9d080bb7afc9d039252d68d04502af6edce3912"
+        },
+        {
+          "path": "jev_gate.py",
+          "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/jev_gate.py",
+          "hash": "c41b3f789314ad8ae14b39ed22cc4c877b115fc80c0e1bcf4e49066c12288029"
+        },
+        {
+          "path": "integrations/opencode/jev-gate.ts",
+          "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/integrations/opencode/jev-gate.ts",
+          "hash": "4efd6812360b269684c7d61c9c687af48b7c0f5858574e2ab2901897eea5a42d"
+        },
+        {
+          "path": "usecases/jevchecks.py",
+          "url": "https://github.com/eugeniughelbur/jev-engineering/blob/f538e7a81b4d775e9b9929fa6da0891132e9713b/usecases/jevchecks.py",
+          "hash": "802ef75cefd904038384a6fd10b251e250f8c8a78b20b9fcc71e3ec27bf8a91a"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 98,
+      "issueBodySha256": "1ab5e3b2b9966a622c03f1e356ed0d26e8d2f71b3985385b700bedfa6b78815f",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/98"
+    }
   }
 ]
