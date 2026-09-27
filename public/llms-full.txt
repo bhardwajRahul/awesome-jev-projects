@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 693
+Catalog entries: 694
 
 ## Install the Agent Skill
 
@@ -9844,3 +9844,23 @@ Cube Lab is an interactive 3D Rubik's Cube app that generates candidate solution
 - Details: https://logicrw.github.io/awesome-jev-projects/en/projects/ngocvychu38-web/cube-lab/
 - Source evidence: https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/README.md
 - Source evidence: https://github.com/ngocvychu38-web/cube-lab/blob/6f7d2675c3c3b5bb54f9460cec2854032c1db53d/netlify/functions/jev.mjs
+
+## jev
+
+jevos is an open-source, Jev-compatible alternative to TypeSafe's Jev for yes/no decisions that runs entirely on a laptop CPU. Send text plus a yes/no question over HTTP and get back P(yes) from a single forward pass of a 1B model — no text generation, no GPU required.
+
+- Repository: https://github.com/feder-cr/jev
+- Category: SDK & Decision Frameworks
+- Jev decision: Jev returns a structured decision for the local program; consult the source for the exact decision policy.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/feder-cr/jev/
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/README.md
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/app.py
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/__init__.py
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/translate.py
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/wire.py
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/backend.py
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/decisions.py
+- Source evidence: https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/models.py

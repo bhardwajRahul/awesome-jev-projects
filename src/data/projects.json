@@ -60972,5 +60972,126 @@
       "issueBodySha256": "45e129902ac9138683720dabf4cf95357ec5c8a3bdfedeb53501244728d716ce",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/94"
     }
+  },
+  {
+    "id": "feder-cr:jev",
+    "name": "jev",
+    "author": "feder-cr",
+    "url": "https://github.com/feder-cr/jev",
+    "repoId": 842982339,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "jevos 是与 Jev 兼容的开源 yes/no 决策服务，在笔记本 CPU 上通过单次模型前向计算返回 P(yes)，仅支持 noul 类型问题。",
+    "jevDecisionPoint": "对输入 state 就指定的 yes/no 问题由本地1B模型单次前向推理输出 P(yes) 作为二元决策。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "multilanguage-sdk",
+      "typed-decisions",
+      "evaluation-benchmarks"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "jevos is an open-source, Jev-compatible alternative to TypeSafe's Jev for yes/no decisions that runs entirely on a laptop CPU. Send text plus a yes/no question over HTTP and get back P(yes) from a single forward pass of a 1B model — no text generation, no GPU required.",
+    "stars": 879,
+    "forks": 120,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2024-08-15T14:24:48Z",
+    "lastCommitAt": "2026-09-27T01:40:40Z",
+    "headSha": "eb74cf78e5377e85fcaa76f6ebc9f82e8b517250",
+    "metadataFetchedAt": "2026-09-27T01:54:26.761Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/85809106?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-27T01:54:26.761Z",
+    "evidence": [
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/app.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/__init__.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/translate.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/wire.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/backend.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/decisions.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/models.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "eb74cf78e5377e85fcaa76f6ebc9f82e8b517250",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/README.md",
+          "hash": "3a03ef45bcffbab372a8e6347c3f882dffcbb879c669f70be8beb42de2fe072b"
+        },
+        {
+          "path": "src/jev/api/app.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/app.py",
+          "hash": "a77e40463b8296516ee88c5726037c6af1b23cfa38e706b851c5c8adf2386525"
+        },
+        {
+          "path": "src/jev/api/__init__.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/__init__.py",
+          "hash": "1e8ff0aea1e7bcce798472ee59719692b997eee01c21d1d3d8cc448a21baba3c"
+        },
+        {
+          "path": "src/jev/api/translate.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/translate.py",
+          "hash": "8cc142dc5db13a277367372a5c06c4d6f42b76b076dc5586653c70be52e816db"
+        },
+        {
+          "path": "src/jev/api/wire.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/api/wire.py",
+          "hash": "199b1440dada4a36586e464fd00323d28d07624470df8c77d06e6e6d5bec5d18"
+        },
+        {
+          "path": "src/jev/engine/backend.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/backend.py",
+          "hash": "8ecb07b9e031cd39a7c1c3cff38fe378fbfc43ec7243b9a2ed72435f9ae3db3f"
+        },
+        {
+          "path": "src/jev/engine/decisions.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/engine/decisions.py",
+          "hash": "897a5bdd1596509b43886c3fad0971ee68bf4bd3d404cfc3fa8bf5d6da726188"
+        },
+        {
+          "path": "src/jev/models.py",
+          "url": "https://github.com/feder-cr/jev/blob/eb74cf78e5377e85fcaa76f6ebc9f82e8b517250/src/jev/models.py",
+          "hash": "19ec9526f66526a43cb9ea167fb6f59c02cc6d28a52befabd62a407017a036a4"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 95,
+      "issueBodySha256": "11e9bf4834ae1c20396588596c822553358e1b2178c3fa5df7848afa3bc4a6f6",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/95"
+    }
   }
 ]
