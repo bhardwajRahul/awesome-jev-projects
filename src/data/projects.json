@@ -66096,5 +66096,72 @@
       ]
     },
     "sourceHash": "d164f1d42ba4639bbd2e4f990716a062409014cc666885066cfc950fcef9afe8"
+  },
+  {
+    "id": "sunyasheng:jevdeepresearch",
+    "name": "JevDeepResearch",
+    "author": "sunyasheng",
+    "url": "https://github.com/sunyasheng/JevDeepResearch",
+    "repoId": 1393470259,
+    "category": "Data & Search",
+    "plainSummary": "JevDeepResearch：对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPointEn": "Within each supplied source region, Choice selects source-line locations and Noul estimates whether the region addresses each evidence question. Code validates the answers, merges selected ranges, and returns verbatim evidence. Source loading and dependent research steps remain sequential; Jev region requests run concurrently.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "search-retrieval",
+      "evaluation-benchmarks",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "GPT directs the research; Jev uses Choice and Noul to locate evidence across document regions concurrently, and code returns original passages for GPT to verify and continue. The released integration pairs Pi-Serini BM25 search with Jev batches of 20, 40, or 60 documents.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-28T17:48:09Z",
+    "lastCommitAt": "2026-09-28T17:48:07Z",
+    "headSha": "72965685fa924c240bf8dd1bc27efa7336e744a2",
+    "metadataFetchedAt": "2026-09-28T22:57:10.945Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/22748186?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-28T22:57:10.945Z",
+    "evidence": [
+      {
+        "url": "https://github.com/sunyasheng/JevDeepResearch/blob/72965685fa924c240bf8dd1bc27efa7336e744a2/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/sunyasheng/JevDeepResearch/blob/72965685fa924c240bf8dd1bc27efa7336e744a2/integrations/pi-serini/src/extensions/jev_find_batch_v4.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "72965685fa924c240bf8dd1bc27efa7336e744a2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/sunyasheng/JevDeepResearch/blob/72965685fa924c240bf8dd1bc27efa7336e744a2/README.md",
+          "hash": "d2812e775b4b355a265c038e241c42e0f41291a7304b0a593858edf5ba542cb0"
+        },
+        {
+          "path": "integrations/pi-serini/src/extensions/jev_find_batch_v4.ts",
+          "url": "https://github.com/sunyasheng/JevDeepResearch/blob/72965685fa924c240bf8dd1bc27efa7336e744a2/integrations/pi-serini/src/extensions/jev_find_batch_v4.ts",
+          "hash": "d26fab9186f6faba0cd7b73fdd05f3cad8c327307a714fb68188b063380cfea4"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 101,
+      "issueBodySha256": "bd6d2a69311cea9b6e755111afa24ac1581e6b04c09cbb3063789c9bde9d8bb8",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/101"
+    }
   }
 ]
