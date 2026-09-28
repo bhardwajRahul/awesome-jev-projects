@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import {
   extractSubmittedRepository,
   extractSubmittedCategory,
+  extractSubmittedTags,
   extractSubmittedCodePaths,
   decodeNotebookCode,
   inspectRepository,
@@ -665,5 +666,30 @@ async def systemone(request: Request):
   assert.equal(result.status, "accepted");
   assert.equal(result.evidence.implementationFiles.length, 1);
   assert.equal(result.evidence.implementationFiles[0].path, serverPath);
+});
+
+test("extractSubmittedTags extracts multiple tags separated by commas or semicolons on a single line", () => {
+  const issueBody = `
+### Project Tags (项目场景标签，建议选 1~3 个)
+
+search-retrieval (搜索与检索 / Search & Retrieval), classification-ranking (分类与排序 / Classification & Ranking), typed-decisions (结构化决策 / Typed Decisions)
+`;
+  const tags = extractSubmittedTags(issueBody);
+  assert.deepEqual(tags, [
+    "search-retrieval",
+    "classification-ranking",
+    "typed-decisions",
+  ]);
+
+  const ideographicBody = `
+## 项目标签
+结构化决策、分类与排序、评测与可观测性
+`;
+  const ideographicTags = extractSubmittedTags(ideographicBody);
+  assert.deepEqual(ideographicTags, [
+    "typed-decisions",
+    "classification-ranking",
+    "evaluation-benchmarks",
+  ]);
 });
 

@@ -87,6 +87,32 @@ export function extractSubmittedRepository(issueBody) {
   ]);
 }
 
+function splitTagsLine(line) {
+  const segments = [];
+  let current = "";
+  let parenDepth = 0;
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    if (char === "(" || char === "（" || char === "[" || char === "【") {
+      parenDepth++;
+      current += char;
+    } else if (char === ")" || char === "）" || char === "]" || char === "】") {
+      if (parenDepth > 0) parenDepth--;
+      current += char;
+    } else if (
+      parenDepth === 0 &&
+      (char === "," || char === "，" || char === ";" || char === "；" || char === "、")
+    ) {
+      if (current.trim()) segments.push(current.trim());
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+  if (current.trim()) segments.push(current.trim());
+  return segments;
+}
+
 /** Extract explicit tags selected by the submitter in the issue body. */
 export function extractSubmittedTags(issueBody) {
   if (typeof issueBody !== "string" || issueBody.length > 100_000) return [];
@@ -114,25 +140,28 @@ export function extractSubmittedTags(issueBody) {
   }
   const candidates = [];
   for (const line of lines) {
-    const trimmed = line.replace(/^[-*•\d.)\s]+/, "").trim();
-    if (!trimmed) continue;
-    const direct = resolveTagId(trimmed);
-    if (direct) {
-      candidates.push(direct);
-      continue;
-    }
-    const head = trimmed.split(/[\s(（]/)[0].trim();
-    const headResolved = resolveTagId(head);
-    if (headResolved) {
-      candidates.push(headResolved);
-      continue;
-    }
-    const parts = trimmed.split(/[/()（）]/).map((s) => s.trim()).filter(Boolean);
-    for (const part of parts) {
-      const partResolved = resolveTagId(part);
-      if (partResolved) {
-        candidates.push(partResolved);
-        break;
+    const segments = splitTagsLine(line);
+    for (const segment of segments) {
+      const trimmed = segment.replace(/^[-*•\d.)\s]+/, "").trim();
+      if (!trimmed) continue;
+      const direct = resolveTagId(trimmed);
+      if (direct) {
+        candidates.push(direct);
+        continue;
+      }
+      const head = trimmed.split(/[\s(（]/)[0].trim();
+      const headResolved = resolveTagId(head);
+      if (headResolved) {
+        candidates.push(headResolved);
+        continue;
+      }
+      const parts = trimmed.split(/[/()（）]/).map((s) => s.trim()).filter(Boolean);
+      for (const part of parts) {
+        const partResolved = resolveTagId(part);
+        if (partResolved) {
+          candidates.push(partResolved);
+          break;
+        }
       }
     }
   }

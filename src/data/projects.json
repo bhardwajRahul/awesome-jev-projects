@@ -61232,12 +61232,13 @@
     "category": "Data & Search",
     "plainSummary": "sieve：Jev 对每对笔记做五选一关系判断、对每个问题或规则给出是否成立的概率，用于矛盾检测、排序和门禁。",
     "jevDecisionPoint": "Jev 对每对笔记做五选一关系判断、对每个问题或规则给出是否成立的概率，用于矛盾检测、排序和门禁。",
-    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "jevDecisionPointEn": "Asks one five-way Choice (same, supports, contradicts, topic, unrelated) for every ordered pair of notes, so each pair is judged from both sides; code averages the two probabilities and lists a pair as a contradiction when the average is 50% or more (the default). Ask and lint put one Noul or Score question to each note, and code ranks or gates on the probability.",
     "highlightBenefit": "把语义判断接到已有的命令行工作流。",
-    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "highlightBenefitEn": "Finds the notes in a Markdown folder that contradict each other or make the same point twice, with no index and no embeddings; the cost of a run is estimated before anything is spent, and a run stops when it reaches its budget.",
     "tags": [
       "search-retrieval",
-      "classification-ranking"
+      "classification-ranking",
+      "typed-decisions"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -63446,5 +63447,97 @@
       ]
     },
     "sourceHash": "dac9385bbc4b5647f689ac99c7bcdd997de5cf0b9f07f94e1e4462e83fb5934a"
+  },
+  {
+    "id": "dzhng:jevgrep",
+    "name": "jevgrep",
+    "repoId": 1388482474,
+    "author": "dzhng",
+    "url": "https://github.com/dzhng/jevgrep",
+    "category": "Codebase & Graph Pathfinding",
+    "plainSummary": "面向 Coding Agent 的生产级代码语义检索 CLI 工具，使用 Jev 智能识别相关文件、导读线索与原文片段，经 SWE-bench 测试验证可降低 ~30% Token 成本。",
+    "jevDecisionPoint": "Jev 在代码库的目录、文件和声明层级上，对代码块是否直接实现/控制查询目标行为进行系统性相关度决策与范围判断。",
+    "jevDecisionPointEn": "Jev evaluates source declarations across directories and files to decide relevance, implementation scope, and referenced symbols for natural-language behavior queries.",
+    "highlightBenefit": "无需向量数据库或额外依赖，单次命令输出结构化原文切片与行号，直接对接 Coding Agent 技能流并有效缩减检索 Token 开销。",
+    "highlightBenefitEn": "Zero embeddings or index required; returns relevant files, reading leads, and verbatim source excerpts in one stdout response, saving ~30% cost on agent benchmarks.",
+    "tags": [
+      "cli-git-gates",
+      "ast-code-graph",
+      "search-retrieval"
+    ],
+    "summarySource": "source-first",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Find code by asking what it does. A CLI for coding agents that uses Jev to discover relevant files and source context with exact excerpts and line numbers.",
+    "stars": 1048,
+    "forks": 59,
+    "openIssues": 20,
+    "license": "MIT",
+    "createdAt": "2026-09-26T04:06:56Z",
+    "lastCommitAt": "2026-09-28T07:45:24Z",
+    "headSha": "2dc1d3c9c9fec236913d97d7288ee6d24ba17baa",
+    "metadataFetchedAt": "2026-09-28T11:01:58.930Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1329503?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-28T11:01:58.931Z",
+    "evidence": [
+      {
+        "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/providers.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/requests.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/evaluator.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/evals/implementation/swebench/gateway_broker.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "2dc1d3c9c9fec236913d97d7288ee6d24ba17baa",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/README.md",
+          "hash": "1190bc1efad25be4722e11ee9ae9ebef99f470559eb4fbb4e3c3b09aa0914101"
+        },
+        {
+          "path": "packages/core/src/providers.ts",
+          "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/providers.ts",
+          "hash": "cbca9968988a8d11c7fa1ee85888d36371cb143f65eeb65ca3df22c953535924"
+        },
+        {
+          "path": "packages/core/src/requests.ts",
+          "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/requests.ts",
+          "hash": "93da7e492ce26e828e18ec3309a63c6519198e3b2e3fc7192a54fb21fdf1b6db"
+        },
+        {
+          "path": "packages/core/src/evaluator.ts",
+          "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/evaluator.ts",
+          "hash": "5d2b7818e5ae3a61fbcbbd3a68ea1dfba54dc69f417fef7b3fe807da00f2ae28"
+        },
+        {
+          "path": "evals/implementation/swebench/gateway_broker.py",
+          "url": "https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/evals/implementation/swebench/gateway_broker.py",
+          "hash": "437325be9790084c32c67b90f7bec03ab9fe991b713a3638623b7a1c9fcbfc40"
+        }
+      ]
+    },
+    "updatedAt": "2026-09-28T07:45:24Z",
+    "pushedAt": "2026-09-28T07:45:24Z",
+    "lastSyncedAt": "2026-09-28T11:01:58.931Z",
+    "archived": false
   }
 ]
