@@ -56,7 +56,7 @@ export function isSubmission(issue) {
   );
   const titled = /^\s*\[project\]/i.test(issue.title ?? "");
   const headed =
-    /^#{1,6}\s+(?:GitHub repository|Project repository|项目仓库|仓库地址|repository)\s*$/im.test(
+    /^#{1,6}\s+(?:GitHub repository|Project repository|项目仓库|仓库地址|repository)(?:\s*[\(（][\s\S]*?[\)）])?\s*$/im.test(
       issue.body ?? "",
     ) ||
     /^\s*(?:repository|github repository|project repository|项目仓库|仓库地址)[\s:：]+\s*https?:\/\/github\.com\//im.test(

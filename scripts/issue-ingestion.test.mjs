@@ -122,6 +122,8 @@ test("non-submissions, ambiguous URLs, and duplicate projects never reach AI", a
   assert.equal(isSubmission({ title: "Hello", labels: ["project-submission"] }), true);
   assert.equal(isSubmission({ title: "Hello", labels: [{ name: "project-submission" }] }), true);
   assert.equal(isSubmission({ title: "Hello", body: "## GitHub repository\n" }), true);
+  assert.equal(isSubmission({ title: "Hello", body: "### GitHub repository (项目仓库地址)\n" }), true);
+  assert.equal(isSubmission({ title: "Hello", body: "### 项目仓库 (Repository)\n" }), true);
   assert.equal(
     (
       await prepareSubmission({

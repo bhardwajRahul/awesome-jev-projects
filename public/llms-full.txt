@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 726
+Catalog entries: 727
 
 ## Install the Agent Skill
 
@@ -10293,3 +10293,17 @@ Find code by asking what it does. A CLI for coding agents that uses Jev to disco
 - Source evidence: https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/requests.ts
 - Source evidence: https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/packages/core/src/evaluator.ts
 - Source evidence: https://github.com/dzhng/jevgrep/blob/2dc1d3c9c9fec236913d97d7288ee6d24ba17baa/evals/implementation/swebench/gateway_broker.py
+
+## jev-opus
+
+Claude Opus 5.5 with the effort level re-decided every step by the TypeSafe Jev reflex — without breaking the prompt cache. CLI + Claude Code plugin.
+
+- Repository: https://github.com/WXK-AI/jev-opus
+- Category: Routing & Cost Optimization
+- Jev decision: Jev chooses the reasoning effort level (low/medium/high) when a prompt arrives and after every tool batch, raising effort on failures and dropping back on pass.
+- Purpose: Re-decides effort level at every step via per-message effort statements to keep prompt cache intact while controlling cost.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/wxk-ai/jev-opus/
+- Source evidence: https://github.com/WXK-AI/jev-opus/blob/c355fb3ba8f23be00fe523c617864daa70d6ea02/README.md
+- Source evidence: https://github.com/WXK-AI/jev-opus/blob/c355fb3ba8f23be00fe523c617864daa70d6ea02/src/jev/client.ts

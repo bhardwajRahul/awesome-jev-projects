@@ -500,10 +500,18 @@ function hasImplementationEvidence(text, path) {
     return true;
   }
 
-  const typesafeKey = /\bTYPESAFE_API_KEY\b/i.test(code);
-  const jevPrimitive = /["']type["']\s*:\s*["'](?:noul|choice|score)["']|\b(?:noul|choice|score)\b.{0,50}\banswer/i.test(code);
+  const typesafeKey = /\b(?:TYPESAFE_API_KEY|JEV_API_KEY)\b/i.test(code);
+  const jevPrimitive = /["'](?:type|kind)["']\s*:\s*["'](?:noul|choice|score)["']|\b(?:noul|choice|score)\b.{0,50}\b(?:answer|probabilities|confidence)/i.test(code);
   const anyHttpRequest = /\b(?:urllib\.request|requests|httpx|aiohttp|fetch|axios|postJson|http\.(?:Post|Get|Client|NewRequest)|reqwest|ureq)\b/i.test(code);
   if (typesafeKey && jevPrimitive && anyHttpRequest) return true;
+
+  const jevWireClient =
+    /\b(?:typesafe|jev)\b/i.test(code) &&
+    anyHttpRequest &&
+    /\b(?:noul|choice|score)\b/i.test(code) &&
+    /\bquestions\b/i.test(code) &&
+    /\b(?:state|probabilities|confidence|answers)\b/i.test(code);
+  if (jevWireClient) return true;
 
   const serverSystemOne =
     /(?:@[\w.]*\.post|router\.(?:post|handle|POST)|app\.(?:post|all)|Route\s*\(\s*["']POST["']|Endpoint|def\s+post|fn\s+handle|route)\s*\(\s*["']\/v1\/(?:systemone|decide)["']/i.test(code) ||

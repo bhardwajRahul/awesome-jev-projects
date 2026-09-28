@@ -63539,5 +63539,71 @@
     "pushedAt": "2026-09-28T07:45:24Z",
     "lastSyncedAt": "2026-09-28T11:01:58.931Z",
     "archived": false
+  },
+  {
+    "id": "wxk-ai:jev-opus",
+    "name": "jev-opus",
+    "author": "WXK-AI",
+    "url": "https://github.com/WXK-AI/jev-opus",
+    "repoId": 1383704341,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "在 Claude Code（Opus 5.5）每一轮推理及工具调用后，调用 Jev（/v1/systemone 端点）动态决策 Reasoning Effort 等级，保持提示词缓存完整。",
+    "jevDecisionPoint": "Jev 在任务提示词到达及每个工具批次后，对当前任务复杂度及测试状态做 low/medium/high 的 Choice 离散决策与 Noul/Score 置信度评估。",
+    "jevDecisionPointEn": "Jev chooses the reasoning effort level (low/medium/high) when a prompt arrives and after every tool batch, raising effort on failures and dropping back on pass.",
+    "highlightBenefit": "在保持 Claude Code 提示词缓存不失效的前提下动态自适应调节思考开销，兼顾深度推理与 Token 成本控制。",
+    "highlightBenefitEn": "Re-decides effort level at every step via per-message effort statements to keep prompt cache intact while controlling cost.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Claude Opus 5.5 with the effort level re-decided every step by the TypeSafe Jev reflex — without breaking the prompt cache. CLI + Claude Code plugin.",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-23T15:22:32Z",
+    "lastCommitAt": "2026-09-28T06:04:19Z",
+    "headSha": "c355fb3ba8f23be00fe523c617864daa70d6ea02",
+    "metadataFetchedAt": "2026-09-28T11:14:46.187Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/145734418?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-28T11:14:46.188Z",
+    "evidence": [
+      {
+        "url": "https://github.com/WXK-AI/jev-opus/blob/c355fb3ba8f23be00fe523c617864daa70d6ea02/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/WXK-AI/jev-opus/blob/c355fb3ba8f23be00fe523c617864daa70d6ea02/src/jev/client.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "c355fb3ba8f23be00fe523c617864daa70d6ea02",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/WXK-AI/jev-opus/blob/c355fb3ba8f23be00fe523c617864daa70d6ea02/README.md",
+          "hash": "a35a415cdca445e6041d769dd7dcd2982e002ea100b7344589d1417713f6bb0f"
+        },
+        {
+          "path": "src/jev/client.ts",
+          "url": "https://github.com/WXK-AI/jev-opus/blob/c355fb3ba8f23be00fe523c617864daa70d6ea02/src/jev/client.ts",
+          "hash": "e78e9ae053d331358dd13d6d0d05900a8f8c09471bf59001cebd162b68fc0e3d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 97,
+      "issueBodySha256": "4ad6a9cf8fc1e521afaf2503523eac54a897dec49da6c9a4018184d895653254",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/97"
+    }
   }
 ]
