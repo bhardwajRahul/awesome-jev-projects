@@ -1,26 +1,26 @@
 {
   "_searchCursors": {
-    "repositories:topic:jev fork:false": 3,
-    "repositories:typesafe jev fork:false": 7,
-    "repositories:typesafe-ai fork:false": 7,
-    "repositories:jev-mcp fork:false": 3,
-    "repositories:jev decision fork:false": 3,
-    "repositories:\"TypeSafe AI\" in:readme fork:false": 7,
-    "repositories:\"Jev API\" in:readme fork:false": 5,
-    "repositories:topic:typesafe-ai fork:false": 3,
-    "repositories:topic:typesafe ai fork:false": 1,
-    "repositories:\"api.typesafe.ai\" in:readme fork:false": 5,
-    "repositories:\"typesafe.ai\" \"jev\" in:readme fork:false": 7,
+    "repositories:topic:jev fork:false": 5,
+    "repositories:typesafe jev fork:false": 9,
+    "repositories:typesafe-ai fork:false": 9,
+    "repositories:jev-mcp fork:false": 1,
+    "repositories:jev decision fork:false": 5,
+    "repositories:\"TypeSafe AI\" in:readme fork:false": 9,
+    "repositories:\"Jev API\" in:readme fork:false": 7,
+    "repositories:topic:typesafe-ai fork:false": 5,
+    "repositories:topic:typesafe ai fork:false": 3,
+    "repositories:\"api.typesafe.ai\" in:readme fork:false": 7,
+    "repositories:\"typesafe.ai\" \"jev\" in:readme fork:false": 9,
     "repositories:\"from typesafe import jev\" in:readme fork:false": 1,
-    "repositories:\"@typesafe/jev\" in:readme fork:false": 7,
-    "code:\"api.typesafe.ai\" in:file": 7,
-    "code:\"typesafe.ai\" in:file": 7,
+    "repositories:\"@typesafe/jev\" in:readme fork:false": 9,
+    "code:\"api.typesafe.ai\" in:file": 9,
+    "code:\"typesafe.ai\" in:file": 9,
     "code:\"from typesafe import\" in:file": 1,
     "code:\"@typesafe/jev\" in:file": 1,
-    "commits:\"typesafe.ai\"": 7,
-    "commits:\"Jev\" \"AI\"": 5,
-    "issues:\"typesafe.ai\" is:pr in:title,body": 1,
-    "issues:\"Jev\" \"TypeSafe\" is:pr in:title,body": 7
+    "commits:\"typesafe.ai\"": 9,
+    "commits:\"Jev\" \"AI\"": 6,
+    "issues:\"typesafe.ai\" is:pr in:title,body": 3,
+    "issues:\"Jev\" \"TypeSafe\" is:pr in:title,body": 9
   },
   "tamaratran/fast-jev-compaction": {
     "checkedAt": "2026-09-18T06:52:26.940Z"
@@ -2751,5 +2751,185 @@
   },
   "baize7815/jev-mcp-open-source": {
     "checkedAt": "2026-09-24T04:03:48.111Z"
+  },
+  "aaddrick/building-with-typesafe-jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "christianmat/jev-pokemon": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "EliaAlberti/jev-rules": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "FeiLiuEM/open-medical-jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "charlesdove977/claude-x-jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Ai-trainee/awesome-jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "shalevamin/jevii": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Shanghua-Gao/RSI-Jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Emenowicz/jev-sap-commerce": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "danielnc/jev-browse": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "lawrence3699/jev-style": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "dfinke/Jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "wiatrM/jevtpp": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "TheAdaply/jev-apply": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "OmniJev/OneJev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "ickma2311/jev-baselines-eval": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "darwintechlab/openjev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "kiler398/jev-demo": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "jorgefspereira/opencode-auto-jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "aifabrice/jev-rag": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "AstonyCat/jev-tab-grouper": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "SoMarkAI/mJev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "hazlema/jev-riffs": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "cooper667/jev-browse": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "bojansandhaus/jev-decisions-hermes": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "xz-dev/pi-jev-todo-audit": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "dglazkov/jev2ui": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "ZTRRTUO/Jev-PhoneControl": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "SamanPandey-in/jevrail": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "tomerglick57/Jevstiller": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Oranquelui/astra-jev-harness": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "XYenon/ajevt-browser": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "AgenticAPP-Web/Jev-Research-Index": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Ayushmaniar/jev-voice-computer-use": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Fox-Islam/jevlint": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "holasoymalva/jev-test-impact": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "DoGMaTiiC/hermes-jev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "nemalabs/voicevox-jev-proxy": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "gauravkhuraana/jev-qa-demos": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "silvariasereneblossom/jeverifier": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Quintui/jev-use-cases": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "halfspin-qc/jev-reviews": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "codaaiteam/jev-mcp": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "aitofy-dev/jev-awesome-skills": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "olivier-motium/jev-doom": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "pZacca/askjev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "krw82/jev-playwright-mcp": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "VBS2004/jev-windows-agent": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "PraveenAShukla/polyjev": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "oluies/jev-vs-spacy": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "sebastianbennis/jev-system-one-reference": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "lazniak/jevskill": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "wustep/jev-playground": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Flam1ngFir3ball/jev-claude-router": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "ashrafumair111-lab/JEV-AI-QUIKSTART": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "aarzhaev/jevtok-ts": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "acidkill/JevCompass": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "markylaredo/openjev-mcp": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Teagar/jev-project-fit-review": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
+  },
+  "Tenkei/jev-decision-bench": {
+    "checkedAt": "2026-09-28T04:41:05.643Z"
   }
 }
