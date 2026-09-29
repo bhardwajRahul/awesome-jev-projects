@@ -68539,5 +68539,81 @@
       ]
     },
     "sourceHash": "3b45a65636ab3f3e702182defa13f85ce7a26a25b5bc7758aa0d9925e1a9f130"
+  },
+  {
+    "id": "cwdx:1-million-emojis",
+    "name": "1-million-emojis",
+    "author": "cwdx",
+    "url": "https://github.com/cwdx/1-million-emojis",
+    "repoId": 1387596514,
+    "category": "Creative Tools",
+    "plainSummary": "1-million-emojis：把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPoint": "把任务状态交给 Jev，返回供本地程序使用的结构化判断；具体策略请查看来源。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "把选择和打分接进现有程序；暂无可核验的性能对照。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "creative-multimedia",
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A shared 1000 × 1000 emoji canvas where humans paint and Jev paints alongside them: after each stroke, one Jev request chooses which emoji goes next to it and where, from typed options named against the stroke, and says whether the stroke is an unfinished shape.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-25T13:52:08Z",
+    "lastCommitAt": "2026-09-29T07:41:11Z",
+    "headSha": "c74634732e195da15184593a2f268165920409b2",
+    "metadataFetchedAt": "2026-09-29T08:06:50.689Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/6141096?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-29T08:06:50.689Z",
+    "evidence": [
+      {
+        "url": "https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/packages/emoji/src/jev-join.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/packages/jev/src/index.ts",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "c74634732e195da15184593a2f268165920409b2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/README.md",
+          "hash": "ac0d61ef40aafe4e33ffa40498958f06336e6ca2a2f8607cee7878051f3d06b2"
+        },
+        {
+          "path": "packages/emoji/src/jev-join.ts",
+          "url": "https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/packages/emoji/src/jev-join.ts",
+          "hash": "24eee8eb19d4fe29ed92a71a18f557e9833b364aa280e661ea46b2bb48fbb314"
+        },
+        {
+          "path": "packages/jev/src/index.ts",
+          "url": "https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/packages/jev/src/index.ts",
+          "hash": "635711bb7143d366cc6849362f93e2bcb1a36414c8f409e8564e58ef75e7ff0d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 102,
+      "issueBodySha256": "d81989c8b3682a3c1d7c37e3925ab5cc470ed0c9ea861d2b3d47d35430763e7c",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/102"
+    }
   }
 ]
