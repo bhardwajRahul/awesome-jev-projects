@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 797
+Catalog entries: 798
 
 ## Install the Agent Skill
 
@@ -11225,3 +11225,17 @@ Fast decision routing for agent harnesses — native MCP with Jev for tool selec
 - Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/models.py
 - Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/policy.py
 - Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/provider.py
+
+## laya-browser-guard
+
+A passive, privacy-first Chrome security copilot that combines deterministic browser-visible checks with local Laya and official Jev typed decisions. It evaluates redacted evidence from scripts, resources, forms, headers, and DOM signals, then explains investigation priority without attacking the target.
+
+- Repository: https://github.com/pateti-hub/laya-browser-guard
+- Category: Security & Guardrails
+- Jev decision: The Railway FastAPI gateway submits one structured, redacted observation state to the official TypeSafe System One endpoint. Jev uses two Noul decisions for meaningful concern and manual review, two Choice decisions for primary category and evidence quality, and one Score decision for investigation priority. Deterministic code retains control of evidence collection, severity rules, side effects, reporting, and fail-open behavior.
+- Purpose: Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: Apache-2.0
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/pateti-hub/laya-browser-guard/
+- Source evidence: https://github.com/pateti-hub/laya-browser-guard/blob/c4a20349b574800ad132fc3e8baf2c6e81d33f89/README.md
+- Source evidence: https://github.com/pateti-hub/laya-browser-guard/blob/c4a20349b574800ad132fc3e8baf2c6e81d33f89/server/app/providers/jev.py

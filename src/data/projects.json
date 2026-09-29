@@ -68792,5 +68792,72 @@
       "issueBodySha256": "d195f76536151f4c8d2b97a456f802602f8ef6fd96d99bad363aa67676feeae0",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/100"
     }
+  },
+  {
+    "id": "pateti-hub:laya-browser-guard",
+    "name": "laya-browser-guard",
+    "author": "pateti-hub",
+    "url": "https://github.com/pateti-hub/laya-browser-guard",
+    "repoId": 1392704462,
+    "category": "Security & Guardrails",
+    "plainSummary": "laya-browser-guard：对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPoint": "对输入文本做分类或打分，交给本地规则继续处理。",
+    "jevDecisionPointEn": "The Railway FastAPI gateway submits one structured, redacted observation state to the official TypeSafe System One endpoint. Jev uses two Noul decisions for meaningful concern and manual review, two Choice decisions for primary category and evidence quality, and one Score decision for investigation priority. Deterministic code retains control of evidence collection, severity rules, side effects, reporting, and fail-open behavior.",
+    "highlightBenefit": "把语义判断接到已有的命令行工作流。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "security-guardrails",
+      "browser-automation",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "A passive, privacy-first Chrome security copilot that combines deterministic browser-visible checks with local Laya and official Jev typed decisions. It evaluates redacted evidence from scripts, resources, forms, headers, and DOM signals, then explains investigation priority without attacking the target.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "Apache-2.0",
+    "createdAt": "2026-09-28T12:51:30Z",
+    "lastCommitAt": "2026-09-29T12:35:41Z",
+    "headSha": "c4a20349b574800ad132fc3e8baf2c6e81d33f89",
+    "metadataFetchedAt": "2026-09-29T12:46:28.831Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/221115518?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-29T12:46:28.831Z",
+    "evidence": [
+      {
+        "url": "https://github.com/pateti-hub/laya-browser-guard/blob/c4a20349b574800ad132fc3e8baf2c6e81d33f89/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/pateti-hub/laya-browser-guard/blob/c4a20349b574800ad132fc3e8baf2c6e81d33f89/server/app/providers/jev.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "c4a20349b574800ad132fc3e8baf2c6e81d33f89",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/pateti-hub/laya-browser-guard/blob/c4a20349b574800ad132fc3e8baf2c6e81d33f89/README.md",
+          "hash": "113ea53c929d01f1b1390f83a33b518156ef3b8ff32aca64eac84282f8e78805"
+        },
+        {
+          "path": "server/app/providers/jev.py",
+          "url": "https://github.com/pateti-hub/laya-browser-guard/blob/c4a20349b574800ad132fc3e8baf2c6e81d33f89/server/app/providers/jev.py",
+          "hash": "4c0122ebdc7ed2ba04aa1792345d44367b7006a9567701c8f97925671071a60d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 103,
+      "issueBodySha256": "543eb3c865182cf54151e83e01c2a919710122093e8149ca4fbe8f85b09e1906",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/103"
+    }
   }
 ]
