@@ -535,6 +535,19 @@ export async function acknowledgePublished({
         method: "POST",
         body: { body: `${successComment}\n\n${marker}` },
       });
+    const hasNeedsEvidence = issue.labels?.some(
+      (l) => (typeof l === "string" ? l : l.name) === "needs-evidence",
+    );
+    if (hasNeedsEvidence) {
+      try {
+        await api(
+          `/repos/${repository}/issues/${issue.number}/labels/needs-evidence`,
+          { method: "DELETE" },
+        );
+      } catch (err) {
+        console.warn(`Could not remove needs-evidence label: ${err.message}`);
+      }
+    }
     await api(`/repos/${repository}/issues/${issue.number}`, {
       method: "PATCH",
       body: { state: "closed", state_reason: "completed" },

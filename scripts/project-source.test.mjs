@@ -485,6 +485,10 @@ test("strict ingestion recognizes precise Jev models only with an OpenRouter req
       accepted: true,
     },
     {
+      text: "import httpx\nbase_url = 'https://openrouter.ai/api/alpha/decisions'\nmodel = 'typesafe/jev-1.13'\nawait client.post(base_url, json={'model': model})",
+      accepted: true,
+    },
+    {
       text: "const models=['typesafe/jev-1.13-20260917']; console.log(models);",
       accepted: false,
     },

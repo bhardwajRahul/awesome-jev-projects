@@ -31622,8 +31622,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "context-compaction",
-      "classification-ranking",
-      "mcp-integrations"
+      "mcp-integrations",
+      "coding-agents"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -31719,7 +31719,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "multilanguage-sdk",
-      "typed-decisions"
+      "domain-workflows",
+      "classification-ranking"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -31814,7 +31815,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "cli-git-gates",
-      "typed-decisions"
+      "typed-decisions",
+      "evaluation-benchmarks"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -32061,7 +32063,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "domain-workflows",
-      "typed-decisions"
+      "browser-automation",
+      "search-retrieval"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -37672,6 +37675,7 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "security-guardrails",
+      "cli-git-gates",
       "typed-decisions"
     ],
     "summarySource": "readme-extractive",
@@ -37921,7 +37925,7 @@
     "tags": [
       "security-guardrails",
       "cli-git-gates",
-      "typed-decisions"
+      "coding-agents"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -38135,7 +38139,7 @@
     "tags": [
       "llm-routing-cost",
       "mcp-integrations",
-      "typed-decisions"
+      "coding-agents"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -38205,7 +38209,7 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "llm-routing-cost",
-      "typed-decisions"
+      "coding-agents"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -38347,7 +38351,7 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "security-guardrails",
-      "typed-decisions"
+      "domain-workflows"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -44953,7 +44957,7 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "search-retrieval",
-      "typed-decisions"
+      "classification-ranking"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -55988,7 +55992,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "games-simulation",
-      "evaluation-benchmarks"
+      "evaluation-benchmarks",
+      "typed-decisions"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -56067,7 +56072,7 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "search-retrieval",
-      "classification-ranking"
+      "coding-agents"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -56207,7 +56212,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "multilanguage-sdk",
-      "evaluation-benchmarks"
+      "evaluation-benchmarks",
+      "typed-decisions"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -56340,7 +56346,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "cli-git-gates",
-      "coding-agents"
+      "coding-agents",
+      "typed-decisions"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -58621,6 +58628,7 @@
     "highlightBenefit": "把语义判断接进已有的数据查询流程。",
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
+      "database-vector",
       "search-retrieval",
       "classification-ranking"
     ],
@@ -60558,7 +60566,7 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "llm-routing-cost",
-      "typed-decisions"
+      "coding-agents"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -60912,7 +60920,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "multilanguage-sdk",
-      "typed-decisions"
+      "typed-decisions",
+      "classification-ranking"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -61347,7 +61356,8 @@
     "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
     "tags": [
       "security-guardrails",
-      "typed-decisions"
+      "coding-agents",
+      "cli-git-gates"
     ],
     "summarySource": "readme-extractive",
     "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
@@ -68614,6 +68624,173 @@
       "issueNumber": 102,
       "issueBodySha256": "d81989c8b3682a3c1d7c37e3925ab5cc470ed0c9ea861d2b3d47d35430763e7c",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/102"
+    }
+  },
+  {
+    "id": "hr98w:jev-visual",
+    "name": "jev-visual",
+    "author": "hr98w",
+    "url": "https://github.com/hr98w/jev-visual",
+    "repoId": 1374829176,
+    "category": "SDK & Decision Frameworks",
+    "plainSummary": "在 Apple Silicon Mac 本地跑的视觉版 Jev 实验。对单张图片做选择、打分与是非判断，自带 3 个本地视觉游戏 Demo。",
+    "plainSummaryEn": "Local Jev-like visual inference experiment on Apple Silicon Mac. Scores and classifies single images across multiple questions with 3 playable game demos.",
+    "plainSummaryJa": "Apple Silicon Mac 上で動作する視覚版 Jev 実験。単一画像に対する選択・採点・真伪判定を行い、3つのローカル視覚ゲームデモを同梱。",
+    "plainSummaryKo": "Apple Silicon Mac 로컬에서 실행되는 시각 버전 Jev 실험. 단일 이미지에 대한 선택, 채점 및 진위 판단을 수행하며 3개의 로컬 시각 게임 데모 포함.",
+    "jevDecisionPoint": "复用图像上下文，读取模型 logits 直接为候选答案打分，由本地代码拼装结构化结果。",
+    "jevDecisionPointEn": "Reuses multimodal visual context to score candidate answers directly from logits without autoregressive generation.",
+    "highlightBenefit": "把 Jev 的多问题单次打分范式拓展到端侧视觉场景，本地秒级跑通分拣与体感游戏。",
+    "highlightBenefitEn": "Brings Jev-style single-pass multi-question scoring to local edge vision on Apple Silicon.",
+    "tags": [
+      "desktop-os",
+      "games-simulation",
+      "typed-decisions"
+    ],
+    "summarySource": "source-reviewed",
+    "claimStatus": "社区开源实验：基于 Qwen3.5-0.8B 与 MLX 在 Apple Silicon 上跑通端侧多模态打分接口，非 TypeSafe 官方实现。",
+    "claimStatusEn": "Open-source experiment running local multimodal Jev-style scoring on Apple Silicon (MLX), not official TypeSafe cloud service.",
+    "stars": 298,
+    "forks": 26,
+    "openIssues": 1,
+    "license": "MIT",
+    "createdAt": "2026-09-17T17:45:56Z",
+    "lastCommitAt": "2026-09-21T11:43:54Z",
+    "headSha": "4382bba455647400951429134ceb012ca155e3fe",
+    "metadataFetchedAt": "2026-09-29T09:18:00.000Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/159284258?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-29T09:18:00.000Z",
+    "evidence": [
+      {
+        "url": "https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/README.md",
+        "note": "固定版本的 Jev 视觉推理实验说明"
+      },
+      {
+        "url": "https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/jev_visual/scoring.py",
+        "note": "固定版本的单次打分与 Candidate Tokenization 实现"
+      },
+      {
+        "url": "https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/jev_visual/server.py",
+        "note": "固定版本的 /v1/judge 本地决策服务"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "4382bba455647400951429134ceb012ca155e3fe",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/README.md",
+          "hash": "64a55fe922c469ad9b576c2da7b88ce1007f0c4e"
+        },
+        {
+          "path": "jev_visual/scoring.py",
+          "url": "https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/jev_visual/scoring.py",
+          "hash": "6bed5667a2eb799e1f135b61eb9ead3d0b23957c"
+        },
+        {
+          "path": "jev_visual/server.py",
+          "url": "https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/jev_visual/server.py",
+          "hash": "948e3e6aa22612d296a7c637a2b771115c43826a"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 2,
+      "issueBodySha256": "481565be7eb9a9cdfdac9d428b6ee6f23fa4d01a6372c4874d6549ee71f3f299",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/2"
+    },
+    "updatedAt": "2026-09-29T09:11:32Z",
+    "pushedAt": "2026-09-21T11:43:54Z",
+    "lastSyncedAt": "2026-09-29T09:18:00.000Z",
+    "archived": false
+  },
+  {
+    "id": "protocol-lattice:harness-router",
+    "name": "harness-router",
+    "author": "Protocol-Lattice",
+    "url": "https://github.com/Protocol-Lattice/harness-router",
+    "repoId": 1387414858,
+    "category": "MCP & Integrations",
+    "plainSummary": "面向 Coding Agent 的工具选择轻量决策层，基于 MCP 架构与 Jev（OpenRouter 端点）动态评估上下文与候选工具并执行快速路由。",
+    "jevDecisionPoint": "Jev 在组装好的候选工具描述符与当前状态上执行 discrete choice 决策，根据置信度阈值判定是直接命中最佳工具还是退避至规划器。",
+    "jevDecisionPointEn": "Jev evaluates the assembled tool descriptors against agent state using OpenRouter decisions API, returning high-confidence tool selection or fallback.",
+    "highlightBenefit": "将“选哪个工具”与“怎么执行工具”解耦，避免在庞大 MCP 工具集场景下浪费昂贵的 Frontier 模型上下文与推理 Token。",
+    "highlightBenefitEn": "Separates tool routing from problem solving, eliminating wasted LLM tokens and latency across large, overlapping MCP tool registries.",
+    "tags": [
+      "mcp-integrations",
+      "coding-agents",
+      "typed-decisions"
+    ],
+    "summarySource": "source-reviewed",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Fast decision routing for agent harnesses — native MCP with Jev for tool selection and MCTS for multi-step decisions.",
+    "stars": 16,
+    "forks": 6,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-25T12:05:02Z",
+    "lastCommitAt": "2026-09-28T20:31:58Z",
+    "headSha": "4d06d9e51af8151c581e9bad7c7a6d0703766746",
+    "metadataFetchedAt": "2026-09-29T09:53:08.466Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/240787679?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-29T09:53:08.470Z",
+    "evidence": [
+      {
+        "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/models.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/policy.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/provider.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "4d06d9e51af8151c581e9bad7c7a6d0703766746",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/README.md",
+          "hash": "1ab506b9080adee5577440a2040339e224283643b4573e4e0473f85fb869b6e6"
+        },
+        {
+          "path": "src/harness_router/models.py",
+          "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/models.py",
+          "hash": "d3ea578beac790598cba6ddfc54b6faeef206d97f6a8d936249317b1faffba7f"
+        },
+        {
+          "path": "src/harness_router/policy.py",
+          "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/policy.py",
+          "hash": "a260ea437a52b882bf00fe02df3cc975127cb6a8c5186427d73c8cd85f5e0ad5"
+        },
+        {
+          "path": "src/harness_router/provider.py",
+          "url": "https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/provider.py",
+          "hash": "83684c173907e89e2a156b3301e485235a38fa0574eb45a80d4c54e517e5e485"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 100,
+      "issueBodySha256": "d195f76536151f4c8d2b97a456f802602f8ef6fd96d99bad363aa67676feeae0",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/100"
     }
   }
 ]

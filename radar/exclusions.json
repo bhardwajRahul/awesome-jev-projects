@@ -46,14 +46,6 @@
     "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
   },
   {
-    "repo": "hr98w/jev-visual",
-    "repoId": null,
-    "status": "remove",
-    "reason": "README 明确本地模型为 Qwen3.5-0.8B + MLX，仅借鉴 Jev-like logits scoring；不集成 TypeSafe Jev。移出实际 Jev 集成目录，项目本身并非低质量。",
-    "source": "https://github.com/hr98w/jev-visual/blob/19af545f096e8db4c4dd5d47aed42d92ec252111/README.md",
-    "reviewedAt": "2026-09-19T06:53:39.508919+00:00"
-  },
-  {
     "repo": "Olti1947/jev-java",
     "repoId": 1375763624,
     "status": "quarantine",

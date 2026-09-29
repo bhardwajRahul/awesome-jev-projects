@@ -298,11 +298,13 @@ function notifier({
   existingComment = false,
   edited = false,
   commentFailure = false,
+  issueOverride = null,
 } = {}) {
+  const currentIssue = issueOverride || issue;
   const calls = [];
   const api = async (path, options = {}) => {
     calls.push({ path, ...options });
-    if (path.includes("?state=open")) return [issue];
+    if (path.includes("?state=open")) return [currentIssue];
     if (path.includes("/comments?"))
       return existingComment
         ? [
@@ -317,6 +319,10 @@ function notifier({
       assert.equal(options.body.body.split("\n\n")[0], successComment);
       return {};
     }
+    if (options.method === "DELETE") {
+      assert.ok(path.endsWith("/labels/needs-evidence"));
+      return {};
+    }
     if (options.method === "PATCH") {
       assert.deepEqual(options.body, {
         state: "closed",
@@ -324,7 +330,7 @@ function notifier({
       });
       return {};
     }
-    return edited ? { ...issue, body: "edited" } : issue;
+    return edited ? { ...currentIssue, body: "edited" } : currentIssue;
   };
   return {
     calls,
@@ -356,6 +362,16 @@ test("successful publication comments exactly once before closing as completed",
   assert.deepEqual(
     rerun.calls.filter((c) => c.method).map((c) => c.method),
     ["PATCH"],
+  );
+});
+test("successful publication strips needs-evidence label if present", async () => {
+  const n = notifier({
+    issueOverride: { ...issue, labels: [{ name: "needs-evidence" }] },
+  });
+  assert.deepEqual(await n.run(), [{ issue: 12, status: "completed" }]);
+  assert.deepEqual(
+    n.calls.filter((c) => c.method).map((c) => c.method),
+    ["POST", "DELETE", "PATCH"],
   );
 });
 test("failed success comment leaves the issue open for reconciliation", async () => {

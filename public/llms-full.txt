@@ -4,7 +4,7 @@ The definitive community radar and directory for TypeSafe Jev and System-1 Agent
 
 Website: https://logicrw.github.io/awesome-jev-projects/
 Repository: https://github.com/logicrw/awesome-jev-projects
-Catalog entries: 795
+Catalog entries: 797
 
 ## Install the Agent Skill
 
@@ -11194,3 +11194,34 @@ A shared 1000 × 1000 emoji canvas where humans paint and Jev paints alongside t
 - Source evidence: https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/README.md
 - Source evidence: https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/packages/emoji/src/jev-join.ts
 - Source evidence: https://github.com/cwdx/1-million-emojis/blob/c74634732e195da15184593a2f268165920409b2/packages/jev/src/index.ts
+
+## jev-visual
+
+Local Jev-like visual inference experiment on Apple Silicon Mac. Scores and classifies single images across multiple questions with 3 playable game demos.
+
+- Repository: https://github.com/hr98w/jev-visual
+- Category: SDK & Decision Frameworks
+- Jev decision: Reuses multimodal visual context to score candidate answers directly from logits without autoregressive generation.
+- Purpose: Brings Jev-style single-pass multi-question scoring to local edge vision on Apple Silicon.
+- Review scope: Open-source experiment running local multimodal Jev-style scoring on Apple Silicon (MLX), not official TypeSafe cloud service.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/hr98w/jev-visual/
+- Source evidence: https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/README.md
+- Source evidence: https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/jev_visual/scoring.py
+- Source evidence: https://github.com/hr98w/jev-visual/blob/4382bba455647400951429134ceb012ca155e3fe/jev_visual/server.py
+
+## harness-router
+
+Fast decision routing for agent harnesses — native MCP with Jev for tool selection and MCTS for multi-step decisions.
+
+- Repository: https://github.com/Protocol-Lattice/harness-router
+- Category: MCP & Integrations
+- Jev decision: Jev evaluates the assembled tool descriptors against agent state using OpenRouter decisions API, returning high-confidence tool selection or fallback.
+- Purpose: Separates tool routing from problem solving, eliminating wasted LLM tokens and latency across large, overlapping MCP tool registries.
+- Review scope: Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.
+- License: MIT
+- Details: https://logicrw.github.io/awesome-jev-projects/en/projects/protocol-lattice/harness-router/
+- Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/README.md
+- Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/models.py
+- Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/policy.py
+- Source evidence: https://github.com/Protocol-Lattice/harness-router/blob/4d06d9e51af8151c581e9bad7c7a6d0703766746/src/harness_router/provider.py

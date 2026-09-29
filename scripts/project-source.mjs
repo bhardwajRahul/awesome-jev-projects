@@ -457,7 +457,10 @@ export function hasOpenRouterJevSource({ path, text }) {
 
 function hasOpenRouterJevIntegration(code) {
   const jevModel = /["'`]~?(?:typesafe-ai|typesafe)\/jev(?:-(?:latest|\d+(?:\.\d+)*(?:-\d{8})?))?["'`]/i.test(code);
-  const openRouterRequest = /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)["'`]/i.test(code);
+  const hasEndpoint = /https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)/i.test(code);
+  const openRouterRequest =
+    /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)["'`]/i.test(code) ||
+    (hasEndpoint && /\b(?:httpx|aiohttp|client\.post|api\.post|requests|postJson)\b/i.test(code));
   const openRouterSdk = /\b(?:from|require\s*\(|import\s*\()\s*["']@openrouter\/sdk["']/i.test(code) &&
     /\.\s*alpha\s*\.\s*decisions\s*\.\s*create\s*\(/i.test(code);
   // A model ID alone may be a catalog or an unused mention; require request code too.
@@ -655,8 +658,10 @@ export async function inspectRepository({
           Number(/typesafe|jev/i.test(posix.basename(a.path))) ||
         Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(a.path)) -
           Number(/(?:^|\/)(?:bench|benchmark|benchmarks|examples?|demos?|fixtures?|scripts?)(?:\/|$)/i.test(b.path)) ||
-        Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(b.path)) -
-          Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route)/i.test(a.path)) ||
+        Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route|provider|evaluator|engine|handler)/i.test(b.path)) -
+          Number(/(?:^|\/)(?:judge|gate|decision|backend|client|agent|model|service|policy|api|route|provider|evaluator|engine|handler)/i.test(a.path)) ||
+        Number(/(?:^|\/)(?:__init__|\.d)\.[a-z]+$/i.test(a.path)) -
+          Number(/(?:^|\/)(?:__init__|\.d)\.[a-z]+$/i.test(b.path)) ||
         Number(/jev|typesafe/i.test(b.path)) -
           Number(/jev|typesafe/i.test(a.path)) ||
         Number(/(?:^|\/)(?:src|lib|app|main|client|agent|cmd|pkg|internal)/i.test(b.path)) -
