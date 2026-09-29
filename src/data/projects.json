@@ -68859,5 +68859,89 @@
       "issueBodySha256": "543eb3c865182cf54151e83e01c2a919710122093e8149ca4fbe8f85b09e1906",
       "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/103"
     }
+  },
+  {
+    "id": "peterwanghot:jev-cc-codex-router",
+    "name": "jev-cc-codex-router",
+    "author": "peterwanghot",
+    "url": "https://github.com/peterwanghot/jev-cc-codex-router",
+    "repoId": 1395551130,
+    "category": "Routing & Cost Optimization",
+    "plainSummary": "它是 Codex 和上游之间的一个本地代理：每来一个新任务，就让 Jev 判断难度，把请求改用 luna、terra、sol、astra 里够用的最便宜的模型，遇到上游偶发的 400 和 502 还会自动重试。",
+    "jevDecisionPoint": "这个任务的难度需要哪一档模型（luna、terra、sol 还是 astra）。它看到的是你当前这句话加最近的对话，返回四档各自的概率，我们取概率最高的那档。代理只负责改请求里的模型名、记住每个会话的选择和重试，不参与难度判断。任务中途工具报错时，也是再问 Jev 一次，看要不要升档。",
+    "jevDecisionPointEn": "Jev returns a structured decision for the local program; consult the source for the exact decision policy.",
+    "highlightBenefit": "按任务分配模型资源；具体成本收益需看项目测试。",
+    "highlightBenefitEn": "Adds structured choices or scores to the workflow; performance and cost benefits have not been independently verified.",
+    "tags": [
+      "llm-routing-cost",
+      "typed-decisions"
+    ],
+    "summarySource": "readme-extractive",
+    "claimStatus": "优先保留投稿者与仓库原文，缺失语言自动补充；自动检查仅确认 Jev 集成证据，未经本站运行或性能复测。",
+    "claimStatusEn": "Author and repository text is preserved where clear; missing languages are enriched automatically. Checks establish source-level Jev integration, not runtime, safety, or performance validation.",
+    "plainSummaryEn": "Per-turn model routing proxy for Codex: asks Jev which tier each task needs, rewrites the model, retries flaky upstream errors.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "license": "MIT",
+    "createdAt": "2026-09-29T14:18:32Z",
+    "lastCommitAt": "2026-09-29T14:37:13Z",
+    "headSha": "a375021f3b2ca7466800e156b94c0daf733664be",
+    "metadataFetchedAt": "2026-09-29T14:43:12.561Z",
+    "metadataStatus": "ok",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/5207213?v=4",
+    "verificationStatus": "integration-detected",
+    "runtimeVerified": false,
+    "discoveredAt": "2026-09-29T14:43:12.562Z",
+    "evidence": [
+      {
+        "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/README.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/README.zh-CN.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/BENCHMARK.md",
+        "note": "固定版本的 Jev 集成与说明来源"
+      },
+      {
+        "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/jev_router.py",
+        "note": "固定版本的 Jev 集成与说明来源"
+      }
+    ],
+    "sourceVerification": {
+      "method": "bounded-source-heuristic",
+      "sha": "a375021f3b2ca7466800e156b94c0daf733664be",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/README.md",
+          "hash": "db6fd2cd21fd0f8d984d92c7473a004e6929e40825bff139e665f631ce3df471"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/README.zh-CN.md",
+          "hash": "f743f2ac81cf506d25835b19b76afe02277f1c17307a66331956fe109f3c775e"
+        },
+        {
+          "path": "BENCHMARK.md",
+          "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/BENCHMARK.md",
+          "hash": "174bb8ecadf332e1d5b687d65146430e3d5cba782158ee85a19797ca2468ed33"
+        },
+        {
+          "path": "jev_router.py",
+          "url": "https://github.com/peterwanghot/jev-cc-codex-router/blob/a375021f3b2ca7466800e156b94c0daf733664be/jev_router.py",
+          "hash": "97e2e6dc1be274816bfd1f1ae967be9c317e2792652f88e0efc4746be5e39d8d"
+        }
+      ]
+    },
+    "ingestion": {
+      "repository": "logicrw/awesome-jev-projects",
+      "issueNumber": 104,
+      "issueBodySha256": "5372d65e4fb6a1706da996afcfc1854d4714ff10d9323cb3d71bc5111ddba476",
+      "issueUrl": "https://github.com/logicrw/awesome-jev-projects/issues/104"
+    }
   }
 ]
