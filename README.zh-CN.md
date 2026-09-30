@@ -20,8 +20,8 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/">🌐 <b>搜索与筛选 ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-接入">🤖 <b>Agent Skill 接入</b></a> &nbsp;｜&nbsp; <a href="#分类">📂 <b>分类</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>提交项目 (Issue 专用通道)</b></a>
 </p>
 
-> [!TIP]
-> **📢 项目收录通道**：欢迎大家提交自己的 Jev 开源项目！为保障格式规范与自动化索引，本项目**统一通过 [Issue 专用模板](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml) 提交收录**，仓库**不接收 Pull Request**。填写仓库地址即可提交。
+> [!IMPORTANT]
+> **📢 仅通过 Issue 提交项目，不接收 Pull Request**：Awesome Jev 是由自动化流水线维护的开源生态雷达，网站前端与工具链由维护团队独立维护。本项目**严格不接受任何形式的代码或功能类 Pull Request（外部 PR 将被直接自动关闭）**。所有开源项目的收录与更新**统一通过 [Issue 专用模板](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)** 提交。感谢大家的配合！
 
 </div>
 

@@ -20,8 +20,8 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/ja/">🌐 <b>検索・絞り込み ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-の導入">🤖 <b>Agent Skill の導入</b></a> &nbsp;｜&nbsp; <a href="#カテゴリ">📂 <b>カテゴリ</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>プロジェクトを投稿 (Issue 経由)</b></a>
 </p>
 
-> [!TIP]
-> **プロジェクトの投稿について**: Jev プロジェクトの推薦・投稿を歓迎します。本ディレクトリの収録・更新は **[GitHub Issue 専門テンプレート](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)** 経由でのみ受け付けており、Pull Request は受け付けておりません。
+> [!IMPORTANT]
+> **Issue 経由の投稿のみ受付 · Pull Request は非対応**: 本ディレクトリは自動化パイプラインによって運営されており、サイトおよびツールチェーンはコアチームが集中管理しています。本リポジトリでは**いかなる Pull Request も受け付けておらず、送信された PR は自動的にクローズされます**。プロジェクトの推薦・更新はすべて **[GitHub Issue 専門テンプレート](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)** よりお送りください。
 
 </div>
 

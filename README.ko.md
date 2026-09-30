@@ -20,8 +20,8 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/ko/">🌐 <b>검색 및 필터 ↗</b></a> &nbsp;｜&nbsp; <a href="#agent-skill-설치">🤖 <b>Agent Skill 설치</b></a> &nbsp;｜&nbsp; <a href="#분류">📂 <b>분류</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>프로젝트 제출 (Issue 전용)</b></a>
 </p>
 
-> [!TIP]
-> **프로젝트 제출 안내**: Jev 프로젝트 제출을 환영합니다! 본 저장소는 **[GitHub Issue 전용 템플릿](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)**을 통해서만 등록을 진행하며, Pull Request는 받지 않습니다. 저장소 주소만 작성하여 제출해 주세요.
+> [!IMPORTANT]
+> **Issue 전용 제출 · Pull Request 미접수 안내**: 본 저장소는 자동화 파이프라인으로 운영되는 카탈로그 레이더로, 사이트 및 도구는 코어 팀이 독립적으로 유지보수합니다. 본 저장소는 **어떠한 형태의 Pull Request도 받지 않으며, 제출된 PR은 자동으로 닫힙니다**。모든 프로젝트 수록 및 갱신은 **[GitHub Issue 전용 템플릿](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)**을 통해서만 진행해 주세요.
 
 </div>
 

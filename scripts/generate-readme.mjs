@@ -192,10 +192,10 @@ for (const locale of LOCALES) {
   };
 
   const submissionTip = {
-    zh: `> [!TIP]\n> **📢 项目收录通道**：欢迎大家提交自己的 Jev 开源项目！为保障格式规范与自动化索引，本项目**统一通过 [Issue 专用模板](${REPOSITORY}/issues/new?template=project.yml) 提交收录**，仓库**不接收 Pull Request**。填写仓库地址即可提交。\n\n`,
-    en: `> [!TIP]\n> **Project Submissions**: We welcome your Jev projects! All project submissions and updates are handled **exclusively via [GitHub Issues](${REPOSITORY}/issues/new?template=project.yml)**. This repository **does not accept Pull Requests**. Simply fill out the issue template with your repository URL.\n\n`,
-    ja: `> [!TIP]\n> **プロジェクトの投稿について**: Jev プロジェクトの推薦・投稿を歓迎します。本ディレクトリの収録・更新は **[GitHub Issue 専門テンプレート](${REPOSITORY}/issues/new?template=project.yml)** 経由でのみ受け付けており、Pull Request は受け付けておりません。\n\n`,
-    ko: `> [!TIP]\n> **프로젝트 제출 안내**: Jev 프로젝트 제출을 환영합니다! 본 저장소는 **[GitHub Issue 전용 템플릿](${REPOSITORY}/issues/new?template=project.yml)**을 통해서만 등록을 진행하며, Pull Request는 받지 않습니다. 저장소 주소만 작성하여 제출해 주세요.\n\n`
+    zh: `> [!IMPORTANT]\n> **📢 仅通过 Issue 提交项目，不接收 Pull Request**：Awesome Jev 是由自动化流水线维护的开源生态雷达，网站前端与工具链由维护团队独立维护。本项目**严格不接受任何形式的代码或功能类 Pull Request（外部 PR 将被直接自动关闭）**。所有开源项目的收录与更新**统一通过 [Issue 专用模板](${REPOSITORY}/issues/new?template=project.yml)** 提交。感谢大家的配合！\n\n`,
+    en: `> [!IMPORTANT]\n> **Submissions via Issues Only · No Pull Requests**: Awesome Jev operates as an automated catalog radar where the site frontend and CI pipeline are strictly maintained by the core team. This repository **does not accept Pull Requests of any kind (they will be closed automatically)**. All project submissions and updates are handled **exclusively via [GitHub Issues](${REPOSITORY}/issues/new?template=project.yml)**.\n\n`,
+    ja: `> [!IMPORTANT]\n> **Issue 経由の投稿のみ受付 · Pull Request は非対応**: 本ディレクトリは自動化パイプラインによって運営されており、サイトおよびツールチェーンはコアチームが集中管理しています。本リポジトリでは**いかなる Pull Request も受け付けておらず、送信された PR は自動的にクローズされます**。プロジェクトの推薦・更新はすべて **[GitHub Issue 専門テンプレート](${REPOSITORY}/issues/new?template=project.yml)** よりお送りください。\n\n`,
+    ko: `> [!IMPORTANT]\n> **Issue 전용 제출 · Pull Request 미접수 안내**: 본 저장소는 자동화 파이프라인으로 운영되는 카탈로그 레이더로, 사이트 및 도구는 코어 팀이 독립적으로 유지보수합니다. 본 저장소는 **어떠한 형태의 Pull Request도 받지 않으며, 제출된 PR은 자동으로 닫힙니다**。모든 프로젝트 수록 및 갱신은 **[GitHub Issue 전용 템플릿](${REPOSITORY}/issues/new?template=project.yml)**을 통해서만 진행해 주세요.\n\n`
   }[locale];
 
   let out = `<div align="center">\n\n` +

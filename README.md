@@ -20,8 +20,8 @@
   <a href="https://logicrw.github.io/awesome-jev-projects/en/">🌐 <b>Search and filter ↗</b></a> &nbsp;｜&nbsp; <a href="#install-the-agent-skill">🤖 <b>Install the Agent Skill</b></a> &nbsp;｜&nbsp; <a href="#categories">📂 <b>Categories</b></a> &nbsp;｜&nbsp; <a href="https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml">🚀 <b>Submit a project (Issue only)</b></a>
 </p>
 
-> [!TIP]
-> **Project Submissions**: We welcome your Jev projects! All project submissions and updates are handled **exclusively via [GitHub Issues](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)**. This repository **does not accept Pull Requests**. Simply fill out the issue template with your repository URL.
+> [!IMPORTANT]
+> **Submissions via Issues Only · No Pull Requests**: Awesome Jev operates as an automated catalog radar where the site frontend and CI pipeline are strictly maintained by the core team. This repository **does not accept Pull Requests of any kind (they will be closed automatically)**. All project submissions and updates are handled **exclusively via [GitHub Issues](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml)**.
 
 </div>
 
