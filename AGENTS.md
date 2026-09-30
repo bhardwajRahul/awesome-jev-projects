@@ -11,3 +11,4 @@
 - After reviewed catalog changes, run `npm run build:readme`, `npm test` and `npm run build`. The build generates crawlable language/category/project pages from the same dataset.
 - Keep dependency builds read-only, publication jobs free of dependency execution, artifacts data-only, action versions pinned, and the main-ref compare-and-swap intact.
 - Review the staged diff and scan it for secrets before a public push. `.agents/` is local scratch and must remain untracked.
+- Strict No-PR Policy: This repository operates as an automated catalog radar maintained exclusively by the core team. Never accept, encourage, or process external Pull Requests for features, UI, scripts, or testing (all incoming PRs are closed automatically). All community contributions are strictly limited to submitting and updating projects via the Issue submission template. Historical PR #9 is an immutable early exception for author copy correction and shall not be repeated.

@@ -25,7 +25,7 @@ export const bodyHash = (body) =>
     .update(body ?? "")
     .digest("hex");
 export const successComment =
-  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并已成功收录至 Awesome Jev 探索雷达：https://logicrw.github.io/awesome-jev-projects/ 欢迎持续关注与共建！";
+  "🎉 感谢提交！项目已通过 Jev 源码集成检查，并已成功收录至 Awesome Jev 探索雷达：https://logicrw.github.io/awesome-jev-projects/ 欢迎持续关注并推荐更多 Jev 优秀项目！";
 const OWNER_REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-z\d_.-]{1,100}$/i;
 function requireOwner(repository) {
   if (!OWNER_REPO.test(repository ?? ""))

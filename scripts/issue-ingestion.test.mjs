@@ -492,6 +492,7 @@ test("invalid prepared identities cannot select API paths or mutate the catalog"
 test("automatic acknowledgement describes integration evidence, never a security certification", () => {
   assert.match(successComment, /源码集成检查/);
   assert.doesNotMatch(successComment, /代码审查|安全认证|安全审查/);
+  assert.doesNotMatch(successComment, /共建|Pull Request|PR/);
 });
 
 
