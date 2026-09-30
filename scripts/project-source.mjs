@@ -229,17 +229,17 @@ export function extractSubmittedCodePaths(text, repository) {
     try {
       candidate = decodeURIComponent(candidate);
     } catch {}
-    candidate = candidate.replace(/(?::\d+(?:-\d+)?|[.,;:!?)>\]])+$/, "").trim();
+    candidate = candidate.replace(/(?::\d+(?:-\d+)?|[.,;:!?)>\]])+$|#L\d+(?:-L?\d+)?$/i, "").trim();
     if (safePath(candidate)) {
       paths.add(candidate);
     }
   }
 
   const inlineRegex =
-    /`([^`\n\r]+\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb))`|(?:\b(?:path|file|in|at|under)\s*[:=]?\s*["']?)([a-z\d_.-]+(?:\/[a-z\d_.-]+)+\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb))\b/gi;
+    /`([^`\n\r]+?\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb))(?::\d+(?:-\d+)?|#L\d+(?:-L?\d+)?)?`|(?:\b(?:path|file|in|at|under|source|evidence)\s*[:=]?\s*["']?)([a-z\d_.-]+(?:\/[a-z\d_.-]+)*\.(?:py|[cm]?js|jsx|ts|tsx|go|rs|java|kt|rb|php|cs|cpp|cc|c|h|hpp|swift|sh|lua|dart|ipynb))(?::\d+(?:-\d+)?|#L\d+(?:-L?\d+)?)?\b/gi;
   while ((match = inlineRegex.exec(text)) !== null) {
     let candidate = (match[1] || match[2] || "").trim();
-    candidate = candidate.replace(/(?::\d+(?:-\d+)?|[.,;:!?)>\]])+$/, "").trim();
+    candidate = candidate.replace(/(?::\d+(?:-\d+)?|[.,;:!?)>\]])+$|#L\d+(?:-L?\d+)?$/i, "").trim();
     if (safePath(candidate)) {
       paths.add(candidate);
     }
@@ -457,14 +457,19 @@ export function hasOpenRouterJevSource({ path, text }) {
 
 function hasOpenRouterJevIntegration(code) {
   const jevModel = /["'`]~?(?:typesafe-ai|typesafe)\/jev(?:-(?:latest|\d+(?:\.\d+)*(?:-\d{8})?))?["'`]/i.test(code);
-  const hasEndpoint = /https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)/i.test(code);
-  const openRouterRequest =
-    /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request))\s*\(\s*["'`]https:\/\/openrouter\.ai\/api\/(?:alpha\/decisions|v1\/chat\/completions)["'`]/i.test(code) ||
-    (hasEndpoint && /\b(?:httpx|aiohttp|client\.post|api\.post|requests|postJson)\b/i.test(code));
+  const hasEndpoint = /https:\/\/(?:www\.)?openrouter\.ai(?::\d+)?\/(?:api\/)?(?:alpha\/decisions|v1\/chat\/completions|v1|api|decisions)(?=[/'"`\s)]|$)/i.test(code);
+  const hasOpenRouterHost = /https:\/\/(?:www\.)?openrouter\.ai(?::\d+)?(?:\/api)?(?:\/(?:v1|alpha))?(?=[/'"`\s)]|$)/i.test(code);
+  const anyHttpClient = /\b(?:fetch(?:er)?|axios|requests|httpx|aiohttp|got|ky|superagent|reqwest|ureq|client\.(?:post|request)|session\.(?:post|request)|api\.(?:post|request)|postJson|httpPost|http\.Post|post|send)\b/i.test(code);
+  const openRouterRequest = (hasEndpoint || hasOpenRouterHost) && (
+    anyHttpClient ||
+    /\b(?:json\s*=|body\s*:|headers\s*:|Authorization.*Bearer)/i.test(code)
+  );
   const openRouterSdk = /\b(?:from|require\s*\(|import\s*\()\s*["']@openrouter\/sdk["']/i.test(code) &&
     /\.\s*alpha\s*\.\s*decisions\s*\.\s*create\s*\(/i.test(code);
+  const openAiCompatible = /\b(?:OpenAI|ChatOpenAI|LiteLLM|createOpenAI|generateText|streamText)\b/i.test(code) &&
+    hasOpenRouterHost;
   // A model ID alone may be a catalog or an unused mention; require request code too.
-  return jevModel && (openRouterRequest || openRouterSdk);
+  return jevModel && (openRouterRequest || openRouterSdk || openAiCompatible);
 }
 
 /** Static implementation evidence must come from executable sources, not README installs. */
@@ -480,7 +485,7 @@ function hasImplementationEvidence(text, path) {
     /\bimport\s*\([\s\S]*?["'](?:github\.com\/(?:typesafe-ai|typesafe|[\w.-]+\/jev[\w.-]*)|(?:go\.)?typesafe\.ai\/[\w.-]*)["']/i.test(code);
 
   const sdkCall =
-    /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient|NewClient|New)|jev\.(?:Client|NewClient|New))\s*(?:\(|::new\s*\()|(?<!\b(?:random|math)\s*)\.\s*choice\s*\(|\.\s*(?:score|noul|decision|query|ask|systemOne|system_one)\s*\(|\b(?:Choice|Score|Noul)\s*(?:::new|\.builder|\.of)\s*\(/i.test(code);
+    /\b(?:TypeSafe|AsyncTypeSafe|TypeSafeClient|JevClient|typesafe\.(?:Client|AsyncClient|NewClient|New)|jev\.(?:Client|NewClient|New))\s*(?:\(|::new\s*\()|(?<!\b(?:random|math)\s*)\.\s*(?:choice|score|noul|decision|decide|query|ask|systemOne|system_one|evaluate|judge|route)\s*\(|\b(?:Choice|Score|Noul)\s*(?:::new|\.builder|\.of)\s*\(/i.test(code);
 
   if (providerImport && sdkCall) return true;
 
@@ -488,11 +493,12 @@ function hasImplementationEvidence(text, path) {
   const jevModelRef = /["'`]~?(?:typesafe-ai|typesafe)\/jev(?:-(?:latest|\d+))?["'`]/i.test(code);
   if (aiSdkImport && jevModelRef) return true;
 
-  const hasTypesafeHost = /https:\/\/(?:api\.)?typesafe\.ai/i.test(code);
-  const hasSystemOnePath = /\/v1\/systemone\b/i.test(code);
-  const hasJevIdentity = /["'`]~?(?:typesafe-ai|typesafe)\/jev-(?:latest|\d)|(?:TypeSafeClient|JevClient)\s*\(|\.\s*(?:systemOne|system_one)\s*\(/i.test(code);
+  const hasTypesafeHost = /(?:https?:\/\/)?(?:api\.)?typesafe\.ai/i.test(code);
+  const hasSystemOnePath = /\/v1\/(?:systemone|decide)\b/i.test(code);
+  const hasJevIdentity = /["'`]~?(?:typesafe-ai|typesafe)\/jev-(?:latest|\d)|(?:TypeSafeClient|JevClient|AsyncTypeSafe)\s*\(|\.\s*(?:systemOne|system_one|choice|score|noul|decision|decide)\s*\(/i.test(code);
 
-  const inlineHttp = /\b(?:fetch(?:er)?|axios\.(?:post|request)|requests\.(?:post|request)|http\.Post|reqwest|ureq)\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai\//i.test(code);
+  const anyHttpClient = /\b(?:fetch(?:er)?|axios|requests|httpx|aiohttp|got|ky|superagent|reqwest|ureq|http\.Post|postJson|httpPost|client\.(?:post|request)|api\.(?:post|request)|post|send)\b/i.test(code);
+  const inlineHttp = anyHttpClient && /["'`]https:\/\/(?:api\.)?typesafe\.ai\//i.test(code);
   if (inlineHttp && (hasJevIdentity || hasSystemOnePath)) return true;
 
   const pyHttp = /\burllib\.request\.(?:Request|urlopen)\s*\(\s*["'`]https:\/\/(?:api\.)?typesafe\.ai/i.test(code);
@@ -505,7 +511,7 @@ function hasImplementationEvidence(text, path) {
 
   const typesafeKey = /\b(?:TYPESAFE_API_KEY|JEV_API_KEY)\b/i.test(code);
   const jevPrimitive = /["'](?:type|kind)["']\s*:\s*["'](?:noul|choice|score)["']|\b(?:noul|choice|score)\b.{0,50}\b(?:answer|probabilities|confidence)/i.test(code);
-  const anyHttpRequest = /\b(?:urllib\.request|requests|httpx|aiohttp|fetch|axios|postJson|http\.(?:Post|Get|Client|NewRequest)|reqwest|ureq)\b/i.test(code);
+  const anyHttpRequest = /\b(?:urllib\.request|requests|httpx|aiohttp|fetch|axios|got|ky|superagent|postJson|http\.(?:Post|Get|Client|NewRequest)|reqwest|ureq)\b/i.test(code);
   if (typesafeKey && jevPrimitive && anyHttpRequest) return true;
 
   const jevWireClient =
@@ -635,9 +641,12 @@ export async function inspectRepository({
     const isPreferred = (entryPath) => {
       const lower = entryPath.toLowerCase();
       if (preferredSet.has(lower)) return true;
+      const base = posix.basename(lower);
       for (const p of preferredPaths) {
         const plower = p.toLowerCase();
+        const pbase = posix.basename(plower);
         if (lower.endsWith("/" + plower) || plower.endsWith("/" + lower)) return true;
+        if (pbase && pbase === base && /(?:src|lib|app|server|internal|core|pkg|providers?|routers?)/i.test(lower)) return true;
       }
       return false;
     };
@@ -694,6 +703,23 @@ export async function inspectRepository({
         { codeSources: files.filter((source) => !readmeFiles.includes(source)) },
       );
       if (evidence.verified && (!requireCodeEvidence || implementationFiles.length)) break;
+    }
+    if (requireCodeEvidence && !implementationFiles.length) {
+      const codeOnlySources = files.filter((source) => !readmeFiles.includes(source));
+      if (codeOnlySources.length > 1) {
+        const jointText = codeOnlySources.map((s) => s.text).join("\n\n");
+        if (hasImplementationEvidence(jointText, "joint.ts")) {
+          const keySource =
+            codeOnlySources.find((s) => /typesafe|jev|router|decision|provider|judge|client/i.test(s.path)) ||
+            codeOnlySources[0];
+          if (keySource) implementationFiles.push(keySource);
+          evidence = verifyIntegration(
+            repo,
+            files.map((source) => source.text).join("\n\n"),
+            { codeSources: codeOnlySources },
+          );
+        }
+      }
     }
   }
   if (requireCodeEvidence && !implementationFiles.length && evidence.reason !== "mention-only directory") {

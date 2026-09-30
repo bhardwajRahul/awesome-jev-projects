@@ -697,3 +697,67 @@ search-retrieval (搜索与检索 / Search & Retrieval), classification-ranking 
   ]);
 });
 
+test("inspectRepository accepts cross-file joint evidence where constants and request dispatch are separated", async () => {
+  const configPath = "src/config.py";
+  const configCode = 'JEV_MODEL = "typesafe/jev-1.13"\nOPENROUTER_URL = "https://openrouter.ai/api/v1"';
+  const routerPath = "src/router.py";
+  const routerCode = 'from config import JEV_MODEL, OPENROUTER_URL\nimport httpx\nresponse = await client.post(f"{OPENROUTER_URL}/chat/completions", json={"model": JEV_MODEL})';
+
+  const f = fixture({
+    [`/repos/${repository}/git/trees/${sha}?recursive=1`]: {
+      tree: [
+        { type: "blob", path: configPath, mode: "100644", size: configCode.length },
+        { type: "blob", path: routerPath, mode: "100644", size: routerCode.length },
+      ],
+    },
+    [`/repos/${repository}/contents/${configPath}?ref=${sha}`]: encoded(configCode, configPath),
+    [`/repos/${repository}/contents/${routerPath}?ref=${sha}`]: encoded(routerCode, routerPath),
+  });
+
+  const result = await inspect(f, { requireCodeEvidence: true });
+  assert.equal(result.status, "accepted");
+  assert.equal(result.evidence.implementationFiles.length, 1);
+});
+
+test("inspectRepository accepts OpenAI-compatible SDK calling OpenRouter Jev model", async () => {
+  const agentPath = "agent/client.ts";
+  const agentCode = `
+import OpenAI from "openai";
+const client = new OpenAI({
+  baseURL: "https://openrouter.ai/api/v1",
+  apiKey: process.env.OPENROUTER_API_KEY,
+});
+export async function routeTask(prompt: string) {
+  return await client.chat.completions.create({
+    model: "typesafe/jev-1.13",
+    messages: [{ role: "user", content: prompt }],
+  });
+}
+`;
+
+  const f = fixture({
+    [`/repos/${repository}/git/trees/${sha}?recursive=1`]: {
+      tree: [
+        { type: "blob", path: agentPath, mode: "100644", size: agentCode.length },
+      ],
+    },
+    [`/repos/${repository}/contents/${agentPath}?ref=${sha}`]: encoded(agentCode, agentPath),
+  });
+
+  const result = await inspect(f, { requireCodeEvidence: true });
+  assert.equal(result.status, "accepted");
+  assert.equal(result.evidence.implementationFiles.length, 1);
+  assert.equal(result.evidence.implementationFiles[0].path, agentPath);
+});
+
+test("extractSubmittedCodePaths strips line anchors (#L10-L20, :15) and matches preferred candidate", () => {
+  const issueText = `
+### Source Evidence
+https://github.com/my-org/my-project/blob/main/packages/server/router.py#L45-L120
+Also see \`src/providers/jev_eval.ts:25\`
+`;
+  const paths = extractSubmittedCodePaths(issueText, "my-org/my-project");
+  assert.ok(paths.includes("packages/server/router.py"));
+  assert.ok(paths.includes("src/providers/jev_eval.ts"));
+});
+
